@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buttons Demo</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+
+
+<style>
+    body {
+        background-color: #66c8f6;
+    }
+    input {
+        margin: 10px;
+    }
+
+    form {
+        background-color: white;
+        padding: 20px;
+        max-width: 450px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        padding-right: 40px;
+    }
+    
+    .actions, h2 {
+        text-align: center;
+    }
+</style>
+
+<form action="" method="post">
+
+    <h2>Login</h2>
+
+    <input class="form-control" type="email" name="email" placeholder=" email" required>
+    <input class="form-control" type="password" name="password" placeholder=" password" required>
+
+    <div class="actions">
+        <button type="submit" class="btn btn-success btn-sm">Login</button> or
+    <a href="register.html" class="btn btn-danger btn-sm">Register</a>
+    </div>
+
+
+</form>
+
+
+
+</body>
+</html>

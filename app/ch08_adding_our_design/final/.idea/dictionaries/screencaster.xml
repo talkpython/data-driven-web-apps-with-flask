@@ -3,6 +3,7 @@
     <words>
       <w>mimetype</w>
       <w>passlib</w>
+      <w>pypi</w>
       <w>sqlalchemy</w>
     </words>
   </dictionary>

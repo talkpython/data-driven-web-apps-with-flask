@@ -64,3 +64,19 @@ nav > a {
     font-size: 20px;
     padding: 20px;
 }
+
+.pypi-stats {
+    padding: 10px 0;
+    background-color: #ececec;
+    text-align: center;
+    border-bottom: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+}
+
+.pypi-stats .stat {
+    display: inline-block;
+    min-width: 170px;
+    padding: 10px;
+    font-size: 16px;
+    color: #003d61;
+}

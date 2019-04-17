@@ -9,9 +9,9 @@ body {
 }
 
 
-.title {
-    font-weight: bold;
-}
+/*.title {*/
+/*    font-weight: bold;*/
+/*}*/
 
 .main_content {
     padding: 0px;
@@ -71,6 +71,7 @@ nav > a {
     text-align: center;
     border-bottom: 1px solid #d3d3d3;
     border-top: 1px solid #d3d3d3;
+    margin-bottom: 30px;
 }
 
 .pypi-stats .stat {
@@ -80,3 +81,37 @@ nav > a {
     font-size: 16px;
     color: #003d61;
 }
+
+.project-list .subtitle {
+    font-style: italic;
+}
+
+.project-list h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.project-list .project {
+    border: 1px solid #d3d3d3;
+    padding: 10px;
+    background-color: #ececec;
+    min-height: 45px;
+    margin-top: 15px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.project-list .project .title {
+    font-size: 20px;
+}
+
+.project-list .project a {
+    color: #006dad;
+}
+
+.project-list .project .desc {
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+}
+

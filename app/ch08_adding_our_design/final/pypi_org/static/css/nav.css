@@ -6,11 +6,12 @@
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #02377c;
+
     color: white;
 }
 
 .navbar-inverse {
-    background-color: #0073b7;
+    background-color: #0066aa;
     border-color: #0067a3;
 }
 

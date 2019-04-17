@@ -1,21 +1,16 @@
 body {
     color: #222;
-    background: #fff;
     margin: 0px;
     padding: 0px;
     font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
     font-size: 17px;
-    /*background-color: #006dad;*/
+    background-color: #006dad;
 }
 
-
-/*.title {*/
-/*    font-weight: bold;*/
-/*}*/
-
 .main_content {
-    padding: 0px;
+    background: #fff;
     margin: 0px;
+    padding: 0px 0px 50px;
 }
 
 
@@ -102,3 +97,14 @@ body {
     font-style: italic;
 }
 
+
+footer {
+    margin-top: 50px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+footer a {
+    color: #2495f2;
+}

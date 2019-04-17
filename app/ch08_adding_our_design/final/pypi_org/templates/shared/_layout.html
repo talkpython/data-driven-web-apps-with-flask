@@ -12,14 +12,33 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/static/css/site.css"/>
+    <link rel="stylesheet" href="/static/css/nav.css"/>
 
     {% block additional_css %}{% endblock %}
 </head>
 <body>
 
-<nav>
-    <a href="/">Home</a>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-expand-md">
+    <a class="navbar-brand" href="/"><img src="/static/img/pypi-logo.svg"/></a>
 
+    <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="navbar-toggler-icon">
+            <div class="nav-expand-line"></div>
+            <div class="nav-expand-line"></div>
+            <div class="nav-expand-line"></div>
+        </div>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+            <li class="nav-item"><a class="nav-link" href="/account/login">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="/account/register" id="last_nav_link">Register</a></li>
+        </ul>
+    </div>
 </nav>
 
 <div class="main_content">

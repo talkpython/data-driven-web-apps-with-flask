@@ -18,19 +18,6 @@ body {
     margin: 0px;
 }
 
-nav {
-    padding: 10px;
-    font-size: 20px;
-    color: white;
-    height: 65px;
-    background-color: #0073b7;
-}
-
-nav > a {
-    color: white;
-    margin-right: 10px;
-}
-
 
 .hero {
     background-color: #0073b7;

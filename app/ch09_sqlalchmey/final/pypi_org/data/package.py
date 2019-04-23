@@ -22,8 +22,8 @@ class Package(SqlAlchemyBase):
 
     license = sa.Column(sa.String, index=True)
 
-    # maintainers
-    # releases
+    # releases relationship
+    # ...
 
     def __repr__(self):
         return '<Package {}>'.format(self.id)

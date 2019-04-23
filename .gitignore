@@ -119,3 +119,7 @@ app/ch09_sqlalchmey/final/.idea/misc.xml
 app/ch09_sqlalchmey/final/.idea/modules.xml
 app/ch09_sqlalchmey/starter/.idea/misc.xml
 app/ch09_sqlalchmey/starter/.idea/modules.xml
+app/ch09_sqlalchmey/final/.idea/dataSources.local.xml
+app/ch09_sqlalchmey/final/.idea/dataSources/583a04da-ae18-4c33-bbf0-6a3e12d3db43.xml
+app/ch09_sqlalchmey/final/.idea/dataSources/8589e457-43bb-4280-ba68-787968d5cb61.xml
+app/ch09_sqlalchmey/final/pypi_org/db/pypi.sqlite

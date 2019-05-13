@@ -2,6 +2,7 @@
   <dictionary name="screencaster">
     <words>
       <w>dateutil</w>
+      <w>passlib</w>
       <w>pypi</w>
       <w>sqlalchemy</w>
       <w>tablename</w>

@@ -1,0 +1,710 @@
+{
+    "info": {
+        "author": "Alex Gr\u00f6nholm",
+        "author_email": "alex.gronholm@nextday.fi",
+        "bugtrack_url": "https://github.com/agronholm/pythonfutures/issues",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Python Software Foundation License",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 2 :: Only"
+        ],
+        "description": ".. image:: https://travis-ci.org/agronholm/pythonfutures.svg?branch=master\n  :target: https://travis-ci.org/agronholm/pythonfutures\n  :alt: Build Status\n\nThis is a backport of the `concurrent.futures`_ standard library module to Python 2.\n\nIt should not be installed on Python 3, although there should be no harm in doing so, as the\nstandard library takes precedence over third party libraries.\n\nTo conditionally require this library only on Python 2, you can do this in your ``setup.py``:\n\n.. code-block:: python\n\n    setup(\n        ...\n        extras_require={\n            ':python_version == \"2.7\"': ['futures']\n        }\n    )\n\nOr, using the newer syntax:\n\n.. code-block:: python\n\n    setup(\n        ...\n        install_requires={\n            'futures; python_version == \"2.7\"'\n        }\n    )\n\n.. warning:: The ``ProcessPoolExecutor`` class has known (unfixable) problems on Python 2 and\n  should not be relied on for mission critical work.\n\n.. _concurrent.futures: https://docs.python.org/library/concurrent.futures.html\n\n\n",
+        "description_content_type": null,
+        "docs_url": "https://pythonhosted.org/futures/",
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/agronholm/pythonfutures",
+        "keywords": "",
+        "license": "PSF",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "futures",
+        "package_url": "https://pypi.org/project/futures/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/futures/",
+        "release_url": "https://pypi.org/project/futures/3.2.0/",
+        "requires_dist": null,
+        "requires_python": ">=2.6, <3",
+        "summary": "Backport of the concurrent.futures package from Python 3",
+        "version": "3.2.0"
+    },
+    "last_serial": 3865286,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14c2e3af0f90479792555e20061a4532",
+                    "sha256": "6f9388076061f3250d107fcedf6e651b8c737266b0b3bee9eacc2fca93891f59"
+                },
+                "downloads": -1,
+                "filename": "futures-0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "14c2e3af0f90479792555e20061a4532",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6048,
+                "upload_time": "2009-06-04T06:25:55",
+                "url": "https://files.pythonhosted.org/packages/2e/65/81cb1de73f001863f90981f4f5a0cea8da08bf7a9ed2a1d812e8f53fe822/futures-0.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3d4dbe19986aa9c654a2294cf6280c97",
+                    "sha256": "e12d6c0e0475c59aa543e173f68337ea519cd401389f19abd178bc27c246b146"
+                },
+                "downloads": -1,
+                "filename": "futures-0.1.win32.exe",
+                "has_sig": false,
+                "md5_digest": "3d4dbe19986aa9c654a2294cf6280c97",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 69510,
+                "upload_time": "2009-06-04T06:25:57",
+                "url": "https://files.pythonhosted.org/packages/09/9a/5cb5882312ae289aadab9dec2bd6557b25c45b79f3de5b400aafe547f3a5/futures-0.1.win32.exe"
+            }
+        ],
+        "0.2": [
+            {
+                "comment_text": "Python 3+",
+                "digests": {
+                    "md5": "b6f1d454aa2ba3c870a3743c154b95d5",
+                    "sha256": "c1bb5e244211aecf645646d0ede38d9000bae4b082c3180991bb47b2abc8b24d"
+                },
+                "downloads": -1,
+                "filename": "futures-0.2.python3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6f1d454aa2ba3c870a3743c154b95d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6501,
+                "upload_time": "2009-06-17T23:49:09",
+                "url": "https://files.pythonhosted.org/packages/08/80/a9e000de5b7372a514add2ef614a953be8bc3d13c8d6205455739d0fb189/futures-0.2.python3.tar.gz"
+            },
+            {
+                "comment_text": "Python 3+",
+                "digests": {
+                    "md5": "242c2437e402a03034823abc91b79d3c",
+                    "sha256": "cdea0e6ca17158aeed9e8369721bc04b4fedf6e6fd20a78577ae34389a314340"
+                },
+                "downloads": -1,
+                "filename": "futures-0.2.python3.win32.exe",
+                "has_sig": false,
+                "md5_digest": "242c2437e402a03034823abc91b79d3c",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.0",
+                "size": 70076,
+                "upload_time": "2009-06-17T23:49:31",
+                "url": "https://files.pythonhosted.org/packages/b1/52/b6024136771fed73f22bb2aae612683ad3f0654af16bc2462d648917cff2/futures-0.2.python3.win32.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a913df7f2e50c2d445cbc959c70b01e",
+                    "sha256": "f96fff8e855cbc27533d641700e59fff5c7228783db2f2ed2cbb6343749decb4"
+                },
+                "downloads": -1,
+                "filename": "futures-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1a913df7f2e50c2d445cbc959c70b01e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6897,
+                "upload_time": "2009-06-17T23:44:31",
+                "url": "https://files.pythonhosted.org/packages/58/da/820c674b07041df44a4bc6c062c0da3e68a5172bf0ad01312634ea39c4f4/futures-0.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc65adcd66ba6ecf0a89d8d6ec891de6",
+                    "sha256": "c95e54dfeb7201cbe1fffeef0134bd38fa47579df0c12c6a9ea68ba158ca27d3"
+                },
+                "downloads": -1,
+                "filename": "futures-0.2.win32.exe",
+                "has_sig": false,
+                "md5_digest": "dc65adcd66ba6ecf0a89d8d6ec891de6",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 70578,
+                "upload_time": "2009-06-17T23:44:34",
+                "url": "https://files.pythonhosted.org/packages/a7/6a/a4386efd6fe91c85f97837c33eab5d3ec7ac29137f89930f15ad52865413/futures-0.2.win32.exe"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0171acd9e2486915ccbe3d0e2e92ec3f",
+                    "sha256": "babf216077ffb0622397c278c1357b073150b5f5106fc27933ad04a029ae41d3"
+                },
+                "downloads": -1,
+                "filename": "futures-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0171acd9e2486915ccbe3d0e2e92ec3f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9169,
+                "upload_time": "2009-10-25T07:27:38",
+                "url": "https://files.pythonhosted.org/packages/18/ab/85f2f673ac828bc3d1c1ceb92c82382cdcbf890046c77cd74edaa63cb7d7/futures-1.0.tar.gz"
+            }
+        ],
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bcc58e035661b9be325b6d278005c0f2",
+                    "sha256": "c144889a929c55d7294126eee9a5f73f8fde9f79b0e18a62c6a813859dccb9b4"
+                },
+                "downloads": -1,
+                "filename": "futures-2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bcc58e035661b9be325b6d278005c0f2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9340,
+                "upload_time": "2010-11-13T11:42:10",
+                "url": "https://files.pythonhosted.org/packages/17/47/1382bf17e7faa123464057df0afc69cca9c7eb14e930734ce8b5bdbfad7e/futures-2.0.tar.gz"
+            }
+        ],
+        "2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1b9879b20e1ca45451124428ebd8157",
+                    "sha256": "f1d4bf1d214e19ed43f88adcd84db94b3b9fcfeec70f749d3de1764975cd5481"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b1b9879b20e1ca45451124428ebd8157",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24970,
+                "upload_time": "2010-12-23T23:52:40",
+                "url": "https://files.pythonhosted.org/packages/4b/19/93f2dd20a2e7eb72348c90b697ef7a0bd20168f973fc269f8986b8e49391/futures-2.1.tar.gz"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "158422d8727f148c439408a8b423f9bb",
+                    "sha256": "14d56550d2bc6872fa8a2ba657022e0d0f46f918653905c6c3336d60bf759586"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "158422d8727f148c439408a8b423f9bb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25038,
+                "upload_time": "2011-01-08T00:40:20",
+                "url": "https://files.pythonhosted.org/packages/10/0e/bde74dc8717243adba113ef415b4c4517c532ce18ca5c476f8f147b9f74e/futures-2.1.1.tar.gz"
+            }
+        ],
+        "2.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a6fa247e3c5fe3d60d8e12f1b873cc88",
+                    "sha256": "129e0c781192d7d680c5868ca602bcd3502a49e9899e5ca658eabc8f1130cb99"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a6fa247e3c5fe3d60d8e12f1b873cc88",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25360,
+                "upload_time": "2011-01-08T17:43:34",
+                "url": "https://files.pythonhosted.org/packages/36/0d/ff8097028893cc2ba0ad6c1a23f8aa5486728f2077f00989733978a4e289/futures-2.1.2.tar.gz"
+            }
+        ],
+        "2.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3de68835c8035dff0495cbe7f5c75beb",
+                    "sha256": "62175d035914a4c2d538335b8488077d09fcf2f8a83c72f06b24f2ab03891206"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3de68835c8035dff0495cbe7f5c75beb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25235,
+                "upload_time": "2012-08-25T07:03:09",
+                "url": "https://files.pythonhosted.org/packages/1c/98/bc0938f1c7c46b14dae9b25fc7edd32a7c26ef78b16a8b90835971f2143b/futures-2.1.3.tar.gz"
+            }
+        ],
+        "2.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c6116d2d8c3c1a7c386ce196a2c98a4d",
+                    "sha256": "8c4f2691b294d7bd1c3d60ecdbac2d436bb1be61884f321c04684252e0d5ec2d"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c6116d2d8c3c1a7c386ce196a2c98a4d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11840,
+                "upload_time": "2013-06-23T22:23:46",
+                "url": "https://files.pythonhosted.org/packages/fd/6f/3ce6a5e9e0754a02ca3f0f6027c73bcc337dbd18517920eea2db0b369ae9/futures-2.1.4.tar.gz"
+            }
+        ],
+        "2.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e6763f4016c0a6e31a0edc15072cc56e",
+                    "sha256": "5373aa3a7d9fcfb342b432fa8a30f48b43d844a9defd4a8b0c23d8e94dc9f3f1"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e6763f4016c0a6e31a0edc15072cc56e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 16573,
+                "upload_time": "2013-11-12T18:56:14",
+                "url": "https://files.pythonhosted.org/packages/32/e3/1de389e9e4372d106b1644b56cc0b94226a3ad637f96f45a8c3b55fc0709/futures-2.1.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2fc924890ccd30a5fe676fa9bbcf0ab8",
+                    "sha256": "8f5a627d3aee94cc1859a942965fdebb714be8cdd2366d819cb8fb9b7cc628a6"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2fc924890ccd30a5fe676fa9bbcf0ab8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11954,
+                "upload_time": "2013-11-12T18:56:59",
+                "url": "https://files.pythonhosted.org/packages/6d/e6/52fa0ac964982c773087d967feb628408b9c3d278d931761afd863c176ee/futures-2.1.5.tar.gz"
+            }
+        ],
+        "2.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9327a3b0bd315594d755180045947b03",
+                    "sha256": "0de25b75a1a353f70ba3c17de148b7bae135fc6a3636a593910f9a1e4b4549c3"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9327a3b0bd315594d755180045947b03",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 16571,
+                "upload_time": "2014-01-14T09:21:13",
+                "url": "https://files.pythonhosted.org/packages/59/a0/cf4cd997e1750f0c2d91c6ea5abea218251c43c3581bcc2f118b00baf5cf/futures-2.1.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cfab9ac3cd55d6c7ddd0546a9f22f453",
+                    "sha256": "33f39102b631fa0a030b24c4341ba1f48558e435946d6735d47fe1f739d757c4"
+                },
+                "downloads": -1,
+                "filename": "futures-2.1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cfab9ac3cd55d6c7ddd0546a9f22f453",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26445,
+                "upload_time": "2014-01-14T09:21:19",
+                "url": "https://files.pythonhosted.org/packages/38/25/85ec21efa813e4158dcea8bc676d1f81510af0ca3e2ba32ec47247d4857d/futures-2.1.6.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12159c04b91abe5d26769f3ed4e01cc8",
+                    "sha256": "9fd22b354a4c4755ad8c7d161d93f5026aca4cfe999bd2e53168f14765c02cd6"
+                },
+                "downloads": -1,
+                "filename": "futures-2.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "12159c04b91abe5d26769f3ed4e01cc8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 16805,
+                "upload_time": "2014-09-25T21:21:25",
+                "url": "https://files.pythonhosted.org/packages/d7/1d/68874943aa37cf1c483fc61def813188473596043158faa6511c04a038b4/futures-2.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "310e446de8609ddb59d0886e35edb534",
+                    "sha256": "151c057173474a3a40f897165951c0e33ad04f37de65b6de547ddef107fd0ed3"
+                },
+                "downloads": -1,
+                "filename": "futures-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "310e446de8609ddb59d0886e35edb534",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26786,
+                "upload_time": "2014-09-25T21:21:32",
+                "url": "https://files.pythonhosted.org/packages/c0/12/927b89a24dcb336e5af18a8fbf581581c36e9620ae963a693a2522b2d340/futures-2.2.0.tar.gz"
+            }
+        ],
+        "3.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d64edfffae0bbda1f28ceef944c1d7cc",
+                    "sha256": "a264cafeeeb1e57e92d9118b75a432d3d364e30773783967e920d3392578dd92"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d64edfffae0bbda1f28ceef944c1d7cc",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 13976,
+                "upload_time": "2015-05-03T05:39:24",
+                "url": "https://files.pythonhosted.org/packages/10/1c/182c9e959ca708ce611a7bf6b0ab6022d4a0e7edad79e5145c220431b028/futures-3.0.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed8cd52e316ad1ec1ed3fd1f1f622961",
+                    "sha256": "d9cd7bb09aa01f0e4940af64c31fbd7045098b7b4354420d7838ea39e8b86ee3"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ed8cd52e316ad1ec1ed3fd1f1f622961",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24841,
+                "upload_time": "2015-05-03T05:39:27",
+                "url": "https://files.pythonhosted.org/packages/ea/c9/35287369718fc05059e7a9d0d73c53745fe981010b4185b3858e7d46eff1/futures-3.0.0.tar.gz"
+            }
+        ],
+        "3.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5abb7b2cdf2cc9f727b513c9bbaf415e",
+                    "sha256": "c450cf293d635b3a8f7bb46690011fe16595a905b0d08cedf66af7f8986f7a4d"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5abb7b2cdf2cc9f727b513c9bbaf415e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 13990,
+                "upload_time": "2015-05-03T06:32:39",
+                "url": "https://files.pythonhosted.org/packages/5c/27/2f22e96c596b7cd83a3c1adceec4609eebd57ba3f8a061f993b4f84e592c/futures-3.0.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c872d96e128fb79371409f68f8c17f74",
+                    "sha256": "f78f2ef458639d72a625cf9c7643cf5442bb222ac11c12bcc445c6ad1cd862e2"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c872d96e128fb79371409f68f8c17f74",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24890,
+                "upload_time": "2015-05-03T06:32:42",
+                "url": "https://files.pythonhosted.org/packages/b2/2c/6b6a57379e47031c6f52e625e0e2b8f6702a8d1f61b6e0daee391e82c187/futures-3.0.1.tar.gz"
+            }
+        ],
+        "3.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "56b6b9c77a9488de90f4b81978753870",
+                    "sha256": "2269d0f0f7f187133378c6649da7bcea0fa33dd276910a39222d9243c0156351"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.2-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "56b6b9c77a9488de90f4b81978753870",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 13959,
+                "upload_time": "2015-05-12T06:39:37",
+                "url": "https://files.pythonhosted.org/packages/87/77/e02574de90ec2944113447106e3be417af2d4b3dd21a9a050c04b007cd29/futures-3.0.2-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42aaf1e4de48d6e871d77dc1f9d96d5a",
+                    "sha256": "dc3fc91508e49e0fd2f8625f0132d16e49c80f882e7e1d565c56b0d5dfbae257"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "42aaf1e4de48d6e871d77dc1f9d96d5a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24908,
+                "upload_time": "2015-05-12T06:39:43",
+                "url": "https://files.pythonhosted.org/packages/f8/e7/fc0fcbeb9193ba2d4de00b065e7fd5aecd0679e93ce95a07322b2b1434f4/futures-3.0.2.tar.gz"
+            }
+        ],
+        "3.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "347b9df805d31b3edea63731ea79cb54",
+                    "sha256": "04afa2a06ab7dcca9d81717b420a7a14826061e9b2614a5c77dd24c75ccf97e4"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.3-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "347b9df805d31b3edea63731ea79cb54",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 13984,
+                "upload_time": "2015-06-12T21:26:54",
+                "url": "https://files.pythonhosted.org/packages/26/7d/a7e1130b63514cd7192f0ba0b53bdda7f96df88641ee0c97bfed8477f324/futures-3.0.3-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "32171f72af7e80c266310794adc4db46",
+                    "sha256": "2fe2342bb4fe8b8e217f0d21b5921cbe5408bf966d9f92025e707e881b198bed"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "32171f72af7e80c266310794adc4db46",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24959,
+                "upload_time": "2015-06-12T21:26:58",
+                "url": "https://files.pythonhosted.org/packages/4c/dc/f9473006d4c9c52d4a4e977173fbcbfb1a8ef3a57e32e885edf994fd4a45/futures-3.0.3.tar.gz"
+            }
+        ],
+        "3.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b6343283c10a6e3b9eb0453739ee84d",
+                    "sha256": "4e860d18d866ff6c5f2804ebcbb16415f4f29cf57efea919178b809cf99326b6"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.4-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0b6343283c10a6e3b9eb0453739ee84d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 14008,
+                "upload_time": "2016-01-18T00:42:29",
+                "url": "https://files.pythonhosted.org/packages/9b/3a/da5dd42fb24e577d7cbb13b6f3a1bd466b7f11ff67facd670583d6bb6931/futures-3.0.4-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "27f0941502b3852ac78f3384e94f544e",
+                    "sha256": "19485d83f7bd2151c0aeaf88fbba3ee50dadfb222ffc3b66a344ef4952b782a3"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "27f0941502b3852ac78f3384e94f544e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25091,
+                "upload_time": "2016-01-18T00:42:35",
+                "url": "https://files.pythonhosted.org/packages/8d/73/b5fff618482bc06c9711e7cdc0d5d7eb1904d35898f48f2d7f9696b08bef/futures-3.0.4.tar.gz"
+            }
+        ],
+        "3.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "968375970768ad7b7838cb07a0d60b44",
+                    "sha256": "f7f16b6bf9653a918a03f1f2c2d62aac0cd64b1bc088e93ea279517f6b61120b"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.5-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "968375970768ad7b7838cb07a0d60b44",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 14010,
+                "upload_time": "2016-02-14T21:51:39",
+                "url": "https://files.pythonhosted.org/packages/9c/3f/1d818ea03fb2956a2bdfa8f8a3b1319590f0f151a5584a8a3ae45085066c/futures-3.0.5-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ced2c365e518242512d7a398b515ff95",
+                    "sha256": "0542525145d5afc984c88f914a0c85c77527f65946617edb5274f72406f981df"
+                },
+                "downloads": -1,
+                "filename": "futures-3.0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ced2c365e518242512d7a398b515ff95",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25153,
+                "upload_time": "2016-02-14T21:51:44",
+                "url": "https://files.pythonhosted.org/packages/55/db/97c1ca37edab586a1ae03d6892b6633d8eaa23b23ac40c7e5bbc55423c78/futures-3.0.5.tar.gz"
+            }
+        ],
+        "3.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a2e7fbede87d71aee50caaa44b8966b8",
+                    "sha256": "f72ad52afda986bb48ade45f3a8ce9bde53dd9d1e90b48fb6c17187013231013"
+                },
+                "downloads": -1,
+                "filename": "futures-3.1.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a2e7fbede87d71aee50caaa44b8966b8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 14002,
+                "upload_time": "2017-04-14T13:51:21",
+                "url": "https://files.pythonhosted.org/packages/d5/ea/a77d7379219f717333c7726bcaafa7839f11f475a3d3691ec9ed5b4add0e/futures-3.1.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab78b3ed854a38b82af19f3d617d29eb",
+                    "sha256": "90a8c71762d53e4ebdb4f7893460761f4ce2f076df08bb4934f39e90464eb889"
+                },
+                "downloads": -1,
+                "filename": "futures-3.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ab78b3ed854a38b82af19f3d617d29eb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25902,
+                "upload_time": "2017-04-14T13:51:23",
+                "url": "https://files.pythonhosted.org/packages/25/83/113da7c7832a4efa80ec7fd5d25b2ea431d9a847cd78f1fa98ddd99d591a/futures-3.1.0.tar.gz"
+            }
+        ],
+        "3.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61a88f749eb3655042f95d198f783ef3",
+                    "sha256": "c4884a65654a7c45435063e14ae85280eb1f111d94e542396717ba9828c4337f"
+                },
+                "downloads": -1,
+                "filename": "futures-3.1.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "61a88f749eb3655042f95d198f783ef3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 14335,
+                "upload_time": "2017-04-14T14:33:22",
+                "url": "https://files.pythonhosted.org/packages/a6/1c/72a18c8c7502ee1b38a604a5c5243aa8c2a64f4bba4e6631b1b8972235dd/futures-3.1.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "77f261ab86cc78efa2c5fe7be27c3ec8",
+                    "sha256": "51ecb45f0add83c806c68e4b06106f90db260585b25ef2abfcda0bd95c0132fd"
+                },
+                "downloads": -1,
+                "filename": "futures-3.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "77f261ab86cc78efa2c5fe7be27c3ec8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26471,
+                "upload_time": "2017-04-14T14:33:24",
+                "url": "https://files.pythonhosted.org/packages/cc/26/b61e3a4eb50653e8a7339d84eeaa46d1e93b92951978873c220ae64d0733/futures-3.1.1.tar.gz"
+            }
+        ],
+        "3.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cfd62ab6c9852b04bb6048480fefaa75",
+                    "sha256": "ec0a6cb848cc212002b9828c3e34c675e0c9ff6741dc445cab6fdd4e1085d1f1"
+                },
+                "downloads": -1,
+                "filename": "futures-3.2.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cfd62ab6c9852b04bb6048480fefaa75",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 15847,
+                "upload_time": "2017-11-30T23:22:35",
+                "url": "https://files.pythonhosted.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1b299a06b96ccb59f70324716dc0016",
+                    "sha256": "9ec02aa7d674acb8618afb127e27fde7fc68994c0437ad759fa094a574adb265"
+                },
+                "downloads": -1,
+                "filename": "futures-3.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d1b299a06b96ccb59f70324716dc0016",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27320,
+                "upload_time": "2017-11-30T23:22:36",
+                "url": "https://files.pythonhosted.org/packages/1f/9e/7b2ff7e965fc654592269f2906ade1c7d705f1bf25b7d469fa153f7d19eb/futures-3.2.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "cfd62ab6c9852b04bb6048480fefaa75",
+                "sha256": "ec0a6cb848cc212002b9828c3e34c675e0c9ff6741dc445cab6fdd4e1085d1f1"
+            },
+            "downloads": -1,
+            "filename": "futures-3.2.0-py2-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "cfd62ab6c9852b04bb6048480fefaa75",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2",
+            "size": 15847,
+            "upload_time": "2017-11-30T23:22:35",
+            "url": "https://files.pythonhosted.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "d1b299a06b96ccb59f70324716dc0016",
+                "sha256": "9ec02aa7d674acb8618afb127e27fde7fc68994c0437ad759fa094a574adb265"
+            },
+            "downloads": -1,
+            "filename": "futures-3.2.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "d1b299a06b96ccb59f70324716dc0016",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 27320,
+            "upload_time": "2017-11-30T23:22:36",
+            "url": "https://files.pythonhosted.org/packages/1f/9e/7b2ff7e965fc654592269f2906ade1c7d705f1bf25b7d469fa153f7d19eb/futures-3.2.0.tar.gz"
+        }
+    ],
+    "package_name": "futures"
+}

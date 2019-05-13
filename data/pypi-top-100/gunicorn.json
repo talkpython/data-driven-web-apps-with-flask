@@ -1,0 +1,1699 @@
+{
+    "info": {
+        "author": "Benoit Chesneau",
+        "author_email": "benoitc@e-engura.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 4 - Beta",
+            "Environment :: Other Environment",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: MacOS :: MacOS X",
+            "Operating System :: POSIX",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Topic :: Internet",
+            "Topic :: Internet :: WWW/HTTP",
+            "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+            "Topic :: Internet :: WWW/HTTP :: WSGI",
+            "Topic :: Internet :: WWW/HTTP :: WSGI :: Server",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Utilities"
+        ],
+        "description": "Gunicorn\n--------\n\n.. image:: https://img.shields.io/pypi/v/gunicorn.svg?style=flat\n    :alt: PyPI version\n    :target: https://pypi.python.org/pypi/gunicorn\n\n.. image:: https://img.shields.io/pypi/pyversions/gunicorn.svg\n    :alt: Supported Python versions\n    :target: https://pypi.python.org/pypi/gunicorn\n\n.. image:: https://travis-ci.org/benoitc/gunicorn.svg?branch=master\n    :alt: Build Status\n    :target: https://travis-ci.org/benoitc/gunicorn\n\nGunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork\nworker model ported from Ruby's Unicorn_ project. The Gunicorn server is broadly\ncompatible with various web frameworks, simply implemented, light on server\nresource usage, and fairly speedy.\n\nFeel free to join us in `#gunicorn`_ on Freenode_.\n\nDocumentation\n-------------\n\nThe documentation is hosted at http://docs.gunicorn.org.\n\nInstallation\n------------\n\nGunicorn requires **Python 2.x >= 2.6** or **Python 3.x >= 3.2**.\n\nInstall from PyPI::\n\n    $ pip install gunicorn\n\n\nUsage\n-----\n\nBasic usage::\n\n    $ gunicorn [OPTIONS] APP_MODULE\n\nWhere ``APP_MODULE`` is of the pattern ``$(MODULE_NAME):$(VARIABLE_NAME)``. The\nmodule name can be a full dotted path. The variable name refers to a WSGI\ncallable that should be found in the specified module.\n\nExample with test app::\n\n    $ cd examples\n    $ gunicorn --workers=2 test:app\n\n\nLicense\n-------\n\nGunicorn is released under the MIT License. See the LICENSE_ file for more\ndetails.\n\n.. _Unicorn: https://bogomips.org/unicorn/\n.. _`#gunicorn`: https://webchat.freenode.net/?channels=gunicorn\n.. _Freenode: https://freenode.net/\n.. _LICENSE: https://github.com/benoitc/gunicorn/blob/master/LICENSE\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://gunicorn.org",
+        "keywords": "",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "gunicorn",
+        "package_url": "https://pypi.org/project/gunicorn/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/gunicorn/",
+        "release_url": "https://pypi.org/project/gunicorn/19.8.1/",
+        "requires_dist": [
+            "tornado (>=0.2); extra == 'tornado'",
+            "gevent (>=0.13); extra == 'gevent'",
+            "eventlet (>=0.9.7); extra == 'eventlet'"
+        ],
+        "requires_python": ">=2.6, !=3.0.*, !=3.1.*",
+        "summary": "WSGI HTTP Server for UNIX",
+        "version": "19.8.1"
+    },
+    "last_serial": 3821626,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0500f5cd50c30202081f0bff03f14c7a",
+                    "sha256": "444a69f77bacce4f116efa8ffb0b037441f6ffb3fe63f8385495a6b8570b7c85"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0500f5cd50c30202081f0bff03f14c7a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14874,
+                "upload_time": "2010-01-03T21:50:51",
+                "url": "https://files.pythonhosted.org/packages/ff/2d/34a4aa743ed8d7e9936d6312f34fecceb03e9d1d80fc0597c2d2d4307e80/gunicorn-0.1.tar.gz"
+            }
+        ],
+        "0.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8feecd4523abb7245292175b58bc6691",
+                    "sha256": "2e012611b5ef4c0a66c33ee0784dccd92d57f74fec51b993893b691eec5090b8"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8feecd4523abb7245292175b58bc6691",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 165538,
+                "upload_time": "2010-07-09T05:35:34",
+                "url": "https://files.pythonhosted.org/packages/f3/df/d871db77c1bcbe73a03568893124fd6126d030ea0b1af2932fa76e742d0f/gunicorn-0.10.0.tar.gz"
+            }
+        ],
+        "0.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "78594fed9d1c4b433d625acca588dd04",
+                    "sha256": "66b14edfa3bc9ee2757de5a3c79a012b41d3da6c355b248b4bca2cfc5eaa9957"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.10.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "78594fed9d1c4b433d625acca588dd04",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 276116,
+                "upload_time": "2010-08-06T11:02:42",
+                "url": "https://files.pythonhosted.org/packages/16/58/8355ffd9c3e21622fb4021426a6db46d8e73a7dba4336976c994e24b20ef/gunicorn-0.10.1.tar.gz"
+            }
+        ],
+        "0.11.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e0120c4fa92d862f339d917d55e70ae7",
+                    "sha256": "273265fc05ea6c998677e7cb0b4cb9adf2e9f8bf416bbfaa47865b9d869de26f"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.11.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e0120c4fa92d862f339d917d55e70ae7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 239128,
+                "upload_time": "2010-08-13T05:26:54",
+                "url": "https://files.pythonhosted.org/packages/65/29/af1ccd0a2b16571d1694a84a43e383cc3a9ccd3ac700f335ae7d48bf7b4b/gunicorn-0.11.0.tar.gz"
+            }
+        ],
+        "0.11.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e4b473dbb621e72dd9ac9570ee82fc3",
+                    "sha256": "547a695a079d3f90b20c57eba9e1ba73bf8847b1c4f0f1b1556c40cd2141ba69"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.11.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1e4b473dbb621e72dd9ac9570ee82fc3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 242259,
+                "upload_time": "2010-09-02T22:39:04",
+                "url": "https://files.pythonhosted.org/packages/92/bc/1caa9234f3f8dad6e129cd499525a85c91dc06ea08d778f6600277875acf/gunicorn-0.11.1.tar.gz"
+            }
+        ],
+        "0.11.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e060350706b362e56dfe1e17ee3522f",
+                    "sha256": "f56a896ba894ff280a412817d7b2714705e1abf31cbc924c6d9b20c804b0d3f8"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.11.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8e060350706b362e56dfe1e17ee3522f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 247769,
+                "upload_time": "2010-10-30T10:47:22",
+                "url": "https://files.pythonhosted.org/packages/ed/bd/a106dd33de8ee57cd0a5b20265f4820a9d49980e5e69e24e9013259f3388/gunicorn-0.11.2.tar.gz"
+            }
+        ],
+        "0.12.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f8dd16676a911ce00e738fc42ea02f3",
+                    "sha256": "38282aec2600991542da306ee9e4a69028029e8a864b28c6d78d6ef8ed2bb09f"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.12.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f8dd16676a911ce00e738fc42ea02f3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 184637,
+                "upload_time": "2010-12-22T23:07:44",
+                "url": "https://files.pythonhosted.org/packages/55/6d/aa4c298ce440fc63fb20a2761ff68a5a707d3f1d13fce885cd58ae375822/gunicorn-0.12.0.tar.gz"
+            }
+        ],
+        "0.12.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6540ec02de8e00b6b60c28a26a019662",
+                    "sha256": "9660ba75e44370bb58063dc670c55b96cd4396f8e08993817c60045422a2bae0"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.12.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6540ec02de8e00b6b60c28a26a019662",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 185199,
+                "upload_time": "2011-03-23T07:34:57",
+                "url": "https://files.pythonhosted.org/packages/8f/55/6cb30d671c40d0e4854a0b14456811a5122f1b3afd9558e5c19aa0a44666/gunicorn-0.12.1.tar.gz"
+            }
+        ],
+        "0.12.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "acf40832274b01a92a13a20a5c6bdfb2",
+                    "sha256": "f79d95c2e245d61ea3e2c12f806546b446cf86284e58ecf115d835d1d191fd5e"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.12.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "acf40832274b01a92a13a20a5c6bdfb2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 180741,
+                "upload_time": "2011-05-18T19:27:41",
+                "url": "https://files.pythonhosted.org/packages/c2/d8/1aa25ff3787f062195778c42e1edd66c0a0c046559ed517cdd4b4c89f9cc/gunicorn-0.12.2.tar.gz"
+            }
+        ],
+        "0.13.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62da8750a75b7afc67526805dd65bd8a",
+                    "sha256": "8690d064a46ca2f65fd305dbef2815857ee6cd6ebff9b2e71adb0ccdccd4464b"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.13.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "62da8750a75b7afc67526805dd65bd8a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 280702,
+                "upload_time": "2011-08-22T14:15:55",
+                "url": "https://files.pythonhosted.org/packages/32/7d/caed0aed65bad49cfdee8cf1be29b1a97070a0a854c73d45c02a5da7e1b0/gunicorn-0.13.0.tar.gz"
+            }
+        ],
+        "0.13.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa2b0e432fa072575d86aff317e1b7c2",
+                    "sha256": "bc08722861c24b18a13596ddd8e64ffcedfa1b7b8466d1abd43b947b057db42e"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.13.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "aa2b0e432fa072575d86aff317e1b7c2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 280753,
+                "upload_time": "2011-08-22T16:46:23",
+                "url": "https://files.pythonhosted.org/packages/45/17/8ca442b902347f062b4d9c9d8a9a0fc7f928d8ddb57d49227d143a2d658a/gunicorn-0.13.1.tar.gz"
+            }
+        ],
+        "0.13.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "24fbd6763b169021c11496eb5627ac3a",
+                    "sha256": "96d8e6a10e4eccdb26d8d3e132742d8b0aab5a7390baf9244396fdd112d76315"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.13.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "24fbd6763b169021c11496eb5627ac3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 283922,
+                "upload_time": "2011-09-17T11:36:58",
+                "url": "https://files.pythonhosted.org/packages/76/9f/fd3f1c447bc4a0c93ded0dea74a84a60b6bd3ea8faeb091c49fcb0db9708/gunicorn-0.13.2.tar.gz"
+            }
+        ],
+        "0.13.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "23079e3385a20be75ff3224ce87e7582",
+                    "sha256": "a6241134a7257efb4d566406db1f9df022507f750c174c601ee4287029b4c08d"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.13.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "23079e3385a20be75ff3224ce87e7582",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 281520,
+                "upload_time": "2011-09-19T23:41:04",
+                "url": "https://files.pythonhosted.org/packages/80/f2/37d30785d3f9ce6dd1786a44f41d05284b40aa926d57262a2da64b26a507/gunicorn-0.13.3.tar.gz"
+            }
+        ],
+        "0.13.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e18f3fdaa94ef2dce2f2d53e1f7aaadc",
+                    "sha256": "e653e90547506c58f293b00ab78caf42829812ff6884a88145e1e0b61eee7d11"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.13.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e18f3fdaa94ef2dce2f2d53e1f7aaadc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 283003,
+                "upload_time": "2011-09-23T07:45:27",
+                "url": "https://files.pythonhosted.org/packages/bd/35/02afbb70798e4646c39c5521201ea597279b5c9651c71a0c34169bc550bb/gunicorn-0.13.4.tar.gz"
+            }
+        ],
+        "0.14.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "95766369e6a95d80e5893395ed6a141b",
+                    "sha256": "d55ba7624df7f1eb2422bcfbdb72d21482c8be9c01177e4793290121e3118eb7"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.14.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "95766369e6a95d80e5893395ed6a141b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 203335,
+                "upload_time": "2012-03-04T07:57:09",
+                "url": "https://files.pythonhosted.org/packages/ec/cf/5deb43f429e0918cfd0ddbc67d42acb8c909925f595cb2fca447df3ba242/gunicorn-0.14.0.tar.gz"
+            }
+        ],
+        "0.14.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f4fe619c3bfcac7c181d5e341d8c13d5",
+                    "sha256": "7f594e3f3ea4734d0ca26587772d761a4368407f1e53d6d71cac5ad6040ef6c3"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.14.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f4fe619c3bfcac7c181d5e341d8c13d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 203334,
+                "upload_time": "2012-03-04T08:50:52",
+                "url": "https://files.pythonhosted.org/packages/21/f2/b98bd891e2390afb3474d0c1b23d8386c823086b0a57b21033136aee4b2e/gunicorn-0.14.1.tar.gz"
+            }
+        ],
+        "0.14.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5e2f8f5c0892f3ff3813fe66bd46a754",
+                    "sha256": "d99eb8c8074763877db28e1996ba70ac4df18ec497f2f27ece276cf54419ee65"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.14.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5e2f8f5c0892f3ff3813fe66bd46a754",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 203588,
+                "upload_time": "2012-03-16T21:34:38",
+                "url": "https://files.pythonhosted.org/packages/ff/e6/bccaba00c8f2ed62be517fd6d335da78fc66193a876a01abd34ed7d10af3/gunicorn-0.14.2.tar.gz"
+            }
+        ],
+        "0.14.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "32ef55d04ad18215d88fd7481c6a5bcf",
+                    "sha256": "fcff4d54533c219ca966cf53e1d5b1856f22180a1ef56f2dc97856544d94360a"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.14.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "32ef55d04ad18215d88fd7481c6a5bcf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 208108,
+                "upload_time": "2012-05-15T11:12:06",
+                "url": "https://files.pythonhosted.org/packages/c1/da/521a8cde60e9a76cf8aa1330109ec0484fcfc19c87bfe9197180c6bc3281/gunicorn-0.14.3.tar.gz"
+            }
+        ],
+        "0.14.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "22047709629c3ca7741adb76778aeb37",
+                    "sha256": "283522ccea5eae7ed3c1e61ea2da7c987a6968fd7603cc83a7de7487b6ff072b"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.14.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "22047709629c3ca7741adb76778aeb37",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 228643,
+                "upload_time": "2012-06-24T14:54:09",
+                "url": "https://files.pythonhosted.org/packages/f6/c5/3a02e970ee3ac66dc8e1b7550c8b95469c6ebe6da6b0b9409cba73203394/gunicorn-0.14.4.tar.gz"
+            }
+        ],
+        "0.14.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a2682d3800291c93780407995426a6b3",
+                    "sha256": "cef7820010cc5d1bf134e25b0ab22097b67886ae72c42a774d555be605a9b422"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.14.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a2682d3800291c93780407995426a6b3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 228742,
+                "upload_time": "2012-06-24T19:06:13",
+                "url": "https://files.pythonhosted.org/packages/79/b0/f80742ffc670565c569a1e197c2d17749442c11bdc01a3b98b4640de9708/gunicorn-0.14.5.tar.gz"
+            }
+        ],
+        "0.14.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "32ce00116fd3df855987e4f749eab7e5",
+                    "sha256": "00cb88f3da5bcb6eb96dacd01c1103b9b777fabfd750ee08d9965288a4681a70"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.14.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "32ce00116fd3df855987e4f749eab7e5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 219695,
+                "upload_time": "2012-07-26T23:51:18",
+                "url": "https://files.pythonhosted.org/packages/d1/6d/0e713f1f38e30f868558d0bf2dbf92a0bf00802e766b3f82d4925f377906/gunicorn-0.14.6.tar.gz"
+            }
+        ],
+        "0.15.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "40808a7dbb4e6f27fd6d0139d95a5c00",
+                    "sha256": "811f7e9b6b81f5ef4ba07ba071ee8f09ce2c9b16824b75fcaf6452af8bc9a9ad"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.15.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "40808a7dbb4e6f27fd6d0139d95a5c00",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 119108,
+                "upload_time": "2012-10-18T20:01:17",
+                "url": "https://files.pythonhosted.org/packages/7b/08/7a2fe559c07d434db2b22297ca022b4c8036971f83134c43a56b087ae88c/gunicorn-0.15.0.tar.gz"
+            }
+        ],
+        "0.16.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e821dcd1152728513cc868691bad1a45",
+                    "sha256": "54061688c9b9ee92c795de39050e57a6bbd962d404fb209f1f00a583c17b6d2c"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.16.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e821dcd1152728513cc868691bad1a45",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 130490,
+                "upload_time": "2012-11-19T14:17:19",
+                "url": "https://files.pythonhosted.org/packages/4e/db/d42c78d07b624d7d8be63ef41aff3c5d76c053b689748a21b1eb15b2d8cc/gunicorn-0.16.0.tar.gz"
+            }
+        ],
+        "0.16.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d53d5d04d941f2a3089e814e753a218f",
+                    "sha256": "9d3e189e3e1ee5674a4c2e3c36415b02a0faa136c34077811124fbaa19163b85"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.16.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d53d5d04d941f2a3089e814e753a218f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 344851,
+                "upload_time": "2012-11-19T15:28:30",
+                "url": "https://files.pythonhosted.org/packages/bd/a4/99f85f36f5b96a61460b462559f58de90ca0d00e98779e04f4bb60052ccb/gunicorn-0.16.1.tar.gz"
+            }
+        ],
+        "0.17.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d4003bcd1a1899cd7ac580e6e4ab4c9",
+                    "sha256": "cde5fad8d44db657899a135b24fe10b1c4bff60a318050d9e0a82c20424b6996"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.17.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0d4003bcd1a1899cd7ac580e6e4ab4c9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 357816,
+                "upload_time": "2012-12-25T05:47:31",
+                "url": "https://files.pythonhosted.org/packages/46/ba/c586dd3c0a4900547db51ce108ec8c9a880b01e1eaa1db7558999c822f3f/gunicorn-0.17.0.tar.gz"
+            }
+        ],
+        "0.17.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b244e0822ffc099b0a6b7a17b07d183",
+                    "sha256": "96e7f22dcb23c1f811c5c75397e465a95d88b12dfd88149802b01e34bca22f38"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.17.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6b244e0822ffc099b0a6b7a17b07d183",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 359636,
+                "upload_time": "2013-01-05T09:38:26",
+                "url": "https://files.pythonhosted.org/packages/6a/8e/1c32b90021e29e7a2e37b4cd030508591cf26c46ca21de82fbe351e5a18a/gunicorn-0.17.1.tar.gz"
+            }
+        ],
+        "0.17.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4f4cdd0ad0fd864eb9abd9d6a4ea931e",
+                    "sha256": "3daeecbf3c3f324317c847bd9523d2c7dcdcc7796fd2e57c18b16c0adf5897e5"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.17.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4f4cdd0ad0fd864eb9abd9d6a4ea931e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 360120,
+                "upload_time": "2013-01-07T18:33:48",
+                "url": "https://files.pythonhosted.org/packages/70/85/ba6cb749ba480e7237f6028ccfa2d00d5289ad55977103e46f4bce44da8d/gunicorn-0.17.2.tar.gz"
+            }
+        ],
+        "0.17.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc2002ad630b4f4f81c3618fba520a82",
+                    "sha256": "35aa4dc9ca07f77e0526450b6011a628d7b1bf2dfd5e429cc85feeacfe69cba6"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.17.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fc2002ad630b4f4f81c3618fba520a82",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 372842,
+                "upload_time": "2013-04-24T08:19:09",
+                "url": "https://files.pythonhosted.org/packages/00/ab/fedf573b667c7de82b15576158c250c5ce5853a51577c23df0a0a896076d/gunicorn-0.17.3.tar.gz"
+            }
+        ],
+        "0.17.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "464c1d0ce93c62ce039dc9a9493d26e3",
+                    "sha256": "0f5b63f87ab66b9aaca6938e2b97dd6e785498a0cb4567560996192d7e40ad21"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.17.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "464c1d0ce93c62ce039dc9a9493d26e3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 372737,
+                "upload_time": "2013-04-24T21:55:00",
+                "url": "https://files.pythonhosted.org/packages/94/a0/6af15d3f7e8d259e30dfb7077405b8a16f2f1c5e45e842e9e808a30c1f7f/gunicorn-0.17.4.tar.gz"
+            }
+        ],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f7c4322773d7e39975f220a1bc7755da",
+                    "sha256": "2c1bfb2cc65399db9c645cf6c13e14922cf1c4f71ad46b370bd40fc818314735"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f7c4322773d7e39975f220a1bc7755da",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14382,
+                "upload_time": "2010-01-22T00:59:08",
+                "url": "https://files.pythonhosted.org/packages/ff/7d/7cda70478b277a72734cc493b5727c21b7158e8d79bdef51ecdc01807c6a/gunicorn-0.2.tar.gz"
+            }
+        ],
+        "0.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ef045db826b7ec8c2c6dd32f79970dfe",
+                    "sha256": "0050239ca20a4eb78b227871f5ec359264fece711138d8b8dc44c0527f04425d"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ef045db826b7ec8c2c6dd32f79970dfe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16167,
+                "upload_time": "2010-01-26T02:05:12",
+                "url": "https://files.pythonhosted.org/packages/38/fe/993220ae59e28c8c55c9dfc562c675a64235f563c440b7180eb847fe71d4/gunicorn-0.2.1.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ddddcf2dcb676f36e4e4d52e7de8c0b8",
+                    "sha256": "551484c4459a8f01bd2db8d9144ddf58a4b675abff4a595f4789c8ddc3c3e5db"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ddddcf2dcb676f36e4e4d52e7de8c0b8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17925,
+                "upload_time": "2010-02-01T20:00:48",
+                "url": "https://files.pythonhosted.org/packages/90/29/00807b038c456fb00e8d7d72d6b407ece21185765b094eed2e476505c97e/gunicorn-0.3.tar.gz"
+            }
+        ],
+        "0.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "571f439d37388719ec4ef98b0fb6cc98",
+                    "sha256": "ab7c75cc4de7b32cfe816175d1b8bb8cbd97107dab8088e2826cde75bbf0debe"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "571f439d37388719ec4ef98b0fb6cc98",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17658,
+                "upload_time": "2010-02-02T23:59:47",
+                "url": "https://files.pythonhosted.org/packages/80/22/c740694761ce2e72f50230f028f25597e0c57bb45923e87b043b66d54fd7/gunicorn-0.3.1.tar.gz"
+            }
+        ],
+        "0.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6c5fc28dfe4b2b07091d6abc00c1564d",
+                    "sha256": "8441a03a19701513610287c1c457bd571f5e84283b9716f6806f9547ed8dd49c"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6c5fc28dfe4b2b07091d6abc00c1564d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17666,
+                "upload_time": "2010-02-03T00:02:33",
+                "url": "https://files.pythonhosted.org/packages/d0/6e/9f63ea2ec5f02c21d4cb3e8996ac1b12a8432151330244aa6fd2db1ebd9d/gunicorn-0.3.2.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a41b9bf5764d4789338851739cc9bed1",
+                    "sha256": "6c19a30f6108487f9081327f90ea18f2d32121bf20019db321a21ae378fc1cd6"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a41b9bf5764d4789338851739cc9bed1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18391,
+                "upload_time": "2010-02-03T17:49:25",
+                "url": "https://files.pythonhosted.org/packages/4f/53/9ebc1f4584719fabe7adebf55c25258c6ac4fda4b6344d0aad57b88e880e/gunicorn-0.4.tar.gz"
+            }
+        ],
+        "0.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9526f11ae928920428fe0f0c3c3904e8",
+                    "sha256": "93218a71ea63aa8b61e460d713f1d15fe7fb05eff7606af39487cf69b8967722"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9526f11ae928920428fe0f0c3c3904e8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18395,
+                "upload_time": "2010-02-03T19:46:52",
+                "url": "https://files.pythonhosted.org/packages/1d/06/483e52ee969e515b08bc9ce87e7d0921b0bd3d9e7381e9b810051f0fbcfa/gunicorn-0.4.1.tar.gz"
+            }
+        ],
+        "0.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2351dfe6edeed22f124903ed608559e2",
+                    "sha256": "52bf81fa634033c37e0e9108d98c45a1447a27b9272b621525e14e20c9fd2c54"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2351dfe6edeed22f124903ed608559e2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18713,
+                "upload_time": "2010-02-09T23:15:15",
+                "url": "https://files.pythonhosted.org/packages/11/2f/60617b417dec8af359da8322dfecf44b8987c2ce9bf87a618039c33b2351/gunicorn-0.4.2.tar.gz"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e443f9b9325e7d6b58eda898988ef375",
+                    "sha256": "baea5e01a5dfa2fa1f6a853d13bde80ed3c0a43705e7dbe34ac938eb1c6daa3e"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e443f9b9325e7d6b58eda898988ef375",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69377,
+                "upload_time": "2010-02-20T22:54:06",
+                "url": "https://files.pythonhosted.org/packages/a4/b5/639c79152fb15b4df5ea8f210f8c3d222e12a17c5d36477174868b375c6f/gunicorn-0.5.tar.gz"
+            }
+        ],
+        "0.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f83eb85a031615c09a02a6c21674e320",
+                    "sha256": "ba0e2b10b9bf2225506170eef6ae9f0503476aed87dc36edac1ab333bfb3797c"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f83eb85a031615c09a02a6c21674e320",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69806,
+                "upload_time": "2010-02-22T08:57:40",
+                "url": "https://files.pythonhosted.org/packages/ed/06/8125f3638181f65e51aa108995bbc61c68ab15f125b44306cfa02e98deee/gunicorn-0.5.1.tar.gz"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6ea00bf1dbd4812d1673038c0b6c074a",
+                    "sha256": "1cf4019dea69b2d9d023af8b5b40105fbbe97ce06714851441033051cd017a16"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6ea00bf1dbd4812d1673038c0b6c074a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 83170,
+                "upload_time": "2010-02-22T21:18:50",
+                "url": "https://files.pythonhosted.org/packages/8a/ee/d1c2ddde17917994a338d5f32ad21ce33dfb7d104df6fc72adad0b7d9d3b/gunicorn-0.6.tar.gz"
+            }
+        ],
+        "0.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d5ea658226b9c9c710d64c4658eb0d1e",
+                    "sha256": "dc9d8d9b18b4ae261c7022981ed2ac95f7d84c04660635cd6f4ece0e0256d9f0"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d5ea658226b9c9c710d64c4658eb0d1e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82491,
+                "upload_time": "2010-02-24T00:06:20",
+                "url": "https://files.pythonhosted.org/packages/ea/01/4d75cadfe59c7a06d55efb7e452a481e977ac2b08aa0ef86fd53497a846a/gunicorn-0.6.1.tar.gz"
+            }
+        ],
+        "0.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ead8ca52cf8793df4631349ff29b008",
+                    "sha256": "9118c7cefa86083d23c3e0d395e9886b5223694ed61e9cb954953da3097dcc24"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7ead8ca52cf8793df4631349ff29b008",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 89304,
+                "upload_time": "2010-03-01T16:48:51",
+                "url": "https://files.pythonhosted.org/packages/48/7c/f829b5dc7ccde1d10fa32dea15c212fbef0e37bc779bb9b941a82e57db19/gunicorn-0.6.2.tar.gz"
+            }
+        ],
+        "0.6.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f818600c0aad44cb69b3ced69086a00",
+                    "sha256": "71c0527607f9e0313ab0514651f347f3e9f1cbc29693f6cec1d3c6110cf3f4c4"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.6.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f818600c0aad44cb69b3ced69086a00",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 89870,
+                "upload_time": "2010-03-07T00:42:03",
+                "url": "https://files.pythonhosted.org/packages/9a/c8/19e724182c4eb65d5960e2cd39bf58e1d2caa71d7c81caafbabaa4a675be/gunicorn-0.6.3.tar.gz"
+            }
+        ],
+        "0.6.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed30c24ad5fc2589952818946d3c32a7",
+                    "sha256": "ec9ba6f50e104d91da8844059a7d3cc5efa49b4a7997c4175810c809c2242042"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.6.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ed30c24ad5fc2589952818946d3c32a7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 89986,
+                "upload_time": "2010-03-08T23:25:05",
+                "url": "https://files.pythonhosted.org/packages/13/0c/a8560d1781661eb5e2dd48b8258366157eb8c2b9ff1ee34ee96fd2a36282/gunicorn-0.6.4.tar.gz"
+            }
+        ],
+        "0.6.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d341fd7ec5fc7ac22b9a35b7b77cf9be",
+                    "sha256": "1ae08975416026f2501e6b9e891ea4b9d55f11b3e1d95694af4459ab32cb7e5d"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.6.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d341fd7ec5fc7ac22b9a35b7b77cf9be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91911,
+                "upload_time": "2010-03-11T08:29:25",
+                "url": "https://files.pythonhosted.org/packages/39/cd/def93e9aa7ba178dade24347debf981c3f622b081c62d66aafd79dc6f6f2/gunicorn-0.6.5.tar.gz"
+            }
+        ],
+        "0.6.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "55ca2cca6a6340e07fec303baefc6db5",
+                    "sha256": "ed41dea343aecc42e664eeed5649078ee908f87f3520200f85a2ebc39c6eb9aa"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.6.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "55ca2cca6a6340e07fec303baefc6db5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 86539,
+                "upload_time": "2010-03-13T23:33:37",
+                "url": "https://files.pythonhosted.org/packages/2d/50/05b0a67dbdf27adaa4bdc553bd575ff1766b48ad3625035604e9f549eebe/gunicorn-0.6.6.tar.gz"
+            }
+        ],
+        "0.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c5b9e2a068531c1dcbfff17f27dfe499",
+                    "sha256": "a19d9dca5aecdc2f58725c5f70468ff0158b256e51cce744a14e8a66949bd56d"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c5b9e2a068531c1dcbfff17f27dfe499",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103458,
+                "upload_time": "2010-03-26T22:21:12",
+                "url": "https://files.pythonhosted.org/packages/e4/c9/de780859167e6ceee255002684c4acefe230fca785c54f4f24eed8e7d36d/gunicorn-0.7.0.tar.gz"
+            }
+        ],
+        "0.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3903366fda9e53a6c41baf92e5b79e85",
+                    "sha256": "46decf272ae41b201b031c1c9bcdb0ec558a00c3c50fa7848e96a5d8b36f144f"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3903366fda9e53a6c41baf92e5b79e85",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 96954,
+                "upload_time": "2010-04-02T02:20:30",
+                "url": "https://files.pythonhosted.org/packages/82/bc/07bbb243f84e777cab4f13be68537c36a037ac30909f294636c88f55ed6f/gunicorn-0.7.1.tar.gz"
+            }
+        ],
+        "0.7.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "848140ea20f6214a298768bd5eb19010",
+                    "sha256": "049752c49da1ba5c4736460684d901a25bf5897eb518e08fe496decf1f086b95"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.7.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "848140ea20f6214a298768bd5eb19010",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 108932,
+                "upload_time": "2010-04-15T03:24:26",
+                "url": "https://files.pythonhosted.org/packages/32/cd/e441ce3936f6fa1d9f2c59f157e5432ee214289a766fd88d58590b740adb/gunicorn-0.7.2.tar.gz"
+            }
+        ],
+        "0.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c63a0c3aaec164ec8cbb270564a12052",
+                    "sha256": "b0c45712d08b04f6d0e7504f28c3caf1492bd21b96410068c566ee75f32b1306"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c63a0c3aaec164ec8cbb270564a12052",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 106439,
+                "upload_time": "2010-04-22T22:08:26",
+                "url": "https://files.pythonhosted.org/packages/20/4e/3ea714e004ef01a1c552e38566f17071410e3da94b3c00c8c59a66f954d5/gunicorn-0.8.0.tar.gz"
+            }
+        ],
+        "0.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b89d8fdf939a7b99ed48ae5b0f201d8",
+                    "sha256": "ca0339ecc72e55d7711c386c1b7f981dd1cf9e23853c260bafd160c22e2221e6"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4b89d8fdf939a7b99ed48ae5b0f201d8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 101773,
+                "upload_time": "2010-04-29T19:32:05",
+                "url": "https://files.pythonhosted.org/packages/65/de/51b61a018af8faf350e733306a92b92483cd66d266caf6c003c7f993661f/gunicorn-0.8.1.tar.gz"
+            }
+        ],
+        "0.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8cd9dccd83dcdbfe78c15386f12aade6",
+                    "sha256": "1e6ffe5288e0577a1363daaf3f662d9bc2ed27d62eb7acf2141456df8eea7611"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8cd9dccd83dcdbfe78c15386f12aade6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 125116,
+                "upload_time": "2010-05-25T00:23:03",
+                "url": "https://files.pythonhosted.org/packages/dd/c0/b716b1e200d52df65b40b0a096ec3e45a5d50ca13c325533b8968c8d764d/gunicorn-0.9.0.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "79220e9949790c3f693a51860696b48c",
+                    "sha256": "bef2417b131f879fd38d305cc507732180dec7242d2b1cb25b17beb54811e291"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "79220e9949790c3f693a51860696b48c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 114522,
+                "upload_time": "2010-05-26T19:09:53",
+                "url": "https://files.pythonhosted.org/packages/65/5d/0158ebbc89e863172efdc798eea79af1e2969582e7cfb42d2e6b52e58705/gunicorn-0.9.1.tar.gz"
+            }
+        ],
+        "17.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "32e4477ac20e1061c9860f466cc87a14",
+                    "sha256": "c8cbee5c44618f49e7b7c6f945a6c7488e5a87657ca19a7a6bb2e6fde6ba0e68"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-17.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "32e4477ac20e1061c9860f466cc87a14",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 367321,
+                "upload_time": "2013-07-03T08:57:32",
+                "url": "https://files.pythonhosted.org/packages/02/a0/206efff381e2b61c038310a772debae8a4288593bb34901a9cb5aac7192c/gunicorn-17.5.tar.gz"
+            }
+        ],
+        "18.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff4b2fd7abf30125947dfa68f9280375",
+                    "sha256": "0a05e3c38fdc553d93ed9e0a5e743be9317b410861e59fb859cdba2d81fe817e"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-18.0-py33-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ff4b2fd7abf30125947dfa68f9280375",
+                "packagetype": "bdist_wheel",
+                "python_version": "any",
+                "size": 93736,
+                "upload_time": "2013-12-12T16:49:13",
+                "url": "https://files.pythonhosted.org/packages/02/b3/23273452586e4923af43b2805292900ac784324e9d8ada8e0673ff7accd5/gunicorn-18.0-py33-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c7138b9ac7515a42066922d2b6120fbe",
+                    "sha256": "b61f38786af6b8d644b530552012d669c7415fcf5852de320f290800db97983d"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-18.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c7138b9ac7515a42066922d2b6120fbe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 366635,
+                "upload_time": "2013-08-27T22:45:00",
+                "url": "https://files.pythonhosted.org/packages/cc/8f/82d9d1ae8cd417421f4ccb04bf8a8d75767b324c50bc83a9be9d4122c01a/gunicorn-18.0.tar.gz"
+            }
+        ],
+        "19.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eb40b21ea909621758e5436684dca028",
+                    "sha256": "0ccb71a2d9e0764fb3abc5dc6f7a44d5d44e3137545be8869befc8aedc02878e"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "eb40b21ea909621758e5436684dca028",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 382899,
+                "upload_time": "2014-06-12T14:53:24",
+                "url": "https://files.pythonhosted.org/packages/ce/f0/70b402ce4a1988616a38524554ae6896846c4bad9c4e3e2dd43ead7c0d82/gunicorn-19.0.0.tar.gz"
+            }
+        ],
+        "19.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8afc651fbb8c9b34f633cbe922c7bbc6",
+                    "sha256": "6b85faf13ec6549eded9f72e4341936732fe396eb995fcaa2c4d6735d6fe9186"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8afc651fbb8c9b34f633cbe922c7bbc6",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 102392,
+                "upload_time": "2014-07-26T12:26:49",
+                "url": "https://files.pythonhosted.org/packages/ee/aa/ce0f2c1886549459c98ab3628a42f1062d79c84b8eca228308f656a95390/gunicorn-19.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3d759bec3c46a680ff010775258c4c56",
+                    "sha256": "ae1dd6452f62b3470bc9acaf62cb5301545fbb9c697d863a5bfe35097ed7a0b3"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3d759bec3c46a680ff010775258c4c56",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 382397,
+                "upload_time": "2014-07-26T12:25:25",
+                "url": "https://files.pythonhosted.org/packages/a4/a3/38185fd83aa3c850090a25d6045560a66dd55569fd9935b5a673748254ab/gunicorn-19.1.0.tar.gz"
+            }
+        ],
+        "19.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "905b2a090447c82bd66e62ee29b2287c",
+                    "sha256": "ffb411757de374d05c759c929908d2397c66e3bcf6f35dee41a6ef9eb851497b"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "905b2a090447c82bd66e62ee29b2287c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 104382,
+                "upload_time": "2014-08-16T12:59:48",
+                "url": "https://files.pythonhosted.org/packages/ee/e2/dbe1f12d527b060bc0340b9df47926b9c80d54bca13482b5611d41773e26/gunicorn-19.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eaa72bff5341c05169b76ce3dcbb8140",
+                    "sha256": "82715511fb6246fad4ba66d812eb93416ae8371b464fa88bf3867c9c177daa14"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "eaa72bff5341c05169b76ce3dcbb8140",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 385155,
+                "upload_time": "2014-08-16T12:58:38",
+                "url": "https://files.pythonhosted.org/packages/df/ae/c2cdd886a282df6eeaca90f8719d23eda51e4945ce55556e00b25f4acd2c/gunicorn-19.1.1.tar.gz"
+            }
+        ],
+        "19.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "31ed07954a7e11c8587a096733ca783d",
+                    "sha256": "c879e1f8320d2dca2baa31ba6746f16ef9ee821f99b0f9c71967311dff9b5679"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "31ed07954a7e11c8587a096733ca783d",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 110214,
+                "upload_time": "2015-01-30T14:37:25",
+                "url": "https://files.pythonhosted.org/packages/06/b2/591ed3ffd25fabbd6f3d48247ee9e4df4011b1a270216bd7eb5e616fb0b3/gunicorn-19.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "010e23e52324375ed9e2265d6e3be692",
+                    "sha256": "6f4d087e2ddc63ee89ff0eae1a707eebc6fed47bd174dc81987adbf06f1f8cbf"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "010e23e52324375ed9e2265d6e3be692",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 394618,
+                "upload_time": "2015-01-30T14:35:18",
+                "url": "https://files.pythonhosted.org/packages/98/ab/0cf3ce33b2d05aa50dd8171ae3f0ae63380adf607e5827d43f7fba21a78d/gunicorn-19.2.0.tar.gz"
+            }
+        ],
+        "19.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee833b8cc0fd834344c825220b1d1738",
+                    "sha256": "181dc3c286787eae0f72a9aaf097213559afda4c9d813679eac1ac8cb492cec4"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.2.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ee833b8cc0fd834344c825220b1d1738",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 110235,
+                "upload_time": "2015-02-04T13:44:44",
+                "url": "https://files.pythonhosted.org/packages/66/52/f4692236b8e56827613188da51564192b119aa6b422311d043560218e76b/gunicorn-19.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2d643e171dc20e2d182d8b11158d4401",
+                    "sha256": "5cf623bc6f3d67297ec89747e21f15b3bd73962fa71c6087f86859a5155de73a"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2d643e171dc20e2d182d8b11158d4401",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 394950,
+                "upload_time": "2015-02-04T13:44:40",
+                "url": "https://files.pythonhosted.org/packages/eb/61/552eac1e21719bd836f7ec7ee2578beeacabf0ab7d990c615687ca0bc08e/gunicorn-19.2.1.tar.gz"
+            }
+        ],
+        "19.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e19df3b0d07bc2b695f02e10b017b934",
+                    "sha256": "a5179cde922d2b4e045ee5b11e87323ee77d363ae40294fc8252f25d6a0eaf06"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e19df3b0d07bc2b695f02e10b017b934",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 110500,
+                "upload_time": "2015-03-06T10:19:43",
+                "url": "https://files.pythonhosted.org/packages/80/1b/25eaf834e05c82233568cdada4a3ea373fd2bc27c447554a98e18def5494/gunicorn-19.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "faa3e80661efd67e5e06bba32699af20",
+                    "sha256": "8bc835082882ad9a012cd790c460011e4d96bf3512d98a04d3dabbe45393a089"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "faa3e80661efd67e5e06bba32699af20",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 395381,
+                "upload_time": "2015-03-06T10:19:40",
+                "url": "https://files.pythonhosted.org/packages/b0/3d/c476010c920926d2b5b4be0a9a5f5dc0a50c667476ad4737774d44fa7591/gunicorn-19.3.0.tar.gz"
+            }
+        ],
+        "19.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b0940d3fc87f337af0571576ef9784c1",
+                    "sha256": "b3d8b47e2be932c23a2204feb2bf36cca7fcf5e229fe184feacfbfd1d19d4929"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b0940d3fc87f337af0571576ef9784c1",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 112734,
+                "upload_time": "2015-11-25T15:17:33",
+                "url": "https://files.pythonhosted.org/packages/b1/f3/559cc64b6901219e112a943c83778f88eb04e41ff3ce748026d2baf8217e/gunicorn-19.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b9f268b36a945c8f2b4f9d5bfafeabd2",
+                    "sha256": "5e46069ecdb11a944f9bffd04b48c895e3057eec4e9880ad4625ea66708916c6"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b9f268b36a945c8f2b4f9d5bfafeabd2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 398556,
+                "upload_time": "2015-11-25T15:17:05",
+                "url": "https://files.pythonhosted.org/packages/66/88/1c703788804e6768a4074b34a74540f7f71849298e1c4cbcab1547487bbd/gunicorn-19.4.0.tar.gz"
+            }
+        ],
+        "19.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "90564140a8cc97526fd166d5f4454004",
+                    "sha256": "63f1a0ce2502c01800de1d4dc812c9eba082e99f44beaacae9496c4151b096f8"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "90564140a8cc97526fd166d5f4454004",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 112745,
+                "upload_time": "2015-11-25T16:07:31",
+                "url": "https://files.pythonhosted.org/packages/75/f1/6c56cff1fbb205a3bf81e881910f3fe4c1287eef8b72abe7882f1e56c9fe/gunicorn-19.4.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a800c164260c2bdb9e1c02e4ddd4908",
+                    "sha256": "53b8ab4676446892354407507c3a936ba731077c0f79239dd6e530507669e931"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0a800c164260c2bdb9e1c02e4ddd4908",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 398583,
+                "upload_time": "2015-11-25T16:07:12",
+                "url": "https://files.pythonhosted.org/packages/0c/22/16ecfa515306a7d8b7beaf4bf6cf35077cc0353555f1fb5093af45a899b9/gunicorn-19.4.1.tar.gz"
+            }
+        ],
+        "19.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8791a826f461f90d47b0641ecedba026",
+                    "sha256": "ec15f87b9bf5f26ab4bc2adbbc4f888c549a2d5fc101246474f61ba7531d5524"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8791a826f461f90d47b0641ecedba026",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 112911,
+                "upload_time": "2015-12-29T09:53:41",
+                "url": "https://files.pythonhosted.org/packages/96/78/84e2711e2d379a1b80596ff7f1fae7c1f5117ad9a30ecf02aeb508d55fcf/gunicorn-19.4.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2d7ae95ae16f879f1cb0507873598686",
+                    "sha256": "9a99c51ecbf425c73b790610ec408f4852736158718e6b167374bfa38d5624d7"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2d7ae95ae16f879f1cb0507873598686",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 399291,
+                "upload_time": "2015-12-29T09:53:10",
+                "url": "https://files.pythonhosted.org/packages/75/7e/267b2ad08f1cf3e26be1bc94f81ae5e3483fbf6ccd43b006d231e6eb3c09/gunicorn-19.4.2.tar.gz"
+            }
+        ],
+        "19.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b384458029a111c469509d20aeefc08",
+                    "sha256": "ddd0302aecac53d0b540909efef51d3725457b57bf98d6ee49da4a2c5029cd8a"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5b384458029a111c469509d20aeefc08",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 112837,
+                "upload_time": "2015-12-29T14:38:58",
+                "url": "https://files.pythonhosted.org/packages/f8/d0/262260f57e553b37e7a0ef50045b1a10876d2f83d94530c83a31b4cac372/gunicorn-19.4.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff2d8d78e99c956831f4a25b3876d8db",
+                    "sha256": "2b06fc7c822b5af65e87fdd54ccb5c46543591264a0fee9d8bd8e56e15b46b25"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ff2d8d78e99c956831f4a25b3876d8db",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 399239,
+                "upload_time": "2015-12-29T14:38:33",
+                "url": "https://files.pythonhosted.org/packages/4c/95/f2b16a4bc905e07902b911610e6b0c1542a4fce947eedb3a4b704cebc384/gunicorn-19.4.3.tar.gz"
+            }
+        ],
+        "19.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "96e46ea06faac7b49d90cebb4c081afc",
+                    "sha256": "ad359dedab7de9a345d8b75a2c1de3262a9094c2788e40b181b66e49e2b09f6f"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "96e46ea06faac7b49d90cebb4c081afc",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 112834,
+                "upload_time": "2016-01-04T09:56:25",
+                "url": "https://files.pythonhosted.org/packages/5a/60/5e6bb0769854ff772888a9b5ca68c4d84c7737e4df010407a6b476925190/gunicorn-19.4.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e61302dc98e53af6ef968ebf82c53f0",
+                    "sha256": "04e87b3bce75c656a029440e9b4847f291060edaddee431824cea40637d1a8ab"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8e61302dc98e53af6ef968ebf82c53f0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 398891,
+                "upload_time": "2016-01-04T09:56:05",
+                "url": "https://files.pythonhosted.org/packages/64/4a/261c684ec63ff9d17b480d3124b169ca4127c56e279b9f1187b60f029cc2/gunicorn-19.4.4.tar.gz"
+            }
+        ],
+        "19.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7184b9d57eb92d01dd56eb817863a174",
+                    "sha256": "c57f1b005a4b90933303c8deed9bedeb509331aa6a0a990023a5796e52bd8988"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7184b9d57eb92d01dd56eb817863a174",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 112846,
+                "upload_time": "2016-01-05T00:12:51",
+                "url": "https://files.pythonhosted.org/packages/bd/4c/1c4131c6082a9cbad894b308097c9ff2e947f331c54aa2daa8e657108eb8/gunicorn-19.4.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce45c2dccba58784694dd77f23d9a677",
+                    "sha256": "53b58044764ad79d732af18c580b1a54b724adf4d290ec19c4ca78ab22a1ee0d"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.4.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ce45c2dccba58784694dd77f23d9a677",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 399066,
+                "upload_time": "2016-01-05T00:12:04",
+                "url": "https://files.pythonhosted.org/packages/1e/67/95248e17050822ab436c8a43dbfc0625a8545775737e33b66508cffad278/gunicorn-19.4.5.tar.gz"
+            }
+        ],
+        "19.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "76da3a755d0c4a2fc6bfc674445c105e",
+                    "sha256": "44cda4183586467493deaa616ac16f42b2f33bfaa57d4d5c07999d6db78c40ec"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "76da3a755d0c4a2fc6bfc674445c105e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 113723,
+                "upload_time": "2016-05-11T19:43:24",
+                "url": "https://files.pythonhosted.org/packages/f9/4e/f4076a1a57fc1e75edc0828db365cfa9005f9f6b4a51b489ae39a91eb4be/gunicorn-19.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f990af93705b22e55a1a821b7d53ec16",
+                    "sha256": "1c62764ceea2d28602843e3e3abd459194f976b8f27627116787977ced47923f"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f990af93705b22e55a1a821b7d53ec16",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 403327,
+                "upload_time": "2016-05-11T19:37:14",
+                "url": "https://files.pythonhosted.org/packages/18/af/e959432746b30fa67902b81320d57f681da433761ba5def5797ccd31c70f/gunicorn-19.5.0.tar.gz"
+            }
+        ],
+        "19.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab69dff52e2e0bccb25bf1e3a82e1448",
+                    "sha256": "723234ea1fa8dff370ab69830ba8bc37469a7cba13fd66055faeef24085e6530"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ab69dff52e2e0bccb25bf1e3a82e1448",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 114252,
+                "upload_time": "2016-05-23T15:26:30",
+                "url": "https://files.pythonhosted.org/packages/72/de/ec28a64885e0b390063379cca601b60b1f9e51367e0c76030ac8a5cddd5e/gunicorn-19.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "338e5e8a83ea0f0625f768dba4597530",
+                    "sha256": "813f6916d18a4c8e90efde72f419308b357692f81333cb1125f80013d22fb618"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "338e5e8a83ea0f0625f768dba4597530",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 404497,
+                "upload_time": "2016-05-23T15:26:18",
+                "url": "https://files.pythonhosted.org/packages/84/ce/7ea5396efad1cef682bbc4068e72a0276341d9d9d0f501da609fab9fcb80/gunicorn-19.6.0.tar.gz"
+            }
+        ],
+        "19.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "99c9a114a52979e71d7c19a3d5e778b8",
+                    "sha256": "7b48e797990b7972862bf93c7eec637efb391217485920e6fa5f509376d94727"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.7.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "99c9a114a52979e71d7c19a3d5e778b8",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 112079,
+                "upload_time": "2017-03-04T09:38:08",
+                "url": "https://files.pythonhosted.org/packages/96/4b/bc4bc2dad60defaa3f7d8590dc51331a225a5399380c161047c1224cd86d/gunicorn-19.7.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a0eef597a5bd55f24086b2597111c94",
+                    "sha256": "e6a9f2f3c4c7db48bf8eaec14d407ece2c93b7e905eaacec263055c541a4fe17"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1a0eef597a5bd55f24086b2597111c94",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 389397,
+                "upload_time": "2017-03-04T09:38:05",
+                "url": "https://files.pythonhosted.org/packages/1d/13/7e3af7187d64d8174a76e5fe5fbba690353db868c73e3aad07183008ca00/gunicorn-19.7.0.tar.gz"
+            }
+        ],
+        "19.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9ca2b1a40bdc3b916bf1da31bb139a8e",
+                    "sha256": "75af03c99389535f218cc596c7de74df4763803f7b63eb09d77e92b3956b36c6"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.7.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9ca2b1a40bdc3b916bf1da31bb139a8e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 111951,
+                "upload_time": "2017-03-21T03:00:52",
+                "url": "https://files.pythonhosted.org/packages/64/32/becbd4089a4c06f0f9f538a76e9fe0b19a08f010bcb47dcdbfbc640cdf7d/gunicorn-19.7.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "174d3c3cd670a5be0404d84c484e590c",
+                    "sha256": "eee1169f0ca667be05db3351a0960765620dad53f53434262ff8901b68a1b622"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "174d3c3cd670a5be0404d84c484e590c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 402658,
+                "upload_time": "2017-03-21T03:00:49",
+                "url": "https://files.pythonhosted.org/packages/30/3a/10bb213cede0cc4d13ac2263316c872a64bf4c819000c8ccd801f1d5f822/gunicorn-19.7.1.tar.gz"
+            }
+        ],
+        "19.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a718128dbc0d3979765c89aae4e75b0",
+                    "sha256": "f5ca088d029fe3cea166c59bb43b7ccc9c850fe25af3da61350fe712c5cc5aa2"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.8.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "5a718128dbc0d3979765c89aae4e75b0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 112847,
+                "upload_time": "2018-04-28T19:15:11",
+                "url": "https://files.pythonhosted.org/packages/ba/a9/67db283e31084925e5b1943a724965f0320577bfdc5144175b64d4328df0/gunicorn-19.8.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e64872dc5f09726627ee5946d881eb3b",
+                    "sha256": "eb8d8924b117a609fae9f8cd85df0cad3535dd613fdbcdbba3ee88d5459f1d4f"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.8.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e64872dc5f09726627ee5946d881eb3b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 415472,
+                "upload_time": "2018-04-28T19:15:13",
+                "url": "https://files.pythonhosted.org/packages/ac/92/a906209497d6391ef8826bc2e5d8d7b164d7c6253cc8bda36bf03a8d0161/gunicorn-19.8.0.tar.gz"
+            }
+        ],
+        "19.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ecaf42b4f473105635544fd8e9bbf9c",
+                    "sha256": "7ef2b828b335ed58e3b64ffa84caceb0a7dd7c5ca12f217241350dec36a1d5dc"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.8.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "7ecaf42b4f473105635544fd8e9bbf9c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 112869,
+                "upload_time": "2018-04-30T18:38:40",
+                "url": "https://files.pythonhosted.org/packages/55/cb/09fe80bddf30be86abfc06ccb1154f97d6c64bb87111de066a5fc9ccb937/gunicorn-19.8.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4656b0edd6ad93c81d491e1448cc6c47",
+                    "sha256": "bc59005979efb6d2dd7d5ba72d99f8a8422862ad17ff3a16e900684630dd2a10"
+                },
+                "downloads": -1,
+                "filename": "gunicorn-19.8.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4656b0edd6ad93c81d491e1448cc6c47",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 415541,
+                "upload_time": "2018-04-30T18:38:43",
+                "url": "https://files.pythonhosted.org/packages/12/29/c7eb6f002898ec99b97e0be8b3617169d06221f26609f5cc5f1bdeb3e492/gunicorn-19.8.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "7ecaf42b4f473105635544fd8e9bbf9c",
+                "sha256": "7ef2b828b335ed58e3b64ffa84caceb0a7dd7c5ca12f217241350dec36a1d5dc"
+            },
+            "downloads": -1,
+            "filename": "gunicorn-19.8.1-py2.py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "7ecaf42b4f473105635544fd8e9bbf9c",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 112869,
+            "upload_time": "2018-04-30T18:38:40",
+            "url": "https://files.pythonhosted.org/packages/55/cb/09fe80bddf30be86abfc06ccb1154f97d6c64bb87111de066a5fc9ccb937/gunicorn-19.8.1-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "4656b0edd6ad93c81d491e1448cc6c47",
+                "sha256": "bc59005979efb6d2dd7d5ba72d99f8a8422862ad17ff3a16e900684630dd2a10"
+            },
+            "downloads": -1,
+            "filename": "gunicorn-19.8.1.tar.gz",
+            "has_sig": true,
+            "md5_digest": "4656b0edd6ad93c81d491e1448cc6c47",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 415541,
+            "upload_time": "2018-04-30T18:38:43",
+            "url": "https://files.pythonhosted.org/packages/12/29/c7eb6f002898ec99b97e0be8b3617169d06221f26609f5cc5f1bdeb3e492/gunicorn-19.8.1.tar.gz"
+        }
+    ],
+    "package_name": "gunicorn"
+}

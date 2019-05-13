@@ -1,0 +1,2715 @@
+{
+    "info": {
+        "author": "Ian Bicking",
+        "author_email": "ianb@colorstudy.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6"
+        ],
+        "description": "Virtualenv\n==========\n\n`Mailing list <http://groups.google.com/group/python-virtualenv>`_ |\n`Issues <https://github.com/pypa/virtualenv/issues>`_ |\n`Github <https://github.com/pypa/virtualenv>`_ |\n`PyPI <https://pypi.python.org/pypi/virtualenv/>`_ |\nUser IRC: #pypa\nDev IRC: #pypa-dev\n\nIntroduction\n------------\n\n``virtualenv`` is a tool to create isolated Python environments.\n\nThe basic problem being addressed is one of dependencies and versions,\nand indirectly permissions. Imagine you have an application that\nneeds version 1 of LibFoo, but another application requires version\n2. How can you use both these applications?  If you install\neverything into ``/usr/lib/python2.7/site-packages`` (or whatever your\nplatform's standard location is), it's easy to end up in a situation\nwhere you unintentionally upgrade an application that shouldn't be\nupgraded.\n\nOr more generally, what if you want to install an application *and\nleave it be*?  If an application works, any change in its libraries or\nthe versions of those libraries can break the application.\n\nAlso, what if you can't install packages into the global\n``site-packages`` directory?  For instance, on a shared host.\n\nIn all these cases, ``virtualenv`` can help you. It creates an\nenvironment that has its own installation directories, that doesn't\nshare libraries with other virtualenv environments (and optionally\ndoesn't access the globally installed libraries either).\n\n.. comment: \n\nRelease History\n===============\n\n16.0.0 (2018-05-16)\n-------------------\n\n* Drop support for Python 2.6.\n\n* Upgrade pip to 10.0.1.\n\n* Upgrade setuptools to 39.1.0.\n\n* Upgrade wheel to 0.31.1.\n\n\n15.2.0 (2018-03-21)\n-------------------\n\n* Upgrade setuptools to 39.0.1.\n\n* Upgrade pip to 9.0.3.\n\n* Upgrade wheel to 0.30.0.\n\n\n`Full Changelog <https://virtualenv.pypa.io/en/latest/changes.html>`_.\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://virtualenv.pypa.io/",
+        "keywords": "setuptools deployment installation distutils",
+        "license": "MIT",
+        "maintainer": "Jannis Leidel, Carl Meyer and Brian Rosner",
+        "maintainer_email": "python-virtualenv@groups.google.com",
+        "name": "virtualenv",
+        "package_url": "https://pypi.org/project/virtualenv/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/virtualenv/",
+        "release_url": "https://pypi.org/project/virtualenv/16.0.0/",
+        "requires_dist": null,
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*",
+        "summary": "Virtual Python Environment builder",
+        "version": "16.0.0"
+    },
+    "last_serial": 3870467,
+    "releases": {
+        "0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "88c187a93a78c4c9bd54eef9ef0e0f03",
+                    "sha256": "dc811a2827a30c9f00df839972445408d63abceaa65f17ebeeb496d2ada96137"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "88c187a93a78c4c9bd54eef9ef0e0f03",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 669859,
+                "upload_time": "2007-09-14T23:32:10",
+                "url": "https://files.pythonhosted.org/packages/bd/74/91d324ddfc50b62aca6e44076384c6d448028e9d5f0ff12bce0430da0c3c/virtualenv-0.8.tar.gz"
+            }
+        ],
+        "0.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fa8831295f1073151876375c4567f5cd",
+                    "sha256": "d65df936d0c1c5ddc9d83c633f38a81e324315a832d6ce0e8751d45cdc71269c"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.1-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "fa8831295f1073151876375c4567f5cd",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 355505,
+                "upload_time": "2007-09-15T04:34:31",
+                "url": "https://files.pythonhosted.org/packages/c1/5b/f4ebebd8ac48ffc4726b4e5aa6605eb671415b1b74d5079e7d8b24f3baf1/virtualenv-0.8.1-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ad5869374196f7d533a9b649adfe9014",
+                    "sha256": "c26b60f0541e6fc7217ea0bd5468f260ef60ca53a0357962889bbc1aabc071de"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.1-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "ad5869374196f7d533a9b649adfe9014",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 672773,
+                "upload_time": "2007-09-15T04:37:02",
+                "url": "https://files.pythonhosted.org/packages/26/32/4e8cff26f4ad9f1ed257c34f90915d5d22663f79fbdabdb4af7e27e9af87/virtualenv-0.8.1-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d7b4784f530bd8acf44b568776dbd3c",
+                    "sha256": "44014735127ae8ebac1a505449327de4c0907fc1852170bf7d42d4d9c202e3af"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5d7b4784f530bd8acf44b568776dbd3c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 669930,
+                "upload_time": "2007-09-15T04:34:21",
+                "url": "https://files.pythonhosted.org/packages/8a/8e/44701300d201d9d3670ea412ad44772927d05702d0d540f851d8fb50f114/virtualenv-0.8.1.tar.gz"
+            }
+        ],
+        "0.8.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4a92b99c93026031b7298906bf126ccd",
+                    "sha256": "ea80eeac6eff874fd0afdd8a7d905c768b01df740a7b97b91895267c615f6028"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.2-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "4a92b99c93026031b7298906bf126ccd",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 356903,
+                "upload_time": "2007-09-18T21:04:41",
+                "url": "https://files.pythonhosted.org/packages/15/f5/f147858db5a336bc4beb1bccf64e912a1add86600cf8bb4690c5ceb950d1/virtualenv-0.8.2-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eedbc037902cd2010b055451641addcf",
+                    "sha256": "4b5d573663eda5a53d51172c504f9bb676afa505378d9d350d135c98ffebe186"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.2-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "eedbc037902cd2010b055451641addcf",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 352539,
+                "upload_time": "2007-09-18T21:05:52",
+                "url": "https://files.pythonhosted.org/packages/5d/c1/2f611504801953499fd485532e3695a765e2e7698a8009c54c7cfe473c9c/virtualenv-0.8.2-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "241f157e92dd9052b5a4b43efcef8035",
+                    "sha256": "f7533f5e56f3ac451e071c26ced2e747b5d17bd5ebab9267511739ab681d21d7"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "241f157e92dd9052b5a4b43efcef8035",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 670940,
+                "upload_time": "2007-09-18T21:04:31",
+                "url": "https://files.pythonhosted.org/packages/43/8b/db596e6719fb67c7a4f190fae6a42ef6123fa9533688544256b6fe3cb652/virtualenv-0.8.2.tar.gz"
+            }
+        ],
+        "0.8.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fbcb29d72e35ee93d80738d46e69d350",
+                    "sha256": "6752c3e44665deb509d7165f9548035b57f10107faa3aea137088e0bc0878cd3"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.3-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "fbcb29d72e35ee93d80738d46e69d350",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 357214,
+                "upload_time": "2007-09-19T02:49:08",
+                "url": "https://files.pythonhosted.org/packages/9d/59/bb0252b659e3cacda7b331a22f33960556ce90706f445e77492048e7f29f/virtualenv-0.8.3-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7592e9dd19388a037768840caac00255",
+                    "sha256": "48b67b74d4be30ec86966b90fedc4daae65a16aa90716a7ea9df88a1ecf1e1ad"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.3-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "7592e9dd19388a037768840caac00255",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 352855,
+                "upload_time": "2007-09-19T02:49:51",
+                "url": "https://files.pythonhosted.org/packages/83/ef/b1afc523162267d46676bb2a0a2a7add61b13b99d91e806b2c9551710573/virtualenv-0.8.3-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d635fb7de359ff603a1fc395933724d1",
+                    "sha256": "66a32465bc59f98c5c4518386fe1ed3c524ee1b10aef33fdb3bfaf2c33003f56"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d635fb7de359ff603a1fc395933724d1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 671092,
+                "upload_time": "2007-09-19T02:48:58",
+                "url": "https://files.pythonhosted.org/packages/91/9e/2356ac78bfa8b8a8b5afdd466fbb42128e87affa34e04f73a304ce9ca6cd/virtualenv-0.8.3.tar.gz"
+            }
+        ],
+        "0.8.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6d2db4c08a9b8a7b59e1ab7731791381",
+                    "sha256": "743d34dc8c6718b4fce906aba55b60acfe63c30d9a635c9b73118eef1f3a7269"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.4-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "6d2db4c08a9b8a7b59e1ab7731791381",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 361447,
+                "upload_time": "2007-09-20T19:22:41",
+                "url": "https://files.pythonhosted.org/packages/90/7b/dda368d70fd19f0ccec901e85597670c0d3ec2bbf7c98bd84ea2609879e3/virtualenv-0.8.4-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "40300b786dad2e8380ef785c4998f421",
+                    "sha256": "0d7eb822e0bfaaa6945f72406f1cf28f33d3ac608fc202a40b266a5accd3646e"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.4-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "40300b786dad2e8380ef785c4998f421",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 357015,
+                "upload_time": "2007-09-20T19:23:12",
+                "url": "https://files.pythonhosted.org/packages/b1/57/1bc370c160214985429035af22c8d5af33b32fa89d0e6bb5b23a15dd1db8/virtualenv-0.8.4-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "30f053782cc29363927b848263ae9158",
+                    "sha256": "cd509835e252b85b4130915e05df313b0fd5811c0990ae75fd66094d11ad093c"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.8.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "30f053782cc29363927b848263ae9158",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 673240,
+                "upload_time": "2007-09-20T19:22:59",
+                "url": "https://files.pythonhosted.org/packages/32/ff/c7626a9aca3b318aaa65d7a9ba1ae25f16e387626b12937f2a9a5429a253/virtualenv-0.8.4.tar.gz"
+            }
+        ],
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12b34ae909f578910c293ecfe7c793e3",
+                    "sha256": "eb1fad4ca7be1c91b8a2627666f65421f1931f138e901bde40fb7ebdb050a7ec"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "12b34ae909f578910c293ecfe7c793e3",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 367496,
+                "upload_time": "2007-10-10T14:28:36",
+                "url": "https://files.pythonhosted.org/packages/49/da/6f20ded5ca672531b4a0043bacc069920ba404861929063a9d442a76c96f/virtualenv-0.9-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7c8e85680f1ede0844a496513366d7a5",
+                    "sha256": "352abf8575dc24516e51c67e756fcc197e67a42e2fe3990ccbaebc9df6f201d0"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "7c8e85680f1ede0844a496513366d7a5",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 363002,
+                "upload_time": "2007-10-10T14:31:03",
+                "url": "https://files.pythonhosted.org/packages/0b/79/0feb894d3e7e20f86eb0225e11f4ee91418c5d9cadd4c69b093908f0054f/virtualenv-0.9-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17a52f8801cbeb6805f4a4650dc89468",
+                    "sha256": "f2a916c648cf705a68b7fc7a87c7803cb1c162bb0269aa7ca096783d3b26c69b"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "17a52f8801cbeb6805f4a4650dc89468",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 677526,
+                "upload_time": "2007-10-10T14:28:26",
+                "url": "https://files.pythonhosted.org/packages/78/75/50c0b8e087506bb737355e9b39812ea192c820bc5338cfdce6870480dddf/virtualenv-0.9.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f595300f14597da25feabaececcf62a2",
+                    "sha256": "5ee72703997c4be51969728c946c4c7dce196c23de03ca0afd8fd07cbe9269bc"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9.1-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "f595300f14597da25feabaececcf62a2",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 367992,
+                "upload_time": "2007-10-18T00:08:00",
+                "url": "https://files.pythonhosted.org/packages/8c/b8/181b6a13bde8f1d94c9eaccfe4bb2fd6839ee03f2b96a4a18d23b79f3c44/virtualenv-0.9.1-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "573b8bd74a7b9b207b5eede8db386953",
+                    "sha256": "30879e5df7b8f432adeedee1823e932f19dda11a0d70b03423c314eb88c59eea"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9.1-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "573b8bd74a7b9b207b5eede8db386953",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 363508,
+                "upload_time": "2007-10-18T00:08:29",
+                "url": "https://files.pythonhosted.org/packages/4b/9a/26943cc34c8b2b319739a49fe7d92a218f5b6a37fadf0f4fa4dfc167268f/virtualenv-0.9.1-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9abf1dc9dcaf603c60840c582414f66",
+                    "sha256": "8a79231b6a0a2bcee2595f16e150ac4f8e9dbe57d932d786956e4eb0363d5ed8"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d9abf1dc9dcaf603c60840c582414f66",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 678545,
+                "upload_time": "2007-10-18T00:07:49",
+                "url": "https://files.pythonhosted.org/packages/5b/73/e08ac8faf2acbcfc38dcf0361e6912a4f29501f4d492eed9b3e0a4813354/virtualenv-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "319b534ed28e2d31b124b1a76f42fbc7",
+                    "sha256": "fe10e8c039d50da8d7e9a9bc4ad01cfb6476c8319716a6a4d1a22bec05885f2c"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9.2-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "319b534ed28e2d31b124b1a76f42fbc7",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 369232,
+                "upload_time": "2007-11-10T18:30:43",
+                "url": "https://files.pythonhosted.org/packages/b0/ef/a1924f426f202aac9a1f23c4491bf5381e16525f70a5972c49dbafb7b852/virtualenv-0.9.2-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7a4d37d0c3f83f917d7a6556f31bb31d",
+                    "sha256": "b5dca7ed2fef2bf38164172e9ea6da0068f8e5a4e6e796d0100b1d104ac213ad"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9.2-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "7a4d37d0c3f83f917d7a6556f31bb31d",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 364757,
+                "upload_time": "2007-11-10T18:30:55",
+                "url": "https://files.pythonhosted.org/packages/9e/3e/a9fe027135a3d3e3dcca5be2210e5a83bdb47ed5533bd21aa56a04537507/virtualenv-0.9.2-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "78b6e73600db0d5ed8c0e507f0f7d705",
+                    "sha256": "c423f2153c5629a53fb95c6e6bfac4d1de7a4dee2e912000c1dc665fd2697c2f"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "78b6e73600db0d5ed8c0e507f0f7d705",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 680722,
+                "upload_time": "2007-11-10T18:30:33",
+                "url": "https://files.pythonhosted.org/packages/19/d8/5a5a1a270240105e6214a68d4bf0b3ecd6a6d3d96bef272a28c4f29f61d9/virtualenv-0.9.2.tar.gz"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6199b281bf6e7370d896520eb3a968f8",
+                    "sha256": "4e62dbc214520991f64bb30e3d1cfb84cedf1edca3c5c6d3ff555f9c668bdd3d"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.0-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "6199b281bf6e7370d896520eb3a968f8",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 369850,
+                "upload_time": "2008-01-08T17:10:54",
+                "url": "https://files.pythonhosted.org/packages/87/9c/114eb48ee1e80489f13579b8ae19ee1b5a24f7fca959b70b1b12d74bc9a8/virtualenv-1.0-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e6881a6353543b0af8b116ed8ed2f6f6",
+                    "sha256": "f1b20c640519b1e5e089e89196917eca58b05bc75595ab72434c722b6802927c"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.0-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "e6881a6353543b0af8b116ed8ed2f6f6",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 365351,
+                "upload_time": "2008-01-08T17:10:23",
+                "url": "https://files.pythonhosted.org/packages/2c/5f/1da59b031cfae3074accd3985d187747ae079287b5af47648c8d7f5cb2e0/virtualenv-1.0-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb86aabdfc2033612b936cf08ad811ec",
+                    "sha256": "70bd71debfbf4941dbb3f0213a9711de8e10d092ab84b87e81a1195aa823e6c3"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fb86aabdfc2033612b936cf08ad811ec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 681618,
+                "upload_time": "2008-01-08T17:10:12",
+                "url": "https://files.pythonhosted.org/packages/36/14/e228a004fec6fadc4705a0b37ee3949ea7a59cf758f4b4bca1ee22217e11/virtualenv-1.0.tar.gz"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9b0de14426957e30b2aa7015451aa43",
+                    "sha256": "98cfbfe374a4c2132ffc92046510a9f5f3f375c25bff76b1480726ec44787a29"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.1-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "d9b0de14426957e30b2aa7015451aa43",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 374159,
+                "upload_time": "2008-05-20T21:23:36",
+                "url": "https://files.pythonhosted.org/packages/74/d8/816876276d7d1e4fbd2ba390c2224886de73e932b3bc9cead7e4aeee3b7a/virtualenv-1.1-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1db8cdd823739c79330a138327239551",
+                    "sha256": "a2f323d9e5666da485256480039102d80cfd5463c68c1ebef3032b55c80c5d4c"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.1-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "1db8cdd823739c79330a138327239551",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 369675,
+                "upload_time": "2008-05-20T21:24:05",
+                "url": "https://files.pythonhosted.org/packages/8b/f6/2230887ff479a28d7ec6c5dc1df264a00bd731c13b10dee6e2ee9d0b25e9/virtualenv-1.1-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8931b66dbb799120583dd107aab2fa89",
+                    "sha256": "9ec20dec1ef4ab788cfd4866935c309828766c45bfebf25b12605ff36cadba9a"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8931b66dbb799120583dd107aab2fa89",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 685106,
+                "upload_time": "2008-05-20T21:23:33",
+                "url": "https://files.pythonhosted.org/packages/24/43/6d567974c760f5adc603f65ad3581022be6e23874265a13214c2ad5e7a9b/virtualenv-1.1.tar.gz"
+            }
+        ],
+        "1.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9745c28256c70c76d36adb3767a00212",
+                    "sha256": "e0851ef23c188c819d4f6de3e82521ab1f63fa80e154d30bd823afef73f341b0"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.10.tar.gz",
+                "has_sig": true,
+                "md5_digest": "9745c28256c70c76d36adb3767a00212",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1323297,
+                "upload_time": "2013-07-23T21:07:22",
+                "url": "https://files.pythonhosted.org/packages/d5/5b/f425e456e017af4801bb08920e30c149a44ac0c194f2225bdb712e77701c/virtualenv-1.10.tar.gz"
+            }
+        ],
+        "1.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a04aa2b32c76c83725ed4d9918e362e",
+                    "sha256": "857449d69b9ec7d058dcc2e37c53d3895432300881aa61fd2ade178a807b0aa7"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.10.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3a04aa2b32c76c83725ed4d9918e362e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1325303,
+                "upload_time": "2013-08-08T01:12:19",
+                "url": "https://files.pythonhosted.org/packages/28/c9/38247a08d6e4ae2cc5b961530581fb80f399b4be209bbfc41de9cf9778d2/virtualenv-1.10.1.tar.gz"
+            }
+        ],
+        "1.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1a7cf95b539a861a8215827f387c4eb",
+                    "sha256": "c2cdd26de719760508ff1c440adbb058fce25a35b334a80e917d951d8f45aef6"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d1a7cf95b539a861a8215827f387c4eb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1559703,
+                "upload_time": "2014-01-02T13:54:31",
+                "url": "https://files.pythonhosted.org/packages/00/02/c9e25efbee0cdb78135995f82cfe58e33b96ea2ac7be0658a59ebb7a15e6/virtualenv-1.11.tar.gz"
+            }
+        ],
+        "1.11.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "265770b61de41d34d2e9fdfddcdf034c",
+                    "sha256": "bff18dd8a7ca358c00a661c7d00d5e7952200b1c6bb4419161730c9a4724b246"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.1-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "265770b61de41d34d2e9fdfddcdf034c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py27",
+                "size": 1716894,
+                "upload_time": "2014-01-21T03:46:11",
+                "url": "https://files.pythonhosted.org/packages/e9/e8/546565b103874812a60fa574c9d7a40f2d1f41f9a5a972ea7637dd0e0297/virtualenv-1.11.1-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7875c2d8c2075571abe5e727449af4d8",
+                    "sha256": "8ffde208bebf7d91a6a23cca15ef55d9618696575a4a28f636aec592c16d4dac"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "7875c2d8c2075571abe5e727449af4d8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1754192,
+                "upload_time": "2014-01-21T03:46:14",
+                "url": "https://files.pythonhosted.org/packages/6e/c2/b871ab1bb45f1f9118c454ae298327c59607a7e9f8a2c1852444d52f5628/virtualenv-1.11.1.tar.gz"
+            }
+        ],
+        "1.11.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a18326dc067b528cfd2b3fce495d540d",
+                    "sha256": "f071dc615ffbb4ed40afe1ba74a6ea1b06d244e8718457afabfe042506a2f7fd"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "a18326dc067b528cfd2b3fce495d540d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 2843171,
+                "upload_time": "2014-01-26T05:13:33",
+                "url": "https://files.pythonhosted.org/packages/ed/e8/4ec73805afca5b1577356691307eadde9ea1c8b52b6bc2eaed72acb0d2d3/virtualenv-1.11.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d3d915836c1ada1be731ccaa12412b98",
+                    "sha256": "3080a1610fa8c4ab23008707ca5c96d7e67d8cb3ed98c7e01e97f542c82bb6df"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d3d915836c1ada1be731ccaa12412b98",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1755846,
+                "upload_time": "2014-01-26T05:13:38",
+                "url": "https://files.pythonhosted.org/packages/69/25/546196b0ca00c53b2339f62c981140b028357fb167c5e8a1917a847e095b/virtualenv-1.11.2.tar.gz"
+            }
+        ],
+        "1.11.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2a576eb3908eb394cddeec34470726c",
+                    "sha256": "9ec995274e57512307d93aa6268d8fb3bcb8fd80e99672b6492a5d2078f816a8"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d2a576eb3908eb394cddeec34470726c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1720342,
+                "upload_time": "2014-02-21T01:27:55",
+                "url": "https://files.pythonhosted.org/packages/94/39/e412844f4e7a1223dd85ad4bf232d6e8df7fc34a9fa04647084bbbf8862d/virtualenv-1.11.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e332877dd29fe0599bf09d239967f4c0",
+                    "sha256": "bfde472777c63ba8fb7c58cb38876257a69391700b9cc225bd5531576f09b245"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e332877dd29fe0599bf09d239967f4c0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1757796,
+                "upload_time": "2014-02-21T01:28:24",
+                "url": "https://files.pythonhosted.org/packages/2a/1e/07f15b240640c1062b277dcffcd3931c6e95d5441466d22a81d7e0e10586/virtualenv-1.11.3.tar.gz"
+            }
+        ],
+        "1.11.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1180da8b836c740ff7ff6dbc86c35d88",
+                    "sha256": "29105e99cd3341ec5244ea4f0c110e4920198c0abccf1c64fb66590bb5325abc"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "1180da8b836c740ff7ff6dbc86c35d88",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1720372,
+                "upload_time": "2014-02-21T12:20:13",
+                "url": "https://files.pythonhosted.org/packages/d2/e1/e5f13a7a1c92e7c36c6b34afcafeeb0e17ee7a54dfd6631f045663727278/virtualenv-1.11.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9accc2d3f0ec1da479ce2c3d1fdff06e",
+                    "sha256": "cf3d958f28eb7470bd04262ef397580a2e57407f2ee2c88e9b2892218eb0465a"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "9accc2d3f0ec1da479ce2c3d1fdff06e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1757873,
+                "upload_time": "2014-02-21T12:20:15",
+                "url": "https://files.pythonhosted.org/packages/3d/dd/2cd13f0d4c734eb80bae09a0e5802d7ef60ef3890259b0a614e8cb1ba1cf/virtualenv-1.11.4.tar.gz"
+            }
+        ],
+        "1.11.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3ae8bdce6389620d48d2d4be3b0070fd",
+                    "sha256": "8e439123c6ac8a1b0d08f897bb3b1e6ee016f9feb0744d8dc438d5370cf6374b"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.5-py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "3ae8bdce6389620d48d2d4be3b0070fd",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 1728607,
+                "upload_time": "2014-05-03T06:27:12",
+                "url": "https://files.pythonhosted.org/packages/1c/b6/04e98899f78fc9f53843bea98cfd0206bde13f133b2db49440c96278d302/virtualenv-1.11.5-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f61636143193499e7700ec9b70756ff6",
+                    "sha256": "9d3fd26c2d5cfc7552b2ea33a4c2dfc78cf451d48b1987cc474fe533a16ae2cb"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "f61636143193499e7700ec9b70756ff6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1766322,
+                "upload_time": "2014-05-03T06:27:17",
+                "url": "https://files.pythonhosted.org/packages/3b/dc/d228d577fb241855161755eab18d737fd4877e9f68e5674ff6c75874a357/virtualenv-1.11.5.tar.gz"
+            }
+        ],
+        "1.11.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c2aa2fc4986967815f8cb3a3418e6031",
+                    "sha256": "a8e07085d85c637c463ae23dc0911f32c871eddef69765ff9fa26cac9f2c5053"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.6-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c2aa2fc4986967815f8cb3a3418e6031",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1573107,
+                "upload_time": "2014-05-17T02:43:05",
+                "url": "https://files.pythonhosted.org/packages/c6/e3/f1eaf5a62fb7df7d98f39e7f45521f562bed2b6ab405a81d678e844a4ef2/virtualenv-1.11.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f61cdd983d2c4e6aeabb70b1060d6f49",
+                    "sha256": "3e7a4c151e2ee97f51db0215bfd2a073b04a91e9786df6cb67c916f16abe04f7"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.11.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "f61cdd983d2c4e6aeabb70b1060d6f49",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1610581,
+                "upload_time": "2014-05-17T02:43:09",
+                "url": "https://files.pythonhosted.org/packages/24/cc/a3cdf0a49ffcaef483b7e2511476aa520cf7260c199a6928fda6c43ba916/virtualenv-1.11.6.tar.gz"
+            }
+        ],
+        "1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "53ab95a286cc0382e503306bb0df9d49",
+                    "sha256": "4add4beb15d04b740706e17fbb8e951a05c2953f94d21bafaa2fc967a8c1b832"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.2-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "53ab95a286cc0382e503306bb0df9d49",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 376802,
+                "upload_time": "2008-08-29T16:25:26",
+                "url": "https://files.pythonhosted.org/packages/6e/65/fc99a66deb060e804633718c79fd799e9aaf4d8950eb620a1be2ce82aab8/virtualenv-1.2-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0043570e1c16af8d3c9fa1e99bce012b",
+                    "sha256": "5550c7a9228caea93f140317fe89d5a4da2c3eb3fed1b96b046f729a1acfd411"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.2-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "0043570e1c16af8d3c9fa1e99bce012b",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 372295,
+                "upload_time": "2008-08-29T16:39:00",
+                "url": "https://files.pythonhosted.org/packages/20/2a/81ab04b9c785a44c1622239daeae20df36d8dcb0b8c88a007d3422661464/virtualenv-1.2-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ad454e52f025cad631d03331ade4aaf",
+                    "sha256": "78a5e5859053cf47c1496631be8895b09d3e8d0009838100f321ab52c7cc014a"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7ad454e52f025cad631d03331ade4aaf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 686708,
+                "upload_time": "2008-08-29T16:25:17",
+                "url": "https://files.pythonhosted.org/packages/55/05/56023a9fb3170382f4d4c6bcaa1e20030b4d67ec15c581f6aa67c51ade56/virtualenv-1.2.tar.gz"
+            }
+        ],
+        "1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff872f8b8dcb3dc76d9c2793afc9b1a5",
+                    "sha256": "b7e27d6582e99ff53b1c576ee8afe54324d4882b7f75a17945371560c853ac83"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "ff872f8b8dcb3dc76d9c2793afc9b1a5",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 386607,
+                "upload_time": "2008-09-24T21:17:08",
+                "url": "https://files.pythonhosted.org/packages/94/ea/b4e1c2cdfc7ec7c75230dd5161448018ca13d0d77b7d8ad284617583627a/virtualenv-1.3-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8102d251e3f1caf709722679a737f454",
+                    "sha256": "b6fa557e86caf1d3553f4ce3caffb112cde9e600ddddda32b385fa77f6733082"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "8102d251e3f1caf709722679a737f454",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 381972,
+                "upload_time": "2008-09-24T21:20:01",
+                "url": "https://files.pythonhosted.org/packages/09/b2/daa7131dacc50ce09876cb1ad45ed9527bf4748377f957840f2c242f3537/virtualenv-1.3-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "36b766604542f2c34d8dffdb21ba14a9",
+                    "sha256": "8af730b2ae7aa4198156d9993c54697c6962c5dc327266f354c5cbb956815418"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "36b766604542f2c34d8dffdb21ba14a9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 699599,
+                "upload_time": "2008-09-24T21:16:57",
+                "url": "https://files.pythonhosted.org/packages/1a/cb/24a1572120a59774eed55ec725ef321b1f848e5ee0789b54a597e603d33e/virtualenv-1.3.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "708cc5281dae7fdd8d996cdb55bef52d",
+                    "sha256": "f3d662e124f57b2974e5f472be93ecaa29d530ef0ed13c920a522792d359559c"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.1-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "708cc5281dae7fdd8d996cdb55bef52d",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 390545,
+                "upload_time": "2008-11-25T02:29:23",
+                "url": "https://files.pythonhosted.org/packages/42/5c/f398970c2b9bd59a2a78cd87e292dd0252c9014df1d5c83c8b9aefea7be6/virtualenv-1.3.1-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f042320f7301a77311b876ed55d2a635",
+                    "sha256": "658f543c09b243d9c8d81fbaaa97871d06d6a6d011a0fe2c11a59eda59834d01"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.1-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "f042320f7301a77311b876ed55d2a635",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 385914,
+                "upload_time": "2008-11-25T02:29:35",
+                "url": "https://files.pythonhosted.org/packages/3a/eb/7310c02f664a3f957fb18bcbb3b8ed92f64646a39209e69952e36aad1a26/virtualenv-1.3.1-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e70ed86cc3823f0b622e80e035b59297",
+                    "sha256": "109462a4101a08cf13dbdea3dffcec51837a5acc04aedb741d5723c2a3d8f8d1"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e70ed86cc3823f0b622e80e035b59297",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1027335,
+                "upload_time": "2008-11-25T02:29:13",
+                "url": "https://files.pythonhosted.org/packages/6c/61/a9ce9b38cea586c8f0380b7f4f31a427f078494a5006acd89ff773367ecb/virtualenv-1.3.1.tar.gz"
+            }
+        ],
+        "1.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6913c03f02167fe4ac32add76c3edeb7",
+                    "sha256": "9bfaf7fd22006fff3a44cba153481895af572fae88d538f1d90720e2f5f00435"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.2-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "6913c03f02167fe4ac32add76c3edeb7",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 391344,
+                "upload_time": "2008-12-17T23:28:20",
+                "url": "https://files.pythonhosted.org/packages/75/63/f047b82dfd9d0d683f4f8289b655cbd34d048745dc7d5c17a530cafb1930/virtualenv-1.3.2-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2cd2b10b8be8b57e74cb1830fc0b504",
+                    "sha256": "6f778ac787a7ee6155ba5650e006c8c8d3e456461ef27ad01e67709436b59739"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.2-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "f2cd2b10b8be8b57e74cb1830fc0b504",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 386733,
+                "upload_time": "2008-12-17T23:28:31",
+                "url": "https://files.pythonhosted.org/packages/94/24/72b11e7bf6c3d30b53117e811de257c7d22d55daec788c579e663960a629/virtualenv-1.3.2-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a013d5a7d9aeddc16bee88604d6de636",
+                    "sha256": "95088b7b7a072bc8e23e9148d06928c94dd072bfc5b70ba1868104aff15f8f98"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a013d5a7d9aeddc16bee88604d6de636",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1027839,
+                "upload_time": "2008-12-17T23:28:10",
+                "url": "https://files.pythonhosted.org/packages/10/9c/25a3020c7449ced830a6332a6b6578b21ac2309a754fc463289ccc6a3526/virtualenv-1.3.2.tar.gz"
+            }
+        ],
+        "1.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9cd8f513ba25e09be54ead5b1325ad3e",
+                    "sha256": "029360197ea1d21172b7517b6623bae59538cb33017e4557395b0e344dfc0c94"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.3-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "9cd8f513ba25e09be54ead5b1325ad3e",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 392454,
+                "upload_time": "2009-03-12T19:23:49",
+                "url": "https://files.pythonhosted.org/packages/79/86/a6848c3a75b2975060062a6cd84c9a22f8a9e56b8cc170bd4f216f85e671/virtualenv-1.3.3-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fae350c941cd9eadf5e9a407c37a2e03",
+                    "sha256": "344dbd05d3107b1d7d5cb43d98d8f18e2d04e5a48bf0b9875cb3b9d574e09135"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.3-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "fae350c941cd9eadf5e9a407c37a2e03",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 714742,
+                "upload_time": "2009-03-12T19:25:51",
+                "url": "https://files.pythonhosted.org/packages/3f/ac/6bc25945100883678a43636ad3c78ae7110eb968165edf95061341c1ccc1/virtualenv-1.3.3-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28e2955aed4ffc4dc3df02dc632b5c42",
+                    "sha256": "42df48b7e5c939940a1651021c7583905c37bf60878c1ff849b4702f4a1a66e5"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "28e2955aed4ffc4dc3df02dc632b5c42",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1029807,
+                "upload_time": "2009-03-12T19:23:39",
+                "url": "https://files.pythonhosted.org/packages/43/15/50093f7af184bfef5616be0aaa4ccaae62386b2d4b8d62ac41b590b2a613/virtualenv-1.3.3.tar.gz"
+            }
+        ],
+        "1.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bd62418a72b7e09a637ef368b7b0101b",
+                    "sha256": "7d3a1e8217a72e9222c4fc135e134180a2778516a04712eb655ece0fbf96a444"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.4-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "bd62418a72b7e09a637ef368b7b0101b",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 394938,
+                "upload_time": "2009-10-02T08:30:19",
+                "url": "https://files.pythonhosted.org/packages/1c/29/f508186fc330df264322ebfacc42c1480ba47da06fec50addc4e40eb394b/virtualenv-1.3.4-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2fd8f371cc83c2a49009e5fe51fcd9c9",
+                    "sha256": "49b3e9a3ed6d665c88a4c7641071996cf8df787dcec807df7fdb49da541496e4"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.4-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "2fd8f371cc83c2a49009e5fe51fcd9c9",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 390284,
+                "upload_time": "2009-10-02T08:30:40",
+                "url": "https://files.pythonhosted.org/packages/a5/7a/29bf9eb8f4a720bb11a1d7101a9656f507758207b10cf4524214cbb7f569/virtualenv-1.3.4-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5cf3d4dba3a224351fb5f90f59dae1a",
+                    "sha256": "af76096e5a076c90032b6fcdf71a2953b2c7382e77d2ce063fb6871fdbe212c8"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.4-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "f5cf3d4dba3a224351fb5f90f59dae1a",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 390222,
+                "upload_time": "2009-10-02T08:31:04",
+                "url": "https://files.pythonhosted.org/packages/fc/c0/479f874340f2173e4d8afe411e1a804c635b520fa1847c4c0d03eacff11c/virtualenv-1.3.4-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "77d675df104b90fceec749150bd5014f",
+                    "sha256": "af1d8ac60a8f2da4ca4ee4249ddb5f6c97def0ad04b7bb1739db5172fd4e1bb1"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "77d675df104b90fceec749150bd5014f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 55407,
+                "upload_time": "2009-10-02T09:55:35",
+                "url": "https://files.pythonhosted.org/packages/53/7d/5081ba60a4cda47f29ed7ca7f2b3990cb785bf965cec69cf4b0201be4dc8/virtualenv-1.3.4.tar.gz"
+            }
+        ],
+        "1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ef70dc53c648f4253335351c65b5740f",
+                    "sha256": "5b8cc2e9ae3922922b8b4391e5bed559dcf81eb5771a8c4c6d2d1b4e2c107084"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ef70dc53c648f4253335351c65b5740f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1429693,
+                "upload_time": "2009-11-07T00:24:21",
+                "url": "https://files.pythonhosted.org/packages/df/0e/296385a17f295f13063819eaee2d8a7be76852b1407ddf9dc2eda61923c3/virtualenv-1.4.tar.gz"
+            }
+        ],
+        "1.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6ab218532376c2a389ef4ea030ff96f2",
+                    "sha256": "b7e3f592b8495371bcd015f88c37276f86f750f0b148d03e4dd22f90c9d4a265"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6ab218532376c2a389ef4ea030ff96f2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1494049,
+                "upload_time": "2009-11-10T16:30:19",
+                "url": "https://files.pythonhosted.org/packages/dc/d6/6df620942c349157daf71068ec11a5fdf93bffae05b6a5ea6bbb08e76f79/virtualenv-1.4.1.tar.gz"
+            }
+        ],
+        "1.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b1a10f0e84dd945c9b006ace1e1bb16",
+                    "sha256": "8eb1af8cca78bb2a49d66c025b6c7ffada10f4cde77fb0350aaa0adf37ce4aa1"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7b1a10f0e84dd945c9b006ace1e1bb16",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1491857,
+                "upload_time": "2009-11-10T19:29:20",
+                "url": "https://files.pythonhosted.org/packages/85/47/930573bec29611bd614991efcd07015c0e26c84975711e32779bc751d230/virtualenv-1.4.2.tar.gz"
+            }
+        ],
+        "1.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b639cee32d15fd049a49561957afe4b",
+                    "sha256": "5c002704306d4f92b053f1ee55feb253d8e78b85bbbac7ba37056ea4e05b1ca4"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b639cee32d15fd049a49561957afe4b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1482955,
+                "upload_time": "2009-11-20T17:37:54",
+                "url": "https://files.pythonhosted.org/packages/64/77/bf43f9f273a865659ea365c89570df1a67205c0aea82ea110f6cdd5e1c01/virtualenv-1.4.3.tar.gz"
+            }
+        ],
+        "1.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "94161ae1500cb3a8b003c0c394c9dbbd",
+                    "sha256": "6665ffdac5c300a9bdd249a74d97edb49d91c4d1cedaa6f8f558fbf34d97f7a5"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "94161ae1500cb3a8b003c0c394c9dbbd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1498706,
+                "upload_time": "2010-01-18T21:45:54",
+                "url": "https://files.pythonhosted.org/packages/7b/01/107064eb3b80d0cb49fcae1e995d732a876b1b21f216b4587af96262db78/virtualenv-1.4.4.tar.gz"
+            }
+        ],
+        "1.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d3c621dd9797789fef78442e336df63e",
+                    "sha256": "6a73f339c2c6b9eb8416f67d4d825a441db586025e07ba383d0f4b30c8649157"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d3c621dd9797789fef78442e336df63e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1498831,
+                "upload_time": "2010-01-21T19:30:21",
+                "url": "https://files.pythonhosted.org/packages/60/21/249a85ebc36350abb4c33fee27367c82ba8fdca29411d4800dc04a339bab/virtualenv-1.4.5.tar.gz"
+            }
+        ],
+        "1.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f576969d591a054132fe8c9165c2b3c3",
+                    "sha256": "cb71199dc298d897bbc5c69b1a644be028fd20ea56085d62d91d7748eb09cca9"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f576969d591a054132fe8c9165c2b3c3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1495656,
+                "upload_time": "2010-04-01T00:07:29",
+                "url": "https://files.pythonhosted.org/packages/8e/8c/f6efe0dd612705b7194b07ed6c416e58cd6974c01853ef9b65e532d1ec76/virtualenv-1.4.6.tar.gz"
+            }
+        ],
+        "1.4.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e1bb0e1cbc4e2df64dfdde6b0867ef29",
+                    "sha256": "d8244c6612e87a07990d73595051bf7f099e217c88302e743fb89272e81fb398"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.7-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "e1bb0e1cbc4e2df64dfdde6b0867ef29",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 959465,
+                "upload_time": "2010-04-16T22:20:56",
+                "url": "https://files.pythonhosted.org/packages/4e/aa/be80be8b00515eecf8a1c308cc7d791dea22b2fd7b80c1947d565db1f261/virtualenv-1.4.7-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "979a7adf8467df7df800a45debd2074f",
+                    "sha256": "5430a04f223e2b29388bc991c2128b41d1fccb13a25bb7efb2a546555576bb65"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "979a7adf8467df7df800a45debd2074f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1493012,
+                "upload_time": "2010-04-16T22:20:52",
+                "url": "https://files.pythonhosted.org/packages/9c/ef/70bce889474bfb32faaae2e82fe14f8f51cb15192b0dbf170e7741967e1c/virtualenv-1.4.7.tar.gz"
+            }
+        ],
+        "1.4.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74ded4025a56e538c1c8df6b9825a8b8",
+                    "sha256": "86dc663451b5ea8a790c28c2ae96f7283efaded46f7db4b7ee38e45b5214428d"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "74ded4025a56e538c1c8df6b9825a8b8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1507088,
+                "upload_time": "2010-04-22T10:02:03",
+                "url": "https://files.pythonhosted.org/packages/26/c8/e28765b98dbb8370ccd3e6211f6a9478a6511955cbb47380bfe7e07d04bb/virtualenv-1.4.8.tar.gz"
+            }
+        ],
+        "1.4.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c49067cab242b5ff8c7b681a5a99533a",
+                    "sha256": "4bc3e365a76fecbf7eb95b93642ce52427c7005a50e660091c8d8471f2a6d3c9"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c49067cab242b5ff8c7b681a5a99533a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1493547,
+                "upload_time": "2010-05-28T00:00:24",
+                "url": "https://files.pythonhosted.org/packages/7c/d7/18fa3eb8bcf383245dc39ac0a9b4504b4016c2831ac1243ec3ff1836a496/virtualenv-1.4.9.tar.gz"
+            }
+        ],
+        "1.4rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb62a93b054e877e6a6c92f7dcd0b6ae",
+                    "sha256": "2a1da8a6acafc5395b425359272664837374323ba90cdd892e6c1fbe0a6af287"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.4rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fb62a93b054e877e6a6c92f7dcd0b6ae",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1429709,
+                "upload_time": "2009-11-03T02:28:08",
+                "url": "https://files.pythonhosted.org/packages/2f/e8/e9644379d83bfba6adc31d9cd711bf905795a078beac44a4d36e0b309926/virtualenv-1.4rc1.tar.gz"
+            }
+        ],
+        "1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a8c756de9661323b1f95311e79f8a5f3",
+                    "sha256": "d46165107003a2e3547a5e833348523e8c2a234ddd0f593c5687e5d8b960421d"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a8c756de9661323b1f95311e79f8a5f3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1424561,
+                "upload_time": "2010-09-14T20:00:05",
+                "url": "https://files.pythonhosted.org/packages/f2/ba/4bbc02866b1d72f7d0d3a4d93b23720675adf2c2649135c2237f1a7f62c1/virtualenv-1.5.tar.gz"
+            }
+        ],
+        "1.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3daa1f449d5d2ee03099484cecb1c2b7",
+                    "sha256": "e2bbc4e80164e1ad83afba698559c2923f4bb7e61197b885c0a0befb29533438"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3daa1f449d5d2ee03099484cecb1c2b7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1424650,
+                "upload_time": "2010-09-20T00:37:32",
+                "url": "https://files.pythonhosted.org/packages/9c/c4/01b92e74c5338c566e49f9f1b74ee987cd96195893e2e493b836e8ee20fe/virtualenv-1.5.1.tar.gz"
+            }
+        ],
+        "1.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fbcefbd8520bb64bc24a560c6019a73c",
+                    "sha256": "54b2e9c4fcb5d30e6d0a35b938f0d962412b38433921de33a476b203e72834d7"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.5.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "fbcefbd8520bb64bc24a560c6019a73c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1431524,
+                "upload_time": "2011-03-12T21:27:37",
+                "url": "https://files.pythonhosted.org/packages/e0/24/a0d3b522652f9746b6f42d18c3f3751fa9bdeeb769abeb090f4e22dc7444/virtualenv-1.5.2.tar.gz"
+            }
+        ],
+        "1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1c585e0bbe4fca56bfa0b34aff87bd9",
+                    "sha256": "b60e5ffb37c65c71c6fba550400d721d9f2c4e257a5a87c3dc759442f480dcda"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b1c585e0bbe4fca56bfa0b34aff87bd9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1766631,
+                "upload_time": "2011-04-04T20:01:59",
+                "url": "https://files.pythonhosted.org/packages/0c/86/96518348874718a23612f52a91d80f3c77455c9e2efb3b4aa66d2c9250ed/virtualenv-1.6.tar.gz"
+            }
+        ],
+        "1.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a475df2219457b6b4febb9fe595d915",
+                    "sha256": "d066d7e5d4924766950d1d78c851cd442dfed9ca966694f614f2cc8c5cb48a26"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.6.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1a475df2219457b6b4febb9fe595d915",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1779120,
+                "upload_time": "2011-05-01T00:44:21",
+                "url": "https://files.pythonhosted.org/packages/18/48/502f2e6718a94929f2eb58f812616af157a24d361198757740cc7fd18189/virtualenv-1.6.1.tar.gz"
+            }
+        ],
+        "1.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e948af53ad41ca2718c4034484fcd694",
+                    "sha256": "6df2a16be86f2cb45a512a7b937374b2ab7f10b48465178c656436c1b94a7e90"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.6.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e948af53ad41ca2718c4034484fcd694",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1888895,
+                "upload_time": "2011-07-16T17:07:10",
+                "url": "https://files.pythonhosted.org/packages/b5/e2/a319dc2bb887b61456f711c6ff990e5efa7dc27821af7f0c3b834b8035fb/virtualenv-1.6.2.tar.gz"
+            }
+        ],
+        "1.6.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "73a69184e35f1e2c2f9016c889c4d26a",
+                    "sha256": "ca9d207c0ac4f74e728c1e54fcd9041f257d2409ccfd5a1c889cdf0dfb5b18ad"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.6.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "73a69184e35f1e2c2f9016c889c4d26a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1888986,
+                "upload_time": "2011-07-16T18:33:26",
+                "url": "https://files.pythonhosted.org/packages/27/73/034f68fd482846d61bdda5c9aec662b100b5acd663e13a3e2437b0e72634/virtualenv-1.6.3.tar.gz"
+            }
+        ],
+        "1.6.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1072b66d53c24e019a8f1304ac9d9fc5",
+                    "sha256": "a68efb4b35a4fef2a57de1981e00d9cf60be5b17d8f677baa0c5848582aaae85"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.6.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1072b66d53c24e019a8f1304ac9d9fc5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1889033,
+                "upload_time": "2011-07-21T18:52:25",
+                "url": "https://files.pythonhosted.org/packages/ec/15/1faab96142ef603b4c8963a4fc2cc73161c59680b8f7dc1f5633848f48b3/virtualenv-1.6.4.tar.gz"
+            }
+        ],
+        "1.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dcc105e5a3907a9dcaa978f813a4f526",
+                    "sha256": "e32b851eec3beae048c41dedcbebdae8484752b4426436ba8d7d1d69458ef6fc"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "dcc105e5a3907a9dcaa978f813a4f526",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2125413,
+                "upload_time": "2011-11-30T12:52:00",
+                "url": "https://files.pythonhosted.org/packages/bf/a0/45ecac80034dbc040fb4f5036f32cb40005df71e496ccd137eb65e5a69e6/virtualenv-1.7.tar.gz"
+            }
+        ],
+        "1.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a07359ff6e5dbfaefa6381516293b47",
+                    "sha256": "0c4981f09b885f0d85cb5f5a0ff24982e2f44717ebd7db45220d80d59f85b001"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.7.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1a07359ff6e5dbfaefa6381516293b47",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2137666,
+                "upload_time": "2012-02-16T21:46:20",
+                "url": "https://files.pythonhosted.org/packages/83/50/f6b73e50c30c36ec9ec673dd94adc14c0b36e1917aaa3b01245250277198/virtualenv-1.7.1.tar.gz"
+            }
+        ],
+        "1.7.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e06efff3c3dd5f88758dde29e108bfdd",
+                    "sha256": "edf6891ba6b24278b3b17faaa7d8a753fc3121e845340e0e8fcc55e783b81e8d"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.7.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e06efff3c3dd5f88758dde29e108bfdd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2137863,
+                "upload_time": "2012-02-16T22:49:00",
+                "url": "https://files.pythonhosted.org/packages/3c/b0/d92b83e8e2298750a9230ad6374dab6421313c1f6abe1db7c76b78c5137e/virtualenv-1.7.1.1.tar.gz"
+            }
+        ],
+        "1.7.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3be8a014c27340f48b56465f9109d9fa",
+                    "sha256": "9f23c47e167f127268cf6777caf613280cf066b32c0183581bf79eab5ccc907e"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.7.1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3be8a014c27340f48b56465f9109d9fa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2138019,
+                "upload_time": "2012-02-17T10:58:42",
+                "url": "https://files.pythonhosted.org/packages/eb/55/137f36eb6c7dd33d9bb1d0f85424aeb77c2e7a08731bf6843a1896e102fd/virtualenv-1.7.1.2.tar.gz"
+            }
+        ],
+        "1.7.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5d63b05373a4344ae099a68875aae78",
+                    "sha256": "8cbbe308ab0f446a4ceacf24b2656bedd33ea22825b0750fd079766cc6e91bf4"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.7.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b5d63b05373a4344ae099a68875aae78",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2156615,
+                "upload_time": "2012-06-22T18:35:39",
+                "url": "https://files.pythonhosted.org/packages/16/86/7b88d35d0a353ec70e42aa37fd8b0bd1c643419c80f022ffaafa4d6449f0/virtualenv-1.7.2.tar.gz"
+            }
+        ],
+        "1.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fdab30066a1d731ca6fe22a4c23b9e80",
+                    "sha256": "842574707e4692502ee286ad1964a2ccd237996d99666a798d5586759c4774e8"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "fdab30066a1d731ca6fe22a4c23b9e80",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2160154,
+                "upload_time": "2012-09-01T20:30:50",
+                "url": "https://files.pythonhosted.org/packages/44/8f/4ec79a1bd1437510830730168ca8d0b95d8d6dcbd6379e2b8a8f33f62905/virtualenv-1.8.tar.gz"
+            }
+        ],
+        "1.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3aebe32859aa4512e1e679834c10f7bf",
+                    "sha256": "524813074d043b5786f45e04912f7eba814defda53ba6d72460b77c704c6b8f4"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.8.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3aebe32859aa4512e1e679834c10f7bf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2160621,
+                "upload_time": "2012-09-03T08:05:02",
+                "url": "https://files.pythonhosted.org/packages/c5/b5/c1551d6f28bdb5f09ba38947db1826d0f647d87d78a678470d87a7e55f81/virtualenv-1.8.1.tar.gz"
+            }
+        ],
+        "1.8.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "174ca075c6b1a42c685415692ec4ce2e",
+                    "sha256": "cffdab213221ef9305f8b4a20fa8ca034f7e30100d8b1e2514e08e33465e4be2"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.8.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "174ca075c6b1a42c685415692ec4ce2e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2168682,
+                "upload_time": "2012-09-06T08:36:47",
+                "url": "https://files.pythonhosted.org/packages/a7/95/bbf277e112cf82f2fb57730febe3be96748b3758646cd8bb82e72bd007d8/virtualenv-1.8.2.tar.gz"
+            }
+        ],
+        "1.8.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d42ab84b1b38258f2a57365841186f71",
+                    "sha256": "75cf8bb136949f7cecf4dcbbb399321f688eaf6360a1a2e3e83e1c3c271bf6e1"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.8.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d42ab84b1b38258f2a57365841186f71",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2183114,
+                "upload_time": "2012-11-21T21:55:40",
+                "url": "https://files.pythonhosted.org/packages/1f/9a/3647ff867500b12baf90ceda9317ac5efc1f28453960575acd03882dc0a3/virtualenv-1.8.3.tar.gz"
+            }
+        ],
+        "1.8.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1c7e56a7f895b2e71558f96e365ee7a7",
+                    "sha256": "a16ee99f4a3b72be04704b8bd28c2f21d510af545492501ca3cd50fde9a70cb6"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.8.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1c7e56a7f895b2e71558f96e365ee7a7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1857001,
+                "upload_time": "2012-11-25T17:12:58",
+                "url": "https://files.pythonhosted.org/packages/16/ef/e5b81c0fd09806f730d762b528b47ad21c4301fe2c62ab83150648148aea/virtualenv-1.8.4.tar.gz"
+            }
+        ],
+        "1.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e03b76752b8ce7eee67c6298414cac79",
+                    "sha256": "8c3ad25a11f80b0aee50c501ccc984d7d10784b31c52028f0d3a2e9811e1370b"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.9.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e03b76752b8ce7eee67c6298414cac79",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2004399,
+                "upload_time": "2013-03-07T21:39:23",
+                "url": "https://files.pythonhosted.org/packages/0c/b3/fb6bee198255458b14b3b93368942deeaae0a78914c980a9c70bccf3a0c2/virtualenv-1.9.tar.gz"
+            }
+        ],
+        "1.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "07e09df0adfca0b2d487e39a4bf2270a",
+                    "sha256": "d04f750c968e18de42ff15f50759f15ba22800b12247b95826e2f8b160f7d99a"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-1.9.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "07e09df0adfca0b2d487e39a4bf2270a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2004589,
+                "upload_time": "2013-03-07T23:15:53",
+                "url": "https://files.pythonhosted.org/packages/a5/f9/0c604ce96292da59301c062689b1380594382c70f27b279522f5d7add9c2/virtualenv-1.9.1.tar.gz"
+            }
+        ],
+        "12.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "efea2832b0999aadafb3781b81da00dc",
+                    "sha256": "ea75cbe5c5e90d5ca35e591046431e298f62df4250f7fb634f446ad61d81c4c4"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "efea2832b0999aadafb3781b81da00dc",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1828220,
+                "upload_time": "2014-12-22T18:15:07",
+                "url": "https://files.pythonhosted.org/packages/54/02/1c5f84b6fe961a274da10759d087e402098559c73fb89d229e6191d76111/virtualenv-12.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c05abddabeed628281ed49aa4dd85568",
+                    "sha256": "b099ec7bafb499c22309325859da183b1e6aa6129f10e7212da82fb55368a001"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c05abddabeed628281ed49aa4dd85568",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1867950,
+                "upload_time": "2014-12-22T18:15:19",
+                "url": "https://files.pythonhosted.org/packages/44/77/480eb1e504d04cd59bb99a80ece2bb2f7454af38062cbc22ffc04ea9273d/virtualenv-12.0.tar.gz"
+            }
+        ],
+        "12.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1667bc49f4b344a768f6da4b16f8e9bc",
+                    "sha256": "d6144303c132a1a56291148a950f9acf029c186d64ca5440e0c9f64083c444a0"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "1667bc49f4b344a768f6da4b16f8e9bc",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1828541,
+                "upload_time": "2014-12-22T23:25:19",
+                "url": "https://files.pythonhosted.org/packages/e9/32/cf1166c1ab96534b04f02de5dab3b0f6bd1637e0c729b635ddc64d8abd1a/virtualenv-12.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4e9b5162cc29ae5438bd307e74f78026",
+                    "sha256": "8ccafb5fd1ce17978e18fefe9ca93a3feaaea94a03bb51be22d40d07bb449450"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4e9b5162cc29ae5438bd307e74f78026",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1868373,
+                "upload_time": "2014-12-22T23:25:31",
+                "url": "https://files.pythonhosted.org/packages/6e/c9/fac168d2fad32ddf7e50e1cc2ae9b2853e91bc64d4116be0c006173b972f/virtualenv-12.0.1.tar.gz"
+            }
+        ],
+        "12.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "11580ed3e6313b04b129d72e13138ce5",
+                    "sha256": "f2ea9f74c3b46d50be7e8867d0678bb8e0769871e6c7ad2ab6f083cdf7fcbe8a"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "11580ed3e6313b04b129d72e13138ce5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1828647,
+                "upload_time": "2014-12-23T13:25:15",
+                "url": "https://files.pythonhosted.org/packages/e4/86/7c4e6f705997e0b0c981a4e2097bdcd8256972fbbe9edbe0786f50f75f18/virtualenv-12.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cd43c130badf76ecb3c6bf72a14c42f6",
+                    "sha256": "b2708c9e5f6dbd08f373f0ccdfc2a4fc85d1d0b85575c9adaea170b40e6f47d9"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cd43c130badf76ecb3c6bf72a14c42f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1868497,
+                "upload_time": "2014-12-23T13:24:39",
+                "url": "https://files.pythonhosted.org/packages/6e/5d/dae55bdaeada6d9161dcc94322887b87768ff501e9ec04584622795715aa/virtualenv-12.0.2.tar.gz"
+            }
+        ],
+        "12.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01551e6cd34a9e5fde66c937c56d0193",
+                    "sha256": "f44b66401507a9ce6e57bb9ace06f3d778ced8548faa76cfd31854da9a6b9218"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "01551e6cd34a9e5fde66c937c56d0193",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1828921,
+                "upload_time": "2014-12-24T02:58:56",
+                "url": "https://files.pythonhosted.org/packages/eb/8b/f1e10ec7df061a0a82a7a1ab392f1151885755c38a25151427d0859d4635/virtualenv-12.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce7c4025516806b791bbd5b4ff6c4b84",
+                    "sha256": "43d886c79e9ddeac0ba50d99d7be154003c5b2df5aca861e8b48cb9aba4c68eb"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ce7c4025516806b791bbd5b4ff6c4b84",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1869009,
+                "upload_time": "2014-12-24T02:59:08",
+                "url": "https://files.pythonhosted.org/packages/cc/fb/58f7293baab4b39150037ab8548bc32985e76141a68e2c9b18a55a4c2454/virtualenv-12.0.4.tar.gz"
+            }
+        ],
+        "12.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2d469eb9081deef1b2b86b58f8913fca",
+                    "sha256": "5b564ec39f85bca6407e6534605ed22a47ae56567f9ea1fc4aa0877175699130"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.5-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "2d469eb9081deef1b2b86b58f8913fca",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1779983,
+                "upload_time": "2015-01-03T09:44:04",
+                "url": "https://files.pythonhosted.org/packages/c0/e7/a81dc248164121e00a3d383797759e8e5462d3fa9b8860b9ae8099c81091/virtualenv-12.0.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "637abbbd04d270ee8c601ab29c4f7561",
+                    "sha256": "c2cb6cb3536cff6be514f92b03af10128a7d5448bbb35f528e64facc37abde73"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "637abbbd04d270ee8c601ab29c4f7561",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1820043,
+                "upload_time": "2015-01-03T09:44:14",
+                "url": "https://files.pythonhosted.org/packages/38/a5/781ba11e55ccdede3d43e8493087c5c768e5a1724f30f255d8c066529720/virtualenv-12.0.5.tar.gz"
+            }
+        ],
+        "12.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8b6878c54f6a444695958f6a32fea073",
+                    "sha256": "c420d686ac04eb9d30e3dc9898080f73008878fbbc367e2cda2568b9772f9fac"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.6-py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "8b6878c54f6a444695958f6a32fea073",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 1786434,
+                "upload_time": "2015-01-28T22:44:01",
+                "url": "https://files.pythonhosted.org/packages/2f/25/648bc0976627989b0e66dd1cd9ded3746a8f0905a6f9faca69c2a457c277/virtualenv-12.0.6-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b111afe2a64d0f4573112003d82f1f0",
+                    "sha256": "db8c3c89d6a8369082530b3bd2084924357ae1216b239c387e576b814bab592f"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "7b111afe2a64d0f4573112003d82f1f0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1826696,
+                "upload_time": "2015-01-28T22:44:11",
+                "url": "https://files.pythonhosted.org/packages/58/7c/8692296207a55293002797b7560f674f6f34fef595fc1e25e6d9c9e4bdc2/virtualenv-12.0.6.tar.gz"
+            }
+        ],
+        "12.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e03d314ea40c2f96375882aceaa0b87f",
+                    "sha256": "fd778ac5e5ffe870a3fb77d6d80e8182e0a5f3fc40d91f8357061044b7844435"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.7-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "e03d314ea40c2f96375882aceaa0b87f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1789661,
+                "upload_time": "2015-02-05T02:51:09",
+                "url": "https://files.pythonhosted.org/packages/a0/5e/8c3e958a04c3197c78bbd3b9bd4205492f19819f17fa704f8961c0957cff/virtualenv-12.0.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e08796f79d112f3bfa6653cc10840114",
+                    "sha256": "d681db1766cdc8aa1b37eb18252c264b775f971166c2bf658a9618c1f3d28741"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.0.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e08796f79d112f3bfa6653cc10840114",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1829757,
+                "upload_time": "2015-02-05T02:51:18",
+                "url": "https://files.pythonhosted.org/packages/14/a4/3145f84afd46a3a74717d97f0c58a7a6442876e7712b209c5070cf34a3be/virtualenv-12.0.7.tar.gz"
+            }
+        ],
+        "12.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e1709a1261cf5f789a5885adb9388bba",
+                    "sha256": "3030d1d72e4cb0191f6365428ff7d34bcdd67a0f951749c0ce023fcb8ab23fea"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "e1709a1261cf5f789a5885adb9388bba",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1640446,
+                "upload_time": "2015-04-07T05:22:04",
+                "url": "https://files.pythonhosted.org/packages/73/5f/86ef3f8ffac68ca9e5ef337ad50a5b1f585635d48742d1565238af7a99ea/virtualenv-12.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b3a9bf032e6bdc72a56364e8810ad2a7",
+                    "sha256": "69a31626bae6b5682de43c4d603ecde2f0298f80fc0895c5837ae982d74eabe2"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b3a9bf032e6bdc72a56364e8810ad2a7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1680479,
+                "upload_time": "2015-04-07T05:22:14",
+                "url": "https://files.pythonhosted.org/packages/82/b1/4ca66d80734279266b5a0cea9d7f166a7f51449c7b5c9ca7e2c89f427f74/virtualenv-12.1.0.tar.gz"
+            }
+        ],
+        "12.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "043b79503a36b295d010964c80117461",
+                    "sha256": "e1def37d92f3dfeaaaac1af5839c1c55cc9b3f759ebdf237090b0e541802b61b"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.1.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "043b79503a36b295d010964c80117461",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1640506,
+                "upload_time": "2015-04-07T11:06:20",
+                "url": "https://files.pythonhosted.org/packages/20/1f/bbe8ab416b7eb084c1e4a570b65909777749db56ffab28f74ce30dbeda7e/virtualenv-12.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "901ecbf302f5de9fdb31d843290b7217",
+                    "sha256": "3c88cf7df114c32cf0651d12f979b8db556d992d647493e5bdbbe2828be40007"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-12.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "901ecbf302f5de9fdb31d843290b7217",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1680553,
+                "upload_time": "2015-04-07T11:06:31",
+                "url": "https://files.pythonhosted.org/packages/d1/9e/1cf17f519a0d374e0708b0396ec3dc23ece1d0808fd0c16358f32565c4ec/virtualenv-12.1.1.tar.gz"
+            }
+        ],
+        "13.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a2bb090a43c140dac59e10f2d36c45d",
+                    "sha256": "224cf521a799b1b3b5700a54a41be8eb8ec7798fc51cac3b05aa66c38951834f"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "0a2bb090a43c140dac59e10f2d36c45d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1685171,
+                "upload_time": "2015-05-22T04:06:54",
+                "url": "https://files.pythonhosted.org/packages/a1/ae/cc0b16ff6185b91ca9947a150a9ec0809531b281a064fc9a59c3feddc99a/virtualenv-13.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "721e7f60b830ff74c3763d64e5f01b0a",
+                    "sha256": "d576e94879b305e31ec0cc4d7125211032b2dccb87054841d112bc4289784c84"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "721e7f60b830ff74c3763d64e5f01b0a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1725236,
+                "upload_time": "2015-05-22T04:07:06",
+                "url": "https://files.pythonhosted.org/packages/7c/81/8576abe9439e1329d9fd59c163b0e435e3e71389587edcb0c7e1bd54ab57/virtualenv-13.0.0.tar.gz"
+            }
+        ],
+        "13.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ceac202ab764a5ea9ad0656bd502b1c",
+                    "sha256": "da85f7ea539cfec9437f4d87d12f95d34d92a6d30485e85a4bc434bcdff7c6c3"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "7ceac202ab764a5ea9ad0656bd502b1c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1685316,
+                "upload_time": "2015-05-23T00:48:10",
+                "url": "https://files.pythonhosted.org/packages/3f/21/8503e2592183d552c6e47fc431b3976c7b53256b1d1c50eb1f12ada2238c/virtualenv-13.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ffc011bde6667f0e37ecd976f4934db",
+                    "sha256": "36c2cfae0f9c6462264bb19c478fc6bab3478cf0575f1027452e975a1ed84dbd"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1ffc011bde6667f0e37ecd976f4934db",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1725410,
+                "upload_time": "2015-05-23T00:48:24",
+                "url": "https://files.pythonhosted.org/packages/c4/3c/f80b2c25a2212a913402c8a43b71817fbed8a4754e7eaad5e7cf7163f373/virtualenv-13.0.1.tar.gz"
+            }
+        ],
+        "13.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c300e1d9c5e522be19db32a8a531cce",
+                    "sha256": "a9a7c5609e121be176e6ede822e527f225309aa838a353a7127f2a17ef06809f"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "3c300e1d9c5e522be19db32a8a531cce",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1685904,
+                "upload_time": "2015-06-02T00:44:35",
+                "url": "https://files.pythonhosted.org/packages/d1/de/5cb54425d8764d22169b4c49bd744a5a984e2de18bae6ca6645a52d6ffb5/virtualenv-13.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "86e74f8b0009544e10caf832fa131c1a",
+                    "sha256": "37ac9e8598be801b517aa9bd7f1cc5e44de97d77243ddd41dcd1fa8a0f86d8db"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "86e74f8b0009544e10caf832fa131c1a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1726118,
+                "upload_time": "2015-06-02T00:44:47",
+                "url": "https://files.pythonhosted.org/packages/9c/fb/c2e3a62b25516c3d3e081abab2d103a9b76fa5714a4df768b8378f22b7ec/virtualenv-13.0.2.tar.gz"
+            }
+        ],
+        "13.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f40a95563e668fca630bd15ebb87ecbe",
+                    "sha256": "62b7f4fa8f7de47e13b7e5475bfeea2ffee9ea9fd209970860d45bc5247ee393"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.0.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "f40a95563e668fca630bd15ebb87ecbe",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1685971,
+                "upload_time": "2015-06-02T01:39:01",
+                "url": "https://files.pythonhosted.org/packages/02/6c/daf3959020ef541e9de8562c2294a7896ebd254078c8cc4284d72d5990a9/virtualenv-13.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cd2043ea72448d65dcc54d33744c2214",
+                    "sha256": "355e46928c2b00b83b7d00d70d5adc529e9c2fe1f366b07e8a1b49cd8c5bd1b9"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cd2043ea72448d65dcc54d33744c2214",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1726220,
+                "upload_time": "2015-06-02T01:39:18",
+                "url": "https://files.pythonhosted.org/packages/15/6d/0a6fead70c4581c331cba537a2579a3ef1bd9283943388b39a0000f5549b/virtualenv-13.0.3.tar.gz"
+            }
+        ],
+        "13.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d57872cd70dcc13f3053418989e973d3",
+                    "sha256": "f7d28d6b93876d19fcf677bced242f291f269313b6320e15aac9703afd208729"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d57872cd70dcc13f3053418989e973d3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1679297,
+                "upload_time": "2015-07-01T00:32:39",
+                "url": "https://files.pythonhosted.org/packages/bc/0a/6de493fa8e9777e40a29f4d0e59c9467aeba3349d3edb6c9338a32b001e2/virtualenv-13.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "70f63a429b7dd7c3e10f6af09ed32554",
+                    "sha256": "7ef0a0b1a1cb4b6407d2c1ff4a0f74865a13e6219482888a21bdcaa60c0f1e73"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "70f63a429b7dd7c3e10f6af09ed32554",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1719734,
+                "upload_time": "2015-07-01T00:32:44",
+                "url": "https://files.pythonhosted.org/packages/6e/48/4d57ca13ffb07b6a844215c11c43a0b96c35ebf4e8ad238ec0611582b15f/virtualenv-13.1.0.tar.gz"
+            }
+        ],
+        "13.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "683417f689261a66a5397cd2c2db921f",
+                    "sha256": "ed59b3f84e7e67f205a4149053131dc93489d792dffc3400a74b22ce335e9696"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.1.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "683417f689261a66a5397cd2c2db921f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1679075,
+                "upload_time": "2015-08-20T22:14:41",
+                "url": "https://files.pythonhosted.org/packages/5b/ea/0bc3ee1249465fcfbdd56a61aeffd6a6b6e4a337e4f51850f9a10bc96176/virtualenv-13.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "22d36ae617d6e962d8a486f58b5ebd2a",
+                    "sha256": "ecc1ca1802fd16724742a93e341d8967ab2499cae388128ba90852c64e06c5c3"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "22d36ae617d6e962d8a486f58b5ebd2a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1719566,
+                "upload_time": "2015-08-20T22:14:47",
+                "url": "https://files.pythonhosted.org/packages/65/94/1c60f0d646f094537fab2fe2d084079960e2c5798463bd2f3d51a8c178b3/virtualenv-13.1.1.tar.gz"
+            }
+        ],
+        "13.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6e7b25033b4aadb262598b76b12edf3a",
+                    "sha256": "f74a5943a9005c1e897bcf87f7e8af7e00c06fa9777b9ad691f69f9fa54a87d8"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.1.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "6e7b25033b4aadb262598b76b12edf3a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1679114,
+                "upload_time": "2015-08-22T22:56:46",
+                "url": "https://files.pythonhosted.org/packages/6b/e1/599c2a3c4a9e088e789489e9238e8016fb09aedd9ea81b93d6530e586ddc/virtualenv-13.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b989598f068d64b32dead530eb25589a",
+                    "sha256": "aabc8ef18cddbd8a2a9c7f92bc43e2fea54b1147330d65db920ef3ce9812e3dc"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-13.1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b989598f068d64b32dead530eb25589a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1719609,
+                "upload_time": "2015-08-22T22:56:52",
+                "url": "https://files.pythonhosted.org/packages/41/96/8d1d3f0f160512d637c1aeaeddf4039525ee0eb17cf5be0c1eca7de6bd76/virtualenv-13.1.2.tar.gz"
+            }
+        ],
+        "14.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df9517915a19b4c4601e8decbcedf7e6",
+                    "sha256": "cebf53bffb6e39d5c98054bf9d79258658078834e6759750a33924c9bf48cb28"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "df9517915a19b4c4601e8decbcedf7e6",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1752257,
+                "upload_time": "2016-01-20T00:56:39",
+                "url": "https://files.pythonhosted.org/packages/44/3d/7392230aa51bdebfeb205e1fdd371f9ce33147bb886ab1451b8767805f4c/virtualenv-14.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bc9bb318b679920e5bd03d6ecf81d331",
+                    "sha256": "f32cb0ca1496c12403372109e319db94da23838df9b57a13546997ee40a80c1f"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "bc9bb318b679920e5bd03d6ecf81d331",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1793381,
+                "upload_time": "2016-01-20T00:56:48",
+                "url": "https://files.pythonhosted.org/packages/ae/82/3b78e8bfc2b41b06bb44052fd15e1b294811d2d83a84aa5c4274e2c562a4/virtualenv-14.0.0.tar.gz"
+            }
+        ],
+        "14.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e81fb3fa5a56e783145f83f0216cb193",
+                    "sha256": "53b7151dbbaacdc6ed08acf259cb8395e286db6fc250f6a6fbbfee8372199336"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "e81fb3fa5a56e783145f83f0216cb193",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1752433,
+                "upload_time": "2016-01-22T00:50:30",
+                "url": "https://files.pythonhosted.org/packages/13/f1/84b2cd9bf5ad9a2d5078cb8e537418e0bff4b5446d22dbdf258b28c6a8a8/virtualenv-14.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "687b2c8ff325c97c37c365f68b0ae975",
+                    "sha256": "715aa5ff9c055ed5c864accdbab6a75331b2040d5666ec8707c48559c7ea3b88"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "687b2c8ff325c97c37c365f68b0ae975",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1793540,
+                "upload_time": "2016-01-22T00:50:38",
+                "url": "https://files.pythonhosted.org/packages/a9/9b/2cf9ff97b7fb23a1fd3d16ebf2a01be15ce2f8b55f552d1314af070353d2/virtualenv-14.0.1.tar.gz"
+            }
+        ],
+        "14.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2d326279a943c7f85884c17262b11cd5",
+                    "sha256": "bb634848f9cee277ce2ba806862987e49de68bfbd88756f24d996f8fbbdf413b"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "2d326279a943c7f85884c17262b11cd5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1751502,
+                "upload_time": "2016-01-28T12:52:16",
+                "url": "https://files.pythonhosted.org/packages/28/e2/23a0ed99e3b82af4b6da64f8d2cb7bc04da7ffc4868c45e7f3b575f5877f/virtualenv-14.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ffd00537e65973125df10b8eeb379170",
+                    "sha256": "fd20ca7185a506de4c640bf7ac8b71eac570c479e8ee61f54d3f8f9eebbb35db"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ffd00537e65973125df10b8eeb379170",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1804302,
+                "upload_time": "2016-01-28T12:52:56",
+                "url": "https://files.pythonhosted.org/packages/e9/53/64ca3740921a34896e373f7263efff5a13056e651c672b9044a278833fa9/virtualenv-14.0.2.tar.gz"
+            }
+        ],
+        "14.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9ca8214052e1095dcc3ddaa26f30504c",
+                    "sha256": "8046d861a875fe141878b26054f04cad4d1ef5ce219f7154258a4eb4aa96f3fa"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "9ca8214052e1095dcc3ddaa26f30504c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 2218551,
+                "upload_time": "2016-01-28T18:55:14",
+                "url": "https://files.pythonhosted.org/packages/2a/83/ceb8ce885644b0e9100d71bb097540c452bea4677625d93a575542d612ed/virtualenv-14.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "29206cfa4cac60de117a610b5ea7e704",
+                    "sha256": "e0434f2a234ca52b75d69fc97bc254a894f2c4f2c4731aa94bbe3f00c4d3fcff"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "29206cfa4cac60de117a610b5ea7e704",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1804491,
+                "upload_time": "2016-01-28T18:55:50",
+                "url": "https://files.pythonhosted.org/packages/e9/42/cedf86473a44207babd072201957af699e437c1c2c1add504686cc7c624b/virtualenv-14.0.3.tar.gz"
+            }
+        ],
+        "14.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ba48564c7ff0083b67d19909f4e999b2",
+                    "sha256": "e49784c1d775319e30961d13cda7f7c8a545c747b6c13735a9ce1226ee88de55"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "ba48564c7ff0083b67d19909f4e999b2",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1751424,
+                "upload_time": "2016-01-31T22:03:54",
+                "url": "https://files.pythonhosted.org/packages/b4/b9/7969223977f2f0b3b1697a54d222ca72276668d0a25a4e9357bc522adb40/virtualenv-14.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b2e28470c41ff35a88ff665a3a609b5a",
+                    "sha256": "777b1a04ccf8d4c1dfc590b6ec050a0b72c7f870f7eab8182f4fa742b034b9b9"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b2e28470c41ff35a88ff665a3a609b5a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1804599,
+                "upload_time": "2016-01-31T22:04:26",
+                "url": "https://files.pythonhosted.org/packages/d8/5f/9025f456f39ef825719d2b30090e240b382dcb4dcb3d0429b18c13176c98/virtualenv-14.0.4.tar.gz"
+            }
+        ],
+        "14.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d72283571b2b7ef1c0ef0de570f87bfd",
+                    "sha256": "c8c70448f1d3492b212ac55d382e2eadbed45565f4d7f472466eae7855f992e6"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.5-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d72283571b2b7ef1c0ef0de570f87bfd",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1751511,
+                "upload_time": "2016-02-01T07:10:51",
+                "url": "https://files.pythonhosted.org/packages/86/75/3faa707b910bb194a44c4052cba65eb644ff018a1af1c2a4aed959fa4bb6/virtualenv-14.0.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5769a96de40d99c4557a0070e4b2e48e",
+                    "sha256": "33db086a3ae4d2cf9e20ac5587d4b518fb80fcda098b872065a7300cf73fca52"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5769a96de40d99c4557a0070e4b2e48e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1804902,
+                "upload_time": "2016-02-01T07:11:42",
+                "url": "https://files.pythonhosted.org/packages/5c/12/28d736d40b449efefe6d8e197f97e469676da4693ab5bf86b23b7ecb7db7/virtualenv-14.0.5.tar.gz"
+            }
+        ],
+        "14.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b4a47ee697913203ec5fdb9e44ce3a8f",
+                    "sha256": "3124a26128511ae66e786e5eb8f035624c612d10c54766123ee5f73d9e522d94"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.6-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b4a47ee697913203ec5fdb9e44ce3a8f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1755463,
+                "upload_time": "2016-02-07T19:44:56",
+                "url": "https://files.pythonhosted.org/packages/39/62/159f60c93e7cf4f88730ec6ee7f23fec4e8f374c133502da18ef1e1420cb/virtualenv-14.0.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a035037925c82990a7659ecf8764bcdb",
+                    "sha256": "1ffb6a02d8999e9c97ad8f04b1d2ba44421dfb8f8a98b54aea5c6fdfb53bc526"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-14.0.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a035037925c82990a7659ecf8764bcdb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1798020,
+                "upload_time": "2016-02-07T19:45:04",
+                "url": "https://files.pythonhosted.org/packages/da/ae/718e96f41a838ad1254d6758abe06bf79867fc729811d8e486d6f306b47e/virtualenv-14.0.6.tar.gz"
+            }
+        ],
+        "15.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "94955d9179ba18706bbc272a79d80980",
+                    "sha256": "a6e2375dfc7c453a29d351308e752d84864caf89e3a964b1f991f8dd91f6e506"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "94955d9179ba18706bbc272a79d80980",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1799766,
+                "upload_time": "2016-03-06T01:15:18",
+                "url": "https://files.pythonhosted.org/packages/5c/80/dcbdaf8e6b64b7e7ae5b51949fb8ebcb36081e7a4499e63d2e6b7347a2e5/virtualenv-15.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9652f8d154546926939066e596af83c",
+                    "sha256": "70d63fb7e949d07aeb37f6ecc94e8b60671edb15b890aa86dba5dfaf2225dc19"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d9652f8d154546926939066e596af83c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1842672,
+                "upload_time": "2016-03-06T01:15:28",
+                "url": "https://files.pythonhosted.org/packages/eb/74/724d0dcc1632de285499ddd67035dd9313b84c28673add274b9c151dbb65/virtualenv-15.0.0.tar.gz"
+            }
+        ],
+        "15.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1fca0d03249563ccc475d39cfe71491e",
+                    "sha256": "13ce1079910a6bc60e2ce1d79813a99f30b2fd1e571427fcde1fabb0ff4c436c"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "1fca0d03249563ccc475d39cfe71491e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1799857,
+                "upload_time": "2016-03-17T15:17:55",
+                "url": "https://files.pythonhosted.org/packages/bb/83/1aa921ab8c7d017e4098582acbc422a30485f820290577b361c8fc407d53/virtualenv-15.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28d76a0d9cbd5dc42046dd14e76a6ecc",
+                    "sha256": "1a74278b8adb383ce4c7619e33c753b1eb7b58dc1e449601c096ca4b76125f84"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "28d76a0d9cbd5dc42046dd14e76a6ecc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1842776,
+                "upload_time": "2016-03-17T15:18:20",
+                "url": "https://files.pythonhosted.org/packages/c8/82/7c1eb879dea5725fae239070b48187de74a8eb06b63d9087cd0a60436353/virtualenv-15.0.1.tar.gz"
+            }
+        ],
+        "15.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "832cc0a303e61fa71892a93ec6b2d746",
+                    "sha256": "da5dce9813d4a4afa56d63334adb0534e8b4355bc7db62b25d63614117a98dab"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.0.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "832cc0a303e61fa71892a93ec6b2d746",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1802689,
+                "upload_time": "2016-05-28T19:21:21",
+                "url": "https://files.pythonhosted.org/packages/bf/f4/43525ce41d4de0128460da3dce059c2c969f4d076bbdbac21b6bc1e996e8/virtualenv-15.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0ed59863994daf1292827ffdbba80a63",
+                    "sha256": "fab40f32d9ad298fba04a260f3073505a16d52539a84843cf8c8369d4fd17167"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0ed59863994daf1292827ffdbba80a63",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1845728,
+                "upload_time": "2016-05-28T19:21:27",
+                "url": "https://files.pythonhosted.org/packages/5c/79/5dae7494b9f5ed061cff9a8ab8d6e1f02db352f3facf907d9eb614fb80e9/virtualenv-15.0.2.tar.gz"
+            }
+        ],
+        "15.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75d2e7305967ec368c43152b7c55546e",
+                    "sha256": "cc8164362fc9611d478f784bbc066f3ee74526c50336ec61a6e75d5af97926c8"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.0.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "75d2e7305967ec368c43152b7c55546e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 3487241,
+                "upload_time": "2016-08-05T12:50:15",
+                "url": "https://files.pythonhosted.org/packages/45/9c/acd0645222dc9f3593e86a33b3e5cae0be841c04807bf0f183625bc5fe85/virtualenv-15.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a5a061ad8a37d973d27eb197d05d99bf",
+                    "sha256": "6d9c760d3fc5fa0894b0f99b9de82a4647e1164f0b700a7f99055034bf548b1d"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a5a061ad8a37d973d27eb197d05d99bf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1849119,
+                "upload_time": "2016-08-05T12:52:18",
+                "url": "https://files.pythonhosted.org/packages/8b/2c/c0d3e47709d0458816167002e1aa3d64d03bdeb2a9d57c5bd18448fd24cd/virtualenv-15.0.3.tar.gz"
+            }
+        ],
+        "15.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa7e5b86cc8cdb99794c4b99e8d670f3",
+                    "sha256": "39d88b533b422825d644087a21e78c45cf5af0ef7a99a1fc9fbb7b481e5c85b0"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "aa7e5b86cc8cdb99794c4b99e8d670f3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1820727,
+                "upload_time": "2016-11-16T02:40:09",
+                "url": "https://files.pythonhosted.org/packages/6f/86/3dc328ee7b1a6419ebfac7896d882fba83c48e3561d22ddddf38294d3e83/virtualenv-15.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "44e19f4134906fe2d75124427dc9b716",
+                    "sha256": "02f8102c2436bb03b3ee6dede1919d1dac8a427541652e5ec95171ec8adbc93a"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "44e19f4134906fe2d75124427dc9b716",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1863951,
+                "upload_time": "2016-11-16T02:40:13",
+                "url": "https://files.pythonhosted.org/packages/d4/0c/9840c08189e030873387a73b90ada981885010dd9aea134d6de30cd24cb8/virtualenv-15.1.0.tar.gz"
+            }
+        ],
+        "15.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9669bf713d0c2cc6429fe7fe315e4698",
+                    "sha256": "e8e05d4714a1c51a2f5921e62f547fcb0f713ebbe959e0a7f585cc8bef71d11f"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9669bf713d0c2cc6429fe7fe315e4698",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 2592245,
+                "upload_time": "2018-03-22T02:23:44",
+                "url": "https://files.pythonhosted.org/packages/ed/ea/e20b5cbebf45d3096e8138ab74eda139595d827677f38e9dd543e6015bdf/virtualenv-15.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5f6b473140cc627d19d0d203f3b63cc",
+                    "sha256": "1d7e241b431e7afce47e77f8843a276f652699d1fa4f93b9d8ce0076fd7b0b54"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-15.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b5f6b473140cc627d19d0d203f3b63cc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2638173,
+                "upload_time": "2018-03-22T02:23:49",
+                "url": "https://files.pythonhosted.org/packages/b1/72/2d70c5a1de409ceb3a27ff2ec007ecdd5cc52239e7c74990e32af57affe9/virtualenv-15.2.0.tar.gz"
+            }
+        ],
+        "16.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9ea4de7dc7830a8deec1a9f59de0a8a",
+                    "sha256": "2ce32cd126117ce2c539f0134eb89de91a8413a29baac49cbab3eb50e2026669"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-16.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d9ea4de7dc7830a8deec1a9f59de0a8a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1922074,
+                "upload_time": "2018-05-16T23:36:56",
+                "url": "https://files.pythonhosted.org/packages/b6/30/96a02b2287098b23b875bc8c2f58071c35d2efe84f747b64d523721dc2b5/virtualenv-16.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4feb74ee26255dd7e62e36ce96bcc4c6",
+                    "sha256": "ca07b4c0b54e14a91af9f34d0919790b016923d157afda5efdde55c96718f752"
+                },
+                "downloads": -1,
+                "filename": "virtualenv-16.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4feb74ee26255dd7e62e36ce96bcc4c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1970558,
+                "upload_time": "2018-05-16T23:36:59",
+                "url": "https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "d9ea4de7dc7830a8deec1a9f59de0a8a",
+                "sha256": "2ce32cd126117ce2c539f0134eb89de91a8413a29baac49cbab3eb50e2026669"
+            },
+            "downloads": -1,
+            "filename": "virtualenv-16.0.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "d9ea4de7dc7830a8deec1a9f59de0a8a",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 1922074,
+            "upload_time": "2018-05-16T23:36:56",
+            "url": "https://files.pythonhosted.org/packages/b6/30/96a02b2287098b23b875bc8c2f58071c35d2efe84f747b64d523721dc2b5/virtualenv-16.0.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "4feb74ee26255dd7e62e36ce96bcc4c6",
+                "sha256": "ca07b4c0b54e14a91af9f34d0919790b016923d157afda5efdde55c96718f752"
+            },
+            "downloads": -1,
+            "filename": "virtualenv-16.0.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "4feb74ee26255dd7e62e36ce96bcc4c6",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 1970558,
+            "upload_time": "2018-05-16T23:36:59",
+            "url": "https://files.pythonhosted.org/packages/33/bc/fa0b5347139cd9564f0d44ebd2b147ac97c36b2403943dbee8a25fd74012/virtualenv-16.0.0.tar.gz"
+        }
+    ],
+    "package_name": "virtualenv"
+}

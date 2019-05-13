@@ -1,0 +1,275 @@
+{
+    "info": {
+        "author": "Testing Cabal",
+        "author_email": "testing-in-python@lists.idyll.org",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 4 - Beta",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Apache Software License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "description": ".. funcsigs documentation master file, created by\n   sphinx-quickstart on Fri Apr 20 20:27:52 2012.\n   You can adapt this file completely to your liking, but it should at least\n   contain the root `toctree` directive.\n\nIntroducing funcsigs\n====================\n\nThe Funcsigs Package\n--------------------\n\n``funcsigs`` is a backport of the `PEP 362`_ function signature features from\nPython 3.3's `inspect`_ module. The backport is compatible with Python 2.6, 2.7\nas well as 3.3 and up. 3.2 was supported by version 0.4, but with setuptools and\npip no longer supporting 3.2, we cannot make any statement about 3.2\ncompatibility.\n\nCompatibility\n`````````````\n\nThe ``funcsigs`` backport has been tested against:\n\n* CPython 2.6\n* CPython 2.7\n* CPython 3.3\n* CPython 3.4\n* CPython 3.5\n* CPython nightlies\n* PyPy and PyPy3(currently failing CI)\n\nContinuous integration testing is provided by `Travis CI`_.\n\nUnder Python 2.x there is a compatibility issue when a function is assigned to\nthe ``__wrapped__`` property of a class after it has been constructed.\nSimiliarily there under PyPy directly passing the ``__call__`` method of a\nbuiltin is also a compatibility issues.  Otherwise the functionality is\nbelieved to be uniform between both Python2 and Python3.\n\nIssues\n``````\n\nSource code for ``funcsigs`` is hosted on `GitHub`_. Any bug reports or feature\nrequests can be made using GitHub's `issues system`_. |build_status| |coverage|\n\nExample\n-------\n\nTo obtain a `Signature` object, pass the target function to the\n``funcsigs.signature`` function.\n\n.. code-block:: python\n\n    >>> from funcsigs import signature\n    >>> def foo(a, b=None, *args, **kwargs):\n    ...     pass\n    ...\n    >>> sig = signature(foo)\n    >>> sig\n    <funcsigs.Signature object at 0x...>\n    >>> sig.parameters\n    OrderedDict([('a', <Parameter at 0x... 'a'>), ('b', <Parameter at 0x... 'b'>), ('args', <Parameter at 0x... 'args'>), ('kwargs', <Parameter at 0x... 'kwargs'>)])\n    >>> sig.return_annotation\n    <class 'funcsigs._empty'>\n\nIntrospecting callables with the Signature object\n-------------------------------------------------\n\n.. note::\n\n   This section of documentation is a direct reproduction of the Python\n   standard library documentation for the inspect module.\n\nThe Signature object represents the call signature of a callable object and its\nreturn annotation.  To retrieve a Signature object, use the :func:`signature`\nfunction.\n\n.. function:: signature(callable)\n\n   Return a :class:`Signature` object for the given ``callable``::\n\n      >>> from funcsigs import signature\n      >>> def foo(a, *, b:int, **kwargs):\n      ...     pass\n\n      >>> sig = signature(foo)\n\n      >>> str(sig)\n      '(a, *, b:int, **kwargs)'\n\n      >>> str(sig.parameters['b'])\n      'b:int'\n\n      >>> sig.parameters['b'].annotation\n      <class 'int'>\n\n   Accepts a wide range of python callables, from plain functions and classes to\n   :func:`functools.partial` objects.\n\n   .. note::\n\n      Some callables may not be introspectable in certain implementations of\n      Python.  For example, in CPython, built-in functions defined in C provide\n      no metadata about their arguments.\n\n\n.. class:: Signature\n\n   A Signature object represents the call signature of a function and its return\n   annotation.  For each parameter accepted by the function it stores a\n   :class:`Parameter` object in its :attr:`parameters` collection.\n\n   Signature objects are *immutable*.  Use :meth:`Signature.replace` to make a\n   modified copy.\n\n   .. attribute:: Signature.empty\n\n      A special class-level marker to specify absence of a return annotation.\n\n   .. attribute:: Signature.parameters\n\n      An ordered mapping of parameters' names to the corresponding\n      :class:`Parameter` objects.\n\n   .. attribute:: Signature.return_annotation\n\n      The \"return\" annotation for the callable.  If the callable has no \"return\"\n      annotation, this attribute is set to :attr:`Signature.empty`.\n\n   .. method:: Signature.bind(*args, **kwargs)\n\n      Create a mapping from positional and keyword arguments to parameters.\n      Returns :class:`BoundArguments` if ``*args`` and ``**kwargs`` match the\n      signature, or raises a :exc:`TypeError`.\n\n   .. method:: Signature.bind_partial(*args, **kwargs)\n\n      Works the same way as :meth:`Signature.bind`, but allows the omission of\n      some required arguments (mimics :func:`functools.partial` behavior.)\n      Returns :class:`BoundArguments`, or raises a :exc:`TypeError` if the\n      passed arguments do not match the signature.\n\n   .. method:: Signature.replace(*[, parameters][, return_annotation])\n\n      Create a new Signature instance based on the instance replace was invoked\n      on.  It is possible to pass different ``parameters`` and/or\n      ``return_annotation`` to override the corresponding properties of the base\n      signature.  To remove return_annotation from the copied Signature, pass in\n      :attr:`Signature.empty`.\n\n      ::\n\n         >>> def test(a, b):\n         ...     pass\n         >>> sig = signature(test)\n         >>> new_sig = sig.replace(return_annotation=\"new return anno\")\n         >>> str(new_sig)\n         \"(a, b) -> 'new return anno'\"\n\n\n.. class:: Parameter\n\n   Parameter objects are *immutable*.  Instead of modifying a Parameter object,\n   you can use :meth:`Parameter.replace` to create a modified copy.\n\n   .. attribute:: Parameter.empty\n\n      A special class-level marker to specify absence of default values and\n      annotations.\n\n   .. attribute:: Parameter.name\n\n      The name of the parameter as a string.  Must be a valid python identifier\n      name (with the exception of ``POSITIONAL_ONLY`` parameters, which can have\n      it set to ``None``).\n\n   .. attribute:: Parameter.default\n\n      The default value for the parameter.  If the parameter has no default\n      value, this attribute is set to :attr:`Parameter.empty`.\n\n   .. attribute:: Parameter.annotation\n\n      The annotation for the parameter.  If the parameter has no annotation,\n      this attribute is set to :attr:`Parameter.empty`.\n\n   .. attribute:: Parameter.kind\n\n      Describes how argument values are bound to the parameter.  Possible values\n      (accessible via :class:`Parameter`, like ``Parameter.KEYWORD_ONLY``):\n\n      +------------------------+----------------------------------------------+\n      |    Name                | Meaning                                      |\n      +========================+==============================================+\n      | *POSITIONAL_ONLY*      | Value must be supplied as a positional       |\n      |                        | argument.                                    |\n      |                        |                                              |\n      |                        | Python has no explicit syntax for defining   |\n      |                        | positional-only parameters, but many built-in|\n      |                        | and extension module functions (especially   |\n      |                        | those that accept only one or two parameters)|\n      |                        | accept them.                                 |\n      +------------------------+----------------------------------------------+\n      | *POSITIONAL_OR_KEYWORD*| Value may be supplied as either a keyword or |\n      |                        | positional argument (this is the standard    |\n      |                        | binding behaviour for functions implemented  |\n      |                        | in Python.)                                  |\n      +------------------------+----------------------------------------------+\n      | *VAR_POSITIONAL*       | A tuple of positional arguments that aren't  |\n      |                        | bound to any other parameter. This           |\n      |                        | corresponds to a ``*args`` parameter in a    |\n      |                        | Python function definition.                  |\n      +------------------------+----------------------------------------------+\n      | *KEYWORD_ONLY*         | Value must be supplied as a keyword argument.|\n      |                        | Keyword only parameters are those which      |\n      |                        | appear after a ``*`` or ``*args`` entry in a |\n      |                        | Python function definition.                  |\n      +------------------------+----------------------------------------------+\n      | *VAR_KEYWORD*          | A dict of keyword arguments that aren't bound|\n      |                        | to any other parameter. This corresponds to a|\n      |                        | ``**kwargs`` parameter in a Python function  |\n      |                        | definition.                                  |\n      +------------------------+----------------------------------------------+\n\n      Example: print all keyword-only arguments without default values::\n\n         >>> def foo(a, b, *, c, d=10):\n         ...     pass\n\n         >>> sig = signature(foo)\n         >>> for param in sig.parameters.values():\n         ...     if (param.kind == param.KEYWORD_ONLY and\n         ...                        param.default is param.empty):\n         ...         print('Parameter:', param)\n         Parameter: c\n\n   .. method:: Parameter.replace(*[, name][, kind][, default][, annotation])\n\n      Create a new Parameter instance based on the instance replaced was invoked\n      on.  To override a :class:`Parameter` attribute, pass the corresponding\n      argument.  To remove a default value or/and an annotation from a\n      Parameter, pass :attr:`Parameter.empty`.\n\n      ::\n\n         >>> from funcsigs import Parameter\n         >>> param = Parameter('foo', Parameter.KEYWORD_ONLY, default=42)\n         >>> str(param)\n         'foo=42'\n\n         >>> str(param.replace()) # Will create a shallow copy of 'param'\n         'foo=42'\n\n         >>> str(param.replace(default=Parameter.empty, annotation='spam'))\n         \"foo:'spam'\"\n\n\n.. class:: BoundArguments\n\n   Result of a :meth:`Signature.bind` or :meth:`Signature.bind_partial` call.\n   Holds the mapping of arguments to the function's parameters.\n\n   .. attribute:: BoundArguments.arguments\n\n      An ordered, mutable mapping (:class:`collections.OrderedDict`) of\n      parameters' names to arguments' values.  Contains only explicitly bound\n      arguments.  Changes in :attr:`arguments` will reflect in :attr:`args` and\n      :attr:`kwargs`.\n\n      Should be used in conjunction with :attr:`Signature.parameters` for any\n      argument processing purposes.\n\n      .. note::\n\n         Arguments for which :meth:`Signature.bind` or\n         :meth:`Signature.bind_partial` relied on a default value are skipped.\n         However, if needed, it is easy to include them.\n\n      ::\n\n        >>> def foo(a, b=10):\n        ...     pass\n\n        >>> sig = signature(foo)\n        >>> ba = sig.bind(5)\n\n        >>> ba.args, ba.kwargs\n        ((5,), {})\n\n        >>> for param in sig.parameters.values():\n        ...     if param.name not in ba.arguments:\n        ...         ba.arguments[param.name] = param.default\n\n        >>> ba.args, ba.kwargs\n        ((5, 10), {})\n\n\n   .. attribute:: BoundArguments.args\n\n      A tuple of positional arguments values.  Dynamically computed from the\n      :attr:`arguments` attribute.\n\n   .. attribute:: BoundArguments.kwargs\n\n      A dict of keyword arguments values.  Dynamically computed from the\n      :attr:`arguments` attribute.\n\n   The :attr:`args` and :attr:`kwargs` properties can be used to invoke\n   functions::\n\n      def test(a, *, b):\n         ...\n\n      sig = signature(test)\n      ba = sig.bind(10, b=20)\n      test(*ba.args, **ba.kwargs)\n\n\n.. seealso::\n\n   :pep:`362` - Function Signature Object.\n      The detailed specification, implementation details and examples.\n\nCopyright\n---------\n\n*funcsigs* is a derived work of CPython under the terms of the `PSF License\nAgreement`_. The original CPython inspect module, its unit tests and\ndocumentation are the copyright of the Python Software Foundation. The derived\nwork is distributed under the `Apache License Version 2.0`_.\n\n.. _PSF License Agreement: http://docs.python.org/3/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python\n.. _Apache License Version 2.0: http://opensource.org/licenses/Apache-2.0\n.. _GitHub: https://github.com/testing-cabal/funcsigs\n.. _PSF License Agreement: http://docs.python.org/3/license.html#terms-and-conditions-for-accessing-or-otherwise-using-python\n.. _Travis CI: http://travis-ci.org/\n.. _Read The Docs: http://funcsigs.readthedocs.org/\n.. _PEP 362: http://www.python.org/dev/peps/pep-0362/\n.. _inspect: http://docs.python.org/3/library/inspect.html#introspecting-callables-with-the-signature-object\n.. _issues system: https://github.com/testing-cabal/funcsigs/issues\n\n.. |build_status| image:: https://secure.travis-ci.org/aliles/funcsigs.png?branch=master\n   :target: http://travis-ci.org/#!/aliles/funcsigs\n   :alt: Current build status\n\n.. |coverage| image:: https://coveralls.io/repos/aliles/funcsigs/badge.png?branch=master\n   :target: https://coveralls.io/r/aliles/funcsigs?branch=master\n   :alt: Coverage status\n\n.. |pypi_version| image:: https://pypip.in/v/funcsigs/badge.png\n   :target: https://crate.io/packages/funcsigs/\n   :alt: Latest PyPI version",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://funcsigs.readthedocs.org",
+        "keywords": null,
+        "license": "ASL",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "funcsigs",
+        "package_url": "https://pypi.org/project/funcsigs/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/funcsigs/",
+        "release_url": "https://pypi.org/project/funcsigs/1.0.2/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Python function signatures from PEP362 for Python 2.6, 2.7 and 3.2+",
+        "version": "1.0.2"
+    },
+    "last_serial": 2083703,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b45f3cd06b9973e590ad714676a5c3d",
+                    "sha256": "0e909110e7427ed0abc8b92525281e05aaf116cc2c921a185982edd48c1e0a6a"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4b45f3cd06b9973e590ad714676a5c3d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 698105,
+                "upload_time": "2013-01-06T12:09:55",
+                "url": "https://files.pythonhosted.org/packages/78/d2/1c8d781e957a667de45199cc9fa69cc95eedc589ceb2f180d7f40af7625f/funcsigs-0.1.tar.gz"
+            }
+        ],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1f56853306a9aa69b58051854d70f904",
+                    "sha256": "6896c54379cbaf8a0e14d095bc00fc0969f08f5f7908a86ddde7b15549c93916"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1f56853306a9aa69b58051854d70f904",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 698263,
+                "upload_time": "2013-01-07T11:06:41",
+                "url": "https://files.pythonhosted.org/packages/b7/56/1def30b73d76ef0a6c68c8a14b3fc31d361c53b02ff2ffb1c91d2b465698/funcsigs-0.2.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a877ec113482165d6f19b49cbec4b8ba",
+                    "sha256": "71dcf5c28a97b2a5a5c39a45497d1c86863eb5474589a00bf7ade3cac0fdccaf"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a877ec113482165d6f19b49cbec4b8ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 585332,
+                "upload_time": "2013-05-29T12:37:29",
+                "url": "https://files.pythonhosted.org/packages/b2/c3/1842bc45f0549d34379e3ea73ce584ba30573e26dd93a0fef03cfed8156c/funcsigs-0.3.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0df93bdb54034b9f0263785c7d6b84f4",
+                    "sha256": "ff5ad9e2f8d9e5d1e8bbfbcf47722ab527cf0d51caeeed9da6d0f40799383fde"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-0.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0df93bdb54034b9f0263785c7d6b84f4",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 14516,
+                "upload_time": "2013-12-20T11:11:42",
+                "url": "https://files.pythonhosted.org/packages/5e/9f/025d4c92c6a1a94313cdf0813cd76f5700f8e5434fa15165090a6446ae22/funcsigs-0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb1d031f284233e09701f6db1281c2a5",
+                    "sha256": "d83ce6df0b0ea6618700fe1db353526391a8a3ada1b7aba52fed7a61da772033"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fb1d031f284233e09701f6db1281c2a5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25697,
+                "upload_time": "2013-12-20T11:11:39",
+                "url": "https://files.pythonhosted.org/packages/87/5e/44bc85c41e5b33b6bf1fcb2f6ccbc4ee74337af079438d2a28c5c45137e1/funcsigs-0.4.tar.gz"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1229a5af8401069351c7e61035982f35",
+                    "sha256": "1c916dfbb4aad250f2a40e937dcff206da165fa29fa909ee1ea02243f7386019"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-1.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "1229a5af8401069351c7e61035982f35",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17663,
+                "upload_time": "2016-04-06T00:36:27",
+                "url": "https://files.pythonhosted.org/packages/09/8d/17528625d12ca90651dd1f7958fd0d32b23b15f2197023372669fd683321/funcsigs-1.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "669d0f34e94cb36a3948e8f592bc6f25",
+                    "sha256": "2310f9d4a77c284e920ec572dc2525366a107b08d216ff8dbb891d95b6a77563"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-1.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "669d0f34e94cb36a3948e8f592bc6f25",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27897,
+                "upload_time": "2016-04-06T00:36:13",
+                "url": "https://files.pythonhosted.org/packages/b9/5e/55612c62d35959b5b9767f020f95cb0830f340733f5c2626c7d1e9056729/funcsigs-1.0.0.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5df37432c5d468cab69c1cc93f31ff9",
+                    "sha256": "2edd42db946babc214077be3626e1c496561daeb6e752e482d8d733a0d578f01"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-1.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b5df37432c5d468cab69c1cc93f31ff9",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17700,
+                "upload_time": "2016-04-24T16:45:23",
+                "url": "https://files.pythonhosted.org/packages/3c/60/4bb1cbb64a46e98b8063013d271fd3e9e20832827a4d59e343889c6a7a95/funcsigs-1.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c2d84de116ce1aba0dc844a359cd20dd",
+                    "sha256": "0726847f1463526794496423f6500cc2ed751361b6c025982ab18bc6c5af35b1"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-1.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c2d84de116ce1aba0dc844a359cd20dd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27929,
+                "upload_time": "2016-04-24T16:45:39",
+                "url": "https://files.pythonhosted.org/packages/ab/5b/a6dff630fe5b68a4d2a049b6d95b51ad1510fb72e9606d656feb2c34efd8/funcsigs-1.0.1.tar.gz"
+            }
+        ],
+        "1.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "701d58358171f34b6d1197de2923a35a",
+                    "sha256": "330cc27ccbf7f1e992e69fef78261dc7c6569012cf397db8d3de0234e6c937ca"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-1.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "701d58358171f34b6d1197de2923a35a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17697,
+                "upload_time": "2016-04-25T22:22:05",
+                "url": "https://files.pythonhosted.org/packages/69/cb/f5be453359271714c01b9bd06126eaf2e368f1fddfff30818754b5ac2328/funcsigs-1.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e583285b1fb8a76305d6d68f4ccc14e",
+                    "sha256": "a7bb0f2cf3a3fd1ab2732cb49eba4252c2af4240442415b4abce3b87022a8f50"
+                },
+                "downloads": -1,
+                "filename": "funcsigs-1.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "7e583285b1fb8a76305d6d68f4ccc14e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27947,
+                "upload_time": "2016-04-25T22:22:33",
+                "url": "https://files.pythonhosted.org/packages/94/4a/db842e7a0545de1cdb0439bb80e6e42dfe82aaeaadd4072f2263a4fbed23/funcsigs-1.0.2.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "701d58358171f34b6d1197de2923a35a",
+                "sha256": "330cc27ccbf7f1e992e69fef78261dc7c6569012cf397db8d3de0234e6c937ca"
+            },
+            "downloads": -1,
+            "filename": "funcsigs-1.0.2-py2.py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "701d58358171f34b6d1197de2923a35a",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 17697,
+            "upload_time": "2016-04-25T22:22:05",
+            "url": "https://files.pythonhosted.org/packages/69/cb/f5be453359271714c01b9bd06126eaf2e368f1fddfff30818754b5ac2328/funcsigs-1.0.2-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "7e583285b1fb8a76305d6d68f4ccc14e",
+                "sha256": "a7bb0f2cf3a3fd1ab2732cb49eba4252c2af4240442415b4abce3b87022a8f50"
+            },
+            "downloads": -1,
+            "filename": "funcsigs-1.0.2.tar.gz",
+            "has_sig": true,
+            "md5_digest": "7e583285b1fb8a76305d6d68f4ccc14e",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 27947,
+            "upload_time": "2016-04-25T22:22:33",
+            "url": "https://files.pythonhosted.org/packages/94/4a/db842e7a0545de1cdb0439bb80e6e42dfe82aaeaadd4072f2263a4fbed23/funcsigs-1.0.2.tar.gz"
+        }
+    ],
+    "package_name": "funcsigs"
+}

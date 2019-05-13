@@ -1,0 +1,1302 @@
+{
+    "info": {
+        "author": "Barry Pederson",
+        "author_email": "pyamqp@celeryproject.org",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6"
+        ],
+        "description": "=====================================================================\n Python AMQP 0.9.1 client library\n=====================================================================\n\n|build-status| |coverage| |license| |wheel| |pyversion| |pyimp|\n\n:Version: 2.3.2\n:Web: https://amqp.readthedocs.io/\n:Download: https://pypi.org/project/amqp/\n:Source: http://github.com/celery/py-amqp/\n:Keywords: amqp, rabbitmq\n\nAbout\n=====\n\nThis is a fork of amqplib_ which was originally written by Barry Pederson.\nIt is maintained by the Celery_ project, and used by `kombu`_ as a pure python\nalternative when `librabbitmq`_ is not available.\n\nThis library should be API compatible with `librabbitmq`_.\n\n.. _amqplib: https://pypi.org/project/amqplib/\n.. _Celery: http://celeryproject.org/\n.. _kombu: https://kombu.readthedocs.io/\n.. _librabbitmq: https://pypi.org/project/librabbitmq/\n\nDifferences from `amqplib`_\n===========================\n\n- Supports draining events from multiple channels (``Connection.drain_events``)\n- Support for timeouts\n- Channels are restored after channel error, instead of having to close the\n  connection.\n- Support for heartbeats\n\n    - ``Connection.heartbeat_tick(rate=2)`` must called at regular intervals\n      (half of the heartbeat value if rate is 2).\n    - Or some other scheme by using ``Connection.send_heartbeat``.\n- Supports RabbitMQ extensions:\n    - Consumer Cancel Notifications\n        - by default a cancel results in ``ChannelError`` being raised\n        - but not if a ``on_cancel`` callback is passed to ``basic_consume``.\n    - Publisher confirms\n        - ``Channel.confirm_select()`` enables publisher confirms.\n        - ``Channel.events['basic_ack'].append(my_callback)`` adds a callback\n          to be called when a message is confirmed. This callback is then\n          called with the signature ``(delivery_tag, multiple)``.\n    - Exchange-to-exchange bindings: ``exchange_bind`` / ``exchange_unbind``.\n        - ``Channel.confirm_select()`` enables publisher confirms.\n        - ``Channel.events['basic_ack'].append(my_callback)`` adds a callback\n          to be called when a message is confirmed. This callback is then\n          called with the signature ``(delivery_tag, multiple)``.\n    - Authentication Failure Notifications\n        Instead of just closing the connection abruptly on invalid\n        credentials, py-amqp will raise an ``AccessRefused`` error\n        when connected to rabbitmq-server 3.2.0 or greater.\n- Support for ``basic_return``\n- Uses AMQP 0-9-1 instead of 0-8.\n    - ``Channel.access_request`` and ``ticket`` arguments to methods\n      **removed**.\n    - Supports the ``arguments`` argument to ``basic_consume``.\n    - ``internal`` argument to ``exchange_declare`` removed.\n    - ``auto_delete`` argument to ``exchange_declare`` deprecated\n    - ``insist`` argument to ``Connection`` removed.\n    - ``Channel.alerts`` has been removed.\n    - Support for ``Channel.basic_recover_async``.\n    - ``Channel.basic_recover`` deprecated.\n- Exceptions renamed to have idiomatic names:\n    - ``AMQPException`` -> ``AMQPError``\n    - ``AMQPConnectionException`` -> ConnectionError``\n    - ``AMQPChannelException`` -> ChannelError``\n    - ``Connection.known_hosts`` removed.\n    - ``Connection`` no longer supports redirects.\n    - ``exchange`` argument to ``queue_bind`` can now be empty\n      to use the \"default exchange\".\n- Adds ``Connection.is_alive`` that tries to detect\n  whether the connection can still be used.\n- Adds ``Connection.connection_errors`` and ``.channel_errors``,\n  a list of recoverable errors.\n- Exposes the underlying socket as ``Connection.sock``.\n- Adds ``Channel.no_ack_consumers`` to keep track of consumer tags\n  that set the no_ack flag.\n- Slightly better at error recovery\n\nFurther\n=======\n\n- Differences between AMQP 0.8 and 0.9.1\n\n    http://www.rabbitmq.com/amqp-0-8-to-0-9-1.html\n\n- AMQP 0.9.1 Quick Reference\n\n    http://www.rabbitmq.com/amqp-0-9-1-quickref.html\n\n- RabbitMQ Extensions\n\n    http://www.rabbitmq.com/extensions.html\n\n- For more information about AMQP, visit\n\n    http://www.amqp.org\n\n- For other Python client libraries see:\n\n    http://www.rabbitmq.com/devtools.html#python-dev\n\n.. |build-status| image:: https://secure.travis-ci.org/celery/py-amqp.png?branch=master\n    :alt: Build status\n    :target: https://travis-ci.org/celery/py-amqp\n\n.. |coverage| image:: https://codecov.io/github/celery/py-amqp/coverage.svg?branch=master\n    :target: https://codecov.io/github/celery/py-amqp?branch=master\n\n.. |license| image:: https://img.shields.io/pypi/l/amqp.svg\n    :alt: BSD License\n    :target: https://opensource.org/licenses/BSD-3-Clause\n\n.. |wheel| image:: https://img.shields.io/pypi/wheel/amqp.svg\n    :alt: Python AMQP can be installed via wheel\n    :target: https://pypi.org/project/amqp/\n\n.. |pyversion| image:: https://img.shields.io/pypi/pyversions/amqp.svg\n    :alt: Supported Python versions.\n    :target: https://pypi.org/project/amqp/\n\n.. |pyimp| image:: https://img.shields.io/pypi/implementation/amqp.svg\n    :alt: Support Python implementations.\n    :target: https://pypi.org/project/amqp/\n\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://github.com/celery/py-amqp",
+        "keywords": "amqp rabbitmq cloudamqp messaging",
+        "license": "BSD",
+        "maintainer": "Ask Solem",
+        "maintainer_email": "",
+        "name": "amqp",
+        "package_url": "https://pypi.org/project/amqp/",
+        "platform": "any",
+        "project_url": "https://pypi.org/project/amqp/",
+        "release_url": "https://pypi.org/project/amqp/2.3.2/",
+        "requires_dist": [
+            "vine (>=1.1.3)"
+        ],
+        "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+        "summary": "Low-level AMQP client for Python (fork of amqplib).",
+        "version": "2.3.2"
+    },
+    "last_serial": 3912687,
+    "releases": {
+        "0.0.1": [],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd0681f0f2de8aa3dfbe29f8fe405cda",
+                    "sha256": "7021189f2a164cc4b54f3f8d54fc632c34dc5a0eaba2d3fe3643eee4da52a73f"
+                },
+                "downloads": -1,
+                "filename": "amqp-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd0681f0f2de8aa3dfbe29f8fe405cda",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57472,
+                "upload_time": "2012-07-24T16:34:31",
+                "url": "https://files.pythonhosted.org/packages/e6/16/66ff35b0c71334bc16e4e03259e74f34f10d0b1c5f8d9470e53a5a5b36e6/amqp-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "34f3f0c095ad09f8748c7e6d4be271f1",
+                    "sha256": "5dcb399e90958abe7daf6839db49461f3d785bcd16ab5dedc81aa92bdef5a777"
+                },
+                "downloads": -1,
+                "filename": "amqp-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "34f3f0c095ad09f8748c7e6d4be271f1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57563,
+                "upload_time": "2012-08-02T18:46:13",
+                "url": "https://files.pythonhosted.org/packages/19/d1/81373665ad6cfe2a67bcce408f4931dfb09ca585ffa1b1e6e0dd22cbf54d/amqp-0.9.2.tar.gz"
+            }
+        ],
+        "0.9.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "945f6933c32b2885e91b52e991b3a4fd",
+                    "sha256": "ff7080df6c634c3f1eaaf4443efb9d012d2e1c5821773b108cf9915d6aa724be"
+                },
+                "downloads": -1,
+                "filename": "amqp-0.9.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "945f6933c32b2885e91b52e991b3a4fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57761,
+                "upload_time": "2012-08-29T14:58:37",
+                "url": "https://files.pythonhosted.org/packages/63/d0/43598e7ca4784042309203d64566763f3210108385642b34cb6c4cb4a710/amqp-0.9.3.tar.gz"
+            }
+        ],
+        "0.9.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "93ed4b3779c57a9c309d1cf65fdcfb59",
+                    "sha256": "b5b48ac6aa906134ed7494243d70ba7ab684d64090830182bc553ee85e886b51"
+                },
+                "downloads": -1,
+                "filename": "amqp-0.9.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "93ed4b3779c57a9c309d1cf65fdcfb59",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 59351,
+                "upload_time": "2012-09-21T12:05:17",
+                "url": "https://files.pythonhosted.org/packages/aa/d7/879069a49d8b2ad27b916ca05ebecc9aef41307b45912cb3ba8afbe5a446/amqp-0.9.4.tar.gz"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d520a7ba496e449f5b5415fcd9f090ac",
+                    "sha256": "43ae5c588b41e75fe53fb818e626ab166a6df975e3f62061defc0fb9dbd45921"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d520a7ba496e449f5b5415fcd9f090ac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 59580,
+                "upload_time": "2012-11-05T12:57:42",
+                "url": "https://files.pythonhosted.org/packages/76/e7/3995c5aae3cb8ed3c9654453482c9071cbca76b6776bcfef3ff7dd6dd0b8/amqp-1.0.0.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9c9ed83180950e8c991caa332d667f28",
+                    "sha256": "cfd932ba9b0883eb326608ceb1e73fe1e823829f1765c9ec75482313e3ed5d36"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9c9ed83180950e8c991caa332d667f28",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 59704,
+                "upload_time": "2012-11-05T13:06:29",
+                "url": "https://files.pythonhosted.org/packages/92/8f/98365bf37e873d7af977059bb30b00f8b160e7082f0db59a38bc53fab31d/amqp-1.0.1.tar.gz"
+            }
+        ],
+        "1.0.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "29e02dbdbadeec52273dfbead6276ef1",
+                    "sha256": "d9412001ec1ae4d5c1c4e3ae1a01f06cb0f4050ef7eff61f0fbc15dc8f07a763"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "29e02dbdbadeec52273dfbead6276ef1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70148,
+                "upload_time": "2013-03-21T15:30:43",
+                "url": "https://files.pythonhosted.org/packages/57/2e/fcb9444137cd7980c9837e01b381f01c18247e00bf85d3c317b01b1b60d0/amqp-1.0.10.tar.gz"
+            }
+        ],
+        "1.0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c09b0ec8a042e8b29f4b7044d91af40",
+                    "sha256": "e26d184024262ac93ba1177217b9a48edba55c5a0a46f3cba35d35d498ebe784"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0c09b0ec8a042e8b29f4b7044d91af40",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70207,
+                "upload_time": "2013-04-11T16:49:08",
+                "url": "https://files.pythonhosted.org/packages/6c/8a/434359ed6d80a15bfd5022346e3e8685b4da54ef56cc029ba1cf72fd9479/amqp-1.0.11.tar.gz"
+            }
+        ],
+        "1.0.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1017ab105af25a6b5b2253adcb7cc5a6",
+                    "sha256": "c2c09d0310009efd9b19fc12efff7a085b789b841341a533451b85750be6518d"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1017ab105af25a6b5b2253adcb7cc5a6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70242,
+                "upload_time": "2013-06-25T13:01:10",
+                "url": "https://files.pythonhosted.org/packages/b9/af/7bec9e63267c62fc97260a266d54a484580c4a907ac60e4d59c03d1dd856/amqp-1.0.12.tar.gz"
+            }
+        ],
+        "1.0.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "33e9e59f71a396f9cdd5d5d6a3d2e5d5",
+                    "sha256": "15fed1a2f0326f198a9d3d16ce1dc4296385d33859bd9f7c59705093fab8f53c"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "33e9e59f71a396f9cdd5d5d6a3d2e5d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70458,
+                "upload_time": "2013-07-31T15:11:01",
+                "url": "https://files.pythonhosted.org/packages/61/7d/2b4103ab8da32892bfb73614bc015e84f5fffefc82c34bd9f5eb917a767e/amqp-1.0.13.tar.gz"
+            }
+        ],
+        "1.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b3e00f8a6cfe5bb06fb310f299f76ab",
+                    "sha256": "e17d34a22371491a45defe3e4c23017cfd41ed4e5e40f1fe93593e52d695233a"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0b3e00f8a6cfe5bb06fb310f299f76ab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 464611,
+                "upload_time": "2012-11-06T17:05:46",
+                "url": "https://files.pythonhosted.org/packages/ae/aa/0e0bf3a8208b7b05c500c51d456e54e64a2a5d4b70e12081fdf44eec7d37/amqp-1.0.2.tar.gz"
+            }
+        ],
+        "1.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "79d7121f9ffa1aee7f318f1fc1fc0f9d",
+                    "sha256": "42e5f4b8e3cbeb86b169bc016479c534bd1daa5948d91bd1d2d06ae4bd676042"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "79d7121f9ffa1aee7f318f1fc1fc0f9d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70741,
+                "upload_time": "2012-11-12T15:40:41",
+                "url": "https://files.pythonhosted.org/packages/7c/4c/5577c673d040c0a4f5c6e659fd2683c1d1df02e9b50c830c4faf1bf94fa1/amqp-1.0.3.tar.gz"
+            }
+        ],
+        "1.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e60792ee275f37f30506251cd97d7cf8",
+                    "sha256": "5013c06a6b88e97d420ec7ef11b97d1e2e614dee709ae56a6c67d15544dbedea"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e60792ee275f37f30506251cd97d7cf8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69335,
+                "upload_time": "2012-11-13T16:31:30",
+                "url": "https://files.pythonhosted.org/packages/53/89/a34490bcdf787c7e5191797048cf9a2bc1ecc2c17c4ea348e12fabfce548/amqp-1.0.4.tar.gz"
+            }
+        ],
+        "1.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "58029d65736bcda75f296739a490b8d9",
+                    "sha256": "66f17d06b98625e31275345effbfac857424b162077274f91a0887dedc0a115d"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "58029d65736bcda75f296739a490b8d9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69472,
+                "upload_time": "2012-11-21T16:13:58",
+                "url": "https://files.pythonhosted.org/packages/23/70/7163032c2cd874059e37cdbed0e014b444e8cd797dc0edb068a51748a831/amqp-1.0.5.tar.gz"
+            }
+        ],
+        "1.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b7b1ada6f8401b0a75db91440f75a62e",
+                    "sha256": "fcc667a4e160c770fc41bd2b9b635ba0963db3dfd277491a8a10f8ccfba13e4f"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b7b1ada6f8401b0a75db91440f75a62e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69511,
+                "upload_time": "2012-11-29T13:16:04",
+                "url": "https://files.pythonhosted.org/packages/6e/04/1a72e020eac4220b8923917a2be2bf20492e0a0abb291833890d07dbacba/amqp-1.0.6.tar.gz"
+            }
+        ],
+        "1.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "41733c7f75cc43aa1a6bd5b615fa57c8",
+                    "sha256": "3e4db5bdd8546bfc7e590b4eaf572e0cd72d36ebc4f72d7f18ee94ae27307ad5"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "41733c7f75cc43aa1a6bd5b615fa57c8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69891,
+                "upload_time": "2013-02-08T12:24:17",
+                "url": "https://files.pythonhosted.org/packages/9e/30/f47f219e8be17d93fa37609f67c9662756c5a9df9f5d4fd06879ed23f888/amqp-1.0.7.tar.gz"
+            }
+        ],
+        "1.0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6d743979d2bb564c8319b17a5df3c3b8",
+                    "sha256": "cc91d7aa03c6777454fda5e1631426952103b072c68a02c5bb7b17945e28f94b"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6d743979d2bb564c8319b17a5df3c3b8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69976,
+                "upload_time": "2013-02-08T12:59:33",
+                "url": "https://files.pythonhosted.org/packages/b7/29/194be99c6c2616f2049384025ff1c4f3d327cd81790335871fabf27a968b/amqp-1.0.8.tar.gz"
+            }
+        ],
+        "1.0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "19a1c9ecedab9c5258725a9fca75321b",
+                    "sha256": "c31217630cbe2057b9f9c689820f950104ad1aea9cbb05df319d2bb7c916857b"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "19a1c9ecedab9c5258725a9fca75321b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70180,
+                "upload_time": "2013-03-08T10:55:48",
+                "url": "https://files.pythonhosted.org/packages/0e/c0/1b7f731cff2be9e489255726a797c25ab010a6d7326e8d0339f707cc467d/amqp-1.0.9.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5669c22fc42d9d07fa040dc2775b1225",
+                    "sha256": "aadadfac49adbab85c92ab343fb529209e91b86ba9a2d82bd33257162a5d9014"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5669c22fc42d9d07fa040dc2775b1225",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 181629,
+                "upload_time": "2012-11-12T15:41:21",
+                "url": "https://files.pythonhosted.org/packages/d9/a6/6271be6e6a00dbbea846529ec36eec60ee84d38a0613a0b4da3579955059/amqp-1.2.0.tar.gz"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4e0fc57c3592f2628454890112d22bc7",
+                    "sha256": "9d688b8da8051b0cbb97131c42a27923e3afd943c557cd30718b3d8f346dbeac"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4e0fc57c3592f2628454890112d22bc7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 74050,
+                "upload_time": "2013-08-16T16:30:39",
+                "url": "https://files.pythonhosted.org/packages/d0/88/e3e1b5479c19e19b9bf785c1519111ecd086a7799e107d5ade68509cce3b/amqp-1.2.1.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e16415611127080a486bfd5a49e7ec9",
+                    "sha256": "59912d9ea5dd41d5927b826b07aca5e447828db267783b91e5b4939077145d86"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e16415611127080a486bfd5a49e7ec9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 75201,
+                "upload_time": "2013-10-04T14:16:09",
+                "url": "https://files.pythonhosted.org/packages/63/c8/c41bd9d479c48265da194210e23802c856bc1b0a7a448e891d5b7cf749db/amqp-1.3.0.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4129e5326d8c311c3a9d2182bb2d08f3",
+                    "sha256": "b5987827da8c5fad56a03840ad559ca1c3465715245869eb11522bbb8b2742fc"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4129e5326d8c311c3a9d2182bb2d08f3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 75316,
+                "upload_time": "2013-10-24T15:50:46",
+                "url": "https://files.pythonhosted.org/packages/b9/b6/b64244c6f7c7a91c69e3404a2ac3ed4727b6d9589eccc4d46d17c97e9073/amqp-1.3.1.tar.gz"
+            }
+        ],
+        "1.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f15c0cd31bae0563107a22f17cfdf63",
+                    "sha256": "9d321609f98f6742eeb2f7d22334749936a26047af5563818e175444ad1e2ba4"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0f15c0cd31bae0563107a22f17cfdf63",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 75555,
+                "upload_time": "2013-10-29T14:07:55",
+                "url": "https://files.pythonhosted.org/packages/72/89/147addcb8bd5545eda936fb75bdf0f2bc6040ce803d351a97a47b4a95c81/amqp-1.3.2.tar.gz"
+            }
+        ],
+        "1.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01156b3d37815171996972148d4342e1",
+                    "sha256": "e65da719efcd1d0a9cff44431e2476f88de8ffeeb7abc0c77e82361c9281170f"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.3.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "01156b3d37815171996972148d4342e1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 75574,
+                "upload_time": "2013-11-11T15:25:57",
+                "url": "https://files.pythonhosted.org/packages/0d/8b/d78cd588b3cbfcc7ac6fa985dffd0d3d5fb40143b1053057feade49f5782/amqp-1.3.3.tar.gz"
+            }
+        ],
+        "1.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "894c93d5be8dacee38f1cce439fad865",
+                    "sha256": "ab4b61d82da00a386578de4882c75c183bf387cfa364f021db3d8db2916662a3"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "894c93d5be8dacee38f1cce439fad865",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76799,
+                "upload_time": "2014-01-13T15:01:15",
+                "url": "https://files.pythonhosted.org/packages/cf/eb/1ec914dcf89c58dc0136f61fe77b52daaa4cb3581b6b66f6126ff9917395/amqp-1.4.0.tar.gz"
+            }
+        ],
+        "1.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc7b9b2a545062087830ca550754d1eb",
+                    "sha256": "0d3c3878ba143d33a74265c8689eefb34462628df9fd8a238efea696b14ea5ff"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cc7b9b2a545062087830ca550754d1eb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76927,
+                "upload_time": "2014-01-14T21:35:02",
+                "url": "https://files.pythonhosted.org/packages/40/a0/1a8b59fbe2e897e419d47bc3f590503ede50d5d50cff0a46864de3a8f14c/amqp-1.4.1.tar.gz"
+            }
+        ],
+        "1.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "88b9a995cc6676ad8d406ca6be50516a",
+                    "sha256": "1de818a1472bf625712c5d3a430130d37749cf8a9413cb61e9411e2ebe17da89"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "88b9a995cc6676ad8d406ca6be50516a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 77984,
+                "upload_time": "2014-01-23T17:01:15",
+                "url": "https://files.pythonhosted.org/packages/3d/8d/1272979a58b2ad59d8b6bc1920f776cfd146cb89974e504d237612fd3f14/amqp-1.4.2.tar.gz"
+            }
+        ],
+        "1.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8a27196f2995a83ce64737c53d5f3bf5",
+                    "sha256": "b0c6c40450bba07d7aa361e91f4cbeaf9e134cb381058136c11330a75d2ca86c"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.3-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "8a27196f2995a83ce64737c53d5f3bf5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 49313,
+                "upload_time": "2014-02-09T15:51:56",
+                "url": "https://files.pythonhosted.org/packages/8d/19/8ac02d6ed6cb8c681008159024b5f07d213599c2f85ce76103ea3be70554/amqp-1.4.3-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75e1cb89f336abc5102e1aa14823bcc2",
+                    "sha256": "07e9147824a36a2614354d7c38aeeebbee00cbbed1206c4acd1e8bbbe24de4cb"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "75e1cb89f336abc5102e1aa14823bcc2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76940,
+                "upload_time": "2014-02-09T14:59:38",
+                "url": "https://files.pythonhosted.org/packages/d3/69/e35a8cf33587287ddb93a75d8ac3080822344d52e06d8e271095bed1a626/amqp-1.4.3.tar.gz"
+            }
+        ],
+        "1.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d10a2124b56fecd13ea09d552f77f897",
+                    "sha256": "d6121fc08d779c8ed977340fb13b35c1a75972748c93493ccf192e6f4f6e989d"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.4-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d10a2124b56fecd13ea09d552f77f897",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 49435,
+                "upload_time": "2014-03-03T16:12:20",
+                "url": "https://files.pythonhosted.org/packages/18/f2/1cee31f050f670224c4d6e86fe03e094f339954aa3db97adfce2d0189ac5/amqp-1.4.4-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5561cbb3bf9008cb0be5bd86ea60b2dc",
+                    "sha256": "86ffc9563311e4e2b343366c51880d973b1388f8e10e8d620689b381201ffe95"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5561cbb3bf9008cb0be5bd86ea60b2dc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 77196,
+                "upload_time": "2014-03-03T16:12:13",
+                "url": "https://files.pythonhosted.org/packages/86/1c/548e7902e80205d27647e0228e062268d0969feb84c571a436cb347b55a1/amqp-1.4.4.tar.gz"
+            }
+        ],
+        "1.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "85deccb5d37cc6cf843a7e4fd1b7ddc5",
+                    "sha256": "a612ed03160c1d8fe86537c28ed27953b8ade60dd0e651133747600448d4b273"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.5-py2.7.egg",
+                "has_sig": true,
+                "md5_digest": "85deccb5d37cc6cf843a7e4fd1b7ddc5",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 100221,
+                "upload_time": "2014-04-15T21:08:13",
+                "url": "https://files.pythonhosted.org/packages/e8/c6/443951cfb51cef34ee3d3c9ae4b7b68a663addfb65f05ea142af759aee23/amqp-1.4.5-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "23765c775edb2d66c44390f0fb485837",
+                    "sha256": "5be3b1586d4aa2f7ef9a99dc6da0dad7bf0b19c70a404ca789523a811c5260c9"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.5-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "23765c775edb2d66c44390f0fb485837",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 49728,
+                "upload_time": "2014-04-15T21:33:33",
+                "url": "https://files.pythonhosted.org/packages/4f/d2/bcfe538ff8864207a853c4e231e683251179cff2539e8eb9d6e039395da1/amqp-1.4.5-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "72ca5f766d84aa46a8ed99c270d1c3ea",
+                    "sha256": "534c807c0081ce9c2d517615e724cb6e9df17f79cd6cd4929653ea1ea60edb60"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "72ca5f766d84aa46a8ed99c270d1c3ea",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 77748,
+                "upload_time": "2014-04-15T21:08:08",
+                "url": "https://files.pythonhosted.org/packages/9c/6d/71a30f22df136023159368050950493e73b85d8b1364417dae5eb94a1adb/amqp-1.4.5.tar.gz"
+            }
+        ],
+        "1.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3317af14e8e20dd45e441730fbdfa7e8",
+                    "sha256": "e34e9765a6120f4664c120f4198a786c39a0fb7e4a59bd19a2d6e3a884b63889"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.6-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3317af14e8e20dd45e441730fbdfa7e8",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 49801,
+                "upload_time": "2014-08-11T17:02:57",
+                "url": "https://files.pythonhosted.org/packages/30/8d/f44530af256403f45499c4053d65cf197fbfa5d20d6251c90ea114da9d31/amqp-1.4.6-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a061581b6864f838bffd62b6a3d0fb9f",
+                    "sha256": "ebcfc867de5a68f9f5ba14d11dbad88e6aff8435a8d39339d5ceb0e5b06de640"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a061581b6864f838bffd62b6a3d0fb9f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 77902,
+                "upload_time": "2014-08-11T17:02:55",
+                "url": "https://files.pythonhosted.org/packages/13/43/048216325cf90a06ed2d47e94a5c7d953ce43ba5b06e4c605e1a408cf4dc/amqp-1.4.6.tar.gz"
+            }
+        ],
+        "1.4.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5aa44107d142f56385d2375f302cf7b0",
+                    "sha256": "1781884b53e01209eeced13ca1d941f1a7026088974edb6fb62728638bd02dda"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5aa44107d142f56385d2375f302cf7b0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 79189,
+                "upload_time": "2015-10-03T00:33:49",
+                "url": "https://files.pythonhosted.org/packages/d4/1b/b52af8a311693f2a661907b18a1c74e68a40b5484d4fddbedabb5a1ba402/amqp-1.4.7.tar.gz"
+            }
+        ],
+        "1.4.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0af30dddfee8fe16f6f419722e35af07",
+                    "sha256": "94d2a68227e7984bd40f5f71c6839730622aff8a4633f29ede1ffdd0d240795e"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.8-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "0af30dddfee8fe16f6f419722e35af07",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 51592,
+                "upload_time": "2015-12-07T08:27:12",
+                "url": "https://files.pythonhosted.org/packages/70/3f/4499bf2984c6a7212036ba8a250e2ab5b4d355ea34c60b5febf366ef42ca/amqp-1.4.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "13ca20ef5c1cea8c2841b9d1f91f7163",
+                    "sha256": "3a5b358ef81fa12927d1ec84f5107c59b6fc3be681c325e7cc690cffd5956879"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "13ca20ef5c1cea8c2841b9d1f91f7163",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 79249,
+                "upload_time": "2015-12-07T08:26:57",
+                "url": "https://files.pythonhosted.org/packages/eb/f5/97141e513e3097bfec8797c8d16ccd76b6e8e61b828993cc18cda7f42f72/amqp-1.4.8.tar.gz"
+            }
+        ],
+        "1.4.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "672d0f24218b24b7453ac836b1e68a48",
+                    "sha256": "e0ed0ce6b8ffe5690a2e856c7908dc557e0e605283d6885dd1361d79f2928908"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.9-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "672d0f24218b24b7453ac836b1e68a48",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 51613,
+                "upload_time": "2016-01-09T01:58:29",
+                "url": "https://files.pythonhosted.org/packages/ed/09/314d2788aba0aa91f2578071a6484f87a615172a98c309c2aad3433da90b/amqp-1.4.9-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df57dde763ba2dea25b3fa92dfe43c19",
+                    "sha256": "2dea4d16d073c902c3b89d9b96620fb6729ac0f7a923bbc777cb4ad827c0c61a"
+                },
+                "downloads": -1,
+                "filename": "amqp-1.4.9.tar.gz",
+                "has_sig": true,
+                "md5_digest": "df57dde763ba2dea25b3fa92dfe43c19",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 79392,
+                "upload_time": "2016-01-09T01:58:22",
+                "url": "https://files.pythonhosted.org/packages/cc/a4/f265c6f9a7eb1dd45d36d9ab775520e07ff575b11ad21156f9866da047b2/amqp-1.4.9.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0af7b96ab0271a45576c21a60fac98b5",
+                    "sha256": "dc19a8c17d58dd6a79d4890e7c75f195111b39cce46819690c67e2267d7f1508"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "0af7b96ab0271a45576c21a60fac98b5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 59072,
+                "upload_time": "2016-05-26T20:55:06",
+                "url": "https://files.pythonhosted.org/packages/2a/19/acc66c77a282b570499f47d48f652ac0f88d8d6b427db67263772dd92536/amqp-2.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4501f0d5dd37d17aa5f5a93244d6269e",
+                    "sha256": "bb6439b2a3f7d5166aac49529e3f8ea95f6aa80483eed167a16dba4b7bb04e19"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4501f0d5dd37d17aa5f5a93244d6269e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 102322,
+                "upload_time": "2016-05-26T20:55:01",
+                "url": "https://files.pythonhosted.org/packages/17/62/d1e46bfb7c6c8685277bfe2a974b72898ec6a926097ee421971843513a06/amqp-2.0.0.tar.gz"
+            }
+        ],
+        "2.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aeaa00540c229d51780f657f6e5c96f8",
+                    "sha256": "4b8b6d328161fd9ad10deff3804bfe78b808fa1ed489001a9cca735cfebe2434"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "aeaa00540c229d51780f657f6e5c96f8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103235,
+                "upload_time": "2016-06-01T01:33:55",
+                "url": "https://files.pythonhosted.org/packages/71/0d/96907721929ad391ed456c11eb7d8e50192ecdf186e60f8d9bd60dfd172a/amqp-2.0.1.tar.gz"
+            }
+        ],
+        "2.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c482e9cf3f85ab1436a5352ca8e345bc",
+                    "sha256": "d03e1506c1e08c6cda8291d4e4fe8072269c5c9e50fc99aac7c4cc53961e4bf5"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c482e9cf3f85ab1436a5352ca8e345bc",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 59867,
+                "upload_time": "2016-06-11T00:42:42",
+                "url": "https://files.pythonhosted.org/packages/9f/d4/5260fe4e20269944c2bf1ae37a4f97ff8f3dd4f67b472cd827b60d3ae236/amqp-2.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a49c0e15448a5070e6efcc1682fe998",
+                    "sha256": "dd999e38a14e00330778863b9d7860efa01e9fb882d46432ac02e271f205b048"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5a49c0e15448a5070e6efcc1682fe998",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103477,
+                "upload_time": "2016-06-11T00:42:37",
+                "url": "https://files.pythonhosted.org/packages/05/2d/774585deb3329df51c750ab7da248f874dfbbe7a794941fc7ba2ec263dc1/amqp-2.0.2.tar.gz"
+            }
+        ],
+        "2.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ca15d7b4e2d19d8bda9e6fab682409f1",
+                    "sha256": "22390e87b4b0f3210a0e027334de774f3ec55614d8f6332af23e985dc76e26b7"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.0.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "ca15d7b4e2d19d8bda9e6fab682409f1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 59865,
+                "upload_time": "2016-07-12T03:16:47",
+                "url": "https://files.pythonhosted.org/packages/f2/0c/e934de7c54596533f06bd662e9f8703bbda568727ec5bd8bf364e741958f/amqp-2.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b6892b267f659c30fcb8eb27345d6df",
+                    "sha256": "70d2bef354dd94a13d24aabe209e8e05fabe1a456a66b6d73323cedab53b9a1b"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5b6892b267f659c30fcb8eb27345d6df",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103398,
+                "upload_time": "2016-07-12T03:13:20",
+                "url": "https://files.pythonhosted.org/packages/3d/5c/c426089f60a36b310a1afbca0cfec9b9d690572b3f7c607e66f05834701e/amqp-2.0.3.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25156e96180878d714856e33df80d719",
+                    "sha256": "7e7b92ae26242daab9b8f24a25df67af4e1a3cb42bfadfd4a085feb9faad965d"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "25156e96180878d714856e33df80d719",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 46915,
+                "upload_time": "2016-09-07T23:49:31",
+                "url": "https://files.pythonhosted.org/packages/ac/75/4423fa4a82fed203138012691892e1e03927488ce50b6f7859e8d7ddec46/amqp-2.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "46fbd8102a4e16366a7c752498aecefe",
+                    "sha256": "0f51aeb45641c974250ce169f89d99d116d937ff83de5435d0d5978d8de4c2cd"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "46fbd8102a4e16366a7c752498aecefe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 96776,
+                "upload_time": "2016-09-07T23:49:27",
+                "url": "https://files.pythonhosted.org/packages/1e/e7/1943c4bbd5018be52bdaef1fcc50e6a75e9bc9675c541e25ebbf84ce3c37/amqp-2.1.0.tar.gz"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b30b6d3e806ce9efb0d784c89689663a",
+                    "sha256": "3c528db2e2bf0131311e27ddc231226919b073964c032f24b16cba3cfa149c23"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b30b6d3e806ce9efb0d784c89689663a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 48244,
+                "upload_time": "2016-10-14T04:57:02",
+                "url": "https://files.pythonhosted.org/packages/1c/45/f31c6bf7b3162548681fb6e1cdc7c0329dd9b29737d07eed4c5de65e12b3/amqp-2.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f634724b09d000b6add537368e2a8e18",
+                    "sha256": "6d16feb4118cc9f5da9e98a10908d128252691bba2d4d31399ddc3092fb5226f"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "f634724b09d000b6add537368e2a8e18",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 98117,
+                "upload_time": "2016-10-14T04:56:59",
+                "url": "https://files.pythonhosted.org/packages/26/31/5ef415192dc8c150f23d47c926282dbd69dcd1a9c1158c18586036aeca4c/amqp-2.1.1.tar.gz"
+            }
+        ],
+        "2.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "04d641706247248504d0bc9924bcfe4d",
+                    "sha256": "73e7b13cce0f79f6b83e4371747b5ba10b8d1eb6465687c0d98f878455a435e5"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "04d641706247248504d0bc9924bcfe4d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 48867,
+                "upload_time": "2016-12-07T22:14:43",
+                "url": "https://files.pythonhosted.org/packages/71/6f/4e91238170ac7fbf7847a88ae315c05b09859f6bdc03bbae3775ae0cd23a/amqp-2.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b0afad6d2d2dde3c7c0f4cfa44259348",
+                    "sha256": "974535a0a9125a92023b3aa9c952c297f2efdd7eed4301e2730a7ba849607eff"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b0afad6d2d2dde3c7c0f4cfa44259348",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 98851,
+                "upload_time": "2016-12-07T22:14:40",
+                "url": "https://files.pythonhosted.org/packages/b2/42/e638d30988de96d4c0d9556c759e00aa63ff3dda6e6ab3a855f99afc2915/amqp-2.1.2.tar.gz"
+            }
+        ],
+        "2.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c851cb2357f66deca683537584e16c2a",
+                    "sha256": "5efef32710cf9980b9f35308e6751d68d58aa6a25e9bc4f9c7677d91a91191e4"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c851cb2357f66deca683537584e16c2a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 48883,
+                "upload_time": "2016-12-08T01:51:19",
+                "url": "https://files.pythonhosted.org/packages/04/4d/f8eed6b9fda11ad143c2cc5062ef7045d611beaa9bd86f22534599f94ab6/amqp-2.1.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74f76bbbc54c3586a6c647d71edd226f",
+                    "sha256": "e8e5c45d6858bbd2814123a61487537804b1101e9be114d1b7c935c04bdd4ee8"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "74f76bbbc54c3586a6c647d71edd226f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 98944,
+                "upload_time": "2016-12-08T01:51:16",
+                "url": "https://files.pythonhosted.org/packages/4d/95/565c868032280757210295262fd593d74eb2cd6d359e5b85031a7628627d/amqp-2.1.3.tar.gz"
+            }
+        ],
+        "2.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c7a54420e97fb9c3524ce6f058f4d05a",
+                    "sha256": "5e0871a93433f941e444c2b859da095f05034d2ac1b7c084529cfd0b6f8eef18"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c7a54420e97fb9c3524ce6f058f4d05a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 49203,
+                "upload_time": "2016-12-14T23:52:16",
+                "url": "https://files.pythonhosted.org/packages/7e/4b/ac7afb11b57f237e3c1c64b5408c5d229bf5d4b42af6cb6e683c7690ca4f/amqp-2.1.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "035a475e42ef4f431b4e0dca113434bd",
+                    "sha256": "1378cc14afeb6c2850404f322d03dec0082d11d04bdcb0360e1b10d4e6e77ef9"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.1.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "035a475e42ef4f431b4e0dca113434bd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99677,
+                "upload_time": "2016-12-14T23:52:14",
+                "url": "https://files.pythonhosted.org/packages/23/39/06bb8bd31e78962675f696498f7821f5dbd11aa0919c5a811d83a0e02609/amqp-2.1.4.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "290f8e256e1c075339b983559c7c9a2a",
+                    "sha256": "860a36d7f427905345dfeb8459617fa42b5f9c428b0dec2b7f6fa5256cf310ff"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.2.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "290f8e256e1c075339b983559c7c9a2a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 51659,
+                "upload_time": "2017-07-12T16:48:54",
+                "url": "https://files.pythonhosted.org/packages/c0/c1/eb48fd11d16398fdb7dba975cd794ed28697847a196fe3f4a863608cb642/amqp-2.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1c5b20abec6665a5f095220fa74e41ed",
+                    "sha256": "76e71d348f2348f2a9b2ab6950b7cd12d20026ad41d3880d673081d97466482c"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.2.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1c5b20abec6665a5f095220fa74e41ed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103411,
+                "upload_time": "2017-07-12T16:48:57",
+                "url": "https://files.pythonhosted.org/packages/e1/fc/72ab37edab3d65cad483ac17756b90018622a98b83741858c4f295619669/amqp-2.2.0.tar.gz"
+            }
+        ],
+        "2.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f8df13f5fbe94e7cd74b537d2fb60fc",
+                    "sha256": "880fced46b2225af6160950c209ddcbdef849a954935c83d61de89ed75f3d3b7"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.2.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "2f8df13f5fbe94e7cd74b537d2fb60fc",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 51700,
+                "upload_time": "2017-07-14T05:59:29",
+                "url": "https://files.pythonhosted.org/packages/e4/f6/4cad14075c0c690b2a09f31cbf902c7a014ac4ce549264e99fc3c4df5def/amqp-2.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dad174746360a186b7ecfb9bdeb162e1",
+                    "sha256": "7ababb2c28672c2a48b907095bc79104531217a98807751b51e0d8c0fa831aff"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.2.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "dad174746360a186b7ecfb9bdeb162e1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103599,
+                "upload_time": "2017-07-14T05:59:32",
+                "url": "https://files.pythonhosted.org/packages/cc/6b/7573935fe6021a89e8b1a74fabae1a9050701b8cf7075ca217b8d3e361a6/amqp-2.2.1.tar.gz"
+            }
+        ],
+        "2.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5cc05af91f560e77efa78d2e1fee79ea",
+                    "sha256": "4e28d3ea61a64ae61830000c909662cb053642efddbe96503db0e7783a6ee85b"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.2.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "5cc05af91f560e77efa78d2e1fee79ea",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 48378,
+                "upload_time": "2017-09-14T11:49:09",
+                "url": "https://files.pythonhosted.org/packages/88/4a/8c45a882d842678963516ebd9cf584a4ded51af719234c3b696c2e884c60/amqp-2.2.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0971a3fd2d635ded45c349cfc17106bd",
+                    "sha256": "cba1ace9d4ff6049b190d8b7991f9c1006b443a5238021aca96dd6ad2ac9da22"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.2.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0971a3fd2d635ded45c349cfc17106bd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103128,
+                "upload_time": "2017-09-14T11:49:11",
+                "url": "https://files.pythonhosted.org/packages/e0/70/9ab9ccd8247fb7d2adb717e9f6a0ed358c9e1ab2c349048b0352f9e80ee2/amqp-2.2.2.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2dc9d9a47f2709e51fdfe8e453e52ada",
+                    "sha256": "e28da24204bb1cdae9446a66eecbaac69659fea6a44ce58a10a7a7dae5ecd679"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.3.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "2dc9d9a47f2709e51fdfe8e453e52ada",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 48051,
+                "upload_time": "2018-05-27T13:26:53",
+                "url": "https://files.pythonhosted.org/packages/9e/11/3cdf27c01cca6e9faf224ef5236b725be8028b97f59bb7427552a2620195/amqp-2.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8c5af471ee56f279fb82c40e1f8b9c2e",
+                    "sha256": "b17591ceb27192195f00c04e848dd4fcda2dc72a8eb27ea3ffa899299679c185"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.3.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "8c5af471ee56f279fb82c40e1f8b9c2e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 105739,
+                "upload_time": "2018-05-27T13:26:55",
+                "url": "https://files.pythonhosted.org/packages/2e/88/a97a736f09cf555ef8769fa3631a2872de5270ef6a8102429535339e33f6/amqp-2.3.0.tar.gz"
+            }
+        ],
+        "2.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bad226dd63175a42ff16ec92045dfee1",
+                    "sha256": "790e5366272a5b301fb969bd0d22b0adfee19f80cebf6e2dcef39c3b2236dedc"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.3.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "bad226dd63175a42ff16ec92045dfee1",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 48036,
+                "upload_time": "2018-05-28T13:33:51",
+                "url": "https://files.pythonhosted.org/packages/71/ba/67a77d1afb073dba82dfa95f86b0394b147266065b3e96b48dace4b12820/amqp-2.3.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f71f8dbe05e5032b88cd719699a837a0",
+                    "sha256": "408b131bf8d0e19d3926a6682dc0ed6dc561aade5e0a173162c76657e1b68e72"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.3.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "f71f8dbe05e5032b88cd719699a837a0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 105867,
+                "upload_time": "2018-05-28T13:33:54",
+                "url": "https://files.pythonhosted.org/packages/1b/32/242ff76cd802766f11c89c72f3389b5c8de4bdfbab406137b90c5fae8b05/amqp-2.3.1.tar.gz"
+            }
+        ],
+        "2.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17630b7b759025e27725eba53ca62c74",
+                    "sha256": "eed41946890cd43e8dee44a316b85cf6fee5a1a34bb4a562b660a358eb529e1b"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.3.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "17630b7b759025e27725eba53ca62c74",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 48045,
+                "upload_time": "2018-05-30T12:37:00",
+                "url": "https://files.pythonhosted.org/packages/7f/cf/12d4611fc67babd4ae250c9e8249c5650ae1933395488e9e7e3562b4ff24/amqp-2.3.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "11fce0d01f4ee6886a02415c20cece80",
+                    "sha256": "073dd02fdd73041bffc913b767866015147b61f2a9bc104daef172fc1a0066eb"
+                },
+                "downloads": -1,
+                "filename": "amqp-2.3.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "11fce0d01f4ee6886a02415c20cece80",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 105854,
+                "upload_time": "2018-05-30T12:37:03",
+                "url": "https://files.pythonhosted.org/packages/ca/0a/95f9fb2dd71578cb5629261230cb5b8b278c7cce908bca55af8030faceba/amqp-2.3.2.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "17630b7b759025e27725eba53ca62c74",
+                "sha256": "eed41946890cd43e8dee44a316b85cf6fee5a1a34bb4a562b660a358eb529e1b"
+            },
+            "downloads": -1,
+            "filename": "amqp-2.3.2-py2.py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "17630b7b759025e27725eba53ca62c74",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 48045,
+            "upload_time": "2018-05-30T12:37:00",
+            "url": "https://files.pythonhosted.org/packages/7f/cf/12d4611fc67babd4ae250c9e8249c5650ae1933395488e9e7e3562b4ff24/amqp-2.3.2-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "11fce0d01f4ee6886a02415c20cece80",
+                "sha256": "073dd02fdd73041bffc913b767866015147b61f2a9bc104daef172fc1a0066eb"
+            },
+            "downloads": -1,
+            "filename": "amqp-2.3.2.tar.gz",
+            "has_sig": true,
+            "md5_digest": "11fce0d01f4ee6886a02415c20cece80",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 105854,
+            "upload_time": "2018-05-30T12:37:03",
+            "url": "https://files.pythonhosted.org/packages/ca/0a/95f9fb2dd71578cb5629261230cb5b8b278c7cce908bca55af8030faceba/amqp-2.3.2.tar.gz"
+        }
+    ],
+    "package_name": "amqp"
+}

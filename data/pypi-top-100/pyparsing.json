@@ -1,0 +1,3589 @@
+{
+    "info": {
+        "author": "Paul McGuire",
+        "author_email": "ptmcg@users.sourceforge.net",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Intended Audience :: Information Technology",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5"
+        ],
+        "description": "====================================\nPyParsing -- A Python Parsing Module\n====================================\n\nIntroduction\n============\n\r\nThe pyparsing module is an alternative approach to creating and executing \r\nsimple grammars, vs. the traditional lex/yacc approach, or the use of \r\nregular expressions.  The pyparsing module provides a library of classes \r\nthat client code uses to construct the grammar directly in Python code.\r\n\r\nHere is a program to parse \"Hello, World!\" (or any greeting of the form \r\n\"<salutation>, <addressee>!\"):\r\n\r\n    from pyparsing import Word, alphas\r\n    greet = Word( alphas ) + \",\" + Word( alphas ) + \"!\"\r\n    hello = \"Hello, World!\"\r\n    print hello, \"->\", greet.parseString( hello )\r\n\r\nThe program outputs the following:\r\n\r\n    Hello, World! -> ['Hello', ',', 'World', '!']\r\n\r\nThe Python representation of the grammar is quite readable, owing to the \r\nself-explanatory class names, and the use of '+', '|' and '^' operator \r\ndefinitions.\r\n\r\nThe parsed results returned from parseString() can be accessed as a \r\nnested list, a dictionary, or an object with named attributes.\r\n\r\nThe pyparsing module handles some of the problems that are typically \r\nvexing when writing text parsers:\r\n- extra or missing whitespace (the above program will also handle \r\n  \"Hello,World!\", \"Hello  ,  World  !\", etc.)\r\n- quoted strings\r\n- embedded comments\r\n\r\nThe .zip file includes examples of a simple SQL parser, simple CORBA IDL \r\nparser, a config file parser, a chemical formula parser, and a four-\r\nfunction algebraic notation parser.  It also includes a simple how-to \r\ndocument, and a UML class diagram of the library's classes.\n\n\n\nInstallation\n============\n\nDo the usual:\n\n    python setup.py install\r\n    \r\n(pyparsing requires Python 2.6 or later.)\n\r\nOr corresponding commands using pip, easy_install, or wheel:\r\n\r\n    pip install pyparsing\r\n    \r\n    easy_install pyparsing\r\n    \r\n    wheel install pyparsing\r\n\n\nDocumentation\n=============\n\nSee:\n\n    HowToUsePyparsing.html\n\n\nLicense\n=======\n\n    MIT License. See header of pyparsing.py\n\nHistory\n=======\n\n    See CHANGES file.\r\n",
+        "description_content_type": null,
+        "docs_url": "https://pythonhosted.org/pyparsing/",
+        "download_url": "http://sourceforge.net/project/showfiles.php?group_id=97203",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://pyparsing.wikispaces.com/",
+        "keywords": null,
+        "license": "MIT License",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "pyparsing",
+        "package_url": "https://pypi.org/project/pyparsing/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/pyparsing/",
+        "release_url": "https://pypi.org/project/pyparsing/2.2.0/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Python parsing module",
+        "version": "2.2.0"
+    },
+    "last_serial": 2684867,
+    "releases": {
+        "1.1.2": [],
+        "1.2": [],
+        "1.3.3": [],
+        "1.4.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5c26d14fba7bc4e1372e79375b0a77f",
+                    "sha256": "d02a6a9cf386b2579b5309d9a788ff45e7273eee644a3d0f91490313b4e4c471"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.4.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f5c26d14fba7bc4e1372e79375b0a77f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 576483,
+                "upload_time": "2008-02-11T23:38:27",
+                "url": "https://files.pythonhosted.org/packages/2a/0f/0434c606572610c049e8b42900e6ea791166510f41c4ccc7f38a4e7b2553/pyparsing-1.4.11.tar.gz"
+            }
+        ],
+        "1.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ecdf94e1b3e155c6bd4afd41536224d",
+                    "sha256": "fb2372564635e8cdc50c587c7f301cde8faae5c9d1d350b2cc366f8862442c2a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.4.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7ecdf94e1b3e155c6bd4afd41536224d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 725902,
+                "upload_time": "2007-06-30T14:42:51",
+                "url": "https://files.pythonhosted.org/packages/51/35/bf0f20fdbce45b2555c4a3aa5b073df65d4944b4d7f4688e42b916efc74a/pyparsing-1.4.6.tar.gz"
+            }
+        ],
+        "1.4.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5b6bf9916a8ee71f7e105d36bd8b545",
+                    "sha256": "f16caa0521a6ce8d9534679f7f75ecc300a80a2f093769a75cc95609429e88c3"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.4.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f5b6bf9916a8ee71f7e105d36bd8b545",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 725951,
+                "upload_time": "2007-07-25T23:46:36",
+                "url": "https://files.pythonhosted.org/packages/da/ff/c8d08a842d528aff677c1c1fa787ad4e27f7db71d56a6cae1da75296dca0/pyparsing-1.4.7.tar.gz"
+            }
+        ],
+        "1.4.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "697ff101cc4de2362425bc462a521f1d",
+                    "sha256": "51d402b0279b89d4922411a5b6503a0f4a592edf8a5dfd8814d2581528e19436"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.4.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "697ff101cc4de2362425bc462a521f1d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 555781,
+                "upload_time": "2007-10-07T07:15:57",
+                "url": "https://files.pythonhosted.org/packages/f9/94/20dbdad562f8ff4497bce19f10bfdd34bacaf3d0ca8c3ab7c0a8b2934cf0/pyparsing-1.4.8.tar.gz"
+            }
+        ],
+        "1.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee318f600fcf34966daeb1bf9bebda8c",
+                    "sha256": "25a19e805b18802c2b0f493351ea41e9149bc967fd7c5b5917c3c65df773c139"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ee318f600fcf34966daeb1bf9bebda8c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 733364,
+                "upload_time": "2008-06-01T17:07:10",
+                "url": "https://files.pythonhosted.org/packages/6a/5b/37edbf304bdf6539177bae0e904b356cf3e2379a5ba29fc29cdbea88f3a3/pyparsing-1.5.0.tar.gz"
+            }
+        ],
+        "1.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1454702458f7b27cc754a86469e103fd",
+                    "sha256": "1f5718376147d83a53135ab5140ee118d2e80a188e2c1a64f200d6009baa3e0c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1454702458f7b27cc754a86469e103fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 912711,
+                "upload_time": "2008-10-18T03:38:37",
+                "url": "https://files.pythonhosted.org/packages/5c/a8/72bdbe6737ebaae349a06f8377321e3dd1f0086a78f2efc2568901c74d2c/pyparsing-1.5.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e462343f92d5b40cbde67775c624719d",
+                    "sha256": "eaa7ddcc4e076cd211dd45d34ff338c2b485b4d77102c391b77d302bcba9baca"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.1.win32.exe",
+                "has_sig": false,
+                "md5_digest": "e462343f92d5b40cbde67775c624719d",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 95456,
+                "upload_time": "2008-10-18T03:39:20",
+                "url": "https://files.pythonhosted.org/packages/86/cf/9fd9fd5e12df5467cc499ead722254bae444a9b80a7f69d4deee35b4a161/pyparsing-1.5.1.win32.exe"
+            }
+        ],
+        "1.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "13aed3cb21a427f8aeb0fe7ca472ba42",
+                    "sha256": "1021fd2cfdf9c3b6ac0191b018c15d591501b77d977baded59d8ef76d375f21c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "13aed3cb21a427f8aeb0fe7ca472ba42",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 790616,
+                "upload_time": "2009-04-20T00:58:34",
+                "url": "https://files.pythonhosted.org/packages/5d/8c/beb9319c2b94ffdb23cd3b5fec208d97e09d830ae06b572b961614ca41dd/pyparsing-1.5.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a52975bc0add1def13c2c3940227f3e5",
+                    "sha256": "9a9d3c428507e3eeb0bf03f4e7d0ac60cba665c33b597cdc8a00649dd31a811f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.2.win32.exe",
+                "has_sig": false,
+                "md5_digest": "a52975bc0add1def13c2c3940227f3e5",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 129016,
+                "upload_time": "2009-04-20T00:59:15",
+                "url": "https://files.pythonhosted.org/packages/3f/fd/8a96ab93864fdff0466399ddd2ca577907bbea9cbbc7b9c7160032202cc3/pyparsing-1.5.2.win32.exe"
+            }
+        ],
+        "1.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0908d97e5ae4f67f7941e876c10461ac",
+                    "sha256": "8ddbe1ffc7d11be3a006422bcf0e93b737c31c6e2e5668a8fa19de548b547b06"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0908d97e5ae4f67f7941e876c10461ac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1297284,
+                "upload_time": "2010-06-25T06:20:48",
+                "url": "https://files.pythonhosted.org/packages/4a/89/ae088935f04d4102c1fb02d94c29dbaa53645057d50320775d9bff403f6c/pyparsing-1.5.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cbd036fb9b8155f32bc8a340c5d0eb5f",
+                    "sha256": "08c799a42a766dbde6d716f0dc0061e19103bf03fc881d7b84682ad40dcdb362"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.win32-py2.4.exe",
+                "has_sig": false,
+                "md5_digest": "cbd036fb9b8155f32bc8a340c5d0eb5f",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.4",
+                "size": 96337,
+                "upload_time": "2010-06-25T06:24:45",
+                "url": "https://files.pythonhosted.org/packages/16/73/d4365abbdc001097ebc9cd66c357ce36ffff0b3c1c2ffe48af4209617755/pyparsing-1.5.3.win32-py2.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee490fa00a5d2cb66bf37ad14526ae90",
+                    "sha256": "7dc0adcab2af24ca28beeeec1894c9bdd673aade893bd452a400220d03cade05"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.win32-py2.5.exe",
+                "has_sig": false,
+                "md5_digest": "ee490fa00a5d2cb66bf37ad14526ae90",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.5",
+                "size": 96337,
+                "upload_time": "2010-06-25T06:25:07",
+                "url": "https://files.pythonhosted.org/packages/c8/4f/f916477850a7768a65eb3c39ed0947cb31088c79f01edc93d3c22875587d/pyparsing-1.5.3.win32-py2.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b45296656b06600a81b9cfe040516e82",
+                    "sha256": "e72d24ae963d8b68b867b0be3d5c2bf691492d63c14f9b29c281d44b013db39a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "b45296656b06600a81b9cfe040516e82",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 96337,
+                "upload_time": "2010-06-25T06:25:29",
+                "url": "https://files.pythonhosted.org/packages/23/fc/d1dcb6faaa8ffac323f0a13948b56a551d2719a944cdb4213a08d059dc4f/pyparsing-1.5.3.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "96323740066f66ea7147a2b134d2a193",
+                    "sha256": "e943e2e1cd86225596d68142bdb53935ec29582084c1008f08783f266f2b58c0"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "96323740066f66ea7147a2b134d2a193",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 96337,
+                "upload_time": "2010-06-25T06:25:43",
+                "url": "https://files.pythonhosted.org/packages/a2/94/2fc95705139bffde35a651d75ea68ac81b4647f2226fe87abdeaecec800c/pyparsing-1.5.3.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62423b8e1d413e15da7fca69fdc0bc6c",
+                    "sha256": "4863911d563083a5014640343eeaa0dbc8b65cc3ba3b23e4c5bb100375b5297e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "62423b8e1d413e15da7fca69fdc0bc6c",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.0",
+                "size": 96252,
+                "upload_time": "2010-06-25T06:25:59",
+                "url": "https://files.pythonhosted.org/packages/8d/10/d8ca83dc6f2012f4a483753accf0d729b2e14803649a9cad25954a0cb765/pyparsing-1.5.3.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62ebc8591a97acf02972bc7532d83907",
+                    "sha256": "a3bdb70ca666bb3d6338cd70a0e2b14bcbe27eb5f67a6621b1834a4b5e039efe"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "62ebc8591a97acf02972bc7532d83907",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.1",
+                "size": 96252,
+                "upload_time": "2010-06-25T06:26:16",
+                "url": "https://files.pythonhosted.org/packages/07/28/f733a182e970d8256f46300a12b7c1c902d4e20a76f49d732002b290f467/pyparsing-1.5.3.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cd9d54e0cd9a427a93883d979e42a767",
+                    "sha256": "a3de6fd528aed598b51e6ce84e596e5f16020e49ac8ed38acefa45799ac4f324"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "cd9d54e0cd9a427a93883d979e42a767",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 96252,
+                "upload_time": "2010-06-25T06:28:01",
+                "url": "https://files.pythonhosted.org/packages/23/0d/2431f6da57582141e1d3351fc99adea40d4da7bd9287d1ec717efd4cd1cb/pyparsing-1.5.3.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6606618331f8253a974803c8244fede5",
+                    "sha256": "32c463ee457643c0073eb61c35c6128485e35196518eef6cef44f62f8114af55"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.3.zip",
+                "has_sig": false,
+                "md5_digest": "6606618331f8253a974803c8244fede5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1573485,
+                "upload_time": "2010-06-25T06:21:53",
+                "url": "https://files.pythonhosted.org/packages/8e/55/43d89acfa00d6c25c1553405e3cf5f7042f59be9301e670a2f653edc55b4/pyparsing-1.5.3.zip"
+            }
+        ],
+        "1.5.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d90b332a768ff5710457cf09a89c8d1",
+                    "sha256": "248972a70c6b6b2a599f6b2dc754ca62db2eeb366cb6d11f2ac8f59a8926a56a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4d90b332a768ff5710457cf09a89c8d1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1412593,
+                "upload_time": "2010-08-11T22:46:36",
+                "url": "https://files.pythonhosted.org/packages/76/2c/030df0b704bd9c84f82a563804f02c68af457e750fcf74e62aa6904ba214/pyparsing-1.5.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "80ad382b269cda0a0c78e7635ce5c0c3",
+                    "sha256": "a8fae0e304f6006fb91e91f5818a557ab8f182743d31529084415276c94e0d70"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.win32-py2.4.exe",
+                "has_sig": false,
+                "md5_digest": "80ad382b269cda0a0c78e7635ce5c0c3",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.4",
+                "size": 96934,
+                "upload_time": "2010-08-11T22:47:13",
+                "url": "https://files.pythonhosted.org/packages/0d/56/ba9ed16dcc8921d206cb23ffa39f92e004a3c4d22631a6827a8ad4058064/pyparsing-1.5.4.win32-py2.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "442aaa87e94e372be101cd6036cc12d3",
+                    "sha256": "8ca218714084c07a9759350097ef2f4ccfe810abc500663627663a40425e46b9"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.win32-py2.5.exe",
+                "has_sig": false,
+                "md5_digest": "442aaa87e94e372be101cd6036cc12d3",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.5",
+                "size": 96934,
+                "upload_time": "2010-08-11T22:47:31",
+                "url": "https://files.pythonhosted.org/packages/5b/49/355336cd2420731119921f4d3a41e30ba31b7d7e722955cc01a116745ab7/pyparsing-1.5.4.win32-py2.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "82d4fb2491330e51d45ee605abb007e5",
+                    "sha256": "83a77f02111fa5ff6724c0ad5ef48fb5a6b0a9924fc991592ff76fed76565f5b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "82d4fb2491330e51d45ee605abb007e5",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 96934,
+                "upload_time": "2010-08-11T22:47:42",
+                "url": "https://files.pythonhosted.org/packages/4c/40/66b8cfa5887ff5e5918ea6fcdb47a549120f368f298c72adba0cbe8d05a3/pyparsing-1.5.4.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f054c61093436a03171645fdf73b7d83",
+                    "sha256": "4290527c819fb45f55a3cf401af7244ef12cecdd36638832b0d87f8864f09fca"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "f054c61093436a03171645fdf73b7d83",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 96934,
+                "upload_time": "2010-08-11T22:47:59",
+                "url": "https://files.pythonhosted.org/packages/2b/87/cfbc3707b0e890f0e38ed0f2cf3c961a1e6b0b7c85ea48a846b97447c604/pyparsing-1.5.4.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e7582f8ff55b7dc0f9fefc8875b1f49",
+                    "sha256": "7d5428e606cad0debaea2ccc0856e28698627566b465d4c82fd1e3327fa6d80f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "8e7582f8ff55b7dc0f9fefc8875b1f49",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.0",
+                "size": 96934,
+                "upload_time": "2010-08-11T22:48:12",
+                "url": "https://files.pythonhosted.org/packages/cc/c6/69a7ff58c6221b00e454954389b3ac6cd857c37615bfb5653d5298ef5b83/pyparsing-1.5.4.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "adb9a36e3c44bd6bb47e20e25addb45d",
+                    "sha256": "2ef8b5fba4534c27155b1d9d43d0ab3dbf96a7a3c689d6ef85a68e338895c26a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "adb9a36e3c44bd6bb47e20e25addb45d",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.1",
+                "size": 96934,
+                "upload_time": "2010-08-11T22:48:25",
+                "url": "https://files.pythonhosted.org/packages/00/87/42b08e754549b2a880561c545a715877f24b1409de24e19bd37eff0b200a/pyparsing-1.5.4.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e4c48cd7703511c767c09c678252030",
+                    "sha256": "6339e32620e5575f4fc81d8dedde1334fa18048ab5f8721ba958224367e2fbbe"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "1e4c48cd7703511c767c09c678252030",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 96934,
+                "upload_time": "2010-08-11T22:48:36",
+                "url": "https://files.pythonhosted.org/packages/2b/66/e646a5a52cd5db1881f284ab2a65872dc7b48062b08cfd8e49d1c4d7850a/pyparsing-1.5.4.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17a5b44b5486e96a332133abc01ab091",
+                    "sha256": "ad2712475796e6b9da3c0eb860f6c1a3aefa76b1744f7e95d94fbeafc1b8fa3c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.4.zip",
+                "has_sig": false,
+                "md5_digest": "17a5b44b5486e96a332133abc01ab091",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1700010,
+                "upload_time": "2010-08-11T22:46:55",
+                "url": "https://files.pythonhosted.org/packages/3d/7e/266f9312ecd7f84d71ea1a86105d1aa1fae3e60a29773c4af231da613919/pyparsing-1.5.4.zip"
+            }
+        ],
+        "1.5.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0beba391cba3082d7914c289bffa52ce",
+                    "sha256": "d1754df0801871d05a96f1cef50a4f32e5d40d49ea24aa1c6ca9529cbd562005"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0beba391cba3082d7914c289bffa52ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1412611,
+                "upload_time": "2010-08-12T11:19:51",
+                "url": "https://files.pythonhosted.org/packages/7c/f3/32eb35e2e52cfedd10394d6eccfd3a62f8c83951bc80260b4ecf57a76675/pyparsing-1.5.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "897b91b59705c94074c672f3981e0aa2",
+                    "sha256": "d5bea06e474da41e8760ce8473b6c6f4e8a2df59a6c0f652b0bc2ed99fbb4452"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.win32-py2.4.exe",
+                "has_sig": false,
+                "md5_digest": "897b91b59705c94074c672f3981e0aa2",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.4",
+                "size": 96934,
+                "upload_time": "2010-08-12T11:33:23",
+                "url": "https://files.pythonhosted.org/packages/71/9e/c9ec85e87e918146b4245aea6919a08fc00f7771dd8d4347f37ce6c635bf/pyparsing-1.5.5.win32-py2.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7c00d802c8792a5c980d2a52850f0f40",
+                    "sha256": "019b385a6a9775f901ed7a903a41a004fda75e63be6425c74d076e7cf3ae3cd4"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.win32-py2.5.exe",
+                "has_sig": false,
+                "md5_digest": "7c00d802c8792a5c980d2a52850f0f40",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.5",
+                "size": 96934,
+                "upload_time": "2010-08-12T11:33:11",
+                "url": "https://files.pythonhosted.org/packages/4d/01/3123110f59abdf2764e82aab67e9c88cb1fb00aa693a5ba225e731dac021/pyparsing-1.5.5.win32-py2.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f44d89471be992275ca43d643cfb22c",
+                    "sha256": "ccaf70600e5b064ec311691694f7a51a0b0fa122a75713904dec47b581ccca43"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "2f44d89471be992275ca43d643cfb22c",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 96934,
+                "upload_time": "2010-08-12T11:32:59",
+                "url": "https://files.pythonhosted.org/packages/db/7c/16cb222a0d53dc4c3a554cd981a03ab0a4e4c953057b1210d2cf857aa5d4/pyparsing-1.5.5.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1b35d23436c876c6d44c079bc0e00311",
+                    "sha256": "cc1801752c35e817d3936e488893f0b7605d595e7a101cfdfeb570f82eb94935"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "1b35d23436c876c6d44c079bc0e00311",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 96934,
+                "upload_time": "2010-08-12T11:32:43",
+                "url": "https://files.pythonhosted.org/packages/b1/49/670dc45d319759c86a94a206f47f313bed47b6cd28b83d2070b2add6586c/pyparsing-1.5.5.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "72bc60a090bd2c5cfcf425df1e16a593",
+                    "sha256": "076c01f789c514477e183a4df41386f9fb672f36e8d4bd15beaf2dc08c4e0784"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "72bc60a090bd2c5cfcf425df1e16a593",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.0",
+                "size": 96934,
+                "upload_time": "2010-08-12T11:32:29",
+                "url": "https://files.pythonhosted.org/packages/a7/32/47788f02612e3fc17674709f94278de65e7a8e97679fe387e34e1a5d9334/pyparsing-1.5.5.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a21f2e7f951481b88c1c6d1e3a780db",
+                    "sha256": "9905b4eecfee0b591f938972fec7079a24001dea167c8964ab037792eac39f79"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "5a21f2e7f951481b88c1c6d1e3a780db",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.1",
+                "size": 96934,
+                "upload_time": "2010-08-12T11:32:16",
+                "url": "https://files.pythonhosted.org/packages/3e/a8/c974a497f03d5a9477ba1ee634c4f3246ae7c36ec42ab3563e359a554411/pyparsing-1.5.5.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d4ea982e7fbdb11f4abcbfd10b6197ed",
+                    "sha256": "4f4baf8d6051b84dfbcb741a212dcef6a30a449c870b3d0cb860559c678fcaac"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "d4ea982e7fbdb11f4abcbfd10b6197ed",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 96934,
+                "upload_time": "2010-08-12T11:28:42",
+                "url": "https://files.pythonhosted.org/packages/7c/69/5d44f9eac7f81ee979a782e2663b93a889e7850ae1a32cade6649a70824c/pyparsing-1.5.5.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ea3cee9ecf767ff9712fa09ecb4bd37",
+                    "sha256": "b450a0a0af7423ff93a79e1f4dc364f56283c8e7a893d957e78c22a3155f95c0"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.5.zip",
+                "has_sig": false,
+                "md5_digest": "5ea3cee9ecf767ff9712fa09ecb4bd37",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1700055,
+                "upload_time": "2010-08-12T11:20:40",
+                "url": "https://files.pythonhosted.org/packages/bf/6f/7bbac15ebba8613d068f39783370d803d2a81b47a27ea2cc37b1a9054a14/pyparsing-1.5.5.zip"
+            }
+        ],
+        "1.5.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e41cb219dae9fc353bd4cd47636b283",
+                    "sha256": "5c84aa4500e82d5aa2c0842d5628c5da985e68ac1fb33554e0e5547eb3c85a75"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1e41cb219dae9fc353bd4cd47636b283",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1418892,
+                "upload_time": "2011-06-29T06:37:58",
+                "url": "https://files.pythonhosted.org/packages/fa/fa/e063a194dd48b8e76c1ef77bda6be80e8f988dc111b29e5029127d324b72/pyparsing-1.5.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e934eef01f9e80b97dc05282ef4a8e44",
+                    "sha256": "d887b605488fd76060afbd3d0618aefbe6b29256449c48436e2fad2ba5fc3c3e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.win32-py2.4.exe",
+                "has_sig": false,
+                "md5_digest": "e934eef01f9e80b97dc05282ef4a8e44",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.4",
+                "size": 101020,
+                "upload_time": "2011-06-29T06:39:45",
+                "url": "https://files.pythonhosted.org/packages/ae/ae/84dc0d03c0e8b55dbba1d8293b2eb52285e249c2f40d1fdf70d658854934/pyparsing-1.5.6.win32-py2.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd1e7b67958c04d39ece970840918fb9",
+                    "sha256": "2dcdd4d8698c2078ce1af97254ebcfb0577df54ea4df3233bcfaba179efc75d9"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.win32-py2.5.exe",
+                "has_sig": false,
+                "md5_digest": "fd1e7b67958c04d39ece970840918fb9",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.5",
+                "size": 101020,
+                "upload_time": "2011-06-29T06:39:26",
+                "url": "https://files.pythonhosted.org/packages/9c/a0/0a125477d0e1273cb821066038e6be72d9dd9f5c048c3a3a82686720980d/pyparsing-1.5.6.win32-py2.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6f25cef63d5c0ccc47dd1582998914d0",
+                    "sha256": "8a0d9136a81b0bc5c08178308f76fecb89180248d4c6b705c3a6b85f3b1910e6"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "6f25cef63d5c0ccc47dd1582998914d0",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 231580,
+                "upload_time": "2011-06-29T06:39:10",
+                "url": "https://files.pythonhosted.org/packages/ba/c3/a668a0555c96c3bff036900ef4877a7134507f3890ceaa21c1bd07a8dbc3/pyparsing-1.5.6.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a09c8950bef2fd949e43b2d803124e9c",
+                    "sha256": "1dd3e062b1bd473d335ee1be76e8f37e02cb8c7b306f42c91ca62aeca714705f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "a09c8950bef2fd949e43b2d803124e9c",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 231580,
+                "upload_time": "2011-06-29T06:40:02",
+                "url": "https://files.pythonhosted.org/packages/5f/1c/78a6b9036c6d8e2564ad36c681424dd2ded40ce37408b2397b6927057be1/pyparsing-1.5.6.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cddbb06edaeaff553a75e58bbd413ca4",
+                    "sha256": "6096e0def6eed745eea8a8741f2403f41d2ae04b070a32cc58877d9322526ac7"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "cddbb06edaeaff553a75e58bbd413ca4",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.0",
+                "size": 231580,
+                "upload_time": "2011-06-29T06:40:24",
+                "url": "https://files.pythonhosted.org/packages/7b/2c/9ba45005d4d6a37727dabe34053105288af4e303f6a8cf3ce36f0d6c1fda/pyparsing-1.5.6.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d48e97a403ede314f67537c9e6d09fab",
+                    "sha256": "12668f43c12a794933dafcb846eb0151733e20ea9d915ea90e006f3b4287e68e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "d48e97a403ede314f67537c9e6d09fab",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.1",
+                "size": 231580,
+                "upload_time": "2011-06-29T06:40:42",
+                "url": "https://files.pythonhosted.org/packages/16/cd/0dfa0f2324373d70ba8e0a618c2d441ace437251f4deae0faa6d74e1245b/pyparsing-1.5.6.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a9f457d45aa000a301ebe14bc197495b",
+                    "sha256": "3ecf69bc78de567cacb6cb0a072f970299949acf6134405471756c090bfa6807"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "a9f457d45aa000a301ebe14bc197495b",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 231580,
+                "upload_time": "2011-06-29T06:41:04",
+                "url": "https://files.pythonhosted.org/packages/c1/c9/af374e7fd13019494c071479d5f1339edda663d6730f002124b486b8af13/pyparsing-1.5.6.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5404de54e6d0ae71ce354d8db3576ac1",
+                    "sha256": "937c0e99fb810e7f163d7b9b24057999570df48eb16e2623b543f45ef0a3a286"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.6.zip",
+                "has_sig": false,
+                "md5_digest": "5404de54e6d0ae71ce354d8db3576ac1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1709236,
+                "upload_time": "2011-06-29T06:38:49",
+                "url": "https://files.pythonhosted.org/packages/d9/1d/d0fd68834af89c9a3a86e6e35354863bee1a5668333a9cd2e6fde15f36fa/pyparsing-1.5.6.zip"
+            }
+        ],
+        "1.5.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9be0fcdcc595199c646ab317c1d9a709",
+                    "sha256": "646e14f90b3689b005c19ac9b6b390c9a39bf976481849993e277d7380e6e79f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9be0fcdcc595199c646ab317c1d9a709",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 939646,
+                "upload_time": "2013-02-27T06:51:57",
+                "url": "https://files.pythonhosted.org/packages/6f/2c/47457771c02a8ff0f302b695e094ec309e30452232bd79198ee94fda689f/pyparsing-1.5.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b3c8a69846c0c3c00d15a75dc99f137a",
+                    "sha256": "cac34e3620a34b7e6888d82dd62ebcf322b7c62c94c7a2816808dc37a3ec6256"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.7.win32-py2.5.exe",
+                "has_sig": false,
+                "md5_digest": "b3c8a69846c0c3c00d15a75dc99f137a",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.5",
+                "size": 101123,
+                "upload_time": "2013-02-27T06:50:45",
+                "url": "https://files.pythonhosted.org/packages/92/7d/7f4027d01213931929c2c6a599da3f9c05efa3a3758be34ce4c391d65b43/pyparsing-1.5.7.win32-py2.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f0a4ced918720f3dbc4918a427de3a9",
+                    "sha256": "3b417014a66d0896c73f0ac77b4f4c7e2c06eb2e11ddcab2f5ed14a7348a461d"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.7.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "0f0a4ced918720f3dbc4918a427de3a9",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 231683,
+                "upload_time": "2013-02-27T06:50:24",
+                "url": "https://files.pythonhosted.org/packages/22/3e/d3cef8d938cee7609c968ca73fefb12caab55243034fb31dff80a6dadfaf/pyparsing-1.5.7.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b3c2fa6c6ad93c506117a31ade2f3ba",
+                    "sha256": "b21232cef657a2477036374c5790b4bbeee3f02efece80b8b68c69e0104dde6c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.7.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "6b3c2fa6c6ad93c506117a31ade2f3ba",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 231683,
+                "upload_time": "2013-02-27T06:49:51",
+                "url": "https://files.pythonhosted.org/packages/2f/74/078bee51e3439579eee83238d0b614d63e8c8da155a56bea336eeed59b6c/pyparsing-1.5.7.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b86854857a368d6ccb4d5b6e76d0637f",
+                    "sha256": "8a6329d4679fb249d4e0a4afbae6e041f9abbc299920d6efe5d8c4e9fb1407bc"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-1.5.7.zip",
+                "has_sig": false,
+                "md5_digest": "b86854857a368d6ccb4d5b6e76d0637f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 965009,
+                "upload_time": "2013-02-27T06:31:31",
+                "url": "https://files.pythonhosted.org/packages/2e/26/e8fb5b4256a5f5036be7ce115ef8db8d06bc537becfbdc46c6af008314ee/pyparsing-1.5.7.zip"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "97b95184cb41edcd7bd162b1fa1f45ee",
+                    "sha256": "36916527202d6e19c1f0e968109ccec52aaba835a935a58186147556c51027b6"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "97b95184cb41edcd7bd162b1fa1f45ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1128594,
+                "upload_time": "2013-02-27T06:34:17",
+                "url": "https://files.pythonhosted.org/packages/ea/32/6b33b76b5a34c5ff29f11ef35fe79cc864331b00e8461208a06a603b6726/pyparsing-2.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62afffa3047bdd991040b20a3f58a09b",
+                    "sha256": "04f8d8663dfccfdfd28201e42885fd3db59d73fa27a21cccf6f9cc442fa6f4fe"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.0.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "62afffa3047bdd991040b20a3f58a09b",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.0",
+                "size": 100399,
+                "upload_time": "2013-02-27T06:54:16",
+                "url": "https://files.pythonhosted.org/packages/be/85/038c547b6557be8d485edbb42da326680c293f5e0339bb2fc3cd30817af7/pyparsing-2.0.0.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "50f0e4fec454d6e401d9b780480c8092",
+                    "sha256": "c4dd78688b78312b35496f37cada39744fa2e5f5ecb1ab404f4026aa0d145d1a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.0.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "50f0e4fec454d6e401d9b780480c8092",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.1",
+                "size": 100399,
+                "upload_time": "2013-02-27T06:54:01",
+                "url": "https://files.pythonhosted.org/packages/b9/4b/b9ad171c2f1e53ce9e5d028284365136faa4d157a7755fda96b7ec1e52af/pyparsing-2.0.0.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f9ee82158715137065753653cafad19",
+                    "sha256": "9fbf8539a74e4b0e7c264a80f1be3fec1266df38f4c9889bdc7a50450b6d97be"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.0.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "2f9ee82158715137065753653cafad19",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 100399,
+                "upload_time": "2013-02-27T06:53:40",
+                "url": "https://files.pythonhosted.org/packages/b6/74/b8e7bbaf8aaf64aa6c47238906857e57713d912213f8265b88e61987d7ff/pyparsing-2.0.0.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "380800a14f44ad6435184e6e14c14ba1",
+                    "sha256": "fce2cdcd1305c0372fe79e1375a103ba52d1e44fe2cdc281cc5f0cf055458f73"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.0.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "380800a14f44ad6435184e6e14c14ba1",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.3",
+                "size": 225839,
+                "upload_time": "2013-02-27T06:53:19",
+                "url": "https://files.pythonhosted.org/packages/c9/a6/3356b92e9df8ce4629fc80d410ce55e11e13044aa0cd923495393bee31e1/pyparsing-2.0.0.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f9bc56d9f6c977085001db49a63d7bb9",
+                    "sha256": "3f3784293789a0ecd4877a5df1be86ad10eeb4c712d8b5ca095879eabc871e5a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "f9bc56d9f6c977085001db49a63d7bb9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1282776,
+                "upload_time": "2013-02-27T06:34:30",
+                "url": "https://files.pythonhosted.org/packages/b5/24/e267a8f83eb95051504843bd1721c6e55c8f364ef0e58a76ce6f915f6459/pyparsing-2.0.0.zip"
+            }
+        ],
+        "2.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37adec94104b98591507218bc82e7c31",
+                    "sha256": "0007cd3f008eba4a203f1f6b4b133ddc352552c8808b694c88c23db56416e4e4"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "37adec94104b98591507218bc82e7c31",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1129563,
+                "upload_time": "2013-07-17T07:38:27",
+                "url": "https://files.pythonhosted.org/packages/44/c7/e2bc51c8aa50b1f5ced031310e2272e883ef2d64f070f882ef1e4301063e/pyparsing-2.0.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bcd0f2702bf022b5eb32782b466c413f",
+                    "sha256": "090d83f491259b16cfabfbd575a7c591f61982707090bfc1512d8b519cda4f44"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.1.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "bcd0f2702bf022b5eb32782b466c413f",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 101123,
+                "upload_time": "2013-07-17T07:39:29",
+                "url": "https://files.pythonhosted.org/packages/e5/d0/b1ab0a5b45c41025c627c0421e628c6f053d61967077ec637bbf9eea03de/pyparsing-2.0.1.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e312e220208383c0b87f3c36996cf47a",
+                    "sha256": "0df0417ded92a2ae72cdf762bf84d116f8accb7b13b9bd185966492a00a7ee2b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.1.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "e312e220208383c0b87f3c36996cf47a",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 101123,
+                "upload_time": "2013-07-17T07:39:37",
+                "url": "https://files.pythonhosted.org/packages/26/34/fd52fe64e1bff3e69bd1e937e1e56d954d5c0862ccf9e76e0b74c13ed8e5/pyparsing-2.0.1.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b580090ef059879deccc0f252ae3ff8",
+                    "sha256": "18d8e2b0506395c05d5410cab29c5c67279dae168bfff7a2177ac5c694857b0a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.1.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "7b580090ef059879deccc0f252ae3ff8",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 101123,
+                "upload_time": "2013-07-17T07:39:40",
+                "url": "https://files.pythonhosted.org/packages/29/b4/67d18026614e6b5300d4faaabb2729e0c68fe8381db884693fbddbfdb114/pyparsing-2.0.1.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cfeab4a7dbf48b3ccd989e174c6237ca",
+                    "sha256": "cf02c4af694a402761a6462958e2d78637515dd3f69d04e0a36150b217e904ac"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.1.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "cfeab4a7dbf48b3ccd989e174c6237ca",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 101123,
+                "upload_time": "2013-07-17T07:39:49",
+                "url": "https://files.pythonhosted.org/packages/91/f8/0dc5c13b5406c423e7cbcd02daee18105af1c5fedc7954c904b3128b31b3/pyparsing-2.0.1.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a65f5afb575224e55c3cec133ad3eff2",
+                    "sha256": "9b8ca2f046acd1977552cb140c2cd16dd0fd69d088b38002a45dcd50022bb8fe"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.1.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "a65f5afb575224e55c3cec133ad3eff2",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 101123,
+                "upload_time": "2013-07-17T07:39:59",
+                "url": "https://files.pythonhosted.org/packages/5d/f6/85d159dce442b0d491b1cfccb88f211cb51ee9f88344942f7d96c6b259fc/pyparsing-2.0.1.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eeffd123f69eb13985748e5213953267",
+                    "sha256": "ce87c81d6672b239ba0e64bcd2597c8f5a2ec89ed43bd82b859b22f0dea94e8f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.1.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "eeffd123f69eb13985748e5213953267",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 226563,
+                "upload_time": "2013-07-17T07:40:12",
+                "url": "https://files.pythonhosted.org/packages/b1/41/6c638762b6e6ac6e23899774a2fad173bb1d074b829045e4b33e8b10ff9b/pyparsing-2.0.1.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc7036a6f1ab01c3baed3d97af8d77c0",
+                    "sha256": "7e1766ee747cca79fe172b670fd53ef58fc55d2b1804fd6c66d857abb62d143a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.1.zip",
+                "has_sig": false,
+                "md5_digest": "dc7036a6f1ab01c3baed3d97af8d77c0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1283658,
+                "upload_time": "2013-07-17T07:38:40",
+                "url": "https://files.pythonhosted.org/packages/d9/9c/1291ec873984c90dd9886b49e58e45306859a5a1c6f9bfbe02e87ee88aad/pyparsing-2.0.1.zip"
+            }
+        ],
+        "2.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b170c5d153d190df1a536988d88e95c1",
+                    "sha256": "17e43d6b17588ed5968735575b3983a952133ec4082596d214d7090b56d48a06"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b170c5d153d190df1a536988d88e95c1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1136568,
+                "upload_time": "2014-04-13T17:24:41",
+                "url": "https://files.pythonhosted.org/packages/51/86/71f91a7eb610a925a7b94ac3153c36e72cec85d29d572fc4fd4929d7b255/pyparsing-2.0.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b0ff69d0c233f38c759aab13dc7d69bf",
+                    "sha256": "8e395e5c5c7d95e62b4a6a5311afbf8644b6d5f8280e033aebfca38d1f637486"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "b0ff69d0c233f38c759aab13dc7d69bf",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232538,
+                "upload_time": "2014-04-13T17:52:11",
+                "url": "https://files.pythonhosted.org/packages/af/b4/d455cddef1ef474f350f900116b3ee51f660ad9a58a23b5ce6543eb9bc4c/pyparsing-2.0.2.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a56ae0f440c8da6fc384b6b8e0533461",
+                    "sha256": "a4c2134b09d85dc250422cdd1ab1c4bc4603dd5016f881c2a987c472778a9a14"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "a56ae0f440c8da6fc384b6b8e0533461",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232538,
+                "upload_time": "2014-04-13T17:52:15",
+                "url": "https://files.pythonhosted.org/packages/5f/19/8027f10c38e03fa09bf976cf38444d90daf7998cbaf99cd54cbaa3abd920/pyparsing-2.0.2.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d78cf4ffb8a6393b96a864aadd92a6ea",
+                    "sha256": "1039385c4702ba1834f1d5d6a832c3acdb499c7a8ffdd460ba6d381df3c30cda"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "d78cf4ffb8a6393b96a864aadd92a6ea",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232538,
+                "upload_time": "2014-04-13T17:52:18",
+                "url": "https://files.pythonhosted.org/packages/b6/c7/cb021d3fc6769f249a1b7e192f241143a3a7458607cfb9dd55c352af47b4/pyparsing-2.0.2.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8536b07be1e6227395d1825635aa8b3e",
+                    "sha256": "4dda9208817b3a1fe7d500408e4d5ebbb8e4549ba377e6a259ab2552e1275b0b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "8536b07be1e6227395d1825635aa8b3e",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232538,
+                "upload_time": "2014-04-13T17:52:22",
+                "url": "https://files.pythonhosted.org/packages/bd/01/dbb7bfd17b480160400661d78501a2621719e3054a55d4372d6e4d5a72be/pyparsing-2.0.2.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b6495636c6a1bff1bd6370b067d3b34",
+                    "sha256": "3a203a88fc0f0b3c21909de3367ade6b51b2f32abb4e6932bcbf197273593f72"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "7b6495636c6a1bff1bd6370b067d3b34",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232538,
+                "upload_time": "2014-04-13T17:52:26",
+                "url": "https://files.pythonhosted.org/packages/ed/66/b1499cfbab6dbadb8893e0df432772ecafbff5540bbc8ed444506d2e9d22/pyparsing-2.0.2.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3af3caa9caef7081e46e98b87c3d3987",
+                    "sha256": "1584a093537c6f0add04a514b91b55fda93e2331de7e5140f835d7d8662ea291"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "3af3caa9caef7081e46e98b87c3d3987",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232538,
+                "upload_time": "2014-04-13T17:52:29",
+                "url": "https://files.pythonhosted.org/packages/42/7e/b4f6c3ba34a7a1230897697d1f25c5ab4646bb62a1d2b65f006bb8a2d4a8/pyparsing-2.0.2.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f5b50e47e53cc92ab0d9170d5d502ad",
+                    "sha256": "7145b41ff85f2428e365f2b9bd16b69bd68f1150c3f8d05528273505ede15abe"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "5f5b50e47e53cc92ab0d9170d5d502ad",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232538,
+                "upload_time": "2014-04-13T17:52:36",
+                "url": "https://files.pythonhosted.org/packages/08/e8/ce1e2d195c0f80565bf48a0fbab49a703acdbda837e15bb64d32153bb541/pyparsing-2.0.2.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e0e49d73cfb9e79954b4a1c553dfae44",
+                    "sha256": "d61cce2ef4bc4eb27d99bc5130e30be1bfbe59fe41e804255f06061cbec0388f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.2.zip",
+                "has_sig": false,
+                "md5_digest": "e0e49d73cfb9e79954b4a1c553dfae44",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1288224,
+                "upload_time": "2014-04-13T17:24:46",
+                "url": "https://files.pythonhosted.org/packages/ca/15/f11ad041560a392ffa16638a2b500f6cdf4ba873609318187184919f9453/pyparsing-2.0.2.zip"
+            }
+        ],
+        "2.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4c16ef222caea2e5de741ae503aae652",
+                    "sha256": "a9c896bab06dbf3759ad5fb63cfdb3777191e2c4ae640e6dd69ed37530f6ba56"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4c16ef222caea2e5de741ae503aae652",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.6",
+                "size": 37705,
+                "upload_time": "2014-11-19T13:48:55",
+                "url": "https://files.pythonhosted.org/packages/8f/f4/3a70b5e5b865b1ec45fe48dc5a57cd4facb5c7bd80e5cb1255c362732e81/pyparsing-2.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0fe479be09fc2cf005f753d3acc35939",
+                    "sha256": "06e729e1cbf5274703b1f47b6135ed8335999d547f9d8cf048b210fb8ebf844f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0fe479be09fc2cf005f753d3acc35939",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1462653,
+                "upload_time": "2014-10-11T05:19:30",
+                "url": "https://files.pythonhosted.org/packages/d2/f9/60bebd372903c3ca2e9216086ac375d4991cce6261b186e6cf908ef5d49d/pyparsing-2.0.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5639878e51d3fe5bcaf9ee41f1c12e4e",
+                    "sha256": "0f9396b5a10f6cf0a7e2cedde20ca8d3af8a2a12943d9d27811aa58816ff90b8"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "5639878e51d3fe5bcaf9ee41f1c12e4e",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232672,
+                "upload_time": "2014-10-11T05:19:40",
+                "url": "https://files.pythonhosted.org/packages/d1/2d/6bbe734d0bb2197dab33788aff2f3f60cc81f17372b6ffe8ecb48545c570/pyparsing-2.0.3.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ca37c237b92ae033feec47cc00b7d14",
+                    "sha256": "5b8bda8b4c4a0cc4eb97a4c7a7a1f652c1ff83eb7bfe77670715ee942e3d24e6"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "1ca37c237b92ae033feec47cc00b7d14",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232672,
+                "upload_time": "2014-10-11T05:19:46",
+                "url": "https://files.pythonhosted.org/packages/c9/f0/4a06ad50583151e49da65121a506387df87f051915528ffee1137871d39f/pyparsing-2.0.3.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ffd9e477bdd2ceff0a9c9f48ac43d4c",
+                    "sha256": "34fb77861e357f7a925f5aafa7eefd16d46416652a978b88908a3930567aa80a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "7ffd9e477bdd2ceff0a9c9f48ac43d4c",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232672,
+                "upload_time": "2014-10-11T05:19:52",
+                "url": "https://files.pythonhosted.org/packages/16/ef/8bda81ef8089bb4ae56f5ef4f526df242aed1a1a00b2bd1e9e47989ecc82/pyparsing-2.0.3.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a207821d40dd21235d87397f2a151b3",
+                    "sha256": "0a7790bbc9b44a141c002d69dd59953b4c3a5edba704440df4ea4154b7942435"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "1a207821d40dd21235d87397f2a151b3",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232672,
+                "upload_time": "2014-10-11T05:19:57",
+                "url": "https://files.pythonhosted.org/packages/b6/2e/b08f6418a325887a77d1df45c9efca62137415aeb8ed4f6ac36aac8884b6/pyparsing-2.0.3.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb12c00a14286528ef70245d126904bb",
+                    "sha256": "9948c6e024eecd2030b8d67b383621a17953df8d5611fdfecd744a4058896839"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "cb12c00a14286528ef70245d126904bb",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232672,
+                "upload_time": "2014-10-11T05:20:04",
+                "url": "https://files.pythonhosted.org/packages/bf/2f/7d59c02c2f107baaaf17ab6812768aa716eed5911c11b382f6c8384493a9/pyparsing-2.0.3.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "60fd563ef2833cea0c6b84160576336e",
+                    "sha256": "edc1858f5987802156589738035428204069a14067d819de79387b1ca64e135d"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "60fd563ef2833cea0c6b84160576336e",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232672,
+                "upload_time": "2014-10-11T05:20:15",
+                "url": "https://files.pythonhosted.org/packages/fe/38/221ddebf6c4ae77c4def2ad9b7a578f31be483559f317a90b1e6d65cc482/pyparsing-2.0.3.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0b523329e37fe7caa87a1e6723e9aca",
+                    "sha256": "bbbb9311fff1bdc4b14fe6c775f2622e7dc2fc71cf4d5407d560f405b9e0d56d"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "d0b523329e37fe7caa87a1e6723e9aca",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 232672,
+                "upload_time": "2014-10-11T05:20:20",
+                "url": "https://files.pythonhosted.org/packages/05/f9/cd563f3190f228f3c615dc223fc1229506e8405102e9f7efb60f9103f3eb/pyparsing-2.0.3.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a5ec41bb650aed802751a311b5d820d",
+                    "sha256": "43d7710fdaa194a3bccf3127d06dec8e2de99a7efe6c47f01d4b748a1d04b192"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.3.zip",
+                "has_sig": false,
+                "md5_digest": "0a5ec41bb650aed802751a311b5d820d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1611849,
+                "upload_time": "2014-10-11T05:19:34",
+                "url": "https://files.pythonhosted.org/packages/52/2d/ad1c5c1919c22588da4dfad86489a03329b5359d8ab8ea6a543e27571e4e/pyparsing-2.0.3.zip"
+            }
+        ],
+        "2.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "13b9539b210d86b6781f28cde96e2a26",
+                    "sha256": "e5c2f4914ec227882874d75180ecbe1fc7cc425b6c35c8c37ed64c307d00b2b5"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "13b9539b210d86b6781f28cde96e2a26",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 38279,
+                "upload_time": "2015-10-29T06:34:54",
+                "url": "https://files.pythonhosted.org/packages/3d/9a/e4159cf9a43d87784291acd56910e86cb246b5660e7170ae774eadf7314b/pyparsing-2.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f6db9de718e25d60208dd7ad306933a2",
+                    "sha256": "c43c9f1395975bf2b032c20e6b149d6b698cdabf9291079bcaf0131709e95f59"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f6db9de718e25d60208dd7ad306933a2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1140009,
+                "upload_time": "2015-10-29T06:34:38",
+                "url": "https://files.pythonhosted.org/packages/66/9e/3a4e42da29d488838c21b52be6b82584ac5b4d605f347c75230e01380468/pyparsing-2.0.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1eb1c9d4f9655f685d43135d0eb88e7",
+                    "sha256": "ed0ceef0cf8a9bf19115cc47fbc3b00ec33793c872e9869644047a15ec7efd06"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.4.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "b1eb1c9d4f9655f685d43135d0eb88e7",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 104575,
+                "upload_time": "2015-10-29T06:35:01",
+                "url": "https://files.pythonhosted.org/packages/ab/7b/a80acfd3dfca4f2ffe05b35fcc35c839f98645adf3947d68cfb00309f302/pyparsing-2.0.4.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dbe29e002115f46aafea2949106af28b",
+                    "sha256": "820e8234e93b6219e2f79282cc5c7af6582ece83b93c718b3c7f7244b06933df"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.4.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "dbe29e002115f46aafea2949106af28b",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235135,
+                "upload_time": "2015-10-29T06:35:11",
+                "url": "https://files.pythonhosted.org/packages/0e/91/a8490c7f6efb2da1136fcb380dc6c8975ecb729c7caac6faa2058b21354c/pyparsing-2.0.4.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "98d01987b65b6d43b47d36750cbce938",
+                    "sha256": "1174e46764b758959ec06bed25b013814e18b9e07449dcdb151bcc08b5a7421e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.4.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "98d01987b65b6d43b47d36750cbce938",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235135,
+                "upload_time": "2015-10-29T06:35:18",
+                "url": "https://files.pythonhosted.org/packages/24/d0/726960998b110d7c0e79f9f9fe45fd5cab5ea1131bd42897add0411cccf0/pyparsing-2.0.4.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9436a8b1f3ed4b64778e73165fa1f355",
+                    "sha256": "6e4da28af8213a5c7c2a353b3e21d3ff065cb325b9db144cfd11715cdd0a483f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.4.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "9436a8b1f3ed4b64778e73165fa1f355",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235135,
+                "upload_time": "2015-10-29T06:35:25",
+                "url": "https://files.pythonhosted.org/packages/11/02/c2a0d378df14d647a318b8f84b627c957e59a3f8c9b457c522fd12634b9f/pyparsing-2.0.4.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4c1f2b5be710d4f864320880400d7628",
+                    "sha256": "e3375fc37df267a61563f4f92cd07871089de6258f177c1a1012eea4a549f82b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.4.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "4c1f2b5be710d4f864320880400d7628",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235135,
+                "upload_time": "2015-10-29T06:35:33",
+                "url": "https://files.pythonhosted.org/packages/19/c8/a09b9ab22844147f6d9f32a6f6b78d4dc24e607747f8444efe15773a9a90/pyparsing-2.0.4.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8cdbf6d6e52934f79473443d335e7cb1",
+                    "sha256": "d0a9a14b7d75e31d7ffcde08ef7d4559eac07777fb800943eb940e83d666006c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.4.zip",
+                "has_sig": false,
+                "md5_digest": "8cdbf6d6e52934f79473443d335e7cb1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1293721,
+                "upload_time": "2015-10-29T06:34:45",
+                "url": "https://files.pythonhosted.org/packages/13/24/b72c92417397a2bdf988ae99a7413f82805c7bd9a6ead77195ccdaa6b4e6/pyparsing-2.0.4.zip"
+            }
+        ],
+        "2.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47b42476d9b89834bd7ebd5ab305cae1",
+                    "sha256": "29cfa7c2c22ece030a7da3181542e099355b59d8be34c6d6f9ae87766e369615"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "47b42476d9b89834bd7ebd5ab305cae1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 38156,
+                "upload_time": "2015-10-29T13:14:36",
+                "url": "https://files.pythonhosted.org/packages/2b/25/398db7ce5e2118af11f352e652569ecb76005f545e3a81b5c55cf8239913/pyparsing-2.0.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec7a522dd8ae22ddeb7c6f1aa95b72bb",
+                    "sha256": "58756bf33e989d84ac72142e4ca558cf10c778a3233edb0a86632f271409ba9e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ec7a522dd8ae22ddeb7c6f1aa95b72bb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1140072,
+                "upload_time": "2015-10-29T13:14:21",
+                "url": "https://files.pythonhosted.org/packages/3a/34/f79db816d4d7506786fe4a7c804e11e39225e8b8f93a58e406edaa70e936/pyparsing-2.0.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "69c539c80536eef13786ea00f12868d9",
+                    "sha256": "9a99bdbcac07f49dca80eb05fac9f03e9a8151a84123605df4d2fce983d46256"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.5.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "69c539c80536eef13786ea00f12868d9",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 104452,
+                "upload_time": "2015-10-29T13:14:42",
+                "url": "https://files.pythonhosted.org/packages/cb/f4/6f41ac39cbd9b65c81a257d6978dde8638a897b68a0662160a906077b099/pyparsing-2.0.5.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eff2c1df5712396c914f26dc577243b4",
+                    "sha256": "a74f9a7d9ee6451f4bf26953ae189c50e42bf35f9adf2527fc0660211d6c1d1a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.5.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "eff2c1df5712396c914f26dc577243b4",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235012,
+                "upload_time": "2015-10-29T13:14:49",
+                "url": "https://files.pythonhosted.org/packages/19/98/b54fad3088089ed5aba8c86f51c623f9bd279d3c7cdb8369ab80ef1eee39/pyparsing-2.0.5.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "05feefa45b2ba8385041b91e34254eea",
+                    "sha256": "8e179886ba1fea06cb52e7684a512feab5739d5d80709c7ac4988cb4b53a8adc"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.5.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "05feefa45b2ba8385041b91e34254eea",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235012,
+                "upload_time": "2015-10-29T13:14:55",
+                "url": "https://files.pythonhosted.org/packages/e4/ae/66f7bc7f71bbec526e10ba8d30fa9fc4f7369f3d281c4d5e8f1cfd0511f1/pyparsing-2.0.5.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "67f77775c5d2c7b09bc04086baf321d2",
+                    "sha256": "372adfc0c6b4e72fde281f71368f251fe131d4a194db5eb53d8b4cb570168713"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.5.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "67f77775c5d2c7b09bc04086baf321d2",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235012,
+                "upload_time": "2015-10-29T13:15:02",
+                "url": "https://files.pythonhosted.org/packages/ba/f2/2d5f00b5a4ee6334a39d80c946f5208922013a39c9876f3b84f18d5f14e9/pyparsing-2.0.5.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "04f5d1ad24b38f2ecd6b122cdc1b0124",
+                    "sha256": "d4d442cc65fbdac92c4cd68beaa184decde762927d5f3b7646a579b5fd49acfb"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.5.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "04f5d1ad24b38f2ecd6b122cdc1b0124",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235012,
+                "upload_time": "2015-10-29T13:15:15",
+                "url": "https://files.pythonhosted.org/packages/55/10/1779c99c4ea99bc55add8dd4dba26ac4a7b6889bc6506f2d4dd3669cb1d7/pyparsing-2.0.5.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "68df9a28b8e100c75b2dcb85e3db8b87",
+                    "sha256": "a1b439e5dd08abb7bd2d4fb8a720ea96fe78803edcbfc3e7207c672285767bfa"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.5.zip",
+                "has_sig": false,
+                "md5_digest": "68df9a28b8e100c75b2dcb85e3db8b87",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1293721,
+                "upload_time": "2015-10-29T13:14:30",
+                "url": "https://files.pythonhosted.org/packages/f4/b3/522c4f0a103a4e48b821b89ce67564b405d83a4b234c316fca007c1d52bc/pyparsing-2.0.5.zip"
+            }
+        ],
+        "2.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b2ddfa95fc7381cfa0b5dc573d1fe26",
+                    "sha256": "23897437d77a627264b176ccc726b1fa0e2d5e4f44c1aa6b6ac880639b8b1ac3"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0b2ddfa95fc7381cfa0b5dc573d1fe26",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 38383,
+                "upload_time": "2015-11-14T03:29:54",
+                "url": "https://files.pythonhosted.org/packages/75/af/dbfea3f224a6980c18336a0feefc37f8011cf2b356e6090a35f2cd23f686/pyparsing-2.0.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a2d85979e33a6600148c6383d3d8de67",
+                    "sha256": "aea69042752ad7e9c436eea6ae5d40e73642e27f50edb6da4a2532030ef532da"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a2d85979e33a6600148c6383d3d8de67",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1140849,
+                "upload_time": "2015-11-14T03:29:42",
+                "url": "https://files.pythonhosted.org/packages/16/10/744034d57ebb4496d881dddd022e8be22a0312b0468f97352bbc6d8e1e6b/pyparsing-2.0.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "51e885d1f35a15d2f594a453a80855a0",
+                    "sha256": "4bfc08ac228ae3c549d3510e62369a48137725d98b39a686bf86c6c5a1d79c3a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.6.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "51e885d1f35a15d2f594a453a80855a0",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 104679,
+                "upload_time": "2015-11-14T03:30:00",
+                "url": "https://files.pythonhosted.org/packages/50/5d/6bc29fc683a5b0e42ad07a918062e344d390ae61ec02bfe239291ff476ca/pyparsing-2.0.6.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1dbd7522b60a8f5b9dd0ce995874f95d",
+                    "sha256": "a032affeff5237982f61c2cf33a0a42f6695d51b0ebfaf2f3841a634dde25071"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.6.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "1dbd7522b60a8f5b9dd0ce995874f95d",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235239,
+                "upload_time": "2015-11-14T03:30:19",
+                "url": "https://files.pythonhosted.org/packages/1c/70/1cb606b27887f8cf502a1bbfadd517411d7a6075268022c6b48f0468f446/pyparsing-2.0.6.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ef3cc8dac17836a031b2ca2cf7ecce9",
+                    "sha256": "fa45e8c51d4936eac407b632d25c16687607a94b5160ad8abba0fb546ba30528"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.6.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "5ef3cc8dac17836a031b2ca2cf7ecce9",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235239,
+                "upload_time": "2015-11-14T03:30:25",
+                "url": "https://files.pythonhosted.org/packages/27/35/76f4b321d5ee22768d2a23d1a7b945313719550fa35cf8d171eacc59ab94/pyparsing-2.0.6.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf6ff8bc7d4d86563b100a8f880570a7",
+                    "sha256": "7a1aeb7a3f6b8471aa64cc57748e06fc353e7a5b995c5d0573fbf237cdebb657"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.6.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "bf6ff8bc7d4d86563b100a8f880570a7",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235239,
+                "upload_time": "2015-11-14T03:30:31",
+                "url": "https://files.pythonhosted.org/packages/7b/b1/1fb09b7ea9892ef03a763f3f7e34dfc0b490d305754d5ca8a25a69b16167/pyparsing-2.0.6.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8acb151ea4f74d2c093b60ffd8dc4d6e",
+                    "sha256": "b42560b839cc86097ed77253b948cc88ecaa6e65f5328063527e5718075b5143"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.6.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "8acb151ea4f74d2c093b60ffd8dc4d6e",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235239,
+                "upload_time": "2015-11-14T03:30:38",
+                "url": "https://files.pythonhosted.org/packages/24/fa/a5b4276f32f8a982c5c44517ae6ff586f41433db8b809e68e94abae4b7c6/pyparsing-2.0.6.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cbad9bc8ae80de503f634b492701f341",
+                    "sha256": "697f04b1b5d01741f4f7b7267ff2f2cc845c336e65efa71609339a250a0e9c72"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.6.zip",
+                "has_sig": false,
+                "md5_digest": "cbad9bc8ae80de503f634b492701f341",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1294481,
+                "upload_time": "2015-11-14T03:29:48",
+                "url": "https://files.pythonhosted.org/packages/fb/bf/77bc958adb8df3119ad87581d218ab2527757dc0f70a2343b507bb7f23b0/pyparsing-2.0.6.zip"
+            }
+        ],
+        "2.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7c5f691a0db36f1fc7dda5c084028ffb",
+                    "sha256": "56adc21a4b86391db146b7f74f8c789c396401915703bbd19b793e2a7c30bb46"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7c5f691a0db36f1fc7dda5c084028ffb",
+                "packagetype": "bdist_wheel",
+                "python_version": "any",
+                "size": 38314,
+                "upload_time": "2015-12-31T01:18:55",
+                "url": "https://files.pythonhosted.org/packages/ac/de/44b122749e143cf87db83edb2d3d239da772e1c3ae4cbeb55964a1bfabdd/pyparsing-2.0.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1c8bed7530642ca19197f3caa05fd28b",
+                    "sha256": "2ce0db3c70ec0413603d4aea389e4ece34ff93c265649b1c5c7d56e3c2cf19c4"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1c8bed7530642ca19197f3caa05fd28b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1141457,
+                "upload_time": "2015-12-31T01:12:40",
+                "url": "https://files.pythonhosted.org/packages/30/b6/12a3f337bf6eb3d681f4f83d6c8da596f99c6ce44797aa91869c1f103729/pyparsing-2.0.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c03e12050e1ca1008781123d6390ea65",
+                    "sha256": "3470388781fb94eccf75141b0b65490637e2717f983a719011e1aa156eec3d7e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "c03e12050e1ca1008781123d6390ea65",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 104623,
+                "upload_time": "2015-12-31T01:19:21",
+                "url": "https://files.pythonhosted.org/packages/16/98/7508fff57563ca42a6c096cfe119560f3906872e509711e7e87e70527abf/pyparsing-2.0.7.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1f6de634643406f7dada60f9aedfde2",
+                    "sha256": "b58b7d993956dab2efa41ee9424700b4c630fcbd85c41531211d36fbbd6e0592"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "d1f6de634643406f7dada60f9aedfde2",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 235183,
+                "upload_time": "2015-12-31T01:19:46",
+                "url": "https://files.pythonhosted.org/packages/b5/78/f59dfe936aa0dbff1356179ea9a05a9bf69130ac17679936391ea08ffdbe/pyparsing-2.0.7.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3208020198d817df82dbf83bae0893c8",
+                    "sha256": "7e194341721f6d5516cfec0d8d99dad6c584373323b6694f8c2f089a00273c07"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "3208020198d817df82dbf83bae0893c8",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 235183,
+                "upload_time": "2015-12-31T01:21:06",
+                "url": "https://files.pythonhosted.org/packages/c7/f0/8c42519449d505e891f408e60fd7472f710d8bef4837a8d31a588c23920d/pyparsing-2.0.7.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "90eba5c44874f1c498d3c6156250beb2",
+                    "sha256": "7fa0713063d809d00db2123431a8d603474a62232491e0455cd13761e8fec655"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "90eba5c44874f1c498d3c6156250beb2",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.3",
+                "size": 235183,
+                "upload_time": "2015-12-31T01:20:47",
+                "url": "https://files.pythonhosted.org/packages/29/bb/6176dda13bc48dcb6b5956a5d1869670d8cb665da2cc78ef9a933525bc66/pyparsing-2.0.7.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "32670e97b78f03819d8af9d5ae8a2a8a",
+                    "sha256": "a03b4e7ea18538064b5e1be4a66cdef35370a4e76dd10574ca35c386dbeca560"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "32670e97b78f03819d8af9d5ae8a2a8a",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.4",
+                "size": 235183,
+                "upload_time": "2015-12-31T01:20:29",
+                "url": "https://files.pythonhosted.org/packages/f9/4e/2c2d59d2ce9b2b182f534526ea1d3a08f7213c4d0fb010b7b05dcd180312/pyparsing-2.0.7.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b7927fc98a782fd92c2f9a4c79aa238",
+                    "sha256": "9043b3c6b0722ec8d47b853768c500ca5246ef1ecd4f9d132a43452c7d3d4588"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "4b7927fc98a782fd92c2f9a4c79aa238",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.5",
+                "size": 235183,
+                "upload_time": "2015-12-31T01:20:09",
+                "url": "https://files.pythonhosted.org/packages/49/59/d06692e83ccdee28aa81e58f30498a195a830a935604a7195f4f65575edc/pyparsing-2.0.7.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1326214959b2e039427cfc27baf846fa",
+                    "sha256": "9e08c1444c91e194bd17ffdaefce7edb5a6036e57f2bb7df5b6c7776d86f4134"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.0.7.zip",
+                "has_sig": false,
+                "md5_digest": "1326214959b2e039427cfc27baf846fa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1295404,
+                "upload_time": "2015-12-31T01:18:23",
+                "url": "https://files.pythonhosted.org/packages/7e/f5/941ce83056de4ded5044e26bf09dab35ab7c4895097e1fde143c2be6b8ed/pyparsing-2.0.7.zip"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1684c60ad8657cd5d8e8260891f6ef7d",
+                    "sha256": "33b8b9da9989456fb92aeb5ae96c28d74cc8f1b14b42d62b2508174afb155787"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1684c60ad8657cd5d8e8260891f6ef7d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 38954,
+                "upload_time": "2016-02-07T20:19:08",
+                "url": "https://files.pythonhosted.org/packages/ed/40/22d4029d6c7b5eb27038ae1ca2ab27a3ff22d88f6577a2f1d9ef609f6447/pyparsing-2.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6fc363eb77331f9cf435d65f63f364ea",
+                    "sha256": "f6cb2bc85a491347c3c699db47f7ecc02903959156b4f92669ebf82395982901"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6fc363eb77331f9cf435d65f63f364ea",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1144460,
+                "upload_time": "2016-02-07T20:18:48",
+                "url": "https://files.pythonhosted.org/packages/3c/49/164a9d65e0b6ef182b328bcfdb35e2a7b978dd2a74602150ee16d7b0b251/pyparsing-2.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bac6d98ff9954602a21269dc3341a3f2",
+                    "sha256": "5c100cded2aa93b7d0629934c4b671ae3b4e192e88546686cf6bd54255de7bc6"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.0.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "bac6d98ff9954602a21269dc3341a3f2",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 105262,
+                "upload_time": "2016-02-07T20:19:18",
+                "url": "https://files.pythonhosted.org/packages/c9/38/39878b4ed9b4104750bb7e48099c597c0668c83811020a8e991e4d93b781/pyparsing-2.1.0.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c762943e426bc556f76366d103e9316",
+                    "sha256": "cf1725d0de8adfa062215afe0edd2acd1097b489eef27616a43ea4c696746a13"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.0.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "0c762943e426bc556f76366d103e9316",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235822,
+                "upload_time": "2016-02-07T20:19:25",
+                "url": "https://files.pythonhosted.org/packages/ee/15/8bb8c33f8bcc2d0950d099ff62c742f93e31fe79411c11d15eee78d7c460/pyparsing-2.1.0.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "230881d07096e608e66c22fe0a0d5741",
+                    "sha256": "e06a750886e562dd2a0eba195ee79216c94fc74555d0fe4f94a473c915f44636"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.0.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "230881d07096e608e66c22fe0a0d5741",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235822,
+                "upload_time": "2016-02-07T20:19:35",
+                "url": "https://files.pythonhosted.org/packages/e9/1d/03adc07b5707bad13a5aa203ef96b4718c64d48cedcc6d356c4554a31b36/pyparsing-2.1.0.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f3e8af83028de0d4649a9824ad96bf36",
+                    "sha256": "ce13c622301acc0239b105e43ba2495e78665cbb13d4647dc74d10de6a5c7a69"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.0.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "f3e8af83028de0d4649a9824ad96bf36",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235822,
+                "upload_time": "2016-02-07T20:19:43",
+                "url": "https://files.pythonhosted.org/packages/72/0f/b0f059c50687778383130223a1bd8bb92504c4c08d4f48e4f08fadd8408f/pyparsing-2.1.0.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6cea83a19329ec278726f72742e09a08",
+                    "sha256": "769f0d74ced4e8133a205fb24561d129c978217fa0c3a610a71fe0971dd6646e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.0.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "6cea83a19329ec278726f72742e09a08",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235822,
+                "upload_time": "2016-02-07T20:19:51",
+                "url": "https://files.pythonhosted.org/packages/1e/2b/97c0e3a03fe624ca673d2e1f0ca3370e68b7e7056d03f1c073cc8b613ce2/pyparsing-2.1.0.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b77862e3ac5d1e40dc6cebce8a1afa2",
+                    "sha256": "ba274dd441b4ebbb684f1dda372664cc6af3201c717293b2cb7562627c13c802"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "4b77862e3ac5d1e40dc6cebce8a1afa2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1298884,
+                "upload_time": "2016-02-07T20:18:56",
+                "url": "https://files.pythonhosted.org/packages/cc/5c/63058b8f3d0fb56b65fe8477a308bd69f079547cef12704e6be0171b93e8/pyparsing-2.1.0.zip"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37807c1844f67ab795a9e4a172eec973",
+                    "sha256": "3a9743e0cba1df5ad7e5412d19a5ec1cd320c08852d5b5a4050aabe877d46c1f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "37807c1844f67ab795a9e4a172eec973",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 38888,
+                "upload_time": "2016-03-22T20:24:17",
+                "url": "https://files.pythonhosted.org/packages/77/e0/a9ec2ed6e31b123e7babc788806cbd734775a3e4be9fac8f4cbf0b1f4356/pyparsing-2.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ce9096d94f553e2bc1fd366fba65558",
+                    "sha256": "9bae5cd4cbee6da0d7d8d9a1647f5253a3b89652e707647eaf1961f4932ae6c6"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5ce9096d94f553e2bc1fd366fba65558",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1144099,
+                "upload_time": "2016-03-22T20:23:55",
+                "url": "https://files.pythonhosted.org/packages/94/51/3dd26b41be55ed05e72d1da87e4a732d8b92245b1f2f7fe2fa65a4910858/pyparsing-2.1.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f44a74ae169c6a427489147bb3f17fa7",
+                    "sha256": "f1a56b9e7c6a43ffe9a696cf3454b2c5774342d8493635da03d056d393591779"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.1.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "f44a74ae169c6a427489147bb3f17fa7",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 105182,
+                "upload_time": "2016-03-22T20:24:26",
+                "url": "https://files.pythonhosted.org/packages/44/c8/cb9cff22ff3738c13cfe38b6d14d2f46813246c9fc95d0ef9c708d7b9ac2/pyparsing-2.1.1.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7cb342d42aeef18250e82145083aa53b",
+                    "sha256": "1302197acc1d5bbb206ca35dfae346cbb16d493e08d720ee4b15e97665d82026"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.1.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "7cb342d42aeef18250e82145083aa53b",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235742,
+                "upload_time": "2016-03-22T20:24:33",
+                "url": "https://files.pythonhosted.org/packages/a5/ea/01209617d3fa09f9b80fdcd6fa9924f729d84f574d2cda3de2483d293a3e/pyparsing-2.1.1.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "abe98b7385d56b4bf1b98b4838d8c811",
+                    "sha256": "be0d5736784b6100bf47a587b112e9a5b00d0803025407feb981836109c1acb8"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.1.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "abe98b7385d56b4bf1b98b4838d8c811",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235742,
+                "upload_time": "2016-03-22T20:24:42",
+                "url": "https://files.pythonhosted.org/packages/6c/24/b46d9827f53349f42aed67798b95a805bf1f0da665f9073bbf1f2b96dcfb/pyparsing-2.1.1.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c0fe8d3c5dccb896c2e2b27fe423dd91",
+                    "sha256": "26d293069c5208e132bdeef81d4f9e20dd0d35da2ed78eded4af1da148fdf130"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.1.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "c0fe8d3c5dccb896c2e2b27fe423dd91",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235742,
+                "upload_time": "2016-03-22T20:24:49",
+                "url": "https://files.pythonhosted.org/packages/36/a9/1a10ee31e90acf9f4034b04b613a399c8181090b76e1d5a5c1a138061fa1/pyparsing-2.1.1.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7add8b376f53cdd46b47a5266a67f6ff",
+                    "sha256": "900351d66d07f1338942074a4306c54d684d53a19df286e8679fdb69a0122dca"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.1.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "7add8b376f53cdd46b47a5266a67f6ff",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 235742,
+                "upload_time": "2016-03-22T20:24:57",
+                "url": "https://files.pythonhosted.org/packages/32/dd/a3274d5a0804bb543284080ee6547f32d8b78cf0557bac8a00a8216ad394/pyparsing-2.1.1.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a1d3a63ddc2ec9a3da961d1b7f258b2",
+                    "sha256": "4bd04badfda39b1e2fd0d77cb78b488c881d88c31734791a0ae902979ae10575"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.1.zip",
+                "has_sig": false,
+                "md5_digest": "2a1d3a63ddc2ec9a3da961d1b7f258b2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1296086,
+                "upload_time": "2016-03-22T20:24:04",
+                "url": "https://files.pythonhosted.org/packages/54/97/11c0b807bafeaf19f50efadb9bd9e47a5f397509154833a1bd66fee59f6a/pyparsing-2.1.1.zip"
+            }
+        ],
+        "2.1.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5e707ac42995e52ae06df4325ac07ebb",
+                    "sha256": "67101d7acee692962f33dd30b5dce079ff532dd9aa99ff48d52a3dad51d2fe84"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.10-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5e707ac42995e52ae06df4325ac07ebb",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 56164,
+                "upload_time": "2016-10-07T01:35:21",
+                "url": "https://files.pythonhosted.org/packages/2b/f7/e5a178fc3ea4118a0edce2a8d51fc14e680c745cf4162e4285b437c43c94/pyparsing-2.1.10-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "065908b92904e0d3634eb156f44cc80e",
+                    "sha256": "811c3e7b0031021137fc83e051795025fcb98674d07eb8fe922ba4de53d39188"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "065908b92904e0d3634eb156f44cc80e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1230829,
+                "upload_time": "2016-10-07T01:35:11",
+                "url": "https://files.pythonhosted.org/packages/38/bb/bf325351dd8ab6eb3c3b7c07c3978f38b2103e2ab48d59726916907cd6fb/pyparsing-2.1.10.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f749ace29740ddc192c6d113ace14a92",
+                    "sha256": "a27bf672302765ab04ed5c976dd44c55c0702f7a25a5e5e78bc91207d5b07da4"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.10.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "f749ace29740ddc192c6d113ace14a92",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 253043,
+                "upload_time": "2016-10-07T01:35:26",
+                "url": "https://files.pythonhosted.org/packages/2a/51/08a9d4a75e08926fba4038f4c2cb76d751654d6286202a412717bacef746/pyparsing-2.1.10.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c89b4128280210b905e9fe2710cfad8",
+                    "sha256": "0fef8411ad305909b1a679471d66f25ef4477f24666598deceb4bb640c2eb6c2"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.10.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "0c89b4128280210b905e9fe2710cfad8",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 253043,
+                "upload_time": "2016-10-07T01:35:31",
+                "url": "https://files.pythonhosted.org/packages/ca/3b/2a771cf75eece6348f5353833510ce2b45211b55d216b28bbe3176cf0771/pyparsing-2.1.10.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0137d2a9c9e27f9f7380cccfe09c96bc",
+                    "sha256": "a00f6e57bf4e2b3d999223d36c14d839f12145d5b1f12126124424e8c43d856e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.10.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "0137d2a9c9e27f9f7380cccfe09c96bc",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 247923,
+                "upload_time": "2016-10-07T01:35:35",
+                "url": "https://files.pythonhosted.org/packages/b9/e5/ac3b3229c8212938f012b96fd2e92fb6d2989faf7251d9c7531c6a2e5285/pyparsing-2.1.10.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8406e978fe59578d72656f8cd8282255",
+                    "sha256": "a163f9079b84da728e4967e3f36476ed168d86b2fc2f49c6e609125600f9d60b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.10.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "8406e978fe59578d72656f8cd8282255",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 247923,
+                "upload_time": "2016-10-07T01:35:40",
+                "url": "https://files.pythonhosted.org/packages/ca/d9/d44a92cca7ad1c86c5ab81f8f5dd4101fcc9a48e1397da93ab4c51374eee/pyparsing-2.1.10.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ac841c34053c12528590ad13c4369153",
+                    "sha256": "4fa446b1c36509e75d883a1a552b51dda9b82bfd914a24ded17ceb5d90b53cc5"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.10.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "ac841c34053c12528590ad13c4369153",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 517235,
+                "upload_time": "2016-10-07T01:35:45",
+                "url": "https://files.pythonhosted.org/packages/3f/ea/1910ae1f746aa225eb56f63a85c6ae92f65c0b4a7d855e2df9babd2a1963/pyparsing-2.1.10.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3732506980ff0a695d003e8c781d8394",
+                    "sha256": "0aa6e8d8c3f9c447a95a33bb04b103ead630121c3f4233e2980348cecf8b69c8"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.10.zip",
+                "has_sig": false,
+                "md5_digest": "3732506980ff0a695d003e8c781d8394",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1390560,
+                "upload_time": "2016-10-07T01:35:16",
+                "url": "https://files.pythonhosted.org/packages/30/c5/a4f214f66fbdb868d20d5811635d08e386f63a9591c5756ef717b3115796/pyparsing-2.1.10.zip"
+            }
+        ],
+        "2.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c93b1a94181567da9bcf092fa6a7c99e",
+                    "sha256": "b6396a972294b1834e6cfddc5b456f3382340bc0611a0f9523e1a148ca890840"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c93b1a94181567da9bcf092fa6a7c99e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 39158,
+                "upload_time": "2016-05-11T01:23:13",
+                "url": "https://files.pythonhosted.org/packages/f6/f3/d52ce91f76f99752f2cac7043cbfaba63e637aa92296c1837ea64ddb780a/pyparsing-2.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1b5995b12fc17387bc4315559a1f13ee",
+                    "sha256": "57754e38d618fb47fdd17d1ce7a2dc8cbb7986ab07363ce8dcfc57270e6c9a2a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1b5995b12fc17387bc4315559a1f13ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1145508,
+                "upload_time": "2016-05-11T01:22:48",
+                "url": "https://files.pythonhosted.org/packages/41/45/1f1b5e0f58d9f5c4e60ca062704c033700d866958f5dc02531996239f5da/pyparsing-2.1.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d17753147d148fa32a1356294df4d994",
+                    "sha256": "5ca31e257a14a2f1b17aad0fc0850ca194c6af2286035106b5dcb69e27f16c70"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.2.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "d17753147d148fa32a1356294df4d994",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 105458,
+                "upload_time": "2016-05-11T01:23:22",
+                "url": "https://files.pythonhosted.org/packages/52/cd/ec5b38df38e74e408efc018018b904c0e5515ca91478bb59ca20ce5f4a9e/pyparsing-2.1.2.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83d7f29f913f74744c401affd0134d07",
+                    "sha256": "f154074ce7ed990422fad8fcbcd1af2ee265751475872324d92082be7554e4fe"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.2.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "83d7f29f913f74744c401affd0134d07",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 236018,
+                "upload_time": "2016-05-11T01:23:30",
+                "url": "https://files.pythonhosted.org/packages/e5/45/ee133714509cfae176b31d24882286588774f16cbebcfa8e8b8ba8fa80cf/pyparsing-2.1.2.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9594874bf2eda310a0dbf925f7e0b2c5",
+                    "sha256": "e4d85fe7f01c0909acf69f2c3624bbce4052fab6af83aa4cdb5683ef8f16ee58"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.2.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "9594874bf2eda310a0dbf925f7e0b2c5",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 236018,
+                "upload_time": "2016-05-11T01:23:38",
+                "url": "https://files.pythonhosted.org/packages/04/fa/5b0bcfd7565ad8e3585d24f19f50ad5e199cdbc21f4b111abb93a695db78/pyparsing-2.1.2.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "45f4084bcbeeea53c61a036bee24caaf",
+                    "sha256": "16e943d8d435f2ad63e4deef935d9b733b47b6a27f9da50acd5684aba3690899"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.2.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "45f4084bcbeeea53c61a036bee24caaf",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 236018,
+                "upload_time": "2016-05-11T01:23:45",
+                "url": "https://files.pythonhosted.org/packages/14/d0/ee30aa21025d01c339baec2f4b6790a6a68023e2c05c40ccbd5d4d7b09e9/pyparsing-2.1.2.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "06efa316ddfe67384c8abca8ec937efd",
+                    "sha256": "7b50e0dd96ff66158da6483bb3c917600ec7fc61a619d78a5dc8f30b9bfbbc4b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.2.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "06efa316ddfe67384c8abca8ec937efd",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 236018,
+                "upload_time": "2016-05-11T01:23:54",
+                "url": "https://files.pythonhosted.org/packages/84/75/41e146cad97a998699675d1987285016681d8485423a0786ffaf4862bd29/pyparsing-2.1.2.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3ebe0138a07d43eded7448388808730b",
+                    "sha256": "cf5f46861ee6aedc949166b325d057d9ef1f420a7dd3c77841dbfa52d9f74588"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.2.zip",
+                "has_sig": false,
+                "md5_digest": "3ebe0138a07d43eded7448388808730b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1297307,
+                "upload_time": "2016-05-11T01:22:58",
+                "url": "https://files.pythonhosted.org/packages/90/f5/8ca95e67983119f06326073e7ca3f0ce4325866a1358fab449a8f695dd52/pyparsing-2.1.2.zip"
+            }
+        ],
+        "2.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "261acb0ee56039df52ac66d823e280cb",
+                    "sha256": "3fcd048fc92e5e8317e753b7f207c0a88f9b79c47cd17e491fd3cc669989d133"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "261acb0ee56039df52ac66d823e280cb",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 39265,
+                "upload_time": "2016-05-11T15:31:48",
+                "url": "https://files.pythonhosted.org/packages/22/26/b56673d1578cfeafe915d946d3075bdbfaeb434a2a5cef4b530c4d1d4d7c/pyparsing-2.1.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3ac54fb8c71a1536648183f24695ed1f",
+                    "sha256": "07ed062c8e38c682ddc728e7aa42fab44612744fce33812bc533f93ea53c9347"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3ac54fb8c71a1536648183f24695ed1f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1145896,
+                "upload_time": "2016-05-11T15:31:12",
+                "url": "https://files.pythonhosted.org/packages/38/2c/e2f2562a7568c0234f600f5257ae077deb7b87cd8ce75a29f2653844952a/pyparsing-2.1.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b995a5e18714a28dbf9578d348b61f4",
+                    "sha256": "f2760e5303df417c43b26b0ca14870ed2b8f5807bbd3ef3083197a3ffc89291c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.3.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "3b995a5e18714a28dbf9578d348b61f4",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 105565,
+                "upload_time": "2016-05-11T15:32:23",
+                "url": "https://files.pythonhosted.org/packages/ca/2e/15229236001ce0142d8270a3e88ffe5bb718b2ef80392f5d33cabc1534e7/pyparsing-2.1.3.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54be9221f78ee7d8361eef11eecf4b66",
+                    "sha256": "2dfb49c39cd3f39279dfc5639b4aaedd386961693f01e3f9682bd849a87b822b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.3.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "54be9221f78ee7d8361eef11eecf4b66",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 236125,
+                "upload_time": "2016-05-11T15:32:57",
+                "url": "https://files.pythonhosted.org/packages/eb/cc/6e0c745ec906d0f79139294cfabbfd5be6cf6711f9a949b52fee944e470b/pyparsing-2.1.3.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "86c0f3dbdd83e5646e44b6717d6d5893",
+                    "sha256": "5fea0c3f5188eda7de52a9bef5502611c2e4c2c260edc70556d476aba25a56da"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.3.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "86c0f3dbdd83e5646e44b6717d6d5893",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 236125,
+                "upload_time": "2016-05-11T15:33:24",
+                "url": "https://files.pythonhosted.org/packages/43/d4/77c31cad24de4b36ee0d010fc073afe452120ad2950b97e03a5a0952fe01/pyparsing-2.1.3.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b56903148c5c9156bccd7aa9e2ded213",
+                    "sha256": "5dc07afdb8c21ff769a0b45ae4ebc18dc02d69a612faf74bf6d6033386954100"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.3.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "b56903148c5c9156bccd7aa9e2ded213",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 236125,
+                "upload_time": "2016-05-11T15:34:00",
+                "url": "https://files.pythonhosted.org/packages/fd/02/5b46483631e63a97177042b8bcde4662a84279029b695a323e1c8a365a97/pyparsing-2.1.3.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d6e5ac39f72fae53e854a4167e90a12b",
+                    "sha256": "2aa77f3c1737661af3b1d54334a20042dd9b8b13e7af19392e2178c927042e59"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.3.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "d6e5ac39f72fae53e854a4167e90a12b",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 236125,
+                "upload_time": "2016-05-11T15:34:35",
+                "url": "https://files.pythonhosted.org/packages/fd/98/b4205d85243044421f457fd2f01519092ff886957d041d99ca86c622b815/pyparsing-2.1.3.win32-py3.5.exe"
+            }
+        ],
+        "2.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e2dde266aa7707415c10272cdaf63490",
+                    "sha256": "7ede41fb90c285a5159372e7de61d2f2451060cb38fa804a4ab53e3bcb2e61b6"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e2dde266aa7707415c10272cdaf63490",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 40684,
+                "upload_time": "2016-05-13T19:03:31",
+                "url": "https://files.pythonhosted.org/packages/47/49/64007b0bc2badabb6521f73939a7611d0620e6d335a9dd5c20e127aea267/pyparsing-2.1.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "322059c57f0c9f11da1c6c06a2ba2197",
+                    "sha256": "a9234dea79b50d49b92a994132cd1c84e873f3936db94977a66f0a4159b1797c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "322059c57f0c9f11da1c6c06a2ba2197",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1155386,
+                "upload_time": "2016-05-13T19:03:11",
+                "url": "https://files.pythonhosted.org/packages/ae/0c/b6ce7eea7ccf020ae68db1119bacaa07ad91fedaefaf8f3265e8dd156813/pyparsing-2.1.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "497d6067707905b42c5410fc2a1eac9e",
+                    "sha256": "e3079c49e9c320f6d1f8a0b15a89e84e8d672165ab5bb264a03d87ff12bd19e9"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.4.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "497d6067707905b42c5410fc2a1eac9e",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 106998,
+                "upload_time": "2016-05-13T19:03:38",
+                "url": "https://files.pythonhosted.org/packages/40/1a/7627202681f7fddb687450adf4155212ef3c93ce6604752848480714d0cd/pyparsing-2.1.4.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e72f73d972919b826f06983d19abcc9d",
+                    "sha256": "ae202972009530278d3b2fb3488c4d370340183c3438cfd005480e8d469dfb05"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.4.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "e72f73d972919b826f06983d19abcc9d",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 237558,
+                "upload_time": "2016-05-13T19:03:46",
+                "url": "https://files.pythonhosted.org/packages/db/58/d9417e60b911db2e1aea90290003d9a5621819b03c35c9e72f64df714f52/pyparsing-2.1.4.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ef6ca89d0f04285d0bea322d38c0442",
+                    "sha256": "d7800f53b30056d1a386d30c6e622bed7b947c76d44f81d541ca12563b1536e3"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.4.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "4ef6ca89d0f04285d0bea322d38c0442",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 237558,
+                "upload_time": "2016-05-13T19:03:56",
+                "url": "https://files.pythonhosted.org/packages/8c/52/d6fc36481d3c7436be82b93f83b17001949780dc6791d4a2add6410ee81c/pyparsing-2.1.4.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9c12a8183a4c35bc8105f546bdad85c",
+                    "sha256": "1d0b5e479ed696d54cacfe6ee7a5ec927fdbfedc16141f60fe2bad62a3dbf934"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.4.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "d9c12a8183a4c35bc8105f546bdad85c",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 237558,
+                "upload_time": "2016-05-13T19:04:07",
+                "url": "https://files.pythonhosted.org/packages/25/64/e853b8090f5444aebbe2a984ba6aeb69a835eb36a989cdc1f1b974ffd722/pyparsing-2.1.4.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "08101f5a74c90dea9957004d79fc0a25",
+                    "sha256": "28bc70dbe824360d1b11862c2c8aab63d6713f2b259282ef0eb0f081db35bc8a"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.4.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "08101f5a74c90dea9957004d79fc0a25",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 237558,
+                "upload_time": "2016-05-13T19:04:17",
+                "url": "https://files.pythonhosted.org/packages/7c/39/b2f62e688d70de0552f73a1a31aff77bb3c9e23f58811f9c54c0a26a69a6/pyparsing-2.1.4.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd4450928cd2e718133271e7feb34442",
+                    "sha256": "54f1cafe211c653735df3a25f81ea04b52fa73da6276687a378ada11ddf84a78"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.4.zip",
+                "has_sig": false,
+                "md5_digest": "dd4450928cd2e718133271e7feb34442",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1309555,
+                "upload_time": "2016-05-13T19:03:20",
+                "url": "https://files.pythonhosted.org/packages/3b/bd/c1012598867074abf91793a00a1fa6913ebf7bd319bc3524993de0894eeb/pyparsing-2.1.4.zip"
+            }
+        ],
+        "2.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "86cc5bebed5f1c0b5c9900f7cf1a9e4f",
+                    "sha256": "d91797f369fc2f11bbcfcc4234bca1b1ff114bdb3557a14458f1bd35211916e5"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "86cc5bebed5f1c0b5c9900f7cf1a9e4f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 42540,
+                "upload_time": "2016-06-13T20:30:37",
+                "url": "https://files.pythonhosted.org/packages/24/c5/3ce00e6a5fca0eb962553467a51b44de1a13e1bc23dabf58e2e9799b8807/pyparsing-2.1.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28d0c3cf39ee5859d408d2b4d311a9c2",
+                    "sha256": "b9ace99b581174d7ca98891a7bc57fd08892b94f17922645d90835f7b9b54a56"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "28d0c3cf39ee5859d408d2b4d311a9c2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1165974,
+                "upload_time": "2016-06-13T20:29:49",
+                "url": "https://files.pythonhosted.org/packages/30/c3/a424fb888af373b54df495a0582379df374322caabd4f3a549bcca72aeeb/pyparsing-2.1.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ebff0024ffeba0b9c1655224f1d8a9c4",
+                    "sha256": "36e5e349de0ce2821f3f7c9e054c2e2dce54e075d62ec05acd893ed398a5ea76"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.5.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "ebff0024ffeba0b9c1655224f1d8a9c4",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 108853,
+                "upload_time": "2016-06-13T20:30:47",
+                "url": "https://files.pythonhosted.org/packages/92/03/ccb2d7f386d9f6c4b7c843554f65d03a1e0d0583ba04085efa1e375a76d5/pyparsing-2.1.5.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "91d885296ca6c006503e989b23a29846",
+                    "sha256": "49fef68224ab25fea6b6a5c0e7a6a14695dabc1e5d48de829cb477a2a35e870c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.5.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "91d885296ca6c006503e989b23a29846",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 239413,
+                "upload_time": "2016-06-13T20:31:02",
+                "url": "https://files.pythonhosted.org/packages/e2/2a/3c61e2a1d41c69ec42c5e22414217bfea57cfdb796b2eaca4b5c24d72f31/pyparsing-2.1.5.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "23e600c9b55427a9c27d703e5d9b8d24",
+                    "sha256": "52d10cf88c6f05135895dbba7937f1aae13a41ea865b5716fab61f535a305b36"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.5.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "23e600c9b55427a9c27d703e5d9b8d24",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 239413,
+                "upload_time": "2016-06-13T20:31:37",
+                "url": "https://files.pythonhosted.org/packages/9b/dc/5408a1327c928a82438d55d0279824bc89b7e55818ef02412d25a99a6d8a/pyparsing-2.1.5.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a901fe884c9f0866403d1065d7b567f",
+                    "sha256": "13a0ae1d2491a6e4a426383c8e4bc32d91db2b55b00e0d54642300a50c6130e1"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.5.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "2a901fe884c9f0866403d1065d7b567f",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 239413,
+                "upload_time": "2016-06-13T20:32:13",
+                "url": "https://files.pythonhosted.org/packages/54/70/42233b4ed2a5e4fb308a5198ffe73c2af9f683b258cdcd1e98b80f67a700/pyparsing-2.1.5.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "153e7f544c2478abfaa1a088cc576186",
+                    "sha256": "1da088e9cfd55d06d5789ea6578add13aedf1eaf33255ab89c9961ae013564eb"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.5.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "153e7f544c2478abfaa1a088cc576186",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 239413,
+                "upload_time": "2016-06-13T20:32:43",
+                "url": "https://files.pythonhosted.org/packages/ae/fe/bdb61cc307385eae2427eaef1e70a03cc872eb2876841ea8b3e452e4083e/pyparsing-2.1.5.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a94424d19e96e19aca9f78b198f9070",
+                    "sha256": "b7d36c1bd9c54e98fd8850da5a9ab43359dfb84ba717ee26768e9c4f81288a1c"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.5.zip",
+                "has_sig": false,
+                "md5_digest": "2a94424d19e96e19aca9f78b198f9070",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1319188,
+                "upload_time": "2016-06-13T20:30:21",
+                "url": "https://files.pythonhosted.org/packages/9e/37/171c883978003807369e3a5fadd621766a48eb3889032af6ad620a229b37/pyparsing-2.1.5.zip"
+            }
+        ],
+        "2.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a6dc670b145f08e3f89cf3fda87dfc6",
+                    "sha256": "5534719f4abaac4efd93c295f9aad9d10f516dd7d1a5cf7f0af7eed5fdad9524"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2a6dc670b145f08e3f89cf3fda87dfc6",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 53774,
+                "upload_time": "2016-08-08T15:44:38",
+                "url": "https://files.pythonhosted.org/packages/82/e2/44fd113b9be057848a30cba3ed238a534814b5266ffc9402605f3a1707ca/pyparsing-2.1.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b90c23e9e2ae57d6b910768d2af71941",
+                    "sha256": "3bbdeb6ba83077136cebf642fb0ac526a4230f72944e7f6a240df2fdd83c6e66"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b90c23e9e2ae57d6b910768d2af71941",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1219660,
+                "upload_time": "2016-08-08T15:44:29",
+                "url": "https://files.pythonhosted.org/packages/e8/85/de26a00e3dc11062bd0794a365993c0e67550875592c86faad9802c05b83/pyparsing-2.1.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "96a8a46ca0068c5a50932d3cbe0cdd12",
+                    "sha256": "6d6a365d01510b59e21b85f00d0f66a722cd6399888d5818beaafc7ee3d886f8"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.6.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "96a8a46ca0068c5a50932d3cbe0cdd12",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 250656,
+                "upload_time": "2016-08-08T15:44:42",
+                "url": "https://files.pythonhosted.org/packages/ec/d1/c055408d6a9c51402e73b3c248feb889aa52d224cdef990ea258d21b5840/pyparsing-2.1.6.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e49df89dfbf6d236684f2300c3179190",
+                    "sha256": "5ee62fd9d796c9e289c0856b14189e01291c9a6c52070c13daa788b66196794d"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.6.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "e49df89dfbf6d236684f2300c3179190",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 250656,
+                "upload_time": "2016-08-08T15:44:46",
+                "url": "https://files.pythonhosted.org/packages/27/61/53cfaa174b6f80b51e4d1dcdfb97fdf8cb77b8e055fe9c19a4740d86823f/pyparsing-2.1.6.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e593a38b20cc5a78dd5f0da64749dc61",
+                    "sha256": "4b19719a54e8739018b3fbd76817b37e6b989398b37e237f26ed5fe9805cd1bb"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.6.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "e593a38b20cc5a78dd5f0da64749dc61",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 245536,
+                "upload_time": "2016-08-08T15:44:50",
+                "url": "https://files.pythonhosted.org/packages/a8/ab/c1309c9ec63f9115876cca63514546ad450fe6c2747fbe3e7deea53bf766/pyparsing-2.1.6.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "58c6b3bfaa51fdea2df72638089bfda4",
+                    "sha256": "71c1b68be6673cde83dc51a7eb689119b2d48fbfa07f281de3987f54c332a400"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.6.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "58c6b3bfaa51fdea2df72638089bfda4",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 245536,
+                "upload_time": "2016-08-08T15:44:55",
+                "url": "https://files.pythonhosted.org/packages/0e/b2/1c51c02cbe7f158b038e51f114aac2c093143838e7ed3c12ab0c1b06c8f5/pyparsing-2.1.6.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f2fc25e1f7eefc10a0363066899f678",
+                    "sha256": "b333729b0af946c804e6fa92f4d195669e773714acfc82270490a706a0a67908"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.6.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "0f2fc25e1f7eefc10a0363066899f678",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 514848,
+                "upload_time": "2016-08-08T15:44:59",
+                "url": "https://files.pythonhosted.org/packages/f7/06/f18c830c4ea41eb020c5496e6942fd49e65678d4c5dc70ba0d0f50764605/pyparsing-2.1.6.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "788feab4ca221f0655c382f9684df5aa",
+                    "sha256": "10edd0cc2d1dd275bff4ce9bd852b8dcfb6f3b25eafff6e4e0d7e3dd06ffb67b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.6.zip",
+                "has_sig": false,
+                "md5_digest": "788feab4ca221f0655c382f9684df5aa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1376146,
+                "upload_time": "2016-08-08T15:44:34",
+                "url": "https://files.pythonhosted.org/packages/cb/64/6f82f2b126cdf7e4d081f3a025ba216b048bc13fa060e8c78ad2556eefc5/pyparsing-2.1.6.zip"
+            }
+        ],
+        "2.1.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e2af1c41beca4b07502a958f1542f492",
+                    "sha256": "5956ee068ff3db81684883206c6735dce5d99517f53a960cb464c4652de1ed56"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e2af1c41beca4b07502a958f1542f492",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 53851,
+                "upload_time": "2016-08-11T16:45:00",
+                "url": "https://files.pythonhosted.org/packages/52/02/efeb2e572c0fc9524c36701bab40df4d77c2fc00d2854e674f9f7e253836/pyparsing-2.1.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75a827a047e25c0abd17a5c63d582d8b",
+                    "sha256": "7faf33a14ab1413d9a73ffe4b5a02d604cff6fba2bc39d5ea71b10ffc67d75ac"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "75a827a047e25c0abd17a5c63d582d8b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1220216,
+                "upload_time": "2016-08-11T16:44:50",
+                "url": "https://files.pythonhosted.org/packages/df/53/68733d03b0577c6c638b3009151fed8ac51bf34a485565910b764cdc5d3b/pyparsing-2.1.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e896dd5d577dc186aa4a7350559ad7a",
+                    "sha256": "5e81fbfb5551f1dac9fcfc13dbbd156d08c47de70a6ab74ac9c5dba3547e4aeb"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.7.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "7e896dd5d577dc186aa4a7350559ad7a",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 250728,
+                "upload_time": "2016-08-11T16:45:04",
+                "url": "https://files.pythonhosted.org/packages/93/6f/bb053f6892006f644b33df3905025515557d88809ee4f6b3b15463eae0d5/pyparsing-2.1.7.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ecb79398da908b50507429f0f8a54147",
+                    "sha256": "4b9a68f12f7e9a3e489fe0012716a3484d83ee305a0c350c4ab92b4c7a389c01"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.7.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "ecb79398da908b50507429f0f8a54147",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 250728,
+                "upload_time": "2016-08-11T16:45:08",
+                "url": "https://files.pythonhosted.org/packages/1d/35/ed402fcac08623538aaa927e92830eedc15b65d60b834e1de3d2398a5771/pyparsing-2.1.7.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6faf3c361ee0a5b10629f30eed5f5108",
+                    "sha256": "bdb7933334976c56dee64bf45aea7278894ef04f7424a7ed37d95fdd3df37496"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.7.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "6faf3c361ee0a5b10629f30eed5f5108",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 245608,
+                "upload_time": "2016-08-11T16:45:12",
+                "url": "https://files.pythonhosted.org/packages/4d/1d/3af6a92f3405e3fd4571edaafb7fa12cff42aa086b96fadbc743f50175a2/pyparsing-2.1.7.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bc70fcb7925341e1017d33d1a14c3910",
+                    "sha256": "d67122c300e15452476096f9a7bdb8d64d9dd62825e8588ce1c77abc03fd9912"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.7.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "bc70fcb7925341e1017d33d1a14c3910",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 245608,
+                "upload_time": "2016-08-11T16:45:17",
+                "url": "https://files.pythonhosted.org/packages/8b/36/b2520660ca59e0dca8ae21edb2c9bb9e2dd8b0f2ce96d4c08309b57f04a6/pyparsing-2.1.7.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "120fed02ab655e686a55872c400134c8",
+                    "sha256": "e1f1829532a2993e500765669a9e7a2f8ec8250a5e39ae0405766af3e66a2f78"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.7.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "120fed02ab655e686a55872c400134c8",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 514920,
+                "upload_time": "2016-08-11T16:45:22",
+                "url": "https://files.pythonhosted.org/packages/18/4e/43e275ec27e73f11fff1c9180012c05bb09284cb31edf5c3e6895828e473/pyparsing-2.1.7.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "60840e1f7bcddfd1ef0fa8aded1e1eed",
+                    "sha256": "b02099d786d77eab58fca3148df412f7d3b19bc5a5bd38e1d6e52f969b629320"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.7.zip",
+                "has_sig": false,
+                "md5_digest": "60840e1f7bcddfd1ef0fa8aded1e1eed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1376347,
+                "upload_time": "2016-08-11T16:44:55",
+                "url": "https://files.pythonhosted.org/packages/f6/35/ddda12a5e35e2d99d26e657b68f20b1ba0d19b46e16fe3812f485818e744/pyparsing-2.1.7.zip"
+            }
+        ],
+        "2.1.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "884c5ee902a1d39d6bd22cf2f0a2f0ed",
+                    "sha256": "2f0f5ceb14eccd5aef809d6382e87df22ca1da583c79f6db01675ce7d7f49c18"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.8-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "884c5ee902a1d39d6bd22cf2f0a2f0ed",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 54533,
+                "upload_time": "2016-08-15T04:10:45",
+                "url": "https://files.pythonhosted.org/packages/85/b9/188515f35f78533b3f82966a2c3f1a71a86df8b801367ee75a77191a861d/pyparsing-2.1.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "034b935c55b7fcace3c8b5031392cd70",
+                    "sha256": "03a4869b9f3493807ee1f1cb405e6d576a1a2ca4d81a982677c0c1ad6177c56b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "034b935c55b7fcace3c8b5031392cd70",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1222883,
+                "upload_time": "2016-08-15T04:10:35",
+                "url": "https://files.pythonhosted.org/packages/65/25/1bb68622ca70abc145ac9c9bcd0e837fccd2889d79cee641aa8604d18a11/pyparsing-2.1.8.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "68caea6987c27d98247b37e3012a0c27",
+                    "sha256": "ab09aee814c0241ff0c503cff30018219fe1fc14501d89f406f4664a0ec9fbcd"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.8.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "68caea6987c27d98247b37e3012a0c27",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 251414,
+                "upload_time": "2016-08-15T04:10:49",
+                "url": "https://files.pythonhosted.org/packages/a9/af/6e937172803b12d0b09cbd490a31efec72ee8d59f2fe55a953e319fe8f29/pyparsing-2.1.8.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37effeca4ae4484dfa7e54f3d81ec0c4",
+                    "sha256": "6e9a7f052f8e26bcf749e4033e3115b6dc7e3c85aafcb794b9a88c9d9ef13c97"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.8.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "37effeca4ae4484dfa7e54f3d81ec0c4",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 251414,
+                "upload_time": "2016-08-15T04:10:53",
+                "url": "https://files.pythonhosted.org/packages/59/ac/11cd6c55bde0f3d6b722fb3e23a1ca401c4a050c2516fc915b9d0002627c/pyparsing-2.1.8.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6f2163dd44ea87f618fc7b90b9c13c6e",
+                    "sha256": "9f463a6bcc4eeb6c08f1ed84439b17818e2085937c0dee0d7674ac127c67c12b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.8.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "6f2163dd44ea87f618fc7b90b9c13c6e",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 246294,
+                "upload_time": "2016-08-15T04:10:58",
+                "url": "https://files.pythonhosted.org/packages/97/bc/7c64187faf333260d6e7cdf5abfc17b0fec737a8961981da383112579ca7/pyparsing-2.1.8.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cd009ef1bb7c091b3b303f85d8b5910b",
+                    "sha256": "3626b4d81cfb300dad57f52f2f791caaf7b06c09b368c0aa7b868e53a5775424"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.8.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "cd009ef1bb7c091b3b303f85d8b5910b",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 246294,
+                "upload_time": "2016-08-15T04:11:02",
+                "url": "https://files.pythonhosted.org/packages/85/a6/4700a3b54eca8edd686e0de8550af47cb30fde7575184a37454bae0fb3ee/pyparsing-2.1.8.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "70b6b113a20618ca3606b1fbddf19a92",
+                    "sha256": "367b90cc877b46af56d4580cd0ae278062903f02b8204ab631f5a2c0f50adfd0"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.8.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "70b6b113a20618ca3606b1fbddf19a92",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 515606,
+                "upload_time": "2016-08-15T04:11:07",
+                "url": "https://files.pythonhosted.org/packages/e9/17/436c1b8a8414d3350e32b504544af6ea1b2f61252b931971321b31922e1f/pyparsing-2.1.8.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47342b0e7ab5c3a127d764a050f9bd1f",
+                    "sha256": "9f1ea360086cd68681e7f4ca8f1f38df47bf81942a0d76a9673c2d23eff35b13"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.8.zip",
+                "has_sig": false,
+                "md5_digest": "47342b0e7ab5c3a127d764a050f9bd1f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1379583,
+                "upload_time": "2016-08-15T04:10:40",
+                "url": "https://files.pythonhosted.org/packages/8f/ad/3dc140bbac31e144585035be42d65b2edb2d502af82c9a5284f7d2662bf7/pyparsing-2.1.8.zip"
+            }
+        ],
+        "2.1.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2fd0cc352d21c7020028c1952116d75b",
+                    "sha256": "52027939e7a7990ca83b6bab549d94e298990b27b3308a382099df908abd8748"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.9-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2fd0cc352d21c7020028c1952116d75b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 55836,
+                "upload_time": "2016-09-10T15:33:21",
+                "url": "https://files.pythonhosted.org/packages/40/f8/926538c3f358a52ea5fd61bfe78f9c208bfd5ebc152d148503e210f23ed2/pyparsing-2.1.9-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee943c354eac79526533c58342f322c7",
+                    "sha256": "93326f5490bcfe7069806ff342692e75f72529cfa82f20683b5fceeb5d4a7fc2"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ee943c354eac79526533c58342f322c7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1230453,
+                "upload_time": "2016-09-10T15:33:12",
+                "url": "https://files.pythonhosted.org/packages/87/ee/6f3a94d834c82a5c1a74f2fc77775ff05b5fbbf7d97f844e6fff5e2ff94b/pyparsing-2.1.9.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b5f92dc4e3df8d18a9e54ad76ec7d1a",
+                    "sha256": "df715b2feecd6057a6d727a014a5abcceeac96870e3f5ef0b3b75bd3e0d24971"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.9.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "2b5f92dc4e3df8d18a9e54ad76ec7d1a",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 252723,
+                "upload_time": "2016-09-10T15:33:26",
+                "url": "https://files.pythonhosted.org/packages/99/5f/57d9c50a56ec2c3cccdda277b07e7bea7574b959876abb44f0d83ddb2552/pyparsing-2.1.9.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2369405b8b8ff30853380f198659749a",
+                    "sha256": "2e2cf4dc13ce854d9c322d1c2333ce377dccb7e731c09c908c608f6078b26e4b"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.9.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "2369405b8b8ff30853380f198659749a",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 252723,
+                "upload_time": "2016-09-10T15:33:31",
+                "url": "https://files.pythonhosted.org/packages/39/d0/5cc8f88963fe9dad613a9c964c4b427abf6995a74fb8e18c5f223cb3023a/pyparsing-2.1.9.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa778bbab881e533ffa3979fc99195c1",
+                    "sha256": "7dde8f8424e8f77c382406f6c92a8577bb70976cf0156b69fdc8b1ae59335a0f"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.9.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "aa778bbab881e533ffa3979fc99195c1",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 247603,
+                "upload_time": "2016-09-10T15:33:35",
+                "url": "https://files.pythonhosted.org/packages/a7/74/397ddd944ddd7ea89c0b6ad3ca973b1b6a3fac5032d187d8c9fbfe559273/pyparsing-2.1.9.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb87ba59123e1e34d2bda703941fe5aa",
+                    "sha256": "693b56bc4695806b3b33f1e3b2f2bf10ff9248924050331c9b6f6f5242d091a5"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.9.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "fb87ba59123e1e34d2bda703941fe5aa",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 247603,
+                "upload_time": "2016-09-10T15:33:40",
+                "url": "https://files.pythonhosted.org/packages/04/d9/9f7f721e7bb91afd179e24b1a90530c868aa999bd442465b344b3b2f6f49/pyparsing-2.1.9.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9068d4beae74328e70a994a44659526",
+                    "sha256": "677f11fc45ef67ce8a77ee7b61c4fd615e0bacb7fd478ce9fa7a5768513b94e2"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.9.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "d9068d4beae74328e70a994a44659526",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 516915,
+                "upload_time": "2016-09-10T15:33:44",
+                "url": "https://files.pythonhosted.org/packages/c6/21/7efa88b66fff487146926011f799cb128465dccafd69b333192d098df9d7/pyparsing-2.1.9.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1c6acfca7c0c0f28113b3de1d4239e12",
+                    "sha256": "91f9c01432128b70369c574c219cc3d144d05274c0deb9b70bf8385c264d1daf"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.1.9.zip",
+                "has_sig": false,
+                "md5_digest": "1c6acfca7c0c0f28113b3de1d4239e12",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1389855,
+                "upload_time": "2016-09-10T15:33:17",
+                "url": "https://files.pythonhosted.org/packages/28/9e/ee6dcf7883b2b74e9369b1c72a1ea4a72f6e82a401072902d79a44d80e35/pyparsing-2.1.9.zip"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7247e7896688eff4bc8c7fc5d0cdd2b0",
+                    "sha256": "fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7247e7896688eff4bc8c7fc5d0cdd2b0",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 56385,
+                "upload_time": "2017-03-06T02:35:15",
+                "url": "https://files.pythonhosted.org/packages/6a/8a/718fd7d3458f9fab8e67186b00abdd345b639976bc7fb3ae722e1b026a50/pyparsing-2.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0214e42d63af850256962b6744c948d9",
+                    "sha256": "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0214e42d63af850256962b6744c948d9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1232522,
+                "upload_time": "2017-03-06T02:35:08",
+                "url": "https://files.pythonhosted.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e695ab24f2c8620a1bbb0f1e76b339f",
+                    "sha256": "9e8143a3e15c13713506886badd96ca4b579a87fbdf49e550dbfc057d6cb218e"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.2.0.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "1e695ab24f2c8620a1bbb0f1e76b339f",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 253268,
+                "upload_time": "2017-03-06T02:35:18",
+                "url": "https://files.pythonhosted.org/packages/81/a3/9907cbc922b76a9086388c0f822737f1d87f2debae8e3ff2f6dd998f97c2/pyparsing-2.2.0.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "19de1501641e97a0c2d0b8567c13f227",
+                    "sha256": "281683241b25fe9b80ec9d66017485f6deff1af5cde372469134b56ca8447a07"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.2.0.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "19de1501641e97a0c2d0b8567c13f227",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 253268,
+                "upload_time": "2017-03-06T02:35:22",
+                "url": "https://files.pythonhosted.org/packages/81/af/21aa186ef834f9fa046392ca2493b298e6258d6401d291e7deb020ecf383/pyparsing-2.2.0.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2a7560c3f0e25d679f6dad04467f613",
+                    "sha256": "b8b3117ed9bdf45e14dcc89345ce638ec7e0e29b2b579fa1ecf32ce45ebac8a5"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.2.0.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "f2a7560c3f0e25d679f6dad04467f613",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 248148,
+                "upload_time": "2017-03-06T02:35:27",
+                "url": "https://files.pythonhosted.org/packages/22/71/a8354e9f5f58f3dd6a2c7e0ef47d31164ec5785ad737f58f3e51fe6c0e14/pyparsing-2.2.0.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "756f1d0378f437c5693e901811f0ef47",
+                    "sha256": "8f1e18d3fd36c6795bb7e02a39fd05c611ffc2596c1e0d995d34d67630426c18"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.2.0.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "756f1d0378f437c5693e901811f0ef47",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 248148,
+                "upload_time": "2017-03-06T02:35:31",
+                "url": "https://files.pythonhosted.org/packages/00/2a/a7a10fb073d3744c134297236263ede6ce67fec3e40839dda5d56fe86a5c/pyparsing-2.2.0.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "855002f511d806ce830958f7f541af02",
+                    "sha256": "e4d45427c6e20a59bf4f88c639dcc03ce30d193112047f94012102f235853a58"
+                },
+                "downloads": -1,
+                "filename": "pyparsing-2.2.0.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "855002f511d806ce830958f7f541af02",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 517460,
+                "upload_time": "2017-03-06T02:35:36",
+                "url": "https://files.pythonhosted.org/packages/5f/9b/8818b69b5cdbe2852106ecca849bdf990c4fc7cb1fb1bc8813bf117be19c/pyparsing-2.2.0.win32-py3.5.exe"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "7247e7896688eff4bc8c7fc5d0cdd2b0",
+                "sha256": "fee43f17a9c4087e7ed1605bd6df994c6173c1e977d7ade7b651292fab2bd010"
+            },
+            "downloads": -1,
+            "filename": "pyparsing-2.2.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "7247e7896688eff4bc8c7fc5d0cdd2b0",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.5",
+            "size": 56385,
+            "upload_time": "2017-03-06T02:35:15",
+            "url": "https://files.pythonhosted.org/packages/6a/8a/718fd7d3458f9fab8e67186b00abdd345b639976bc7fb3ae722e1b026a50/pyparsing-2.2.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0214e42d63af850256962b6744c948d9",
+                "sha256": "0832bcf47acd283788593e7a0f542407bd9550a55a8a8435214a1960e04bcb04"
+            },
+            "downloads": -1,
+            "filename": "pyparsing-2.2.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "0214e42d63af850256962b6744c948d9",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 1232522,
+            "upload_time": "2017-03-06T02:35:08",
+            "url": "https://files.pythonhosted.org/packages/3c/ec/a94f8cf7274ea60b5413df054f82a8980523efd712ec55a59e7c3357cf7c/pyparsing-2.2.0.tar.gz"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "1e695ab24f2c8620a1bbb0f1e76b339f",
+                "sha256": "9e8143a3e15c13713506886badd96ca4b579a87fbdf49e550dbfc057d6cb218e"
+            },
+            "downloads": -1,
+            "filename": "pyparsing-2.2.0.win32-py2.6.exe",
+            "has_sig": false,
+            "md5_digest": "1e695ab24f2c8620a1bbb0f1e76b339f",
+            "packagetype": "bdist_wininst",
+            "python_version": "any",
+            "size": 253268,
+            "upload_time": "2017-03-06T02:35:18",
+            "url": "https://files.pythonhosted.org/packages/81/a3/9907cbc922b76a9086388c0f822737f1d87f2debae8e3ff2f6dd998f97c2/pyparsing-2.2.0.win32-py2.6.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "19de1501641e97a0c2d0b8567c13f227",
+                "sha256": "281683241b25fe9b80ec9d66017485f6deff1af5cde372469134b56ca8447a07"
+            },
+            "downloads": -1,
+            "filename": "pyparsing-2.2.0.win32-py2.7.exe",
+            "has_sig": false,
+            "md5_digest": "19de1501641e97a0c2d0b8567c13f227",
+            "packagetype": "bdist_wininst",
+            "python_version": "any",
+            "size": 253268,
+            "upload_time": "2017-03-06T02:35:22",
+            "url": "https://files.pythonhosted.org/packages/81/af/21aa186ef834f9fa046392ca2493b298e6258d6401d291e7deb020ecf383/pyparsing-2.2.0.win32-py2.7.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "f2a7560c3f0e25d679f6dad04467f613",
+                "sha256": "b8b3117ed9bdf45e14dcc89345ce638ec7e0e29b2b579fa1ecf32ce45ebac8a5"
+            },
+            "downloads": -1,
+            "filename": "pyparsing-2.2.0.win32-py3.3.exe",
+            "has_sig": false,
+            "md5_digest": "f2a7560c3f0e25d679f6dad04467f613",
+            "packagetype": "bdist_wininst",
+            "python_version": "any",
+            "size": 248148,
+            "upload_time": "2017-03-06T02:35:27",
+            "url": "https://files.pythonhosted.org/packages/22/71/a8354e9f5f58f3dd6a2c7e0ef47d31164ec5785ad737f58f3e51fe6c0e14/pyparsing-2.2.0.win32-py3.3.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "756f1d0378f437c5693e901811f0ef47",
+                "sha256": "8f1e18d3fd36c6795bb7e02a39fd05c611ffc2596c1e0d995d34d67630426c18"
+            },
+            "downloads": -1,
+            "filename": "pyparsing-2.2.0.win32-py3.4.exe",
+            "has_sig": false,
+            "md5_digest": "756f1d0378f437c5693e901811f0ef47",
+            "packagetype": "bdist_wininst",
+            "python_version": "any",
+            "size": 248148,
+            "upload_time": "2017-03-06T02:35:31",
+            "url": "https://files.pythonhosted.org/packages/00/2a/a7a10fb073d3744c134297236263ede6ce67fec3e40839dda5d56fe86a5c/pyparsing-2.2.0.win32-py3.4.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "855002f511d806ce830958f7f541af02",
+                "sha256": "e4d45427c6e20a59bf4f88c639dcc03ce30d193112047f94012102f235853a58"
+            },
+            "downloads": -1,
+            "filename": "pyparsing-2.2.0.win32-py3.5.exe",
+            "has_sig": false,
+            "md5_digest": "855002f511d806ce830958f7f541af02",
+            "packagetype": "bdist_wininst",
+            "python_version": "any",
+            "size": 517460,
+            "upload_time": "2017-03-06T02:35:36",
+            "url": "https://files.pythonhosted.org/packages/5f/9b/8818b69b5cdbe2852106ecca849bdf990c4fc7cb1fb1bc8813bf117be19c/pyparsing-2.2.0.win32-py3.5.exe"
+        }
+    ],
+    "package_name": "pyparsing"
+}

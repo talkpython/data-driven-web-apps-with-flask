@@ -1,0 +1,2769 @@
+{
+    "info": {
+        "author": "Mitch Garnaat",
+        "author_email": "mitch@garnaat.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Topic :: Internet"
+        ],
+        "description": "####\nboto\n####\nboto 2.48.0\n\nReleased: 24-May-2017\n\n.. image:: https://travis-ci.org/boto/boto.svg?branch=develop\n        :target: https://travis-ci.org/boto/boto\n\n.. image:: https://pypip.in/d/boto/badge.svg\n        :target: https://pypi.python.org/pypi/boto/\n\n******\nBoto 3\n******\n\n`Boto3 <https://github.com/boto/boto3>`__, the next version of Boto, is now\nstable and recommended for general use.  It can be used side-by-side with Boto\nin the same project, so it is easy to start using Boto3 in your existing\nprojects as well as new projects. Going forward, API updates and all new\nfeature work will be focused on Boto3.\n\nTo assist users who still depend on Boto and cannot immediately switch over, we\nwill be triaging and addressing critical issues and PRs in Boto in the short\nterm. As more users make the switch to Boto3, we expect to reduce our\nmaintenance involvement over time. If we decide on a cutoff date or any\nsignificant changes to our maintenance plan, we will make pre-announcements\nwell ahead of schedule to allow ample time for our users to adapt/migrate.\n\n\n************\nIntroduction\n************\n\nBoto is a Python package that provides interfaces to Amazon Web Services.\nCurrently, all features work with Python 2.6 and 2.7. Work is under way to\nsupport Python 3.3+ in the same codebase. Modules are being ported one at\na time with the help of the open source community, so please check below\nfor compatibility with Python 3.3+.\n\nTo port a module to Python 3.3+, please view our `Contributing Guidelines`_\nand the `Porting Guide`_. If you would like, you can open an issue to let\nothers know about your work in progress. Tests **must** pass on Python\n2.6, 2.7, 3.3, and 3.4 for pull requests to be accepted.\n\n\n********\nServices\n********\n\nAt the moment, boto supports:\n\n* Compute\n\n  * Amazon Elastic Compute Cloud (EC2) (Python 3)\n  * Amazon Elastic Map Reduce (EMR) (Python 3)\n  * AutoScaling (Python 3)\n  * Amazon Kinesis (Python 3)\n  * AWS Lambda (Python 3)\n  * Amazon EC2 Container Service (Python 3)\n\n* Content Delivery\n\n  * Amazon CloudFront (Python 3)\n\n* Database\n\n  * Amazon Relational Data Service (RDS)\n  * Amazon DynamoDB (Python 3)\n  * Amazon SimpleDB (Python 3)\n  * Amazon ElastiCache (Python 3)\n  * Amazon Redshift (Python 3)\n\n* Deployment and Management\n\n  * AWS Elastic Beanstalk (Python 3)\n  * AWS CloudFormation (Python 3)\n  * AWS Data Pipeline (Python 3)\n  * AWS Opsworks (Python 3)\n  * AWS CloudTrail (Python 3)\n  * AWS CodeDeploy (Python 3)\n\n* Administration & Security\n\n  * AWS Identity and Access Management (IAM) (Python 3)\n  * AWS Key Management Service (KMS) (Python 3)\n  * AWS Config (Python 3)\n  * AWS CloudHSM (Python 3)\n\n* Application Services\n\n  * Amazon CloudSearch (Python 3)\n  * Amazon CloudSearch Domain (Python 3)\n  * Amazon Elastic Transcoder (Python 3)\n  * Amazon Simple Workflow Service (SWF) (Python 3)\n  * Amazon Simple Queue Service (SQS) (Python 3)\n  * Amazon Simple Notification Server (SNS) (Python 3)\n  * Amazon Simple Email Service (SES) (Python 3)\n  * Amazon Cognito Identity (Python 3)\n  * Amazon Cognito Sync (Python 3)\n  * Amazon Machine Learning (Python 3)\n\n* Monitoring\n\n  * Amazon CloudWatch (EC2 Only) (Python 3)\n  * Amazon CloudWatch Logs (Python 3)\n\n* Networking\n\n  * Amazon Route53 (Python 3)\n  * Amazon Route 53 Domains (Python 3)\n  * Amazon Virtual Private Cloud (VPC) (Python 3)\n  * Elastic Load Balancing (ELB) (Python 3)\n  * AWS Direct Connect (Python 3)\n\n* Payments and Billing\n\n  * Amazon Flexible Payment Service (FPS)\n\n* Storage\n\n  * Amazon Simple Storage Service (S3) (Python 3)\n  * Amazon Glacier (Python 3)\n  * Amazon Elastic Block Store (EBS)\n  * Google Cloud Storage\n\n* Workforce\n\n  * Amazon Mechanical Turk\n\n* Other\n\n  * Marketplace Web Services (Python 3)\n  * AWS Support (Python 3)\n\nThe goal of boto is to support the full breadth and depth of Amazon\nWeb Services.  In addition, boto provides support for other public\nservices such as Google Storage in addition to private cloud systems\nlike Eucalyptus, OpenStack and Open Nebula.\n\nBoto is developed mainly using Python 2.6.6 and Python 2.7.3 on Mac OSX\nand Ubuntu Maverick.  It is known to work on other Linux distributions\nand on Windows.  Most of Boto requires no additional libraries or packages\nother than those that are distributed with Python.  Efforts are made\nto keep boto compatible with Python 2.5.x but no guarantees are made.\n\n************\nInstallation\n************\n\nInstall via `pip`_:\n\n::\n\n    $ pip install boto\n\nInstall from source:\n\n::\n\n    $ git clone git://github.com/boto/boto.git\n    $ cd boto\n    $ python setup.py install\n\n**********\nChangeLogs\n**********\n\nTo see what has changed over time in boto, you can check out the\nrelease notes at `http://docs.pythonboto.org/en/latest/#release-notes`\n\n***************************\nFinding Out More About Boto\n***************************\n\nThe main source code repository for boto can be found on `github.com`_.\nThe boto project uses the `gitflow`_ model for branching.\n\n`Online documentation`_ is also available. The online documentation includes\nfull API documentation as well as Getting Started Guides for many of the boto\nmodules.\n\nBoto releases can be found on the `Python Cheese Shop`_.\n\nJoin our IRC channel `#boto` on FreeNode.\nWebchat IRC channel: http://webchat.freenode.net/?channels=boto\n\nJoin the `boto-users Google Group`_.\n\n*************************\nGetting Started with Boto\n*************************\n\nYour credentials can be passed into the methods that create\nconnections.  Alternatively, boto will check for the existence of the\nfollowing environment variables to ascertain your credentials:\n\n**AWS_ACCESS_KEY_ID** - Your AWS Access Key ID\n\n**AWS_SECRET_ACCESS_KEY** - Your AWS Secret Access Key\n\nCredentials and other boto-related settings can also be stored in a\nboto config file.  See `this`_ for details.\n\n.. _Contributing Guidelines: https://github.com/boto/boto/blob/develop/CONTRIBUTING\n.. _Porting Guide: http://boto.readthedocs.org/en/latest/porting_guide.html\n.. _pip: http://www.pip-installer.org/\n.. _release notes: https://github.com/boto/boto/wiki\n.. _github.com: http://github.com/boto/boto\n.. _Online documentation: http://docs.pythonboto.org\n.. _Python Cheese Shop: http://pypi.python.org/pypi/boto\n.. _this: http://docs.pythonboto.org/en/latest/boto_config_tut.html\n.. _gitflow: http://nvie.com/posts/a-successful-git-branching-model/\n.. _neo: https://github.com/boto/boto/tree/neo\n.. _boto-users Google Group: https://groups.google.com/forum/?fromgroups#!forum/boto-users\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/boto/boto/",
+        "keywords": "",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "boto",
+        "package_url": "https://pypi.org/project/boto/",
+        "platform": "Posix; MacOS X; Windows",
+        "project_url": "https://pypi.org/project/boto/",
+        "release_url": "https://pypi.org/project/boto/2.48.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Amazon Web Services Library",
+        "version": "2.48.0"
+    },
+    "last_serial": 3004011,
+    "releases": {
+        "0.2a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "061ecddccb5cd5fe9a0ed1d68c3deb20",
+                    "sha256": "0bdf67b849e6ec781b5ca4bb762a84a19c23defc938edc0696bbb589196f5d4d"
+                },
+                "downloads": -1,
+                "filename": "boto-0.2a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "061ecddccb5cd5fe9a0ed1d68c3deb20",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29567,
+                "upload_time": "2006-09-16T14:32:21",
+                "url": "https://files.pythonhosted.org/packages/46/6f/b69352090133f77e7cab6ea26568a7062fcfa8d0a6b9747da34309109fd8/boto-0.2a.tar.gz"
+            }
+        ],
+        "0.3a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "71f99139693daa85ad47c1f8c3b7a13b",
+                    "sha256": "2f58e345f8673ccde25d883819559001253077cff274bdaf01bd1fa18935796a"
+                },
+                "downloads": -1,
+                "filename": "boto-0.3a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "71f99139693daa85ad47c1f8c3b7a13b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47225,
+                "upload_time": "2006-09-24T23:11:06",
+                "url": "https://files.pythonhosted.org/packages/42/2f/7ebb6506940be968c5465eb93ecb3659b0d7d251d5deec5d22e0176aa17e/boto-0.3a.tar.gz"
+            }
+        ],
+        "0.4a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f7f06ac04067c21065bd92a5d54d0b75",
+                    "sha256": "6a9b3a94bcf8aa4853840cdb4229a0665d695f5af3a2aaaff3d774c6daa7293c"
+                },
+                "downloads": -1,
+                "filename": "boto-0.4a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f7f06ac04067c21065bd92a5d54d0b75",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 94079,
+                "upload_time": "2006-10-16T10:59:03",
+                "url": "https://files.pythonhosted.org/packages/48/e2/d021a935a45cb3edc3cbbf82c4301e7b7341514ea3c0a186c3d7087055e7/boto-0.4a.tar.gz"
+            }
+        ],
+        "0.4b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cef5a4918df66570150367207519a554",
+                    "sha256": "855f979d915ced676010f946e3ca8004653072c5b180027236fe0f4ae7f77e41"
+                },
+                "downloads": -1,
+                "filename": "boto-0.4b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cef5a4918df66570150367207519a554",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 188503,
+                "upload_time": "2006-10-16T19:33:12",
+                "url": "https://files.pythonhosted.org/packages/f5/a5/926287d9562ccb758bfd839d9e88ab7387eaf774076a5cb4eb1de0ae70b9/boto-0.4b.tar.gz"
+            }
+        ],
+        "0.5a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7db450d488cadce8701e04f6ec224b30",
+                    "sha256": "a7e5aca2de9226c0292a69b024be8209582681c7734294cda31f573f7b99eb33"
+                },
+                "downloads": -1,
+                "filename": "boto-0.5a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7db450d488cadce8701e04f6ec224b30",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 379930,
+                "upload_time": "2006-11-09T17:43:39",
+                "url": "https://files.pythonhosted.org/packages/cd/77/e539f1105696e78dcc8d042445654cfffc9dbaa1bfff72173459236c2b8d/boto-0.5a.tar.gz"
+            }
+        ],
+        "0.6a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "853304ac94374b500ca5050875ffa067",
+                    "sha256": "93c16be6264255d815be1d01af84aa79f1d1bb280c24260ed93c8bdb45d9eb5b"
+                },
+                "downloads": -1,
+                "filename": "boto-0.6a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "853304ac94374b500ca5050875ffa067",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 760644,
+                "upload_time": "2006-11-19T16:31:09",
+                "url": "https://files.pythonhosted.org/packages/3e/c8/4b09eeb990d16cd3bdf188358660802fe39fc2520732181fa5791dff5ee3/boto-0.6a.tar.gz"
+            }
+        ],
+        "0.6b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3ab2b1605836f376006b091d21de3332",
+                    "sha256": "ab3a2dd0f47e3535df3230afcf89485d6f3cf41f1f940394afc0780ccd4db835"
+                },
+                "downloads": -1,
+                "filename": "boto-0.6b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3ab2b1605836f376006b091d21de3332",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1522003,
+                "upload_time": "2006-11-21T15:22:07",
+                "url": "https://files.pythonhosted.org/packages/ff/e9/3e1d0fd97b973b30e0c2938d486ba23764fae8e2d567dc7970567de67130/boto-0.6b.tar.gz"
+            }
+        ],
+        "0.6c": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aec9a07bcb1c307fb26a8fa96901d194",
+                    "sha256": "d2e40ce0b6cf5edbf56e878a65cdd5c67f9ac8c3c813916689eb3a7f4654660e"
+                },
+                "downloads": -1,
+                "filename": "boto-0.6c.tar.gz",
+                "has_sig": false,
+                "md5_digest": "aec9a07bcb1c307fb26a8fa96901d194",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1522591,
+                "upload_time": "2006-11-22T12:38:56",
+                "url": "https://files.pythonhosted.org/packages/c6/5b/08e4cc6334d9dc71f52576d95ef0fcbaea7099304059011b6037759c5e3f/boto-0.6c.tar.gz"
+            }
+        ],
+        "0.7a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8618c02e1d5afff223c56d0d6381e9eb",
+                    "sha256": "2b7d3cec8c1a7cb9f943ed192cae2668a2ef6e8b46ea0206bfff5bf904b7572e"
+                },
+                "downloads": -1,
+                "filename": "boto-0.7a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8618c02e1d5afff223c56d0d6381e9eb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 20057,
+                "upload_time": "2007-01-18T02:20:59",
+                "url": "https://files.pythonhosted.org/packages/82/6d/8e79f23da6015179324027b908ca41e8cb949761563c020ef09202e6cd2c/boto-0.7a.tar.gz"
+            }
+        ],
+        "0.8a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5929bc1ec916f48bed5934836c9b0a27",
+                    "sha256": "323d610efdcb79853c46ce2ccd37f85474c61e536402562b208693bf471a5252"
+                },
+                "downloads": -1,
+                "filename": "boto-0.8a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5929bc1ec916f48bed5934836c9b0a27",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 20600,
+                "upload_time": "2007-01-26T21:45:16",
+                "url": "https://files.pythonhosted.org/packages/d8/ab/4cbb61a1557f37b4f9418038c869967d891924c50e088b90023f3193606c/boto-0.8a.tar.gz"
+            }
+        ],
+        "0.8b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1f943589e82f4404e38baf59bdbe1873",
+                    "sha256": "a3de03eedc34ad008e1a107c118f98a344bdf2b4ed2f4b1480823c55a1fa7ec2"
+                },
+                "downloads": -1,
+                "filename": "boto-0.8b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1f943589e82f4404e38baf59bdbe1873",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 20737,
+                "upload_time": "2007-02-05T14:28:08",
+                "url": "https://files.pythonhosted.org/packages/6c/f1/ab694eb9912b98074ba68dde85ca299926eea53e77768df0b93ade97bb8e/boto-0.8b.tar.gz"
+            }
+        ],
+        "0.8c": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "647a7e40c87146be211f7a791feeda24",
+                    "sha256": "7c79106f4135a16aea9bdb4c933023228d8b0cfd89b51bf4e0e4c48bd922b5b1"
+                },
+                "downloads": -1,
+                "filename": "boto-0.8c.tar.gz",
+                "has_sig": false,
+                "md5_digest": "647a7e40c87146be211f7a791feeda24",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 22169,
+                "upload_time": "2007-02-08T23:14:01",
+                "url": "https://files.pythonhosted.org/packages/12/fc/c5ffb981408d78b735d43dc50843538a697a47e872663e0525f8dd63ec46/boto-0.8c.tar.gz"
+            }
+        ],
+        "0.8d": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "db884d441061df64cd7f96b4147099d6",
+                    "sha256": "6b60aac7e21d8d2a5977f2e5b4b29ceba52895430f1b2d8f4e4cf814c4d5f238"
+                },
+                "downloads": -1,
+                "filename": "boto-0.8d.tar.gz",
+                "has_sig": false,
+                "md5_digest": "db884d441061df64cd7f96b4147099d6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25460,
+                "upload_time": "2007-03-13T17:43:26",
+                "url": "https://files.pythonhosted.org/packages/6b/1e/509c06323570a610209eb8354794c49a8d610bd0135d7e48e47c439da2aa/boto-0.8d.tar.gz"
+            }
+        ],
+        "0.9a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "57cdc4ca61afb38b9995126a845215ba",
+                    "sha256": "d183658fd218ddb0bdb5988e9c4be3114204bddf6c8f62ecdb0b8a3263ce2adc"
+                },
+                "downloads": -1,
+                "filename": "boto-0.9a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "57cdc4ca61afb38b9995126a845215ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 56804,
+                "upload_time": "2007-06-23T13:53:50",
+                "url": "https://files.pythonhosted.org/packages/82/1d/c45ee165955731868d5ddafcefea649f19ac5b02d0db8c1b7351ef5e28d2/boto-0.9a.tar.gz"
+            }
+        ],
+        "0.9b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b7591fd2515dcd75fd01095473381c87",
+                    "sha256": "2bcd944d6ff443de9efd14ea981642620ff1a98f19ce9db4a1fda81d3cf7080e"
+                },
+                "downloads": -1,
+                "filename": "boto-0.9b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b7591fd2515dcd75fd01095473381c87",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57034,
+                "upload_time": "2007-07-10T19:34:09",
+                "url": "https://files.pythonhosted.org/packages/d0/a4/651f663b9291f26101c6b1a3388f2c5b8ca6cc16a71f2bcdca54e74653aa/boto-0.9b.tar.gz"
+            }
+        ],
+        "0.9c": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "23f171235ed77cd152f1709c92cf9572",
+                    "sha256": "df8f4234368d606749948563f1af72e56d7eb95503eab667bed5da21885f52d7"
+                },
+                "downloads": -1,
+                "filename": "boto-0.9c.tar.gz",
+                "has_sig": false,
+                "md5_digest": "23f171235ed77cd152f1709c92cf9572",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 63946,
+                "upload_time": "2007-10-16T11:50:00",
+                "url": "https://files.pythonhosted.org/packages/2a/22/f5d01479cfe2fe12c35180c1f5a2acb1a99b248059631cb13d23e38bf704/boto-0.9c.tar.gz"
+            }
+        ],
+        "0.9d": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b84379c10d7b9fded8f85d679dad6ab",
+                    "sha256": "3c2b743f78ebc279c2bb3c56ce57e77e9086ee88a941c1ca00e50c391844ef2a"
+                },
+                "downloads": -1,
+                "filename": "boto-0.9d.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4b84379c10d7b9fded8f85d679dad6ab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 64031,
+                "upload_time": "2007-10-17T01:17:06",
+                "url": "https://files.pythonhosted.org/packages/b4/20/60730ce36349af7f0d63335b7a6810ab27541ad0617e3c3c7aacda6654d5/boto-0.9d.tar.gz"
+            }
+        ],
+        "1.0a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c783c9b8d020d874994c710f1babf27",
+                    "sha256": "d4fedac3f3ba3ad868dd21481ea6301d57d0cbd01ef96e533731e60cbac3a651"
+                },
+                "downloads": -1,
+                "filename": "boto-1.0a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3c783c9b8d020d874994c710f1babf27",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 71893,
+                "upload_time": "2007-12-30T19:46:54",
+                "url": "https://files.pythonhosted.org/packages/1d/4e/fceb2a582a762a36b033c286fdfc67c0e1c83432e8946ea8b2f699187e1b/boto-1.0a.tar.gz"
+            }
+        ],
+        "1.1a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd7bd098cbd7cbb8c629b586a5274a6d",
+                    "sha256": "1fbf29dd974fd41c5bdfc174c312b4d26a91df4d3111197b327c86a382c99c57"
+                },
+                "downloads": -1,
+                "filename": "boto-1.1a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd7bd098cbd7cbb8c629b586a5274a6d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91140,
+                "upload_time": "2008-03-20T00:13:06",
+                "url": "https://files.pythonhosted.org/packages/79/f1/6373bf80d9dfa4612e93744dd2dac99629a8880dbafdaf52cb4437d0a627/boto-1.1a.tar.gz"
+            }
+        ],
+        "1.1b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "312cd56946d5151250c988e3b194ecbc",
+                    "sha256": "82169216b481faccadd5bcd0f8a795a5de23f77207a745ed742b839fed9072fa"
+                },
+                "downloads": -1,
+                "filename": "boto-1.1b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "312cd56946d5151250c988e3b194ecbc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91112,
+                "upload_time": "2008-03-20T17:51:48",
+                "url": "https://files.pythonhosted.org/packages/33/ec/f5959e1ec39c2dfd33af01c5c47d8e628abeaba6c88f571eecf8a945fee1/boto-1.1b.tar.gz"
+            }
+        ],
+        "1.1c": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "036e022de81d8707a6d720c2b07b70cc",
+                    "sha256": "d7f1d96bf63c8336064ab3d578f61c8c0c2ca6d3286dd190f54ebe4e8f900d19"
+                },
+                "downloads": -1,
+                "filename": "boto-1.1c.tar.gz",
+                "has_sig": false,
+                "md5_digest": "036e022de81d8707a6d720c2b07b70cc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 86130,
+                "upload_time": "2008-03-22T16:28:18",
+                "url": "https://files.pythonhosted.org/packages/bf/4d/4dd0ce5c45245726ecac3a378e19540201631df09dd48d69dd54c1837d2f/boto-1.1c.tar.gz"
+            }
+        ],
+        "1.2a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e4329f02ad17837b6e4b1269e1ae63e3",
+                    "sha256": "8149c98e545e23ebe673c5383ad14770a7812cdac92e31744cc32d1d11b8cfd9"
+                },
+                "downloads": -1,
+                "filename": "boto-1.2a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e4329f02ad17837b6e4b1269e1ae63e3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 89030,
+                "upload_time": "2008-04-16T15:25:16",
+                "url": "https://files.pythonhosted.org/packages/99/2b/70a53d15a155880aadd4f99f1daf53dc7b0f8777906db168ab5e31b0492e/boto-1.2a.tar.gz"
+            }
+        ],
+        "1.3a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "97274d242ac1c68656ddf88f2346a661",
+                    "sha256": "5baeeb7115d0b67fb10e812769b329d0a48ea0af8ca627108cb62ea958a4b0c6"
+                },
+                "downloads": -1,
+                "filename": "boto-1.3a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "97274d242ac1c68656ddf88f2346a661",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103018,
+                "upload_time": "2008-06-02T12:45:05",
+                "url": "https://files.pythonhosted.org/packages/d9/87/d4206fd71e3dae6c4a5433fc1a96dd47b68b487d329242b9a787b7b7a583/boto-1.3a.tar.gz"
+            }
+        ],
+        "1.4a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f349767aad47a73455e1e71c356f23be",
+                    "sha256": "bee52c9b9896840e82bb70246208008626240df05a6c1080daa7b11b1d1b093a"
+                },
+                "downloads": -1,
+                "filename": "boto-1.4a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f349767aad47a73455e1e71c356f23be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 123754,
+                "upload_time": "2008-08-31T00:24:53",
+                "url": "https://files.pythonhosted.org/packages/55/56/38f291da2c66169a41e111b9b7ee3c0b7ac4a4fafdc56a263b886f9d1168/boto-1.4a.tar.gz"
+            }
+        ],
+        "1.4b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cab476118f37eb0de191556944cc6432",
+                    "sha256": "d1b1a99abad123b2a31824781dab373726a30f95643053eec5b6fe906987d6ff"
+                },
+                "downloads": -1,
+                "filename": "boto-1.4b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cab476118f37eb0de191556944cc6432",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 123837,
+                "upload_time": "2008-09-08T02:24:02",
+                "url": "https://files.pythonhosted.org/packages/0a/1a/4e067a482847e0e412294473f4b98de237bed2c8e08d558a42a6f7c71764/boto-1.4b.tar.gz"
+            }
+        ],
+        "1.4c": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cdc586bc0e01035c1f7c17d6a317cc55",
+                    "sha256": "25fe3221f07017085ab2a315b349aec87dbcb354722ff4ef78f5f5ab80e3fd65"
+                },
+                "downloads": -1,
+                "filename": "boto-1.4c.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cdc586bc0e01035c1f7c17d6a317cc55",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 123862,
+                "upload_time": "2008-09-08T10:50:24",
+                "url": "https://files.pythonhosted.org/packages/7d/85/96578c428c0cb5d24972559005c8133b575a18b4b6f93ee0b4ebd7ac7275/boto-1.4c.tar.gz"
+            }
+        ],
+        "1.5c": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "596558d292361944d2319cc615494734",
+                    "sha256": "76afb916dbfd197eb83789e14be95dc21e1224824932f334893e616dddad3b0d"
+                },
+                "downloads": -1,
+                "filename": "boto-1.5c.tar.gz",
+                "has_sig": false,
+                "md5_digest": "596558d292361944d2319cc615494734",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 129181,
+                "upload_time": "2008-12-01T18:26:47",
+                "url": "https://files.pythonhosted.org/packages/a7/11/2eebc237347f039fba9d81126f70e81e25b505c08eb6fc8eef7ee988dd26/boto-1.5c.tar.gz"
+            }
+        ],
+        "1.5d": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f859271bc46e8fc5820cffde22b34f7",
+                    "sha256": "626fa1dd7819e7cd596a38d3f20642bb1ac55bd87ab487f6e7f91f7f4e1e4b2f"
+                },
+                "downloads": -1,
+                "filename": "boto-1.5d.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f859271bc46e8fc5820cffde22b34f7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 128400,
+                "upload_time": "2008-12-08T13:38:51",
+                "url": "https://files.pythonhosted.org/packages/4a/96/8843ef58d057666e77ca7457312ad5891794841e5f5ae69e43e5b33f8d18/boto-1.5d.tar.gz"
+            }
+        ],
+        "1.6a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26adbb21f9cfa243b6d7f9fcdb76d63e",
+                    "sha256": "7c6144f644a9f53b37f233ddd851243d464baa092e2157dbf318fca825715c0f"
+                },
+                "downloads": -1,
+                "filename": "boto-1.6a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "26adbb21f9cfa243b6d7f9fcdb76d63e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 131478,
+                "upload_time": "2008-12-10T11:46:00",
+                "url": "https://files.pythonhosted.org/packages/31/04/21881a2917d1cda9635acb305043b67210bee90a8607d9aab3ef5a5d3cdc/boto-1.6a.tar.gz"
+            }
+        ],
+        "1.6b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "da35ce449ed0be74a3e5d9fff58f9d08",
+                    "sha256": "c80b1b8b48313f6c063b07ff5a18a2b00c7e98d0a44eed5c0892f593ebd238f0"
+                },
+                "downloads": -1,
+                "filename": "boto-1.6b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "da35ce449ed0be74a3e5d9fff58f9d08",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 134305,
+                "upload_time": "2008-12-19T02:53:10",
+                "url": "https://files.pythonhosted.org/packages/d9/86/0c49ff05db7a5b4b4070f39d1697d4159ecf2d1da981f2be9ee7f4272b3d/boto-1.6b.tar.gz"
+            }
+        ],
+        "1.7a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e64e995ff2313452e78ef37dddeb44c1",
+                    "sha256": "a1ff967d801ef93bb0566c4fd1f236f662f34585f17d46c24836597e6c1801de"
+                },
+                "downloads": -1,
+                "filename": "boto-1.7a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e64e995ff2313452e78ef37dddeb44c1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 156683,
+                "upload_time": "2009-04-10T00:50:34",
+                "url": "https://files.pythonhosted.org/packages/7b/96/d1b0ebaf8444744a8b60ec282cfd856365877af25647dcb6152f4b6a4bce/boto-1.7a.tar.gz"
+            }
+        ],
+        "1.8a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "704e358087e4ffb9f1010c87a96e788c",
+                    "sha256": "cbf19fa40b5a136b9000d30c83b1fd12bddc1c2c3ec720343a87101fbfe35f87"
+                },
+                "downloads": -1,
+                "filename": "boto-1.8a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "704e358087e4ffb9f1010c87a96e788c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 171929,
+                "upload_time": "2009-06-25T03:35:01",
+                "url": "https://files.pythonhosted.org/packages/6d/99/3043220c63bcea82b459061f16eaa5084cdc19f9e233730d1110d01436eb/boto-1.8a.tar.gz"
+            }
+        ],
+        "1.8b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c3600dcfc2b6a5b33c2eb0872ffc244",
+                    "sha256": "01f7cd931ef3e7b9044a60437dcfaf84236eccadce01498698eed246bdb252b2"
+                },
+                "downloads": -1,
+                "filename": "boto-1.8b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0c3600dcfc2b6a5b33c2eb0872ffc244",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 171961,
+                "upload_time": "2009-06-25T21:06:17",
+                "url": "https://files.pythonhosted.org/packages/30/98/a5728084c6cf122b51cb3da5c14ea18097bfe4497b4b4bbf09e85885a905/boto-1.8b.tar.gz"
+            }
+        ],
+        "1.8c": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6f66bee0076b457c8bee51439ac45ef0",
+                    "sha256": "30a580ad19ec415920ae2c32ae7de597adbd61a87c56be86ce68455f1a8ffcad"
+                },
+                "downloads": -1,
+                "filename": "boto-1.8c.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6f66bee0076b457c8bee51439ac45ef0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 172026,
+                "upload_time": "2009-06-28T11:53:52",
+                "url": "https://files.pythonhosted.org/packages/3d/29/8ba736f9699d30384805794f8099fed2bd1f34f4abed510e6b6e0b890ad0/boto-1.8c.tar.gz"
+            }
+        ],
+        "1.8d": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3de4ac64015a9b06960fd14827a9c07a",
+                    "sha256": "5e343805906946d11bd257331cde3246b4c6ff98e5f8f1996eeb041b65b04a1c"
+                },
+                "downloads": -1,
+                "filename": "boto-1.8d.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3de4ac64015a9b06960fd14827a9c07a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 172033,
+                "upload_time": "2009-07-07T13:57:59",
+                "url": "https://files.pythonhosted.org/packages/d4/f4/ad9981fee58c53ca434462bd02d46cbe80664bad1b1f8e6fd83935b4e5e0/boto-1.8d.tar.gz"
+            }
+        ],
+        "1.9a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ad808d35ee34795f5047c1e61fdd418e",
+                    "sha256": "09f3a8321e0a9b655b2c0077adccab323e5e587538d37c61ace5a26cb1621ae8"
+                },
+                "downloads": -1,
+                "filename": "boto-1.9a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ad808d35ee34795f5047c1e61fdd418e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 218410,
+                "upload_time": "2009-12-21T16:45:10",
+                "url": "https://files.pythonhosted.org/packages/8a/35/97f7b12a87a820c074caedaddda100a1a642cee7b28577409c1a21b1d1d2/boto-1.9a.tar.gz"
+            }
+        ],
+        "1.9b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4fc2fd7b70a971b1363f8465aafe7091",
+                    "sha256": "9f2372515a73260199aa041b93e490ef63bb6eaf9f95c58f6b3da7535b1b394e"
+                },
+                "downloads": -1,
+                "filename": "boto-1.9b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4fc2fd7b70a971b1363f8465aafe7091",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 218406,
+                "upload_time": "2009-12-21T21:49:27",
+                "url": "https://files.pythonhosted.org/packages/6b/82/980a1de1ee7ad9f06a246029b4ae56ea0a88d01048b91ec185b156e6e679/boto-1.9b.tar.gz"
+            }
+        ],
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e238262c5ff417a2b59a8b24ae06b9ce",
+                    "sha256": "7b8714b0a6054f3a8c1b8e0908b8a0606c528c2c04b2910fb6dbd4337692e16b"
+                },
+                "downloads": -1,
+                "filename": "boto-2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e238262c5ff417a2b59a8b24ae06b9ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 302074,
+                "upload_time": "2011-07-14T03:03:39",
+                "url": "https://files.pythonhosted.org/packages/79/e7/7bf7a14e797a53b2fa20ef359d38053318a95f29286864f5faa32a1dff66/boto-2.0.tar.gz"
+            }
+        ],
+        "2.0a1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9ef8b42cc4c75c47424893721f89b77e",
+                    "sha256": "cb1887aa326495fa2fc2d154b9b031dc849bf0443913bc02d1726174b2e97285"
+                },
+                "downloads": -1,
+                "filename": "boto-2.0a1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9ef8b42cc4c75c47424893721f89b77e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 248180,
+                "upload_time": "2010-07-05T22:01:05",
+                "url": "https://files.pythonhosted.org/packages/7c/4d/3794e3bb9f57faaa6f4d0130c2772fd038d532754951d0c3b5e0472ebcf8/boto-2.0a1.tar.gz"
+            }
+        ],
+        "2.0a2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d7a0ff3f9874697f3142bca4e1f9a99d",
+                    "sha256": "7c3998a7a90ecc0ea9ad9ed24fb5ee1233bd48de4f39777441b2ff24b1268c3a"
+                },
+                "downloads": -1,
+                "filename": "boto-2.0a2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d7a0ff3f9874697f3142bca4e1f9a99d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 248194,
+                "upload_time": "2010-07-05T23:04:00",
+                "url": "https://files.pythonhosted.org/packages/13/fd/38486f63fb0524a48e7de3ea6a6aa03b177533f9a76e4fd331f555d34395/boto-2.0a2.tar.gz"
+            }
+        ],
+        "2.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f06f8377addbdd48869eaf6b07886431",
+                    "sha256": "69594bfec41452fa1ace6656b48d2eea7f5c33a616ae4fa27f2f9ecde72387a0"
+                },
+                "downloads": -1,
+                "filename": "boto-2.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f06f8377addbdd48869eaf6b07886431",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 198277,
+                "upload_time": "2010-07-22T14:16:51",
+                "url": "https://files.pythonhosted.org/packages/84/f0/ef8059c10e7e129126973787ac5da172c6addb0cd29df3468af00e80e477/boto-2.0b1.tar.gz"
+            }
+        ],
+        "2.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7cb6859f0ad40285c068f38e88d02a6e",
+                    "sha256": "480cca1be4e84d9fbbddbbabb8abe967aa1fb22752f245361e57f811c8977215"
+                },
+                "downloads": -1,
+                "filename": "boto-2.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7cb6859f0ad40285c068f38e88d02a6e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 199812,
+                "upload_time": "2010-08-19T18:37:29",
+                "url": "https://files.pythonhosted.org/packages/c7/aa/12841b91525b6d69454cdae815f1762f507217a5ed4ddbda4188732d5977/boto-2.0b2.tar.gz"
+            }
+        ],
+        "2.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a6ab186d7767d191c5803449ed086f46",
+                    "sha256": "abcd23525ee5bdda425a3b95d0318763e30d1e406a1aba8fedd67f85dedcc984"
+                },
+                "downloads": -1,
+                "filename": "boto-2.0b3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a6ab186d7767d191c5803449ed086f46",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 235473,
+                "upload_time": "2010-10-14T07:11:52",
+                "url": "https://files.pythonhosted.org/packages/78/e0/f2e9a0995c2ead7903e5a2d8bf34048fda43b077da46edc95ab66ef0ad9a/boto-2.0b3.tar.gz"
+            }
+        ],
+        "2.0b4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f00ccf9167fee01d6a415bd4ab156171",
+                    "sha256": "044d83120ae21ab269ce2b8dc3539362b767734adaae58df0cfdc6d395fd95d7"
+                },
+                "downloads": -1,
+                "filename": "boto-2.0b4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f00ccf9167fee01d6a415bd4ab156171",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 270432,
+                "upload_time": "2011-02-14T02:23:41",
+                "url": "https://files.pythonhosted.org/packages/58/dc/ee122087b19780ece8fd7b21b937011f8bf48280d4a71acf0c7032f540f1/boto-2.0b4.tar.gz"
+            }
+        ],
+        "2.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9232fa51fdcd607c0451c44b5ee81b5e",
+                    "sha256": "be69032dad8d6256d9ad4ba3559f80caabd75e5d9d0439076b77e1baab101c22"
+                },
+                "downloads": -1,
+                "filename": "boto-2.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9232fa51fdcd607c0451c44b5ee81b5e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 293771,
+                "upload_time": "2011-06-02T16:56:31",
+                "url": "https://files.pythonhosted.org/packages/8b/b6/72fa921994a3636c185918c6e6726edd22dfabe21dd93dd29e84af673f2c/boto-2.0rc1.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f87689bdd746e4f25a48889ccab289b",
+                    "sha256": "f0c06a323cdd05186784a38ad940517542f04bf751b070fd538bc26e7d1dbc76"
+                },
+                "downloads": -1,
+                "filename": "boto-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5f87689bdd746e4f25a48889ccab289b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 315477,
+                "upload_time": "2011-10-27T15:04:02",
+                "url": "https://files.pythonhosted.org/packages/47/d3/c0242a57fb9a4624dbea4ba08ffb06f79b15c62eb08296cb5ddd48172ae7/boto-2.1.0.tar.gz"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5528f3010c42dd0ed7b188a6917295f1",
+                    "sha256": "4d6d38aa8e9e536a27a9737eb4222f896417841fed9a12eedcb619ba8fb68a39"
+                },
+                "downloads": -1,
+                "filename": "boto-2.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5528f3010c42dd0ed7b188a6917295f1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 313294,
+                "upload_time": "2011-10-31T14:03:37",
+                "url": "https://files.pythonhosted.org/packages/1e/20/77433d15ab022174386b8dda9191adf786ef4f7ebf7891e0420422d65163/boto-2.1.1.tar.gz"
+            }
+        ],
+        "2.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "966f0b66bd127f6712209d63d55a17df",
+                    "sha256": "42f06c6023f6c6531109cab0b9cefc56abc9cc374737214b8682a1d5a39c7257"
+                },
+                "downloads": -1,
+                "filename": "boto-2.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "966f0b66bd127f6712209d63d55a17df",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1037320,
+                "upload_time": "2013-08-13T11:40:40",
+                "url": "https://files.pythonhosted.org/packages/4b/20/67f6bf0e7d7b2d1156d0ede62559a5c1e7a2f68455df457143fac1c5593d/boto-2.10.0.tar.gz"
+            }
+        ],
+        "2.11.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1a535328246174898768ef22c82ba04",
+                    "sha256": "abc0409acd323030d32b994dda8f3538c1fbfbc8c62816975c2b85eb6c3832f9"
+                },
+                "downloads": -1,
+                "filename": "boto-2.11.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a1a535328246174898768ef22c82ba04",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1045981,
+                "upload_time": "2013-08-29T19:39:50",
+                "url": "https://files.pythonhosted.org/packages/90/20/49e3040cf5627b8c351621eae6c5e9208e5a325b08863634ffc11bc630dd/boto-2.11.0.tar.gz"
+            }
+        ],
+        "2.12.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b6ee28986721310c7ec75664ab64ba7",
+                    "sha256": "5561e8dadd87481cf50fb29b0692e55dba48138618a47c9c3b9a32bfcd7f2ba7"
+                },
+                "downloads": -1,
+                "filename": "boto-2.12.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3b6ee28986721310c7ec75664ab64ba7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1050915,
+                "upload_time": "2013-09-04T20:42:53",
+                "url": "https://files.pythonhosted.org/packages/86/6f/7417df8c214857c194c3e4ec49abe2d268de2af3bf2f63631a2117d63bfd/boto-2.12.0.tar.gz"
+            }
+        ],
+        "2.13.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cdf7cfd947349a165edbc533465e1a3e",
+                    "sha256": "6c6002ecc1299fb6b8bf7b1b2513863ba09671436f28ff3de5784f6a41852626"
+                },
+                "downloads": -1,
+                "filename": "boto-2.13.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cdf7cfd947349a165edbc533465e1a3e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1056601,
+                "upload_time": "2013-09-12T22:46:37",
+                "url": "https://files.pythonhosted.org/packages/a6/43/bd453546a53e298de04bcc5b6d4ae0f84ac5381a0c0b94f9ee3b07a5f45e/boto-2.13.0.tar.gz"
+            }
+        ],
+        "2.13.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f4e43a842db5c5010d2bddc3569028dc",
+                    "sha256": "8734d9008a7437fad538d8fd7a946bf5820cbde2a0e89a32b0fc12d3371b242b"
+                },
+                "downloads": -1,
+                "filename": "boto-2.13.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f4e43a842db5c5010d2bddc3569028dc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1063143,
+                "upload_time": "2013-09-16T21:56:10",
+                "url": "https://files.pythonhosted.org/packages/93/5e/62c7e107eeb48ad9f244803c08fca4b74111fd6eb27ca0706b16f706b968/boto-2.13.3.tar.gz"
+            }
+        ],
+        "2.14.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5cc84717f1955fc30146fd92a9e11329",
+                    "sha256": "6e26cb54229085bec996ce2330e883f8ac696f11d6d9a398fa127788d4454428"
+                },
+                "downloads": -1,
+                "filename": "boto-2.14.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5cc84717f1955fc30146fd92a9e11329",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1073405,
+                "upload_time": "2013-10-09T21:30:34",
+                "url": "https://files.pythonhosted.org/packages/18/c2/9e2e50f76a6bee0bd15b48914af4bfb8235803915ae6b994bbf0b85ae8de/boto-2.14.0.tar.gz"
+            }
+        ],
+        "2.15.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc1ce8897d5859011f189233d3e79752",
+                    "sha256": "e81f1feab60254dddabbb2d94324220c40461dee241ffb14af4a069bfc7b268c"
+                },
+                "downloads": -1,
+                "filename": "boto-2.15.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fc1ce8897d5859011f189233d3e79752",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5645904,
+                "upload_time": "2013-10-18T03:11:18",
+                "url": "https://files.pythonhosted.org/packages/f6/f6/a65e62c1dc39360f10af95c4f2b855326e2180d0c5ee8e32e53415d94755/boto-2.15.0.tar.gz"
+            }
+        ],
+        "2.16.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9399feb58b1fbf1f85ce13ddd10e904a",
+                    "sha256": "345b9766e924995d70799af2beecd5bb5937e15c9201f5ed9f0b1ee5edf09e6d"
+                },
+                "downloads": -1,
+                "filename": "boto-2.16.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9399feb58b1fbf1f85ce13ddd10e904a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5700070,
+                "upload_time": "2013-11-08T22:35:32",
+                "url": "https://files.pythonhosted.org/packages/30/30/bcd1f8ba672a0c999691ea163382b5df636cb357d9003d357d5e18a53ffd/boto-2.16.0.tar.gz"
+            }
+        ],
+        "2.17.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "398f7fd9c223fb484c2d6031b0c2b65b",
+                    "sha256": "8ade8069e8fa273fd819da6604394bae194c3440842123ee8ca80e06976c2af5"
+                },
+                "downloads": -1,
+                "filename": "boto-2.17.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "398f7fd9c223fb484c2d6031b0c2b65b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5993878,
+                "upload_time": "2013-11-14T18:41:46",
+                "url": "https://files.pythonhosted.org/packages/b4/75/cedaf318e59570f3f021e715adb2d891f865dba06103e813f28cb0bcf6d7/boto-2.17.0.tar.gz"
+            }
+        ],
+        "2.18.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "087037d477ee71601171d6b4e32856e8",
+                    "sha256": "5b68b2902020e43efcaca749ec74a13b7ad71b9c9d34c754863f44568e87fce5"
+                },
+                "downloads": -1,
+                "filename": "boto-2.18.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "087037d477ee71601171d6b4e32856e8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6001448,
+                "upload_time": "2013-11-22T21:31:23",
+                "url": "https://files.pythonhosted.org/packages/79/31/764a0e2191a2764fac090def178ecbf02a385ee02bbf5a0ff92f9a6831ca/boto-2.18.0.tar.gz"
+            }
+        ],
+        "2.19.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "be21d571fc80c1cb5e0e6b85ed4558ed",
+                    "sha256": "8c461b6dac980a6ebc6794e0218c80aab084b2abdd734c0772a7bca514b17a27"
+                },
+                "downloads": -1,
+                "filename": "boto-2.19.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "be21d571fc80c1cb5e0e6b85ed4558ed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6003759,
+                "upload_time": "2013-11-27T19:38:09",
+                "url": "https://files.pythonhosted.org/packages/77/b3/ff2f4360c25c622357910cce8840b0e9bb654d4fbffa0bc91ceebbd5e1ae/boto-2.19.0.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3ea6fa88116fddab88df2921f0388b7b",
+                    "sha256": "f581c90971f4c5e1a65d3681b5e44100dd0f4fd54013467cdbd176da5186efd6"
+                },
+                "downloads": -1,
+                "filename": "boto-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3ea6fa88116fddab88df2921f0388b7b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 504475,
+                "upload_time": "2012-02-01T00:25:36",
+                "url": "https://files.pythonhosted.org/packages/cb/84/99d33a6a49b26212700235feff20495d6080656fe3371b3330ba229c52dc/boto-2.2.0.tar.gz"
+            }
+        ],
+        "2.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2bc07230ac92890aeea7ec32521c9f28",
+                    "sha256": "338d92595bf5578eed6fde1fd3c1ea62c78c50e6f755f280546a420b11eb9f4a"
+                },
+                "downloads": -1,
+                "filename": "boto-2.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2bc07230ac92890aeea7ec32521c9f28",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 446290,
+                "upload_time": "2012-02-01T16:38:56",
+                "url": "https://files.pythonhosted.org/packages/f9/50/3bd777fad4018bfe768869e01d531dc73af7085e1fc926935c9c35de91ca/boto-2.2.1.tar.gz"
+            }
+        ],
+        "2.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b23b9137abd7286615236ed03929d282",
+                    "sha256": "17dce8082a650da50cdc966a5325b97873fac14916dcf1b9d9130b7e212ee292"
+                },
+                "downloads": -1,
+                "filename": "boto-2.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b23b9137abd7286615236ed03929d282",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 456632,
+                "upload_time": "2012-02-15T04:23:23",
+                "url": "https://files.pythonhosted.org/packages/a7/ec/be279125b9b8fcaa4680d6c557fc905f7609d769a7a1f76dd1274f2aecb9/boto-2.2.2.tar.gz"
+            }
+        ],
+        "2.20.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f4b5186d5b09330d3fd92d951d88ebe",
+                    "sha256": "339e3205d5ac99e63847a32d829535cf1be6afe7a61406f95e187fc29d3032a3"
+                },
+                "downloads": -1,
+                "filename": "boto-2.20.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5f4b5186d5b09330d3fd92d951d88ebe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6022471,
+                "upload_time": "2013-12-13T03:50:48",
+                "url": "https://files.pythonhosted.org/packages/c4/0c/cf189a2675cb2357736ceaa7f20a0b635db591e9bd3e37ef1a95a3231021/boto-2.20.0.tar.gz"
+            }
+        ],
+        "2.20.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a36482b5b81574aeffc57c2ed55bcb5d",
+                    "sha256": "32baadcd0fd7a509ca7854cae264063841212c1504ca4c8c2847268a703ba79f"
+                },
+                "downloads": -1,
+                "filename": "boto-2.20.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a36482b5b81574aeffc57c2ed55bcb5d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6022818,
+                "upload_time": "2013-12-13T20:47:57",
+                "url": "https://files.pythonhosted.org/packages/46/02/c883f25f860a9b3bbdb2ef02a57f7437bb3b76744ea0292638b8119eaf84/boto-2.20.1.tar.gz"
+            }
+        ],
+        "2.21.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a27bce451b0ddeabf310db0ba510a4b",
+                    "sha256": "2cf22b3472d31e454cb0916d7c324eb380a3ab7c7811a7553bb6db2e87f7d186"
+                },
+                "downloads": -1,
+                "filename": "boto-2.21.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1a27bce451b0ddeabf310db0ba510a4b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6034315,
+                "upload_time": "2013-12-20T00:14:42",
+                "url": "https://files.pythonhosted.org/packages/af/c1/c4e14f221d6f2948de72c6036dcd772b49dcfe679bdf3c05ec726c1864ea/boto-2.21.0.tar.gz"
+            }
+        ],
+        "2.21.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62d26997f9c324a2ca7b62eda70faef3",
+                    "sha256": "2fb137097236db482eca3556a6cdb0dd81eba50084b3f66303e7a9631b0e8136"
+                },
+                "downloads": -1,
+                "filename": "boto-2.21.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "62d26997f9c324a2ca7b62eda70faef3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5661111,
+                "upload_time": "2013-12-23T23:34:12",
+                "url": "https://files.pythonhosted.org/packages/a8/38/ca23c45e0beced1b93864f7ccffae63b11d18d8ff1c121f938168c4e942a/boto-2.21.1.tar.gz"
+            }
+        ],
+        "2.21.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a836dd47a84751d05929ced6293ac0e7",
+                    "sha256": "603e19c0607b15b927296e17cd47037de0e62c2f22044706a1e921949d5025b9"
+                },
+                "downloads": -1,
+                "filename": "boto-2.21.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a836dd47a84751d05929ced6293ac0e7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6103547,
+                "upload_time": "2013-12-25T00:08:21",
+                "url": "https://files.pythonhosted.org/packages/07/f8/6bdad35ab7eccb44617f48340d80d82fe69ad33b3ad0a9d12cb78c0c6352/boto-2.21.2.tar.gz"
+            }
+        ],
+        "2.22.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd87a713bbfeeb66d444380cb156b852",
+                    "sha256": "dbe7458fb356787387dce8129030b43552dc4beb70be2971869f70987c3e2b3d"
+                },
+                "downloads": -1,
+                "filename": "boto-2.22.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd87a713bbfeeb66d444380cb156b852",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6106851,
+                "upload_time": "2014-01-02T19:55:34",
+                "url": "https://files.pythonhosted.org/packages/7f/7a/3f4f0b2368687704995b4fdc765120b6bd26c05fef76561105a3c2ace20f/boto-2.22.0.tar.gz"
+            }
+        ],
+        "2.22.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fa5bfa654adeb10cf6c03965c0190db9",
+                    "sha256": "fafc65ce06304a78784d531b306bc4c51dbb3e804574e92ca1b5f60928ed1960"
+                },
+                "downloads": -1,
+                "filename": "boto-2.22.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fa5bfa654adeb10cf6c03965c0190db9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6108313,
+                "upload_time": "2014-01-06T22:25:34",
+                "url": "https://files.pythonhosted.org/packages/8e/d7/f06d13ff8cac7909f71b81858da6e4a689c3f15114d6ccb388c9e51dca92/boto-2.22.1.tar.gz"
+            }
+        ],
+        "2.23.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0f49c5ab0bd6e1d8ddd53f11a9e0439",
+                    "sha256": "4ba2f5fd6c67063306d8b52856e2168cfc80670c08fc0acc031c886fa75943c4"
+                },
+                "downloads": -1,
+                "filename": "boto-2.23.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d0f49c5ab0bd6e1d8ddd53f11a9e0439",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1118077,
+                "upload_time": "2014-01-10T22:35:53",
+                "url": "https://files.pythonhosted.org/packages/4b/7f/918a93faff801ddf45091034feccc6e580297a532d7f902e596b6b6c7060/boto-2.23.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b2fc1f946eed3b3577fa6fb6cf0d016d",
+                    "sha256": "67452818c694181d7948425308d91f44ca454a9655ec2ad62ec0076030f11b6e"
+                },
+                "downloads": -1,
+                "filename": "boto-2.23.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b2fc1f946eed3b3577fa6fb6cf0d016d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6116463,
+                "upload_time": "2014-01-10T22:31:36",
+                "url": "https://files.pythonhosted.org/packages/3d/10/7948b25365ce8d4ddcf361afa8b86ce6acc775dc8aeecc6da44d19883a07/boto-2.23.0.tar.gz"
+            }
+        ],
+        "2.24.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "599dea451d458d178ddfcae9c3f85ad3",
+                    "sha256": "9a373afff3d5ddd235c8ca7e2915a464fb352e3ac4beb39d6ea131efb0783909"
+                },
+                "downloads": -1,
+                "filename": "boto-2.24.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "599dea451d458d178ddfcae9c3f85ad3",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1130919,
+                "upload_time": "2014-01-30T00:42:04",
+                "url": "https://files.pythonhosted.org/packages/e1/60/3b0755cd850bf020c778f3cd6b73fad0225ed8384db17c9c9a7d92997f12/boto-2.24.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8cc8247c9ad201894ca2e04fc7241a1b",
+                    "sha256": "a3f9b02b8f39f097d55487d5ddf45eb8bedb9f0c80b1f97fe6e7f3f3885600e7"
+                },
+                "downloads": -1,
+                "filename": "boto-2.24.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8cc8247c9ad201894ca2e04fc7241a1b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6068609,
+                "upload_time": "2014-01-30T00:41:25",
+                "url": "https://files.pythonhosted.org/packages/91/4d/b013b743ba38019a3fa4e0c9759acc8b025a9d228744820f77d9009a8ce2/boto-2.24.0.tar.gz"
+            }
+        ],
+        "2.25.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "338df8458001174c11aa993936eae2a8",
+                    "sha256": "7fce1440af187d783d5582713aa9a0b2368d3ccf02d4c8c033c5174fa7fbf10d"
+                },
+                "downloads": -1,
+                "filename": "boto-2.25.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "338df8458001174c11aa993936eae2a8",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1124007,
+                "upload_time": "2014-02-07T21:44:46",
+                "url": "https://files.pythonhosted.org/packages/b6/7b/755647bcd945a8a2fb3eb3b3d2e3f02dc4ed0a9646b3f3b282302d5c81ed/boto-2.25.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b77d186bbed11fdd3d7ee0d6caa53a4",
+                    "sha256": "1ea4fbc1b28a583ecb28010c498a134f88b56479a98dec5d371470ec9abc0d03"
+                },
+                "downloads": -1,
+                "filename": "boto-2.25.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6b77d186bbed11fdd3d7ee0d6caa53a4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6243622,
+                "upload_time": "2014-02-07T21:40:29",
+                "url": "https://files.pythonhosted.org/packages/b3/74/cc2a4dcc48bd73b4ab320524b32c7e5518790585a36a9c5eaeccd79c52bc/boto-2.25.0.tar.gz"
+            }
+        ],
+        "2.26.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7525584f9ad7996b9fe1c04b9cd3078f",
+                    "sha256": "3eed518b4d1d98518348ff27c7826dc67fd47de1ca71c0ebbb1ba8ccc920d2fa"
+                },
+                "downloads": -1,
+                "filename": "boto-2.26.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7525584f9ad7996b9fe1c04b9cd3078f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1161083,
+                "upload_time": "2014-02-27T19:19:15",
+                "url": "https://files.pythonhosted.org/packages/cb/c4/994c6868905e5714f27244eebcab5123075303f2fa5a8134501c82c9c0fd/boto-2.26.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a43e2ad3fe48f52932a43dd48b71cab",
+                    "sha256": "e15548155e7bfd41e988d377cd3388ebe3093efa27ebf04e99cdc2b1f5218194"
+                },
+                "downloads": -1,
+                "filename": "boto-2.26.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9a43e2ad3fe48f52932a43dd48b71cab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6523274,
+                "upload_time": "2014-02-27T19:17:07",
+                "url": "https://files.pythonhosted.org/packages/ad/54/6eb03b051b9796574ba85f5a6c4d4fa2b975219cf9c75a2ea3a789d85f90/boto-2.26.0.tar.gz"
+            }
+        ],
+        "2.26.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7bba74eac8974ae8187b13db5f4797e2",
+                    "sha256": "c04d06eb3bd3c9fd01bd3fd298b7190ff0ce63f103cd8869f9fd59f2b34b8534"
+                },
+                "downloads": -1,
+                "filename": "boto-2.26.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7bba74eac8974ae8187b13db5f4797e2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1161215,
+                "upload_time": "2014-03-03T21:50:38",
+                "url": "https://files.pythonhosted.org/packages/61/43/160781a6aaecc7dd1a77bfbdcce5c53ee1985b2085d2c1c742de741550b1/boto-2.26.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "653f03cca044c233d6b53987774972f4",
+                    "sha256": "b9c5b0a4194fbfc16604bcff83ef5f42f95b40d53fc133f392991d94f98975ff"
+                },
+                "downloads": -1,
+                "filename": "boto-2.26.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "653f03cca044c233d6b53987774972f4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6525396,
+                "upload_time": "2014-03-03T21:49:46",
+                "url": "https://files.pythonhosted.org/packages/93/1a/211e3329d143e70f3f28e81a6bef0a0ea714c3c3ec44bb91b129fd59f219/boto-2.26.1.tar.gz"
+            }
+        ],
+        "2.27.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "853768464ec45c30d42c448dd1464939",
+                    "sha256": "9bab855333f4bfadc7ef52654173207324b04594582ee06ed378a6df95ce4e34"
+                },
+                "downloads": -1,
+                "filename": "boto-2.27.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "853768464ec45c30d42c448dd1464939",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1179482,
+                "upload_time": "2014-03-07T00:25:35",
+                "url": "https://files.pythonhosted.org/packages/cf/a0/07a0d92ba53922a701b111c3b10f4c4cc9f89deb432d464797597d5fbe3c/boto-2.27.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47a4d81554380b21d85005f91d12a585",
+                    "sha256": "5b20c6c22177c8048b4299bed7c357b6418932abd434c277c5b6050a18dc284b"
+                },
+                "downloads": -1,
+                "filename": "boto-2.27.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "47a4d81554380b21d85005f91d12a585",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6789802,
+                "upload_time": "2014-03-07T00:23:57",
+                "url": "https://files.pythonhosted.org/packages/df/50/30df87d598ae1e2c706897438a8d0bfd317a3e8b75aa4401ef0723a6ac63/boto-2.27.0.tar.gz"
+            }
+        ],
+        "2.28.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b0d5200476e2c6f2a3b57a0134515fd1",
+                    "sha256": "bcff5e55e45a8fe0c3771e8056021d48714de96421d1edeec36d12f737503997"
+                },
+                "downloads": -1,
+                "filename": "boto-2.28.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b0d5200476e2c6f2a3b57a0134515fd1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1214853,
+                "upload_time": "2014-05-08T20:25:59",
+                "url": "https://files.pythonhosted.org/packages/a1/78/d6b8bea237d65afefe47f649f5627b3074ecba3493b9527de2fe49165805/boto-2.28.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84ec31503b03a3a5dd049c7120cda845",
+                    "sha256": "c1599e66174a6cab633cb6bf5ec2590cce104c23d16395c02bda5ed93ea7947c"
+                },
+                "downloads": -1,
+                "filename": "boto-2.28.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "84ec31503b03a3a5dd049c7120cda845",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7101691,
+                "upload_time": "2014-05-08T20:23:27",
+                "url": "https://files.pythonhosted.org/packages/d4/74/624c01340f49f5eade8d2f158585b6ac1e50d210342c1f730af8845af651/boto-2.28.0.tar.gz"
+            }
+        ],
+        "2.29.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e456c1eb326204f03ba25d1eecd9e942",
+                    "sha256": "c13e71003c2b822e76da5c796c31c225673b55edacda1f118618a52990747255"
+                },
+                "downloads": -1,
+                "filename": "boto-2.29.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e456c1eb326204f03ba25d1eecd9e942",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1215433,
+                "upload_time": "2014-05-29T22:47:19",
+                "url": "https://files.pythonhosted.org/packages/bc/ff/0556b26e7e25bf3f63e387ea8921dc95c61a6c9005ddd82b8d36f3079d2c/boto-2.29.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6cc76121db8256d4d0ddda8a99c30a1d",
+                    "sha256": "7c5c8b484f7c1bdfdf1b97fea76bbb0fdbcb193d5bf6c50b9482f914915b24bc"
+                },
+                "downloads": -1,
+                "filename": "boto-2.29.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6cc76121db8256d4d0ddda8a99c30a1d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7104983,
+                "upload_time": "2014-05-29T22:46:03",
+                "url": "https://files.pythonhosted.org/packages/b2/19/0256ea15c12a711c9e4e71e7d20b8fbb6cf620764434a5471b089f578dec/boto-2.29.0.tar.gz"
+            }
+        ],
+        "2.29.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2686ae78a6293cdf36ca04b8dbeb3de2",
+                    "sha256": "ebe008f5642267425d97f25a3f65de2fa903b76e73f804938229906316006ead"
+                },
+                "downloads": -1,
+                "filename": "boto-2.29.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2686ae78a6293cdf36ca04b8dbeb3de2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1215466,
+                "upload_time": "2014-05-30T20:52:11",
+                "url": "https://files.pythonhosted.org/packages/a0/f6/1501d5ce7f78e1f1c2dc5e5fe58ffbe2d280420937ebe96d5ec384dcdd07/boto-2.29.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b752db4e5a37bfa061be38e7ed0c255e",
+                    "sha256": "eed223541b8e7901fe848e5050b6f369603f792fd8bc1b0590960626b728fe17"
+                },
+                "downloads": -1,
+                "filename": "boto-2.29.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b752db4e5a37bfa061be38e7ed0c255e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7105487,
+                "upload_time": "2014-05-30T20:51:23",
+                "url": "https://files.pythonhosted.org/packages/cd/d6/f62e9b8a9945b15db9f8fc5161311669eb74491a91a4575bd5453b0502fd/boto-2.29.1.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9c8c3ea67a58021c95609d4cc3a08e54",
+                    "sha256": "c12969a9b51eb803e348f71850b3cd28edb43095235d46b86408f334fd4e3516"
+                },
+                "downloads": -1,
+                "filename": "boto-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9c8c3ea67a58021c95609d4cc3a08e54",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 488207,
+                "upload_time": "2012-03-18T21:49:40",
+                "url": "https://files.pythonhosted.org/packages/9f/e7/dc2a8afb565b1057f36db3eb56aa32595b06b811eaccd592ceea318ba55a/boto-2.3.0.tar.gz"
+            }
+        ],
+        "2.30.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "91ac031e0fb7c1d1d69056c71438d142",
+                    "sha256": "38d7fe77bc7678832babaa9b4978985ee0cb2300b8a94d37f9f6df109fc828b5"
+                },
+                "downloads": -1,
+                "filename": "boto-2.30.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "91ac031e0fb7c1d1d69056c71438d142",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1217979,
+                "upload_time": "2014-07-01T21:41:55",
+                "url": "https://files.pythonhosted.org/packages/69/2e/501d9838eddd8176a9f8c438e8c1305594e8bac0f08e0d6ecf04a8d1457a/boto-2.30.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47d49e63b7059ac1b11c0b847004665d",
+                    "sha256": "101a18307fcf4c32ce638b4af06c684db02be1d216cab457437b875ebf42f489"
+                },
+                "downloads": -1,
+                "filename": "boto-2.30.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "47d49e63b7059ac1b11c0b847004665d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7074911,
+                "upload_time": "2014-07-01T21:40:33",
+                "url": "https://files.pythonhosted.org/packages/5b/b0/7ab9e9be2459783cccba8d92f2e56b28ac2193e182a0ef89ba5b7f71d7cd/boto-2.30.0.tar.gz"
+            }
+        ],
+        "2.31.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df1163a39c71e2c9026882a759a57f9c",
+                    "sha256": "0c02778c04570d3bf725253635c33a9e1231ed7014314ca5217bc2faca0d2782"
+                },
+                "downloads": -1,
+                "filename": "boto-2.31.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "df1163a39c71e2c9026882a759a57f9c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1235462,
+                "upload_time": "2014-07-10T18:35:16",
+                "url": "https://files.pythonhosted.org/packages/67/60/914d5c356bb1c2a25a4a8905478db685077782e372bebc4377ae4b277cd7/boto-2.31.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "458be11d86bd41f541e072512cfe124b",
+                    "sha256": "774d3e61b5ee12a6b14e29d7722397c7c4fa5fa5dd28703994aa3e55aeeaa814"
+                },
+                "downloads": -1,
+                "filename": "boto-2.31.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "458be11d86bd41f541e072512cfe124b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7091862,
+                "upload_time": "2014-07-10T18:34:42",
+                "url": "https://files.pythonhosted.org/packages/c9/45/d8da986d6c355413cb5c312b5790b711755d2c2dc85e5abe5932c36a73f9/boto-2.31.0.tar.gz"
+            }
+        ],
+        "2.31.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b242ae5e38b3dc998b8d5aa0d597772f",
+                    "sha256": "4121b9fe5eb04a6375a47d523decb2564c037fccee4174cecbc32ed1e9a89617"
+                },
+                "downloads": -1,
+                "filename": "boto-2.31.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b242ae5e38b3dc998b8d5aa0d597772f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1232425,
+                "upload_time": "2014-07-10T22:13:26",
+                "url": "https://files.pythonhosted.org/packages/3f/11/3dd1877cf53e3b2adad7cb058b2d82effc6426d19351e9f9a4314e7e39ff/boto-2.31.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d312bf911139925848633d012babee9",
+                    "sha256": "dadccbe69a9f8d858506bb9b14ff288fa91b81dec1fefd8867792324b8cb33f3"
+                },
+                "downloads": -1,
+                "filename": "boto-2.31.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4d312bf911139925848633d012babee9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7078455,
+                "upload_time": "2014-07-10T22:12:28",
+                "url": "https://files.pythonhosted.org/packages/eb/d9/fb22a8cf08928ca9b983df6a672da34356c3129a96210753f39aa87ff737/boto-2.31.1.tar.gz"
+            }
+        ],
+        "2.32.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ea4242231c01d09d2a6e780673e14b8",
+                    "sha256": "6faea98a9717fdd867418c3d33be78244eaaa43b2f72957c6a3c262ac986c04c"
+                },
+                "downloads": -1,
+                "filename": "boto-2.32.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7ea4242231c01d09d2a6e780673e14b8",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1240950,
+                "upload_time": "2014-07-30T22:35:58",
+                "url": "https://files.pythonhosted.org/packages/8e/4b/8bbfef895a5291d18758a91159a33cdb847288bfe3aef8e39378a8b0b279/boto-2.32.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8fd30cd04e7c47e67486e2a7ede29ae5",
+                    "sha256": "34e3143aaf2e0d017da916d79bddce0bb3e93ecc48417b8ee401aa43f3b52c55"
+                },
+                "downloads": -1,
+                "filename": "boto-2.32.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8fd30cd04e7c47e67486e2a7ede29ae5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7204200,
+                "upload_time": "2014-07-30T22:35:30",
+                "url": "https://files.pythonhosted.org/packages/53/a7/4c3caf4d8a3302d30b520f6c44b00fe92ef6f06142b51b836421f2484fa4/boto-2.32.0.tar.gz"
+            }
+        ],
+        "2.32.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ef8c03378d32a1eb90bedfbce9c5acf2",
+                    "sha256": "f0d2c1101b6a74ba3e5a542b8dcca536ec8cc20026eb0b4002d534658a19fe5e"
+                },
+                "downloads": -1,
+                "filename": "boto-2.32.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ef8c03378d32a1eb90bedfbce9c5acf2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1241217,
+                "upload_time": "2014-08-04T22:51:12",
+                "url": "https://files.pythonhosted.org/packages/ea/b0/a7d57fc0d773f3e8a58903be4553753e5f31ae0a4a1959564f05a9680419/boto-2.32.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "66bb70a9aa7576726dd1b141b64a4e0b",
+                    "sha256": "a8fd6e60417d59deef6ab33b2dfd09ff1da5b25364b0981d86fc633890e8cee9"
+                },
+                "downloads": -1,
+                "filename": "boto-2.32.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "66bb70a9aa7576726dd1b141b64a4e0b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7206910,
+                "upload_time": "2014-08-04T22:50:39",
+                "url": "https://files.pythonhosted.org/packages/46/af/cd263731663acd768f5d314c1731067e29d48b962362c5732422523bdf92/boto-2.32.1.tar.gz"
+            }
+        ],
+        "2.33.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e8cf7127b3de11e6730665b55c139ff4",
+                    "sha256": "78d7ac8c8a329b648cfc91ded58d6ce42e2cbc522e218f34ad6baf6440079d33"
+                },
+                "downloads": -1,
+                "filename": "boto-2.33.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e8cf7127b3de11e6730665b55c139ff4",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 1252132,
+                "upload_time": "2014-10-08T20:52:04",
+                "url": "https://files.pythonhosted.org/packages/17/2c/f2816e8c526bcb92c0b999bbcf1a2e6855ded628059b14bf1409f82000fd/boto-2.33.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7529e5b06547a81aef9b259e36a9c797",
+                    "sha256": "527cbe4784e57a4b10348e1fefd57b5d94d894c20d07b61b00109d8a86e4ca43"
+                },
+                "downloads": -1,
+                "filename": "boto-2.33.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7529e5b06547a81aef9b259e36a9c797",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1339323,
+                "upload_time": "2014-10-08T20:51:36",
+                "url": "https://files.pythonhosted.org/packages/12/89/1ced8e17b571bd5e44170dbe5fc858676a3f44648a2223825bd555558250/boto-2.33.0.tar.gz"
+            }
+        ],
+        "2.34.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "993cd85edce146375af0531d483bf2c7",
+                    "sha256": "1539a954641239c823387ae6a089125d826e5addc36697b671661fcca05aa771"
+                },
+                "downloads": -1,
+                "filename": "boto-2.34.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "993cd85edce146375af0531d483bf2c7",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1252861,
+                "upload_time": "2014-10-23T16:26:17",
+                "url": "https://files.pythonhosted.org/packages/71/41/825cd6b7dd0be939d8dc786e38b1aa1da629b3789bf970a388f6f1b3eaeb/boto-2.34.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5556223d2d0cc4d06dd4829e671dcecd",
+                    "sha256": "33baab022ecb803414ad0d6cf4041d010cfc2755ff8acc3bea7b32e77ba98be0"
+                },
+                "downloads": -1,
+                "filename": "boto-2.34.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5556223d2d0cc4d06dd4829e671dcecd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7302242,
+                "upload_time": "2014-10-23T16:25:50",
+                "url": "https://files.pythonhosted.org/packages/91/c5/7ff7be388abf0ba1f1d68581eb5410a60cebe3aec5ae0858fa148d80ce00/boto-2.34.0.tar.gz"
+            }
+        ],
+        "2.35.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17c3df5740353b66bef1dfdbacc23afa",
+                    "sha256": "e0178a5f38299ed11a6c796c04eb7f8a00b3000bfe115334587c5e0e51b44099"
+                },
+                "downloads": -1,
+                "filename": "boto-2.35.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "17c3df5740353b66bef1dfdbacc23afa",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 1268515,
+                "upload_time": "2015-01-08T23:48:25",
+                "url": "https://files.pythonhosted.org/packages/ba/6b/e323793a042b433a459460f2533568f7ca1885f62c563f2ae3ed0050f170/boto-2.35.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5edf8fcede206f8db5daa5dc831099d",
+                    "sha256": "497557bf79ae0b2f438cd868c2613734e7a3af39ee3933d75042b35ebda62130"
+                },
+                "downloads": -1,
+                "filename": "boto-2.35.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b5edf8fcede206f8db5daa5dc831099d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1366811,
+                "upload_time": "2015-01-08T23:47:53",
+                "url": "https://files.pythonhosted.org/packages/14/9f/458e860ce36b52e663b7c3d4d6c46695c0efff32cc97b587b59035fb0f2d/boto-2.35.0.tar.gz"
+            }
+        ],
+        "2.35.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "57179c734f558d9d5eaf2aa6889fd3eb",
+                    "sha256": "db768306a17af5709613bcc23b70a9bbb7594823b1e641d1ed985d6a03c82b10"
+                },
+                "downloads": -1,
+                "filename": "boto-2.35.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "57179c734f558d9d5eaf2aa6889fd3eb",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 1268529,
+                "upload_time": "2015-01-09T20:56:37",
+                "url": "https://files.pythonhosted.org/packages/fc/99/7238e5a2097e0f9c7d33ca78d98fdc9e59a0da2babf104128c02979158ae/boto-2.35.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a3a7fe5262bd9416cf4a25356f837687",
+                    "sha256": "62604f0fdf68a2b9a6c6bd5111c82e10281b498695152d21f56c9e4a0691d45d"
+                },
+                "downloads": -1,
+                "filename": "boto-2.35.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a3a7fe5262bd9416cf4a25356f837687",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1367029,
+                "upload_time": "2015-01-09T20:55:36",
+                "url": "https://files.pythonhosted.org/packages/08/32/f1a0603df0e97dc0905570238c8c34d83f71fc0eb5ef5c5381302920b115/boto-2.35.1.tar.gz"
+            }
+        ],
+        "2.35.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "00497aa3affac7ea272cabe76ebd61e9",
+                    "sha256": "1a4668573f332420f97dd8abc07d164f248eccecf41de5ff13bda7e5cab979d2"
+                },
+                "downloads": -1,
+                "filename": "boto-2.35.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "00497aa3affac7ea272cabe76ebd61e9",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 1269208,
+                "upload_time": "2015-01-20T00:25:08",
+                "url": "https://files.pythonhosted.org/packages/4b/ef/8396654e352d4597bd8f42e03fc3fc1d360c52d0521bb7311d5fc0a997ba/boto-2.35.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a421325aa2751ca8f5ab90eb9d24da9",
+                    "sha256": "7237dcdec195eb74660bbbecd3274171a6cda0a08842eb4777a68d0228f503ae"
+                },
+                "downloads": -1,
+                "filename": "boto-2.35.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3a421325aa2751ca8f5ab90eb9d24da9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1368899,
+                "upload_time": "2015-01-20T00:24:49",
+                "url": "https://files.pythonhosted.org/packages/52/78/e505cef51feb791f6752696d941e9967c9b6cf35384b073e4ac9688386f9/boto-2.35.2.tar.gz"
+            }
+        ],
+        "2.36.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3777433a2f800450a63d44c4b91d5caf",
+                    "sha256": "86e3bd841c288ebeb1f014f1e8ceb9d5e33c485becd1226f27616267a96a92a3"
+                },
+                "downloads": -1,
+                "filename": "boto-2.36.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3777433a2f800450a63d44c4b91d5caf",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 1324559,
+                "upload_time": "2015-01-27T20:24:37",
+                "url": "https://files.pythonhosted.org/packages/f6/c5/b956f78a1f96c983379578ef8be9021331e4859a5e7a2eaebd898a6c9624/boto-2.36.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "457e27d6d8730441bfe7a9d4b87bc8d2",
+                    "sha256": "8033c6f7a7252976df0137b62536cfe38f1dbd1ef443a7a6d8bc06c063bc36bd"
+                },
+                "downloads": -1,
+                "filename": "boto-2.36.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "457e27d6d8730441bfe7a9d4b87bc8d2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1412318,
+                "upload_time": "2015-01-27T20:23:23",
+                "url": "https://files.pythonhosted.org/packages/39/61/ac7e07e9774c49d44f20087cbd922306e8aa771d3643b74e08ff60292e82/boto-2.36.0.tar.gz"
+            }
+        ],
+        "2.37.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "946327a1453821ca03871bafd22677bd",
+                    "sha256": "510d22cebcbe76ee1cd3eb0a665de7afeac4df05699a1d3eeab183fa174a26aa"
+                },
+                "downloads": -1,
+                "filename": "boto-2.37.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "946327a1453821ca03871bafd22677bd",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1326460,
+                "upload_time": "2015-04-02T22:46:28",
+                "url": "https://files.pythonhosted.org/packages/25/d4/2441223fc810613136f84670b0821f57db7c92e6331d08b6f205486b7abd/boto-2.37.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c8699fe3a3a2bd4ff5bbdac9d40d92c6",
+                    "sha256": "37971ea0f0af168de885aa85ef9c942f7b18cf5a6c34ce995f401b1119106ac3"
+                },
+                "downloads": -1,
+                "filename": "boto-2.37.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c8699fe3a3a2bd4ff5bbdac9d40d92c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1413606,
+                "upload_time": "2015-04-02T22:46:22",
+                "url": "https://files.pythonhosted.org/packages/e4/a7/75f76107c920c9f6fb5ba28c816477fd95ac44b45a41be12bf9a49579a32/boto-2.37.0.tar.gz"
+            }
+        ],
+        "2.38.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd00fcddc668880494987bcb6102ecf2",
+                    "sha256": "758498c77f16e26b8b61af26f8d0dbb119b713f2d8d166681ec892311f3520c4"
+                },
+                "downloads": -1,
+                "filename": "boto-2.38.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "dd00fcddc668880494987bcb6102ecf2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1338855,
+                "upload_time": "2015-04-09T18:59:58",
+                "url": "https://files.pythonhosted.org/packages/ed/bb/52b97bed7daf481fcf355fca49655e3f2b44bb8da079a94a9da420eeda06/boto-2.38.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28112f29e9c7b10e12b6917a325e70ce",
+                    "sha256": "d9083f91e21df850c813b38358dc83df16d7f253180a1344ecfedce24213ecf2"
+                },
+                "downloads": -1,
+                "filename": "boto-2.38.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "28112f29e9c7b10e12b6917a325e70ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1423863,
+                "upload_time": "2015-04-09T18:59:50",
+                "url": "https://files.pythonhosted.org/packages/e5/6e/13022066f104f6097a7414763c5658d68081ad0bc2b0630a83cd498a6f22/boto-2.38.0.tar.gz"
+            }
+        ],
+        "2.39.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7a3905b33f003950e16e19b1f8ee8725",
+                    "sha256": "c73f43558bbc2c4a438c39019b7b4947ba00573ead23420c8614dde0239167ca"
+                },
+                "downloads": -1,
+                "filename": "boto-2.39.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7a3905b33f003950e16e19b1f8ee8725",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1343161,
+                "upload_time": "2016-01-19T01:49:06",
+                "url": "https://files.pythonhosted.org/packages/48/ec/a90c9a21c15ea162015e58c8e4cd3cfff02602414eea57272441c6a74db4/boto-2.39.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "503e6ffd7d56dcdffa38cb316bb119e9",
+                    "sha256": "950c5bf36691df916b94ebc5679fed07f642030d39132454ec178800d5b6c58a"
+                },
+                "downloads": -1,
+                "filename": "boto-2.39.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "503e6ffd7d56dcdffa38cb316bb119e9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1434775,
+                "upload_time": "2016-01-19T01:48:38",
+                "url": "https://files.pythonhosted.org/packages/b3/1d/3022db30af1ba551b285d771716ad5bb24a5f82c2b941017a33de2d86793/boto-2.39.0.tar.gz"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a746ee521e82beae8c3cce421a65f8a",
+                    "sha256": "28d7c97b040be50a02a501afa666136b97e8f2934f4ca80ce1ac0fcad3005e64"
+                },
+                "downloads": -1,
+                "filename": "boto-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2a746ee521e82beae8c3cce421a65f8a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 507828,
+                "upload_time": "2012-05-16T04:31:40",
+                "url": "https://files.pythonhosted.org/packages/4b/7a/2d00feac327d43faa2803ec9bcd55bd3ba937ab8d442cf2f8438c1dabe33/boto-2.4.0.tar.gz"
+            }
+        ],
+        "2.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6fb90c1aa8c8ce6d967f2b0e06deda5b",
+                    "sha256": "68c3b8d6ece61f6d0edd04faaea3eb6a4f40f9def936a005dc69bc456d89c814"
+                },
+                "downloads": -1,
+                "filename": "boto-2.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6fb90c1aa8c8ce6d967f2b0e06deda5b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 519928,
+                "upload_time": "2012-05-16T16:39:57",
+                "url": "https://files.pythonhosted.org/packages/80/c4/87ce523cf5ea2d16195a5409dc1ebb461970d7c016addf02b67b9c9ea610/boto-2.4.1.tar.gz"
+            }
+        ],
+        "2.40.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "516acc3d61be5d4976ad3b66652f0826",
+                    "sha256": "8a76f6874de4b3b09a1ed6d8840294954e7d4c19c0a3ef1e91e0622281e04bf1"
+                },
+                "downloads": -1,
+                "filename": "boto-2.40.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "516acc3d61be5d4976ad3b66652f0826",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1345065,
+                "upload_time": "2016-04-28T19:38:02",
+                "url": "https://files.pythonhosted.org/packages/41/b4/f788bf1ed5f35f2dc29410f41a38688584d25babbfdf2528b09e00a77438/boto-2.40.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a3438341f7cd4b1aa46023ec0ae05ee",
+                    "sha256": "e12d5fca11fcabfd0acd18f78651e0f0dba60f958a0520ff4e9b73e35cd9928f"
+                },
+                "downloads": -1,
+                "filename": "boto-2.40.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5a3438341f7cd4b1aa46023ec0ae05ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1439746,
+                "upload_time": "2016-04-28T19:37:35",
+                "url": "https://files.pythonhosted.org/packages/6f/ce/3447e2136c629ae895611d946879b43c19346c54876dea614316306b17dd/boto-2.40.0.tar.gz"
+            }
+        ],
+        "2.41.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "981d33dc9abc7542039dd04b113256e6",
+                    "sha256": "6e2c2336c24901f6249b4f56519100453931b7198c3bd03fa98481a2def98f9e"
+                },
+                "downloads": -1,
+                "filename": "boto-2.41.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "981d33dc9abc7542039dd04b113256e6",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1345232,
+                "upload_time": "2016-06-28T01:10:13",
+                "url": "https://files.pythonhosted.org/packages/df/ff/ee0abfdaf8535141c625578a1c849d1aee60a1e16a1ba37bb8345fd7cc28/boto-2.41.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "65122acdf8b270d4a350954e4723400c",
+                    "sha256": "c638acdecb0a2383b517c15ac2a6ccf15a2f806aee923cc4448a59b9b73b52e0"
+                },
+                "downloads": -1,
+                "filename": "boto-2.41.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "65122acdf8b270d4a350954e4723400c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1440323,
+                "upload_time": "2016-06-28T01:09:47",
+                "url": "https://files.pythonhosted.org/packages/e9/74/7ef3431c37fc1f51f98cc04491cdb112dcd9f474c83b275e1a1450c24527/boto-2.41.0.tar.gz"
+            }
+        ],
+        "2.42.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e2c868a1cef8a1c78a79d2cf18c1d64c",
+                    "sha256": "ef345a9c5f5961c481cf986d755d33470f43452192fbc0ca978f8abe2a31992a"
+                },
+                "downloads": -1,
+                "filename": "boto-2.42.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e2c868a1cef8a1c78a79d2cf18c1d64c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1345517,
+                "upload_time": "2016-07-19T22:23:33",
+                "url": "https://files.pythonhosted.org/packages/bb/89/ea1b2239aa6dfc94629438901d2e5b1a7ccf16b3b0a87f1e9e69fb24084d/boto-2.42.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62b6ef1af3d18f8811f97e311b856dad",
+                    "sha256": "dcf140d4ce535bb8f5266d1750c16def4d50f6c46eff27fab38b55d0d74d5ac7"
+                },
+                "downloads": -1,
+                "filename": "boto-2.42.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "62b6ef1af3d18f8811f97e311b856dad",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1442326,
+                "upload_time": "2016-07-19T22:23:10",
+                "url": "https://files.pythonhosted.org/packages/c4/bb/28324652bedb4ea9ca77253b84567d1347b54df6231b51822eaaa296e6e0/boto-2.42.0.tar.gz"
+            }
+        ],
+        "2.43.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c524e27de9900cb4b58feea092992ba8",
+                    "sha256": "cd915c35287e06dd8e25b5e33f5da173dca48c56dafac2547414758ddd53ea1f"
+                },
+                "downloads": -1,
+                "filename": "boto-2.43.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c524e27de9900cb4b58feea092992ba8",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1345713,
+                "upload_time": "2016-10-17T21:40:51",
+                "url": "https://files.pythonhosted.org/packages/29/64/51e30f48b0e160d384d13aeab66d416b68e404525a34a87aded0da82f32a/boto-2.43.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42dfaa490058c1e41bc8f76bd02caf83",
+                    "sha256": "de4449cdc671939ecea6121c05587b25e73ac0c057bf1278a44bbc1974d5fd94"
+                },
+                "downloads": -1,
+                "filename": "boto-2.43.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "42dfaa490058c1e41bc8f76bd02caf83",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8316621,
+                "upload_time": "2016-10-17T21:40:31",
+                "url": "https://files.pythonhosted.org/packages/68/4a/48b302989cbc3e6c64a16da5ec807bb7b36d8e8d3428579addde2eb1f671/boto-2.43.0.tar.gz"
+            }
+        ],
+        "2.44.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a0188fbf4edecf8df24eb74a0b1dda3",
+                    "sha256": "348345865a728c742e7eb42f863c5f6f7ff2001f254b6d3b2c312a7777290fee"
+                },
+                "downloads": -1,
+                "filename": "boto-2.44.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2a0188fbf4edecf8df24eb74a0b1dda3",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 1346145,
+                "upload_time": "2016-12-09T00:00:12",
+                "url": "https://files.pythonhosted.org/packages/61/c0/91c836665cbef9e3fa8011f4855d8245bd3542ffc61de858eb53f52c22e3/boto-2.44.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec1b507f8b2aff6ca05fc4f54fd19d7e",
+                    "sha256": "10ca4ef0370550f32087fb011d666783a728d5cd360fb795b22e8d6ca6c88f22"
+                },
+                "downloads": -1,
+                "filename": "boto-2.44.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ec1b507f8b2aff6ca05fc4f54fd19d7e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1443625,
+                "upload_time": "2016-12-08T23:59:08",
+                "url": "https://files.pythonhosted.org/packages/12/88/a774b7eee0f0cc6b0792cb932fd15876d6be68db9e90b1d6afdc050ea2d2/boto-2.44.0.tar.gz"
+            }
+        ],
+        "2.45.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d61eacc37e4864b932354439d56e98d5",
+                    "sha256": "e8da1ad3ce7f84aaa35ec68feeded0f55818232d676e03529877eb8e935a005a"
+                },
+                "downloads": -1,
+                "filename": "boto-2.45.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d61eacc37e4864b932354439d56e98d5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1346283,
+                "upload_time": "2016-12-14T21:32:11",
+                "url": "https://files.pythonhosted.org/packages/9c/83/b4e3dd246d523c6215bc308d5c7d86a52715413203ee6b65172edf71ed13/boto-2.45.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "32b247ce908a7c3ba2efc386a2846d8b",
+                    "sha256": "053d64727b3bd7d24a64163d28feaa044257c5f49343f2c6cdd991c9fd4aab3b"
+                },
+                "downloads": -1,
+                "filename": "boto-2.45.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "32b247ce908a7c3ba2efc386a2846d8b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8317217,
+                "upload_time": "2016-12-14T21:31:31",
+                "url": "https://files.pythonhosted.org/packages/01/e6/c49b2d0c91f644fc067122ddf098f88b02417079053870e26bbbfa9ebb2c/boto-2.45.0.tar.gz"
+            }
+        ],
+        "2.46.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e5ce15f7297e6dae66d6937baa7f026e",
+                    "sha256": "76fd38c55b898b752bfa10b793f72e8f767b38d84b94e4516fe70e0734082374"
+                },
+                "downloads": -1,
+                "filename": "boto-2.46.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e5ce15f7297e6dae66d6937baa7f026e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1348834,
+                "upload_time": "2017-02-20T23:53:54",
+                "url": "https://files.pythonhosted.org/packages/d2/4f/af438cc7a27eb364e58e6a82847d70b7a0381720237b54b1fd54a174dbdc/boto-2.46.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a00b8eeb12a4ddba4365758f64f25dfd",
+                    "sha256": "95a9aba180d297779bdfdb65f36fcb122ace5a1738d7ecf45f01b95370ced939"
+                },
+                "downloads": -1,
+                "filename": "boto-2.46.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a00b8eeb12a4ddba4365758f64f25dfd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1457579,
+                "upload_time": "2017-02-20T23:53:30",
+                "url": "https://files.pythonhosted.org/packages/d4/16/d70d49ff39ed4af7457d8bac8f55b6e713875a65b2b452f2f7b8eec55359/boto-2.46.0.tar.gz"
+            }
+        ],
+        "2.46.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "913ac770f039be71b900030c1181d614",
+                    "sha256": "d6c7046a1a199fad87ae95edeecb8e5a900b70c854199d3949d1dbb9f3385fcb"
+                },
+                "downloads": -1,
+                "filename": "boto-2.46.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "913ac770f039be71b900030c1181d614",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1352815,
+                "upload_time": "2017-02-21T01:38:17",
+                "url": "https://files.pythonhosted.org/packages/3a/3a/eaa880264b8087fcb5730ab4b5fd707d62d766216de9051eeb69333141de/boto-2.46.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f952cefb7631d7847da07febb2b15cd",
+                    "sha256": "d24a68d97276445d1b5baee6537bc565ab7070afcd449a72f2541b1da1328ed4"
+                },
+                "downloads": -1,
+                "filename": "boto-2.46.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0f952cefb7631d7847da07febb2b15cd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1460213,
+                "upload_time": "2017-02-21T01:37:59",
+                "url": "https://files.pythonhosted.org/packages/b1/f9/cf8fa9a4a48e651294fc88446edee96f8b965f1d3ca044befc5dd7c9449b/boto-2.46.1.tar.gz"
+            }
+        ],
+        "2.47.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d0a5526847ee58bec3a405ac4e12aa5",
+                    "sha256": "daa8cd950d546b848c907676aa3a57bbbc1486700646d13be9a01485794821ad"
+                },
+                "downloads": -1,
+                "filename": "boto-2.47.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0d0a5526847ee58bec3a405ac4e12aa5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1352908,
+                "upload_time": "2017-05-24T21:29:19",
+                "url": "https://files.pythonhosted.org/packages/d7/ce/ced61cdf36d09038fc4c88bac1182845489e51a950148f5c1d1a4804cc28/boto-2.47.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c7ed986a6f369fe93f04ec62d16299ac",
+                    "sha256": "684ccaa1c030acd8ec6a48664d0555a6042bdc325b15ce52645c085bc36c0a69"
+                },
+                "downloads": -1,
+                "filename": "boto-2.47.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c7ed986a6f369fe93f04ec62d16299ac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1460723,
+                "upload_time": "2017-05-24T21:28:44",
+                "url": "https://files.pythonhosted.org/packages/bc/ee/e674c01b10972765511705dc77b824b550646a30994cbc428087c4910ac3/boto-2.47.0.tar.gz"
+            }
+        ],
+        "2.48.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e972e30f16c1f875e9b6e93a6452117e",
+                    "sha256": "13be844158d1bd80a94c972c806ec8381b9ea72035aa06123c5db6bc6a6f3ead"
+                },
+                "downloads": -1,
+                "filename": "boto-2.48.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e972e30f16c1f875e9b6e93a6452117e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1352965,
+                "upload_time": "2017-07-06T16:41:39",
+                "url": "https://files.pythonhosted.org/packages/bd/b7/a88a67002b1185ed9a8e8a6ef15266728c2361fcb4f1d02ea331e4c7741d/boto-2.48.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce4589dd9c1d7f5d347363223ae1b970",
+                    "sha256": "deb8925b734b109679e3de65856018996338758f4b916ff4fe7bb62b6d7000d1"
+                },
+                "downloads": -1,
+                "filename": "boto-2.48.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ce4589dd9c1d7f5d347363223ae1b970",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1461372,
+                "upload_time": "2017-07-06T16:41:23",
+                "url": "https://files.pythonhosted.org/packages/66/e7/fe1db6a5ed53831b53b8a6695a8f134a58833cadb5f2740802bc3730ac15/boto-2.48.0.tar.gz"
+            }
+        ],
+        "2.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "821670807cfa3f3569b0ec5ee3c49f5f",
+                    "sha256": "70ecb0f782ac7e1a7179b66477d486dd62b06bd3e25b596aa1222ac79478e25a"
+                },
+                "downloads": -1,
+                "filename": "boto-2.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "821670807cfa3f3569b0ec5ee3c49f5f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 576399,
+                "upload_time": "2012-06-13T21:08:35",
+                "url": "https://files.pythonhosted.org/packages/44/d8/3540c2ce59d2d96038561ff9166150b5f81a35136198e64d14cdb6ba21a8/boto-2.5.0.tar.gz"
+            }
+        ],
+        "2.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1f844d77eac3f49145724064e7ba7616",
+                    "sha256": "f3002ac979351201da7175133ba2885202e63d0664e6aba984eb8df3390937f8"
+                },
+                "downloads": -1,
+                "filename": "boto-2.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1f844d77eac3f49145724064e7ba7616",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 576374,
+                "upload_time": "2012-06-14T17:26:54",
+                "url": "https://files.pythonhosted.org/packages/e6/59/8677ff992e3b6e574d404f8c8090bfa1a31d7044b51aa609bf5fd9674654/boto-2.5.1.tar.gz"
+            }
+        ],
+        "2.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "be2ed101a4289d1e7271b9371438722d",
+                    "sha256": "1dbe16df5b3a69011ae80b1999680ed4a3d97cb1aeeceb1ad86bceaff0b580ed"
+                },
+                "downloads": -1,
+                "filename": "boto-2.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "be2ed101a4289d1e7271b9371438722d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 580273,
+                "upload_time": "2012-06-21T20:55:05",
+                "url": "https://files.pythonhosted.org/packages/45/81/936117196dd2d613f92acf78569379a276f944f819f150cfb8cdc0303e2f/boto-2.5.2.tar.gz"
+            }
+        ],
+        "2.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f91986376c0330f837b935d833b6f6aa",
+                    "sha256": "ce516d8e92601f61e53b439c9d31669b2dab0a93710b7ab8cd9510975dd2dff2"
+                },
+                "downloads": -1,
+                "filename": "boto-2.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f91986376c0330f837b935d833b6f6aa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 640220,
+                "upload_time": "2012-09-20T04:46:06",
+                "url": "https://files.pythonhosted.org/packages/e1/f8/944a677ed348d17df6da0463fa5c67b1c66baeb6d5b628da1875a7d459eb/boto-2.6.0.tar.gz"
+            }
+        ],
+        "2.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b19c6856c1e116556a0cab1aefc29ae2",
+                    "sha256": "77e8c62113cab20ddd0d3cb8a72229f0f947cacbb7a168ef2641f5aa424e37a2"
+                },
+                "downloads": -1,
+                "filename": "boto-2.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b19c6856c1e116556a0cab1aefc29ae2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 706722,
+                "upload_time": "2013-01-11T00:58:43",
+                "url": "https://files.pythonhosted.org/packages/b0/ff/36e9158593ffff03ce59b23bf6ac66ca5547db31aee5b9141181fb90fc06/boto-2.7.0.tar.gz"
+            }
+        ],
+        "2.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d86d23a357f4c527c51b1ea02bbae8e3",
+                    "sha256": "f520cec579a11c99b510e06d16f484ce877f5b75eeae850c7e165753092939db"
+                },
+                "downloads": -1,
+                "filename": "boto-2.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d86d23a357f4c527c51b1ea02bbae8e3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 743925,
+                "upload_time": "2013-02-01T01:05:09",
+                "url": "https://files.pythonhosted.org/packages/90/6a/25135f74ce6b19b7d93772797703d811db148d68d471ba26a71fa5dda50e/boto-2.8.0.tar.gz"
+            }
+        ],
+        "2.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f8f298054d33a87e4c2b92dd81ddb78a",
+                    "sha256": "0fb96c6610fa647e351e6d1a1b9e96c1b48ecb3177fb9ce7c4d91e82cff8143f"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f8f298054d33a87e4c2b92dd81ddb78a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 862556,
+                "upload_time": "2013-04-18T11:42:17",
+                "url": "https://files.pythonhosted.org/packages/25/4a/d5ce42cd08f37d50139d7f08a673755724382b1612b343c4afd906bef2e6/boto-2.9.0.tar.gz"
+            }
+        ],
+        "2.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14e0f17264d4034c43bf65e61612eca9",
+                    "sha256": "3e240a0f90f17dfed9d1e5c74736f5e6cb66809436da452854f030cfeb5f50af"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "14e0f17264d4034c43bf65e61612eca9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 871899,
+                "upload_time": "2013-05-01T01:18:42",
+                "url": "https://files.pythonhosted.org/packages/1c/21/3608d5da598a6c4455d05c8b2aeef957e250536186ca5e9b22c30045580d/boto-2.9.1.tar.gz"
+            }
+        ],
+        "2.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "18fe51b8a8d8e42d831046da8cea5d4e",
+                    "sha256": "be7b58fb34a9ceb136c4aadcb3e1a926e8a3fde4ebcc55c940b8c69a9dcbba4a"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "18fe51b8a8d8e42d831046da8cea5d4e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 875951,
+                "upload_time": "2013-05-01T01:30:32",
+                "url": "https://files.pythonhosted.org/packages/1f/17/cc9f0f381844449ac7cbda83be70b7b8d7016f33a7ce486697e66695cb05/boto-2.9.2.tar.gz"
+            }
+        ],
+        "2.9.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce564ea69d510cabcd158f34ab41c62d",
+                    "sha256": "57ec51f2dbcfe8ef444d355096b55bfbbf6b04b34de700ff79ba7a8cf24ea39d"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ce564ea69d510cabcd158f34ab41c62d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 915218,
+                "upload_time": "2013-05-15T22:21:12",
+                "url": "https://files.pythonhosted.org/packages/40/e4/ee389eb00ac7b9331fff89702c5a682abf34f1b8d4ca434e04194942e708/boto-2.9.3.tar.gz"
+            }
+        ],
+        "2.9.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd6c21b319fe81836d56a8a9406ecc6b",
+                    "sha256": "9e4747923c1c92c15d330dd29427306af24f05ee2fa6eb80debde0dea1b6bd2f"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fd6c21b319fe81836d56a8a9406ecc6b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 916124,
+                "upload_time": "2013-05-21T00:09:04",
+                "url": "https://files.pythonhosted.org/packages/6c/e1/34ea2988d44015193950e67b8d8f94aeba2ec50fe71c0684793cf6f8d751/boto-2.9.4.tar.gz"
+            }
+        ],
+        "2.9.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc79cc87edb4cce00ca275c8ea7b75ed",
+                    "sha256": "4684b9f8ef57b397954089006306d37fc595a4f6ac04882143fd7e861944cab6"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cc79cc87edb4cce00ca275c8ea7b75ed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 921725,
+                "upload_time": "2013-05-29T04:46:57",
+                "url": "https://files.pythonhosted.org/packages/68/cc/0f50e7b8f5839a5218d80763afb0d9bfea75cd90901d2faa23990a1bf970/boto-2.9.5.tar.gz"
+            }
+        ],
+        "2.9.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "46f8e51001d2e8e17ec50615d0d55201",
+                    "sha256": "baf12b9101b17a5bb97e7ee74fef8622f4ca0f3c147f870eff58c37a7a2297c5"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "46f8e51001d2e8e17ec50615d0d55201",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 926557,
+                "upload_time": "2013-06-18T21:56:36",
+                "url": "https://files.pythonhosted.org/packages/ab/c3/f50189b4144c40ae87972f7a6fa0ec57e76e1c118eb6e6f04f97f5f12708/boto-2.9.6.tar.gz"
+            }
+        ],
+        "2.9.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1d148444990292e3b36c35d0a98ff26f",
+                    "sha256": "6f06d348f4827128e235125b6f7b667f6706da8399961fde844195dc751182b5"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1d148444990292e3b36c35d0a98ff26f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 937950,
+                "upload_time": "2013-07-09T05:44:03",
+                "url": "https://files.pythonhosted.org/packages/3c/28/19f1dbcdc1ac1362faa04cea96a27b1e6a8a28141f4397ab0b0f3b3e0836/boto-2.9.7.tar.gz"
+            }
+        ],
+        "2.9.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "373b183e721f2e442855ef096aa3482d",
+                    "sha256": "b878495436fd7a89f74444c681f03807518453ac118da9210f4c6b4928430266"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "373b183e721f2e442855ef096aa3482d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 948344,
+                "upload_time": "2013-07-18T19:45:13",
+                "url": "https://files.pythonhosted.org/packages/46/41/390deea665068bd80301bccec1bc6bc30bc1af5b445e008031d3af827bef/boto-2.9.8.tar.gz"
+            }
+        ],
+        "2.9.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "794a7db936864403ab0142a0bd03b0c3",
+                    "sha256": "6ce016eed6605381d67f39bc62763ee3b862aed3d403ea70b16b9d63738c002a"
+                },
+                "downloads": -1,
+                "filename": "boto-2.9.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "794a7db936864403ab0142a0bd03b0c3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 949433,
+                "upload_time": "2013-07-24T22:05:23",
+                "url": "https://files.pythonhosted.org/packages/3a/ca/ef01caa13753c5af18eb76bd2cca7e7ee9f8e7725741d3ba2d6e366e7562/boto-2.9.9.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "e972e30f16c1f875e9b6e93a6452117e",
+                "sha256": "13be844158d1bd80a94c972c806ec8381b9ea72035aa06123c5db6bc6a6f3ead"
+            },
+            "downloads": -1,
+            "filename": "boto-2.48.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "e972e30f16c1f875e9b6e93a6452117e",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 1352965,
+            "upload_time": "2017-07-06T16:41:39",
+            "url": "https://files.pythonhosted.org/packages/bd/b7/a88a67002b1185ed9a8e8a6ef15266728c2361fcb4f1d02ea331e4c7741d/boto-2.48.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "ce4589dd9c1d7f5d347363223ae1b970",
+                "sha256": "deb8925b734b109679e3de65856018996338758f4b916ff4fe7bb62b6d7000d1"
+            },
+            "downloads": -1,
+            "filename": "boto-2.48.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "ce4589dd9c1d7f5d347363223ae1b970",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 1461372,
+            "upload_time": "2017-07-06T16:41:23",
+            "url": "https://files.pythonhosted.org/packages/66/e7/fe1db6a5ed53831b53b8a6695a8f134a58833cadb5f2740802bc3730ac15/boto-2.48.0.tar.gz"
+        }
+    ],
+    "package_name": "boto"
+}

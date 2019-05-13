@@ -1,0 +1,278 @@
+{
+    "info": {
+        "author": "Aaron Gallagher",
+        "author_email": "_@habnab.it",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 3 - Alpha",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: ISC License (ISCL)",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Topic :: Software Development :: Version Control"
+        ],
+        "description": ".. image:: https://travis-ci.org/habnabit/vcversioner.png\n\n===========\nvcversioner\n===========\n\n`Elevator pitch`_: you can write a ``setup.py`` with no version information\nspecified, and vcversioner will find a recent, properly-formatted VCS tag and\nextract a version from it.\n\nIt's much more convenient to be able to use your version control system's\ntagging mechanism to derive a version number than to have to duplicate that\ninformation all over the place. I eventually ended up copy-pasting the same\ncode into a couple different ``setup.py`` files just to avoid duplicating\nversion information. But, copy-pasting is dumb and unit testing ``setup.py``\nfiles is hard. This code got factored out into vcversioner.\n\n\nBasic usage\n-----------\n\nvcversioner installs itself as a setuptools hook, which makes its use\nexceedingly simple::\n\n  from setuptools import setup\n\n  setup(\n      # [...]\n      setup_requires=['vcversioner'],\n      vcversioner={},\n  )\n\nThe presence of a ``vcversioner`` argument automagically activates vcversioner\nand updates the project's version. The parameter to the ``vcversioner``\nargument can also be a dict of keyword arguments which |find_version|\nwill be called with.\n\nTo allow tarballs to be distributed without requiring a ``.git`` (or ``.hg``,\netc.) directory, vcversioner will also write out a file named (by default)\n``version.txt``. Then, if there is no VCS program or the program is unable to\nfind any version information, vcversioner will read version information from\nthe ``version.txt`` file. However, this file needs to be included in a\ndistributed tarball, so the following line should be added to ``MANIFEST.in``::\n\n  include version.txt\n\nThis isn't necessary if ``setup.py`` will always be run from a checkout, but\notherwise is essential for vcversioner to know what version to use.\n\nThe name ``version.txt`` also can be changed by specifying the ``version_file``\nparameter. For example::\n\n  from setuptools import setup\n\n  setup(\n      # [...]\n      setup_requires=['vcversioner'],\n      vcversioner={\n          'version_file': 'custom_version.txt',\n      },\n  )\n\nFor compatibility with `semantic versioning`_, ``vcversioner`` will strip\nleading ``'v'``\\ s  from version tags. That is, the tag ``v1.0`` will be\ntreated as if it was ``1.0``.\n\nOther prefixes can be specified to be stripped by using the ``strip_prefix``\nargument to vcversioner. For compatibility with ``git-dch``, one could specify\nthe ``strip_prefix`` as ``'debian/'``.\n\n\nNon-hook usage\n--------------\n\nIt's not necessary to depend on vcversioner; while `pip`_ will take care of\ndependencies automatically, sometimes having a self-contained project is\nsimpler. vcversioner is a single file which is easy to add to a project. Simply\ncopy the entire ``vcversioner.py`` file adjacent to the existing ``setup.py``\nfile and update the usage slightly::\n\n  from setuptools import setup\n  import vcversioner\n\n  setup(\n      # [...]\n      version=vcversioner.find_version().version,\n  )\n\nThis is necessary because the ``vcversioner`` distutils hook won't be\navailable.\n\n\nVersion modules\n---------------\n\n``setup.py`` isn't the only place that version information gets duplicated. By\ngenerating a version module, the ``__init__.py`` file of a package can import\nversion information. For example, with a package named ``spam``::\n\n  from setuptools import setup\n\n  setup(\n      # [...]\n      setup_requires=['vcversioner'],\n      vcversioner={\n          'version_module_paths': ['spam/_version.py'],\n      },\n  )\n\nThis will generate a ``spam/_version.py`` file that defines ``__version__`` and\n``__revision__``. Then, in ``spam/__init__.py``::\n\n  from spam._version import __version__, __revision__\n\nSince this acts like (and *is*) a regular python module, changing\n``MANIFEST.in`` is not required.\n\n\nCustomizing VCS commands\n------------------------\n\nvcversioner by default tries to detect which VCS is being used and picks a\ncommand to run based on that. For git, that is ``git --git-dir %(root)s/.git\ndescribe --tags --long``. For hg, that is ``hg log -R %(root)s -r . --template\n'{latesttag}-{latesttagdistance}-hg{node|short}'``.\n\nAny command should output a string that describes the current commit in the\nformat ``1.0-0-gdeadbeef``. Specifically, that is ``<version number>-<number of\ncommits between the current commit and the version tagged commit>-<revision>``.\nThe revision should have a VCS-specific prefix, e.g. ``g`` for git and ``hg``\nfor hg.\n\nHowever, sometimes this isn't sufficient. If someone wanted to only use\nannotated tags, the git command could be amended like so::\n\n  from setuptools import setup\n\n  setup(\n      # [...]\n      setup_requires=['vcversioner'],\n      vcversioner={\n          'vcs_args': ['git', 'describe', '--long'],\n      },\n  )\n\nThe ``vcs_args`` parameter must always be a list of strings, which will not be\ninterpreted by the shell. This is the same as what ``subprocess.Popen``\nexpects.\n\nThis argument used to be spelled ``git_args`` until support for multiple VCS\nsystems was added.\n\n\nDevelopment versions\n--------------------\n\nvcversioner can also automatically make a version that corresponds to a commit\nthat isn't itself tagged. Following `PEP 386`_, this is done by adding a\n``.post`` suffix to the version specified by a tag on an earlier commit. For\nexample, if the current commit is three revisions past the ``1.0`` tag, the\ncomputed version will be ``1.0.post3``.\n\nThis behavior can be disabled by setting the ``include_dev_version`` parameter\nto ``False``. In that case, the aforementioned untagged commit's version would\nbe just ``1.0``.\n\nSince hg requires a commit to make a tag, there's a parameter\n``decrement_dev_version`` to subtract one from the number of commits after the\nmost recent tag. If the VCS used is detected to be hg (i.e. the revision starts\nwith ``'hg'``) and ``decrement_dev_version`` is not specified as ``False``,\n``decrement_dev_version`` will be automatically set to ``True``.\n\n\nProject roots\n-------------\n\nIn order to prevent contamination from other source repositories, vcversioner\nin the 1.x version series will only look in the project root directory for\nrepositories. The project root defaults to the current working directory, which\nis often the case when running setup.py. This can be changed by specifying the\n``root`` parameter. Someone concerned with being able to run setup.py from\ndirectories other than the directory containing setup.py should determine the\nproject root from ``__file__`` in setup.py::\n\n  from setuptools import setup\n  import os\n\n  setup(\n      # [...]\n      setup_requires=['vcversioner'],\n      vcversioner={\n          'root': os.path.dirname(os.path.abspath(__file__)),\n      },\n  )\n\nTo get the same behavior in the 0.x version series, ``vcs_args`` can be set to\ninclude the ``--git-dir`` flag::\n\n  from setuptools import setup\n\n  setup(\n      # [...]\n      setup_requires=['vcversioner'],\n      vcversioner={\n          vcs_args=['git', '--git-dir', '%(root)s/.git', 'describe',\n                    '--tags', '--long'],\n      },\n  )\n\nBy default, ``version.txt`` is also read from the project root.\n\n\nSubstitutions\n~~~~~~~~~~~~~\n\nAs seen above, *root*, *version_file*, and *vcs_args* each support some\nsubstitutions:\n\n``%(root)s``\n  The value provided for *root*. This is not available for the *root*\n  parameter itself.\n\n``%(pwd)s``\n  The current working directory.\n\n``/`` will automatically be translated into the correct path separator for the\ncurrent platform, such as ``:`` or ``\\``.\n\n\nSphinx documentation\n--------------------\n\n`Sphinx`_ documentation is yet another place where version numbers get\nduplicated. Fortunately, since sphinx configuration is python code, vcversioner\ncan be used there too. Assuming vcversioner is installed system-wide, this is\nquite easy. Since Sphinx is typically run with the current working directory as\n``<your project root>/docs``, it's necessary to tell vcversioner where the\nproject root is. Simply change your ``conf.py`` to include::\n\n  import vcversioner\n  version = release = vcversioner.find_version(root='..').version\n\nThis assumes that your project root is the parent directory of the current\nworking directory. A slightly longer version which is a little more robust\nwould be::\n\n  import vcversioner, os\n  version = release = vcversioner.find_version(\n      root=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))).version\n\nThis version is more robust because it finds the project root not relative to\nthe current working directory but instead relative to the ``conf.py`` file.\n\nIf vcversioner is bundled with your project instead of relying on it being\ninstalled, you might have to add the following to your ``conf.py`` before\n``import vcversioner``::\n\n  import sys, os\n  sys.path.insert(0, os.path.abspath('..'))\n\nThis line, or something with the same effect, is sometimes already present when\nusing the sphinx ``autodoc`` extension.\n\n\nRead the Docs\n~~~~~~~~~~~~~\n\nUsing vcversioner is even possible when building documentation on `Read the\nDocs`_. If vcversioner is bundled with your project, nothing further needs to\nbe done. Otherwise, you need to tell Read the Docs to install vcversioner\nbefore it builds the documentation. This means using a ``requirements.txt``\nfile.\n\nIf your project is already set up to install dependencies with a\n``requirements.txt`` file, add ``vcversioner`` to it. Otherwise, create a\n``requirements.txt`` file. Assuming your documentation is in a ``docs``\nsubdirectory of the main project directory, create ``docs/requirements.txt``\ncontaining a ``vcversioner`` line.\n\nThen, make the following changes to your project's configuration: (Project\nconfiguration is edited at e.g.\nhttps://readthedocs.org/dashboard/vcversioner/edit/)\n\n- Check the checkbox under **Use virtualenv**.\n- If there was no ``requirements.txt`` previously, set the **Requirements\n  file** to the newly-created one, e.g. ``docs/requirements.txt``.\n\n\n.. _Elevator pitch: http://en.wikipedia.org/wiki/Elevator_pitch\n.. _pip: https://pypi.python.org/pypi/pip\n.. _PEP 386: http://www.python.org/dev/peps/pep-0386/\n.. _Sphinx: http://sphinx-doc.org\n.. _Read the Docs: https://readthedocs.org/\n.. _semantic versioning: http://semver.org/\n\n.. |find_version| replace:: ``find_version``",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/habnabit/vcversioner",
+        "keywords": "",
+        "license": "ISC",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "vcversioner",
+        "package_url": "https://pypi.org/project/vcversioner/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/vcversioner/",
+        "release_url": "https://pypi.org/project/vcversioner/2.16.0.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Use version control tags to discover version numbers",
+        "version": "2.16.0.0"
+    },
+    "last_serial": 2060151,
+    "releases": {
+        "0.13.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a3eb170400fc7bc29231ec811a87bda",
+                    "sha256": "b0f13b26f7142047d514a83f6d20d4e3282706090f341c9730fe26fb65d5b22a"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-0.13.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3a3eb170400fc7bc29231ec811a87bda",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4112,
+                "upload_time": "2013-07-07T03:29:57",
+                "url": "https://files.pythonhosted.org/packages/26/8d/cb1bd2f9c4c44ddd5824aa0b536d054e7a8898db44188002a43f375bf3a7/vcversioner-0.13.0.tar.gz"
+            }
+        ],
+        "0.13.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9007e3a05fe02916fb5e6500f56706f7",
+                    "sha256": "bf0ff5a354de77e4094aa511de53b4222935c259d355ed315f50515a4da98fc6"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-0.13.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9007e3a05fe02916fb5e6500f56706f7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4251,
+                "upload_time": "2013-07-07T22:04:39",
+                "url": "https://files.pythonhosted.org/packages/d5/68/c8b167951ffd6665e8bf7bb3d6b690b3b802bb1dce3dc361e6c118f2e283/vcversioner-0.13.0.1.tar.gz"
+            }
+        ],
+        "0.13.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fedfad15168149a19da6bea9df568fd3",
+                    "sha256": "0576acf5a38715e04fadbff4394c328c5f3692941fd326a01a26e68cc0dd4729"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-0.13.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fedfad15168149a19da6bea9df568fd3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6705,
+                "upload_time": "2013-08-24T20:46:57",
+                "url": "https://files.pythonhosted.org/packages/77/3a/4f93edf09f2cc8925eedfd9ad286b50909cf71f132f56a32e10ece5a283c/vcversioner-0.13.0.2.tar.gz"
+            }
+        ],
+        "0.13.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "866fa9840a9034d6530c98923d7356d0",
+                    "sha256": "32acdc06f845d4b664923d0f326c6c1c9b701cc98eccdda0a28a4a5ccb06d37f"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-0.13.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "866fa9840a9034d6530c98923d7356d0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7503,
+                "upload_time": "2013-11-08T04:03:24",
+                "url": "https://files.pythonhosted.org/packages/a6/e4/e1b993b191e3022cd31b81953e86e24673ddf060e4309294c1f991f78530/vcversioner-0.13.1.0.tar.gz"
+            }
+        ],
+        "1.13.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "07ad32ac279161b4a036324834096079",
+                    "sha256": "8a2cacf1b25dbbc231e7e2ada1aeae14011a69614d1de2d99fbd898639f1c78b"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-1.13.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "07ad32ac279161b4a036324834096079",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7541,
+                "upload_time": "2013-11-08T04:03:43",
+                "url": "https://files.pythonhosted.org/packages/19/df/0886516b7fccac96f5e9733cd7a20af6bf10874d698c4953bbe0c20ac677/vcversioner-1.13.0.0.tar.gz"
+            }
+        ],
+        "1.14.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "91d20625f9823f6b565b41e77d2de968",
+                    "sha256": "50f1dd6fab6d5eb66b1d1ceb3192eebe767dbc5401418d34d1c98355d4d6110c"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-1.14.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "91d20625f9823f6b565b41e77d2de968",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7753,
+                "upload_time": "2014-04-09T04:50:30",
+                "url": "https://files.pythonhosted.org/packages/51/ab/26ccd65f36cc84835761872f122f40a80b149f872c4d2b83bb1a3aba7756/vcversioner-1.14.0.0.tar.gz"
+            }
+        ],
+        "1.14.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d229c0f4d0e61bdd10cca868b9649f97",
+                    "sha256": "dd808100068f52abdd31bee84c60ee194dd6a8abd1c2a21a1a0c3180b26ada93"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-1.14.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d229c0f4d0e61bdd10cca868b9649f97",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8803,
+                "upload_time": "2014-04-27T09:26:11",
+                "url": "https://files.pythonhosted.org/packages/f9/6a/76da913e539de4e7adbf57cde814dc2e749244000f250ea151274bd6fdb5/vcversioner-1.14.1.0.tar.gz"
+            }
+        ],
+        "1.14.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3680f1df3982edebf0e2417439cdacf4",
+                    "sha256": "8488030eccad209aae94c87c866dae9352fbd507f41ead71ca63fd2736c45365"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-1.14.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3680f1df3982edebf0e2417439cdacf4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8809,
+                "upload_time": "2014-04-27T22:16:52",
+                "url": "https://files.pythonhosted.org/packages/88/2d/2846726385dacc0b227f8f5521b7dec673977946f0abba0f4474fe095ab2/vcversioner-1.14.1.1.tar.gz"
+            }
+        ],
+        "2.14.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7848a365ced9941053bc25d9a9f8f4b4",
+                    "sha256": "acd43686e92e6c8bbeb4f2eef54408567a7adea9692fa72d591eec5357c03b86"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-2.14.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7848a365ced9941053bc25d9a9f8f4b4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9015,
+                "upload_time": "2014-07-15T20:49:53",
+                "url": "https://files.pythonhosted.org/packages/c8/bf/a850e9924d42d52e8677703338c56559da2c54166fa6a813f517a6b80161/vcversioner-2.14.0.0.tar.gz"
+            }
+        ],
+        "2.16.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "afbe817dbd60d2f70724ce920e492590",
+                    "sha256": "1b81bd26218944e6c86b03c7a840e058c697f014a03374296dc2f8969d1adf36"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-2.16.0.0-py2-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "afbe817dbd60d2f70724ce920e492590",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 13934,
+                "upload_time": "2016-04-12T15:18:28",
+                "url": "https://files.pythonhosted.org/packages/5a/6b/6f5da157648cadbaf83f625c395cd23ff6be3421268b7bf54523b8d9aaab/vcversioner-2.16.0.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aab6ef5e0cf8614a1b1140ed5b7f107d",
+                    "sha256": "dae60c17a479781f44a4010701833f1829140b1eeccd258762a74974aa06e19b"
+                },
+                "downloads": -1,
+                "filename": "vcversioner-2.16.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "aab6ef5e0cf8614a1b1140ed5b7f107d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9024,
+                "upload_time": "2016-04-12T15:18:56",
+                "url": "https://files.pythonhosted.org/packages/c5/cc/33162c0a7b28a4d8c83da07bc2b12cee58c120b4a9e8bba31c41c8d35a16/vcversioner-2.16.0.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "afbe817dbd60d2f70724ce920e492590",
+                "sha256": "1b81bd26218944e6c86b03c7a840e058c697f014a03374296dc2f8969d1adf36"
+            },
+            "downloads": -1,
+            "filename": "vcversioner-2.16.0.0-py2-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "afbe817dbd60d2f70724ce920e492590",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2",
+            "size": 13934,
+            "upload_time": "2016-04-12T15:18:28",
+            "url": "https://files.pythonhosted.org/packages/5a/6b/6f5da157648cadbaf83f625c395cd23ff6be3421268b7bf54523b8d9aaab/vcversioner-2.16.0.0-py2-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "aab6ef5e0cf8614a1b1140ed5b7f107d",
+                "sha256": "dae60c17a479781f44a4010701833f1829140b1eeccd258762a74974aa06e19b"
+            },
+            "downloads": -1,
+            "filename": "vcversioner-2.16.0.0.tar.gz",
+            "has_sig": true,
+            "md5_digest": "aab6ef5e0cf8614a1b1140ed5b7f107d",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 9024,
+            "upload_time": "2016-04-12T15:18:56",
+            "url": "https://files.pythonhosted.org/packages/c5/cc/33162c0a7b28a4d8c83da07bc2b12cee58c120b4a9e8bba31c41c8d35a16/vcversioner-2.16.0.0.tar.gz"
+        }
+    ],
+    "package_name": "vcversioner"
+}

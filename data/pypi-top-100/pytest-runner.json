@@ -1,0 +1,989 @@
+{
+    "info": {
+        "author": "Jason R. Coombs",
+        "author_email": "jaraco@jaraco.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Framework :: Pytest",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3"
+        ],
+        "description": ".. image:: https://img.shields.io/pypi/v/pytest-runner.svg\n   :target: https://pypi.org/project/pytest-runner\n\n.. image:: https://img.shields.io/pypi/pyversions/pytest-runner.svg\n\n.. image:: https://img.shields.io/travis/pytest-dev/pytest-runner/master.svg\n   :target: https://travis-ci.org/pytest-dev/pytest-runner\n\n.. .. image:: https://img.shields.io/appveyor/ci/pytest-dev/pytest-runner/master.svg\n..    :target: https://ci.appveyor.com/project/pytest-dev/pytest-runner/branch/master\n\n.. .. image:: https://readthedocs.org/projects/pytest-runner/badge/?version=latest\n..    :target: https://pytest-runner.readthedocs.io/en/latest/?badge=latest\n\nSetup scripts can use pytest-runner to add setup.py test support for pytest\nrunner.\n\nUsage\n=====\n\n- Add 'pytest-runner' to your 'setup_requires'. Pin to '>=2.0,<3dev' (or\n  similar) to avoid pulling in incompatible versions.\n- Include 'pytest' and any other testing requirements to 'tests_require'.\n- Invoke tests with ``setup.py pytest``.\n- Pass ``--index-url`` to have test requirements downloaded from an alternate\n  index URL (unnecessary if specified for easy_install in setup.cfg).\n- Pass additional py.test command-line options using ``--addopts``.\n- Set permanent options for the ``python setup.py pytest`` command (like ``index-url``)\n  in the ``[pytest]`` section of ``setup.cfg``.\n- Set permanent options for the ``py.test`` run (like ``addopts`` or ``pep8ignore``) in the ``[pytest]``\n  section of ``pytest.ini`` or ``tox.ini`` or put them in the ``[tool:pytest]``\n  section of ``setup.cfg``. See `pytest issue 567\n  <https://github.com/pytest-dev/pytest/issues/567>`_.\n- Optionally, set ``test=pytest`` in the ``[aliases]`` section of ``setup.cfg``\n  to cause ``python setup.py test`` to invoke pytest.\n\nExample\n=======\n\nThe most simple usage looks like this in setup.py::\n\n    setup(\n        setup_requires=[\n            'pytest-runner',\n        ],\n        tests_require=[\n            'pytest',\n        ],\n    )\n\nAdditional dependencies require to run the tests (e.g. mock or pytest\nplugins) may be added to tests_require and will be downloaded and\nrequired by the session before invoking pytest.\n\nFollow `this search on github\n<https://github.com/search?utf8=%E2%9C%93&q=filename%3Asetup.py+pytest-runner&type=Code&ref=searchresults>`_\nfor examples of real-world usage.\n\nStandalone Example\n==================\n\nThis technique is deprecated - if you have standalone scripts\nyou wish to invoke with dependencies, `use rwt\n<https://pypi.org/project/rwt>`_.\n\nAlthough ``pytest-runner`` is typically used to add pytest test\nrunner support to maintained packages, ``pytest-runner`` may\nalso be used to create standalone tests. Consider `this example\nfailure <https://gist.github.com/jaraco/d979a558bc0bf2194c23>`_,\nreported in `jsonpickle #117\n<https://github.com/jsonpickle/jsonpickle/issues/117>`_\nor `this MongoDB test\n<https://gist.github.com/jaraco/0b9e482f5c0a1300dc9a>`_\ndemonstrating a technique that works even when dependencies\nare required in the test.\n\nEither example file may be cloned or downloaded and simply run on\nany system with Python and Setuptools. It will download the\nspecified dependencies and run the tests. Afterward, the the\ncloned directory can be removed and with it all trace of\ninvoking the test. No other dependencies are needed and no\nsystem configuration is altered.\n\nThen, anyone trying to replicate the failure can do so easily\nand with all the power of pytest (rewritten assertions,\nrich comparisons, interactive debugging, extensibility through\nplugins, etc).\n\nAs a result, the communication barrier for describing and\nreplicating failures is made almost trivially low.\n\nConsiderations\n==============\n\nConditional Requirement\n-----------------------\n\nBecause it uses Setuptools setup_requires, pytest-runner will install itself\non every invocation of setup.py. In some cases, this causes delays for\ninvocations of setup.py that will never invoke pytest-runner. To help avoid\nthis contingency, consider requiring pytest-runner only when pytest\nis invoked::\n\n    needs_pytest = {'pytest', 'test', 'ptr'}.intersection(sys.argv)\n    pytest_runner = ['pytest-runner'] if needs_pytest else []\n\n    # ...\n\n    setup(\n        #...\n        setup_requires=[\n            #... (other setup requirements)\n        ] + pytest_runner,\n    )\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/pytest-dev/pytest-runner",
+        "keywords": "",
+        "license": "",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "pytest-runner",
+        "package_url": "https://pypi.org/project/pytest-runner/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/pytest-runner/",
+        "release_url": "https://pypi.org/project/pytest-runner/4.2/",
+        "requires_dist": [
+            "sphinx; extra == 'docs'",
+            "jaraco.packaging (>=3.2); extra == 'docs'",
+            "rst.linker (>=1.9); extra == 'docs'",
+            "pytest (>=2.8); extra == 'testing'",
+            "pytest-sugar (>=0.9.1); extra == 'testing'",
+            "collective.checkdocs; extra == 'testing'",
+            "pytest-flake8; extra == 'testing'",
+            "pytest-virtualenv; extra == 'testing'"
+        ],
+        "requires_python": ">=2.7,!=3.0,!=3.1",
+        "summary": "Invoke py.test as distutils command with dependency resolution",
+        "version": "4.2"
+    },
+    "last_serial": 3680802,
+    "releases": {
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb04f164ff3d7a78fc1a341bbeacf1c6",
+                    "sha256": "f6fb90ce5bc4d5f349c699ec0ee4e084b5e2220d7dc203b351ed31bfa1f6cffe"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-1.0.zip",
+                "has_sig": false,
+                "md5_digest": "fb04f164ff3d7a78fc1a341bbeacf1c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4634,
+                "upload_time": "2012-05-23T22:27:47",
+                "url": "https://files.pythonhosted.org/packages/31/ba/7518a0b75aec727bb9d59931db84b886deed954c6043e292a2ee50bcf129/pytest-runner-1.0.zip"
+            }
+        ],
+        "1.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "075b42d97d7a3971343d61c8034a5061",
+                    "sha256": "abc2abda1b0a435822faf5bb7f372435b58ad7b04ebf156a7c03f31f46609542"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-1.0b2.zip",
+                "has_sig": false,
+                "md5_digest": "075b42d97d7a3971343d61c8034a5061",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4371,
+                "upload_time": "2012-05-06T22:41:53",
+                "url": "https://files.pythonhosted.org/packages/ee/e0/8df7aa66766e278cca76febb1c0f20d658836f34cdd39c2fffe85ab24b5e/pytest-runner-1.0b2.zip"
+            }
+        ],
+        "1.0dev": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cec640e65a70b1b5b95c1c88fe3f1a5a",
+                    "sha256": "bee5aaca2e1ae9604942b5e3d0b53cadfcd18b5b1ed52565c1e858073af8cc16"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-1.0dev.zip",
+                "has_sig": false,
+                "md5_digest": "cec640e65a70b1b5b95c1c88fe3f1a5a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4370,
+                "upload_time": "2012-05-06T22:09:27",
+                "url": "https://files.pythonhosted.org/packages/65/61/05c2ddff49beb3b25b6cc298b9f7bf20711409ed78996677902ad113d902/pytest-runner-1.0dev.zip"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9410e99a9732f5a69534b67d731fd429",
+                    "sha256": "47d672ca89c414cd3b7e1d8d0f95c56f44876ee1cc0d0409426b55cba9b989d2"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-1.1.zip",
+                "has_sig": false,
+                "md5_digest": "9410e99a9732f5a69534b67d731fd429",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4986,
+                "upload_time": "2012-09-07T20:36:44",
+                "url": "https://files.pythonhosted.org/packages/56/52/7b2f01bd5f26b1cf2109d93e9d43f3c709b75d0e19787697191c51a2f7cd/pytest-runner-1.1.zip"
+            }
+        ],
+        "1.1b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3d93cc2d7131b023d4fa872f2707ae26",
+                    "sha256": "1a11566efeccb8bf247c830ffa1720b4eea2c7bf6b1be4156cc1a31a961d66ac"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-1.1b1.zip",
+                "has_sig": false,
+                "md5_digest": "3d93cc2d7131b023d4fa872f2707ae26",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5015,
+                "upload_time": "2012-09-07T20:31:09",
+                "url": "https://files.pythonhosted.org/packages/7b/57/4788ce182bd6d50487f42ad111fe4ad6701007157314b8d22645fadd554a/pytest-runner-1.1b1.zip"
+            }
+        ],
+        "1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f7ddf6bf6e16fffa1e5018e9a334bece",
+                    "sha256": "1a7ae452115f454a92f94f124c093eae65c8f3cc942d2e16a6b879b813396ead"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-1.2.zip",
+                "has_sig": false,
+                "md5_digest": "f7ddf6bf6e16fffa1e5018e9a334bece",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5030,
+                "upload_time": "2012-10-21T16:11:18",
+                "url": "https://files.pythonhosted.org/packages/42/0f/d3040864641345526ef7b7b61a4d80b119e1b3fbf11c330d67e8355e6666/pytest-runner-1.2.zip"
+            }
+        ],
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "399a91934c797695e294a5a341db715f",
+                    "sha256": "65178b9f8367c84b7af196722d1132d236cc5abbafce1910c0fa49db8bd31483"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.0.zip",
+                "has_sig": false,
+                "md5_digest": "399a91934c797695e294a5a341db715f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5034,
+                "upload_time": "2013-05-18T14:13:27",
+                "url": "https://files.pythonhosted.org/packages/c6/b9/526311371a74cd30cceceff5edb75d13bcd0598de559d9f53adc86d2f839/pytest-runner-2.0.zip"
+            }
+        ],
+        "2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cbd6dd1b598d44092b73766916fcd587",
+                    "sha256": "40cdb1b69e6fbd11eed1833dc4a38b700bdb72d75877923d8fd1689b9e96f983"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.1.zip",
+                "has_sig": false,
+                "md5_digest": "cbd6dd1b598d44092b73766916fcd587",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5187,
+                "upload_time": "2014-08-21T22:47:47",
+                "url": "https://files.pythonhosted.org/packages/14/06/40bc387ce77158f908a0625b3f90deb80eccf402966658e0c016a8d3cbaa/pytest-runner-2.1.zip"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "589d821404c24668cf8b41e6a6c37066",
+                    "sha256": "fd0416ace547726d300d2a72c51a3e8bc0a1a4bc6cf9d4ecfa4227134c1285ce"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.1.1.zip",
+                "has_sig": false,
+                "md5_digest": "589d821404c24668cf8b41e6a6c37066",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5267,
+                "upload_time": "2014-08-28T21:30:08",
+                "url": "https://files.pythonhosted.org/packages/43/8f/bfabd2f0593fcc77c19ef701f22696c27dcfdabd70649a35c0bb792e3c5b/pytest-runner-2.1.1.zip"
+            }
+        ],
+        "2.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fa70e3494e72a525e2296f6c979463f9",
+                    "sha256": "544b53ade15931ad9bc74fecd897c49b2f3a9a1affc94bcbd88508548f6abbfc"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.1.2.zip",
+                "has_sig": false,
+                "md5_digest": "fa70e3494e72a525e2296f6c979463f9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5413,
+                "upload_time": "2014-08-28T22:01:31",
+                "url": "https://files.pythonhosted.org/packages/ab/61/c8b64b1f828a14c30763ebe49ad05d2c7d123cc606ada3ec456abb1956e5/pytest-runner-2.1.2.zip"
+            }
+        ],
+        "2.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a67b5dfdfa39f23839374d433c874440",
+                    "sha256": "c56c5f44df89c1f0e85bd9e7744d0644c78163f0eeba1acbf9b10e2483430ed8"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.10-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a67b5dfdfa39f23839374d433c874440",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 8106,
+                "upload_time": "2017-01-20T16:14:16",
+                "url": "https://files.pythonhosted.org/packages/44/d5/b181b4ca658b9b417298f2f62f7f7ec0f8cd53f90545b36816bbc20a1444/pytest_runner-2.10-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d118c32158c5f888b91027ad6f89fdcc",
+                    "sha256": "961bc3134bc6ac20fa9495552116266f571c75e99dd31a634c7f522076c95cc6"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d118c32158c5f888b91027ad6f89fdcc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8557,
+                "upload_time": "2017-01-20T16:14:15",
+                "url": "https://files.pythonhosted.org/packages/f7/fc/1c3bf7a0040cf459dbe3b6ecaba142013ec4c33c4f2bda047f708b11fec4/pytest-runner-2.10.tar.gz"
+            }
+        ],
+        "2.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6f278ff5c47792c7cd6b74c1e865000a",
+                    "sha256": "ee883310e96620532b799a46a3e556830472ee197d229129b12060ce0209e51f"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.10.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6f278ff5c47792c7cd6b74c1e865000a",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 8282,
+                "upload_time": "2017-01-20T16:14:26",
+                "url": "https://files.pythonhosted.org/packages/99/ff/233019992b3f3c84fbef1f917804a7369aa96252fbac12d084c2b9c5e3e6/pytest_runner-2.10.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6695c6a4289d8829cfee37c887ebebe8",
+                    "sha256": "ecc9549ed1ce9bbfc9e7c9bad33d3f9fa91da2334632070a191a35aa96f0be35"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.10.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6695c6a4289d8829cfee37c887ebebe8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8815,
+                "upload_time": "2017-01-20T16:14:24",
+                "url": "https://files.pythonhosted.org/packages/3d/dd/e491ac188a79b4d18628b1f9aa5df3603be72c3a02ae3e1dd5e081cb7ccc/pytest-runner-2.10.1.tar.gz"
+            }
+        ],
+        "2.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52771624c730bffaebffee1f2978bea2",
+                    "sha256": "670b54fa511d03bc5913d7bd81f0191e9f5cf5422681908f72469766de80f27d"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.11-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "52771624c730bffaebffee1f2978bea2",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8415,
+                "upload_time": "2017-01-31T18:19:47",
+                "url": "https://files.pythonhosted.org/packages/1a/b5/9661c66c3fba0ea0854dfd3e49f303282046a5eecc3fd10fdae47ad52783/pytest_runner-2.11-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14a7ce88361e190c671d8c199ca03381",
+                    "sha256": "bd4cae2efe03495955197983695cc170b5060766f9245994a8cda1ffc7fd3123"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "14a7ce88361e190c671d8c199ca03381",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9639,
+                "upload_time": "2017-01-31T18:19:48",
+                "url": "https://files.pythonhosted.org/packages/f8/f9/d740d06d15c1bce86ff7a0502e3da116944efecc61a5cfffedd356f19675/pytest-runner-2.11.tar.gz"
+            }
+        ],
+        "2.11.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9fb13a0f1472cfc670d815dbe61bf42d",
+                    "sha256": "feca6166c9c3b535441a9818126c9030101417c057892f29ffd5d8ae56613f35"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.11.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9fb13a0f1472cfc670d815dbe61bf42d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8450,
+                "upload_time": "2017-02-08T22:02:13",
+                "url": "https://files.pythonhosted.org/packages/26/d4/9e25eb226ddc6d395a72e3a6a6dcdfea197c21a2c7fbcd6f94545effb04d/pytest_runner-2.11.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bdb73eb18eca2727944a2dcf963c5a81",
+                    "sha256": "983a31eab45e375240e250161a556163bc8d250edaba97960909338c273a89b3"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.11.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bdb73eb18eca2727944a2dcf963c5a81",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9661,
+                "upload_time": "2017-02-08T22:02:15",
+                "url": "https://files.pythonhosted.org/packages/9e/4d/08889e5e27a9f5d6096b9ad257f4dea1faabb03c5ded8f665ead448f5d8a/pytest-runner-2.11.1.tar.gz"
+            }
+        ],
+        "2.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "07efc1a0d52036c89a9b6e539d3b6576",
+                    "sha256": "8089375b2268bc61fd05652a8c8e416ba674a4f21557898538dcfea572b3ab7c"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.12-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "07efc1a0d52036c89a9b6e539d3b6576",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8710,
+                "upload_time": "2017-09-03T16:26:47",
+                "url": "https://files.pythonhosted.org/packages/a3/3c/cb7c403293dc7f80537e399197e6af3d1043b8cc2aacb1c2b82fc33c90e5/pytest_runner-2.12-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47eae451a207f9aee5ed772f88acc387",
+                    "sha256": "f8ce1f0cba109f14ca2051cda0cdaae49887397384ad4f048dc556743ae70191"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "47eae451a207f9aee5ed772f88acc387",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11447,
+                "upload_time": "2017-09-03T16:26:48",
+                "url": "https://files.pythonhosted.org/packages/80/32/783ed65d9dd5e42027a015956bd19c8c5d3669e5ea004a023e7af69dbc5d/pytest-runner-2.12.tar.gz"
+            }
+        ],
+        "2.12.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "08398e2beb62b2e27c8aea2986219673",
+                    "sha256": "c408dd86f4de99db64367d951368bf8d180bf6a8e32ed7f3c8d3a78b60f01452"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.12.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "08398e2beb62b2e27c8aea2986219673",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8757,
+                "upload_time": "2017-09-07T02:03:21",
+                "url": "https://files.pythonhosted.org/packages/a8/0a/945112f24b61f1974fa79c82c8e3711011e004b21348816c5bd8d51caa2c/pytest_runner-2.12.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a8dd57c80cde37a587dd8c37740c1ab1",
+                    "sha256": "5c9093e7a18780409d9a389f20366f2fd39acfb1db61545fdb2e90cdbd0bcae4"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.12.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a8dd57c80cde37a587dd8c37740c1ab1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11603,
+                "upload_time": "2017-09-07T02:03:22",
+                "url": "https://files.pythonhosted.org/packages/43/bb/def5d83ce6abe507300e013562d3e1229633e86296d3f7f76bd39bf3d2b9/pytest-runner-2.12.1.tar.gz"
+            }
+        ],
+        "2.12.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3289b47503bb2f46eb09d0df765d7f58",
+                    "sha256": "1413962beb397705ddfae1fcdb8cd72e05bf6b4974b23f1d78dc14bc13af9b43"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.12.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3289b47503bb2f46eb09d0df765d7f58",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8624,
+                "upload_time": "2017-10-27T13:48:01",
+                "url": "https://files.pythonhosted.org/packages/75/1e/5a475293eecd5ed7e1d29392f24d55c800f4d3d5cacfa052ee3583f2625e/pytest_runner-2.12.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "019041def2b9af3bc9953f27280c4444",
+                    "sha256": "868fd7ad6b0c860b5c5cefb8c51ef206794fb622e789e53cd9135e0793943b86"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.12.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "019041def2b9af3bc9953f27280c4444",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11522,
+                "upload_time": "2017-10-27T13:48:03",
+                "url": "https://files.pythonhosted.org/packages/c6/2b/af94bec59139a2cf9798558b6bebace96b60f89b446cb95acfddf4c46b2b/pytest-runner-2.12.2.tar.gz"
+            }
+        ],
+        "2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e8834b38ab11f991fbea2e9b9e9d7744",
+                    "sha256": "64b752897ebc5108f795bf5476a04e7d58aa0c281036c85591ba15ce28825696"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.2.zip",
+                "has_sig": false,
+                "md5_digest": "e8834b38ab11f991fbea2e9b9e9d7744",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5477,
+                "upload_time": "2015-01-02T20:06:29",
+                "url": "https://files.pythonhosted.org/packages/0e/7c/bd5fafea6503128118547ce8dd673685ee0832e536bcec7dd17f7014bf03/pytest-runner-2.2.zip"
+            }
+        ],
+        "2.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4bc395bbaa30f745b919ae76063f2eb6",
+                    "sha256": "fe0a772d7456c503c59b49a1cfde80c6079c01d3e5b6bdf7baff02e6b21523c0"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.2.1.zip",
+                "has_sig": false,
+                "md5_digest": "4bc395bbaa30f745b919ae76063f2eb6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5551,
+                "upload_time": "2015-01-08T00:08:14",
+                "url": "https://files.pythonhosted.org/packages/0d/41/80d745d1ee43a3e98c0ea1ba728adfd0faa90043072adaa370b53eb6d924/pytest-runner-2.2.1.zip"
+            }
+        ],
+        "2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c3024a74755dec6d786709e23bc0cba",
+                    "sha256": "d6fa9be850d36ee26e46296833b3710587451caab1844aef78ee24d789b61d6e"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.3.zip",
+                "has_sig": false,
+                "md5_digest": "3c3024a74755dec6d786709e23bc0cba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6030,
+                "upload_time": "2015-02-16T17:00:18",
+                "url": "https://files.pythonhosted.org/packages/77/7b/1b418747591d009bb5c13ea67ccff1383c68c15ee64c0f3f56f03aedecf4/pytest-runner-2.3.zip"
+            }
+        ],
+        "2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1f84673faa571b4c0c763a0c8a6b10b",
+                    "sha256": "9b6edb388681c6c507776e2e5922b0a88b329ae132e64080f93e363bc6c8ac37"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.4.zip",
+                "has_sig": false,
+                "md5_digest": "d1f84673faa571b4c0c763a0c8a6b10b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11284,
+                "upload_time": "2015-03-01T15:36:55",
+                "url": "https://files.pythonhosted.org/packages/dc/be/c498e62ba44e93a58f18c0bea81105689a8ff5529966c1a4167b326f54fc/pytest-runner-2.4.zip"
+            }
+        ],
+        "2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b04b161c09c03d8f4280437634a0335f",
+                    "sha256": "c584a8fae4fd9d4e3a5f36d04502ab5238abc89a84a17e70f21efce20850a04e"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.5.zip",
+                "has_sig": false,
+                "md5_digest": "b04b161c09c03d8f4280437634a0335f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11293,
+                "upload_time": "2015-03-03T03:26:47",
+                "url": "https://files.pythonhosted.org/packages/da/3d/1ff51e6c6a7180b1436b16bd9cb0e4842b5a35ec7e3bc0026a9843f5ae6e/pytest-runner-2.5.zip"
+            }
+        ],
+        "2.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2eef117c2f9db55d6639f5ef733575a6",
+                    "sha256": "9c2d1d1ab4595d5cd5eef6950e3e11ca8f1719c7504d16a111ae1f5757660a7f"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.5.1.zip",
+                "has_sig": false,
+                "md5_digest": "2eef117c2f9db55d6639f5ef733575a6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11419,
+                "upload_time": "2015-03-04T15:17:35",
+                "url": "https://files.pythonhosted.org/packages/89/97/2ba6851996020d6cf1574a77110fffac25ac46455199bc1334555ec05a95/pytest-runner-2.5.1.zip"
+            }
+        ],
+        "2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f708bee39338ad03e919d350c81d023",
+                    "sha256": "7a7353be8658ba085ba548747dd51783467fcee241977dc1ae03e6450261c9e0"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f708bee39338ad03e919d350c81d023",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6295,
+                "upload_time": "2015-07-29T00:46:16",
+                "url": "https://files.pythonhosted.org/packages/51/bb/240c324f1ba7247cf87c78d7f7f37dd4564fa17d130079a7548afe6bfe40/pytest-runner-2.6.tar.gz"
+            }
+        ],
+        "2.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d4ba8baff534f86b63914035b56366a1",
+                    "sha256": "761c6bb1e6ffe3788f23a3b18170a4d83d1d0b29ffaff8213dbc5ff6fd41714c"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d4ba8baff534f86b63914035b56366a1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6343,
+                "upload_time": "2015-07-29T19:01:53",
+                "url": "https://files.pythonhosted.org/packages/56/11/bd93dbb9f45d251490a18acfb1869db274ee2b096f4e145ee586ebb1baef/pytest-runner-2.6.1.tar.gz"
+            }
+        ],
+        "2.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b81b698289addb13c2ed8d6ba6c8feb4",
+                    "sha256": "e775a40ee4a3a1d45018b199c44cc20bbe7f3df2dc8882f61465bb4141c78cdb"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b81b698289addb13c2ed8d6ba6c8feb4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6379,
+                "upload_time": "2015-08-19T19:21:55",
+                "url": "https://files.pythonhosted.org/packages/de/7a/a6b4f85476e29fcb35a5d4d7cf4b8d91b8919dedf8e7b070877d83deaa80/pytest-runner-2.6.2.tar.gz"
+            }
+        ],
+        "2.6.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f438d6f355176b8999d05788b735bd44",
+                    "sha256": "97660d94d44543ed2cfe7482706144c15cf229c94ad2073b381b7feecec4dfa2"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.6.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f438d6f355176b8999d05788b735bd44",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6422,
+                "upload_time": "2016-02-13T01:28:26",
+                "url": "https://files.pythonhosted.org/packages/58/b6/494d47b1212704b886323cd05fc4c7dd490005ebc1ef911695b9d5cb4bff/pytest-runner-2.6.3.tar.gz"
+            }
+        ],
+        "2.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bad5a9f0ca6aa82316dcb433cbecf217",
+                    "sha256": "8f214d466a680a0726b065bea5dc63bb2057f08f72031f8a7ab2456c0256cfeb"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "bad5a9f0ca6aa82316dcb433cbecf217",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 6722,
+                "upload_time": "2016-02-13T17:57:33",
+                "url": "https://files.pythonhosted.org/packages/4f/97/d8e28be24f57758aeae75079f5e72b1c70ad808021fff0c0e27c23abcb98/pytest_runner-2.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "360a09bb80b505a7a093c20aeb4d1994",
+                    "sha256": "7b7682a5b4c00ed249cb72e0ffa06eec088a5fe9078e84c76517c90f1b3ce3f8"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "360a09bb80b505a7a093c20aeb4d1994",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6525,
+                "upload_time": "2016-02-13T17:57:27",
+                "url": "https://files.pythonhosted.org/packages/59/c6/889943024f981da56d1e83a26691fbeb40a773c68a7d7e77023b18808b94/pytest-runner-2.7.tar.gz"
+            }
+        ],
+        "2.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c42a93e604e9dfbdf2355f5e4820a7cd",
+                    "sha256": "a8c2c4f4c0d33bf8e573d5423abfb9ebd9de1604599ae10b8bfb49dc29b8a18a"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.7.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c42a93e604e9dfbdf2355f5e4820a7cd",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 7128,
+                "upload_time": "2016-04-03T02:45:52",
+                "url": "https://files.pythonhosted.org/packages/86/6d/39430582fa83b22cd637df99002a67313f7b2637e5f5abe063a0c8397dec/pytest_runner-2.7.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e56f0bc8d79a6bd91772b44ef4215c7e",
+                    "sha256": "c335d1821567e6d489451e99ded1a83f5657b99c6549e6d7029e42461c4ea72d"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e56f0bc8d79a6bd91772b44ef4215c7e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7059,
+                "upload_time": "2016-04-03T02:45:40",
+                "url": "https://files.pythonhosted.org/packages/99/6b/c4ff4418d3424d4475b7af60724fd4a5cdd91ed8e489dc9443281f0052bc/pytest-runner-2.7.1.tar.gz"
+            }
+        ],
+        "2.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab7cff1f9ca547ddd1cdc8780e0c583d",
+                    "sha256": "608b8ef8f5d60c30021fc75d96a2d23de28242075e9aa868a3c437d4c939740f"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.8-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ab7cff1f9ca547ddd1cdc8780e0c583d",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 7187,
+                "upload_time": "2016-05-25T20:57:36",
+                "url": "https://files.pythonhosted.org/packages/9b/ad/3e2508c26385af08da87f70f7ae49e89b6487a0bad50207b64840bee7863/pytest_runner-2.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "041f3624f450d87a242e3907d7f90e8f",
+                    "sha256": "1ec44deddaa551f85fd563c40a4c483a2609aca1f284a95399566a74d0680d5c"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "041f3624f450d87a242e3907d7f90e8f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8535,
+                "upload_time": "2016-05-25T20:57:25",
+                "url": "https://files.pythonhosted.org/packages/46/6c/ff61a9e0d513222afa3529bdb565a465812b7e50b218a5afd705f46b258c/pytest-runner-2.8.tar.gz"
+            }
+        ],
+        "2.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "536b2edb3b81c5907eb791121bdd5d30",
+                    "sha256": "613bf2af91be866e48368af877790be57665ba489339e4cf8116c18b700f2a8c"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-2.9-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "536b2edb3b81c5907eb791121bdd5d30",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 7202,
+                "upload_time": "2016-07-14T19:59:29",
+                "url": "https://files.pythonhosted.org/packages/3d/5c/c6dbb71700fc2ce0c9addde996bab67e57ed785e53e8b8470a5eb129d694/pytest_runner-2.9-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2212a2e34404b0960b2fdc2c469247b2",
+                    "sha256": "50378de59b02f51f64796d3904dfe71b9dc6f06d88fc6bfbd5c8e8366ae1d131"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-2.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2212a2e34404b0960b2fdc2c469247b2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8601,
+                "upload_time": "2016-07-14T19:59:26",
+                "url": "https://files.pythonhosted.org/packages/11/d4/c335ddf94463e451109e3494e909765c3e5205787b772e3b25ee8601b86a/pytest-runner-2.9.tar.gz"
+            }
+        ],
+        "3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25076b14ff1877c02434953044f4f2a8",
+                    "sha256": "71e581622a1fad23cf12c1c1bd23e826e3358ab10b28c6e7e1a88f2f4489bf2f"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "25076b14ff1877c02434953044f4f2a8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8521,
+                "upload_time": "2017-10-27T14:19:47",
+                "url": "https://files.pythonhosted.org/packages/d1/8a/5f1385bba05d887662835d1230fb9a362c5c03f4f744a4fe0455d9474cf3/pytest_runner-3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f8363a52bbabc4cedd5e239beb2ba11",
+                    "sha256": "0f7c3a3cf5aead13f54baaa01ceb49e5ae92aba5d3ff1928e81e189c40bc6703"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f8363a52bbabc4cedd5e239beb2ba11",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11378,
+                "upload_time": "2017-10-27T14:19:49",
+                "url": "https://files.pythonhosted.org/packages/65/b4/ae89338cd2d81e2cc54bd6db2e962bfe948f612303610d68ab24539ac2d1/pytest-runner-3.0.tar.gz"
+            }
+        ],
+        "3.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "833a9357711868b8dc5da090731119f1",
+                    "sha256": "f83606c4a71d934bb906f6e6c992ce32de6e943f87ad65b321f2b62bded05528"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-3.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "833a9357711868b8dc5da090731119f1",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 9460,
+                "upload_time": "2018-02-10T20:37:10",
+                "url": "https://files.pythonhosted.org/packages/4d/fd/a0828ebf9369d8aec3ad257bb0c293809df57d269fbce89d48163fdb2bd1/pytest_runner-3.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fa99dcc38a7f2d5fa4895a4e7e5dc328",
+                    "sha256": "42eb1e4231caeeee18e85074c015d6afbeb367244fdd8cfdf7ff8c5a5cb3afce"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-3.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fa99dcc38a7f2d5fa4895a4e7e5dc328",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11670,
+                "upload_time": "2018-02-10T20:37:11",
+                "url": "https://files.pythonhosted.org/packages/c4/fc/b42c96d3813cbc5aabb0a6d83a44e33b8833cf1c7a1b5ced584d449fb527/pytest-runner-3.0.1.tar.gz"
+            }
+        ],
+        "4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e6b0634e76db58bf5c332058fc3e05e5",
+                    "sha256": "06a286842b3b15fcc9d54f5ad1e7c6e25249f2c9e295f15ad49d7f0ecf63660a"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e6b0634e76db58bf5c332058fc3e05e5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 9078,
+                "upload_time": "2018-02-10T20:42:15",
+                "url": "https://files.pythonhosted.org/packages/fc/92/99da1a54b93e61d7403d2f3bdb1c9dff7acd1a04fcd04e89cf3f73690547/pytest_runner-4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "19c3892d9b830829b2a55cb2ed64d734",
+                    "sha256": "183f3745561b1e00ea51cd97634ba5c540848ab4aa8016a81faba7fb7f33ec76"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "19c3892d9b830829b2a55cb2ed64d734",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11401,
+                "upload_time": "2018-02-10T20:42:16",
+                "url": "https://files.pythonhosted.org/packages/c7/8b/c69aeaac921ce55e8098682d5bf9a665f036624a730b64ea5dc6bc8e8826/pytest-runner-4.0.tar.gz"
+            }
+        ],
+        "4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5c1e00f8bfbb2ca463a1311e9b5fefb3",
+                    "sha256": "3e8f0d4d55884457d54e8f5a7d9a3000737de01e2c71728f7e54bcc0a04889e6"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-4.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5c1e00f8bfbb2ca463a1311e9b5fefb3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 9248,
+                "upload_time": "2018-03-17T19:12:47",
+                "url": "https://files.pythonhosted.org/packages/15/eb/d2a4396c2ad8d0a033644fb10ea04da596cc04d9e09a75c75d235792546e/pytest_runner-4.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "acec41852519d8190237ad77f0c13117",
+                    "sha256": "3b10744e971c7dced934d3d7b1b74c78159b3f8398c11365451e43b8b75efcbd"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "acec41852519d8190237ad77f0c13117",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11772,
+                "upload_time": "2018-03-17T19:12:48",
+                "url": "https://files.pythonhosted.org/packages/64/5f/00570a65dfda65f5c706f002c684465578c3bb059babba10ed51d6c51b68/pytest-runner-4.1.tar.gz"
+            }
+        ],
+        "4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eef6eff133e07b172ad99fc5f0b8bad7",
+                    "sha256": "d987fec1e31287592ffe1cb823a8c613c533db4c6aaca0ee1191dbc91e2fcc61"
+                },
+                "downloads": -1,
+                "filename": "pytest_runner-4.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "eef6eff133e07b172ad99fc5f0b8bad7",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 9397,
+                "upload_time": "2018-03-18T13:02:59",
+                "url": "https://files.pythonhosted.org/packages/72/a4/d7a5738a3096f22a98bec1609e237b250ebff04e5ea2930305d485337263/pytest_runner-4.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b696b0f35767f0694f183d0a1855300",
+                    "sha256": "d23f117be39919f00dd91bffeb4f15e031ec797501b717a245e377aee0f577be"
+                },
+                "downloads": -1,
+                "filename": "pytest-runner-4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4b696b0f35767f0694f183d0a1855300",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11947,
+                "upload_time": "2018-03-18T13:03:00",
+                "url": "https://files.pythonhosted.org/packages/9e/b7/fe6e8f87f9a756fd06722216f1b6698ccba4d269eac6329d9f0c441d0f93/pytest-runner-4.2.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "eef6eff133e07b172ad99fc5f0b8bad7",
+                "sha256": "d987fec1e31287592ffe1cb823a8c613c533db4c6aaca0ee1191dbc91e2fcc61"
+            },
+            "downloads": -1,
+            "filename": "pytest_runner-4.2-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "eef6eff133e07b172ad99fc5f0b8bad7",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 9397,
+            "upload_time": "2018-03-18T13:02:59",
+            "url": "https://files.pythonhosted.org/packages/72/a4/d7a5738a3096f22a98bec1609e237b250ebff04e5ea2930305d485337263/pytest_runner-4.2-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "4b696b0f35767f0694f183d0a1855300",
+                "sha256": "d23f117be39919f00dd91bffeb4f15e031ec797501b717a245e377aee0f577be"
+            },
+            "downloads": -1,
+            "filename": "pytest-runner-4.2.tar.gz",
+            "has_sig": false,
+            "md5_digest": "4b696b0f35767f0694f183d0a1855300",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 11947,
+            "upload_time": "2018-03-18T13:03:00",
+            "url": "https://files.pythonhosted.org/packages/9e/b7/fe6e8f87f9a756fd06722216f1b6698ccba4d269eac6329d9f0c441d0f93/pytest-runner-4.2.tar.gz"
+        }
+    ],
+    "package_name": "pytest-runner"
+}

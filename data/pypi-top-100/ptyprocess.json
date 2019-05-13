@@ -1,0 +1,257 @@
+{
+    "info": {
+        "author": "Thomas Kluyver",
+        "author_email": "thomas@kluyver.me.uk",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "Intended Audience :: System Administrators",
+            "License :: OSI Approved :: ISC License (ISCL)",
+            "Operating System :: MacOS :: MacOS X",
+            "Operating System :: POSIX",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Topic :: Terminals"
+        ],
+        "description": "Launch a subprocess in a pseudo terminal (pty), and interact with both the\nprocess and its pty.\n\nSometimes, piping stdin and stdout is not enough. There might be a password\nprompt that doesn't read from stdin, output that changes when it's going to a\npipe rather than a terminal, or curses-style interfaces that rely on a terminal.\nIf you need to automate these things, running the process in a pseudo terminal\n(pty) is the answer.\n\nInterface::\n\n    p = PtyProcessUnicode.spawn(['python'])\n    p.read(20)\n    p.write('6+6\\n')\n    p.read(20)\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/pexpect/ptyprocess",
+        "keywords": "",
+        "license": "",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "ptyprocess",
+        "package_url": "https://pypi.org/project/ptyprocess/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/ptyprocess/",
+        "release_url": "https://pypi.org/project/ptyprocess/0.5.2/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Run a subprocess in a pseudo terminal",
+        "version": "0.5.2"
+    },
+    "last_serial": 2968518,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc91908dc8f1d369dbb27a84531a8077",
+                    "sha256": "e646086fe2d7d4e2d1fd7730591ffa6af8c1e8aaea1da9dd507e18cbe93df0e7"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cc91908dc8f1d369dbb27a84531a8077",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10570,
+                "upload_time": "2014-10-03T22:35:47",
+                "url": "https://files.pythonhosted.org/packages/a5/ce/375a5b5a5a6c3dd29a88d1072eee662a30259993db22144664542a27c018/ptyprocess-0.1.tar.gz"
+            }
+        ],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "112a725c375876b568a1c3345343f8b7",
+                    "sha256": "7cd2400f04e3d68f72a1daba5cf616b1d63e16046652cc79c22e498e462aa106"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "112a725c375876b568a1c3345343f8b7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10586,
+                "upload_time": "2014-10-10T00:20:15",
+                "url": "https://files.pythonhosted.org/packages/3c/8a/4722c026dd2a16106bfda3934fdcf9bb782d92a234cbd7fb20b13d801f89/ptyprocess-0.2.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5bb31b0edf0bf365b9e6f182cc26fa9d",
+                    "sha256": "433f87cc8a5da3385a908d28d8b79c8fb90345e77e4452d5f5c57ac93b4bb4c7"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5bb31b0edf0bf365b9e6f182cc26fa9d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11555,
+                "upload_time": "2014-10-13T19:17:57",
+                "url": "https://files.pythonhosted.org/packages/d0/c9/4309b0654252c338da274e0da96d04de31f31c4a9ca82fa5a94aae7f8bbc/ptyprocess-0.3.tar.gz"
+            }
+        ],
+        "0.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cf47dd902d2f7820b91050e1e61c3631",
+                    "sha256": "a2071d6305c03a0337224786ce8c95d37223b3d8b34529efe3b314c517035daa"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.3.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cf47dd902d2f7820b91050e1e61c3631",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11552,
+                "upload_time": "2014-10-13T19:28:22",
+                "url": "https://files.pythonhosted.org/packages/7d/01/184f96c5d164da335ef60af8e685eb23612d02d212a9468fac6bfd3878d6/ptyprocess-0.3.1.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d29b8bfd7d2df4d9e4a0f87aafe59018",
+                    "sha256": "ddba719428afc4dd4f5eb37307ae753c81f89ea63f18e7d35bbb494a88fd49dc"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d29b8bfd7d2df4d9e4a0f87aafe59018",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17883,
+                "upload_time": "2014-12-20T00:35:14",
+                "url": "https://files.pythonhosted.org/packages/4e/29/c4eaccbb1e5d7c4c76f21358db006cd2333bd94eb6ddb93a06810f593b8d/ptyprocess-0.4.tar.gz"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d1ecfba622cb4e35ee157c38de18eae",
+                    "sha256": "dcb78fb2197b49ca1b7b2f37b047bc89c0da7a90f90bd5bc17c3ce388bb6ef59"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0d1ecfba622cb4e35ee157c38de18eae",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14923,
+                "upload_time": "2015-05-20T21:44:26",
+                "url": "https://files.pythonhosted.org/packages/21/4e/590ee28cfe596e190cf5409ea0c29cb00dd61b22568571960bddeb8bac9c/ptyprocess-0.5.tar.gz"
+            }
+        ],
+        "0.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "91ac71a01ecd458986ee5209539c4f7b",
+                    "sha256": "464cb76f7a7122743dd25507650db89cd447c51f38e4671602b3eaa2e38e05ae"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "91ac71a01ecd458986ee5209539c4f7b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 12822,
+                "upload_time": "2016-02-02T16:35:12",
+                "url": "https://files.pythonhosted.org/packages/40/a5/184b46a3c986000196abd077166b2536acb2500009bec95feb9b8fc19828/ptyprocess-0.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "94e537122914cc9ec9c1eadcd36e73a1",
+                    "sha256": "0530ce63a9295bfae7bd06edc02b6aa935619f486f0f1dc0972f516265ee81a6"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "94e537122914cc9ec9c1eadcd36e73a1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68474,
+                "upload_time": "2016-02-04T18:22:48",
+                "url": "https://files.pythonhosted.org/packages/db/d7/b465161910f3d1cef593c5e002bff67e0384898f597f1a7fdc8db4c02bf6/ptyprocess-0.5.1.tar.gz"
+            }
+        ],
+        "0.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "65bd0b9a9df661538f64fcbef1ae74fe",
+                    "sha256": "e8c43b5eee76b2083a9badde89fd1bbce6c8942d1045146e100b7b5e014f4f1a"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.5.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "65bd0b9a9df661538f64fcbef1ae74fe",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 39072,
+                "upload_time": "2017-06-22T15:39:34",
+                "url": "https://files.pythonhosted.org/packages/ff/4e/fa4a73ccfefe2b37d7b6898329e7dbcd1ac846ba3a3b26b294a78a3eb997/ptyprocess-0.5.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d3b8febae1b8c53b054bd818d0bb8665",
+                    "sha256": "e64193f0047ad603b71f202332ab5527c5e52aa7c8b609704fc28c0dc20c4365"
+                },
+                "downloads": -1,
+                "filename": "ptyprocess-0.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d3b8febae1b8c53b054bd818d0bb8665",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69297,
+                "upload_time": "2017-06-22T15:39:36",
+                "url": "https://files.pythonhosted.org/packages/51/83/5d07dc35534640b06f9d9f1a1d2bc2513fb9cc7595a1b0e28ae5477056ce/ptyprocess-0.5.2.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "65bd0b9a9df661538f64fcbef1ae74fe",
+                "sha256": "e8c43b5eee76b2083a9badde89fd1bbce6c8942d1045146e100b7b5e014f4f1a"
+            },
+            "downloads": -1,
+            "filename": "ptyprocess-0.5.2-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "65bd0b9a9df661538f64fcbef1ae74fe",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 39072,
+            "upload_time": "2017-06-22T15:39:34",
+            "url": "https://files.pythonhosted.org/packages/ff/4e/fa4a73ccfefe2b37d7b6898329e7dbcd1ac846ba3a3b26b294a78a3eb997/ptyprocess-0.5.2-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "d3b8febae1b8c53b054bd818d0bb8665",
+                "sha256": "e64193f0047ad603b71f202332ab5527c5e52aa7c8b609704fc28c0dc20c4365"
+            },
+            "downloads": -1,
+            "filename": "ptyprocess-0.5.2.tar.gz",
+            "has_sig": false,
+            "md5_digest": "d3b8febae1b8c53b054bd818d0bb8665",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 69297,
+            "upload_time": "2017-06-22T15:39:36",
+            "url": "https://files.pythonhosted.org/packages/51/83/5d07dc35534640b06f9d9f1a1d2bc2513fb9cc7595a1b0e28ae5477056ce/ptyprocess-0.5.2.tar.gz"
+        }
+    ],
+    "package_name": "ptyprocess"
+}

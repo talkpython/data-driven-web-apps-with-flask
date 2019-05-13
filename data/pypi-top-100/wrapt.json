@@ -1,0 +1,606 @@
+{
+    "info": {
+        "author": "Graham Dumpleton",
+        "author_email": "Graham.Dumpleton@gmail.com",
+        "bugtrack_url": "https://github.com/GrahamDumpleton/wrapt/issues",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "License :: OSI Approved :: BSD License",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy"
+        ],
+        "description": "wrapt\n=====\n\n|Travis| |Coveralls| |PyPI|\n\nThe aim of the **wrapt** module is to provide a transparent object proxy\nfor Python, which can be used as the basis for the construction of function\nwrappers and decorator functions.\n\nThe **wrapt** module focuses very much on correctness. It therefore goes\nway beyond existing mechanisms such as ``functools.wraps()`` to ensure that\ndecorators preserve introspectability, signatures, type checking abilities\netc. The decorators that can be constructed using this module will work in\nfar more scenarios than typical decorators and provide more predictable and\nconsistent behaviour.\n\nTo ensure that the overhead is as minimal as possible, a C extension module\nis used for performance critical components. An automatic fallback to a\npure Python implementation is also provided where a target system does not\nhave a compiler to allow the C extension to be compiled.\n\nDocumentation\n-------------\n\nFor further information on the **wrapt** module see:\n\n* http://wrapt.readthedocs.org/\n\nQuick Start\n-----------\n\nTo implement your decorator you need to first define a wrapper function.\nThis will be called each time a decorated function is called. The wrapper\nfunction needs to take four positional arguments:\n\n* ``wrapped`` - The wrapped function which in turns needs to be called by your wrapper function.\n* ``instance`` - The object to which the wrapped function was bound when it was called.\n* ``args`` - The list of positional arguments supplied when the decorated function was called.\n* ``kwargs`` - The dictionary of keyword arguments supplied when the decorated function was called.\n\nThe wrapper function would do whatever it needs to, but would usually in\nturn call the wrapped function that is passed in via the ``wrapped``\nargument.\n\nThe decorator ``@wrapt.decorator`` then needs to be applied to the wrapper\nfunction to convert it into a decorator which can in turn be applied to\nother functions.\n\n::\n\n    import wrapt\n    \n    @wrapt.decorator\n    def pass_through(wrapped, instance, args, kwargs):\n        return wrapped(*args, **kwargs)\n\n    @pass_through\n    def function():\n        pass\n\nIf you wish to implement a decorator which accepts arguments, then wrap the\ndefinition of the decorator in a function closure. Any arguments supplied\nto the outer function when the decorator is applied, will be available to\nthe inner wrapper when the wrapped function is called.\n\n::\n\n    import wrapt\n\n    def with_arguments(myarg1, myarg2):\n        @wrapt.decorator\n        def wrapper(wrapped, instance, args, kwargs):\n            return wrapped(*args, **kwargs)\n        return wrapper\n\n    @with_arguments(1, 2)\n    def function():\n        pass\n\nWhen applied to a normal function or static method, the wrapper function\nwhen called will be passed ``None`` as the ``instance`` argument.\n\nWhen applied to an instance method, the wrapper function when called will\nbe passed the instance of the class the method is being called on as the\n``instance`` argument. This will be the case even when the instance method\nwas called explicitly via the class and the instance passed as the first\nargument. That is, the instance will never be passed as part of ``args``.\n\nWhen applied to a class method, the wrapper function when called will be\npassed the class type as the ``instance`` argument.\n\nWhen applied to a class, the wrapper function when called will be passed\n``None`` as the ``instance`` argument. The ``wrapped`` argument in this\ncase will be the class.\n\nThe above rules can be summarised with the following example.\n\n::\n\n    import inspect\n    \n    @wrapt.decorator\n    def universal(wrapped, instance, args, kwargs):\n        if instance is None:\n            if inspect.isclass(wrapped):\n                # Decorator was applied to a class.\n                return wrapped(*args, **kwargs)\n            else:\n                # Decorator was applied to a function or staticmethod.\n                return wrapped(*args, **kwargs)\n        else:\n            if inspect.isclass(instance):\n                # Decorator was applied to a classmethod.\n                return wrapped(*args, **kwargs)\n            else:\n                # Decorator was applied to an instancemethod.\n                return wrapped(*args, **kwargs)\n\nUsing these checks it is therefore possible to create a universal decorator\nthat can be applied in all situations. It is no longer necessary to create\ndifferent variants of decorators for normal functions and instance methods,\nor use additional wrappers to convert a function decorator into one that\nwill work for instance methods.\n\nIn all cases, the wrapped function passed to the wrapper function is called\nin the same way, with ``args`` and ``kwargs`` being passed. The\n``instance`` argument doesn't need to be used in calling the wrapped\nfunction.\n\nRepository\n----------\n\nFull source code for the **wrapt** module, including documentation files\nand unit tests, can be obtained from github.\n\n* https://github.com/GrahamDumpleton/wrapt\n\n.. |Travis| image:: https://img.shields.io/travis/GrahamDumpleton/wrapt/develop.svg?style=plastic\n   :target: https://travis-ci.org/GrahamDumpleton/wrapt?branch=develop\n.. |Coveralls| image:: https://img.shields.io/coveralls/GrahamDumpleton/wrapt/develop.svg?style=plastic\n   :target: https://coveralls.io/github/GrahamDumpleton/wrapt?branch=develop\n.. |PyPI| image:: https://img.shields.io/pypi/v/wrapt.svg?style=plastic\n   :target: https://pypi.python.org/pypi/wrapt",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/GrahamDumpleton/wrapt",
+        "keywords": "",
+        "license": "BSD",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "wrapt",
+        "package_url": "https://pypi.org/project/wrapt/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/wrapt/",
+        "release_url": "https://pypi.org/project/wrapt/1.10.11/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Module for decorators, wrappers and monkey patching.",
+        "version": "1.10.11"
+    },
+    "last_serial": 3088971,
+    "releases": {
+        "0.0.0": [],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce3f19ec12941bbcb64bd6dac10d41fb",
+                    "sha256": "91bc8a76d8673e7e14629d1356cd222206d6cfcf9d6a4573123d7d10e68d100b"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ce3f19ec12941bbcb64bd6dac10d41fb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16821,
+                "upload_time": "2013-09-06T21:23:22",
+                "url": "https://files.pythonhosted.org/packages/82/36/42a99a92803ce9215d3dcd0d2da0a24db54a8d4dd488e523f9cfb6062df2/wrapt-1.0.0.tar.gz"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "30a2701d56c68ae79d75b933afd75ee9",
+                    "sha256": "bad100524b94301e231d83154c04fdfa0d1d3b5f26caad8f460b97dda09c409c"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "30a2701d56c68ae79d75b933afd75ee9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 19291,
+                "upload_time": "2013-09-18T12:12:13",
+                "url": "https://files.pythonhosted.org/packages/c7/0c/00f16906dcb54bc2962a34c5a3afcdeb50bf9061f9efdae0779c4c814157/wrapt-1.1.0.tar.gz"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f76068fa08bf79eb66e8051a22a2232",
+                    "sha256": "2d34bfb29dd2c2e01a336b38e8cbd5eb695dd0b7d5ee45cbf00d449650d09cea"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f76068fa08bf79eb66e8051a22a2232",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18891,
+                "upload_time": "2013-09-19T12:31:21",
+                "url": "https://files.pythonhosted.org/packages/d0/db/44ad837565252abe87e3b306267a714e7281ab15f67914d46e3b74e6df59/wrapt-1.1.1.tar.gz"
+            }
+        ],
+        "1.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ecd31cf682d5bed3008314abe24ee2c",
+                    "sha256": "71ad2ffede3e694d3374c9bbb505bfde17885897b04b71667579aa60131ef84b"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5ecd31cf682d5bed3008314abe24ee2c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18651,
+                "upload_time": "2013-09-20T12:21:54",
+                "url": "https://files.pythonhosted.org/packages/c1/fd/9e372c9eb21ca08538f9ff6a992bae9e3b2a02fe70a4ef4496b1219a4319/wrapt-1.1.2.tar.gz"
+            }
+        ],
+        "1.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "de8b0cb97cf29a68d44d803a63441800",
+                    "sha256": "8975b2717a66b040a663c18ece0fca5eac1aa072a489df757d428cb9bd7c804b"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "de8b0cb97cf29a68d44d803a63441800",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18875,
+                "upload_time": "2013-09-24T10:51:57",
+                "url": "https://files.pythonhosted.org/packages/59/a7/f64b5ee278614b32bf2be070160b8b361f113ef0e91273060f534b15784a/wrapt-1.1.3.tar.gz"
+            }
+        ],
+        "1.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8fe8799028a6499d5cea3dee3dc39bf2",
+                    "sha256": "a90c2ce7f7af8a193016d4346e744853e55914ab99c86c326b843a5cdae0ff8f"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8fe8799028a6499d5cea3dee3dc39bf2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18908,
+                "upload_time": "2013-09-27T02:38:39",
+                "url": "https://files.pythonhosted.org/packages/b5/de/f06b74942040f9fc72c8a7a885d0c8d07e46ee5e9182d6293b8de01cc266/wrapt-1.1.4.tar.gz"
+            }
+        ],
+        "1.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b8f0f803ed74689666e2bf0d083f3800",
+                    "sha256": "ec7cf2f32bbf91c9f910fe26a93a87c3cf35d08b36a5f1d4d5860f58067bbfc7"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b8f0f803ed74689666e2bf0d083f3800",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24522,
+                "upload_time": "2014-11-20T06:26:33",
+                "url": "https://files.pythonhosted.org/packages/ab/43/5453a18b5a06b0d714fd50f4634524c09af4bc41214f3dddf97f59090b23/wrapt-1.10.0.tar.gz"
+            }
+        ],
+        "1.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "79b6416e9e7f7dbdace688c5c817660b",
+                    "sha256": "20d6047da965d8e6e9413fea27efa426aee664dd26f655aa0e990c23410353d7"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "79b6416e9e7f7dbdace688c5c817660b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24498,
+                "upload_time": "2014-11-26T00:38:15",
+                "url": "https://files.pythonhosted.org/packages/9c/21/9c83c5f4638be42ee93a02a2d1f815b73742c86c53f7c3caf4fc256d6bbb/wrapt-1.10.1.tar.gz"
+            }
+        ],
+        "1.10.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "97365e906afa8b431f266866ec4e2e18",
+                    "sha256": "42160c91b77f1bc64a955890038e02f2f72986c01d462d53cb6cb039b995cdd9"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "97365e906afa8b431f266866ec4e2e18",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27257,
+                "upload_time": "2017-03-15T00:38:34",
+                "url": "https://files.pythonhosted.org/packages/a3/bb/525e9de0a220060394f4aa34fdf6200853581803d92714ae41fc3556e7d7/wrapt-1.10.10.tar.gz"
+            }
+        ],
+        "1.10.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e1346f31782d50401f81c2345b037076",
+                    "sha256": "d4d560d479f2c21e1b5443bbd15fe7ec4b37fe7e53d335d3b9b0a7b1226fe3c6"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e1346f31782d50401f81c2345b037076",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27402,
+                "upload_time": "2017-08-11T05:28:10",
+                "url": "https://files.pythonhosted.org/packages/a0/47/66897906448185fcb77fc3c2b1bc20ed0ecca81a0f2f88eda3fc5a34fc3d/wrapt-1.10.11.tar.gz"
+            }
+        ],
+        "1.10.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17dcdefd56473e8d479233777e87c0db",
+                    "sha256": "ddd3b844828a45ba7dd9acf79d6342db3ea02f340878badad5805e0c64b10e93"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "17dcdefd56473e8d479233777e87c0db",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24616,
+                "upload_time": "2014-12-11T09:55:08",
+                "url": "https://files.pythonhosted.org/packages/2a/3c/85dd80ad44ce1a7f12b6cc9711ecb1b494167b6096945646599953157155/wrapt-1.10.2.tar.gz"
+            }
+        ],
+        "1.10.3": [],
+        "1.10.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "db2790d758e5999a295205fc3901a493",
+                    "sha256": "a657129f910f9155ea0a567ef442016bff6a0b4ace8a4c5e7fbf91e0eb13d7de"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "db2790d758e5999a295205fc3901a493",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24612,
+                "upload_time": "2015-03-18T04:27:35",
+                "url": "https://files.pythonhosted.org/packages/2c/f0/2ee6e01d8b96d5096730b8ddc72fd6f1c78cae07c1364884a00c366a64ff/wrapt-1.10.4.tar.gz"
+            }
+        ],
+        "1.10.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "79732bbc096235704e7523d3bacd202c",
+                    "sha256": "99cbb4e3a3ea964df0cb1437261fc1198616ec872e7b501622f3f7f92fcd0833"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "79732bbc096235704e7523d3bacd202c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24941,
+                "upload_time": "2015-07-03T00:37:06",
+                "url": "https://files.pythonhosted.org/packages/4a/0f/e5fa3390f63c6f9e34da2d4de9bd56bc3be74c3ebbb135d8581ba1986e58/wrapt-1.10.5.tar.gz"
+            }
+        ],
+        "1.10.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e29294a8949ff4dc74d6fcd800f6f23d",
+                    "sha256": "9576869bb74a43cbb36ee39dc3584e6830b8e5c788e83edf0a397eba807734ab"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e29294a8949ff4dc74d6fcd800f6f23d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25134,
+                "upload_time": "2015-12-08T23:11:30",
+                "url": "https://files.pythonhosted.org/packages/0f/94/0862c5e97a818aa6053a1a376364c664aa050e09cb65e18bd11f414c978a/wrapt-1.10.6.tar.gz"
+            }
+        ],
+        "1.10.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e2b22d75dfa60a80ed440fae6fabe23",
+                    "sha256": "fee76adb6a0b18d42e902cd1ab3b9a0612726d1bf04ffa2f9508897b00f4e311"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e2b22d75dfa60a80ed440fae6fabe23",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25160,
+                "upload_time": "2016-03-31T05:55:50",
+                "url": "https://files.pythonhosted.org/packages/6d/4c/aabac3763f20488664e40ec5ba7d3f3747a4062d280a67b8c4edbc01bf69/wrapt-1.10.7.tar.gz"
+            }
+        ],
+        "1.10.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7c2a7e6262acc396ef6528b3d66bd047",
+                    "sha256": "4ea17e814e39883c6cf1bb9b0835d316b2f69f0f0882ffe7dad1ede66ba82c73"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7c2a7e6262acc396ef6528b3d66bd047",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25183,
+                "upload_time": "2016-04-10T23:37:48",
+                "url": "https://files.pythonhosted.org/packages/00/dd/dc22f8d06ee1f16788131954fc69bc4438f8d0125dd62419a43b86383458/wrapt-1.10.8.tar.gz"
+            }
+        ],
+        "1.10.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a530ec1acdd109e255123591fc75ca1c",
+                    "sha256": "4e4f43717480b9c6563854080e007216b818901c76d3dab0faecafec217648ab"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.10.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a530ec1acdd109e255123591fc75ca1c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25130,
+                "upload_time": "2017-03-15T00:05:44",
+                "url": "https://files.pythonhosted.org/packages/f9/f9/bf7ecee1f5c4db608737f468b8ea12002e72050223dab33bd82b5bdee18a/wrapt-1.10.9.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c891afe5bb656aaa914d8d09f4276f3a",
+                    "sha256": "83cc05928626ca694567c7d195bf259f94b1da3da5fc56ed83d5fd72f4db4542"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c891afe5bb656aaa914d8d09f4276f3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 22912,
+                "upload_time": "2013-10-11T01:07:03",
+                "url": "https://files.pythonhosted.org/packages/b6/23/0f3f010d6467b805e281b8308f28148ad946ddfa8459b91aa586eb2dc195/wrapt-1.2.0.tar.gz"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dfde8c35677876f255925fbfd8a2b0b8",
+                    "sha256": "589285fedba18d9e16b9c4388a55e22aa500d915bcd1dacecbf4fb4f25fa0193"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dfde8c35677876f255925fbfd8a2b0b8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 22864,
+                "upload_time": "2013-10-16T05:46:00",
+                "url": "https://files.pythonhosted.org/packages/28/96/ac6d4d7e2d6fc1140df64649a2baad79abba76771767c75acda3d17b05db/wrapt-1.2.1.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bae21c4947f614d9e3b8f2fc3769c545",
+                    "sha256": "cc95a7b12849de396bdb8c4d6b9d3c00842d835ea4326936f0fcaa93bbdf60a7"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bae21c4947f614d9e3b8f2fc3769c545",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 22955,
+                "upload_time": "2013-12-19T10:49:42",
+                "url": "https://files.pythonhosted.org/packages/38/ad/4d348e504791100776077649a69a20f15df55adcb47a593551a6d09a4fb9/wrapt-1.3.0.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "69c0fd9ac7baf8f2f1c9c010e8a67219",
+                    "sha256": "8250153e77a28226c0daa400736a94b5ca595a5c7cf872b210db4c9499e75d2f"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "69c0fd9ac7baf8f2f1c9c010e8a67219",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 22972,
+                "upload_time": "2013-12-19T11:17:58",
+                "url": "https://files.pythonhosted.org/packages/5b/40/1fd2116a0f6943f48bdc2e6c09fdd2ecde7ecbd8a1689d74293bfee32fea/wrapt-1.3.1.tar.gz"
+            }
+        ],
+        "1.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "351d836e1ef9df606581a43eb9205bf4",
+                    "sha256": "506d263227c6304aa895992f27d194e57748876dbb20c918ab626d113d9c9c45"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "351d836e1ef9df606581a43eb9205bf4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23217,
+                "upload_time": "2013-12-20T10:04:22",
+                "url": "https://files.pythonhosted.org/packages/11/17/37a7fcb16c61b4cdf20838f9e936972dc704f2060a2ed8ad20038f60e052/wrapt-1.4.0.tar.gz"
+            }
+        ],
+        "1.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6b5687e652f18f4f9d5335487b9c5b8",
+                    "sha256": "28dcd0ed2938491ad6843b63277d76660fa0c569c52aaaae797e4e5cb7f8b627"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6b5687e652f18f4f9d5335487b9c5b8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23221,
+                "upload_time": "2013-12-23T00:29:12",
+                "url": "https://files.pythonhosted.org/packages/66/8a/85f8e6db6b0b2e4537cef04918702f62e954a90141f9feae50d54792f176/wrapt-1.4.1.tar.gz"
+            }
+        ],
+        "1.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "667cff7e3106e371a3d8b28e7b80465b",
+                    "sha256": "08785424e37f5f90ef889acbc231d1e324a362e5e9cf22a350514f79dc100e94"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "667cff7e3106e371a3d8b28e7b80465b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23273,
+                "upload_time": "2013-12-28T02:58:58",
+                "url": "https://files.pythonhosted.org/packages/24/0c/bd1afe13becb3d45282fdbfbeb6be1a4d7374d5602921c4b4d6ef8772bc7/wrapt-1.4.2.tar.gz"
+            }
+        ],
+        "1.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a162535720bbd36bf3b8295f99abfa9",
+                    "sha256": "0517c87b5f154e4193e1aaa7103afecd85552b49ee9754fee056c97ecf110905"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1a162535720bbd36bf3b8295f99abfa9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23310,
+                "upload_time": "2014-01-02T10:09:27",
+                "url": "https://files.pythonhosted.org/packages/48/69/4f54de8407c48d3a789076553cbc8f0457e196828f0d33ed9ea3e6330c4d/wrapt-1.5.0.tar.gz"
+            }
+        ],
+        "1.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b2d1c61b72e1d43e79b8a40b086796a",
+                    "sha256": "52d75001a52d901fc6f43487d74e2e65f11639b16e4d42531bfe57f75d56969e"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3b2d1c61b72e1d43e79b8a40b086796a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23309,
+                "upload_time": "2014-01-14T09:25:47",
+                "url": "https://files.pythonhosted.org/packages/17/63/b4e2ee839e736f7110c117b2f655869c2958e1cbd94177060dec26da5b4d/wrapt-1.5.1.tar.gz"
+            }
+        ],
+        "1.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "769c50d53562f9cf63909d6f7166014d",
+                    "sha256": "f7a9a242865b2a21dc1110352a8cc0d401dc8c139e986c7cd306c31dd7c0cc1b"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "769c50d53562f9cf63909d6f7166014d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23378,
+                "upload_time": "2014-01-26T05:12:13",
+                "url": "https://files.pythonhosted.org/packages/5b/08/fbf77b351370acd3e7832eca0f596b4c177ef28ce47ada844d4c7c758e6a/wrapt-1.6.0.tar.gz"
+            }
+        ],
+        "1.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37aa26df8c1bd07733dd26cd8caf1ea8",
+                    "sha256": "d0efe548b38af0b90e90eb850a5cb4cbbcf9a16c216b90a0b8fe1cdafd113c83"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "37aa26df8c1bd07733dd26cd8caf1ea8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25172,
+                "upload_time": "2014-04-26T11:24:40",
+                "url": "https://files.pythonhosted.org/packages/33/d5/da377fb3e104152a44594a5ba61028e652bbc9f73869e4cead23f258cdf5/wrapt-1.7.0.tar.gz"
+            }
+        ],
+        "1.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d6c4a3c68ea45c1b6fad545fd008831",
+                    "sha256": "f1502158bf681a534d6dc314c4be008b5968152a303e1cf9be75b82838b0c7ce"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0d6c4a3c68ea45c1b6fad545fd008831",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26278,
+                "upload_time": "2014-05-03T10:19:50",
+                "url": "https://files.pythonhosted.org/packages/26/e5/d3c2717aab947f146cc2ea39022c30be4dd502c30e22b020933f5ddbc930/wrapt-1.8.0.tar.gz"
+            }
+        ],
+        "1.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c2d284aeb762cdf51accfdddd003890",
+                    "sha256": "ac6a5bad9bd5efd9c6010de01a9a203634efb841d7f86d4e1e1f7e2c233a83fd"
+                },
+                "downloads": -1,
+                "filename": "wrapt-1.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2c2d284aeb762cdf51accfdddd003890",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24034,
+                "upload_time": "2014-08-22T10:53:12",
+                "url": "https://files.pythonhosted.org/packages/66/19/d2fe20975dc799e2116f6ddee2643b6a882f6b36d86108f3ecb42d5c1d46/wrapt-1.9.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "e1346f31782d50401f81c2345b037076",
+                "sha256": "d4d560d479f2c21e1b5443bbd15fe7ec4b37fe7e53d335d3b9b0a7b1226fe3c6"
+            },
+            "downloads": -1,
+            "filename": "wrapt-1.10.11.tar.gz",
+            "has_sig": false,
+            "md5_digest": "e1346f31782d50401f81c2345b037076",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 27402,
+            "upload_time": "2017-08-11T05:28:10",
+            "url": "https://files.pythonhosted.org/packages/a0/47/66897906448185fcb77fc3c2b1bc20ed0ecca81a0f2f88eda3fc5a34fc3d/wrapt-1.10.11.tar.gz"
+        }
+    ],
+    "package_name": "wrapt"
+}

@@ -1,0 +1,1846 @@
+{
+    "info": {
+        "author": "OpenStack",
+        "author_email": "openstack-dev@lists.openstack.org",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Environment :: OpenStack",
+            "Intended Audience :: Developers",
+            "Intended Audience :: Information Technology",
+            "License :: OSI Approved :: Apache Software License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5"
+        ],
+        "description": "Introduction\n============\n\n.. image:: https://img.shields.io/pypi/v/pbr.svg\n    :target: https://pypi.python.org/pypi/pbr/\n    :alt: Latest Version\n\n.. image:: https://img.shields.io/pypi/dm/pbr.svg\n    :target: https://pypi.python.org/pypi/pbr/\n    :alt: Downloads\n\nPBR is a library that injects some useful and sensible default behaviors\ninto your setuptools run. It started off life as the chunks of code that\nwere copied between all of the `OpenStack`_ projects. Around the time that\nOpenStack hit 18 different projects each with at least 3 active branches,\nit seemed like a good time to make that code into a proper reusable library.\n\nPBR is only mildly configurable. The basic idea is that there's a decent\nway to run things and if you do, you should reap the rewards, because then\nit's simple and repeatable. If you want to do things differently, cool! But\nyou've already got the power of Python at your fingertips, so you don't\nreally need PBR.\n\nPBR builds on top of the work that `d2to1`_ started to provide for declarative\nconfiguration. `d2to1`_ is itself an implementation of the ideas behind\n`distutils2`_. Although `distutils2`_ is now abandoned in favor of work towards\n`PEP 426`_ and Metadata 2.0, declarative config is still a great idea and\nspecifically important in trying to distribute setup code as a library\nwhen that library itself will alter how the setup is processed. As Metadata\n2.0 and other modern Python packaging PEPs come out, PBR aims to support\nthem as quickly as possible.\n\n* License: Apache License, Version 2.0\n* Documentation: https://docs.openstack.org/pbr/latest/\n* Source: https://git.openstack.org/cgit/openstack-dev/pbr\n* Bugs: https://bugs.launchpad.net/pbr\n* Change Log: https://docs.openstack.org/pbr/latest/user/history.html\n\n.. _d2to1: https://pypi.python.org/pypi/d2to1\n.. _distutils2: https://pypi.python.org/pypi/Distutils2\n.. _PEP 426: http://legacy.python.org/dev/peps/pep-0426/\n.. _OpenStack: https://www.openstack.org/\n\n\n\n",
+        "description_content_type": "text/x-rst; charset=UTF-8",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://docs.openstack.org/pbr/latest/",
+        "keywords": "",
+        "license": "",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "pbr",
+        "package_url": "https://pypi.org/project/pbr/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/pbr/",
+        "release_url": "https://pypi.org/project/pbr/4.0.3/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Python Build Reasonableness",
+        "version": "4.0.3"
+    },
+    "last_serial": 3863157,
+    "releases": {
+        "0.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "102a0e69a7335f7cbbfcfa746caf7897",
+                    "sha256": "c5a301669c8bc7e900a422386374822cf038fbd1f23eef2ce0b026a34a9bbd63"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "102a0e69a7335f7cbbfcfa746caf7897",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63039,
+                "upload_time": "2014-07-21T18:07:58",
+                "url": "https://files.pythonhosted.org/packages/c2/fb/e4cbd19cffb126d2172e0d76c4a15c807bb9ca90f65e3270d3f69e7e641f/pbr-0.10.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e02dbfb5e49210c381fd4eea00cf7b7",
+                    "sha256": "52a61a863566fafa45507a9aa40e6c88edc1e09d96cde5f5a6aa3b4d26c913ce"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e02dbfb5e49210c381fd4eea00cf7b7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 77690,
+                "upload_time": "2014-07-21T18:07:55",
+                "url": "https://files.pythonhosted.org/packages/c2/c4/baea9cc86502ee89c91ac9ec2d09d77d816f3f266d7653a6ab27e6b2b171/pbr-0.10.0.tar.gz"
+            }
+        ],
+        "0.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c876b26978806d8bf490aa7510cd1f74",
+                    "sha256": "64a051044009f18da4a5ed8faefe8eb9540cab8d3431b9b6d510d877c4b36a82"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c876b26978806d8bf490aa7510cd1f74",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63059,
+                "upload_time": "2014-12-14T02:33:43",
+                "url": "https://files.pythonhosted.org/packages/db/20/4b2c63698053d5a03e2f1d5cf39735a890901a97fff513adfc7e7bd0729a/pbr-0.10.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "078783b789dc7885dc85b7ee52bbc9a1",
+                    "sha256": "6d30a3ed1b165943639301aea29fbe57b8222c1064d1379bd7c93c769b507480"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "078783b789dc7885dc85b7ee52bbc9a1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 79515,
+                "upload_time": "2014-12-14T02:33:45",
+                "url": "https://files.pythonhosted.org/packages/98/18/15857380350b35b33a7ef52099cc68632434be0b1babcbaeb10910b1f5f2/pbr-0.10.1.tar.gz"
+            }
+        ],
+        "0.10.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ad53e06117b823fd1614acc6f5e43335",
+                    "sha256": "22c3f4a8c91dc2d2e99271d662b72cfeb90ec436ca0553ece620ae8576096a2b"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ad53e06117b823fd1614acc6f5e43335",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63059,
+                "upload_time": "2014-12-14T03:35:01",
+                "url": "https://files.pythonhosted.org/packages/c2/39/653746d50ebd66a8784c5469e439e73b717f48fa463165d7c734d25a2de6/pbr-0.10.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f57d706d96b8790b5f2998fd71f2273",
+                    "sha256": "f16f31839b293b3cf48ed3b34768b647743c3435e218c90d59ca9d1d27455bf8"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f57d706d96b8790b5f2998fd71f2273",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 79480,
+                "upload_time": "2014-12-14T03:35:04",
+                "url": "https://files.pythonhosted.org/packages/2d/5d/85559fcd563b1567502d45d6a193839e22661cbea0c1663636cf10e3b4ce/pbr-0.10.2.tar.gz"
+            }
+        ],
+        "0.10.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b16e070c1fb56755b20ed3610508db64",
+                    "sha256": "87d67997a3d6570f6688aa4e938699439efae17abc452d4572442168043870f1"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b16e070c1fb56755b20ed3610508db64",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 65368,
+                "upload_time": "2014-12-17T02:52:49",
+                "url": "https://files.pythonhosted.org/packages/d2/78/c6824d6fec5169cca21295093b42d1c609a54d21a18c953cf7f16dfaf1f5/pbr-0.10.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df43c99f2c1decacebd506247fa1d691",
+                    "sha256": "3697811c2d05315fb33e6d2334576ec9d2e8573dfa8d9990529e3082d07fc651"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "df43c99f2c1decacebd506247fa1d691",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81331,
+                "upload_time": "2014-12-17T03:19:43",
+                "url": "https://files.pythonhosted.org/packages/ee/dc/d120fa8c01ef6e19e0272e39295f95a56ad434e0069717b18bc3514f155f/pbr-0.10.3.tar.gz"
+            }
+        ],
+        "0.10.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "844b592c09afb696758192c41e4487b4",
+                    "sha256": "27b6aeae83f95e5cd52c0952b46c265333baf5622cff1743135f0d81382e0495"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "844b592c09afb696758192c41e4487b4",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 67819,
+                "upload_time": "2014-12-18T12:20:51",
+                "url": "https://files.pythonhosted.org/packages/55/93/92c38d86ad190cf3ab9903614869ef6649e660e5f01622a3b111ff0f8bf4/pbr-0.10.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a6da7171daf28dc3bae59960bd1b4e11",
+                    "sha256": "765a37d1f185ba0af18e11dfc94e9d1814d2607ef80151ad725ce6d03122a0d5"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a6da7171daf28dc3bae59960bd1b4e11",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81675,
+                "upload_time": "2014-12-18T12:20:54",
+                "url": "https://files.pythonhosted.org/packages/50/ab/963142856158acf5887fa69e707b12903886a3069714b70d4e97eead774d/pbr-0.10.4.tar.gz"
+            }
+        ],
+        "0.10.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9dac093685bd403a7b44c595e670201e",
+                    "sha256": "f563eb1ef0595d415b46becb8335893ae1d392ef5d5dc7571e27d836dae1372c"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9dac093685bd403a7b44c595e670201e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 70035,
+                "upload_time": "2014-12-21T01:42:02",
+                "url": "https://files.pythonhosted.org/packages/bf/4d/6c52208dcbd56bb27921b631bcb689143bf4177700f06ee5c02281581788/pbr-0.10.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b08361a29d02598016ab5de5fe88ce90",
+                    "sha256": "e956bf32f40f408e223824ad819e260ba68f40bc626c1dc07c181bc17bb8b696"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b08361a29d02598016ab5de5fe88ce90",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82529,
+                "upload_time": "2014-12-21T01:42:05",
+                "url": "https://files.pythonhosted.org/packages/1e/3d/51cf7f899cdc10b3867ab9359bdb0843d44576220cebf347a9022924e1b2/pbr-0.10.5.tar.gz"
+            }
+        ],
+        "0.10.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "72ed5a5dfba41d5cca1b0fa990913e32",
+                    "sha256": "d5c4357467bf6cc6d1fbae3d726381ff4315664a11f0485150dc93b77fe5c150"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "72ed5a5dfba41d5cca1b0fa990913e32",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 70039,
+                "upload_time": "2014-12-21T20:58:34",
+                "url": "https://files.pythonhosted.org/packages/33/e0/b950dc6f07f174b70be856f1666236b60902c340e042d0a04dbd2529c086/pbr-0.10.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "018ea54b1e70b218047e3ce3e50099d3",
+                    "sha256": "8d07a7b76a4cc2be8170af49b046b9a268c06536261f26de5869e5b4dbdb4356"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "018ea54b1e70b218047e3ce3e50099d3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82634,
+                "upload_time": "2014-12-21T20:58:37",
+                "url": "https://files.pythonhosted.org/packages/25/83/a41e99d7cec85162a996fd3d1f1a35307c1fb43b04b5e6eba7c85ce74bda/pbr-0.10.6.tar.gz"
+            }
+        ],
+        "0.10.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "63b3de0f31e0543930c7524129b53ea8",
+                    "sha256": "93cd0caba57c2c97ae4bf3e76cc80413a727be529cee38c4e196a6d690eb9109"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "63b3de0f31e0543930c7524129b53ea8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 70021,
+                "upload_time": "2014-12-22T05:24:33",
+                "url": "https://files.pythonhosted.org/packages/c1/ce/f8a51cbccd7e4bccb972464463a8bb139a35cf0c9d4998f4548292abc59d/pbr-0.10.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f523231e709ad028497d7af557bf2fb",
+                    "sha256": "3219912992192c68d21885409ff853ab97b19559c6b5f9f76fd84f06b00f7a27"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f523231e709ad028497d7af557bf2fb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82640,
+                "upload_time": "2014-12-22T05:24:36",
+                "url": "https://files.pythonhosted.org/packages/33/e2/b070023aece01ba1e9899b67ff93d770e4be71dd0233150d353b0f8bd976/pbr-0.10.7.tar.gz"
+            }
+        ],
+        "0.10.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "169389d23737ff44e3cfe6492d750b8c",
+                    "sha256": "ff5d4975ac02c072d4d338fda3bbd1fd1ea430a23e11bf5e1c53a579c2e5856b"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.8-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "169389d23737ff44e3cfe6492d750b8c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 70103,
+                "upload_time": "2015-03-02T18:38:33",
+                "url": "https://files.pythonhosted.org/packages/9c/b1/ca2d79e0d7a8745a3e4fbe396be26aa7ce6d02891af689474be93c25dcc1/pbr-0.10.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ccef0c0fa2ad7ee2c9997322a83d7e45",
+                    "sha256": "a741650c697abe9dd3da00039a57a45a15a6eed017a16f6b7e4c0161fae2b4b2"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.10.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ccef0c0fa2ad7ee2c9997322a83d7e45",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82952,
+                "upload_time": "2015-03-02T18:38:36",
+                "url": "https://files.pythonhosted.org/packages/93/40/4820e8bea62d5d48365b4bb009a5d1c55713e3823ac9e2ee80b92ad7fce7/pbr-0.10.8.tar.gz"
+            }
+        ],
+        "0.11.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4896f66ab0d24bfd24dced1bf40cda7a",
+                    "sha256": "ba3f3c6313ccc8c22e73d6fbd94aff2a9e0a57e7cb9c5e9ac6e953a29d5c008b"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.11.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4896f66ab0d24bfd24dced1bf40cda7a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 78954,
+                "upload_time": "2015-04-30T22:33:26",
+                "url": "https://files.pythonhosted.org/packages/d4/26/8777b9e756b22295375946cb83ee588e8c10e6e2bed73e5f29c218c141c8/pbr-0.11.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e69466b4206e350f4f1e1db2e11ab73b",
+                    "sha256": "d7f0d69aef367a764d69a4728afd966025ce9394d6029a924ef838ecdf592f6d"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.11.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e69466b4206e350f4f1e1db2e11ab73b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 94347,
+                "upload_time": "2015-04-30T22:33:29",
+                "url": "https://files.pythonhosted.org/packages/39/e9/937d7777eca2670c6d04279c243359c4a97652e728e1d19021890193ea58/pbr-0.11.0.tar.gz"
+            }
+        ],
+        "0.11.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b7852a0a626f06c4468a3ffa4187af8",
+                    "sha256": "192d775764cc87013ed4ce92382054a2317f1d2782197a0fe3cd1b00f0e40c02"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.11.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0b7852a0a626f06c4468a3ffa4187af8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 79061,
+                "upload_time": "2016-01-11T22:08:31",
+                "url": "https://files.pythonhosted.org/packages/a8/87/23e26858c1a45ff7ed352261e34fb99b33a97bfac0a6e5ece8df7c983d02/pbr-0.11.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc476e5ffe4e15dfecbdf5586fadc8db",
+                    "sha256": "701ab2922c29ca6004e3a4aab968728f33224968de9b51e432be2ee3340c2309"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.11.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dc476e5ffe4e15dfecbdf5586fadc8db",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 95008,
+                "upload_time": "2016-01-11T22:08:40",
+                "url": "https://files.pythonhosted.org/packages/8d/35/9c224b1f62566ec810851b0ff32eaf6ee6ce9acf82ff972e61d66abe9a4f/pbr-0.11.1.tar.gz"
+            }
+        ],
+        "0.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "957c5474720bd044b859d24c6fb5b1ca",
+                    "sha256": "3e222b5b1c720edd32cf91af40002848d9d62866d1357c3f7597975c7feec352"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "957c5474720bd044b859d24c6fb5b1ca",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10377,
+                "upload_time": "2013-03-18T07:02:57",
+                "url": "https://files.pythonhosted.org/packages/a8/0a/6ad9f0d1e5f10c6523bb1c52d97643938194693e28083d0112a511c94b9f/pbr-0.5.0.tar.gz"
+            }
+        ],
+        "0.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ea4b32b03f606e4548adbdedd91b1bf2",
+                    "sha256": "4b666b59c07aba9a3515ca0157512a708f980f688cfdcf4e043b28ad7dd8c77b"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ea4b32b03f606e4548adbdedd91b1bf2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57192,
+                "upload_time": "2013-03-18T17:52:54",
+                "url": "https://files.pythonhosted.org/packages/a9/27/fd662ee763cb4348c412452aa3a92cd0d61dfe72a4ababc529ea6409911a/pbr-0.5.1.tar.gz"
+            }
+        ],
+        "0.5.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "849a522f3b64b5a1c9c640d2fded4aa6",
+                    "sha256": "e750cbc6030ca45d13778f49534863e8953be5f348d3591b4764f058ef43d15b"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "849a522f3b64b5a1c9c640d2fded4aa6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82092,
+                "upload_time": "2013-05-10T00:57:26",
+                "url": "https://files.pythonhosted.org/packages/c1/0e/131710b2f7dd178de3446d41be6333dbea66727d5736f83950a881dce6d5/pbr-0.5.10.tar.gz"
+            }
+        ],
+        "0.5.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "56717ac59c8d4528742ab3f61a35fe6b",
+                    "sha256": "9f6a80e8eaac2a6d171b6f015a7937cceaa22a1f858ca50b2229f259d1e80aed"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "56717ac59c8d4528742ab3f61a35fe6b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 83211,
+                "upload_time": "2013-05-28T17:20:47",
+                "url": "https://files.pythonhosted.org/packages/5b/1f/c0bb2ab7add8cdda622cf99a2427520e744d08a2ae6c9d8474800c66efd2/pbr-0.5.11.tar.gz"
+            }
+        ],
+        "0.5.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bc976fce6d07845eb69a2d9fcc3d176e",
+                    "sha256": "243ba6eaf8ea31928f2c9376d69232bc53887e85f7ff097ee857b63bb2f5845f"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bc976fce6d07845eb69a2d9fcc3d176e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 85276,
+                "upload_time": "2013-06-06T21:04:47",
+                "url": "https://files.pythonhosted.org/packages/0c/5d/d52d6dd3ccf868f6239b10953e1bd977f01099769649ab639a9f118fd1c7/pbr-0.5.12.tar.gz"
+            }
+        ],
+        "0.5.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4c3a36aaa4c711728ab15186ddd2dc5a",
+                    "sha256": "f62e7d8965056768a7f54e85c5383df1c9d96de4d2a519666cbee849c5130094"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4c3a36aaa4c711728ab15186ddd2dc5a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 85367,
+                "upload_time": "2013-06-07T17:12:39",
+                "url": "https://files.pythonhosted.org/packages/94/d2/13ff71d810b53500774e874c188213c7e9d7d0746d2ef37262b308392b76/pbr-0.5.13.tar.gz"
+            }
+        ],
+        "0.5.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1462a461437b51286115bd5ab02b22b",
+                    "sha256": "a0687bf7afb9c0042e882a1e6e496e3bbc43c73967a9525ada8424d0a4815ce1"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b1462a461437b51286115bd5ab02b22b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 85362,
+                "upload_time": "2013-06-08T01:25:05",
+                "url": "https://files.pythonhosted.org/packages/81/1c/8a5b2d2075b63cd74567ecfc41496842dcf38ab75bc9379c608e6c05d2bc/pbr-0.5.14.tar.gz"
+            }
+        ],
+        "0.5.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2ee400cc0f46bd074d16d7f6b1d63da",
+                    "sha256": "427985fdacfe05d8aa986baa435c7570c9b09da6d724bfc3970c5752c99dd535"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.15.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f2ee400cc0f46bd074d16d7f6b1d63da",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 87294,
+                "upload_time": "2013-06-11T15:04:39",
+                "url": "https://files.pythonhosted.org/packages/22/56/9c4ed97ea99aab9358a8a15e216ed3ad424732062fd86229074568e83c76/pbr-0.5.15.tar.gz"
+            }
+        ],
+        "0.5.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "31c851aa6c16ba397e3b722234a8654d",
+                    "sha256": "5111de23b4620a53f639a8da4b34075344315d121e2d43ae9b567db4870018bd"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.16.tar.gz",
+                "has_sig": false,
+                "md5_digest": "31c851aa6c16ba397e3b722234a8654d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 87344,
+                "upload_time": "2013-06-11T16:49:23",
+                "url": "https://files.pythonhosted.org/packages/52/d6/643ce069bc2aab0565d0fed087314ce065b8b39f3691bb12ddf8a442a14b/pbr-0.5.16.tar.gz"
+            }
+        ],
+        "0.5.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ca5e8a790e230bc132cab98b31b8e39b",
+                    "sha256": "fc3e5394a3fe89b270d84c624aed440f5b617e24586bd1f837e97ea4eb5fc1b0"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.17.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ca5e8a790e230bc132cab98b31b8e39b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 87439,
+                "upload_time": "2013-06-16T20:56:52",
+                "url": "https://files.pythonhosted.org/packages/77/9f/a9b24fcab52e7fd7ad054a1abe88020bbeb66db87ad9859bc2093249a12f/pbr-0.5.17.tar.gz"
+            }
+        ],
+        "0.5.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd14abc6600fc63a87dd33268f2f6d19",
+                    "sha256": "5e22cac5ebcba4a3c04bdb32021c3ea7ab2bd0c17f73eb6b183e11c0d3e2fb7e"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.18.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fd14abc6600fc63a87dd33268f2f6d19",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91950,
+                "upload_time": "2013-07-09T19:42:52",
+                "url": "https://files.pythonhosted.org/packages/2c/cd/0c6bf3648359b0be7a48ef24b12070a9384121651ebf907ff8d289fc1760/pbr-0.5.18.tar.gz"
+            }
+        ],
+        "0.5.19": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5e441e595b294e343ea3261aba6b7f76",
+                    "sha256": "c78bf113af3181d06ada9fc7d07685cb55d6e5803491bb5c2932f99b923e375d"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.19.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5e441e595b294e343ea3261aba6b7f76",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 112995,
+                "upload_time": "2013-07-21T16:04:28",
+                "url": "https://files.pythonhosted.org/packages/96/1b/036f5e2d7b96785547d9d7965866832990aee4f47bcc8bb3e426ffc73808/pbr-0.5.19.tar.gz"
+            }
+        ],
+        "0.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f6e1870a2db8e35412acef33415c218",
+                    "sha256": "72653010c65af1d3e1177db5de4a45cbb0bcd379cb9ff0e1665698f6d08f5de1"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5f6e1870a2db8e35412acef33415c218",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 78219,
+                "upload_time": "2013-03-19T20:01:59",
+                "url": "https://files.pythonhosted.org/packages/71/66/0fe2927f8f1d13fcf9a6005db995ebce4b0f86712f0946c7ff84d27cd9ea/pbr-0.5.2.tar.gz"
+            }
+        ],
+        "0.5.2.5.g5b3e942": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "276a1c4590ac231004a2d64a6887dc44",
+                    "sha256": "39628abc4cd0c1f6210cd46d266826536320ffa49989efbd039af21f81a79621"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.2.5.g5b3e942.tar.gz",
+                "has_sig": false,
+                "md5_digest": "276a1c4590ac231004a2d64a6887dc44",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 80361,
+                "upload_time": "2013-03-24T17:25:02",
+                "url": "https://files.pythonhosted.org/packages/8d/da/5a5f40dce8b0b814f0fcb8cb290f20e7d90b8218fb51ac7dca6a6797a194/pbr-0.5.2.5.g5b3e942.tar.gz"
+            }
+        ],
+        "0.5.20": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bbfd338b8971084e6ef999f0b3b5a73a",
+                    "sha256": "ab0140704948cb9fe513f36bebc4c4c950eb888bf7d4e82ae32153f2273fb188"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.20.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bbfd338b8971084e6ef999f0b3b5a73a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 119196,
+                "upload_time": "2013-07-30T03:16:20",
+                "url": "https://files.pythonhosted.org/packages/17/0d/76f93f00a05ff92b6515fee63db17e1e8eb1e07d8986abc248c227795f49/pbr-0.5.20.tar.gz"
+            }
+        ],
+        "0.5.21": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1dafd1ef666b9bce4d880170ddc39387",
+                    "sha256": "bba90ab981fc2c086650dad4413e4626cc8b199f1c848959469f26224d3ab381"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.21.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1dafd1ef666b9bce4d880170ddc39387",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 123902,
+                "upload_time": "2013-08-04T18:41:16",
+                "url": "https://files.pythonhosted.org/packages/68/71/515cf4d6272a30a5203514a86dcf6a7fd563e8c58de7f81a0c0cace0a362/pbr-0.5.21.tar.gz"
+            }
+        ],
+        "0.5.22": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3bb4f92e970dab5807d3f8189d6cfa10",
+                    "sha256": "656c8ce897d4489269e1303b47f2b154ec7e344699c79ea6573e1fd0b0fbc3e6"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.22.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3bb4f92e970dab5807d3f8189d6cfa10",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 128523,
+                "upload_time": "2013-10-28T02:01:41",
+                "url": "https://files.pythonhosted.org/packages/d2/00/aaaaea2b4d6eb1566953ae607f38170801ba1f31eac22984d801d6821bcf/pbr-0.5.22.tar.gz"
+            }
+        ],
+        "0.5.23": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dde40a1c2fefcd901c7c9ee9223ef955",
+                    "sha256": "032903366eabe6a388dfd6fdc1f4ef72558d7b9be6313bc24619c2a8d71b6087"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.23.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dde40a1c2fefcd901c7c9ee9223ef955",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 128773,
+                "upload_time": "2013-10-30T21:03:03",
+                "url": "https://files.pythonhosted.org/packages/c8/44/ef516bef9b79383aa396efe873c8298fef3d99ffbb07aac1d14f121f1237/pbr-0.5.23.tar.gz"
+            }
+        ],
+        "0.5.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "93c1a18af7d91c2bf470558dfa75a736",
+                    "sha256": "54a048635773495dd2e4b887826fdb19ccd7249cb85ccb34ac5e21759f0c9ff4"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "93c1a18af7d91c2bf470558dfa75a736",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 80345,
+                "upload_time": "2013-03-24T17:25:52",
+                "url": "https://files.pythonhosted.org/packages/5d/c0/71d70764464dc049f2bb417c497751b1f16ebfb3c3146051c614156be54c/pbr-0.5.4.tar.gz"
+            }
+        ],
+        "0.5.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e5d90e3aa87cfd9b484f68283691376",
+                    "sha256": "ba01f94372436dec1449d7edc65626c30897717af1c7f46eef2c9f08a12d7c2d"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8e5d90e3aa87cfd9b484f68283691376",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 80420,
+                "upload_time": "2013-03-24T17:39:05",
+                "url": "https://files.pythonhosted.org/packages/e7/e3/e86fc1e78fa42a8c39630fd37bf730ecbbe78925d0a9b51bef2489668752/pbr-0.5.5.tar.gz"
+            }
+        ],
+        "0.5.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c34fad829c66a1cd0e55ab74908f5ce9",
+                    "sha256": "815f7eef8709f3f8c99c5bbde0a3577afc32a6c44b931568615539d73201f967"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c34fad829c66a1cd0e55ab74908f5ce9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 78445,
+                "upload_time": "2013-03-28T23:40:13",
+                "url": "https://files.pythonhosted.org/packages/7a/69/52a53c3efadb243f14c4f0aeb31d3e3094f91a0c58e1b21c1058e6717af3/pbr-0.5.6.tar.gz"
+            }
+        ],
+        "0.5.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d10fa77e985000f0f00c6af6a28acdb7",
+                    "sha256": "d1873a738aea2a7c2d45d9aea43d680d6d26b9e4c8bb0d7c053a461aa61e686e"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d10fa77e985000f0f00c6af6a28acdb7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81220,
+                "upload_time": "2013-04-09T21:28:20",
+                "url": "https://files.pythonhosted.org/packages/af/60/8e4469f8a1f8570701a5ec781fa5e71db256a17f47f5d16dc924bc905d4f/pbr-0.5.7.tar.gz"
+            }
+        ],
+        "0.5.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fa6a9330dc608ea53ae3ac1997fc9648",
+                    "sha256": "ee2b1988842bb9aa8578d1a5992f181a0a35597420d45d9eb5d83a381aa230d3"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.5.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fa6a9330dc608ea53ae3ac1997fc9648",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81232,
+                "upload_time": "2013-04-09T21:38:26",
+                "url": "https://files.pythonhosted.org/packages/d8/d5/66183c56f77e77baea356d596d86e8b2b5a29c61571aca5760682fef68af/pbr-0.5.8.tar.gz"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74ed7d0a9d93c1ab3eb7000e2c0482c7",
+                    "sha256": "d82d78422625a78f89fb341fb0243320b09c18caac6e7770105ba62dd7d8b445"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "74ed7d0a9d93c1ab3eb7000e2c0482c7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76544,
+                "upload_time": "2014-02-03T21:08:45",
+                "url": "https://files.pythonhosted.org/packages/06/9f/087191de13300fbc2675821857d0fdf4d5efe254f651fe9e349af97385e1/pbr-0.6.tar.gz"
+            }
+        ],
+        "0.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "33e71021ae6a35487325f4c4c16d467d",
+                    "sha256": "1680e9add47561abf6aed6c18d5d9bf3c8b8f22bd9931373f28348e10c5b9fce"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "33e71021ae6a35487325f4c4c16d467d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 78021,
+                "upload_time": "2014-03-18T14:08:57",
+                "url": "https://files.pythonhosted.org/packages/a7/7b/d66521f2f6bf7e5bf772cbf0ccd77c93d763840a2081ee0c8a94c3ac70bd/pbr-0.7.0.tar.gz"
+            }
+        ],
+        "0.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d85dc6aa47809d97d29901bf0244f6f",
+                    "sha256": "799cbdd896806ffa736bca0021aa61619fee5813148f8418366c690af80ee94a"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7d85dc6aa47809d97d29901bf0244f6f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 75217,
+                "upload_time": "2014-03-27T22:09:23",
+                "url": "https://files.pythonhosted.org/packages/7c/13/1a676016b726ca3f6a38772bc013670affc52ab5a304ed3eb4bd79cde70a/pbr-0.8.0.tar.gz"
+            }
+        ],
+        "0.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7f87d32188359a823f84c88faf1b8ea0",
+                    "sha256": "aad1f8296aa6c5379c3ccb07cf7819a7482bb39a835b70d7e5faa4a00fa0876a"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7f87d32188359a823f84c88faf1b8ea0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 78797,
+                "upload_time": "2014-05-23T13:50:27",
+                "url": "https://files.pythonhosted.org/packages/1f/29/c5ed626759ab3d1636974d30f48e474f4122de2376225aa068e6733e6b7a/pbr-0.8.1.tar.gz"
+            }
+        ],
+        "0.8.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e634d42285755724ad3d75ebbc68173a",
+                    "sha256": "eef2ace8d65d5902582cbc9ad3b2ecff0e86a6f90ad4837d8b17d568dd9dd20e"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.8.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e634d42285755724ad3d75ebbc68173a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 77790,
+                "upload_time": "2014-05-24T03:20:29",
+                "url": "https://files.pythonhosted.org/packages/99/d3/1941d4ad237bb9e3d92b386d852c2c6049135db5ea8000dd47c10f992083/pbr-0.8.2.tar.gz"
+            }
+        ],
+        "0.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c0fa68e6f0dc92958647f6e19ef0f6e",
+                    "sha256": "8230f4cc96998878529b066a0fc10d26fc2143024c836eecc2492414b26ec478"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.9.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3c0fa68e6f0dc92958647f6e19ef0f6e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63236,
+                "upload_time": "2014-07-07T15:44:37",
+                "url": "https://files.pythonhosted.org/packages/80/4f/4cb186de73b8e496215f3bd449c3be47afd7aee0b55a5f497bcb351afae0/pbr-0.9.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eabd5606f7e3db56c3cd70e44c377706",
+                    "sha256": "e5a57c434b1faa509a00bf458d2c7af965199d9cced3d05a547bff9880f7e8cb"
+                },
+                "downloads": -1,
+                "filename": "pbr-0.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "eabd5606f7e3db56c3cd70e44c377706",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 80662,
+                "upload_time": "2014-07-07T15:44:35",
+                "url": "https://files.pythonhosted.org/packages/9d/60/0e0c8d181fead2a46cff2a0769c72216803de8e6f0aa2eb7764e818e5349/pbr-0.9.0.tar.gz"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7f24be794ceb844cc7a2055829ad0c1c",
+                    "sha256": "9243fb99bbaafb34a768e211b372268b9b5b6780f1163793e783686dcff09f03"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7f24be794ceb844cc7a2055829ad0c1c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 83234,
+                "upload_time": "2015-05-18T19:30:14",
+                "url": "https://files.pythonhosted.org/packages/19/28/e19b33264b4bb812fc9eb88de84c4c77774cbdf2c31a30672378f1db08af/pbr-1.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8075d0922db081d3ae1aa3c4f372ecf8",
+                    "sha256": "22d8724e5d6648930874aa9d15cc739872edde5d3e3b453e680a4b1387d01f56"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8075d0922db081d3ae1aa3c4f372ecf8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 97630,
+                "upload_time": "2015-05-18T19:30:18",
+                "url": "https://files.pythonhosted.org/packages/2e/34/cd633b4d83fd691ec32171506979e076a5762c5f7063be61e41495cb6006/pbr-1.0.0.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dbba7064b44ee3e1a89f0b9804c2010b",
+                    "sha256": "1f1cd33f9f0ad1d91710594a678c93412769abee7b868a7e6fb2001d8451b330"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "dbba7064b44ee3e1a89f0b9804c2010b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 83212,
+                "upload_time": "2015-05-19T22:37:28",
+                "url": "https://files.pythonhosted.org/packages/6c/5e/455c63ef5c4c7f3dc6a8639302c01cfa97da689ecef771dc27f4f593e2d8/pbr-1.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37b112f4962735faebf618811d4c1797",
+                    "sha256": "fc3d19ab844647388cc13a3df403bda872d2fc16662803d0ebcc1787d3645552"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "37b112f4962735faebf618811d4c1797",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 96438,
+                "upload_time": "2015-05-19T22:37:33",
+                "url": "https://files.pythonhosted.org/packages/ae/7b/a40fbf06e6d73a19428fd6e3c38244cfd01d218958253bd594f8fc10a203/pbr-1.0.1.tar.gz"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "77dc871fa086c0148306cb53f644241e",
+                    "sha256": "ea949dc7e40d177b7d815179f03dbcc2c79ffeaa1f2c87471554df3e575d553e"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "77dc871fa086c0148306cb53f644241e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 83323,
+                "upload_time": "2015-06-09T03:15:20",
+                "url": "https://files.pythonhosted.org/packages/2d/52/ea19b878ed286aa47183d87317a52fb2c1bc23fcea2fcc358d8ab8d9191c/pbr-1.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d730c18e11adf7712255f327908fcbac",
+                    "sha256": "d53899758799094f4de673b58abe310fe96e1f5d0ed02feec11e7aba197aabd3"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d730c18e11adf7712255f327908fcbac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 97535,
+                "upload_time": "2015-06-09T03:15:24",
+                "url": "https://files.pythonhosted.org/packages/d4/60/956bf3025f5b8bb655b72968f8993becec4563ce125fca9e33b5f72f497e/pbr-1.1.0.tar.gz"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "514f405c44fcab8ff99830d18122b6bd",
+                    "sha256": "6ec4b49680f56f8ac4b3a7a751462ca176faac81706fd03a6fe5e2023477e079"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "514f405c44fcab8ff99830d18122b6bd",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 83362,
+                "upload_time": "2015-06-09T21:16:50",
+                "url": "https://files.pythonhosted.org/packages/19/43/7ad0151ebf46a92e12a71497acf427b17c28b0d3f45592ca3415c2463952/pbr-1.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e54ee276bf64589d74f123b28c7c8a73",
+                    "sha256": "3d63cc8e145e5e20624859d6453d783ae1451704483ae23d3315041d65e4d423"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e54ee276bf64589d74f123b28c7c8a73",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 97607,
+                "upload_time": "2015-06-09T21:16:53",
+                "url": "https://files.pythonhosted.org/packages/6f/0f/f7e94cf4d10355dbb5142a052ffd593501feb7dea4a553beb78cbc4a1a8d/pbr-1.1.1.tar.gz"
+            }
+        ],
+        "1.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7941615147c725d1800ee86f91d5df3e",
+                    "sha256": "f5cf7265a80636ecff66806d13494cbf9d77a3758a65fd8b4d4d4bee81b0c375"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.10.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7941615147c725d1800ee86f91d5df3e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 96932,
+                "upload_time": "2016-05-23T19:42:01",
+                "url": "https://files.pythonhosted.org/packages/b8/a1/7abb01fd93d66fc71e24e5df9ca6d7d9acfb4b715937d2a38fd739f266e6/pbr-1.10.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e4968c587268f030e38329feb9c8f17",
+                    "sha256": "186428c270309e6fdfe2d5ab0949ab21ae5f7dea831eab96701b86bd666af39c"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8e4968c587268f030e38329feb9c8f17",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 111425,
+                "upload_time": "2016-05-23T19:42:18",
+                "url": "https://files.pythonhosted.org/packages/c3/2c/63275fab26a0fd8cadafca71a3623e4d0f0ee8ed7124a5bb128853d178a7/pbr-1.10.0.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "065cee17aab68a54b32a8b5d5fd19726",
+                    "sha256": "0bf9f621cae35ea1b2326d6a3b1bf9cf8ca9942f5943c505da99fc3649afddd0"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "065cee17aab68a54b32a8b5d5fd19726",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 83687,
+                "upload_time": "2015-06-21T22:52:26",
+                "url": "https://files.pythonhosted.org/packages/a2/7a/a5c5c87a9afe45e1e2efea5262bd68c68611dd23c106d675e4b4ec64a766/pbr-1.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5b93565a5c6fd514889d5f5d83a485b",
+                    "sha256": "1543fc3e00261369c160fc8cf700717aad15fbc1f0ea0e8dc4f372cb91a655d0"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b5b93565a5c6fd514889d5f5d83a485b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99092,
+                "upload_time": "2015-06-21T22:52:30",
+                "url": "https://files.pythonhosted.org/packages/85/54/388bfc35753c380c2868c0570fa53eebc53818ae3c25b3c19c0c3818775b/pbr-1.2.0.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b54311390cb31abacfc6c48f4fb8a72d",
+                    "sha256": "3a872d02d4060d23b4d2944fd8e8596de67b67ea65447a604d89299521b136e2"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b54311390cb31abacfc6c48f4fb8a72d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 83700,
+                "upload_time": "2015-07-10T21:33:12",
+                "url": "https://files.pythonhosted.org/packages/dc/1c/963dff2c51137a57539d1bf86e651366a34ee83b3658b8406c463b83b7da/pbr-1.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5e54c9e7f083b5259a6e619dfd6525f8",
+                    "sha256": "1a6f8d514fc11d2571c75c207d932c106f024f199b5f12d25f8ca022b026c59d"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5e54c9e7f083b5259a6e619dfd6525f8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99701,
+                "upload_time": "2015-07-10T21:33:16",
+                "url": "https://files.pythonhosted.org/packages/b8/2d/b8a38176b243617b1e36144a905c1892325b0b0079f142e3ae3f0b14cfe4/pbr-1.3.0.tar.gz"
+            }
+        ],
+        "1.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "914e6cc4f83a3c8b56faa725fbdce0e2",
+                    "sha256": "01e05c9397732fa27e4feabd77756c1da6070bc69b5c9584b02d07ecb8f6fde4"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "914e6cc4f83a3c8b56faa725fbdce0e2",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87483,
+                "upload_time": "2015-08-03T20:00:32",
+                "url": "https://files.pythonhosted.org/packages/20/0a/4c26cec481094d2b880d4c122804f3c07534a0622ba4f19b5995e69c8885/pbr-1.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "21f847dd9d3f9bd37db402067024be98",
+                    "sha256": "f080232fb6b208615b4c1854bf4277bb097d19c9ef89f94f203c1436fe600e92"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "21f847dd9d3f9bd37db402067024be98",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 102181,
+                "upload_time": "2015-08-03T20:00:36",
+                "url": "https://files.pythonhosted.org/packages/2d/89/8b99cffdd0d1874448bd479ea5979a5f702699e4a1f0d3230864518b0832/pbr-1.4.0.tar.gz"
+            }
+        ],
+        "1.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "010ce85abb3c2bcb4034bfc9ad318913",
+                    "sha256": "ac323216ee0612c71252eed6fbbffe1539db9f13c3c8343ec3cee7fdefdf88e0"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "010ce85abb3c2bcb4034bfc9ad318913",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87523,
+                "upload_time": "2015-08-13T19:34:26",
+                "url": "https://files.pythonhosted.org/packages/53/4a/31a753a4eeb5ce5b4a4818482c0133cf4e3600b739656b36f35decf28e68/pbr-1.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e2d24853397c1c6c9b20db212ff2084b",
+                    "sha256": "bd6db6ecddf5d8ab40d7d554508c29cfe0d150a1789f07d4dd32abe896068e7e"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e2d24853397c1c6c9b20db212ff2084b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99436,
+                "upload_time": "2015-08-13T19:34:30",
+                "url": "https://files.pythonhosted.org/packages/8e/a7/f185db31a06ffe51d7a957b90dd0cc12dca29e9be218fb430d999c5ab980/pbr-1.5.0.tar.gz"
+            }
+        ],
+        "1.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "40d83daa9fa67cb215c44ad27c248624",
+                    "sha256": "6d0f47c050cced1d9abfc89a937ad06870a2974fda31ec0adfcafc2600b947ce"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "40d83daa9fa67cb215c44ad27c248624",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87893,
+                "upload_time": "2015-08-24T21:31:40",
+                "url": "https://files.pythonhosted.org/packages/bc/f8/4f5315aabe064e75b6cf5ea00e89753aad17370b6bedc87959013e4e5d5b/pbr-1.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a9a0fc1c8ecabdf057eef5ff98d1ea71",
+                    "sha256": "4eaee8ff5544703edd1951ed1dc0b283da99a74f740d9f9055eeefcf329de1d1"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a9a0fc1c8ecabdf057eef5ff98d1ea71",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99945,
+                "upload_time": "2015-08-24T21:31:51",
+                "url": "https://files.pythonhosted.org/packages/73/29/ce7ad655da1d45715a2043c2223b7f4923a69f4a3695c6162e872b157d1e/pbr-1.6.0.tar.gz"
+            }
+        ],
+        "1.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a2249f3808bab91b58974c179987e09",
+                    "sha256": "90eb021fc2f003e42ebe888c1ee856ffccdfbb6404e3ff9d32c8835fe162e57b"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.7.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5a2249f3808bab91b58974c179987e09",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87682,
+                "upload_time": "2015-09-08T16:22:18",
+                "url": "https://files.pythonhosted.org/packages/22/eb/8d8a7e6f2aaf11d36c3e8c6562cc6f80c5cb071460265b611071c57ccf7b/pbr-1.7.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8a039757ad7fdc15d6ffcae151c6b427",
+                    "sha256": "d6e696dbd2b311225e3a21fe11d611989434cb366ff7919cef5ef1add859526e"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8a039757ad7fdc15d6ffcae151c6b427",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99850,
+                "upload_time": "2015-09-08T16:22:22",
+                "url": "https://files.pythonhosted.org/packages/40/e3/24f5f78af5a52ff62b2e0d4fe8cc459acd19c4f2b09963608df203e169e1/pbr-1.7.0.tar.gz"
+            }
+        ],
+        "1.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7cda2b9a2ad3134fe8c29e5ff0216468",
+                    "sha256": "ca75e7ad799b30520cb217f9f723a33fd2602209e3ea76a24d37cebdd6452310"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.8.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7cda2b9a2ad3134fe8c29e5ff0216468",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87835,
+                "upload_time": "2015-09-14T20:59:46",
+                "url": "https://files.pythonhosted.org/packages/ab/ed/f93a88e436c7f6a5d190f4e156e37276aebb08d1ca44bf3f32a0d03c620e/pbr-1.8.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bc7173f5ccec8e6125e3b68f0285eb8a",
+                    "sha256": "44a0ef9295bb59698f461124741a21a0f7f76d42e160d8a0a4bf1693338036fc"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bc7173f5ccec8e6125e3b68f0285eb8a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 102868,
+                "upload_time": "2015-09-14T20:59:50",
+                "url": "https://files.pythonhosted.org/packages/d3/0a/e7e41f00d4e479baa627f4146eb40cb422758500459a5ed012cf4c599a72/pbr-1.8.0.tar.gz"
+            }
+        ],
+        "1.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "88d4ed81ec269cc1094ba7e3c41d85e5",
+                    "sha256": "46c8db75ae75a056bd1cc07fa21734fe2e603d11a07833ecc1eeb74c35c72e0c"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.8.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "88d4ed81ec269cc1094ba7e3c41d85e5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 89372,
+                "upload_time": "2015-10-07T21:57:57",
+                "url": "https://files.pythonhosted.org/packages/fc/37/94af8387babb09796d306b18cf94ee5c70388c875a16d8a88e471500452c/pbr-1.8.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c8f9285e1a4ca6f9654c529b158baa3a",
+                    "sha256": "e2127626a91e6c885db89668976db31020f0af2da728924b56480fc7ccf09649"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c8f9285e1a4ca6f9654c529b158baa3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 104584,
+                "upload_time": "2015-10-07T21:58:02",
+                "url": "https://files.pythonhosted.org/packages/94/27/2d371af70766f2d1dc0cf1c42ea3319a057d0ebc0d71ab05c824be48e9df/pbr-1.8.1.tar.gz"
+            }
+        ],
+        "1.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8838efaa9d8470a1b4995bab59a8a6c2",
+                    "sha256": "91f882be18d6d203d3f6ac8a8b74c18d7974a91044ea637d6759beb3295a459f"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.9.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8838efaa9d8470a1b4995bab59a8a6c2",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 96638,
+                "upload_time": "2016-04-12T13:42:27",
+                "url": "https://files.pythonhosted.org/packages/25/f6/bb56954d86bdb13949849da87db1b01b5e1120c0d2df9af76f2bb63ba154/pbr-1.9.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed8854f725e1c4d7e94d1b2c9ab61304",
+                    "sha256": "d7a1d4622210037f2d1cfc5b65c0a87a2fb04cc58c08c3fbaf7eabc7a1dc48fb"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ed8854f725e1c4d7e94d1b2c9ab61304",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 112455,
+                "upload_time": "2016-04-12T13:42:59",
+                "url": "https://files.pythonhosted.org/packages/56/f2/7195b36b39b7a207643e44c9b4a00eb8045174dfd10e0709b42496a65417/pbr-1.9.0.tar.gz"
+            }
+        ],
+        "1.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ce49b71e2238e156111fe535b527014",
+                    "sha256": "fdfda7175428e7527635dfef42d0eda5b609b2d5b1ac707045dbaed7a7307c7f"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.9.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1ce49b71e2238e156111fe535b527014",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 96724,
+                "upload_time": "2016-04-14T09:57:00",
+                "url": "https://files.pythonhosted.org/packages/13/68/1bea12c1593970bb917f50fba54bd5d74574c29079dc57653d9ca1a3da36/pbr-1.9.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d70073a39a28da64ac968139b49cec8f",
+                    "sha256": "3997406c90894ebf3d1371811c1e099721440a901f946ca6dc4383350403ed51"
+                },
+                "downloads": -1,
+                "filename": "pbr-1.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d70073a39a28da64ac968139b49cec8f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 113439,
+                "upload_time": "2016-04-14T09:57:07",
+                "url": "https://files.pythonhosted.org/packages/89/d0/d4db92ef43e9b21a7034f6dc041fa9c3b0310599c131c9fb07273b6ca1c4/pbr-1.9.1.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5c7c3692b69649b55a8a793319712f62",
+                    "sha256": "d9b69a26a5cb4e3898eb3c5cea54d2ab3332382167f04e30db5e1f54e1945e45"
+                },
+                "downloads": -1,
+                "filename": "pbr-2.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5c7c3692b69649b55a8a793319712f62",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 98673,
+                "upload_time": "2017-03-01T03:33:11",
+                "url": "https://files.pythonhosted.org/packages/e9/c0/8f7f54d7b9b8ceb73ac30d769fdd722431e95ad0d2cd689def382e8b9eec/pbr-2.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dfc1c3788eff06acfaade6f1655fa490",
+                    "sha256": "0ccd2db529afd070df815b1521f01401d43de03941170f8a800e7531faba265d"
+                },
+                "downloads": -1,
+                "filename": "pbr-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dfc1c3788eff06acfaade6f1655fa490",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 98568,
+                "upload_time": "2017-03-01T03:33:13",
+                "url": "https://files.pythonhosted.org/packages/35/a5/3d1beff9fc149b3da814419369a8c24ecf0d1410637fc91002989f433a1a/pbr-2.0.0.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c7670f4272531da6790499efc8231f5",
+                    "sha256": "be54aa7c958bf0a6b2949d3fb5b049c1e4d212d25a03068583b4942eccec804f"
+                },
+                "downloads": -1,
+                "filename": "pbr-2.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2c7670f4272531da6790499efc8231f5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 98641,
+                "upload_time": "2017-04-11T08:28:27",
+                "url": "https://files.pythonhosted.org/packages/3f/fd/1ac92034e81906ff10d261f4d72141e75710188a25b7b958c5f7a23bbd30/pbr-2.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6decaa3bd7529d591e40b0a64d6c4cfb",
+                    "sha256": "f71359a7e2de2f5ea1eceea7c1e3222f2560ee48e21eef6f96957bb5c2ebb94a"
+                },
+                "downloads": -1,
+                "filename": "pbr-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6decaa3bd7529d591e40b0a64d6c4cfb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 100858,
+                "upload_time": "2017-04-11T08:28:30",
+                "url": "https://files.pythonhosted.org/packages/9b/cf/6c6f843ffc13aee42c5412c49e7aff7e860d006261dcafb5a5512fa27cd6/pbr-2.1.0.tar.gz"
+            }
+        ],
+        "3.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e1dd9cf48467da01d5d27bfb5dccd9b2",
+                    "sha256": "86f0e548dfbdc1ad12559725a66b5e1ca0b2e0744940da1ec89991fd11a2b32b"
+                },
+                "downloads": -1,
+                "filename": "pbr-3.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e1dd9cf48467da01d5d27bfb5dccd9b2",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 98969,
+                "upload_time": "2017-04-20T16:01:01",
+                "url": "https://files.pythonhosted.org/packages/0b/9a/698e7bea31bbfa79a64380fff0dde28c0f1f6aa7bcfabf0f3efa5857d178/pbr-3.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b9ef99a98350a57bbe55b1142807f224",
+                    "sha256": "568f988af109114fbfa0525dcb6836b069838360d11732736ecc82e4c15d5c12"
+                },
+                "downloads": -1,
+                "filename": "pbr-3.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b9ef99a98350a57bbe55b1142807f224",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99062,
+                "upload_time": "2017-04-20T16:01:04",
+                "url": "https://files.pythonhosted.org/packages/1e/f0/9963f6ff9fb3861384be272c07522a9e85441ea5524f7fe15d07cadcae2a/pbr-3.0.0.tar.gz"
+            }
+        ],
+        "3.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab384ed0e275a086988492d856effa04",
+                    "sha256": "dfc304262e881066bc675a59a348733af17bee1d57084d9e2a0c96b952a82db7"
+                },
+                "downloads": -1,
+                "filename": "pbr-3.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ab384ed0e275a086988492d856effa04",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 99103,
+                "upload_time": "2017-05-17T20:59:03",
+                "url": "https://files.pythonhosted.org/packages/0a/b5/c50b7dda55052cba3362ae73baa8ef7daa81e6ba0080999aec5c712a0aae/pbr-3.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c537dbb9756e319be25772b1fe1c05fa",
+                    "sha256": "d7e8917458094002b9a2e0030ba60ba4c834c456071f2d0c1ccb5265992ada91"
+                },
+                "downloads": -1,
+                "filename": "pbr-3.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c537dbb9756e319be25772b1fe1c05fa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 100518,
+                "upload_time": "2017-05-17T20:59:06",
+                "url": "https://files.pythonhosted.org/packages/18/2e/28a7d361a568b1a6c86946674e8ac35a609573c3a3d12bb20f6aaf1c39bf/pbr-3.0.1.tar.gz"
+            }
+        ],
+        "3.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f32817607cce84ab36c62325e64f844",
+                    "sha256": "283986d680683a36af097194599a47b866cd5f1dd59acb0fdba9fb20a54ba342"
+                },
+                "downloads": -1,
+                "filename": "pbr-3.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8f32817607cce84ab36c62325e64f844",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 99694,
+                "upload_time": "2017-06-19T16:43:32",
+                "url": "https://files.pythonhosted.org/packages/f4/7b/f724d20f4474c50f28603e42ba2cd1491b823068ebabaf4c941febd4b3e7/pbr-3.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ebad465f51393759710d2ed3b356004",
+                    "sha256": "b8af6ec309f4f3ab419b998b22073d66da55b36414e0b729cb04a408f6d73697"
+                },
+                "downloads": -1,
+                "filename": "pbr-3.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2ebad465f51393759710d2ed3b356004",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 102185,
+                "upload_time": "2017-06-19T16:43:36",
+                "url": "https://files.pythonhosted.org/packages/2b/56/fd3015212c8f546c632a65b1018e8f065eff1b173d11739bb73c64cc5683/pbr-3.1.0.tar.gz"
+            }
+        ],
+        "3.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75a0f55856bfc9220af0d01244afec43",
+                    "sha256": "60c25b7dfd054ef9bb0ae327af949dd4676aa09ac3a9471cdc871d8a9213f9ac"
+                },
+                "downloads": -1,
+                "filename": "pbr-3.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "75a0f55856bfc9220af0d01244afec43",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 99692,
+                "upload_time": "2017-06-21T09:45:22",
+                "url": "https://files.pythonhosted.org/packages/0c/5d/b077dbf309993d52c1d71e6bf6fe443a8029ea215135ebbe0b1b10e7aefc/pbr-3.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4e82c2e07af544c56a5b71c801525b00",
+                    "sha256": "05f61c71aaefc02d8e37c0a3eeb9815ff526ea28b3b76324769e6158d7f95be1"
+                },
+                "downloads": -1,
+                "filename": "pbr-3.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4e82c2e07af544c56a5b71c801525b00",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 102665,
+                "upload_time": "2017-06-21T09:45:25",
+                "url": "https://files.pythonhosted.org/packages/d5/d6/f2bf137d71e4f213b575faa9eb426a8775732432edb67588a8ee836ecb80/pbr-3.1.1.tar.gz"
+            }
+        ],
+        "4.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6293de42d50d2657f651d1634f0cbe28",
+                    "sha256": "8b9a7c3704657cb0831b3ded0a6b61377947c8235b76649bb7de4bfe2e6cfa56"
+                },
+                "downloads": -1,
+                "filename": "pbr-4.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6293de42d50d2657f651d1634f0cbe28",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 100084,
+                "upload_time": "2018-03-27T18:50:21",
+                "url": "https://files.pythonhosted.org/packages/a3/fc/7c2c83f6d257f2565895dbb39e63aba066d34af40ad11d9e4a9987df5637/pbr-4.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5c320a684c423b41eeb27e7f2cf61ad5",
+                    "sha256": "cf66675e22ae91a4f20e4b8354f117d3e3d1de651513051d109cc39645fb3672"
+                },
+                "downloads": -1,
+                "filename": "pbr-4.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5c320a684c423b41eeb27e7f2cf61ad5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 106169,
+                "upload_time": "2018-03-27T18:50:24",
+                "url": "https://files.pythonhosted.org/packages/0f/a4/9d5fdc5234de1c0c93ac83aaf6081a920c5705b6ab858ac74b26bb457ccf/pbr-4.0.0.tar.gz"
+            }
+        ],
+        "4.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ccb3f9d290c298d46000cdd9e07d241e",
+                    "sha256": "de75cf1d510542c746beeff66b52241eb12c8f95f2ef846ee50ed5d72392caa4"
+                },
+                "downloads": -1,
+                "filename": "pbr-4.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ccb3f9d290c298d46000cdd9e07d241e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 97986,
+                "upload_time": "2018-04-03T11:18:18",
+                "url": "https://files.pythonhosted.org/packages/5a/8a/c0f2aa14bf7a40efe0fe511fe8605f51b93403b7178dfc50f464ea3cfa79/pbr-4.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f3e8ee3efe10f5c90461d9fd8e9f87d3",
+                    "sha256": "56b7a8ba7d64bf6135a9dfefb85a80d95924b3fde5ed6343a1a1d464a040dae3"
+                },
+                "downloads": -1,
+                "filename": "pbr-4.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f3e8ee3efe10f5c90461d9fd8e9f87d3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 107365,
+                "upload_time": "2018-04-03T11:18:21",
+                "url": "https://files.pythonhosted.org/packages/71/99/bbe0ed2c7077da3af0d7439127d215d4b90ebc8c8d096d2e39fc7e614d1f/pbr-4.0.1.tar.gz"
+            }
+        ],
+        "4.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a583f12815cf490ee68944d41d89061a",
+                    "sha256": "4e8a0ed6a8705a26768f4c3da26026013b157821fe5f95881599556ea9d91c19"
+                },
+                "downloads": -1,
+                "filename": "pbr-4.0.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a583f12815cf490ee68944d41d89061a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 98092,
+                "upload_time": "2018-04-11T09:55:25",
+                "url": "https://files.pythonhosted.org/packages/e1/ba/f95e3ec83f93919b1437028e989cf3fa5ff4f5cae4a1f62255f71deddb5b/pbr-4.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eb01289de58ab34e41d800f773cac7ef",
+                    "sha256": "dae4aaa78eafcad10ce2581fc34d694faa616727837fd8e55c1a00951ad6744f"
+                },
+                "downloads": -1,
+                "filename": "pbr-4.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "eb01289de58ab34e41d800f773cac7ef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 107720,
+                "upload_time": "2018-04-11T09:55:29",
+                "url": "https://files.pythonhosted.org/packages/c6/46/f414e7d9ba9621c8acd3e7a82e08c47e0de34ad3e213c16e458b6c04d432/pbr-4.0.2.tar.gz"
+            }
+        ],
+        "4.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9ef784e5b196fe95d7488fee58c883a2",
+                    "sha256": "680bf5ba9b28dd56e08eb7c267991a37c7a5f90a92c2e07108829931a50ff80a"
+                },
+                "downloads": -1,
+                "filename": "pbr-4.0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9ef784e5b196fe95d7488fee58c883a2",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 98094,
+                "upload_time": "2018-05-15T04:15:53",
+                "url": "https://files.pythonhosted.org/packages/2d/9d/7bfab757977067556c7ca5fe437f28e8b8843c95564fca504de79df63b25/pbr-4.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d77c47cb22dc9dd9ba8c209c118a86f",
+                    "sha256": "6874feb22334a1e9a515193cba797664e940b763440c88115009ec323a7f2df5"
+                },
+                "downloads": -1,
+                "filename": "pbr-4.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0d77c47cb22dc9dd9ba8c209c118a86f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 108684,
+                "upload_time": "2018-05-15T04:15:57",
+                "url": "https://files.pythonhosted.org/packages/a7/d7/eeb3cc66469e21843748e9b8f196eefd42fc81ea43191715e8ec54fee4df/pbr-4.0.3.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "9ef784e5b196fe95d7488fee58c883a2",
+                "sha256": "680bf5ba9b28dd56e08eb7c267991a37c7a5f90a92c2e07108829931a50ff80a"
+            },
+            "downloads": -1,
+            "filename": "pbr-4.0.3-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "9ef784e5b196fe95d7488fee58c883a2",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 98094,
+            "upload_time": "2018-05-15T04:15:53",
+            "url": "https://files.pythonhosted.org/packages/2d/9d/7bfab757977067556c7ca5fe437f28e8b8843c95564fca504de79df63b25/pbr-4.0.3-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0d77c47cb22dc9dd9ba8c209c118a86f",
+                "sha256": "6874feb22334a1e9a515193cba797664e940b763440c88115009ec323a7f2df5"
+            },
+            "downloads": -1,
+            "filename": "pbr-4.0.3.tar.gz",
+            "has_sig": false,
+            "md5_digest": "0d77c47cb22dc9dd9ba8c209c118a86f",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 108684,
+            "upload_time": "2018-05-15T04:15:57",
+            "url": "https://files.pythonhosted.org/packages/a7/d7/eeb3cc66469e21843748e9b8f196eefd42fc81ea43191715e8ec54fee4df/pbr-4.0.3.tar.gz"
+        }
+    ],
+    "package_name": "pbr"
+}

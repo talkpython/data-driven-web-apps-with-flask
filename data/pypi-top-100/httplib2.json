@@ -1,0 +1,450 @@
+{
+    "info": {
+        "author": "Joe Gregorio",
+        "author_email": "joe@bitworking.org",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 4 - Beta",
+            "Environment :: Web Environment",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Topic :: Internet :: WWW/HTTP",
+            "Topic :: Software Development :: Libraries"
+        ],
+        "description": "A comprehensive HTTP client library, ``httplib2`` supports many features left out of other HTTP libraries.\n\n**HTTP and HTTPS**\n  HTTPS support is only available if the socket module was compiled with SSL support.\n\n\n**Keep-Alive**\n  Supports HTTP 1.1 Keep-Alive, keeping the socket open and performing multiple requests over the same connection if possible.\n\n\n**Authentication**\n  The following three types of HTTP Authentication are supported. These can be used over both HTTP and HTTPS.\n\n  * Digest\n  * Basic\n  * WSSE\n\n**Caching**\n  The module can optionally operate with a private cache that understands the Cache-Control:\n  header and uses both the ETag and Last-Modified cache validators. Both file system\n  and memcached based caches are supported.\n\n\n**All Methods**\n  The module can handle any HTTP request method, not just GET and POST.\n\n\n**Redirects**\n  Automatically follows 3XX redirects on GETs.\n\n\n**Compression**\n  Handles both 'deflate' and 'gzip' types of compression.\n\n\n**Lost update support**\n  Automatically adds back ETags into PUT requests to resources we have already cached. This implements Section 3.2 of Detecting the Lost Update Problem Using Unreserved Checkout\n\n\n**Unit Tested**\n  A large and growing set of unit tests.",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/httplib2/httplib2",
+        "keywords": "",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "httplib2",
+        "package_url": "https://pypi.org/project/httplib2/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/httplib2/",
+        "release_url": "https://pypi.org/project/httplib2/0.11.3/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "A comprehensive HTTP client library.",
+        "version": "0.11.3"
+    },
+    "last_serial": 3718646,
+    "releases": {
+        "0.10.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "709c305e1b00e9c0af49ee816429569c",
+                    "sha256": "e404d3b7bd86c1bc931906098e7c1305d6a3a6dcef141b8bb1059903abb3ceeb"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.10.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "709c305e1b00e9c0af49ee816429569c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 204500,
+                "upload_time": "2017-02-06T17:58:25",
+                "url": "https://files.pythonhosted.org/packages/e4/2e/a7e27d2c36076efeb8c0e519758968b20389adf57a9ce3af139891af2696/httplib2-0.10.3.tar.gz"
+            }
+        ],
+        "0.11.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec160048ef18dbf78f9b11fd66b2d6a2",
+                    "sha256": "5c0138b53a2f13b1dc29707b75c04236e35247d6b5f2a14c930966e8f45ce3cc"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.11.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ec160048ef18dbf78f9b11fd66b2d6a2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 216686,
+                "upload_time": "2018-03-21T18:14:15",
+                "url": "https://files.pythonhosted.org/packages/a0/15/964b7ff08a126c620444dc3e5978edaadabca2ad6cb7621b7a82cd7f9eab/httplib2-0.11.0.tar.gz"
+            }
+        ],
+        "0.11.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7eb3941c1feddccabedb0bb15b021a15",
+                    "sha256": "f2176149e1e1c59e0520db62c925715018b787b2ae901358803bae5d816fda0b"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.11.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7eb3941c1feddccabedb0bb15b021a15",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 216758,
+                "upload_time": "2018-03-26T17:16:43",
+                "url": "https://files.pythonhosted.org/packages/6d/6e/e286c14521000d62bd5aeafe0a27cb1c84f1701c78975693ae21f6222f0e/httplib2-0.11.1.tar.gz"
+            }
+        ],
+        "0.11.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9aa3e074da9a235cd675dd65e1fbcf39",
+                    "sha256": "e71daed9a0e6373642db61166fa70beecc9bf04383477f84671348c02a04cbdf"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.11.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9aa3e074da9a235cd675dd65e1fbcf39",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 215815,
+                "upload_time": "2018-03-30T02:29:15",
+                "url": "https://files.pythonhosted.org/packages/fd/ce/aa4a385e3e9fd351737fd2b07edaa56e7a730448465aceda6b35086a0d9b/httplib2-0.11.3.tar.gz"
+            }
+        ],
+        "0.7.0": [],
+        "0.7.1": [],
+        "0.7.2": [],
+        "0.7.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf44ef622813ccb4d2acd277c4654806",
+                    "sha256": "786bce4ad4e5abbb1b4f660b5fb5296a565a6d593b54234b7de5bbf4af596a5b"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bf44ef622813ccb4d2acd277c4654806",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69074,
+                "upload_time": "2012-03-02T17:45:35",
+                "url": "https://files.pythonhosted.org/packages/a3/3d/60276e1e0ea090833031abe1855a934113e3d64d2a6a667ab91a8e312f43/httplib2-0.7.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ab079fe79949f5bb44fae612b6cc527",
+                    "sha256": "29c3f5bb69efa431197d3bd16d80ea2e2443caf02334e1277f9c4961a0841823"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.3.zip",
+                "has_sig": false,
+                "md5_digest": "2ab079fe79949f5bb44fae612b6cc527",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76781,
+                "upload_time": "2012-03-02T17:47:10",
+                "url": "https://files.pythonhosted.org/packages/ad/8a/2f2fbdbf1cc414a69c9ff116c5a939621e6945f0edac7c8fad8777f3b189/httplib2-0.7.3.zip"
+            }
+        ],
+        "0.7.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ef27e7b9225fd0941e3134ce8b46128",
+                    "sha256": "46ad7f0e529b3bfa2dfe618705706f76fe1085347de6cb8858d41a9b42666e27"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1ef27e7b9225fd0941e3134ce8b46128",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 106979,
+                "upload_time": "2012-03-02T21:12:35",
+                "url": "https://files.pythonhosted.org/packages/62/89/95df81f893da90744f0086d6841086953c41d25da4950e034dcfdf8cf334/httplib2-0.7.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37000b45eb3555c8b98faef0f400ddcf",
+                    "sha256": "80139deeef0d7ef0eba707f0469ee48bcf7d80aa3bc4514b0bb6f3c0c171bbfb"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.4.zip",
+                "has_sig": false,
+                "md5_digest": "37000b45eb3555c8b98faef0f400ddcf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 112783,
+                "upload_time": "2012-03-02T21:12:36",
+                "url": "https://files.pythonhosted.org/packages/82/67/815f1bdcac4787760e6a4d052467ceb65944d6a23f2b0f7502dee6b84508/httplib2-0.7.4.zip"
+            }
+        ],
+        "0.7.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6e4f2b01fdb6a7cc4da4043a4ff7ca08",
+                    "sha256": "9de296ac797f3103463a57fb251f5526bd7e66bdd059647d3b60073807f8ac7b"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6e4f2b01fdb6a7cc4da4043a4ff7ca08",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 108039,
+                "upload_time": "2012-08-28T17:10:40",
+                "url": "https://files.pythonhosted.org/packages/60/f1/c6f02beb9baadc7035e851ba381dd1d4331b4d8a337775f16ab36815ad5e/httplib2-0.7.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c5b12e40e7b962530535e22a6a6de07",
+                    "sha256": "82cf3725c2bdbcb20bf5e8c49234af825a0c4e9364bc72eb774df1945aaaf152"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.5.zip",
+                "has_sig": false,
+                "md5_digest": "3c5b12e40e7b962530535e22a6a6de07",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 113571,
+                "upload_time": "2012-08-28T17:10:42",
+                "url": "https://files.pythonhosted.org/packages/f6/d2/edbda80b0c50a0c9d306259ac1f54b12000057ed8cb2f5372309a7e758b0/httplib2-0.7.5.zip"
+            }
+        ],
+        "0.7.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f440fff00e0d2d3c2971693de283cdf",
+                    "sha256": "d10307bd369983b17a561ecbafee8afdc54ee3c785b9917e3e6489dd2de0f194"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f440fff00e0d2d3c2971693de283cdf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 106664,
+                "upload_time": "2012-09-11T17:22:05",
+                "url": "https://files.pythonhosted.org/packages/1d/b1/135a95f55963bec8fb9d0c9bc8ff658eef15419d8908df2ce2d230e6120f/httplib2-0.7.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a48e5e43ef3c75591046b4f4b7c15186",
+                    "sha256": "0e9f59a28d99639358f90c14f3e6aa62a9cc4aafebe8b208a6fdc2646a6de037"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.6.zip",
+                "has_sig": false,
+                "md5_digest": "a48e5e43ef3c75591046b4f4b7c15186",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 112032,
+                "upload_time": "2012-09-11T17:22:07",
+                "url": "https://files.pythonhosted.org/packages/c5/a3/eb31b7bc8b6b3edaa42f4d71c4734af98027835fd7503b1c469ac116119f/httplib2-0.7.6.zip"
+            }
+        ],
+        "0.7.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b4ac0b1f2af72043496bf6b9a4c1757f",
+                    "sha256": "7df36dae9af89aed32483cfd49c8b6032f3b3ef57141828e079aa616e4f952a2"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b4ac0b1f2af72043496bf6b9a4c1757f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 110391,
+                "upload_time": "2012-11-16T13:19:28",
+                "url": "https://files.pythonhosted.org/packages/80/09/e42bce51b2615202884098fb11d76671992374be62e037625182c7ea7f7b/httplib2-0.7.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "de94c069e284e6e75dcfbb6ba0e17b52",
+                    "sha256": "08d379fb8c46d3b3f61ec229c166910ec68db65edd836a6588ba5338538b4f8f"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.7.7.zip",
+                "has_sig": false,
+                "md5_digest": "de94c069e284e6e75dcfbb6ba0e17b52",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 116500,
+                "upload_time": "2012-11-16T13:19:29",
+                "url": "https://files.pythonhosted.org/packages/4d/60/98c33ac88b1f71be740d16c63d8d64b68ddc840c75ac884920ac46101f6b/httplib2-0.7.7.zip"
+            }
+        ],
+        "0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "94cb8a3b196dfd19253c46609489d9f1",
+                    "sha256": "cee59fdaa97a40ac505bb0629bdc8ba9ba79012d099ef11d6d3a284b7e369c9c"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "94cb8a3b196dfd19253c46609489d9f1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 110854,
+                "upload_time": "2013-03-06T20:45:32",
+                "url": "https://files.pythonhosted.org/packages/f0/cf/71451a11600b896b3e186361b73a971372cd2c124666798af8cd4ffa6ac8/httplib2-0.8.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c92df9674a18f2b6e20ff2c5b7ada579",
+                    "sha256": "d4271d56fa8f0c39d84711602217574f050c0281efbfaf1cfa8821f0d7f2a714"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.8.zip",
+                "has_sig": false,
+                "md5_digest": "c92df9674a18f2b6e20ff2c5b7ada579",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 116271,
+                "upload_time": "2013-03-06T20:45:36",
+                "url": "https://files.pythonhosted.org/packages/b0/c9/4e9ec1dbce7696d4b474cd7d9469a35bb5af43bac5cf9b0ad5bede36f910/httplib2-0.8.zip"
+            }
+        ],
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "09d8e8016911fc40e2e4c58f1aa3ec24",
+                    "sha256": "39ea8c6a6d9f595c177a16134fc49a990ad8d382758cbf469c8659662f2f51ab"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "09d8e8016911fc40e2e4c58f1aa3ec24",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 204584,
+                "upload_time": "2014-04-14T13:07:39",
+                "url": "https://files.pythonhosted.org/packages/d3/51/ac7e695ffd88de81d1655074a4727d30dbc13e95199628598816053000ca/httplib2-0.9.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bdad6a844e0cb890b681fe7c811cfea5",
+                    "sha256": "e227e67f676293025fbedca080c7114685e55857d6079d15f12704dfda03dd62"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.9.zip",
+                "has_sig": false,
+                "md5_digest": "bdad6a844e0cb890b681fe7c811cfea5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 209971,
+                "upload_time": "2014-04-14T13:07:41",
+                "url": "https://files.pythonhosted.org/packages/76/5b/223f8b6ad06e331d496aac9c1be0fe05441f450c1859674a15cbd5be5ca9/httplib2-0.9.zip"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c49590437e4c5729505d034cd34a8528",
+                    "sha256": "bc6339919a5235b9d1aaee011ca5464184098f0c47c9098001f91c97176583f5"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c49590437e4c5729505d034cd34a8528",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 205074,
+                "upload_time": "2015-04-11T13:56:59",
+                "url": "https://files.pythonhosted.org/packages/38/9c/cd76fde3a74d36a0317422dee019ae5f73ce27e62d817ca003e018d9f9d8/httplib2-0.9.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5db0cec10d9bf6bd6767820ac304a3ce",
+                    "sha256": "0e8950edd5826a7fc0211f77de49163c7ae11ca62e658aa5a1ba318f39f6d310"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.9.1.zip",
+                "has_sig": false,
+                "md5_digest": "5db0cec10d9bf6bd6767820ac304a3ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 210520,
+                "upload_time": "2015-04-11T13:57:03",
+                "url": "https://files.pythonhosted.org/packages/06/63/c68c69427aef33e861821d8b32d720421a388cd43723125148a3f33ab9f7/httplib2-0.9.1.zip"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bd1b1445b3b2dfa7276b09b1a07b7f0e",
+                    "sha256": "c3aba1c9539711551f4d83e857b316b5134a1c4ddce98a875b7027be7dd6d988"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bd1b1445b3b2dfa7276b09b1a07b7f0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 205165,
+                "upload_time": "2015-09-28T13:55:48",
+                "url": "https://files.pythonhosted.org/packages/ff/a9/5751cdf17a70ea89f6dde23ceb1705bfb638fd8cee00f845308bf8d26397/httplib2-0.9.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "404bac4a4e0d10b3ba498ce483c8c456",
+                    "sha256": "fe187f315336c3daa6616d09f327a6e6560b082fce59723f77336329fdcbfc36"
+                },
+                "downloads": -1,
+                "filename": "httplib2-0.9.2.zip",
+                "has_sig": false,
+                "md5_digest": "404bac4a4e0d10b3ba498ce483c8c456",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 210602,
+                "upload_time": "2015-09-28T13:55:53",
+                "url": "https://files.pythonhosted.org/packages/b1/e8/a49f534214a5c850faaad1678bea812991559d53bea49ecc7321f38a5757/httplib2-0.9.2.zip"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "9aa3e074da9a235cd675dd65e1fbcf39",
+                "sha256": "e71daed9a0e6373642db61166fa70beecc9bf04383477f84671348c02a04cbdf"
+            },
+            "downloads": -1,
+            "filename": "httplib2-0.11.3.tar.gz",
+            "has_sig": false,
+            "md5_digest": "9aa3e074da9a235cd675dd65e1fbcf39",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 215815,
+            "upload_time": "2018-03-30T02:29:15",
+            "url": "https://files.pythonhosted.org/packages/fd/ce/aa4a385e3e9fd351737fd2b07edaa56e7a730448465aceda6b35086a0d9b/httplib2-0.11.3.tar.gz"
+        }
+    ],
+    "package_name": "httplib2"
+}

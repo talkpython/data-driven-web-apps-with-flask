@@ -1,0 +1,804 @@
+{
+    "info": {
+        "author": "wbond",
+        "author_email": "will@wbond.net",
+        "bugtrack_url": "https://github.com/wbond/asn1crypto/issues",
+        "classifiers": [
+            "Development Status :: 4 - Beta",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Security :: Cryptography"
+        ],
+        "description": "Docs for this project are maintained at https://github.com/wbond/asn1crypto#readme.\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/wbond/asn1crypto",
+        "keywords": "asn1 crypto pki x509 certificate rsa dsa ec dh",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "asn1crypto",
+        "package_url": "https://pypi.org/project/asn1crypto/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/asn1crypto/",
+        "release_url": "https://pypi.org/project/asn1crypto/0.24.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Fast ASN.1 parser and serializer with definitions for private keys, public keys, certificates, CRL, OCSP, CMS, PKCS#3, PKCS#7, PKCS#8, PKCS#12, PKCS#5, X.509 and TSP",
+        "version": "0.24.0"
+    },
+    "last_serial": 3417909,
+    "releases": {
+        "0.11.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d3c24181d33a355e389b6fbece7e24cf",
+                    "sha256": "fddb71521c2c4c7fa11dad0a9a398a8d6f34f2a0bd4a3bbfc9abfc96ec8c91c4"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.11.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d3c24181d33a355e389b6fbece7e24cf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68348,
+                "upload_time": "2015-10-20T05:12:05",
+                "url": "https://files.pythonhosted.org/packages/97/a4/bf830df887ea2312d3114ea6f01c8ff0af3fe4d6fd088402bd99b5515746/asn1crypto-0.11.1.tar.gz"
+            }
+        ],
+        "0.12.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "de768fe9783667b36787d05771dcc5c2",
+                    "sha256": "10976025932936233d448bc71de10f670864a48ef4deae5cd7bfcd41b0cc1941"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.12.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "de768fe9783667b36787d05771dcc5c2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68848,
+                "upload_time": "2015-10-26T03:24:05",
+                "url": "https://files.pythonhosted.org/packages/91/27/dcdafa09fc748b016ddb8ce4dc84fb36411f7475aff6a37165b0bf8395dc/asn1crypto-0.12.0.tar.gz"
+            }
+        ],
+        "0.12.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1056168b2d96b55ca3f8814212cdba34",
+                    "sha256": "b4f9df92fed2d541b2cee65f8bcd3cfdf10526b9eb28a8bf63cb0951191461c9"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.12.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1056168b2d96b55ca3f8814212cdba34",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68876,
+                "upload_time": "2015-10-26T14:28:37",
+                "url": "https://files.pythonhosted.org/packages/c4/99/608d3b635fa7b3e33e74d42c5b44be40cdd0c57fe6aadc55157e3ef8f6dd/asn1crypto-0.12.1.tar.gz"
+            }
+        ],
+        "0.12.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4903a8e263ce3e325a35b70e3f4004ef",
+                    "sha256": "ea2a3e695e7f0f8579be6a539da2cd0e7b69e39669904750873c28534a223778"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.12.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4903a8e263ce3e325a35b70e3f4004ef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68906,
+                "upload_time": "2015-10-27T04:03:58",
+                "url": "https://files.pythonhosted.org/packages/55/52/9cf5c0d1a8be5316ec86bf5d088e5204bc73293cc828afaba4a7cf2fde2c/asn1crypto-0.12.2.tar.gz"
+            }
+        ],
+        "0.13.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "971e0fed879aac892839f74a76df4101",
+                    "sha256": "300193f42a6608036a1904edf95c59aa40b2a6b3aba070b91b654f5df05dc58c"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.13.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "971e0fed879aac892839f74a76df4101",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69514,
+                "upload_time": "2015-11-10T16:30:41",
+                "url": "https://files.pythonhosted.org/packages/3d/9f/21f96992cfbf637eab930676a48228ef385a78351d1deae04f4a6af1510e/asn1crypto-0.13.0.tar.gz"
+            }
+        ],
+        "0.14.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "71146179572885996d2d8d482ce4718c",
+                    "sha256": "54fd7c46698571f3054feddb9e3e0d6c9ab4e070b9b43ead266e44ae9222b263"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.14.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "71146179572885996d2d8d482ce4718c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69604,
+                "upload_time": "2015-11-17T19:58:03",
+                "url": "https://files.pythonhosted.org/packages/e0/67/e8d7271be1897ecb572b280a9eb62d97fb481a9a5176f53a2e42a93af778/asn1crypto-0.14.0.tar.gz"
+            }
+        ],
+        "0.14.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1dd53564f0b27a2c0336cd5fbcb2d13",
+                    "sha256": "37bc3b7be21666f635748673d323cfc3bcb719f6db92dbe32dcc0edf69da45cf"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.14.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a1dd53564f0b27a2c0336cd5fbcb2d13",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69619,
+                "upload_time": "2015-11-18T07:47:31",
+                "url": "https://files.pythonhosted.org/packages/a3/84/73496d1baf5d47c6a9a11b014047f03e65c6ab9277f448d59325ca75dfa2/asn1crypto-0.14.1.tar.gz"
+            }
+        ],
+        "0.15.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "41756574fec285658db2e7239c97691b",
+                    "sha256": "45a4a6c5fdb661026a48f75b38d49f5b90bd42b8c3d57fc60fc2bbe489177726"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.15.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "41756574fec285658db2e7239c97691b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70253,
+                "upload_time": "2015-12-01T19:06:44",
+                "url": "https://files.pythonhosted.org/packages/70/44/e20088d3f6260f404f68763d01aa3de4233f3d16b2a28b1632c482c5e958/asn1crypto-0.15.0.tar.gz"
+            }
+        ],
+        "0.15.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7eec15cc63d47bf57fb8f3273ddd9fd0",
+                    "sha256": "3c0b718b1bef2fec2eb8a63a74eb6549e53527f99b6f77a2ec1525f6371d1051"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.15.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7eec15cc63d47bf57fb8f3273ddd9fd0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 84972,
+                "upload_time": "2015-12-18T04:37:52",
+                "url": "https://files.pythonhosted.org/packages/9d/a6/c2b9517177e97a9f697d8a81ed1756ad4cfb7298eac3b957070918b5c5f6/asn1crypto-0.15.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a2e090400c59011bc93a5c67f0734cb9",
+                    "sha256": "5f38a38ea11921672dc2f16553f2a23d1f39e34d097e56403d8dcedcde29cdb6"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.15.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a2e090400c59011bc93a5c67f0734cb9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70767,
+                "upload_time": "2015-12-17T16:25:47",
+                "url": "https://files.pythonhosted.org/packages/02/89/2570935a5e7fa50678c7c1c9a4105418a47db099f75790e75c9e8c1b20f2/asn1crypto-0.15.1.tar.gz"
+            }
+        ],
+        "0.16.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "29dedb18c2211a0617cf9f06489c29aa",
+                    "sha256": "6a1efb71186287517a78b3e0bde2a9d4d118ab3b6415a1770c29da0c6ff262f9"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.16.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "29dedb18c2211a0617cf9f06489c29aa",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 85157,
+                "upload_time": "2016-03-17T15:53:33",
+                "url": "https://files.pythonhosted.org/packages/9a/82/2b2098f423249ef191d738e2ac065bef09286e28ddc206c494a707d14f72/asn1crypto-0.16.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b23577066881bc5969283ac4c38bda3b",
+                    "sha256": "4a0d90aa7347150eb323a4750bffae36e84826f949d51d673148e0414d09e1af"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.16.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b23577066881bc5969283ac4c38bda3b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70917,
+                "upload_time": "2016-03-17T15:53:38",
+                "url": "https://files.pythonhosted.org/packages/24/44/1076623fd2e0cc0bb458c747bbaaf0ae48a75324cae6d9f781f01ecb6261/asn1crypto-0.16.0.tar.gz"
+            }
+        ],
+        "0.17.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c206e6feb90529afd43ded3ac28e38d7",
+                    "sha256": "54441b06747efbae0d329517a036f21f2898fc3d62d1c63a6f1ecb10768beb0d"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.17.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c206e6feb90529afd43ded3ac28e38d7",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87112,
+                "upload_time": "2016-03-18T18:25:00",
+                "url": "https://files.pythonhosted.org/packages/d9/04/8a63bb52b66ac2eee3347e464cf637d3e6b898b730220c32595108d3fd37/asn1crypto-0.17.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e67ac5365b77eb4dd7eb048f2a65b976",
+                    "sha256": "3d1e03fe6ca55d34f68002f18ae626872a400c1eee5bd3c5e25f5d7c94b30a5b"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.17.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e67ac5365b77eb4dd7eb048f2a65b976",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 72810,
+                "upload_time": "2016-03-18T18:25:08",
+                "url": "https://files.pythonhosted.org/packages/dd/a8/fa8f2cf925e0124dd448501c690f2cd727c1eb5a5a24b0a65e16510a981e/asn1crypto-0.17.0.tar.gz"
+            }
+        ],
+        "0.17.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b3196c9216ab52bf645b8581a53835ce",
+                    "sha256": "9ef848137a7aaea4559555102a0bc5dd6a9290ea5a4ce94ff23ae91c5eddda5a"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.17.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b3196c9216ab52bf645b8581a53835ce",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87129,
+                "upload_time": "2016-03-29T13:33:44",
+                "url": "https://files.pythonhosted.org/packages/8e/8b/48188ce167191adf80cb0f283c1257a11acf255a9756dfe916f01bfd48b7/asn1crypto-0.17.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "efe2045044988f060fb309e68dab42a4",
+                    "sha256": "3156c2ab34b5d023f387fd55e023f3e93a6a310563938fd4831210cfa45cb64e"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.17.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "efe2045044988f060fb309e68dab42a4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 72823,
+                "upload_time": "2016-03-29T13:34:57",
+                "url": "https://files.pythonhosted.org/packages/b7/84/3492ded92f14b46f5e83ed3adfe4a9a7df3aab04d3464cac25e04567b7df/asn1crypto-0.17.1.tar.gz"
+            }
+        ],
+        "0.18.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e32fe7f6d4616f5bdcc2070267d3c56c",
+                    "sha256": "0070d540a1402f792237298e00870bb0c117e60311ed86add0ae6ff1d4380831"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e32fe7f6d4616f5bdcc2070267d3c56c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87859,
+                "upload_time": "2016-06-24T19:03:36",
+                "url": "https://files.pythonhosted.org/packages/de/81/dc3f06d87ecc1724b700633d25483967aff9442ff35c147b71202991057d/asn1crypto-0.18.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "272d5728ea4724e5fd6522f9a665d4ea",
+                    "sha256": "46cfd349bfcd4ac55f1fbb042f200d23e73b7a5042b1dbb7710e240a931fbd23"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "272d5728ea4724e5fd6522f9a665d4ea",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 74504,
+                "upload_time": "2016-06-24T19:03:55",
+                "url": "https://files.pythonhosted.org/packages/3e/6c/fd067388d465cdfd268b0d02231cb3ee8c21f29d1c2661c5c7d64492cbd6/asn1crypto-0.18.0.tar.gz"
+            }
+        ],
+        "0.18.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "974cfbff9cd1fda77ae3267501200c42",
+                    "sha256": "2b86e9274f548af6067b5363120d839a9645cfa448c7103471593e3f1c9ec904"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "974cfbff9cd1fda77ae3267501200c42",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 88706,
+                "upload_time": "2016-07-26T21:48:56",
+                "url": "https://files.pythonhosted.org/packages/df/e2/77f8417fcaa58462d64abd93a68fb0da6ead5c445d3ff0ca26de9f69b8f8/asn1crypto-0.18.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "025ff87f65362ad78a6aa47c3188542f",
+                    "sha256": "aca0afb76998a45a5d2a5029e510b069e924584c24a8a5e487e4e7ca38424a3d"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "025ff87f65362ad78a6aa47c3188542f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 75850,
+                "upload_time": "2016-07-26T21:48:59",
+                "url": "https://files.pythonhosted.org/packages/c8/97/e7aa601433e22c3c3187eb42d1d0108c27f4e0282c059a822667a09b38eb/asn1crypto-0.18.1.tar.gz"
+            }
+        ],
+        "0.18.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b80b5f728c4115f39ee29c871b31e15d",
+                    "sha256": "32379f0dea633fcd19fbaa4a396d49f65477641cc5348159fd9932b7006bfa94"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b80b5f728c4115f39ee29c871b31e15d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 88712,
+                "upload_time": "2016-07-29T18:01:16",
+                "url": "https://files.pythonhosted.org/packages/da/ea/880ab45d5590a2fb19adcb48cbd99876b267d48c3fcc5e38d5b71287f56f/asn1crypto-0.18.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cf08c4354a3595b2146263990a4b4058",
+                    "sha256": "8eadfb669fea5b4af137bac5eeb767edea3b44f1af7944265188cbc6d6ae0e99"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cf08c4354a3595b2146263990a4b4058",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 75867,
+                "upload_time": "2016-07-29T18:01:19",
+                "url": "https://files.pythonhosted.org/packages/cb/82/53a132b3edd4e484cb09cbaf0dd98fed153b1e3fa72b0debbbc680233424/asn1crypto-0.18.2.tar.gz"
+            }
+        ],
+        "0.18.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ecad7235c2cabf3cd4ecd67ceb4e703d",
+                    "sha256": "dc741efe64da393c5886ece6d6e45f64730683af41ea428e33a0fd233b971ddc"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ecad7235c2cabf3cd4ecd67ceb4e703d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 88942,
+                "upload_time": "2016-08-05T15:47:29",
+                "url": "https://files.pythonhosted.org/packages/4a/2f/e39e097d80cac8b36eb5e97940de6e15345804583396c37e560f3500e072/asn1crypto-0.18.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c5ef60b25d480c2b3d1f59766e81ccd5",
+                    "sha256": "9e27c3d3c3ac7e79325535f10507652a49c9f656da901bb36364caf3db8575c1"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c5ef60b25d480c2b3d1f59766e81ccd5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76086,
+                "upload_time": "2016-08-05T15:47:32",
+                "url": "https://files.pythonhosted.org/packages/ec/62/4d07bc0d27de12a97ad4c3372035f0aaff2d70f8477575ac658a832cb691/asn1crypto-0.18.3.tar.gz"
+            }
+        ],
+        "0.18.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2ddcc5ce875a447eded8c4571689e7f",
+                    "sha256": "a74daeadbd57b9946d97f9140eab53b26b6367336d8cd6b3fdd56298e6aacdae"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d2ddcc5ce875a447eded8c4571689e7f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 89322,
+                "upload_time": "2016-09-13T19:20:00",
+                "url": "https://files.pythonhosted.org/packages/28/a8/5698acdec5b50c70ca201e1bd10f89c93e4386c9c58016b27d52a770b316/asn1crypto-0.18.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "48b87cd8d95e4a262b0cb1aeffe580b1",
+                    "sha256": "3af29704fe200c88fd15327322e867c97ae9192166371c0b212824aab4b9f43d"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "48b87cd8d95e4a262b0cb1aeffe580b1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76437,
+                "upload_time": "2016-09-13T19:20:03",
+                "url": "https://files.pythonhosted.org/packages/ab/e9/402f36a2568b3b87fe2e542fcba8b8e80e7b9836eb1dbcf7c1351043a7fd/asn1crypto-0.18.4.tar.gz"
+            }
+        ],
+        "0.18.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b7cb472224d9a96e357ec87f3470d527",
+                    "sha256": "6d936bb943144dec7017d8e526a6e454a450e704f7ec2f8f85e6c7c737063de0"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b7cb472224d9a96e357ec87f3470d527",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 89373,
+                "upload_time": "2016-09-13T20:46:12",
+                "url": "https://files.pythonhosted.org/packages/c3/ec/25cbca44b1ece17c1ebec4fc4760ead8030527ea50dd72051b8839eb843e/asn1crypto-0.18.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab2197cfaed3b7934f6d1c8ba6182535",
+                    "sha256": "0006e8ec1fdd000dff460f4fad57b362174f6e4cf9ca764be9a776de936b5f94"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.18.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ab2197cfaed3b7934f6d1c8ba6182535",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76470,
+                "upload_time": "2016-09-13T20:46:15",
+                "url": "https://files.pythonhosted.org/packages/29/88/55e3979a4ff30990dbbb3a9e405dccc938f60281b6dc86be2fdb690b8b17/asn1crypto-0.18.5.tar.gz"
+            }
+        ],
+        "0.19.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "497972b561f7eceff111a9abb753445d",
+                    "sha256": "af0481e0b596ef6d8c2b10bb0c3928339e65e4ebea3b7ec786ef70576e921621"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.19.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "497972b561f7eceff111a9abb753445d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 90042,
+                "upload_time": "2016-11-23T16:19:55",
+                "url": "https://files.pythonhosted.org/packages/6a/80/bb4f6a401a78a72a1613a3e3d5f2b61ef8f5d375b950acf871b6f6e24ab3/asn1crypto-0.19.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9daf3acf447d8bb2e9fb10270456ebed",
+                    "sha256": "1aa36c579a27b503ebf90a0342eacedd66ecd6c5b94cc0a37598b6f04787b207"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.19.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9daf3acf447d8bb2e9fb10270456ebed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 77401,
+                "upload_time": "2016-11-23T16:19:58",
+                "url": "https://files.pythonhosted.org/packages/c6/7c/89fc5d1f0390ee63f9d3ea1974d44039d0018b9af4d0e4069566748bea0b/asn1crypto-0.19.0.tar.gz"
+            }
+        ],
+        "0.20.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e89f441ed5b4f39db01b9c3f5ae99fe8",
+                    "sha256": "3a8abbb7935e92ab549431fb94c1a0ee87f02ae582a8ab88f97235b1f70f830c"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.20.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e89f441ed5b4f39db01b9c3f5ae99fe8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 92891,
+                "upload_time": "2017-01-17T14:40:17",
+                "url": "https://files.pythonhosted.org/packages/7b/df/6809c40b9f1fa091f3cddccdd5dfaf3c7acf0bfa06f36808fc6d7cb873c9/asn1crypto-0.20.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "513f0309005f14fe06b0d1f5633b77c6",
+                    "sha256": "492cc879d124919d9cc53f93d20f1f872d86d05fb165504666da5faad38d3a36"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.20.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "513f0309005f14fe06b0d1f5633b77c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 80205,
+                "upload_time": "2017-01-17T14:40:20",
+                "url": "https://files.pythonhosted.org/packages/41/bf/cb11d5ed78ac83fc84ac0b51f2bc5eb8bd10b29542e5aa803f1a4338da1d/asn1crypto-0.20.0.tar.gz"
+            }
+        ],
+        "0.21.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3043d377a84b02fd6f5898b28bdc9ad8",
+                    "sha256": "975069ce7341c60f570f74ee57c3152eeedb72d98eed7d40082f0ae120e1a96b"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.21.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3043d377a84b02fd6f5898b28bdc9ad8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 95855,
+                "upload_time": "2017-02-01T16:43:14",
+                "url": "https://files.pythonhosted.org/packages/4b/1b/6c6e8e75f53d5353fd6c4029a5a2c928ee0ba7bbed93206f5b73174d9e10/asn1crypto-0.21.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "07854c549e2f883fc438b60b232e9d28",
+                    "sha256": "0398fd42bce2de1a97131abfa705799b11c1ca565ad4c68e0926a56ef07efd65"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.21.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "07854c549e2f883fc438b60b232e9d28",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82493,
+                "upload_time": "2017-02-01T16:43:17",
+                "url": "https://files.pythonhosted.org/packages/15/9d/fa72c0d15cd92ab4e9029e44559521cf2d9e196d2309159c8ba52927b9d8/asn1crypto-0.21.0.tar.gz"
+            }
+        ],
+        "0.21.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "780f6552dfc85dcdbace2c0e90fe2e4f",
+                    "sha256": "32a2989fc0904e5072abe14bfc87d7ff1afd7317f467bee5d5c424915700f580"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.21.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "780f6552dfc85dcdbace2c0e90fe2e4f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 96043,
+                "upload_time": "2017-02-20T17:25:14",
+                "url": "https://files.pythonhosted.org/packages/a6/0a/9f58fe498c1d7f924387bce7c0d19abaace5203c085a6d995ae7c873e18b/asn1crypto-0.21.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d8e311a39136229c53f4ed83dcfaf624",
+                    "sha256": "4e6d7b22814d680114a439faafeccb9402a78095fb23bf0b25f9404c6938a017"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.21.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d8e311a39136229c53f4ed83dcfaf624",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82670,
+                "upload_time": "2017-02-20T17:25:16",
+                "url": "https://files.pythonhosted.org/packages/ce/39/17e90c2efacc4060915f7d1f9b8d2a5b20e54e46233bdf3092e68193407d/asn1crypto-0.21.1.tar.gz"
+            }
+        ],
+        "0.22.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f8356d63fb715160b00fe764f6790ea",
+                    "sha256": "d232509fefcfcdb9a331f37e9c9dc20441019ad927c7d2176cf18ed5da0ba097"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.22.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5f8356d63fb715160b00fe764f6790ea",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 97896,
+                "upload_time": "2017-03-15T13:32:54",
+                "url": "https://files.pythonhosted.org/packages/97/ba/7e8117d8efcee589f4d96dd2b2eb1d997f96d27d214cf2b7134ad8acf6ab/asn1crypto-0.22.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74a8b9402625b38ef19cf3fa69ef8470",
+                    "sha256": "cbbadd640d3165ab24b06ef25d1dca09a3441611ac15f6a6b452474fdf0aed1a"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.22.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "74a8b9402625b38ef19cf3fa69ef8470",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 84508,
+                "upload_time": "2017-03-15T13:32:56",
+                "url": "https://files.pythonhosted.org/packages/67/14/5d66588868c4304f804ebaff9397255f6ec5559e46724c2496e0f26e68d6/asn1crypto-0.22.0.tar.gz"
+            }
+        ],
+        "0.23.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7be9a80b2eff7cf4159fda71ba13c355",
+                    "sha256": "654b7db3b120e23474e9a1e5e38d268c77e58a9e17d2cb595456c37309846494"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.23.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7be9a80b2eff7cf4159fda71ba13c355",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 99380,
+                "upload_time": "2017-09-22T20:36:39",
+                "url": "https://files.pythonhosted.org/packages/5e/85/d9b46c307ff2b5504432425cd99e2d9f13ab7a9835ba45c93da299cb1ec8/asn1crypto-0.23.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "97d54665c397b72b165768398dfdd876",
+                    "sha256": "0874981329cfebb366d6584c3d16e913f2a0eb026c9463efcc4aaf42a9d94d70"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.23.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "97d54665c397b72b165768398dfdd876",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 102654,
+                "upload_time": "2017-09-22T20:36:42",
+                "url": "https://files.pythonhosted.org/packages/31/53/8bca924b30cb79d6d70dbab6a99e8731d1e4dd3b090b7f3d8412a8d8ffbc/asn1crypto-0.23.0.tar.gz"
+            }
+        ],
+        "0.24.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1060a0dfb21580c901c5092dddbc76d7",
+                    "sha256": "2f1adbb7546ed199e3c90ef23ec95c5cf3585bac7d11fb7eb562a3fe89c64e87"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.24.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1060a0dfb21580c901c5092dddbc76d7",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 101571,
+                "upload_time": "2017-12-14T21:04:15",
+                "url": "https://files.pythonhosted.org/packages/ea/cd/35485615f45f30a510576f1a56d1e0a7ad7bd8ab5ed7cdc600ef7cd06222/asn1crypto-0.24.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "de3520426e81a6581352d4366f310eb1",
+                    "sha256": "9d5c20441baf0cb60a4ac34cc447c6c189024b6b4c6cd7877034f4965c464e49"
+                },
+                "downloads": -1,
+                "filename": "asn1crypto-0.24.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "de3520426e81a6581352d4366f310eb1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 104964,
+                "upload_time": "2017-12-14T21:04:21",
+                "url": "https://files.pythonhosted.org/packages/fc/f1/8db7daa71f414ddabfa056c4ef792e1461ff655c2ae2928a2b675bfed6b4/asn1crypto-0.24.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "1060a0dfb21580c901c5092dddbc76d7",
+                "sha256": "2f1adbb7546ed199e3c90ef23ec95c5cf3585bac7d11fb7eb562a3fe89c64e87"
+            },
+            "downloads": -1,
+            "filename": "asn1crypto-0.24.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "1060a0dfb21580c901c5092dddbc76d7",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 101571,
+            "upload_time": "2017-12-14T21:04:15",
+            "url": "https://files.pythonhosted.org/packages/ea/cd/35485615f45f30a510576f1a56d1e0a7ad7bd8ab5ed7cdc600ef7cd06222/asn1crypto-0.24.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "de3520426e81a6581352d4366f310eb1",
+                "sha256": "9d5c20441baf0cb60a4ac34cc447c6c189024b6b4c6cd7877034f4965c464e49"
+            },
+            "downloads": -1,
+            "filename": "asn1crypto-0.24.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "de3520426e81a6581352d4366f310eb1",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 104964,
+            "upload_time": "2017-12-14T21:04:21",
+            "url": "https://files.pythonhosted.org/packages/fc/f1/8db7daa71f414ddabfa056c4ef792e1461ff655c2ae2928a2b675bfed6b4/asn1crypto-0.24.0.tar.gz"
+        }
+    ],
+    "package_name": "asn1crypto"
+}

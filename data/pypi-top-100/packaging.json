@@ -1,0 +1,798 @@
+{
+    "info": {
+        "author": "Donald Stufft and individual contributors",
+        "author_email": "donald@stufft.io",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Apache Software License",
+            "License :: OSI Approved :: BSD License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6"
+        ],
+        "description": "packaging\n=========\n\nCore utilities for Python packages\n\n\nDocumentation\n-------------\n\n`documentation`_\n\n\nDiscussion\n----------\n\nIf you run into bugs, you can file them in our `issue tracker`_.\n\nYou can also join ``#pypa`` on Freenode to ask questions or get involved.\n\n\n.. _`documentation`: https://packaging.pypa.io/\n.. _`issue tracker`: https://github.com/pypa/packaging/issues\n\n\nCode of Conduct\n---------------\n\nEveryone interacting in the packaging project's codebases, issue trackers, chat\nrooms, and mailing lists is expected to follow the `PyPA Code of Conduct`_.\n\n.. _PyPA Code of Conduct: https://www.pypa.io/en/latest/code-of-conduct/\n\nChangelog\n---------\n\n17.1 - 2017-02-28\n~~~~~~~~~~~~~~~~~\n\n* Fix ``utils.canonicalize_version`` when supplying non PEP 440 versions.\n\n\n17.0 - 2017-02-28\n~~~~~~~~~~~~~~~~~\n\n* Drop support for python 2.6, 3.2, and 3.3.\n\n* Define minimal pyparsing version to 2.0.2 (`#91 <https://github.com/pypa/packaging/issues/91>`__).\n\n* Add ``epoch``, ``release``, ``pre``, ``dev``, and ``post`` attributes to\n  ``Version`` and ``LegacyVersion`` (`#34 <https://github.com/pypa/packaging/issues/34>`__).\n\n* Add ``Version().is_devrelease`` and ``LegacyVersion().is_devrelease`` to\n  make it easy to determine if a release is a development release.\n\n* Add ``utils.canonicalize_version`` to canonicalize version strings or\n  ``Version`` instances (`#121 <https://github.com/pypa/packaging/issues/121>`__).\n\n\n16.8 - 2016-10-29\n~~~~~~~~~~~~~~~~~\n\n* Fix markers that utilize ``in`` so that they render correctly.\n\n* Fix an erroneous test on Python RC releases.\n\n\n16.7 - 2016-04-23\n~~~~~~~~~~~~~~~~~\n\n* Add support for the deprecated ``python_implementation`` marker which was\n  an undocumented setuptools marker in addition to the newer markers.\n\n\n16.6 - 2016-03-29\n~~~~~~~~~~~~~~~~~\n\n* Add support for the deprecated, PEP 345 environment markers in addition to\n  the newer markers.\n\n\n16.5 - 2016-02-26\n~~~~~~~~~~~~~~~~~\n\n* Fix a regression in parsing requirements with whitespaces between the comma\n  separators.\n\n\n16.4 - 2016-02-22\n~~~~~~~~~~~~~~~~~\n\n* Fix a regression in parsing requirements like ``foo (==4)``.\n\n\n16.3 - 2016-02-21\n~~~~~~~~~~~~~~~~~\n\n* Fix a bug where ``packaging.requirements:Requirement`` was overly strict when\n  matching legacy requirements.\n\n\n16.2 - 2016-02-09\n~~~~~~~~~~~~~~~~~\n\n* Add a function that implements the name canonicalization from PEP 503.\n\n\n16.1 - 2016-02-07\n~~~~~~~~~~~~~~~~~\n\n* Implement requirement specifiers from PEP 508.\n\n\n16.0 - 2016-01-19\n~~~~~~~~~~~~~~~~~\n\n* Relicense so that packaging is available under *either* the Apache License,\n  Version 2.0 or a 2 Clause BSD license.\n\n* Support installation of packaging when only distutils is available.\n\n* Fix ``==`` comparison when there is a prefix and a local version in play.\n  (`#41 <https://github.com/pypa/packaging/issues/41>`__).\n\n* Implement environment markers from PEP 508.\n\n\n15.3 - 2015-08-01\n~~~~~~~~~~~~~~~~~\n\n* Normalize post-release spellings for rev/r prefixes. `#35 <https://github.com/pypa/packaging/issues/35>`__\n\n\n15.2 - 2015-05-13\n~~~~~~~~~~~~~~~~~\n\n* Fix an error where the arbitary specifier (``===``) was not correctly\n  allowing pre-releases when it was being used.\n\n* Expose the specifier and version parts through properties on the\n  ``Specifier`` classes.\n\n* Allow iterating over the ``SpecifierSet`` to get access to all of the\n  ``Specifier`` instances.\n\n* Allow testing if a version is contained within a specifier via the ``in``\n  operator.\n\n\n15.1 - 2015-04-13\n~~~~~~~~~~~~~~~~~\n\n* Fix a logic error that was causing inconsistent answers about whether or not\n  a pre-release was contained within a ``SpecifierSet`` or not.\n\n\n15.0 - 2015-01-02\n~~~~~~~~~~~~~~~~~\n\n* Add ``Version().is_postrelease`` and ``LegacyVersion().is_postrelease`` to\n  make it easy to determine if a release is a post release.\n\n* Add ``Version().base_version`` and ``LegacyVersion().base_version`` to make\n  it easy to get the public version without any pre or post release markers.\n\n* Support the update to PEP 440 which removed the implied ``!=V.*`` when using\n  either ``>V`` or ``<V`` and which instead special cased the handling of\n  pre-releases, post-releases, and local versions when using ``>V`` or ``<V``.\n\n\n14.5 - 2014-12-17\n~~~~~~~~~~~~~~~~~\n\n* Normalize release candidates as ``rc`` instead of ``c``.\n\n* Expose the ``VERSION_PATTERN`` constant, a regular expression matching\n  a valid version.\n\n\n14.4 - 2014-12-15\n~~~~~~~~~~~~~~~~~\n\n* Ensure that versions are normalized before comparison when used in a\n  specifier with a less than (``<``) or greater than (``>``) operator.\n\n\n14.3 - 2014-11-19\n~~~~~~~~~~~~~~~~~\n\n* **BACKWARDS INCOMPATIBLE** Refactor specifier support so that it can sanely\n  handle legacy specifiers as well as PEP 440 specifiers.\n\n* **BACKWARDS INCOMPATIBLE** Move the specifier support out of\n  ``packaging.version`` into ``packaging.specifiers``.\n\n\n14.2 - 2014-09-10\n~~~~~~~~~~~~~~~~~\n\n* Add prerelease support to ``Specifier``.\n* Remove the ability to do ``item in Specifier()`` and replace it with\n  ``Specifier().contains(item)`` in order to allow flags that signal if a\n  prerelease should be accepted or not.\n* Add a method ``Specifier().filter()`` which will take an iterable and returns\n  an iterable with items that do not match the specifier filtered out.\n\n\n14.1 - 2014-09-08\n~~~~~~~~~~~~~~~~~\n\n* Allow ``LegacyVersion`` and ``Version`` to be sorted together.\n* Add ``packaging.version.parse()`` to enable easily parsing a version string\n  as either a ``Version`` or a ``LegacyVersion`` depending on it's PEP 440\n  validity.\n\n\n14.0 - 2014-09-05\n~~~~~~~~~~~~~~~~~\n\n* Initial release.\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/pypa/packaging",
+        "keywords": "",
+        "license": "BSD or Apache License, Version 2.0",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "packaging",
+        "package_url": "https://pypi.org/project/packaging/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/packaging/",
+        "release_url": "https://pypi.org/project/packaging/17.1/",
+        "requires_dist": [
+            "pyparsing (>=2.0.2)",
+            "six"
+        ],
+        "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+        "summary": "Core utilities for Python packages",
+        "version": "17.1"
+    },
+    "last_serial": 3626080,
+    "releases": {
+        "14.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "daaffe52ff0524202af82eefd4e1f1de",
+                    "sha256": "2d9bdc7bb9d23a57e14d38b444602b6b89192388f94b61d63a2f022f6bbfbd62"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "daaffe52ff0524202af82eefd4e1f1de",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 10948,
+                "upload_time": "2014-09-05T00:26:05",
+                "url": "https://files.pythonhosted.org/packages/bc/4f/9f94808ebac790cc3edba502cb9a1cc29a3f8262f7e2961aed2a159692b5/packaging-14.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "59d11152eab4b47447ec5591b16a6e1f",
+                    "sha256": "89f36ecd68941f59e1447796b6068d403151a0338804bd2ed65313517fde1ea2"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "59d11152eab4b47447ec5591b16a6e1f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25240,
+                "upload_time": "2014-09-05T00:26:06",
+                "url": "https://files.pythonhosted.org/packages/db/ef/25e0ab6aebdd1c8898cac97c395b0ccc792a19ae9dd05ad8c66c4347ef50/packaging-14.0.tar.gz"
+            }
+        ],
+        "14.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d5cc6c61c9c0b26142dca4e8dc8ecce",
+                    "sha256": "fbd35fe6b9b17e908b2fcfc58f7af2860edde458533fc893ae62a427be5eede5"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4d5cc6c61c9c0b26142dca4e8dc8ecce",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 11906,
+                "upload_time": "2014-09-09T00:53:30",
+                "url": "https://files.pythonhosted.org/packages/e1/0d/bc6e387b7726a5a4a54f9fb503512a86d2456440bb7bd2455d29b374f6e2/packaging-14.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "454b48b5948bb997172a33a19d3c0a2f",
+                    "sha256": "74b388a679d59a37802a1553bbf561fc8359487f074b0c57eb334e53f1ca7982"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "454b48b5948bb997172a33a19d3c0a2f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26311,
+                "upload_time": "2014-09-09T00:53:33",
+                "url": "https://files.pythonhosted.org/packages/66/46/3d89d71421c24cfd74c17fff0fda2efb04bc698690d153048713c254d933/packaging-14.1.tar.gz"
+            }
+        ],
+        "14.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f8a23c57e45f67638caf232e5ea6bf4",
+                    "sha256": "98eff1b46b488bceffb4bd04002cf8db7b76c719665ebf2e9866a8125a2b5eb3"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2f8a23c57e45f67638caf232e5ea6bf4",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 13057,
+                "upload_time": "2014-09-10T17:37:44",
+                "url": "https://files.pythonhosted.org/packages/a5/e0/2f27d770c3403d7dc4cf43bf13ec2b25ee8b7cd554247d5bc0f5c3f1d25e/packaging-14.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a814fac82b58e38cfc17f278e02a2eb8",
+                    "sha256": "236efc871728034662f265aa8c590f3cc3aa8cb2f86112402ff012dbb27622f8"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a814fac82b58e38cfc17f278e02a2eb8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28453,
+                "upload_time": "2014-09-10T17:37:46",
+                "url": "https://files.pythonhosted.org/packages/17/8c/e00b08be0068f052982ccbab24dd687a447ac21039c522e1e8522556d855/packaging-14.2.tar.gz"
+            }
+        ],
+        "14.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a8333d76ccdd40b75e45f167f162129c",
+                    "sha256": "12268cfe4c3cabd21cf6da7db5d1c2fbb1dad41a94554296821f2cf4eed39418"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a8333d76ccdd40b75e45f167f162129c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 16344,
+                "upload_time": "2014-11-20T02:45:21",
+                "url": "https://files.pythonhosted.org/packages/df/77/12ebad6ff79087e717e970461e5370c612cee44fa742cedc383300f62826/packaging-14.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6d690f1cccad8d3ea5b4ed7436559a8",
+                    "sha256": "4f0bf96d626042d964ead1572f8a89603416d5a5c8284a7968dd1de26ba9a13b"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6d690f1cccad8d3ea5b4ed7436559a8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31116,
+                "upload_time": "2014-11-20T02:45:24",
+                "url": "https://files.pythonhosted.org/packages/dc/ff/10c76c0bd03cccbdf87cedf0204ee2027b4261c559e4d30099230a098e13/packaging-14.3.tar.gz"
+            }
+        ],
+        "14.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e556dc0cd4197488b9a57459632c261c",
+                    "sha256": "8b03794ad47f2cc841a12c7bc4650b4cff01eebcb48d78e895fa89847bf6a479"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e556dc0cd4197488b9a57459632c261c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 16536,
+                "upload_time": "2014-12-15T20:30:44",
+                "url": "https://files.pythonhosted.org/packages/46/10/3febc5a1e47548af4b68eb4176aecd1303a369db8c40f28bf079bdb6f558/packaging-14.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "66076aafbca7fb0126e77dcf43b3a1c0",
+                    "sha256": "fee2bcfc2dccf09c9fff14a4a9e8bc8114b581f5daedf2517c9505e0e693e2ab"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "66076aafbca7fb0126e77dcf43b3a1c0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31139,
+                "upload_time": "2014-12-15T20:30:47",
+                "url": "https://files.pythonhosted.org/packages/19/8d/30710be752fc9ad21d7774b75c2d0927ce14eac5bfbd89fa05a0694f710d/packaging-14.4.tar.gz"
+            }
+        ],
+        "14.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c615a3f978940c8aeb7ca1d5e1f9e8b9",
+                    "sha256": "dce190c8d365fb6a5fd25a76808d9ad9e7c172afc7979320addecbb8c3af18a8"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c615a3f978940c8aeb7ca1d5e1f9e8b9",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 16787,
+                "upload_time": "2014-12-18T02:35:44",
+                "url": "https://files.pythonhosted.org/packages/31/c4/53a8c47f729663380a515c2582e517e2ebe921c277008498a34a247964f7/packaging-14.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "33b644ab03d046427dfd81befdc4fe06",
+                    "sha256": "363f9193daa14085b8dfeeb2bf64227bcf1dc85c02ae2a5c6018b01f77e46491"
+                },
+                "downloads": -1,
+                "filename": "packaging-14.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "33b644ab03d046427dfd81befdc4fe06",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31511,
+                "upload_time": "2014-12-18T02:35:48",
+                "url": "https://files.pythonhosted.org/packages/d8/80/cfb342741cd425e9dbff97a6d229c8796657bdfca1020b55316cbab6575e/packaging-14.5.tar.gz"
+            }
+        ],
+        "15.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "007aa40f4d403d46715b1b583ba08a9a",
+                    "sha256": "f2966ddee3b9c798022a21a93a2987f84f77aaeb188a8d3809d1e78af3663a9f"
+                },
+                "downloads": -1,
+                "filename": "packaging-15.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "007aa40f4d403d46715b1b583ba08a9a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 17740,
+                "upload_time": "2015-01-03T02:47:30",
+                "url": "https://files.pythonhosted.org/packages/4b/f7/c3d00bfd39532f40a7463bfe57be4175c1a5de5b979c89de311f9cf71a2f/packaging-15.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cf5bb1f3a19c04e64043a7664c143ced",
+                    "sha256": "6f6cfaf59a40cfba8ee8cf734d8a544e0731bbaa1163ab04e7652b25af256deb"
+                },
+                "downloads": -1,
+                "filename": "packaging-15.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cf5bb1f3a19c04e64043a7664c143ced",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32647,
+                "upload_time": "2015-01-03T02:47:40",
+                "url": "https://files.pythonhosted.org/packages/da/42/7a270854f87f93baa15b5e101c9dd2eb277c53fd7d2657937f0b8f6f4263/packaging-15.0.tar.gz"
+            }
+        ],
+        "15.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6087ef0bc7cbfcbb912749deea32ad34",
+                    "sha256": "b75de8a8149cd205d05eea06990e8af7889719e662823fd5cd4ffce233038e4c"
+                },
+                "downloads": -1,
+                "filename": "packaging-15.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "6087ef0bc7cbfcbb912749deea32ad34",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 17811,
+                "upload_time": "2015-04-15T00:29:05",
+                "url": "https://files.pythonhosted.org/packages/10/eb/6251a2aed2e8d1399ff89e03a4ab4a829bf6f0d458239af527949c558cd1/packaging-15.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed1c813e0ddb562f92db2246fba4df8d",
+                    "sha256": "9f4fad6c70b47aee71ba8b2b17a9f610b32abad84be99b7d3d940748bce4b1f0"
+                },
+                "downloads": -1,
+                "filename": "packaging-15.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ed1c813e0ddb562f92db2246fba4df8d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32724,
+                "upload_time": "2015-04-15T00:29:16",
+                "url": "https://files.pythonhosted.org/packages/c8/6e/3c567f29f0295d7ca0e18c7ee9dfbb761a56750c8f812134fad616c9bd34/packaging-15.1.tar.gz"
+            }
+        ],
+        "15.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f4cfaa1195c6ec24371a43fc33fe8e9",
+                    "sha256": "c2cb2490c48b85f2fa5390392b098e3565d60ddfcb31ff86b698c3e3e8773ceb"
+                },
+                "downloads": -1,
+                "filename": "packaging-15.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "0f4cfaa1195c6ec24371a43fc33fe8e9",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 18175,
+                "upload_time": "2015-05-13T21:45:54",
+                "url": "https://files.pythonhosted.org/packages/4f/52/83573919abe8090dc8825e63a265daa8de6814693c7ebe6ca023c80b1e34/packaging-15.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c16093476f6ced42128bf610e5db3784",
+                    "sha256": "cf92396a51d269eb10660367c7c40cea1aa3180a6a3a773d377cf7451007c6fe"
+                },
+                "downloads": -1,
+                "filename": "packaging-15.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c16093476f6ced42128bf610e5db3784",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34187,
+                "upload_time": "2015-05-13T21:46:06",
+                "url": "https://files.pythonhosted.org/packages/24/c4/185da1304f07047dc9e0c46c31db75c0351bd73458ac3efad7da3dbcfbe1/packaging-15.2.tar.gz"
+            }
+        ],
+        "15.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3554c8a857cd12c0f1b708a920cb06a3",
+                    "sha256": "ce1a869fe039fbf7e217df36c4653d1dbe657778b2d41709593a0003584405f4"
+                },
+                "downloads": -1,
+                "filename": "packaging-15.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "3554c8a857cd12c0f1b708a920cb06a3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 18268,
+                "upload_time": "2015-08-02T00:08:44",
+                "url": "https://files.pythonhosted.org/packages/2f/2b/c681de3e1dbcd469537aefb15186b800209aa1f299d933d23b48d85c9d56/packaging-15.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d28c7b3111b05fdfeea8bbf915990ecf",
+                    "sha256": "1e9a6b9ad621bc1dbd3aa8dfff52abc4b44f5c14fbb406731c25cba250a5f61e"
+                },
+                "downloads": -1,
+                "filename": "packaging-15.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d28c7b3111b05fdfeea8bbf915990ecf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34359,
+                "upload_time": "2015-08-02T00:08:48",
+                "url": "https://files.pythonhosted.org/packages/12/11/18d2bee4102033f3c174de28f1b37bb71e3b26c39e41b9b98e2ae51d2c75/packaging-15.3.tar.gz"
+            }
+        ],
+        "16.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "40ab289fe22019f34d4da5f44de0aafc",
+                    "sha256": "f2e2716538a754c7683db7e005c8178b8d5ebbb919737de3466561959b0a1ee4"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "40ab289fe22019f34d4da5f44de0aafc",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 19906,
+                "upload_time": "2016-01-19T14:58:40",
+                "url": "https://files.pythonhosted.org/packages/11/ae/3e8cc8ea7495b26f5579bea2db27375011c33352091775f0cc9b402b2b02/packaging-16.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d21de9a871eedc8d993f9f8a8c9bf623",
+                    "sha256": "a32895134cd7b86ee8add60a3be5bfd7ef3f30e73e5b54221dbe67d0e0690689"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d21de9a871eedc8d993f9f8a8c9bf623",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40167,
+                "upload_time": "2016-01-19T14:58:45",
+                "url": "https://files.pythonhosted.org/packages/18/67/f11936677977f6d6badc10ad08fba60e36b89c16561d00fc28409f3c6d6f/packaging-16.0.tar.gz"
+            }
+        ],
+        "16.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "09d461c7211ffc7bf3cffe01f9b0b18c",
+                    "sha256": "cec352cb51f89e06d9b2e7e2499b5884a0e969b0c434b176c5cbe18b558fc1db"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "09d461c7211ffc7bf3cffe01f9b0b18c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 21780,
+                "upload_time": "2016-02-08T00:39:30",
+                "url": "https://files.pythonhosted.org/packages/71/31/13514b030d25327a5a5d3542e32b6a442c9e52f85ad831b1f2110f7caa8a/packaging-16.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "87735cdaddc572326bc1a80b496e8411",
+                    "sha256": "7792caf5bfda630c96310a84ecba5d61b17a843ab72194bb5606d81e4f44094f"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "87735cdaddc572326bc1a80b496e8411",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42929,
+                "upload_time": "2016-02-08T00:39:36",
+                "url": "https://files.pythonhosted.org/packages/b2/ed/b41840681d29d785727ab6cafd7528db5037612652cea2d31661e00ebbd5/packaging-16.1.tar.gz"
+            }
+        ],
+        "16.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2e6779020ab59d44259ac0f4a57b6c4",
+                    "sha256": "2ae330cd327e2b2b5a9a1a4ed25fc83b5d18fb7f371778342d3da08de1e7f28b"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d2e6779020ab59d44259ac0f4a57b6c4",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 22276,
+                "upload_time": "2016-02-09T22:51:09",
+                "url": "https://files.pythonhosted.org/packages/a1/4e/932a01cd7d7d025bc4ce52e41dfd85d27b0c7d47432965d90e542fb761fe/packaging-16.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "90098644046c97ee304c1889de9a6085",
+                    "sha256": "0eb4a6329c6d40a0deef725b4f510b6219ec8c365f888583babbb4454d761dd6"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "90098644046c97ee304c1889de9a6085",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43398,
+                "upload_time": "2016-02-09T22:51:13",
+                "url": "https://files.pythonhosted.org/packages/90/72/79b0ec4ee2cac2922792c8bff90e321ea3d37f9d2b59acbc2adb9da0e589/packaging-16.2.tar.gz"
+            }
+        ],
+        "16.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c27f027bef62f14118be0545a4cdff39",
+                    "sha256": "bf2919d1cb5939ca6d768670ad0f7e955e05b442cca641aceb5dc85a5d13b562"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c27f027bef62f14118be0545a4cdff39",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 22394,
+                "upload_time": "2016-02-22T01:19:55",
+                "url": "https://files.pythonhosted.org/packages/b1/aa/6a89e3a6ad7a269c463e3287035c4f8e47e35390324b3cf1710f84636abf/packaging-16.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "da45a9340ac001bdeb6eca5d33f3d987",
+                    "sha256": "46e5808cdfd3766d41d3691d413ca3515bd060f16fca5aab080d5a6a204ec33c"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "da45a9340ac001bdeb6eca5d33f3d987",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43580,
+                "upload_time": "2016-02-22T01:20:00",
+                "url": "https://files.pythonhosted.org/packages/25/1c/5fad66dbba7748a61591a8021611d5c3b5a8b04b9dbde3292f82882ad0fe/packaging-16.3.tar.gz"
+            }
+        ],
+        "16.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7560e587aae70094cbe40d1e51d708b4",
+                    "sha256": "a7e6dd8ac3d3fd8b43d42ec6d026fec860dfbb1f15b87531e68479691681567a"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "7560e587aae70094cbe40d1e51d708b4",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 22481,
+                "upload_time": "2016-02-23T01:13:14",
+                "url": "https://files.pythonhosted.org/packages/4e/e9/46d443119910bf54d60584b28592a0483c6cd7b2a81f0e7c9ac60887266c/packaging-16.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "071735d6414ebc1f810325434d01e389",
+                    "sha256": "325db5b475511303f17e96047877bfc6ba9c895b6850df4a98d95bfbc0329cb1"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "071735d6414ebc1f810325434d01e389",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43707,
+                "upload_time": "2016-02-23T01:13:23",
+                "url": "https://files.pythonhosted.org/packages/68/8e/798e7c2979adc00ad5b077dc00c5747e92721cded3f6766fdb62e593958e/packaging-16.4.tar.gz"
+            }
+        ],
+        "16.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "240ae6ba4d941e64ba35d0f1709ab453",
+                    "sha256": "00fde0ca774d5b8127692fa37509bbe1b06cd0bf40fded5ed85b5024d2296483"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.5-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "240ae6ba4d941e64ba35d0f1709ab453",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 22596,
+                "upload_time": "2016-02-26T18:29:20",
+                "url": "https://files.pythonhosted.org/packages/84/5d/ddff692c96ad269301c6f07042eaa02484b2c4a32e2f196075e00f7c6482/packaging-16.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d572ab85ff78f38fe99f79cfcda76c68",
+                    "sha256": "b763bd2a025e957323f761bf00fb72e8c17ac1c6d5eb8fb55c18802f2143f911"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d572ab85ff78f38fe99f79cfcda76c68",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43810,
+                "upload_time": "2016-02-26T18:29:27",
+                "url": "https://files.pythonhosted.org/packages/35/47/6f2138d89bc963d80dc5bf8e9578fb7204a9c29a31d17432bb19ee472f12/packaging-16.5.tar.gz"
+            }
+        ],
+        "16.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1534b5cdd675eeedeb1093a1a1289400",
+                    "sha256": "4bd8cd241dd6be95841b2585db9fd582d7a07b2ebd9246ebe60818b931782aa9"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.6-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "1534b5cdd675eeedeb1093a1a1289400",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 22753,
+                "upload_time": "2016-03-29T15:15:52",
+                "url": "https://files.pythonhosted.org/packages/ac/6d/e4af1127595629456532130288c636b5f62d37d39c2f8c879d2d8abd00a2/packaging-16.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b0bd9e546b1e44934fdf461726cb4fc",
+                    "sha256": "a335d0778b77d3525875dfe66c2b880529e3bbde08e1a6604710ac36f851021a"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3b0bd9e546b1e44934fdf461726cb4fc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44194,
+                "upload_time": "2016-03-29T15:16:00",
+                "url": "https://files.pythonhosted.org/packages/c3/fd/74cfa994e3c9fcaf13f37f6447ccefa252c04ad9358f91c76ebbc5006eaa/packaging-16.6.tar.gz"
+            }
+        ],
+        "16.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b43f9673696cbdcd468318b3178af0d",
+                    "sha256": "cbbbc487473b4d729cb0d86ea78ceeea22629cb1f31fd6cc717c5235616ed160"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.7-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "7b43f9673696cbdcd468318b3178af0d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 22924,
+                "upload_time": "2016-04-23T22:16:15",
+                "url": "https://files.pythonhosted.org/packages/9b/6f/aaca53ea2d5f974f42a910b52485b83e0e1e96096f17c11a37ca6bf5b728/packaging-16.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5bfeb52de8dee2fcc95a003b0ebe9011",
+                    "sha256": "2e246cde53917a320c4edb549b6b6ed0c80e22be835047bad814687c7345011e"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5bfeb52de8dee2fcc95a003b0ebe9011",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44454,
+                "upload_time": "2016-04-23T22:16:48",
+                "url": "https://files.pythonhosted.org/packages/28/ad/4e6601d14b11bb300719a8bb6247f6ef5861467a692523c978a4e9e3981a/packaging-16.7.tar.gz"
+            }
+        ],
+        "16.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c7326351bf015fa53c74b0075923ab02",
+                    "sha256": "99276dc6e3a7851f32027a68f1095cd3f77c148091b092ea867a351811cfe388"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.8-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c7326351bf015fa53c74b0075923ab02",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 23069,
+                "upload_time": "2016-10-29T15:55:42",
+                "url": "https://files.pythonhosted.org/packages/87/1b/c39b7c65b5612812b83d6cab7ef2885eac9f6beb0b7b8a7071a186aea3b1/packaging-16.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "53895cdca04ecff80b54128e475b5d3b",
+                    "sha256": "5d50835fdf0a7edf0b55e311b7c887786504efea1177abd7e69329a8e5ea619e"
+                },
+                "downloads": -1,
+                "filename": "packaging-16.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "53895cdca04ecff80b54128e475b5d3b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44706,
+                "upload_time": "2016-10-29T15:55:45",
+                "url": "https://files.pythonhosted.org/packages/c6/70/bb32913de251017e266c5114d0a645f262fb10ebc9bf6de894966d124e35/packaging-16.8.tar.gz"
+            }
+        ],
+        "17.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed7bfcbb2a778b5e31b833133975a485",
+                    "sha256": "fd6933093a5462f61eec7e2d7f9bb042c28ee597ff6a93d27fb73bdc43f2684d"
+                },
+                "downloads": -1,
+                "filename": "packaging-17.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ed7bfcbb2a778b5e31b833133975a485",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 23983,
+                "upload_time": "2018-02-28T14:04:58",
+                "url": "https://files.pythonhosted.org/packages/0a/a3/015a04002453d5c28f98de127fdf6295abe27d722f444aaeacd9821fc5a4/packaging-17.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c175b986d52e5183c4c61040674590b8",
+                    "sha256": "e9f654a6854321ac39d2e6745b820773ba9efa394e71dea1b387cc717d439f93"
+                },
+                "downloads": -1,
+                "filename": "packaging-17.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c175b986d52e5183c4c61040674590b8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49719,
+                "upload_time": "2018-02-28T14:05:00",
+                "url": "https://files.pythonhosted.org/packages/6d/72/20bcaab4f7a6bfd108c4ca1dc486906817efa9596e3b15b4c0603da981ba/packaging-17.0.tar.gz"
+            }
+        ],
+        "17.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "243fd003a3598dd7006e4e17f59a3a5e",
+                    "sha256": "e9215d2d2535d3ae866c3d6efc77d5b24a0192cce0ff20e42896cc0664f889c0"
+                },
+                "downloads": -1,
+                "filename": "packaging-17.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "243fd003a3598dd7006e4e17f59a3a5e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 24075,
+                "upload_time": "2018-02-28T17:52:49",
+                "url": "https://files.pythonhosted.org/packages/ad/c2/b500ea05d5f9f361a562f089fc91f77ed3b4783e13a08a3daf82069b1224/packaging-17.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8baf8241d1b6b0a5fae9b00f359976a8",
+                    "sha256": "f019b770dd64e585a99714f1fd5e01c7a8f11b45635aa953fd41c689a657375b"
+                },
+                "downloads": -1,
+                "filename": "packaging-17.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8baf8241d1b6b0a5fae9b00f359976a8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49849,
+                "upload_time": "2018-02-28T17:52:51",
+                "url": "https://files.pythonhosted.org/packages/77/32/439f47be99809c12ef2da8b60a2c47987786d2c6c9205549dd6ef95df8bd/packaging-17.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "243fd003a3598dd7006e4e17f59a3a5e",
+                "sha256": "e9215d2d2535d3ae866c3d6efc77d5b24a0192cce0ff20e42896cc0664f889c0"
+            },
+            "downloads": -1,
+            "filename": "packaging-17.1-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "243fd003a3598dd7006e4e17f59a3a5e",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 24075,
+            "upload_time": "2018-02-28T17:52:49",
+            "url": "https://files.pythonhosted.org/packages/ad/c2/b500ea05d5f9f361a562f089fc91f77ed3b4783e13a08a3daf82069b1224/packaging-17.1-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "8baf8241d1b6b0a5fae9b00f359976a8",
+                "sha256": "f019b770dd64e585a99714f1fd5e01c7a8f11b45635aa953fd41c689a657375b"
+            },
+            "downloads": -1,
+            "filename": "packaging-17.1.tar.gz",
+            "has_sig": false,
+            "md5_digest": "8baf8241d1b6b0a5fae9b00f359976a8",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 49849,
+            "upload_time": "2018-02-28T17:52:51",
+            "url": "https://files.pythonhosted.org/packages/77/32/439f47be99809c12ef2da8b60a2c47987786d2c6c9205549dd6ef95df8bd/packaging-17.1.tar.gz"
+        }
+    ],
+    "package_name": "packaging"
+}

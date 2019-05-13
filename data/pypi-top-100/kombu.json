@@ -1,0 +1,3269 @@
+{
+    "info": {
+        "author": "Ask Solem",
+        "author_email": "ask@celeryproject.org",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: Jython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Communications",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: System :: Distributed Computing",
+            "Topic :: System :: Networking"
+        ],
+        "description": "========================================\n kombu - Messaging library for Python\n========================================\n\n|build-status| |coverage| |license| |wheel| |pyversion| |pyimp|\n\n:Version: 4.2.1\n:Web: http://kombu.me/\n:Download: https://pypi.python.org/pypi/kombu/\n:Source: https://github.com/celery/kombu/\n:Keywords: messaging, amqp, rabbitmq, redis, mongodb, python, queue\n\nAbout\n=====\n\n`Kombu` is a messaging library for Python.\n\nThe aim of `Kombu` is to make messaging in Python as easy as possible by\nproviding an idiomatic high-level interface for the AMQ protocol, and also\nprovide proven and tested solutions to common messaging problems.\n\n`AMQP`_ is the Advanced Message Queuing Protocol, an open standard protocol\nfor message orientation, queuing, routing, reliability and security,\nfor which the `RabbitMQ`_ messaging server is the most popular implementation.\n\nFeatures\n========\n\n* Allows application authors to support several message server\n  solutions by using pluggable transports.\n\n    * AMQP transport using the `py-amqp`_, `librabbitmq`_, or `qpid-python`_ libraries.\n\n    * High performance AMQP transport written in C - when using `librabbitmq`_\n\n      This is automatically enabled if librabbitmq is installed:\n\n      ::\n\n        $ pip install librabbitmq\n\n    * Virtual transports makes it really easy to add support for non-AMQP\n      transports. There is already built-in support for `Redis`_,\n      `Amazon SQS`_, `ZooKeeper`_, `SoftLayer MQ`_ and `Pyro`_.\n\n    * In-memory transport for unit testing.\n\n* Supports automatic encoding, serialization and compression of message\n  payloads.\n\n* Consistent exception handling across transports.\n\n* The ability to ensure that an operation is performed by gracefully\n  handling connection and channel errors.\n\n* Several annoyances with `amqplib`_ has been fixed, like supporting\n  timeouts and the ability to wait for events on more than one channel.\n\n* Projects already using `carrot`_ can easily be ported by using\n  a compatibility layer.\n\nFor an introduction to AMQP you should read the article `Rabbits and warrens`_,\nand the `Wikipedia article about AMQP`_.\n\n.. _`RabbitMQ`: https://www.rabbitmq.com/\n.. _`AMQP`: https://amqp.org\n.. _`py-amqp`: https://pypi.python.org/pypi/amqp/\n.. _`qpid-python`: https://pypi.python.org/pypi/qpid-python/\n.. _`Redis`: https://redis.io\n.. _`Amazon SQS`: https://aws.amazon.com/sqs/\n.. _`Zookeeper`: https://zookeeper.apache.org/\n.. _`Rabbits and warrens`: http://web.archive.org/web/20160323134044/http://blogs.digitar.com/jjww/2009/01/rabbits-and-warrens/\n.. _`amqplib`: https://barryp.org/software/py-amqplib/\n.. _`Wikipedia article about AMQP`: https://en.wikipedia.org/wiki/AMQP\n.. _`carrot`: https://pypi.python.org/pypi/carrot/\n.. _`librabbitmq`: https://pypi.python.org/pypi/librabbitmq\n.. _`Pyro`: https://pythonhosting.org/Pyro4\n.. _`SoftLayer MQ`: https://sldn.softlayer.com/reference/messagequeueapi\n\n.. _transport-comparison:\n\nTransport Comparison\n====================\n\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| **Client**    | **Type** | **Direct** | **Topic**  | **Fanout**    | **Priority** | **TTL**               |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| *amqp*        | Native   | Yes        | Yes        | Yes           | Yes [#f3]_   | Yes [#f4]_            |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| *qpid*        | Native   | Yes        | Yes        | Yes           | No           | No                    |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| *redis*       | Virtual  | Yes        | Yes        | Yes (PUB/SUB) | Yes          | No                    |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| *mongodb*     | Virtual  | Yes        | Yes        | Yes           | Yes          | Yes                   |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| *SQS*         | Virtual  | Yes        | Yes [#f1]_ | Yes [#f2]_    | No           | No                    |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| *zookeeper*   | Virtual  | Yes        | Yes [#f1]_ | No            | Yes          | No                    |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| *in-memory*   | Virtual  | Yes        | Yes [#f1]_ | No            | No           | No                    |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n| *SLMQ*        | Virtual  | Yes        | Yes [#f1]_ | No            | No           | No                    |\n+---------------+----------+------------+------------+---------------+--------------+-----------------------+\n\n\n.. [#f1] Declarations only kept in memory, so exchanges/queues\n         must be declared by all clients that needs them.\n\n.. [#f2] Fanout supported via storing routing tables in SimpleDB.\n         Disabled by default, but can be enabled by using the\n         ``supports_fanout`` transport option.\n\n.. [#f3] AMQP Message priority support depends on broker implementation.\n\n.. [#f4] AMQP Message/Queue TTL support depends on broker implementation.\n\nDocumentation\n-------------\n\nKombu is using Sphinx, and the latest documentation can be found here:\n\n    https://kombu.readthedocs.io/\n\nQuick overview\n--------------\n\n.. code:: python\n\n    from kombu import Connection, Exchange, Queue\n\n    media_exchange = Exchange('media', 'direct', durable=True)\n    video_queue = Queue('video', exchange=media_exchange, routing_key='video')\n\n    def process_media(body, message):\n        print body\n        message.ack()\n\n    # connections\n    with Connection('amqp://guest:guest@localhost//') as conn:\n\n        # produce\n        producer = conn.Producer(serializer='json')\n        producer.publish({'name': '/tmp/lolcat1.avi', 'size': 1301013},\n                          exchange=media_exchange, routing_key='video',\n                          declare=[video_queue])\n\n        # the declare above, makes sure the video queue is declared\n        # so that the messages can be delivered.\n        # It's a best practice in Kombu to have both publishers and\n        # consumers declare the queue. You can also declare the\n        # queue manually using:\n        #     video_queue(conn).declare()\n\n        # consume\n        with conn.Consumer(video_queue, callbacks=[process_media]) as consumer:\n            # Process messages and handle events on all channels\n            while True:\n                conn.drain_events()\n\n    # Consume from several queues on the same channel:\n    video_queue = Queue('video', exchange=media_exchange, key='video')\n    image_queue = Queue('image', exchange=media_exchange, key='image')\n\n    with connection.Consumer([video_queue, image_queue],\n                             callbacks=[process_media]) as consumer:\n        while True:\n            connection.drain_events()\n\n\nOr handle channels manually:\n\n.. code:: python\n\n    with connection.channel() as channel:\n        producer = Producer(channel, ...)\n        consumer = Producer(channel)\n\n\nAll objects can be used outside of with statements too,\njust remember to close the objects after use:\n\n.. code:: python\n\n    from kombu import Connection, Consumer, Producer\n\n    connection = Connection()\n        # ...\n    connection.release()\n\n    consumer = Consumer(channel_or_connection, ...)\n    consumer.register_callback(my_callback)\n    consumer.consume()\n        # ....\n    consumer.cancel()\n\n\n`Exchange` and `Queue` are simply declarations that can be pickled\nand used in configuration files etc.\n\nThey also support operations, but to do so they need to be bound\nto a channel.\n\nBinding exchanges and queues to a connection will make it use\nthat connections default channel.\n\n::\n\n    >>> exchange = Exchange('tasks', 'direct')\n\n    >>> connection = Connection()\n    >>> bound_exchange = exchange(connection)\n    >>> bound_exchange.delete()\n\n    # the original exchange is not affected, and stays unbound.\n    >>> exchange.delete()\n    raise NotBoundError: Can't call delete on Exchange not bound to\n        a channel.\n\nTerminology\n===========\n\nThere are some concepts you should be familiar with before starting:\n\n    * Producers\n\n        Producers sends messages to an exchange.\n\n    * Exchanges\n\n        Messages are sent to exchanges. Exchanges are named and can be\n        configured to use one of several routing algorithms. The exchange\n        routes the messages to consumers by matching the routing key in the\n        message with the routing key the consumer provides when binding to\n        the exchange.\n\n    * Consumers\n\n        Consumers declares a queue, binds it to a exchange and receives\n        messages from it.\n\n    * Queues\n\n        Queues receive messages sent to exchanges. The queues are declared\n        by consumers.\n\n    * Routing keys\n\n        Every message has a routing key. The interpretation of the routing\n        key depends on the exchange type. There are four default exchange\n        types defined by the AMQP standard, and vendors can define custom\n        types (so see your vendors manual for details).\n\n        These are the default exchange types defined by AMQP/0.8:\n\n            * Direct exchange\n\n                Matches if the routing key property of the message and\n                the `routing_key` attribute of the consumer are identical.\n\n            * Fan-out exchange\n\n                Always matches, even if the binding does not have a routing\n                key.\n\n            * Topic exchange\n\n                Matches the routing key property of the message by a primitive\n                pattern matching scheme. The message routing key then consists\n                of words separated by dots (`\".\"`, like domain names), and\n                two special characters are available; star (`\"*\"`) and hash\n                (`\"#\"`). The star matches any word, and the hash matches\n                zero or more words. For example `\"*.stock.#\"` matches the\n                routing keys `\"usd.stock\"` and `\"eur.stock.db\"` but not\n                `\"stock.nasdaq\"`.\n\n\nInstallation\n============\n\nYou can install `Kombu` either via the Python Package Index (PyPI)\nor from source.\n\nTo install using `pip`,:\n\n::\n\n    $ pip install kombu\n\nTo install using `easy_install`,:\n\n::\n\n    $ easy_install kombu\n\nIf you have downloaded a source tarball you can install it\nby doing the following,:\n\n::\n\n    $ python setup.py build\n    # python setup.py install # as root\n\n\n\nGetting Help\n============\n\nMailing list\n------------\n\nJoin the `celery-users`_ mailing list.\n\n.. _`celery-users`: https://groups.google.com/group/celery-users/\n\nBug tracker\n===========\n\nIf you have any suggestions, bug reports or annoyances please report them\nto our issue tracker at https://github.com/celery/kombu/issues/\n\nContributing\n============\n\nDevelopment of `Kombu` happens at Github: https://github.com/celery/kombu\n\nYou are highly encouraged to participate in the development. If you don't\nlike Github (for some reason) you're welcome to send regular patches.\n\nLicense\n=======\n\nThis software is licensed under the `New BSD License`. See the `LICENSE`\nfile in the top distribution directory for the full license text.\n\n\n.. |build-status| image:: https://secure.travis-ci.org/celery/kombu.png?branch=master\n    :alt: Build status\n    :target: https://travis-ci.org/celery/kombu\n\n.. |coverage| image:: https://codecov.io/github/celery/kombu/coverage.svg?branch=master\n    :target: https://codecov.io/github/celery/kombu?branch=master\n\n.. |license| image:: https://img.shields.io/pypi/l/kombu.svg\n    :alt: BSD License\n    :target: https://opensource.org/licenses/BSD-3-Clause\n\n.. |wheel| image:: https://img.shields.io/pypi/wheel/kombu.svg\n    :alt: Kombu can be installed via wheel\n    :target: https://pypi.python.org/pypi/kombu/\n\n.. |pyversion| image:: https://img.shields.io/pypi/pyversions/kombu.svg\n    :alt: Supported Python versions.\n    :target: https://pypi.python.org/pypi/kombu/\n\n.. |pyimp| image:: https://img.shields.io/pypi/implementation/kombu.svg\n    :alt: Support Python implementations.\n    :target: https://pypi.python.org/pypi/kombu/\n--\n\n\n\n",
+        "description_content_type": "",
+        "docs_url": "https://pythonhosted.org/kombu/",
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://kombu.readthedocs.io",
+        "keywords": "messaging message amqp rabbitmq redis actor producer consumer",
+        "license": "BSD",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "kombu",
+        "package_url": "https://pypi.org/project/kombu/",
+        "platform": "any",
+        "project_url": "https://pypi.org/project/kombu/",
+        "release_url": "https://pypi.org/project/kombu/4.2.1/",
+        "requires_dist": [
+            "kazoo (>=1.3.1); extra == 'zookeeper'",
+            "PyYAML (>=3.10); extra == 'yaml'",
+            "pycurl; extra == 'sqs'",
+            "boto3 (>=1.4.4); extra == 'sqs'",
+            "sqlalchemy; extra == 'sqlalchemy'",
+            "softlayer-messaging (>=1.0.3); extra == 'slmq'",
+            "redis (>=2.10.5); extra == 'redis'",
+            "qpid-tools (>=0.26); extra == 'qpid'",
+            "qpid-python (>=0.26); extra == 'qpid'",
+            "pyro4; extra == 'pyro'",
+            "msgpack; extra == 'msgpack'",
+            "pymongo (<3.0,>=2.6.2); extra == 'mongodb'",
+            "librabbitmq (>=1.5.2); extra == 'librabbitmq'",
+            "python-consul (>=0.6.0); extra == 'consul'",
+            "amqp (<3.0,>=2.1.4)"
+        ],
+        "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+        "summary": "Messaging library for Python.",
+        "version": "4.2.1"
+    },
+    "last_serial": 3913016,
+    "releases": {
+        "0.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "713141c61b009d11fb662a7eb44f372c",
+                    "sha256": "2b9ea7f8b9c21b083075a9b38401af93a53258228c8f7d28aee609df62db48ee"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "713141c61b009d11fb662a7eb44f372c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34015,
+                "upload_time": "2010-07-22T16:24:23",
+                "url": "https://files.pythonhosted.org/packages/06/77/99bf348bff560005db2f236e5787505b42c24b5919d650f9c45759362ed9/kombu-0.1.0.tar.gz"
+            }
+        ],
+        "0.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d76d090001f1f9071e5dda60a0ac0c77",
+                    "sha256": "a389566318daacbed8ceb3c27d7146cfdf366f5d00b11bc18f73dcaa66237e6c"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d76d090001f1f9071e5dda60a0ac0c77",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 479968,
+                "upload_time": "2010-09-20T09:47:46",
+                "url": "https://files.pythonhosted.org/packages/20/f9/66791164c4152e6bca7896cc701e0fb13f8e90619af802902e4e6eca10e4/kombu-0.2.0.tar.gz"
+            }
+        ],
+        "0.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "59ff345b8a6fcf2f5d29654833415e0f",
+                    "sha256": "7a75f2d6147f71820cee133c10c4f85b17a8c4dc74b9ddb1088b4ea23abd2cb7"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "59ff345b8a6fcf2f5d29654833415e0f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 174024,
+                "upload_time": "2010-10-21T15:31:24",
+                "url": "https://files.pythonhosted.org/packages/3a/db/89b39bbcc150ab7a1e699660ca42e4fd23ce2c9c822ad6343233394ebe30/kombu-0.9.0.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "642adf455b973878fda9647d661f4e3d",
+                    "sha256": "43d9470403abce977b933b5b7538b5e630d7030330553cb1706066cf13c5499b"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "642adf455b973878fda9647d661f4e3d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 182247,
+                "upload_time": "2010-10-27T09:47:24",
+                "url": "https://files.pythonhosted.org/packages/ff/80/dc10f93272c0393ca1b2c9b3e151c0e1536793e5840e0e680d9bd4273388/kombu-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5c1e259c3317afde9129db9b4e21a7ba",
+                    "sha256": "73464ceab191e074967c3c955f4fbe064f4065eee6fd740e587e245c9063e5e7"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5c1e259c3317afde9129db9b4e21a7ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 190924,
+                "upload_time": "2010-11-10T09:35:55",
+                "url": "https://files.pythonhosted.org/packages/f1/af/678ae8eec53ed57d68b7d96d64e0eed7db04a8bd6e43c8ee2f16156eb717/kombu-0.9.2.tar.gz"
+            }
+        ],
+        "0.9.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "46f0a447635ea29eca9e4298b43a962a",
+                    "sha256": "73831bbc5bf5b20969089d4c0707f4a4e0f504e9cb956fca274148f7fab84ffa"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.9.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "46f0a447635ea29eca9e4298b43a962a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 191562,
+                "upload_time": "2010-11-10T12:32:01",
+                "url": "https://files.pythonhosted.org/packages/b8/ca/7bce76e33fbe87619aa21ce5fd285560c5c3b0f1ef9b251e81afa7c20f64/kombu-0.9.4.tar.gz"
+            }
+        ],
+        "0.9.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a6215ebc490e2f6b134e930fbcbd698",
+                    "sha256": "4728206673f8ba11e5377584b7f62ce342e4568e2ee45daec71d4ad0dd09dc2a"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.9.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0a6215ebc490e2f6b134e930fbcbd698",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 194992,
+                "upload_time": "2010-11-11T16:16:15",
+                "url": "https://files.pythonhosted.org/packages/f8/e6/63b9d31276940b11ae3776d485c698fd604ee3b95cdba946d6b13c0e0474/kombu-0.9.5.tar.gz"
+            }
+        ],
+        "0.9.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d6672c49b5a65eb7d127c4a747eea81",
+                    "sha256": "6fbb0d9a484a4e5796296152e80d6a1fc676f6abba1ee54a509986ea72e6314c"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.9.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9d6672c49b5a65eb7d127c4a747eea81",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 194283,
+                "upload_time": "2010-11-12T15:55:31",
+                "url": "https://files.pythonhosted.org/packages/d9/bd/9038cec1b68c5c9491d01c6db1525cb52dae861006fd9e1f18ea9f8dc3de/kombu-0.9.6.tar.gz"
+            }
+        ],
+        "0.9.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8ada28264fa367dd78731191801d09c1",
+                    "sha256": "5346df9fef22dd28e14ecbc79c2550fc45e14cfef0653c21817707ea539b0794"
+                },
+                "downloads": -1,
+                "filename": "kombu-0.9.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8ada28264fa367dd78731191801d09c1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 194748,
+                "upload_time": "2010-11-30T19:58:51",
+                "url": "https://files.pythonhosted.org/packages/e6/5b/2b53801b073070364aff4dcca5190e47b81405cca1bdedd400d044d9661e/kombu-0.9.7.tar.gz"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e59c148061d26b7121bd0145021c103a",
+                    "sha256": "fdf674b2bf1639b5406b92d598bc3e96b503324404631401a892f9c6b29e9280"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e59c148061d26b7121bd0145021c103a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 201085,
+                "upload_time": "2011-01-27T13:04:48",
+                "url": "https://files.pythonhosted.org/packages/8e/9d/2e5648dff7280afb8c14556935d0c15f8a63a52f94982b6577751ca5ed74/kombu-1.0.0.tar.gz"
+            }
+        ],
+        "1.0.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c32ae49410e2cfcf6ae0180b35743727",
+                    "sha256": "ad82c5463b43cb6b49311e664ff99187d1687750cf474c854352c2ef97c5df57"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c32ae49410e2cfcf6ae0180b35743727",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 195203,
+                "upload_time": "2010-12-18T11:53:33",
+                "url": "https://files.pythonhosted.org/packages/11/26/245c393375eb36c123aa074ef8e93e56dd4e3a294d46678237a4439fe696/kombu-1.0.0b1.tar.gz"
+            }
+        ],
+        "1.0.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "878b324bf4564edd6c0b119f3fe06392",
+                    "sha256": "f2857c8f2535424f1627b3354d595201e250871eef269d39c870587fb9b03b6c"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "878b324bf4564edd6c0b119f3fe06392",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 195441,
+                "upload_time": "2011-01-03T13:49:02",
+                "url": "https://files.pythonhosted.org/packages/32/3e/711e2fa4e5d3213c04e4366cc415d79c4b4dfd3a1145d80fafdde0c62611/kombu-1.0.0b2.tar.gz"
+            }
+        ],
+        "1.0.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "98663ce421f4f568f5ec397126d55ce2",
+                    "sha256": "0ad48fc1de742c9b6e0612d9f5faaf1bd468f5550a1b05b658f87670dea837c0"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0b3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "98663ce421f4f568f5ec397126d55ce2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 195477,
+                "upload_time": "2011-01-07T11:30:31",
+                "url": "https://files.pythonhosted.org/packages/c2/cd/8e917d6087fc9a4fee33c6f97a07d376997185913086723716d1f2e2d877/kombu-1.0.0b3.tar.gz"
+            }
+        ],
+        "1.0.0b4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12161a8045bdb96d55e7e2c2df2aa5bd",
+                    "sha256": "d0eb15b40ea932e668b01414422c26edc9c16f61d8c48f471c200c0563ebda4f"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0b4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "12161a8045bdb96d55e7e2c2df2aa5bd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 195436,
+                "upload_time": "2011-01-07T14:18:15",
+                "url": "https://files.pythonhosted.org/packages/9b/f6/73d70ff1269b833c6cc699ae72831ba9d15d707709611c3a687357d570f0/kombu-1.0.0b4.tar.gz"
+            }
+        ],
+        "1.0.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "655e3cf9f9ea07dcdfacc1b8145b45e1",
+                    "sha256": "2747932247ab49934fb6c41c4004efa6c754245ae47ebce7e55200d3c6715754"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "655e3cf9f9ea07dcdfacc1b8145b45e1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 195588,
+                "upload_time": "2011-01-12T13:43:27",
+                "url": "https://files.pythonhosted.org/packages/56/a2/da2e2339e108ac6e47c37585dbee1732c017cc7610295277fa85cf2dd16b/kombu-1.0.0rc1.tar.gz"
+            }
+        ],
+        "1.0.0rc2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "97bf360b428c11968406bd6dd3ce31f7",
+                    "sha256": "9087d0ce0da9ec766007163488a62a55a2d0616402aa7d09a7d9ec78cb9432bb"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0rc2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "97bf360b428c11968406bd6dd3ce31f7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 195610,
+                "upload_time": "2011-01-13T15:46:59",
+                "url": "https://files.pythonhosted.org/packages/fe/1e/f305067212bfdfe208deb551ce3b24f9af630084ccf0e97038e8957df916/kombu-1.0.0rc2.tar.gz"
+            }
+        ],
+        "1.0.0rc3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e357dde5bae943cdfa03fcc95d1675b",
+                    "sha256": "5c69ffd99a6e836c5051ba35af96cbd6be18cc7dde14346f86f41b8580d0334d"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0rc3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0e357dde5bae943cdfa03fcc95d1675b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 198563,
+                "upload_time": "2011-01-21T10:14:10",
+                "url": "https://files.pythonhosted.org/packages/b0/be/16b4f70948224c4d2b1e05503d12a4e5c647e2ee12162abb5d6db4d6ba76/kombu-1.0.0rc3.tar.gz"
+            }
+        ],
+        "1.0.0rc4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "64c7dcab8840dea2a0a63face262b244",
+                    "sha256": "016bc2e1ced9854112a1a6c999781b969b2b770d8d706dc75c912b989878a05b"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.0rc4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "64c7dcab8840dea2a0a63face262b244",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 200107,
+                "upload_time": "2011-01-25T16:10:09",
+                "url": "https://files.pythonhosted.org/packages/61/17/94e8b7aba62f5c10b53f554190bfed3f03ce058a37c63be925f3b316a8b8/kombu-1.0.0rc4.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d4dde5de5fddd0a4443331a79b0bb12",
+                    "sha256": "aa68db05a457c7513f9cb0118d798af2feea2733e25b98884e967a7fd95c0967"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7d4dde5de5fddd0a4443331a79b0bb12",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 201237,
+                "upload_time": "2011-01-28T20:33:19",
+                "url": "https://files.pythonhosted.org/packages/aa/c7/81e3b1cdc3cbecf6554ac65d20c9b591420744aff342fc3e212fc50e5e81/kombu-1.0.1.tar.gz"
+            }
+        ],
+        "1.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b83a1b6efd0f1b28f121d29a07f23c9c",
+                    "sha256": "b7af7b4c7b3956d46592f4204126bfe12159c7a122e1275328678ea3e46ae576"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.2.tar.bz2",
+                "has_sig": false,
+                "md5_digest": "b83a1b6efd0f1b28f121d29a07f23c9c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 196315,
+                "upload_time": "2011-02-01T11:12:11",
+                "url": "https://files.pythonhosted.org/packages/af/06/793d752683e543c33d0f995062945d5dfc3ed061356302fd468e3d0b3237/kombu-1.0.2.tar.bz2"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "19238c6ae4f66847ce4799e9e8770718",
+                    "sha256": "45691fc59e3da7a3a3b2cce5a3737ed733ee3071f9b47751e4771896cb65eab4"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "19238c6ae4f66847ce4799e9e8770718",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 201705,
+                "upload_time": "2011-01-31T22:48:21",
+                "url": "https://files.pythonhosted.org/packages/79/6a/b2c9ad3515487c8e0c841b6ecd773ab53c6ff014213395df928d9e3e674f/kombu-1.0.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "316545d97c4ee9062d250ad25baf9fbe",
+                    "sha256": "666f3d5193b8a2856bb18951af57b8683c137045dd1439704d5767219d6f041c"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.2.zip",
+                "has_sig": false,
+                "md5_digest": "316545d97c4ee9062d250ad25baf9fbe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 249433,
+                "upload_time": "2011-02-01T11:12:12",
+                "url": "https://files.pythonhosted.org/packages/9e/19/3a6e7b2e894504a2c97fc051b13f551714d37598870cf79d795e2b7b9d9a/kombu-1.0.2.zip"
+            }
+        ],
+        "1.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d8e35df68ded4912ab06ec2b48294ace",
+                    "sha256": "f9cb9c1ae21a1fb43e19963ae3fe9beb74bf56d5f6e5980d4a67fb6d4244f5e1"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.3.tar.bz2",
+                "has_sig": false,
+                "md5_digest": "d8e35df68ded4912ab06ec2b48294ace",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 196376,
+                "upload_time": "2011-02-12T16:14:34",
+                "url": "https://files.pythonhosted.org/packages/a6/8f/ac5898b71efd9f8eb50a628f1e43ceb7133ae079e3c8f1a59203aef02147/kombu-1.0.3.tar.bz2"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0165c7023cfc4ddb50f6a6102c41294d",
+                    "sha256": "4c46a32c6f77c93bcebd4e69b541751403bffaaf9b5d81874060d171fc38cc13"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0165c7023cfc4ddb50f6a6102c41294d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 201715,
+                "upload_time": "2011-02-12T16:14:33",
+                "url": "https://files.pythonhosted.org/packages/5e/43/b48051a66915674a436ae1e069d0ded7229d8e2dcbc232c9ced9afda1c95/kombu-1.0.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3cd69a5f614240e850e072b2a8e0aa53",
+                    "sha256": "e28b4102efc4c1f0dc8a5143743841bff3934d78f7c60c0bcfb07b378e4ec503"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.3.zip",
+                "has_sig": false,
+                "md5_digest": "3cd69a5f614240e850e072b2a8e0aa53",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 249610,
+                "upload_time": "2011-02-12T16:14:35",
+                "url": "https://files.pythonhosted.org/packages/7a/cb/2125ee70dfabc41e3551971511f74561906b2092fdbe72fbcbbd0ee7aa49/kombu-1.0.3.zip"
+            }
+        ],
+        "1.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9648a24738bf639a0625967236ebc40a",
+                    "sha256": "a876b9dd923e2d719afa7491e6d7a90829ebc9d836d8c4f71332984042693140"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9648a24738bf639a0625967236ebc40a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 201925,
+                "upload_time": "2011-02-28T23:51:53",
+                "url": "https://files.pythonhosted.org/packages/34/4b/8955a043e29fb014a026379ed130795257f6b8daa5f125b934ae82e7bc0c/kombu-1.0.4.tar.gz"
+            }
+        ],
+        "1.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce9ea950733401915f864e510bd05aba",
+                    "sha256": "36c4a70818f87f4cf534d4731518753753f303afbb93851088dc50099f4f4555"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ce9ea950733401915f864e510bd05aba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 202609,
+                "upload_time": "2011-03-17T19:10:56",
+                "url": "https://files.pythonhosted.org/packages/fe/57/56c921a509e3ccc58ed00bf1f6d84862e5119b1c1209b9d1f92f30b81259/kombu-1.0.5.tar.gz"
+            }
+        ],
+        "1.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8bc9f7ac464a4fae10849d4acfdf5219",
+                    "sha256": "2db202969c95ec8dc5850e4c3991532b827d35feddc21d2c1dd11ba4874d8e4d"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8bc9f7ac464a4fae10849d4acfdf5219",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 203574,
+                "upload_time": "2011-03-22T16:51:22",
+                "url": "https://files.pythonhosted.org/packages/1a/76/0cee250323a43e83fe312358aa85ac1e73692fb7e3d18f25a9f829795d3a/kombu-1.0.6.tar.gz"
+            }
+        ],
+        "1.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a98ac7c5b218c62639f0b675d04a2e4",
+                    "sha256": "ffd8334102c2ae9c57e2b501dee3066f0cbb16110705010a4fa5668d15271aa7"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3a98ac7c5b218c62639f0b675d04a2e4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 204166,
+                "upload_time": "2011-03-28T17:44:12",
+                "url": "https://files.pythonhosted.org/packages/92/4e/dcc652536d8d52ee996601b6368d06894ccb7348f66ca1db163fbeeacc70/kombu-1.0.7.tar.gz"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b99e6867949a72e4fb88f2f7a40c712",
+                    "sha256": "bf875334bbe5b41aacab5732ab75a5c56f8483771fd7aa7589ef26470fa12ec0"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b99e6867949a72e4fb88f2f7a40c712",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 210976,
+                "upload_time": "2011-04-05T13:06:12",
+                "url": "https://files.pythonhosted.org/packages/c5/03/be93967361fa1b38c01dba18f4e1b209c3576a5797757a1edfc84e90ad62/kombu-1.1.0.tar.gz"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "66a398154117eff257d0b0e15e9bb5ac",
+                    "sha256": "587be0360504322e8bd7f618938388e55e7d928d6ade0f57a8ecd72785997ce3"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "66a398154117eff257d0b0e15e9bb5ac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 211029,
+                "upload_time": "2011-04-05T16:18:54",
+                "url": "https://files.pythonhosted.org/packages/18/44/8a11dfab679eaa995e57b0ce53d8262cb93ae137ce272aba5f94588c57e9/kombu-1.1.1.tar.gz"
+            }
+        ],
+        "1.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7a6b5284f813d679f9986ef1eb63e5cb",
+                    "sha256": "8ab50f75f57313fa0947dfb7d49297e320ba9e1af8a6fa7b242051f7f15f442f"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7a6b5284f813d679f9986ef1eb63e5cb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 212290,
+                "upload_time": "2011-04-06T16:13:09",
+                "url": "https://files.pythonhosted.org/packages/00/ca/7e683e4c9ad338e25a3a3627f5159c81f426d5970e2273e3d6c0f57c29b7/kombu-1.1.2.tar.gz"
+            }
+        ],
+        "1.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d9d15058454ae2d1f6212cedb1efbc9",
+                    "sha256": "3a2e17f48238a653cd51bf709a2ff0f1130bd2b5879736554056bb6fd136ac1c"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7d9d15058454ae2d1f6212cedb1efbc9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 213384,
+                "upload_time": "2011-04-21T14:18:18",
+                "url": "https://files.pythonhosted.org/packages/db/61/6b58c40f9953954005ffed780ef125f25a8d5115b55dbc173892a8bcf2dd/kombu-1.1.3.tar.gz"
+            }
+        ],
+        "1.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d041c1123e0868cf0398ae0a52673ff4",
+                    "sha256": "11537282d7c3a32c85ecfbb776cdf8e28e86a8a56e834205bbb40f49347b3392"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d041c1123e0868cf0398ae0a52673ff4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 218646,
+                "upload_time": "2011-06-07T16:54:04",
+                "url": "https://files.pythonhosted.org/packages/d7/c9/63cbd2f6d89f068e41af0ff19e1269188f3c78ca81560b2b6ecce8ed0461/kombu-1.1.4.tar.gz"
+            }
+        ],
+        "1.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3d7470fb90f0a430a7089f96076aed3a",
+                    "sha256": "e994a0412c6a80fa48649ef41969c9839037851b663d59ec25a56f65274575d4"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3d7470fb90f0a430a7089f96076aed3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 218725,
+                "upload_time": "2011-06-07T18:56:36",
+                "url": "https://files.pythonhosted.org/packages/17/6e/937318ec96dffef48332b753417f5a32b0b96573268c9a84dab087ee3ee4/kombu-1.1.5.tar.gz"
+            }
+        ],
+        "1.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6cdae2b1a27df2e56a06f3dd388d69f3",
+                    "sha256": "52fbc1bbad5d9473586f0aed02a5e651c8b84b6a25de3ec74e904c328384d6cc"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6cdae2b1a27df2e56a06f3dd388d69f3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 220750,
+                "upload_time": "2011-06-13T16:59:07",
+                "url": "https://files.pythonhosted.org/packages/b6/1a/df28b3070ccdf687241c1cdf406afa0623f6f5f354ea1aa813350aa1e800/kombu-1.1.6.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3e6690f36ec4cf3311730ebd5e02a940",
+                    "sha256": "2be0563a0f63aa6219a64d1889e0dda0c70f22ea67e4d20debdda8cc8dc76792"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3e6690f36ec4cf3311730ebd5e02a940",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 222120,
+                "upload_time": "2011-07-15T13:43:50",
+                "url": "https://files.pythonhosted.org/packages/f2/fb/bdc5ab0dad645a484ba3488f27670496a6470cdbdb16462061831d54e84f/kombu-1.2.0.tar.gz"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b0c4f57e0dfceb7c4b62a839faf502f",
+                    "sha256": "da49112857ca4a00a06995fdbcac3c5bd6ac3a63700db58b19f545b56e9b7482"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5b0c4f57e0dfceb7c4b62a839faf502f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 224012,
+                "upload_time": "2011-07-29T13:57:49",
+                "url": "https://files.pythonhosted.org/packages/6a/cd/0d2b211c7acc96a8f7b7559e95ecd2393f08cc7b5d5a3027401aa8d99900/kombu-1.2.1.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5080642526ab238b01d1bca2e331d4b5",
+                    "sha256": "672f0c60d86fa0d5b9748d69e9cee793c6e12d1f5fec5a0e9def18fc6e6bddc4"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5080642526ab238b01d1bca2e331d4b5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 228402,
+                "upload_time": "2011-09-05T14:01:49",
+                "url": "https://files.pythonhosted.org/packages/ad/36/211f795fcd0203b929d4ff111f68324c063bc7eb145d096741a1b22535e9/kombu-1.3.0.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ae287205a94cc4b3dbae79a3eb430f8",
+                    "sha256": "44a4cc5e1cdb1d28e7c761a85ffa455d6cf64105cb8472498dbe90226d8ce56d"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1ae287205a94cc4b3dbae79a3eb430f8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 230285,
+                "upload_time": "2011-09-07T15:42:21",
+                "url": "https://files.pythonhosted.org/packages/ef/92/6e2b9733e651c616a203ef70d2ee867556e863db40f13f832b15f719de30/kombu-1.3.1.tar.gz"
+            }
+        ],
+        "1.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f88c05197e61598bcf6425da8331de4a",
+                    "sha256": "98ddf6c29a303608906339e1cde8702cc240c087e16d8560b1f4c73dadb7b7cf"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f88c05197e61598bcf6425da8331de4a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 842957,
+                "upload_time": "2011-09-10T20:19:29",
+                "url": "https://files.pythonhosted.org/packages/d5/4e/86699e390e489a3ce777a2672a35f535afdee822086427e618e498a320b3/kombu-1.3.2.tar.gz"
+            }
+        ],
+        "1.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6c5f068e37bf9caaf5da3941baaae712",
+                    "sha256": "bcad95d8b85d509ba684443a95b561f4a87e37a64789af2a64a3cb2ca167f70a"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6c5f068e37bf9caaf5da3941baaae712",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 227446,
+                "upload_time": "2011-09-15T17:02:48",
+                "url": "https://files.pythonhosted.org/packages/5e/7d/25ff6711a12c1ed2e283c3fa61ec199705b9ee8b29057050a322a775d8a6/kombu-1.3.3.tar.gz"
+            }
+        ],
+        "1.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb72555c198056e1d56157eed220ca87",
+                    "sha256": "80c1a7ee8dcdd8fa928d0181e7b5f9124dbaab44b4b787c41bfa9cc53a8a026c"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cb72555c198056e1d56157eed220ca87",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 227591,
+                "upload_time": "2011-09-16T18:59:42",
+                "url": "https://files.pythonhosted.org/packages/39/8b/03c20c19eb6ba0a4906431afc321a351accdae11c114cae7a941a1d27454/kombu-1.3.4.tar.gz"
+            }
+        ],
+        "1.3.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec731f14bb9942158c1f24f77e86c749",
+                    "sha256": "fb4e337a2550f149ab9449433c2a300090f8040b1752a30e4063c2909b891c9d"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.3.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ec731f14bb9942158c1f24f77e86c749",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 227637,
+                "upload_time": "2011-09-16T19:16:26",
+                "url": "https://files.pythonhosted.org/packages/c9/06/364ce04606d079c95e89c1db1d5d1142d5cedc3d8921df82f578bd2b23c8/kombu-1.3.5.tar.gz"
+            }
+        ],
+        "1.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ae0ec3af8484329ad38cdde080acac9",
+                    "sha256": "20a4ca8a30141efac6b9b22882ac72e1a307903f92a43cda0b798bdf0db2585b"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2ae0ec3af8484329ad38cdde080acac9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 238049,
+                "upload_time": "2011-09-22T18:17:13",
+                "url": "https://files.pythonhosted.org/packages/78/b1/3b949b0b7a5a326d07a8a3fbc34a92942d23ad24d17598a1f0cc3b0eeebe/kombu-1.4.0.tar.gz"
+            }
+        ],
+        "1.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "764f54eca610395f67e334ba04fcf9f7",
+                    "sha256": "db55d38ac252ae3e8e4fc1cd3dbe1af2d7577be36cceff4ad22e2b779c9da24a"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "764f54eca610395f67e334ba04fcf9f7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 239417,
+                "upload_time": "2011-09-26T19:14:10",
+                "url": "https://files.pythonhosted.org/packages/fe/87/5b68ba8812e1e297b51ce5d09705cb526ad109ad555f162370b1376cba21/kombu-1.4.1.tar.gz"
+            }
+        ],
+        "1.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ae73873f957c413ed37683745d32310",
+                    "sha256": "7d2f53e2f78dfa8d84dbba1e920a5d635d3cb0668a509584fc3857f605e995d3"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2ae73873f957c413ed37683745d32310",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 240181,
+                "upload_time": "2011-10-26T18:06:25",
+                "url": "https://files.pythonhosted.org/packages/ac/d6/2e6549d957fea4426ca5164e9667de7c62fff854ac31b5f8f41e5f7afa19/kombu-1.4.2.tar.gz"
+            }
+        ],
+        "1.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc8a423a05d027e4b453fe0a3e0b06be",
+                    "sha256": "43bb2b68ddb60434ee0d413cef4808316a9d0c8ac25bb331f75e6d711cd1ca86"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fc8a423a05d027e4b453fe0a3e0b06be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 240174,
+                "upload_time": "2011-10-27T22:42:22",
+                "url": "https://files.pythonhosted.org/packages/84/8d/8534cac6f26ec250b7d37faf1a8813af9043a4b471c9dec885b77b6dc483/kombu-1.4.3.tar.gz"
+            }
+        ],
+        "1.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "639a3e4728c3c25235aaa05e816d92a9",
+                    "sha256": "ad728f42ae6b1921a34d5ebbd566754a35c945ad41d169b0f69c229b6ffa362a"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "639a3e4728c3c25235aaa05e816d92a9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 243225,
+                "upload_time": "2011-11-27T18:57:05",
+                "url": "https://files.pythonhosted.org/packages/e2/85/5d5b8e1649aecc297bcc1083999c169e037ab3e78485de4a98d6b80ac78b/kombu-1.5.0.tar.gz"
+            }
+        ],
+        "1.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "50662f3c7e9395b3d0721fb75d100b63",
+                    "sha256": "ae526adae2dd89c07f4f63fe3c4312d62c7c4a79b3aaeb32d5bf944cb0ac6e6f"
+                },
+                "downloads": -1,
+                "filename": "kombu-1.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "50662f3c7e9395b3d0721fb75d100b63",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 243413,
+                "upload_time": "2011-11-30T14:07:15",
+                "url": "https://files.pythonhosted.org/packages/19/53/74bf2a624644b45f0850a638752514fc10a8e1cbd738f10804951a6df3f5/kombu-1.5.1.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4e9fd273cd4b559d57468868f3e64b76",
+                    "sha256": "baa5bf1804dfee39b36052a6724ab034ba18d10a5480b9965b34fad0ae814c78"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4e9fd273cd4b559d57468868f3e64b76",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 264645,
+                "upload_time": "2012-01-15T20:17:08",
+                "url": "https://files.pythonhosted.org/packages/d0/ea/69630a312894eb83f8f66cf4845e99c548a4e16cbd53cd1d5abd6ea4dd0a/kombu-2.0.0.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42d950dcf1a3bb00e518f9cfd5a0e99f",
+                    "sha256": "e4c964fb313624d33903c44062bc084ce0c39132cea6e4f82eb3d893b47fd1be"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "42d950dcf1a3bb00e518f9cfd5a0e99f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 267234,
+                "upload_time": "2012-02-04T11:38:26",
+                "url": "https://files.pythonhosted.org/packages/1e/7d/d1af9a0453d79d54b5970c1880cbb4dc7f090c4f5cd69cd76197b01d9023/kombu-2.1.0.tar.gz"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8befd696ca891fd3f12748804bef0bd3",
+                    "sha256": "06adac6f2b330b8abe92fa04a44190c0e23b2c3635545afa2b33d7a31d51383c"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8befd696ca891fd3f12748804bef0bd3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 268274,
+                "upload_time": "2012-02-24T13:00:15",
+                "url": "https://files.pythonhosted.org/packages/23/9f/f55f86ba7812a388f2cf2c988b0636ef69b7407fc518a5fab84a4e69be35/kombu-2.1.1.tar.gz"
+            }
+        ],
+        "2.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b07c4ec297f927f20c2f8d1b4aaf2a3d",
+                    "sha256": "3d14608c5ee16af8015abc0365c8ebdc47432ec1b34b8939f56dcb5d98918e74"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b07c4ec297f927f20c2f8d1b4aaf2a3d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 268769,
+                "upload_time": "2012-03-20T15:58:13",
+                "url": "https://files.pythonhosted.org/packages/54/82/bb08aebaee740d7f4a5920cbb79fe49a158f0af0c051e43c20e3566093d4/kombu-2.1.2.tar.gz"
+            }
+        ],
+        "2.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e33b332f6fce15efae7adf68f1971c1d",
+                    "sha256": "64b311419ebcbff0a15d01329ea6b970a7c5990e30da8d8485fb0e909973578b"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e33b332f6fce15efae7adf68f1971c1d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 270570,
+                "upload_time": "2012-04-03T17:21:50",
+                "url": "https://files.pythonhosted.org/packages/88/7a/4dc2a559ef214d290dcf76c784204375473ad16a019e52c35659d26a9cc0/kombu-2.1.3.tar.gz"
+            }
+        ],
+        "2.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "53d548f7f664ac8b4787183adddb9c8e",
+                    "sha256": "721c4b0304c156ebad199adf9d048df3d24edc4412a2080e80a77d5d0e9309bf"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "53d548f7f664ac8b4787183adddb9c8e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 270148,
+                "upload_time": "2012-04-10T17:07:11",
+                "url": "https://files.pythonhosted.org/packages/91/2c/6f5ed723c534c207be3b13b24b1be8202803ab2e2bcc60d11c8f79be7291/kombu-2.1.4.tar.gz"
+            }
+        ],
+        "2.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "56f7eadb976be1f29a4fc85c0aed402d",
+                    "sha256": "04debd048cbb00a8d3496a1a2325ee5386fb733c49c38cbe44ad7fd5fff5b4c3"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "56f7eadb976be1f29a4fc85c0aed402d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 270632,
+                "upload_time": "2012-04-13T16:44:31",
+                "url": "https://files.pythonhosted.org/packages/cd/b8/b1750f6976f3037dccdac363e3e83125af64225c5a3767053e2e3751ca9a/kombu-2.1.5.tar.gz"
+            }
+        ],
+        "2.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bbae0b9ff5371b6e60bd6c806a7f1f0e",
+                    "sha256": "dbb79c4ddb2ea3d5c7802513bc9af31833dfaed253dd6aaa08423b16187524bb"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bbae0b9ff5371b6e60bd6c806a7f1f0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 272387,
+                "upload_time": "2012-04-23T14:28:22",
+                "url": "https://files.pythonhosted.org/packages/aa/c4/d18f80c6939f85ffcc37e719debef2b633ca8bd48fa986bbe25595197ab6/kombu-2.1.6.tar.gz"
+            }
+        ],
+        "2.1.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "573e07562758203fa7958ba9a831a3f6",
+                    "sha256": "82e6cebc150a79b406b8dddbe0cdef8a5bb719d78d85a0f35c279750644f7c69"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "573e07562758203fa7958ba9a831a3f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 272502,
+                "upload_time": "2012-04-27T18:54:38",
+                "url": "https://files.pythonhosted.org/packages/e7/42/bd60d390130fbbfe8f9d2d792fefff4cf005cefb0324cc381a1071f62245/kombu-2.1.7.tar.gz"
+            }
+        ],
+        "2.1.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "783ac412120be80b66993a363b56674a",
+                    "sha256": "6012931f1a5724b52b0e535d462f81c47c2d152b5dae5fa43843d306dbcf3dc8"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.1.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "783ac412120be80b66993a363b56674a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 273195,
+                "upload_time": "2012-05-06T16:07:30",
+                "url": "https://files.pythonhosted.org/packages/16/3f/a48898bee7e74facd78774e62dfdd36d006e09846249de88b26c5ce569df/kombu-2.1.8.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fbe698b12e07be679c397518d7405117",
+                    "sha256": "e21449772441ce12b61bc3fa3ce0c8959a0f566354115cfcabede8b00b439d58"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fbe698b12e07be679c397518d7405117",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 280467,
+                "upload_time": "2012-06-07T16:25:56",
+                "url": "https://files.pythonhosted.org/packages/7c/d3/b302748c8ab942cd0672695e4b430290a926fb1eb4592422c0d80c780b25/kombu-2.2.0.tar.gz"
+            }
+        ],
+        "2.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ab57b8c9a620de80490e0c4c5755317",
+                    "sha256": "265b8868165f4b9efcd27b2f1e3bad06b76e14e8737340fd85e6b436899863ff"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4ab57b8c9a620de80490e0c4c5755317",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 281747,
+                "upload_time": "2012-06-21T14:03:17",
+                "url": "https://files.pythonhosted.org/packages/97/25/23cff5a2058c924f765bcf919b8fb852e3083901f73359972aee2f86cf8c/kombu-2.2.1.tar.gz"
+            }
+        ],
+        "2.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b4481a28106b0d426d474ad5de543b3f",
+                    "sha256": "1114c5b5ff553c5900a2c455bcd5a8a51977a125d6b44a09b9dcf87d23f65095"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b4481a28106b0d426d474ad5de543b3f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 283028,
+                "upload_time": "2012-06-22T15:33:16",
+                "url": "https://files.pythonhosted.org/packages/92/d8/c3ba33bafea4c7a835dbfac8e98c6c6ec3c8837dae44d4e78685537cfb1a/kombu-2.2.2.tar.gz"
+            }
+        ],
+        "2.2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c6c2447fdaaddaa3ad7e1f8d446b2f1b",
+                    "sha256": "59fdcf5c31b0bb204bbf81273500fabc09d65d486a809054a26e28139f25d43b"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c6c2447fdaaddaa3ad7e1f8d446b2f1b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 283299,
+                "upload_time": "2012-06-24T18:15:16",
+                "url": "https://files.pythonhosted.org/packages/bc/00/0ffbd9a6a8a96d58ba177341dca6329278a7a6b96a04bf8dfab4ba2b498c/kombu-2.2.3.tar.gz"
+            }
+        ],
+        "2.2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8201651781bffed1fc07e5bbfbc42eae",
+                    "sha256": "2360ff27de517544557a53fbdb485bf999167fc4a193b424b5fe8b3d8ad9b4bf"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8201651781bffed1fc07e5bbfbc42eae",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 285540,
+                "upload_time": "2012-07-05T16:49:29",
+                "url": "https://files.pythonhosted.org/packages/02/db/8afeca2618c5385bf22dbcbfd587b3d5dd43f89038e3c7e1503c109357f6/kombu-2.2.4.tar.gz"
+            }
+        ],
+        "2.2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5029cb6ed51d43def5584e3ad7f747df",
+                    "sha256": "12be41be29e6b6b98d7e4d37bc56146d5729252c9264cd1bd836334f100f9cca"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.2.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5029cb6ed51d43def5584e3ad7f747df",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 285842,
+                "upload_time": "2012-07-10T17:57:18",
+                "url": "https://files.pythonhosted.org/packages/f4/05/e2e06bf4007afcca4338fc19590b698f694d48092b8563f96610d92ca5e9/kombu-2.2.5.tar.gz"
+            }
+        ],
+        "2.2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3eac58bf4b54f28abb2be5e30404b46a",
+                    "sha256": "ff20487a3f322e9acc435d8435879fb65e8f087d597e28395987b5db660935a1"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.2.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3eac58bf4b54f28abb2be5e30404b46a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 285888,
+                "upload_time": "2012-07-10T19:03:24",
+                "url": "https://files.pythonhosted.org/packages/9e/62/990a0175c7ba84b9197b1498c5bb4cab41cf7b0c79670ec5f968e889033d/kombu-2.2.6.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1bbe176791dfdfb0b810e8045ac06045",
+                    "sha256": "c138c165f9b2d289ca55a47ccf10e35b9f23cea89a621a104b9dfec08604b20d"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1bbe176791dfdfb0b810e8045ac06045",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 288148,
+                "upload_time": "2012-07-24T17:25:03",
+                "url": "https://files.pythonhosted.org/packages/41/e6/c8fadc0ccdc73c0a6807632f516410f2f39f2029c13688e794d28424c76c/kombu-2.3.0.tar.gz"
+            }
+        ],
+        "2.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "55992099ed8e5e07ac1394423afa3020",
+                    "sha256": "374cbbd2bf1f741757ba5414ef31489ffc8c357a08c51f91667f2c0ccbe4ea8b"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "55992099ed8e5e07ac1394423afa3020",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 287998,
+                "upload_time": "2012-08-01T17:12:16",
+                "url": "https://files.pythonhosted.org/packages/57/44/c949892d38b95ae7486602a7382c61f49ad91b65ab6a7c4a8141db4e5394/kombu-2.3.1.tar.gz"
+            }
+        ],
+        "2.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e421f7c4ba4ad483bcf0171910abecb5",
+                    "sha256": "3010c0b4d47ad1a3f3e815ec902f7c3818cead3d2778659bd924e88db421d70b"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e421f7c4ba4ad483bcf0171910abecb5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 288062,
+                "upload_time": "2012-08-01T18:48:31",
+                "url": "https://files.pythonhosted.org/packages/dd/e1/66fc6f6aff3c3d18ba128edfeae5e5e0caf7cd0a22d24062b89d44da633c/kombu-2.3.2.tar.gz"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74e15d95717da33f4003911b2a514d80",
+                    "sha256": "2791c4e2bf8667b216a5d4de24a64e371e2249cfd361e658a6623b74f0340957"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "74e15d95717da33f4003911b2a514d80",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 290239,
+                "upload_time": "2012-08-17T18:51:44",
+                "url": "https://files.pythonhosted.org/packages/37/3c/abb8210f5437ce03c5a86efe8e3a614cf6cbb111a12b2f3d21ae276fcc4a/kombu-2.4.0.tar.gz"
+            }
+        ],
+        "2.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b871f97074ad7a141164941db4e14b7e",
+                    "sha256": "4b6374920c21f0d48a4e8802e5cb2e41d7105fd3be2c9b314ccf15dd45b9bb63"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b871f97074ad7a141164941db4e14b7e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 290488,
+                "upload_time": "2012-08-24T14:43:18",
+                "url": "https://files.pythonhosted.org/packages/23/5b/87cf7db1461f0cab3c663c3a6d9b6c785244bacd0515945bfe214cd952ad/kombu-2.4.1.tar.gz"
+            }
+        ],
+        "2.4.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "347a5a5fd67e1b6a12f28f8b5e226a70",
+                    "sha256": "211cb68b133578338aac0990d31d9255ed54b5f1861fb2cd54c1bb28bdbc8a6e"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "347a5a5fd67e1b6a12f28f8b5e226a70",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 291204,
+                "upload_time": "2012-11-22T17:47:11",
+                "url": "https://files.pythonhosted.org/packages/d6/e3/c17f9efd48c361a139aeab78a84d781d9579a4b7d3d88d852ecb2ceee4bc/kombu-2.4.10.tar.gz"
+            }
+        ],
+        "2.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b9884816a00449efa87d85c50b9e68c",
+                    "sha256": "383c28b787360890ad049ab8a271a7bde782e8feb1c4ff1b3678e0199944ee22"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3b9884816a00449efa87d85c50b9e68c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 290518,
+                "upload_time": "2012-08-24T16:21:33",
+                "url": "https://files.pythonhosted.org/packages/87/74/0d83d774be0ec1068846688b200e9d68a6050f475a4f1a17c0633117bf50/kombu-2.4.2.tar.gz"
+            }
+        ],
+        "2.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f226aed020c201b2fba2191cd1ac912",
+                    "sha256": "1dac6b3720e5e31b38b626e7247c07b10c8cc39e2f32aec80559fa643d2db021"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0f226aed020c201b2fba2191cd1ac912",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 290543,
+                "upload_time": "2012-08-25T21:26:55",
+                "url": "https://files.pythonhosted.org/packages/2c/18/423198c0ae3d42182906a7b9d9081d36b77f8c88996b8fe2498958bfe197/kombu-2.4.3.tar.gz"
+            }
+        ],
+        "2.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3ca3c1e23ce40982a0d4c1a2ca0e18f",
+                    "sha256": "5e31f9c923581b9ba544da60960f10ad588483505fa003871aa3779e82dbb161"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c3ca3c1e23ce40982a0d4c1a2ca0e18f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 290810,
+                "upload_time": "2012-08-29T15:06:44",
+                "url": "https://files.pythonhosted.org/packages/88/4f/dfe5842728d0f640c7532f4e27b8d819dde0454531827515263e9eb9710c/kombu-2.4.4.tar.gz"
+            }
+        ],
+        "2.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0fdd28b52b511eb9900ee22cdbd3bd4f",
+                    "sha256": "909b101c521eca3a3c7d25b52f845b8fa347e602c8db40d5046e3f23039a931f"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0fdd28b52b511eb9900ee22cdbd3bd4f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 290869,
+                "upload_time": "2012-08-30T14:28:48",
+                "url": "https://files.pythonhosted.org/packages/92/96/24821b4ca5f73a948afcb6848e9067eb08b51fe1f8db9f37104663cbcfd7/kombu-2.4.5.tar.gz"
+            }
+        ],
+        "2.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "096d38abdd9cac4355c16eafc27cfdbe",
+                    "sha256": "84fd0fa79c6292c174a7efbcd47483a07345040166223f67e6a2326e73419b1a"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "096d38abdd9cac4355c16eafc27cfdbe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 289642,
+                "upload_time": "2012-09-12T13:49:44",
+                "url": "https://files.pythonhosted.org/packages/d5/ae/5a1386ee990596df59025133ee30b93f8f2a6e4330f5547dabad492bfd88/kombu-2.4.6.tar.gz"
+            }
+        ],
+        "2.4.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "308a86807815b2279ae8f6cc4c4f851d",
+                    "sha256": "d86d179111fa347bbb40d946feb579a5cf4d93f8b4db946e8a0c12c7257d7cc3"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "308a86807815b2279ae8f6cc4c4f851d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 289883,
+                "upload_time": "2012-09-18T14:13:13",
+                "url": "https://files.pythonhosted.org/packages/61/bd/07fc75911acc95b87434f8c9f5c79c333f0d817c653a59e5595fee490d38/kombu-2.4.7.tar.gz"
+            }
+        ],
+        "2.4.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8b312111b07470684fd8aff62de7d018",
+                    "sha256": "c6613158dcb21d630300dbb53fb76dabdc28c21ba2b13386ce39fda136c5907e"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8b312111b07470684fd8aff62de7d018",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 290975,
+                "upload_time": "2012-11-02T16:56:01",
+                "url": "https://files.pythonhosted.org/packages/c7/52/c1d8675f51150495ff5f9783a710b01bb320080fb1643754ef4021540ba5/kombu-2.4.8.tar.gz"
+            }
+        ],
+        "2.4.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a61816cfd727d608c87d1229b32fa0e",
+                    "sha256": "94ee2160adbc377fccfa9dc156056103ba566536b831e75c9569815b9f4a9598"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.4.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5a61816cfd727d608c87d1229b32fa0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 291187,
+                "upload_time": "2012-11-21T15:29:35",
+                "url": "https://files.pythonhosted.org/packages/fc/85/3e0dfb9fa56503f5db98653fdca35befb581043c2f6c71c64804a7c965b6/kombu-2.4.9.tar.gz"
+            }
+        ],
+        "2.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed725caf82182186f6bf23ede24fee35",
+                    "sha256": "c6e183af5a5cb20dd5ce2cfe3094458b79bde9a7c6a312c7dfe1481b442f1a75"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ed725caf82182186f6bf23ede24fee35",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 299968,
+                "upload_time": "2012-11-27T16:01:00",
+                "url": "https://files.pythonhosted.org/packages/e0/d9/bf218ef0e0ca34a05a7ccc43ff213ba23a281d66ca011ee03c10665c1a5a/kombu-2.5.0.tar.gz"
+            }
+        ],
+        "2.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "80ade2ac194539f0d6823bebeed13892",
+                    "sha256": "b7420b0f734c9e66b26e65867486d6c63fe2f0cfb570e87cf619bab4761f6d5d"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "80ade2ac194539f0d6823bebeed13892",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 300237,
+                "upload_time": "2012-11-28T12:49:02",
+                "url": "https://files.pythonhosted.org/packages/42/34/05916e75ca30d578e262f9d7d41411f8bb96fecdaaa1a3381c70dd04cc36/kombu-2.5.1.tar.gz"
+            }
+        ],
+        "2.5.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc9845f65774b82f62e97203a2eee18a",
+                    "sha256": "01c1e56fe88053b6e7801682277c4cc8318c485d8bd47c830c08567bfac680e2"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cc9845f65774b82f62e97203a2eee18a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 304810,
+                "upload_time": "2013-04-11T17:12:37",
+                "url": "https://files.pythonhosted.org/packages/c7/81/8d7b361afaad5cb7fb86678918ab60557fa35e4ee12dfc59da6e6811b264/kombu-2.5.10.tar.gz"
+            }
+        ],
+        "2.5.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5a66d94de5eaca8ee3e576efc73c3ce",
+                    "sha256": "cb9ee646cec2fde3e8bc7e408679d4b5a2ed9d02d625b8d026bdc600fbbf2418"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f5a66d94de5eaca8ee3e576efc73c3ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 306409,
+                "upload_time": "2013-06-25T13:38:09",
+                "url": "https://files.pythonhosted.org/packages/cd/77/ecd60dd46b383efe2bb4cd2786ec06930db7937bf74033e23f5901957f42/kombu-2.5.11.tar.gz"
+            }
+        ],
+        "2.5.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "609ca6c0bfad41b71122d9d729d4c72e",
+                    "sha256": "cc5b33eb96fd2d3846bd0b2fec34cfacf8205b69a1669a17c97af77bc6f1aa09"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "609ca6c0bfad41b71122d9d729d4c72e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 306807,
+                "upload_time": "2013-06-28T14:28:21",
+                "url": "https://files.pythonhosted.org/packages/0e/33/33ca684c5e9632a1bc22af8dda98cf485713b3d2850ecc65d9d0280ddd64/kombu-2.5.12.tar.gz"
+            }
+        ],
+        "2.5.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e17796abf33fe7937c606819104aac1e",
+                    "sha256": "017c8fd904797d8a7c5a902e048e3d1148e77f9c487a4a9e8a270abe9032895c"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e17796abf33fe7937c606819104aac1e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 307041,
+                "upload_time": "2013-08-16T15:09:54",
+                "url": "https://files.pythonhosted.org/packages/6c/68/b212617a2c3f41a3ec6e9ad4e57c2589ffa55dfb2afcfce58f74871aa117/kombu-2.5.13.tar.gz"
+            }
+        ],
+        "2.5.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "72281e32ea18c644c840325c6ca1d0ce",
+                    "sha256": "2a480d8d676f584f6b7a399514f5effa96ced2ce7b37ff975f2c8d16e154e5b4"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "72281e32ea18c644c840325c6ca1d0ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 307139,
+                "upload_time": "2013-08-23T16:09:01",
+                "url": "https://files.pythonhosted.org/packages/a6/50/1e94669fe52b4e8fd5a0ffd6967737248427a69eee4c556467a97880d85d/kombu-2.5.14.tar.gz"
+            }
+        ],
+        "2.5.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "429127bb9c7d9e02cab6e57675bbc9b3",
+                    "sha256": "a02e28dfb25844d202ed817fe77dec7aec4db6654596b6fd50f0c11d0d469377"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.15.tar.gz",
+                "has_sig": false,
+                "md5_digest": "429127bb9c7d9e02cab6e57675bbc9b3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 307532,
+                "upload_time": "2013-10-04T14:21:48",
+                "url": "https://files.pythonhosted.org/packages/cf/0c/1cf640d0a947dd07eb0f79605780158bb5c9f9ed1a0d096b61053516d20b/kombu-2.5.15.tar.gz"
+            }
+        ],
+        "2.5.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e6a883288a962be7c64af5e1806a0f9e",
+                    "sha256": "feab7f4384e2420bed19b8323150059d4b12e8eacbd581f62776ad5878d433c2"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.16.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e6a883288a962be7c64af5e1806a0f9e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 307515,
+                "upload_time": "2013-10-23T17:57:03",
+                "url": "https://files.pythonhosted.org/packages/0e/b3/7563bdd28ecdd8a38798de35fed59add02607801279ae477b2b056787055/kombu-2.5.16.tar.gz"
+            }
+        ],
+        "2.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "001e766d405195f10b16875435403c3f",
+                    "sha256": "1e1cf6fe896a30922fd978d6df44c8b6eb26947786d685a4e02ee532b9c5a6a4"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "001e766d405195f10b16875435403c3f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 300507,
+                "upload_time": "2012-11-29T12:37:54",
+                "url": "https://files.pythonhosted.org/packages/df/4c/89cd2b7ec01deb105cb88c11e19c558b230648f769b724dda13796e0eb7f/kombu-2.5.2.tar.gz"
+            }
+        ],
+        "2.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "02c422f3d040bd3ec9daacb72cedf714",
+                    "sha256": "8f0708417777f573691eb793f401b444281dbe0ae9dc6a9a5784bf01e9471ad1"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "02c422f3d040bd3ec9daacb72cedf714",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 300525,
+                "upload_time": "2012-11-29T16:45:12",
+                "url": "https://files.pythonhosted.org/packages/78/4c/86cfe68cc6554b5199763f783a3cb732e58d67cbb85d46fd87679bef6c40/kombu-2.5.3.tar.gz"
+            }
+        ],
+        "2.5.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d822bba263f34d2f8d16d3dec6bfb4a5",
+                    "sha256": "92cfb82af1d3e8753258d660003769461b75abe0f1a03d720709a211042f358b"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d822bba263f34d2f8d16d3dec6bfb4a5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 300506,
+                "upload_time": "2012-12-10T15:55:31",
+                "url": "https://files.pythonhosted.org/packages/0b/b9/b9f1c6604934431ce427fedecd5a4720cb5a46d62283d69566137c48a797/kombu-2.5.4.tar.gz"
+            }
+        ],
+        "2.5.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6cc9d19238af8ddaae041a796ecfa0c4",
+                    "sha256": "d5365135df8f2c82e2b7215a2c3dd80d058ff7ab6126027b982f00833aaceb01"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6cc9d19238af8ddaae041a796ecfa0c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 301488,
+                "upload_time": "2013-02-07T17:05:59",
+                "url": "https://files.pythonhosted.org/packages/bc/59/aed91ff3051b820c6158623a225ee6a2b13516b7fdd2fcb168df61bec46b/kombu-2.5.5.tar.gz"
+            }
+        ],
+        "2.5.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "479c01b766e265f1a65aae4c6ce19c83",
+                    "sha256": "01c0ba72782535df913b519d6509835f8210b4dbfde652d3a1c6f545d737beb9"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "479c01b766e265f1a65aae4c6ce19c83",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 301670,
+                "upload_time": "2013-02-08T17:55:39",
+                "url": "https://files.pythonhosted.org/packages/c5/52/d2aa3b92ed0d16df7a4e57e248f3b1e9190164821ad061e458ad4d8862dd/kombu-2.5.6.tar.gz"
+            }
+        ],
+        "2.5.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5fa02993f7cd60b110ec47b3e4993da",
+                    "sha256": "32bcfabc02366738101861f06e737106dea8d2ea784a588d7a9e1fbd940b7a78"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b5fa02993f7cd60b110ec47b3e4993da",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 301904,
+                "upload_time": "2013-03-08T12:49:32",
+                "url": "https://files.pythonhosted.org/packages/4a/e5/67e2dbbc31b6f82d5ee9a11fb6ff5a58b2f5b593c28b49fad1a12b807de9/kombu-2.5.7.tar.gz"
+            }
+        ],
+        "2.5.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "78edd0490ad864dd8404d32ca47cbcf9",
+                    "sha256": "92a4b6129e7a08f24a1b50f8853e3cad321b564a496e8ecc0c7f2bae3f3b71e4"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "78edd0490ad864dd8404d32ca47cbcf9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 302410,
+                "upload_time": "2013-03-21T16:27:26",
+                "url": "https://files.pythonhosted.org/packages/76/c8/39ca33477f32c7bbe2b4c51450184925c1633099a6e9a6e806ff4e25e398/kombu-2.5.8.tar.gz"
+            }
+        ],
+        "2.5.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1e53957ca255b2bfa54989840de5c80",
+                    "sha256": "f0f9b7a412964af67e8ac013b5dbe2299eb8f1bd68b09a6d3d85717bdf1ea459"
+                },
+                "downloads": -1,
+                "filename": "kombu-2.5.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d1e53957ca255b2bfa54989840de5c80",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 303193,
+                "upload_time": "2013-04-08T16:08:56",
+                "url": "https://files.pythonhosted.org/packages/9f/b7/064368c847169fa990d5ca5094690fc38dafe0b6686bb0232ac2fae4c8d9/kombu-2.5.9.tar.gz"
+            }
+        ],
+        "3.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "686e19ed87824c49db90baa151eea257",
+                    "sha256": "0ec6078c99033edd6cd41d248c1da8effd07e31265eeb5f9461a428c4d04abf9"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "686e19ed87824c49db90baa151eea257",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 328455,
+                "upload_time": "2013-10-14T15:11:44",
+                "url": "https://files.pythonhosted.org/packages/88/44/824fa3e14c68f3e5d43c57ee85e0ad0d3943781c654be70ffe20366c50b5/kombu-3.0.0.tar.gz"
+            }
+        ],
+        "3.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "87580fdec7a84607f8a960d5a0714cfb",
+                    "sha256": "f6dc110264d420044911be2f6661610b257fc54cecd1e67ca9374db4f22c6162"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "87580fdec7a84607f8a960d5a0714cfb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 329199,
+                "upload_time": "2013-10-24T15:58:24",
+                "url": "https://files.pythonhosted.org/packages/ca/c6/2d3d0cd8219e796b135fc97210002eb485a78f42126c5b8ce009440aa679/kombu-3.0.1.tar.gz"
+            }
+        ],
+        "3.0.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec23b37b72a2a5b0bc3ea16feb79b6dd",
+                    "sha256": "796f5a65a95bf518eab1ad04b10e1a45ddb84918348781391d547c943b87f7bc"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.10.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ec23b37b72a2a5b0bc3ea16feb79b6dd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 337255,
+                "upload_time": "2014-01-17T17:41:17",
+                "url": "https://files.pythonhosted.org/packages/52/9e/9c15dbea43c35b3896b18ec2191493c7682239efa121edf5a45347c692a1/kombu-3.0.10.tar.gz"
+            }
+        ],
+        "3.0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "71531f7372916c55508d3c0cea3fe8f2",
+                    "sha256": "9a52cdfc1fa8bf659c280f2f7ea1432f5711d228324ee3227df6886b9ca256bd"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.11.tar.gz",
+                "has_sig": true,
+                "md5_digest": "71531f7372916c55508d3c0cea3fe8f2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 337807,
+                "upload_time": "2014-02-03T17:00:02",
+                "url": "https://files.pythonhosted.org/packages/4b/59/6b52acba348514002758f6bbbd15602d046045cc6534e348e39c239daca1/kombu-3.0.11.tar.gz"
+            }
+        ],
+        "3.0.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4a76702432582c0e86bb9188900ea819",
+                    "sha256": "88be51003f326f7bea4208af1cf8c4a848459efaee98310ebca90a3e11121e35"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.12-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "4a76702432582c0e86bb9188900ea819",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 204365,
+                "upload_time": "2014-02-09T15:51:15",
+                "url": "https://files.pythonhosted.org/packages/32/28/f6567b893beb9bb9b8e193b01636976025c6c17b2a4fe45ee22a61e71da9/kombu-3.0.12-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a9cf9f8056a7a1f1289346aed2b9319",
+                    "sha256": "c9d3044328756da35f4cde0a5304292ec97fbc529eb755b5f5460924781df81b"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.12.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3a9cf9f8056a7a1f1289346aed2b9319",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 337963,
+                "upload_time": "2014-02-09T15:50:56",
+                "url": "https://files.pythonhosted.org/packages/dd/ed/06207d0515271ae348eea109c3a258f9d769c8be12b9d32cc8bf4e231533/kombu-3.0.12.tar.gz"
+            }
+        ],
+        "3.0.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b0f6912a1d95036dc9c49ed185015ea6",
+                    "sha256": "4124aee50722ec44b3681705b17b0b2007005b36c99d605a9b60dd8106d69f21"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.13-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b0f6912a1d95036dc9c49ed185015ea6",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 205094,
+                "upload_time": "2014-03-03T16:24:26",
+                "url": "https://files.pythonhosted.org/packages/dc/ff/0684ee421eb5eeef4eefeac976845ac68a84603abec55e7072373e9a88c3/kombu-3.0.13-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "764f4cea383d21827f3501f04e77d621",
+                    "sha256": "b0d3dfd82907b6a3964c902c68364ce34a1cd5f42dc4cc2d3f10569f32b4ba97"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.13.tar.gz",
+                "has_sig": true,
+                "md5_digest": "764f4cea383d21827f3501f04e77d621",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 339432,
+                "upload_time": "2014-03-03T16:24:15",
+                "url": "https://files.pythonhosted.org/packages/c1/de/e0e3e672db044b1cf84bdbe36316944b2022e63fcfee658fbeeadaa5d2ea/kombu-3.0.13.tar.gz"
+            }
+        ],
+        "3.0.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f51e778d9963878900208a9fab4a5750",
+                    "sha256": "73d4868aabd3d98ca4d168091f7cccea5c60134fe884e55975419de458fbec8f"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.14-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "f51e778d9963878900208a9fab4a5750",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 205959,
+                "upload_time": "2014-03-19T19:36:12",
+                "url": "https://files.pythonhosted.org/packages/ad/dc/f1cd6b13605602126fab1aed494f37e85250e2045846ff51dbf65112e95c/kombu-3.0.14-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d7c899de8277de795543aa621213c8c7",
+                    "sha256": "e64812539ffa1d6f1c6c15aa60721203a102284e30bd8938c0bdd4da6091cf41"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.14.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d7c899de8277de795543aa621213c8c7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 340310,
+                "upload_time": "2014-03-19T19:36:07",
+                "url": "https://files.pythonhosted.org/packages/df/e4/15eb92c5df31739fc3f224487e5794aa32dd7462d530f1b1cac1f79f9b83/kombu-3.0.14.tar.gz"
+            }
+        ],
+        "3.0.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc99c7c42d8efffae9deda71e65a8010",
+                    "sha256": "dc41fc1c072e4c66c7183dad4e1e9171b0773055d7a01fb4500867e6058e2f06"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.15-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "dc99c7c42d8efffae9deda71e65a8010",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207260,
+                "upload_time": "2014-04-15T21:33:26",
+                "url": "https://files.pythonhosted.org/packages/dc/b9/f1f1c00b5ce5b161b3355a258fdc6a0aa19be26e168b51ef034610a79a86/kombu-3.0.15-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e07720f574ccc7362f617dca2cc1d11c",
+                    "sha256": "8872a52e42f9e08c2c135cc67dbe8eb9f2707a714cb6719f6900c4af66bc5500"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.15.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e07720f574ccc7362f617dca2cc1d11c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 342092,
+                "upload_time": "2014-04-15T21:33:11",
+                "url": "https://files.pythonhosted.org/packages/fc/c7/442f96fe1ef6ff49d5c2ca1f2a68e35f4abca663b1e4a95960cb66acb4c9/kombu-3.0.15.tar.gz"
+            }
+        ],
+        "3.0.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d23164b77c4c9de1b65664994c65aab4",
+                    "sha256": "160a853f2cf84c088d14ca347af78647d0efb04b1fe36aa716e409bf4ef2b517"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.16-py27-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d23164b77c4c9de1b65664994c65aab4",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207280,
+                "upload_time": "2014-05-06T13:38:29",
+                "url": "https://files.pythonhosted.org/packages/b8/67/1077f96e7445935b1d7ae1c43a7509cee00f0bef653ba7e905d8bef12c2f/kombu-3.0.16-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6ce4f6f3e13275c501f247d83b28bc4e",
+                    "sha256": "c1e0a1146ef109b85a35cc5f7f8e4b652211aa4d666efba5d727c554e25e2957"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.16.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6ce4f6f3e13275c501f247d83b28bc4e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 342440,
+                "upload_time": "2014-05-06T13:38:14",
+                "url": "https://files.pythonhosted.org/packages/f9/03/9a736043d5aaa173b225d6edb15b13903c852fa3dd2420724828c8fbe9d6/kombu-3.0.16.tar.gz"
+            }
+        ],
+        "3.0.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c970c49ad639a2f5bada9cfc0804015a",
+                    "sha256": "d2cb19706e9b197481efbe40ab5bb86350676da37518e80dffff282e79bacbed"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.17-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c970c49ad639a2f5bada9cfc0804015a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207669,
+                "upload_time": "2014-06-02T17:39:33",
+                "url": "https://files.pythonhosted.org/packages/83/87/24db6b3fb7fea7919826e71261136afaa3376ccc75f2e1792e6f1583a573/kombu-3.0.17-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3342bada1d7dd04d7736fbd58fa11ec9",
+                    "sha256": "8cc809a4dc584753b05dadd84f90d21164cff31978abf8fbb3f148911c8cbb9f"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.17.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3342bada1d7dd04d7736fbd58fa11ec9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 343015,
+                "upload_time": "2014-06-02T17:39:22",
+                "url": "https://files.pythonhosted.org/packages/0c/88/6ca6f3905ec0f8ef8d7146e66cf860d6a9303a95c5e8fea4498c270654c3/kombu-3.0.17.tar.gz"
+            }
+        ],
+        "3.0.17-20140602": [],
+        "3.0.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a4b8c6f09a88ba2b456e5916131cdbae",
+                    "sha256": "b86a4682c346e13de9751dae91b0158d14aa36bb1ea5216fff6cbd250c73f3eb"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.18-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "a4b8c6f09a88ba2b456e5916131cdbae",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207664,
+                "upload_time": "2014-06-02T18:00:38",
+                "url": "https://files.pythonhosted.org/packages/33/f6/12409aac3840e1096844e1ac4c85e5a2ec7feb764675e3aabc2742624ca2/kombu-3.0.18-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "057f5a94bf9398a3cef291f695b3478d",
+                    "sha256": "a6efb207c19ff64fb52af074d079611c53548e7f75f59a40422a1d0034dd8256"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.18.tar.gz",
+                "has_sig": true,
+                "md5_digest": "057f5a94bf9398a3cef291f695b3478d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 343083,
+                "upload_time": "2014-06-02T18:00:31",
+                "url": "https://files.pythonhosted.org/packages/a2/fe/1a14ca5de13c87cb968a6e20f8b0e32bb0f69f9488a80ebb77bc58230ae6/kombu-3.0.18.tar.gz"
+            }
+        ],
+        "3.0.19": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa9f402714e15648d8954feff50a5473",
+                    "sha256": "bb4408625874417f04f38f7780b2e56e7b857578873db4361fd8d0497452dc68"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.19-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "aa9f402714e15648d8954feff50a5473",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207310,
+                "upload_time": "2014-06-09T15:45:50",
+                "url": "https://files.pythonhosted.org/packages/4f/6f/c5612b85aa9acbe3534103b64045f185d63128bc8a3f18575d7c6d562d91/kombu-3.0.19-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dbf4ea0e7d879e62c719069e721d7c73",
+                    "sha256": "26a0ccb2bbca5ef27733ad1d3f05e0f69bc9fc93ff6aeaef55f8a94609c835b7"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.19.tar.gz",
+                "has_sig": true,
+                "md5_digest": "dbf4ea0e7d879e62c719069e721d7c73",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 343272,
+                "upload_time": "2014-06-09T15:18:23",
+                "url": "https://files.pythonhosted.org/packages/7e/16/18638622f57e95dd64c08c6d77d55696d11656db4c9e662b91fd282d722d/kombu-3.0.19.tar.gz"
+            }
+        ],
+        "3.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c2eb4fab24230487f9be43d60c6c4a75",
+                    "sha256": "a78950a37a35a3ae46020e465d009f8d2ceb838518de5947c25b330257c97ac2"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c2eb4fab24230487f9be43d60c6c4a75",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 329365,
+                "upload_time": "2013-10-29T14:06:57",
+                "url": "https://files.pythonhosted.org/packages/34/94/7c4f5f5a3202d1c01e223f27c9b70b95a26871c008690fb02995bbdff8bb/kombu-3.0.2.tar.gz"
+            }
+        ],
+        "3.0.20": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d7ab12c9115c39323d271113554e6f55",
+                    "sha256": "79668859801e460b03192e57755128440951893c9dfa95767801249b5ed1a5a3"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.20-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d7ab12c9115c39323d271113554e6f55",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207309,
+                "upload_time": "2014-06-24T14:32:18",
+                "url": "https://files.pythonhosted.org/packages/c1/02/fe5f81fa50c8893339e3a566d3cad4eda0b2b596e96e8d623532604c104c/kombu-3.0.20-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26ad1a9e417ffad1be938bab8cb91155",
+                    "sha256": "c3d8a40ee323f8b3c70eb4d8be3e35ced1cad85c4aa12de5a576af33ca29f33e"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.20.tar.gz",
+                "has_sig": true,
+                "md5_digest": "26ad1a9e417ffad1be938bab8cb91155",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 343275,
+                "upload_time": "2014-06-24T14:31:06",
+                "url": "https://files.pythonhosted.org/packages/24/ce/99c26e7894d4c8ee4f3d5d8dcfc45809081f0ba4a4954b7d9f9d57f31d13/kombu-3.0.20.tar.gz"
+            }
+        ],
+        "3.0.21": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d851fecd8039029e23ae0b59bab98da7",
+                    "sha256": "de0d56249fdcfa22137b6051c4eae3872e21545bd956c5b92292ed5a040c95f0"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.21-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d851fecd8039029e23ae0b59bab98da7",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207393,
+                "upload_time": "2014-07-07T15:12:50",
+                "url": "https://files.pythonhosted.org/packages/3b/ba/3d159059991c4869a1dfee3972dd8c8243771a28a9909c3897df53f056b5/kombu-3.0.21-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "081b10921ea31780aa4bdf871f4f3acb",
+                    "sha256": "2eaca88496bcfcf9b6d597999776853792ef35f919c37e2f0f151dfe38a60d3a"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.21.tar.gz",
+                "has_sig": true,
+                "md5_digest": "081b10921ea31780aa4bdf871f4f3acb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 343363,
+                "upload_time": "2014-07-07T15:12:46",
+                "url": "https://files.pythonhosted.org/packages/00/bd/4bda72739b09af310e7faf8154ff083825d172630d758ffcc781f92e3a9a/kombu-3.0.21.tar.gz"
+            }
+        ],
+        "3.0.22": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff39ede3d49eda93fc9d333b4e1e6977",
+                    "sha256": "ccd3f80b3d0afb0cab66a9881969039750bf4c10d07a8b50391ea507a8697dad"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.22-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "ff39ede3d49eda93fc9d333b4e1e6977",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207505,
+                "upload_time": "2014-09-04T15:21:54",
+                "url": "https://files.pythonhosted.org/packages/9f/3d/8af1d23eb2d30616ae67d3e5d2fcb3a19eeb77e8084547fb703131f8363b/kombu-3.0.22-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9935e8d929d1faf03533990c11de0340",
+                    "sha256": "bcb7c30b6b2fa8a147ceea811e866f80ce383c9f82066644cd5460e951a04943"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.22.tar.gz",
+                "has_sig": true,
+                "md5_digest": "9935e8d929d1faf03533990c11de0340",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 343695,
+                "upload_time": "2014-09-04T15:21:50",
+                "url": "https://files.pythonhosted.org/packages/df/d5/fc57c3b4e543ea0446a1a3202daf94d205d9a4320ddf55d69c6be10d8911/kombu-3.0.22.tar.gz"
+            }
+        ],
+        "3.0.23": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cda147341fde0aa807a4fe371a68fe28",
+                    "sha256": "b195fa8eb520c32994d8bbd1637000de3d096532b2e45183832dbcb65c211e8e"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.23-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "cda147341fde0aa807a4fe371a68fe28",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 207518,
+                "upload_time": "2014-09-14T22:51:51",
+                "url": "https://files.pythonhosted.org/packages/76/e9/829509627b2a16416cdf52bbf1383f8e66893b697941397f41cdfa9be629/kombu-3.0.23-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d02b880bec8a5a975e19faf1f1d8c7cf",
+                    "sha256": "448c3e3ce671a10f00ee03979ba3c7866b4bfce49f65edec9f93a0cefa87ec16"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.23.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d02b880bec8a5a975e19faf1f1d8c7cf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 343923,
+                "upload_time": "2014-09-14T22:51:46",
+                "url": "https://files.pythonhosted.org/packages/2e/73/831df66f6d52095b8dd61c2316ec00a0a8bf812c96503eddb82e811c8700/kombu-3.0.23.tar.gz"
+            }
+        ],
+        "3.0.24": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c54df4aa3a92906668a3f1d1cf58f8aa",
+                    "sha256": "4862f7490f13e06257312f57e81553f398cc71ba035d02632ff41739c572d4ad"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.24-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c54df4aa3a92906668a3f1d1cf58f8aa",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 238234,
+                "upload_time": "2014-11-18T00:11:28",
+                "url": "https://files.pythonhosted.org/packages/7e/00/1e88a1fffb3d0e2b124dc95cfbf2e0fe4c53003e04fb165b382baf9c61b0/kombu-3.0.24-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37c8b5084ac83b8a6f5ff9f157cac0e9",
+                    "sha256": "b9ff0437607113aea701fd5122c2afa40c05dff6f1da4f58b2f1ea18d9f2bf8d"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.24.tar.gz",
+                "has_sig": true,
+                "md5_digest": "37c8b5084ac83b8a6f5ff9f157cac0e9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 374539,
+                "upload_time": "2014-11-18T00:11:22",
+                "url": "https://files.pythonhosted.org/packages/c6/20/1ee21ac90739e3362bc841d21859c4f3c5b1709af5e695a9275cdf67d724/kombu-3.0.24.tar.gz"
+            }
+        ],
+        "3.0.25": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "85b78c73a8d1ce49f11ba5cb222d213c",
+                    "sha256": "297a72370558555d99af4895ce7272821233ce29e24ba5b8b9b7071ba7e00d50"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.25-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "85b78c73a8d1ce49f11ba5cb222d213c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 238557,
+                "upload_time": "2015-04-21T14:26:52",
+                "url": "https://files.pythonhosted.org/packages/d5/82/aa9cf842cdc6eb3ef9be9b9765656370737cf35e24acb3dd7ca70ba64c2a/kombu-3.0.25-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d73c04288b258e7710e322d17b36349",
+                    "sha256": "8d9de68e8d42403c10a2d28c32221f334da16a44801f02b59ca7ad22585c7261"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.25.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0d73c04288b258e7710e322d17b36349",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 375493,
+                "upload_time": "2015-04-21T14:26:42",
+                "url": "https://files.pythonhosted.org/packages/8d/b8/b82f564683d5f94652059ab9dfd1c5a1303211cc460c9befa1c198a200dc/kombu-3.0.25.tar.gz"
+            }
+        ],
+        "3.0.26": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "32dcd84147cba7c075fe201414be69f2",
+                    "sha256": "fea8653ae4b87a7eb099659409f09e68036a7b83f0a15a0bc6aefadbd98a51dc"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.26-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "32dcd84147cba7c075fe201414be69f2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 238582,
+                "upload_time": "2015-04-22T18:17:06",
+                "url": "https://files.pythonhosted.org/packages/2c/61/c7845d5634f1a2293c99af2cc1721e9567cfbaafa6c7ef91d067b0d91cde/kombu-3.0.26-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dda05763cd4b72a131fe1ef9ba93d542",
+                    "sha256": "1f565abd44c4b7dfaa4dd543d52f982d2f006aba0a2b3830542b4d25a801fe09"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.26.tar.gz",
+                "has_sig": true,
+                "md5_digest": "dda05763cd4b72a131fe1ef9ba93d542",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 375553,
+                "upload_time": "2015-04-22T18:17:00",
+                "url": "https://files.pythonhosted.org/packages/6c/da/258f990e587a0eaea0703ce6489efd93d2600baf436b23a189336c51b175/kombu-3.0.26.tar.gz"
+            }
+        ],
+        "3.0.27": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e8881602ddbbf26d6948881ff028843",
+                    "sha256": "a00712618fbb53340f02151914db414d8ef6e965679f15d9180858dab5534b10"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.27.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1e8881602ddbbf26d6948881ff028843",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 376721,
+                "upload_time": "2015-10-09T22:13:22",
+                "url": "https://files.pythonhosted.org/packages/27/d2/a5805d7411d8878bc60dd591898b25b0115f99ce0c1203b0b1103f7cec33/kombu-3.0.27.tar.gz"
+            }
+        ],
+        "3.0.28": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f759683722ea54dfc09d7977ec08bdb",
+                    "sha256": "c22af35c4e7bbb7441b789b9b8c1baf73a8c481eaa93d00a63fa85bddc6b1ab1"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.28.tar.gz",
+                "has_sig": true,
+                "md5_digest": "8f759683722ea54dfc09d7977ec08bdb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 377706,
+                "upload_time": "2015-10-12T19:38:37",
+                "url": "https://files.pythonhosted.org/packages/cb/39/9ef84cf2263cadcb86292e5de5659df4595c3278dfc8825081e7728e3b4a/kombu-3.0.28.tar.gz"
+            }
+        ],
+        "3.0.29": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f53147631cb615378bc47fb219a6d4f5",
+                    "sha256": "4fb3056e7dcf6130e5af58eff4af42db72f568bb6728bddb8c0fafeb4463020d"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.29-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "f53147631cb615378bc47fb219a6d4f5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 241139,
+                "upload_time": "2015-10-26T18:13:32",
+                "url": "https://files.pythonhosted.org/packages/9d/69/5bcaa4d6ac3b3dc54c0a1c0178eb99cf6bd91b70334258e3b0821effe050/kombu-3.0.29-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "892bf89ee247c0d16d2bdd63f1ddf4c5",
+                    "sha256": "970a55ec65e668403c3e6ef4aa2213362568387885f5cc0ff8429abd44a6dca8"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.29.tar.gz",
+                "has_sig": true,
+                "md5_digest": "892bf89ee247c0d16d2bdd63f1ddf4c5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 378270,
+                "upload_time": "2015-10-26T18:13:27",
+                "url": "https://files.pythonhosted.org/packages/5f/db/099668f8819085216149a20d2eb792bf66a649829b837f677496225b566f/kombu-3.0.29.tar.gz"
+            }
+        ],
+        "3.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f33b7e9c4b5757e151b455f51a3a4be",
+                    "sha256": "7da5e90cde3f8c9aea7210345ee15e66da4438bee56087cb0f00e8c7f03dd66a"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f33b7e9c4b5757e151b455f51a3a4be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 329074,
+                "upload_time": "2013-11-04T15:11:50",
+                "url": "https://files.pythonhosted.org/packages/77/b1/7befddb3e7289bfbfec08608fdc598042e880f813c1e909ab2526018b1da/kombu-3.0.3.tar.gz"
+            }
+        ],
+        "3.0.30": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "508c80f8bb3adbe7e0c36c002bdc1375",
+                    "sha256": "fecb34edf4852064f385dbf53969047b22353d3608a576497dd05f71b943fae6"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.30-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "508c80f8bb3adbe7e0c36c002bdc1375",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 241395,
+                "upload_time": "2015-12-07T08:38:04",
+                "url": "https://files.pythonhosted.org/packages/a5/1f/8c02e99defbb54be092db3605220fd54aa8569b2b931c46337be5a2b1322/kombu-3.0.30-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a95f3886fd628862e45c5dc4e3658e89",
+                    "sha256": "b902fe768ea49173c7c26b117bf6c51d258f822d00d753e543b7e2285540f85a"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.30.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a95f3886fd628862e45c5dc4e3658e89",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 380706,
+                "upload_time": "2015-12-07T08:37:53",
+                "url": "https://files.pythonhosted.org/packages/e4/31/7d77a4b5fa7299208dfca6ccd8aea2d8361486f520408b0f533d4433ce6b/kombu-3.0.30.tar.gz"
+            }
+        ],
+        "3.0.31": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "013693d29deb9f74783528401f01e2e5",
+                    "sha256": "e891f234c209a431f4b497d98266eb8ce92970a757bcb676489aea527f0928e2"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.31-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "013693d29deb9f74783528401f01e2e5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 241457,
+                "upload_time": "2015-12-16T21:01:38",
+                "url": "https://files.pythonhosted.org/packages/13/aa/e1fbe481664f2c5c607c9d9f17ae29a93d00ac8337135a1549c6c2184ed0/kombu-3.0.31-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e4ab1f698737b84409bc2b1a4b55aaf8",
+                    "sha256": "2b41cf6e89c64468a8b67815e5da587ae7c32eba39aea46ff202dcfe4dc84159"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.31.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e4ab1f698737b84409bc2b1a4b55aaf8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 380874,
+                "upload_time": "2015-12-16T21:01:29",
+                "url": "https://files.pythonhosted.org/packages/14/1f/313e2fd286e30d1eb8ab28a880372a7e7d393afe8228c9dba7608e1771cf/kombu-3.0.31.tar.gz"
+            }
+        ],
+        "3.0.32": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec74588da1a64c8badb9339d34d1ac44",
+                    "sha256": "406c9f4cad1d11ac07b245ae215f6d8ee127db63e8331e0c87108bbaf1791c8e"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.32-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "ec74588da1a64c8badb9339d34d1ac44",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 794896,
+                "upload_time": "2015-12-16T22:39:53",
+                "url": "https://files.pythonhosted.org/packages/21/ab/2b6ab4d0f2254ec835cd742d0ac053faa7ce9f5d98d6e86479c4ce666211/kombu-3.0.32-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8819aa97abb09f5b27f29e35b8ecaeaf",
+                    "sha256": "d3edda02076ae04fa62d128007756f4c4298fe479119ca070a47a22afe867660"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.32.tar.gz",
+                "has_sig": true,
+                "md5_digest": "8819aa97abb09f5b27f29e35b8ecaeaf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 380958,
+                "upload_time": "2015-12-16T22:39:46",
+                "url": "https://files.pythonhosted.org/packages/10/d6/1c31e95234a11e80322c691dbbe82ec41af4dd9e6028aa76e8f9539a82dd/kombu-3.0.32.tar.gz"
+            }
+        ],
+        "3.0.33": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "41083933ee02371943fe01f46d02a6c2",
+                    "sha256": "6741a5d7e8b8f53151aabd47fd3df1195aed540b169b2d7684b904ff112b483c"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.33-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "41083933ee02371943fe01f46d02a6c2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 239881,
+                "upload_time": "2016-01-09T02:38:16",
+                "url": "https://files.pythonhosted.org/packages/ad/ca/13d0265de94dbe4f685a2a5cd8c0123a4c90710352e94ccadc2e13098fc9/kombu-3.0.33-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75eaaaa57fd5f1cd304e285e20867f5f",
+                    "sha256": "853d18ca958a598787ceb8c297a369745b82965bf28276861272f14745977999"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.33.tar.gz",
+                "has_sig": true,
+                "md5_digest": "75eaaaa57fd5f1cd304e285e20867f5f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 379423,
+                "upload_time": "2016-01-09T02:38:22",
+                "url": "https://files.pythonhosted.org/packages/39/86/d04b0e111edb8c3ba2da1bcf843f8ce848436c6c54f94908cd1e422846eb/kombu-3.0.33.tar.gz"
+            }
+        ],
+        "3.0.34": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "22a5b281dbd3216a71c7c94abb46b238",
+                    "sha256": "ba39da5f7e1166de64f38ad88c0bfb417f17c24f2e6b584a4d53ae8a8fc98605"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.34-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "22a5b281dbd3216a71c7c94abb46b238",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 239968,
+                "upload_time": "2016-03-04T01:56:46",
+                "url": "https://files.pythonhosted.org/packages/fa/94/c874933b540a8c9da5ac6c916e4eee92a0de66cddb86c50da5fd641e34d3/kombu-3.0.34-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2d7b5ab949c77aff1eb858c0ede11195",
+                    "sha256": "8878ff19b09d86b2689682a4a3eb163d70115ef4ebd974966079a0edd80075da"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.34.tar.gz",
+                "has_sig": true,
+                "md5_digest": "2d7b5ab949c77aff1eb858c0ede11195",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 380374,
+                "upload_time": "2016-03-04T01:56:30",
+                "url": "https://files.pythonhosted.org/packages/bb/41/563d20ed360dd11636b8fb29a6809ffd83bac1fef61158e4bf08c29b316d/kombu-3.0.34.tar.gz"
+            }
+        ],
+        "3.0.35": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "57fe1790006f5a62d3d5fe2cb4200521",
+                    "sha256": "2c59a5e087d5895675cdb4d6a38a0aa147f0411366e68330a76e480ba3b25727"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.35-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "57fe1790006f5a62d3d5fe2cb4200521",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 240153,
+                "upload_time": "2016-03-22T19:15:29",
+                "url": "https://files.pythonhosted.org/packages/34/e6/a81b9cbcb107fc45af2d77b9f4b9745448be42b9952cc4c974f69a9239e7/kombu-3.0.35-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6483ac8ba7109ec606f5cb9bd084b6ef",
+                    "sha256": "22ab336a17962717a5d9470547e5508d4bcf1b6ec10cd9486868daf4e5edb727"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.35.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6483ac8ba7109ec606f5cb9bd084b6ef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 381135,
+                "upload_time": "2016-03-22T19:15:20",
+                "url": "https://files.pythonhosted.org/packages/5f/4f/3859b52f6d465d0d4a767516c924ee4f0e1387498ac8d0c30d9942da3762/kombu-3.0.35.tar.gz"
+            }
+        ],
+        "3.0.36": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d70ac231109fb90171a7faffcd9c9e37",
+                    "sha256": "07b0d97b04f207ad8c1658a59e7a02d23ae18385f1971656fd15e851eb38d135"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.36-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d70ac231109fb90171a7faffcd9c9e37",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 240387,
+                "upload_time": "2016-09-30T22:26:37",
+                "url": "https://files.pythonhosted.org/packages/eb/b6/cd4b475912936a6250418d3e7dcc4460268ca477bca89f01a4795f987ff7/kombu-3.0.36-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b8ff51e1705f4e72ec562e9358ce6696",
+                    "sha256": "09afe0e6d1c5ce9a985703b6e54e96e2a99ec0646a52ab303d63646e61fd35f4"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.36.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b8ff51e1705f4e72ec562e9358ce6696",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 411583,
+                "upload_time": "2016-09-30T22:25:12",
+                "url": "https://files.pythonhosted.org/packages/f7/b3/0cde7300c4526a0a8dd00435913fe54665a954cc141bf7d2a6babd35fb97/kombu-3.0.36.tar.gz"
+            }
+        ],
+        "3.0.37": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9787920ee2bef97419bbdd511807b8b5",
+                    "sha256": "7ceab743e3e974f3e5736082e8cc514c009e254e646d6167342e0e192aee81a6"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.37-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "9787920ee2bef97419bbdd511807b8b5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 240430,
+                "upload_time": "2016-10-07T00:30:55",
+                "url": "https://files.pythonhosted.org/packages/4d/0e/73ac0df8949bdb6ad81812110962b38e6bb4243c3bfdad2d9e90b5509e2e/kombu-3.0.37-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1901036ba5e70e6b1733f7c2d5ee313",
+                    "sha256": "e064a00c66b4d1058cd2b0523fb8d98c82c18450244177b6c0f7913016642650"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.37.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a1901036ba5e70e6b1733f7c2d5ee313",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 411790,
+                "upload_time": "2016-10-07T00:30:51",
+                "url": "https://files.pythonhosted.org/packages/38/69/8d603be2df979f1b9ffefae1e51cde664c52a258aff6e8c3253032c8f2c8/kombu-3.0.37.tar.gz"
+            }
+        ],
+        "3.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "582d0fffc0f4bc36b28508d6d7881f38",
+                    "sha256": "8d933047e64f5789b99bc5a2b4b6b9e9d2d282afcf6493e59886e91943b65b9b"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "582d0fffc0f4bc36b28508d6d7881f38",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 329216,
+                "upload_time": "2013-11-08T13:49:11",
+                "url": "https://files.pythonhosted.org/packages/30/6d/acac73fe659233fabb98b9a4f27b6d5a374e85b372b7b1bbdadcf075502e/kombu-3.0.4.tar.gz"
+            }
+        ],
+        "3.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2085c82cd335387c9cbcff2d916ed77",
+                    "sha256": "c4dba87a65e63f24618a0782cc044e65ffa1163cd9b418295af0c16a21430270"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "f2085c82cd335387c9cbcff2d916ed77",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 329621,
+                "upload_time": "2013-11-15T23:17:31",
+                "url": "https://files.pythonhosted.org/packages/ac/88/f7b3d77dc36cc1832dc79e56b44ccb1ed0e031a26e4246ad6c2794a24203/kombu-3.0.5.tar.gz"
+            }
+        ],
+        "3.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a20b2d97ba7356c1f8cb08d1580c4f39",
+                    "sha256": "325ebedb769c1ce3fbc92c563b88ef5e18dc64c308fc42b954258491719b4a0d"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a20b2d97ba7356c1f8cb08d1580c4f39",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 330477,
+                "upload_time": "2013-11-21T16:49:07",
+                "url": "https://files.pythonhosted.org/packages/65/d0/cce1d731aa6766910fc8ce0ba4354f0f7b680dc86ada64ef2832347a6284/kombu-3.0.6.tar.gz"
+            }
+        ],
+        "3.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "148e4e6502ca386e0b034fbbab82abfe",
+                    "sha256": "1aed91b4e58c5114069b9432d229a6b8564f63000f50b03de1c514f2bdd42f1b"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "148e4e6502ca386e0b034fbbab82abfe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 330463,
+                "upload_time": "2013-12-02T16:02:04",
+                "url": "https://files.pythonhosted.org/packages/4b/ab/71782b8330849422791d3a686a6a82c4f1e3cfebae31a00eb899447a0f17/kombu-3.0.7.tar.gz"
+            }
+        ],
+        "3.0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "58fb5e3b4e3d9548893490f80a5ef5c4",
+                    "sha256": "de8eea1b9dc83c268a135bcaa9b89aedec1b07f63ebb487f3ba09d35d37f07d2"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "58fb5e3b4e3d9548893490f80a5ef5c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 335226,
+                "upload_time": "2013-12-16T17:35:55",
+                "url": "https://files.pythonhosted.org/packages/99/88/e984a220aa7f3bb3f872df036053d11bb1192be23cba25e1f2361bf84bd8/kombu-3.0.8.tar.gz"
+            }
+        ],
+        "3.0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "653cddb01f435ade241391d637e8407f",
+                    "sha256": "636f997aa2431a30a347e08368834ff8d4079533db7c9a7947234a9fe65ebf69"
+                },
+                "downloads": -1,
+                "filename": "kombu-3.0.9.tar.gz",
+                "has_sig": true,
+                "md5_digest": "653cddb01f435ade241391d637e8407f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 336443,
+                "upload_time": "2014-01-13T17:59:32",
+                "url": "https://files.pythonhosted.org/packages/84/ba/868418480060f2a5fb34b81014d39f3d5024e00243c1166444271200fc37/kombu-3.0.9.tar.gz"
+            }
+        ],
+        "4.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "44bba19cb48b6b78dd0710a66fe61bba",
+                    "sha256": "7fdf5e4a5818c476c95df0af24d79ebcef6a66eca1aa477ae3fcfd98d5c420c0"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "44bba19cb48b6b78dd0710a66fe61bba",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 178182,
+                "upload_time": "2016-10-28T23:54:08",
+                "url": "https://files.pythonhosted.org/packages/ad/7a/3a9d1679bbe0320bd395d02a3dd4e7613381332a95cea1d68ba71b339c5c/kombu-4.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a38516e1216316b0ec71009308708638",
+                    "sha256": "fb855eccbe83d3b97d44ac3f5bb809f97b73938017e383953baf3cb60dbb1ea9"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a38516e1216316b0ec71009308708638",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 417320,
+                "upload_time": "2016-10-28T23:54:04",
+                "url": "https://files.pythonhosted.org/packages/95/fc/596472db8daa607efd599bb10cadd0bba0934fe1334ab1084201eeb38311/kombu-4.0.0.tar.gz"
+            }
+        ],
+        "4.0.0rc3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "614e2e086be81a3414c0756dbe12e746",
+                    "sha256": "46a3bdb24fe0000f6b94fc930ff49dbba3e60c5ae42b73dc5a9801f8f01b0a07"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0rc3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "614e2e086be81a3414c0756dbe12e746",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 475102,
+                "upload_time": "2016-07-08T22:35:44",
+                "url": "https://files.pythonhosted.org/packages/84/4e/2b7a14e929af19956cdca5cdcd1e40888f0bd7251754081450719eeb70f4/kombu-4.0.0rc3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a25c9cb71acfb09e918b36e82e9d1dd",
+                    "sha256": "63e4ee8fe05bb085fdbe7335c8737dda59006335fae9389e35730fff2c80050c"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0rc3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "2a25c9cb71acfb09e918b36e82e9d1dd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 405523,
+                "upload_time": "2016-07-08T22:35:36",
+                "url": "https://files.pythonhosted.org/packages/3b/54/6cab6d09bb584054202294e1e53603a9f6bf6e7f661c9c0579bc30c0a526/kombu-4.0.0rc3.tar.gz"
+            }
+        ],
+        "4.0.0rc4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54843d5a1456d6add50f4c636883147d",
+                    "sha256": "46ee870608a0c9952928f25ae22a2bd03c3ad7ec4e05fc1a4951825b70a72936"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0rc4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "54843d5a1456d6add50f4c636883147d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 173234,
+                "upload_time": "2016-09-08T22:18:05",
+                "url": "https://files.pythonhosted.org/packages/92/0e/f71241d6123d8e262f27fe24a216d49037e4773a1d88257e74ac63528088/kombu-4.0.0rc4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "90ffbc96327b29ef3bb5be6fa9817e55",
+                    "sha256": "6da3e09ca504f7609cb6483b331bedf7f8b181911ddb1778c70a8d9178452d06"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0rc4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "90ffbc96327b29ef3bb5be6fa9817e55",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 400207,
+                "upload_time": "2016-09-08T22:18:02",
+                "url": "https://files.pythonhosted.org/packages/04/c9/d0ad925ab0b2e7310fbb361bcc7940bb916c42e09a327515945908bf7b7e/kombu-4.0.0rc4.tar.gz"
+            }
+        ],
+        "4.0.0rc5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6bdd333fdbb987e35d32a49ca1d15b9f",
+                    "sha256": "e606163acc6a4046578ac4ce242d046d940048eee4327196768f8d1cd691a90e"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0rc5-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "6bdd333fdbb987e35d32a49ca1d15b9f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 177811,
+                "upload_time": "2016-10-15T01:06:21",
+                "url": "https://files.pythonhosted.org/packages/7f/d1/16991672cc05e75d1bd9a17bc3847d18487cbd740c3e71acbd28b8d60596/kombu-4.0.0rc5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "edf4e58987362ea4ad4fb8736dcef62f",
+                    "sha256": "45ebb3adfb20a88e5a170255ad4afa7c47f7941c0352c4e92aa700339ae79b29"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0rc5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "edf4e58987362ea4ad4fb8736dcef62f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 405552,
+                "upload_time": "2016-10-15T01:06:17",
+                "url": "https://files.pythonhosted.org/packages/ef/7e/0a509f31461b04c4bfb9152a909fabc82ec2e67578ecf4f9a440f7062c58/kombu-4.0.0rc5.tar.gz"
+            }
+        ],
+        "4.0.0rc6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4567d59c72f21295c29b688aa78917ad",
+                    "sha256": "2f626cb2975ad99765602eba803da1fd94669a956ed783a5ef68654c0dc05bf1"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0rc6-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "4567d59c72f21295c29b688aa78917ad",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 177844,
+                "upload_time": "2016-10-22T01:17:29",
+                "url": "https://files.pythonhosted.org/packages/fc/a3/7b3c63bda44c9c7b40489a9c94fa89071d7de50c7b93b59b501a8870c3a0/kombu-4.0.0rc6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee5c41a784b45d3294d935373663ffdd",
+                    "sha256": "57a03e5b9af54d52e620b4d93ab892d9b6ee4417037c2fe3fab07d489d397e2a"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.0rc6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ee5c41a784b45d3294d935373663ffdd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 405671,
+                "upload_time": "2016-10-22T01:17:25",
+                "url": "https://files.pythonhosted.org/packages/8b/fa/90d2cd7f04f8962f13b003aa5aef67ecf02797ba17db575a2924b847ba6f/kombu-4.0.0rc6.tar.gz"
+            }
+        ],
+        "4.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "49ea0514709fc27e7e91794b7cc86092",
+                    "sha256": "ee240fdccb26507a7842d8c2de4106e022c0142eed2e77c482efa597a77efd16"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "49ea0514709fc27e7e91794b7cc86092",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 178262,
+                "upload_time": "2016-12-08T01:55:28",
+                "url": "https://files.pythonhosted.org/packages/27/d1/3e8d2e651cdd2ec4979177be5c53cf669e1f7415881e92cce10daaa3732e/kombu-4.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d77e3083dd852046ae33b7cad1573d8d",
+                    "sha256": "d293c2698f6b86835f2584c63cc6283fcac1ac6bdb3e7b8ff31395da20626536"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d77e3083dd852046ae33b7cad1573d8d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 417909,
+                "upload_time": "2016-12-08T01:55:24",
+                "url": "https://files.pythonhosted.org/packages/d3/8e/23b6c18f90196618702fef40a5bb3642f86236f7857963caff7e82ea27ce/kombu-4.0.1.tar.gz"
+            }
+        ],
+        "4.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "81c8fcae3b6a9ed118d6074cb1700e17",
+                    "sha256": "385bf38e6de7f3851f674671dbfe24572ce999608d293a85fb8a630654d8bd9c"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "81c8fcae3b6a9ed118d6074cb1700e17",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 178258,
+                "upload_time": "2016-12-15T23:49:44",
+                "url": "https://files.pythonhosted.org/packages/43/ac/567da3770c8f1d2c44262b485130d6a12efc1bdb4ba79f1f328e1015ecd0/kombu-4.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1f24f3a8addf8f3eb0f463aad970f0fb",
+                    "sha256": "d0fc6f2a36610a308f838db4b832dad79a681b516ac1d1a1f9d42edb58cc11a2"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1f24f3a8addf8f3eb0f463aad970f0fb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 418051,
+                "upload_time": "2016-12-15T23:49:41",
+                "url": "https://files.pythonhosted.org/packages/c7/76/58c655a80bf08b703478ce673ed4e3029297105951863b73030d45b06b42/kombu-4.0.2.tar.gz"
+            }
+        ],
+        "4.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cbeb9ada03a0ffd4874836ee738b8615",
+                    "sha256": "01f0da9fe222a2183345004243d1518c0fbe5875955f1b24842f2d9c65709ade"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "cbeb9ada03a0ffd4874836ee738b8615",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 181281,
+                "upload_time": "2017-07-20T16:32:03",
+                "url": "https://files.pythonhosted.org/packages/62/a4/5d16954803224a1e451713293c2a028614099f5538cf626e1fdd7b438c86/kombu-4.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2fb2be9fec0e6514231bba23a3779439",
+                    "sha256": "4249d9dd9dbf1fcec471d1c2def20653c9310dd1a217272d77e4844f9d5273cb"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "2fb2be9fec0e6514231bba23a3779439",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 421875,
+                "upload_time": "2017-07-20T16:32:08",
+                "url": "https://files.pythonhosted.org/packages/03/5e/1a47d1e543d4943d65330af4e4406049f443878818fb65bfdc651bb93a96/kombu-4.1.0.tar.gz"
+            }
+        ],
+        "4.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc79f8b9cb816357dd3d4efe5751e3b6",
+                    "sha256": "416aa6fb7b22125a3b65322eb26f5c4479d4830b3e7bad55191ac46438ef2b2b"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.2.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "dc79f8b9cb816357dd3d4efe5751e3b6",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 853287,
+                "upload_time": "2018-05-21T05:50:54",
+                "url": "https://files.pythonhosted.org/packages/2f/0d/416d396ee75b7e47e620005ef81a5b8a36c53c85bb148bd82459e8e61b6b/kombu-4.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb7e668936cd5ffc3232b72a2a4f931f",
+                    "sha256": "d601c47312833c0f6f4aaf037f293b2627398d4cf8526e6ba0360287294ee1fb"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.2.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cb7e668936cd5ffc3232b72a2a4f931f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 423909,
+                "upload_time": "2018-05-21T05:50:59",
+                "url": "https://files.pythonhosted.org/packages/ab/b1/46a7a8babf5e60f3b2ca081a100af8edfcf132078a726375f52a054e70cf/kombu-4.2.0.tar.gz"
+            }
+        ],
+        "4.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f7f1c617947d3b30e25236f6790d966",
+                    "sha256": "b274db3a4eacc4789aeb24e1de3e460586db7c4fc8610f7adcc7a3a1709a60af"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.2.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "5f7f1c617947d3b30e25236f6790d966",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 177481,
+                "upload_time": "2018-05-30T14:09:05",
+                "url": "https://files.pythonhosted.org/packages/97/61/65838c7da048e56d549e358ac19c0979c892e17dc6186610c49531d35b70/kombu-4.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15e43bdeacef6805a61e2cdee717f748",
+                    "sha256": "86adec6c60f63124e2082ea8481bbe4ebe04fde8ebed32c177c7f0cd2c1c9082"
+                },
+                "downloads": -1,
+                "filename": "kombu-4.2.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "15e43bdeacef6805a61e2cdee717f748",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 423926,
+                "upload_time": "2018-05-30T14:09:09",
+                "url": "https://files.pythonhosted.org/packages/39/9f/556b988833abede4a80dbd18b2bdf4e8ff4486dd482ed45da961347e8ed2/kombu-4.2.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "5f7f1c617947d3b30e25236f6790d966",
+                "sha256": "b274db3a4eacc4789aeb24e1de3e460586db7c4fc8610f7adcc7a3a1709a60af"
+            },
+            "downloads": -1,
+            "filename": "kombu-4.2.1-py2.py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "5f7f1c617947d3b30e25236f6790d966",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 177481,
+            "upload_time": "2018-05-30T14:09:05",
+            "url": "https://files.pythonhosted.org/packages/97/61/65838c7da048e56d549e358ac19c0979c892e17dc6186610c49531d35b70/kombu-4.2.1-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "15e43bdeacef6805a61e2cdee717f748",
+                "sha256": "86adec6c60f63124e2082ea8481bbe4ebe04fde8ebed32c177c7f0cd2c1c9082"
+            },
+            "downloads": -1,
+            "filename": "kombu-4.2.1.tar.gz",
+            "has_sig": true,
+            "md5_digest": "15e43bdeacef6805a61e2cdee717f748",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 423926,
+            "upload_time": "2018-05-30T14:09:09",
+            "url": "https://files.pythonhosted.org/packages/39/9f/556b988833abede4a80dbd18b2bdf4e8ff4486dd482ed45da961347e8ed2/kombu-4.2.1.tar.gz"
+        }
+    ],
+    "package_name": "kombu"
+}

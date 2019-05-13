@@ -1,0 +1,910 @@
+{
+    "info": {
+        "author": "Kenneth Reitz",
+        "author_email": "me@kennethreitz.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+            "Natural Language :: English",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6"
+        ],
+        "description": "Certifi: Python SSL Certificates\n================================\n\n`Certifi`_ is a carefully curated collection of Root Certificates for\nvalidating the trustworthiness of SSL certificates while verifying the identity\nof TLS hosts. It has been extracted from the `Requests`_ project.\n\nInstallation\n------------\n\n``certifi`` is available on PyPI. Simply install it with ``pip``::\n\n    $ pip install certifi\n\nUsage\n-----\n\nTo reference the installed certificate authority (CA) bundle, you can use the\nbuilt-in function::\n\n    >>> import certifi\n\n    >>> certifi.where()\n    '/usr/local/lib/python2.7/site-packages/certifi/cacert.pem'\n\nEnjoy!\n\n1024-bit Root Certificates\n~~~~~~~~~~~~~~~~~~~~~~~~~~\n\nBrowsers and certificate authorities have concluded that 1024-bit keys are\nunacceptably weak for certificates, particularly root certificates. For this\nreason, Mozilla has removed any weak (i.e. 1024-bit key) certificate from its\nbundle, replacing it with an equivalent strong (i.e. 2048-bit or greater key)\ncertificate from the same CA. Because Mozilla removed these certificates from\nits bundle, ``certifi`` removed them as well.\n\nIn previous versions, ``certifi`` provided the ``certifi.old_where()`` function\nto intentionally re-add the 1024-bit roots back into your bundle. This was not\nrecommended in production and therefore was removed. To assist in migrating old\ncode, the function ``certifi.old_where()`` continues to exist as an alias of\n``certifi.where()``. Please update your code to use ``certifi.where()``\ninstead. ``certifi.old_where()`` will be removed in 2018.\n\n.. _`Certifi`: http://certifi.io/en/latest/\n.. _`Requests`: http://docs.python-requests.org/en/latest/\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://certifi.io/",
+        "keywords": "",
+        "license": "MPL-2.0",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "certifi",
+        "package_url": "https://pypi.org/project/certifi/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/certifi/",
+        "release_url": "https://pypi.org/project/certifi/2018.4.16/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Python package for providing Mozilla's CA Bundle.",
+        "version": "2018.4.16"
+    },
+    "last_serial": 3770157,
+    "releases": {
+        "0": [],
+        "0.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bad50249a8e0a2e5f7858e6322cf06d2",
+                    "sha256": "a6f0d79b2b63a43c71bc128929be3a17bdf5d0a5f74208d7ad9563b3bf8210e9"
+                },
+                "downloads": -1,
+                "filename": "certifi-0.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bad50249a8e0a2e5f7858e6322cf06d2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 118887,
+                "upload_time": "2011-12-28T07:27:42",
+                "url": "https://files.pythonhosted.org/packages/55/bf/e1094f052b5932a452b12ac5a6c229f3d7dbf41a66cfc8d5832fe3fb6463/certifi-0.0.1.tar.gz"
+            }
+        ],
+        "0.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c91ab8b034966f88f481ef8f6e0c07e1",
+                    "sha256": "678b7a44338228d55bc4569a575b4734bbbcb9da109328f3b10e3435ec6abdee"
+                },
+                "downloads": -1,
+                "filename": "certifi-0.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c91ab8b034966f88f481ef8f6e0c07e1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 118508,
+                "upload_time": "2011-12-28T09:28:47",
+                "url": "https://files.pythonhosted.org/packages/0c/4d/6e036d6158e533499272f7b82d0ffa115ecc7c930994475b7bf8f4047489/certifi-0.0.2.tar.gz"
+            }
+        ],
+        "0.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "88aa24faf5d46c2d8426450b38330f2a",
+                    "sha256": "1418bce4a32cd409b9766a7c92556be4d23f287da581945be4076eea299fbeac"
+                },
+                "downloads": -1,
+                "filename": "certifi-0.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "88aa24faf5d46c2d8426450b38330f2a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 118528,
+                "upload_time": "2011-12-28T09:41:16",
+                "url": "https://files.pythonhosted.org/packages/17/3d/7d037b5aadde37d95c067e5b26f064ae53f791201a89b5b38ee315409264/certifi-0.0.3.tar.gz"
+            }
+        ],
+        "0.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f79d78ea1404dc6ad607a2f035e25d3f",
+                    "sha256": "8aed314d0d133c70fd9c56ee13cabe0910c0f6ff423da266841512af0e3d68c4"
+                },
+                "downloads": -1,
+                "filename": "certifi-0.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f79d78ea1404dc6ad607a2f035e25d3f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 118526,
+                "upload_time": "2011-12-28T09:49:48",
+                "url": "https://files.pythonhosted.org/packages/cd/b9/ad866737dfde6b459fa3188b13d249e50101fa06bab408e6d9e5029b6838/certifi-0.0.4.tar.gz"
+            }
+        ],
+        "0.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d5005feb495e83f78e0fb1b3f2ec70f",
+                    "sha256": "c1c47a7545e39e19357d51c2e5291de158508024658d6860815359566ac65c02"
+                },
+                "downloads": -1,
+                "filename": "certifi-0.0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0d5005feb495e83f78e0fb1b3f2ec70f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 118528,
+                "upload_time": "2011-12-28T11:34:59",
+                "url": "https://files.pythonhosted.org/packages/84/b9/a5aac1c71b154f18dad87b39e42a118a538ce4f95fe10f3f651b0c3d0ac2/certifi-0.0.5.tar.gz"
+            }
+        ],
+        "0.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e5238cfffd61be7fef5b5db4aa29f818",
+                    "sha256": "e839718ce80daa9853b1f47a333757d4a22cdf422e2fd8de5e579d5634a89585"
+                },
+                "downloads": -1,
+                "filename": "certifi-0.0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e5238cfffd61be7fef5b5db4aa29f818",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 118451,
+                "upload_time": "2011-12-28T11:37:01",
+                "url": "https://files.pythonhosted.org/packages/76/4a/92995898df84d15c42d49e38b814caa94502cbf28be9b9732703303f2107/certifi-0.0.6.tar.gz"
+            }
+        ],
+        "0.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "86eee1cacdf8167d7ea7ea3572d233d5",
+                    "sha256": "6dec7d3c6f3d4ed0a50fb15f8fd41c0bb1b17998eb8c103d0f34d61c19061e36"
+                },
+                "downloads": -1,
+                "filename": "certifi-0.0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "86eee1cacdf8167d7ea7ea3572d233d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 119974,
+                "upload_time": "2012-01-23T07:45:43",
+                "url": "https://files.pythonhosted.org/packages/43/10/aafebf9677ccec8b227f15eef20a4aac65fbff7f14fc9462f06855fecdd2/certifi-0.0.7.tar.gz"
+            }
+        ],
+        "0.0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc5f5e7f0b5fc08d27654b17daa6ecec",
+                    "sha256": "46ecf5f7526a08cc1f8bc8232adf0cffce046f46ceff95539daec42ebc4849ef"
+                },
+                "downloads": -1,
+                "filename": "certifi-0.0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dc5f5e7f0b5fc08d27654b17daa6ecec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 118129,
+                "upload_time": "2012-01-30T21:09:58",
+                "url": "https://files.pythonhosted.org/packages/38/70/d777da670969367780cb0cb66f43799e17e050dcdeb0fa4e26189519f9f2/certifi-0.0.8.tar.gz"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ef0ac75aabb7bfd4ab6261a55f08493",
+                    "sha256": "d4f8e89c9e709f67221bf21231d0fa66a00d3712bcb69d4b5aef3705339c8dcd"
+                },
+                "downloads": -1,
+                "filename": "certifi-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1ef0ac75aabb7bfd4ab6261a55f08493",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 164836,
+                "upload_time": "2014-01-17T19:18:21",
+                "url": "https://files.pythonhosted.org/packages/eb/fe/3ba38b686003664a75c01c42c6f1be02f9837d007c0f15727e6f8f2040a3/certifi-1.0.0.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7a7f27120a39ab0be1bfb6884c6e9ebf",
+                    "sha256": "44964ac783fca598e723da5fa2ef3631b5b2f94f445749bfc6043d4afb20de75"
+                },
+                "downloads": -1,
+                "filename": "certifi-1.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7a7f27120a39ab0be1bfb6884c6e9ebf",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 169278,
+                "upload_time": "2014-03-10T13:36:03",
+                "url": "https://files.pythonhosted.org/packages/4e/58/86422944e1f228a4e90c291388bf69675826c995f163b2894541365f1f0e/certifi-1.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "45f5cb94b8af9e1df0f9450a8f61b790",
+                    "sha256": "f2c18c7edd349ec10378ef43ff16f81ae1d0af61d5d2858a8b383e8f6814a9cc"
+                },
+                "downloads": -1,
+                "filename": "certifi-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "45f5cb94b8af9e1df0f9450a8f61b790",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 168859,
+                "upload_time": "2014-03-10T13:24:54",
+                "url": "https://files.pythonhosted.org/packages/ff/3a/ec07518540a090d463aa20c615a170d52a3633057fde480bd462883a0de2/certifi-1.0.1.tar.gz"
+            }
+        ],
+        "14.05.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "315ea4e50673a16ab047099f816fd32a",
+                    "sha256": "1e1bcbacd6357c151ae37cf0290dcc809721d32ce21fd6b7339568f3ddef1b69"
+                },
+                "downloads": -1,
+                "filename": "certifi-14.05.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "315ea4e50673a16ab047099f816fd32a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 168608,
+                "upload_time": "2014-05-18T22:55:55",
+                "url": "https://files.pythonhosted.org/packages/c1/ed/4a424a55f77679700452972e583393b64160583c80ffa893b4be9391f3ae/certifi-14.05.14.tar.gz"
+            }
+        ],
+        "2015.04.28": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b0d6599c8297becffeb369c0b3ef47b",
+                    "sha256": "268fa00c27de756d71663dd61f73a4a8d8727569bb1b474b2ce6020553826872"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.04.28-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4b0d6599c8297becffeb369c0b3ef47b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 373298,
+                "upload_time": "2015-04-28T17:40:47",
+                "url": "https://files.pythonhosted.org/packages/86/35/9758a67004a266047c779ae40a3d937869bfc6fc3422f6c606b8afbc9d23/certifi-2015.04.28-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12c7c3a063b2ff97a0f8291d8de41e8c",
+                    "sha256": "99785e6cf715cdcde59dee05a676e99f04835a71e7ced201ca317401c322ba96"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.04.28.tar.gz",
+                "has_sig": false,
+                "md5_digest": "12c7c3a063b2ff97a0f8291d8de41e8c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 370682,
+                "upload_time": "2015-04-28T17:40:43",
+                "url": "https://files.pythonhosted.org/packages/4a/41/52617061e93551d5c8041b70d35db395ad647cc356beb764cd9b278e3114/certifi-2015.04.28.tar.gz"
+            }
+        ],
+        "2015.11.20": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6206cd9ca559c1d7390da307fe96f661",
+                    "sha256": "12e141bb3e0f1b3ea4d5a8af804fc59ff94d5ece040cf8d22232ddf87eec096b"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.11.20-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6206cd9ca559c1d7390da307fe96f661",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 367351,
+                "upload_time": "2015-11-20T09:19:41",
+                "url": "https://files.pythonhosted.org/packages/a5/2b/83904abc08c3d95808d098163b049e923cbf9fa04f6fa5c0f3750959da8e/certifi-2015.11.20-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25134646672c695c1ff1593c2dd75d08",
+                    "sha256": "7168668372f07219439e82878b484d6216ff63224fd4e7ff4f39c56ad0b487de"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.11.20.tar.gz",
+                "has_sig": false,
+                "md5_digest": "25134646672c695c1ff1593c2dd75d08",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 364503,
+                "upload_time": "2015-11-20T09:19:14",
+                "url": "https://files.pythonhosted.org/packages/c5/8a/d007319d95bd2424adb3f2a41ffb29de76f2c07b3dd5fd98f3651f9a14f5/certifi-2015.11.20.tar.gz"
+            }
+        ],
+        "2015.11.20.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "144eb8a498f1b98c372eebc6f9a76bc6",
+                    "sha256": "ad86683448f7483d4147a64d96856e551734e594c4563747e9fbe2368df13d3f"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.11.20.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "144eb8a498f1b98c372eebc6f9a76bc6",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 368793,
+                "upload_time": "2015-11-30T11:18:21",
+                "url": "https://files.pythonhosted.org/packages/df/21/86903664789d010c7693523aa44cd6f96f9d60c7bc813761ff3db5fa8aad/certifi-2015.11.20.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e04b512009401603f1485380ac879cf5",
+                    "sha256": "30b0a7354a1b32caa8b4705d3f5fb2dadefac7ba4bf8af8a2176869f93e38f16"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.11.20.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e04b512009401603f1485380ac879cf5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 365934,
+                "upload_time": "2015-11-30T11:18:12",
+                "url": "https://files.pythonhosted.org/packages/08/59/d39d98454a4fd2c9e0955590398bcfc4047f8e6dde00d7731cefdb32b403/certifi-2015.11.20.1.tar.gz"
+            }
+        ],
+        "2015.9.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "353670355bc7b0b87b99d101d693aff0",
+                    "sha256": "499d154e26c642108248be45b4e09d3b978d2e7c6a72e0a147a2e81448a61a7d"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.9.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "353670355bc7b0b87b99d101d693aff0",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 361971,
+                "upload_time": "2015-09-06T02:54:12",
+                "url": "https://files.pythonhosted.org/packages/c6/aa/85432217f85f1553dc0926a3e00b48e00819b80097dd056e482c19766f11/certifi-2015.9.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "433489b1ccdd1ffe91500866fea7042d",
+                    "sha256": "7e5646f75d2779719b3400c009e3461f921823e4592657f8e00fb2b6e14b8b92"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.9.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "433489b1ccdd1ffe91500866fea7042d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 359650,
+                "upload_time": "2015-09-06T02:53:58",
+                "url": "https://files.pythonhosted.org/packages/e2/ec/ab8442e4d6cf92ea4df67ed81e078bd6a9e092c96ffcd03dbd910e1eb389/certifi-2015.9.6.tar.gz"
+            }
+        ],
+        "2015.9.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a6bc6cbbadcbc8e4ada2979294923d9",
+                    "sha256": "4cbb1f8b30948895f36bb94402598506808833747e0a2e1ca5b1f152ff341da4"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.9.6.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0a6bc6cbbadcbc8e4ada2979294923d9",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 371112,
+                "upload_time": "2015-09-06T03:32:59",
+                "url": "https://files.pythonhosted.org/packages/cc/7f/fb45b6c47ff3a1e119b8fa0aec4a9d1812f0c9f774d877eca582065ef21e/certifi-2015.9.6.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4653a5fe35985fd3b5d6a19c88f50135",
+                    "sha256": "f924457bd89178e565fe1b90359d90639f524e7da1a99988292474f52defbf34"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.9.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4653a5fe35985fd3b5d6a19c88f50135",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 186331,
+                "upload_time": "2015-09-06T03:32:44",
+                "url": "https://files.pythonhosted.org/packages/d6/8d/700b62e1cbcd0264450b8bb476757808ef2c3f6060ee552c3717d010b616/certifi-2015.9.6.1.tar.gz"
+            }
+        ],
+        "2015.9.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "512f112ac0d3cb1efe88786e00fde931",
+                    "sha256": "7486e08ffd0a9bea8c66e76fd1f0f0150294c572e78cb16b14d8589beafd3564"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.9.6.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "512f112ac0d3cb1efe88786e00fde931",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 371110,
+                "upload_time": "2015-09-07T15:43:34",
+                "url": "https://files.pythonhosted.org/packages/58/41/b16d4787c30bfb27d608fd2383ab2a7823afa0491fa16df04336d7b7519b/certifi-2015.9.6.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "323884431b31aa0eccb5f8086d92196b",
+                    "sha256": "dc3a2b2d9d1033dbf27586366ae61b9d7c44d8c3a6f29694ffcbb0618ea7aea6"
+                },
+                "downloads": -1,
+                "filename": "certifi-2015.9.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "323884431b31aa0eccb5f8086d92196b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 368588,
+                "upload_time": "2015-09-07T15:43:28",
+                "url": "https://files.pythonhosted.org/packages/63/71/422814652028afbff99347da9f3d102f53113a1d2389e255a2dde15c5d8d/certifi-2015.9.6.2.tar.gz"
+            }
+        ],
+        "2016.2.28": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "409448ee124f3159d912e4e155b034b0",
+                    "sha256": "75c33d546e0a732a4606749cbadcd81929f30d8b814061ca93cde49933dbb860"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.2.28-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "409448ee124f3159d912e4e155b034b0",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 366879,
+                "upload_time": "2016-02-28T14:32:48",
+                "url": "https://files.pythonhosted.org/packages/db/60/1ed0106bde7b14b363b15b17cc308aad93ba57d3582570f3ad7180ae0fae/certifi-2016.2.28-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d672aa766e1f773c75cfeccd02d3650",
+                    "sha256": "5e8eccf95924658c97b990b50552addb64f55e1e3dfe4880456ac1f287dc79d0"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.2.28.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5d672aa766e1f773c75cfeccd02d3650",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 364036,
+                "upload_time": "2016-02-28T14:32:41",
+                "url": "https://files.pythonhosted.org/packages/5c/f8/f6c54727c74579c6bbe5926f5deb9677c5810a33e11da58d1a4e2d09d041/certifi-2016.2.28.tar.gz"
+            }
+        ],
+        "2016.8.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e8f31a38035586cc28033c06dec3875",
+                    "sha256": "c6290b32cfccf569a621d0449fcaf9283a3e0c77108bc808545b41c779d42e0a"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.8.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "7e8f31a38035586cc28033c06dec3875",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 381733,
+                "upload_time": "2016-08-02T08:07:40",
+                "url": "https://files.pythonhosted.org/packages/65/da/116b7b175ecdb089406ec24238d1fe668b52d3f25e4e7ba88983807eac6a/certifi-2016.8.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "004ae166985d3a684bcac5368e22ed63",
+                    "sha256": "65ddc34fd9c8509851031d7075b8325393b87e6dbe5875a723959a20266d7a41"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.8.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "004ae166985d3a684bcac5368e22ed63",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 379197,
+                "upload_time": "2016-08-02T08:07:44",
+                "url": "https://files.pythonhosted.org/packages/60/d8/e4dbd7239f1dd3854135949cc2cc8344602b1545a7929b7bf652ac69fbb6/certifi-2016.8.2.tar.gz"
+            }
+        ],
+        "2016.8.31": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0931a7d2576083826efa419d695117a3",
+                    "sha256": "172844a3e2896c924e6aa2657b2e56586a724f27edd0e9592be9353f3a3f6c73"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.8.31-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "0931a7d2576083826efa419d695117a3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 379020,
+                "upload_time": "2016-08-31T16:25:25",
+                "url": "https://files.pythonhosted.org/packages/34/21/ebb383f944dfc3a14461ee021089da90477be919a5554117c184ae3d44be/certifi-2016.8.31-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f22d484a36d38d98be74f9eeb2846ec",
+                    "sha256": "f7708a42d86f29ccc7c8c4ff9d34a8d854d8d78eb2973d1f28406bb43d6b8919"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.8.31.tar.gz",
+                "has_sig": true,
+                "md5_digest": "2f22d484a36d38d98be74f9eeb2846ec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 376643,
+                "upload_time": "2016-08-31T16:25:30",
+                "url": "https://files.pythonhosted.org/packages/1c/d1/0133a5084f0d17db0270c6061e824a11b0e417d743f5ff4c594f4090ed89/certifi-2016.8.31.tar.gz"
+            }
+        ],
+        "2016.8.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cd6b969efda72327c5178c3ef0946ff2",
+                    "sha256": "04f0e6677e6a5a64ba83ade859bcdda254c1ccf58545eb72bc2067f51a01873c"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.8.8-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cd6b969efda72327c5178c3ef0946ff2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 384755,
+                "upload_time": "2016-08-08T13:12:03",
+                "url": "https://files.pythonhosted.org/packages/dd/ed/e9bf6a9dc79e23c68385c4ea692f0e9e1a7880518872564f88be013b552f/certifi-2016.8.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b57513f7670482da45bb350b792f659e",
+                    "sha256": "99864ed602d8a9d212e339b15ffa438895002eda7b7db20dca5309dac9605ae9"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.8.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b57513f7670482da45bb350b792f659e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 382233,
+                "upload_time": "2016-08-08T13:11:59",
+                "url": "https://files.pythonhosted.org/packages/41/bf/88a3269c7c95fc94a2c581c4b1b3d3ec21af7a268d6a3a4e54578adccfd6/certifi-2016.8.8.tar.gz"
+            }
+        ],
+        "2016.9.26": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f48b1ab06489776c408cc5062a826971",
+                    "sha256": "a60073d7bb5cb01671877efda875e8dab755b98baedfbb9b8b3d9be2d52ad022"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.9.26-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "f48b1ab06489776c408cc5062a826971",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 377097,
+                "upload_time": "2016-09-26T11:50:55",
+                "url": "https://files.pythonhosted.org/packages/a2/35/b7b457c95fdd661d4c179201e9e58a2181934695943b08ccfcba09284b4e/certifi-2016.9.26-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "baa81e951a29958563689d868ef1064d",
+                    "sha256": "8275aef1bbeaf05c53715bfc5d8569bd1e04ca1e8e69608cc52bcaac2604eb19"
+                },
+                "downloads": -1,
+                "filename": "certifi-2016.9.26.tar.gz",
+                "has_sig": true,
+                "md5_digest": "baa81e951a29958563689d868ef1064d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 374637,
+                "upload_time": "2016-09-26T11:50:59",
+                "url": "https://files.pythonhosted.org/packages/4f/75/e1bc6e363a2c76f8d7e754c27c437dbe4086414e1d6d2f6b2a3e7846f22b/certifi-2016.9.26.tar.gz"
+            }
+        ],
+        "2017.1.23": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b4c86480f1527eefc24a6a6f8c2253eb",
+                    "sha256": "f74a224a9860fd5a2e9757230a7ea3eba82d6d46914780abc18e70c8b58d4bf8"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.1.23-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b4c86480f1527eefc24a6a6f8c2253eb",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 382984,
+                "upload_time": "2017-01-23T21:21:13",
+                "url": "https://files.pythonhosted.org/packages/21/f7/7bb6b1c5ba1db21515950bc16b22cd7ef7d27024100f326a19921efd2ce0/certifi-2017.1.23-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b72521a8badff5e89a8eabea586d79ab",
+                    "sha256": "81877fb7ac126e9215dfb15bfef7115fdc30e798e0013065158eed0707fd99ce"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.1.23.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b72521a8badff5e89a8eabea586d79ab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 380397,
+                "upload_time": "2017-01-23T21:21:15",
+                "url": "https://files.pythonhosted.org/packages/b6/fa/ca682d5ace0700008d246664e50db8d095d23750bb212c0086305450c276/certifi-2017.1.23.tar.gz"
+            }
+        ],
+        "2017.11.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "429fdf238d878f8090a80ccc3488049b",
+                    "sha256": "244be0d93b71e93fc0a0a479862051414d0e00e16435707e5bf5000f92e04694"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.11.5-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "429fdf238d878f8090a80ccc3488049b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 330630,
+                "upload_time": "2017-11-05T13:22:40",
+                "url": "https://files.pythonhosted.org/packages/29/9b/25ef61e948321296f029f53c9f67cc2b54e224db509eb67ce17e0df6044a/certifi-2017.11.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c15ac46ed1fe4b607ff3405928f9a992",
+                    "sha256": "5ec74291ca1136b40f0379e1128ff80e866597e4e2c1e755739a913bbc3613c0"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.11.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c15ac46ed1fe4b607ff3405928f9a992",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 329246,
+                "upload_time": "2017-11-05T13:22:43",
+                "url": "https://files.pythonhosted.org/packages/23/3f/8be01c50ed24a4bd6b8da799839066ce0288f66f5e11f0367323467f0cbc/certifi-2017.11.5.tar.gz"
+            }
+        ],
+        "2017.4.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d6198f160686046fd727900adf39f5b",
+                    "sha256": "f4318671072f030a33c7ca6acaef720ddd50ff124d1388e50c1bda4cbd6d7010"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.4.17-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "7d6198f160686046fd727900adf39f5b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 375925,
+                "upload_time": "2017-04-17T19:36:37",
+                "url": "https://files.pythonhosted.org/packages/eb/01/c1f58987b777d6c4ec535b4e004a4a07bfc9db06f0c7533367ca6da8f2a6/certifi-2017.4.17-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "db40445044feda1437ce3ccd5fc28a57",
+                    "sha256": "f7527ebf7461582ce95f7a9e03dd141ce810d40590834f4ec20cddd54234c10a"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.4.17.tar.gz",
+                "has_sig": true,
+                "md5_digest": "db40445044feda1437ce3ccd5fc28a57",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 373512,
+                "upload_time": "2017-04-17T19:36:40",
+                "url": "https://files.pythonhosted.org/packages/dd/0e/1e3b58c861d40a9ca2d7ea4ccf47271d4456ae4294c5998ad817bd1b4396/certifi-2017.4.17.tar.gz"
+            }
+        ],
+        "2017.7.27": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c84dfaa15d456c86c5b91e8758a920d0",
+                    "sha256": "f0c0494d4a43fc862826a8ac731538ac68120524d4438e864a1ce2a2916e495d"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.7.27-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c84dfaa15d456c86c5b91e8758a920d0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 349511,
+                "upload_time": "2017-07-27T15:42:26",
+                "url": "https://files.pythonhosted.org/packages/dc/ec/38df4e406cfca294fd6e242ea38bd943f47885d95e4dbf1783146f80e391/certifi-2017.7.27-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf4506df00739efb8fbc490f6cab5375",
+                    "sha256": "a7e03cbaf96baad108e34602848d0e4f04e59185325a61e63c96fcf67cee5fcd"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.7.27.tar.gz",
+                "has_sig": true,
+                "md5_digest": "bf4506df00739efb8fbc490f6cab5375",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 348142,
+                "upload_time": "2017-07-27T15:42:29",
+                "url": "https://files.pythonhosted.org/packages/fa/70/bf24052d94f00bfdb70ac70840bfa1ba61e6d56ee7da5f62ecbca743c87e/certifi-2017.7.27.tar.gz"
+            }
+        ],
+        "2017.7.27.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c78c8e571e3556b8f0222bd221e471ac",
+                    "sha256": "54a07c09c586b0e4c619f02a5e94e36619da8e2b053e20f594348c0611803704"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.7.27.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c78c8e571e3556b8f0222bd221e471ac",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 349554,
+                "upload_time": "2017-07-27T15:46:17",
+                "url": "https://files.pythonhosted.org/packages/40/66/06130724e8205fc8c105db7edb92871c7fff7d31324d7f4405c762624a43/certifi-2017.7.27.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "48e8370da8b370a16e223ee9c7b6b063",
+                    "sha256": "40523d2efb60523e113b44602298f0960e900388cf3bb6043f645cf57ea9e3f5"
+                },
+                "downloads": -1,
+                "filename": "certifi-2017.7.27.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "48e8370da8b370a16e223ee9c7b6b063",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 348217,
+                "upload_time": "2017-07-27T15:46:22",
+                "url": "https://files.pythonhosted.org/packages/20/d0/3f7a84b0c5b89e94abbd073a5f00c7176089f526edb056686751d5064cbd/certifi-2017.7.27.1.tar.gz"
+            }
+        ],
+        "2018.1.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "38f1c6a4a5d6b5e8bcb614354d6584c9",
+                    "sha256": "14131608ad2fd56836d33a71ee60fa1c82bc9d2c8d98b7bdbc631fe1b3cd1296"
+                },
+                "downloads": -1,
+                "filename": "certifi-2018.1.18-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "38f1c6a4a5d6b5e8bcb614354d6584c9",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 151607,
+                "upload_time": "2018-01-18T20:30:56",
+                "url": "https://files.pythonhosted.org/packages/fa/53/0a5562e2b96749e99a3d55d8c7df91c9e4d8c39a9da1f1a49ac9e4f4b39f/certifi-2018.1.18-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "068fd5c3c690ae47504b3e0bf4e56c4c",
+                    "sha256": "edbc3f203427eef571f79a7692bb160a2b0f7ccaa31953e99bd17e307cf63f7d"
+                },
+                "downloads": -1,
+                "filename": "certifi-2018.1.18.tar.gz",
+                "has_sig": true,
+                "md5_digest": "068fd5c3c690ae47504b3e0bf4e56c4c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 151258,
+                "upload_time": "2018-01-18T20:30:58",
+                "url": "https://files.pythonhosted.org/packages/15/d4/2f888fc463d516ff7bf2379a4e9a552fef7f22a94147655d9b1097108248/certifi-2018.1.18.tar.gz"
+            }
+        ],
+        "2018.4.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8280b65d50546025140b542904e86c3b",
+                    "sha256": "9fa520c1bacfb634fa7af20a76bcbd3d5fb390481724c597da32c719a7dca4b0"
+                },
+                "downloads": -1,
+                "filename": "certifi-2018.4.16-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "8280b65d50546025140b542904e86c3b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 150367,
+                "upload_time": "2018-04-16T18:50:10",
+                "url": "https://files.pythonhosted.org/packages/7c/e6/92ad559b7192d846975fc916b65f667c7b8c3a32bea7372340bfe9a15fa5/certifi-2018.4.16-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5d81d0048e84285611412b0dea0630a",
+                    "sha256": "13e698f54293db9f89122b0581843a782ad0934a4fe0172d2a980ba77fc61bb7"
+                },
+                "downloads": -1,
+                "filename": "certifi-2018.4.16.tar.gz",
+                "has_sig": true,
+                "md5_digest": "f5d81d0048e84285611412b0dea0630a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 149967,
+                "upload_time": "2018-04-16T18:50:12",
+                "url": "https://files.pythonhosted.org/packages/4d/9c/46e950a6f4d6b4be571ddcae21e7bc846fcbb88f1de3eff0f6dd0a6be55d/certifi-2018.4.16.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "8280b65d50546025140b542904e86c3b",
+                "sha256": "9fa520c1bacfb634fa7af20a76bcbd3d5fb390481724c597da32c719a7dca4b0"
+            },
+            "downloads": -1,
+            "filename": "certifi-2018.4.16-py2.py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "8280b65d50546025140b542904e86c3b",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 150367,
+            "upload_time": "2018-04-16T18:50:10",
+            "url": "https://files.pythonhosted.org/packages/7c/e6/92ad559b7192d846975fc916b65f667c7b8c3a32bea7372340bfe9a15fa5/certifi-2018.4.16-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "f5d81d0048e84285611412b0dea0630a",
+                "sha256": "13e698f54293db9f89122b0581843a782ad0934a4fe0172d2a980ba77fc61bb7"
+            },
+            "downloads": -1,
+            "filename": "certifi-2018.4.16.tar.gz",
+            "has_sig": true,
+            "md5_digest": "f5d81d0048e84285611412b0dea0630a",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 149967,
+            "upload_time": "2018-04-16T18:50:12",
+            "url": "https://files.pythonhosted.org/packages/4d/9c/46e950a6f4d6b4be571ddcae21e7bc846fcbb88f1de3eff0f6dd0a6be55d/certifi-2018.4.16.tar.gz"
+        }
+    ],
+    "package_name": "certifi"
+}

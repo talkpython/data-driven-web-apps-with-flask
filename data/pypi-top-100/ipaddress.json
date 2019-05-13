@@ -1,0 +1,700 @@
+{
+    "info": {
+        "author": "Philipp Hagemeister",
+        "author_email": "phihag@phihag.de",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Python Software Foundation License",
+            "Natural Language :: English",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6"
+        ],
+        "description": "Port of the 3.3+ ipaddress module to 2.6, 2.7, 3.2",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/phihag/ipaddress",
+        "keywords": "",
+        "license": "Python Software Foundation License",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "ipaddress",
+        "package_url": "https://pypi.org/project/ipaddress/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/ipaddress/",
+        "release_url": "https://pypi.org/project/ipaddress/1.0.22/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "IPv4/IPv6 manipulation library",
+        "version": "1.0.22"
+    },
+    "last_serial": 3766716,
+    "releases": {
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e98480db071778fd090a89cb7ea4b904",
+                    "sha256": "315c3152d342a44263f025837bb69d5e4285cafe7c07a0343910dbd843032a9e"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e98480db071778fd090a89cb7ea4b904",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1041,
+                "upload_time": "2013-02-04T00:13:44",
+                "url": "https://files.pythonhosted.org/packages/08/c5/54d2d43790ab5bd81ce9ea74890a66899be9b40589e99b6135a6d8218750/ipaddress-1.0.1.tar.gz"
+            }
+        ],
+        "1.0.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c6c57dc1617fa56be4aba0e774783fb2",
+                    "sha256": "97295cc40b3902749718ac97b0c088ba1b7de76bc3a63825fedc5a6c3d4d95e2"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.10-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c6c57dc1617fa56be4aba0e774783fb2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17448,
+                "upload_time": "2015-07-13T03:42:30",
+                "url": "https://files.pythonhosted.org/packages/01/00/5d2dcbe58733096986a6f875b08b713738488b26e586e64352179303b321/ipaddress-1.0.10-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62a59bf4f5310c56ef770ba94841af93",
+                    "sha256": "1514f7230f1682d5453c88860fe34fed89176648c8c4fda5793a00bb065ddfef"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "62a59bf4f5310c56ef770ba94841af93",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16378,
+                "upload_time": "2015-07-13T03:42:26",
+                "url": "https://files.pythonhosted.org/packages/66/8e/8aac1db1d26eda41c03e2c8b250d3fca7e1c356850d21d52f8e4eb3195d6/ipaddress-1.0.10.tar.gz"
+            }
+        ],
+        "1.0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1ccf78e454ceab463f8aedcd8015b80",
+                    "sha256": "0054ebcf5d7edd88e947bbf90cfb84435f2a4d383f06f0c46c5d9cee68e46222"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.11-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a1ccf78e454ceab463f8aedcd8015b80",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17441,
+                "upload_time": "2015-07-13T10:35:43",
+                "url": "https://files.pythonhosted.org/packages/64/83/c72b98c1afe1dddccc100cc6d93e4558404444d077dfd062b22fa3c2f25d/ipaddress-1.0.11-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f763dfbcd347ddbdc73077988eabb88",
+                    "sha256": "a30ee1b6cd9c95561154716155f97e247d4abb9d2b3bd5db4dbb2972c0755d73"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f763dfbcd347ddbdc73077988eabb88",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16371,
+                "upload_time": "2015-07-13T10:35:39",
+                "url": "https://files.pythonhosted.org/packages/5c/0e/344c894fbc109684ccec182f6da59abcdd707b79d96f05aa15332b7761ff/ipaddress-1.0.11.tar.gz"
+            }
+        ],
+        "1.0.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9f69f89263501f1b9bb2806237cc7aa3",
+                    "sha256": "e0d87458ccfced0f253a04aa8d427163a046f994a7f7e47db6ffec43e52d6aae"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.12-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9f69f89263501f1b9bb2806237cc7aa3",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17442,
+                "upload_time": "2015-07-14T19:31:32",
+                "url": "https://files.pythonhosted.org/packages/1e/23/195b12476c5b0858f90d2979be09ec417264c8338f618b0f3410cc3661bc/ipaddress-1.0.12-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec865e52b6cbeb2f63ca0ec4637d5138",
+                    "sha256": "8c81980950b6360df6d5451456d09e92895f0a9d4aba96ceabcff66ef1f02b11"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ec865e52b6cbeb2f63ca0ec4637d5138",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16158,
+                "upload_time": "2015-07-14T19:31:28",
+                "url": "https://files.pythonhosted.org/packages/55/ec/84c5f17d753d750c81e68120b9e08ec28a916c9e031b753120c795fa876a/ipaddress-1.0.12.tar.gz"
+            }
+        ],
+        "1.0.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "029ce63b3f4f23a0ad0b5620e59a5911",
+                    "sha256": "0d8f40aa39966f66277e4e83876fa366c2499ab5cd740735b3e153ec43886c87"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.13-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "029ce63b3f4f23a0ad0b5620e59a5911",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17435,
+                "upload_time": "2015-07-15T18:12:46",
+                "url": "https://files.pythonhosted.org/packages/a6/96/7446a4c0aaa3b4ea2a94c162029690c3b620b068ab092073e58aa5d9977c/ipaddress-1.0.13-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4a31bbd4542257039de811d4b89adebe",
+                    "sha256": "d6cfd6d26d8f5e9b65c55fce673141bbcdd7837ab119105a894ab7977f02261f"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4a31bbd4542257039de811d4b89adebe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16194,
+                "upload_time": "2015-07-15T18:12:42",
+                "url": "https://files.pythonhosted.org/packages/ac/36/e7e739925b2c34558524219316070463eb15b4bd5d2c5847d65c6598a825/ipaddress-1.0.13.tar.gz"
+            }
+        ],
+        "1.0.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "090b0f13b295c5c532efcd28e56f610c",
+                    "sha256": "c216d8a22e9495bf0af75f48c3bbeec30eb6fe5d38802065f167936197378e13"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.14-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "090b0f13b295c5c532efcd28e56f610c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17434,
+                "upload_time": "2015-07-16T21:08:26",
+                "url": "https://files.pythonhosted.org/packages/4d/fc/b35d2f4883c272c92423a1ca28088918c379e66ba40198015893741275a0/ipaddress-1.0.14-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e2f2f6593b2b8a7e8abba0fbdf33f046",
+                    "sha256": "226f4be44c6cb64055e23060848266f51f329813baae28b53dc50e93488b3b3e"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e2f2f6593b2b8a7e8abba0fbdf33f046",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30429,
+                "upload_time": "2015-07-16T21:08:21",
+                "url": "https://files.pythonhosted.org/packages/0e/5f/deee2eca683b09582b4c2e88ad41064ab29af0f1d6600f9491b443fadd3f/ipaddress-1.0.14.tar.gz"
+            }
+        ],
+        "1.0.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "396c6b262ffb75607ffa02660d25ab3f",
+                    "sha256": "58959fbec3ae438f5ac710bb61c42b610d89bb4e5bcc3247b3077e2348734dad"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.15-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "396c6b262ffb75607ffa02660d25ab3f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17441,
+                "upload_time": "2015-11-11T19:59:11",
+                "url": "https://files.pythonhosted.org/packages/2e/88/9d24e5e953970af73e058e5a7166c31ffc05a5dfe6439cf97cc86776439d/ipaddress-1.0.15-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12915e923b738107e47827478d553ba1",
+                    "sha256": "af6c85cfc9cdb12b861655e6b9f2f59618bf3088cbde858727b2c0a98e9f6636"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.15.tar.gz",
+                "has_sig": false,
+                "md5_digest": "12915e923b738107e47827478d553ba1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30438,
+                "upload_time": "2015-11-11T19:59:05",
+                "url": "https://files.pythonhosted.org/packages/15/0f/ea139e6e469d2c195d2008da66a254d761eba3c6200dfb6d88774703607e/ipaddress-1.0.15.tar.gz"
+            }
+        ],
+        "1.0.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ca35627d73f695d7dd8999b62a13323f",
+                    "sha256": "935712800ce4760701d89ad677666cd52691fd2f6f0b340c8b4239a3c17988a5"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.16-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ca35627d73f695d7dd8999b62a13323f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17441,
+                "upload_time": "2015-12-28T17:11:21",
+                "url": "https://files.pythonhosted.org/packages/23/6a/813ac29a01e4c33c19c2bded98ac3d4266ebbf0bd2c0eb0020e1c969958d/ipaddress-1.0.16-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e27b62aa20f5b6fc200b2bdbf0d0847",
+                    "sha256": "5a3182b322a706525c46282ca6f064d27a02cffbd449f9f47416f1dc96aa71b0"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.16.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1e27b62aa20f5b6fc200b2bdbf0d0847",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31765,
+                "upload_time": "2015-12-28T17:11:14",
+                "url": "https://files.pythonhosted.org/packages/cd/c5/bd44885274379121507870d4abfe7ba908326cf7bfd50a48d9d6ae091c0d/ipaddress-1.0.16.tar.gz"
+            }
+        ],
+        "1.0.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d5bbd4c159932bac9dc4071968a190e",
+                    "sha256": "a42764805223838ec9d04eee7fe699083bf5321001792b6076322784c5b994a5"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.17-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5d5bbd4c159932bac9dc4071968a190e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17510,
+                "upload_time": "2016-09-09T16:55:17",
+                "url": "https://files.pythonhosted.org/packages/9c/06/9c02897c07943697e4be028c874565892f16756828e02c1178fad5384c32/ipaddress-1.0.17-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8bbf0326719fafb1f453921ef96729fe",
+                    "sha256": "3a21c5a15f433710aaa26f1ae174b615973a25182006ae7f9c26de151cd51716"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.17.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8bbf0326719fafb1f453921ef96729fe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32434,
+                "upload_time": "2016-09-09T16:55:12",
+                "url": "https://files.pythonhosted.org/packages/bb/26/3b64955ff73f9e3155079b9ed31812afdfa5333b5c76387454d651ef593a/ipaddress-1.0.17.tar.gz"
+            }
+        ],
+        "1.0.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "87a59004e58c97d2040b0bf3b93e29b7",
+                    "sha256": "d34cf15d95ce9a734560f7400a8bd2ac2606f378e2a1d0eadbf1c98707e7c74a"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.18-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "87a59004e58c97d2040b0bf3b93e29b7",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17511,
+                "upload_time": "2017-01-11T12:30:48",
+                "url": "https://files.pythonhosted.org/packages/17/93/28f4dd560780dd70fe75ce7e2662869770dfac181f6bbb472179ea8da516/ipaddress-1.0.18-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "310c2dfd64eb6f0df44aa8c59f2334a7",
+                    "sha256": "5d8534c8e185f2d8a1fda1ef73f2c8f4b23264e8e30063feeb9511d492a413e1"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.18.tar.gz",
+                "has_sig": false,
+                "md5_digest": "310c2dfd64eb6f0df44aa8c59f2334a7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32475,
+                "upload_time": "2017-01-11T12:30:46",
+                "url": "https://files.pythonhosted.org/packages/4e/13/774faf38b445d0b3a844b65747175b2e0500164b7c28d78e34987a5bfe06/ipaddress-1.0.18.tar.gz"
+            }
+        ],
+        "1.0.19": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0687efaf93a32476d81e90ba0609c57",
+                    "sha256": "200d8686011d470b5e4de207d803445deee427455cd0cb7c982b68cf82524f81"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.19.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d0687efaf93a32476d81e90ba0609c57",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32854,
+                "upload_time": "2017-12-16T21:30:41",
+                "url": "https://files.pythonhosted.org/packages/f0/ba/860a4a3e283456d6b7e2ab39ce5cf11a3490ee1a363652ac50abf9f0f5df/ipaddress-1.0.19.tar.gz"
+            }
+        ],
+        "1.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8c028138ad6b41444f2db9f5bcfb23ec",
+                    "sha256": "c7c23b1c2676b1454a3fc97d0eed035dd2e5c42790549e80bfe5715ed7373e7e"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8c028138ad6b41444f2db9f5bcfb23ec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1086,
+                "upload_time": "2013-02-04T00:14:41",
+                "url": "https://files.pythonhosted.org/packages/37/c3/9807e6ff7b3d4025e6166f40cf8326ae3919e6842fe0430117a025f500ad/ipaddress-1.0.2.tar.gz"
+            }
+        ],
+        "1.0.21": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "922d565436da605411a1b9aa33307e12",
+                    "sha256": "c65c59041d771a8f8996e3579015b14bf015bcfdcb7949c315e6e25b89a6e2a2"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.21-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "922d565436da605411a1b9aa33307e12",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 18154,
+                "upload_time": "2018-04-14T17:54:45",
+                "url": "https://files.pythonhosted.org/packages/09/5c/8f604ba5927646e0989a525b1643b0b301560344954408fe18a5e3bbefd5/ipaddress-1.0.21-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ec98ca51cd0f9fa54ffc5385ca39d5a",
+                    "sha256": "82c964e8a387f3869774c9fd3ed7bf19f0e001de58f0f52fc17257b6bc5f515d"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.21.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1ec98ca51cd0f9fa54ffc5385ca39d5a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32885,
+                "upload_time": "2018-04-14T17:54:43",
+                "url": "https://files.pythonhosted.org/packages/a8/8a/82b83cfb953a87570e91acb2c92ec20e278ec51843a25f0fd361236ae3b9/ipaddress-1.0.21.tar.gz"
+            }
+        ],
+        "1.0.22": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a240380dba35117be557c4c04be4129",
+                    "sha256": "64b28eec5e78e7510698f6d4da08800a5c575caa4a286c93d651c5d3ff7b6794"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.22-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3a240380dba35117be557c4c04be4129",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 18155,
+                "upload_time": "2018-04-15T18:00:48",
+                "url": "https://files.pythonhosted.org/packages/fc/d0/7fc3a811e011d4b388be48a0e381db8d990042df54aa4ef4599a31d39853/ipaddress-1.0.22-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74c1ce3109f30eaa1ab3dd342e7b76d4",
+                    "sha256": "b146c751ea45cad6188dd6cf2d9b757f6f4f8d6ffb96a023e6f2e26eea02a72c"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.22.tar.gz",
+                "has_sig": false,
+                "md5_digest": "74c1ce3109f30eaa1ab3dd342e7b76d4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33051,
+                "upload_time": "2018-04-15T18:00:47",
+                "url": "https://files.pythonhosted.org/packages/97/8d/77b8cedcfbf93676148518036c6b1ce7f8e14bf07e95d7fd4ddcb8cc052f/ipaddress-1.0.22.tar.gz"
+            }
+        ],
+        "1.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e30ca46929f34c20da4cea4ece7910fb",
+                    "sha256": "0bd63c8851db843ae86d7b1bd31be1803a77a4d698d2a677241409c9f77c6048"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e30ca46929f34c20da4cea4ece7910fb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14914,
+                "upload_time": "2013-02-04T00:39:50",
+                "url": "https://files.pythonhosted.org/packages/94/c9/d3b5372458a0594629855c3d4523a8acbae56dc5341a3a4e257ef0bfee09/ipaddress-1.0.3.tar.gz"
+            }
+        ],
+        "1.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ffc9f6255fc0cc8d31368bd3e38c2bba",
+                    "sha256": "401e8b3197aed15b600641d1e2a2c52f4c80d812075cb6d3dffc812eca93571f"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ffc9f6255fc0cc8d31368bd3e38c2bba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14947,
+                "upload_time": "2013-04-01T16:08:45",
+                "url": "https://files.pythonhosted.org/packages/0e/69/3b2b02b375cd3d520f6a5223e6000800e14a1b6fe69ac4d5958075b2ebb1/ipaddress-1.0.4.tar.gz"
+            }
+        ],
+        "1.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c5a55c6edae6348840c23f5c18f28aa",
+                    "sha256": "557c366d6a7460855c5e2c31d8387a85878b5f077a40abef33ac66b26bd1c388"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0c5a55c6edae6348840c23f5c18f28aa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14989,
+                "upload_time": "2013-09-06T10:33:12",
+                "url": "https://files.pythonhosted.org/packages/00/4a/2a7fe99d2b4cbbe99da60857d4ee3605d3dfd9c0820077a9fa56c4d673c5/ipaddress-1.0.5.tar.gz"
+            }
+        ],
+        "1.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e9a5a3901677ff14eadbc41a8e5ef17b",
+                    "sha256": "04510f7bb526f47f5fa122104aaf914fae4ebf20d3f545114dc1fdc85cf4c7e9"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.6-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e9a5a3901677ff14eadbc41a8e5ef17b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 16108,
+                "upload_time": "2014-06-23T13:14:00",
+                "url": "https://files.pythonhosted.org/packages/28/62/0d45d4b044d751cdb38cce4708e5ead2243c32d840f8ab2621b9b0ca9ae1/ipaddress-1.0.6-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a869a0c03f03961c714046a579e38e68",
+                    "sha256": "b1b2f8b915b1ff0314301f5aaa9635e508ae2a16e8538812a2fd5dd2b7939d8d"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a869a0c03f03961c714046a579e38e68",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15091,
+                "upload_time": "2013-09-20T13:48:03",
+                "url": "https://files.pythonhosted.org/packages/45/df/27fd8f300304408a969dc8998c62ea8d32c7f7654106b210ea5ba6af06bc/ipaddress-1.0.6.tar.gz"
+            }
+        ],
+        "1.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "96fc86757100c27edfd187e49ef22f40",
+                    "sha256": "67f9e431f96f49912d6a6b96544f8918c89fa2f0d5b334fbc7ccb4e752354ef0"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.7-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "96fc86757100c27edfd187e49ef22f40",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 16146,
+                "upload_time": "2014-11-24T01:45:31",
+                "url": "https://files.pythonhosted.org/packages/64/e0/3cf7c6e06115e70ec0944fc6797bd635a00cd17a735e346b98798429bb76/ipaddress-1.0.7-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d9ecf415cced476f7781cf5b9ef70c4",
+                    "sha256": "2c99e9eaea2dacbe4038b3be772ec650f5b4f4c8cc479c3704b81673d96849d7"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5d9ecf415cced476f7781cf5b9ef70c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15126,
+                "upload_time": "2014-11-24T01:45:28",
+                "url": "https://files.pythonhosted.org/packages/f8/a4/2d0cd332721772b214af4a79ade2480f611fb53c730140dc0f3fbcdae100/ipaddress-1.0.7.tar.gz"
+            }
+        ],
+        "1.0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75b28f6db0e1c4aa43894fc3db0c27fa",
+                    "sha256": "713369a2169bde7d3309cdd8b28d6cfa1baef12af0af839eaf27da875d18c02f"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.8-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "75b28f6db0e1c4aa43894fc3db0c27fa",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17324,
+                "upload_time": "2015-07-13T02:45:05",
+                "url": "https://files.pythonhosted.org/packages/82/66/8a281a6b8f9d0a229c8f7b302c94a86341d1c903c729bdcc6ea017e2b336/ipaddress-1.0.8-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bd70676ddc14e5dd25d44d72d3ed9b0e",
+                    "sha256": "7b8581530525a80a4c884bbe5e5744b0a1fcdd637fb2e66762e832d81d89b2ee"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bd70676ddc14e5dd25d44d72d3ed9b0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16211,
+                "upload_time": "2015-07-13T02:45:01",
+                "url": "https://files.pythonhosted.org/packages/b0/eb/0b9988ec28b3093a55e446b6222a17d04fe17b09adfe40ddc7583777b17f/ipaddress-1.0.8.tar.gz"
+            }
+        ],
+        "1.0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f8d74aa7800ffe24fe2936f61036bdb",
+                    "sha256": "90a16aa135ab47b0220867e67904f6fd26aa8cba310aaed1e03214bb2dc2c3f0"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.9-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2f8d74aa7800ffe24fe2936f61036bdb",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 17433,
+                "upload_time": "2015-07-13T02:58:25",
+                "url": "https://files.pythonhosted.org/packages/f0/98/4edd1114e0732a798cc77801fe80dc52718645ea8ac4b12b5a9c5f5a6b3f/ipaddress-1.0.9-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b999d9420aa10bd428d08150b1824e71",
+                    "sha256": "4fcec53076042dc041458915efdf426770a3cdd333a539478b5db728c2cb2c68"
+                },
+                "downloads": -1,
+                "filename": "ipaddress-1.0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b999d9420aa10bd428d08150b1824e71",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16377,
+                "upload_time": "2015-07-13T02:58:21",
+                "url": "https://files.pythonhosted.org/packages/77/bd/ffaa273799a87bc640061e858abd04086783e9ed1d5b2c48981ca86f41ca/ipaddress-1.0.9.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "3a240380dba35117be557c4c04be4129",
+                "sha256": "64b28eec5e78e7510698f6d4da08800a5c575caa4a286c93d651c5d3ff7b6794"
+            },
+            "downloads": -1,
+            "filename": "ipaddress-1.0.22-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "3a240380dba35117be557c4c04be4129",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 18155,
+            "upload_time": "2018-04-15T18:00:48",
+            "url": "https://files.pythonhosted.org/packages/fc/d0/7fc3a811e011d4b388be48a0e381db8d990042df54aa4ef4599a31d39853/ipaddress-1.0.22-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "74c1ce3109f30eaa1ab3dd342e7b76d4",
+                "sha256": "b146c751ea45cad6188dd6cf2d9b757f6f4f8d6ffb96a023e6f2e26eea02a72c"
+            },
+            "downloads": -1,
+            "filename": "ipaddress-1.0.22.tar.gz",
+            "has_sig": false,
+            "md5_digest": "74c1ce3109f30eaa1ab3dd342e7b76d4",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 33051,
+            "upload_time": "2018-04-15T18:00:47",
+            "url": "https://files.pythonhosted.org/packages/97/8d/77b8cedcfbf93676148518036c6b1ce7f8e14bf07e95d7fd4ddcb8cc052f/ipaddress-1.0.22.tar.gz"
+        }
+    ],
+    "package_name": "ipaddress"
+}

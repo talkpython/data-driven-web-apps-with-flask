@@ -1,0 +1,392 @@
+{
+    "info": {
+        "author": "Johann C. Rocholl",
+        "author_email": "johann@rocholl.net",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "description": "pycodestyle (formerly called pep8) - Python style guide checker\n===============================================================\n\n.. image:: https://img.shields.io/travis/PyCQA/pycodestyle.svg\n   :target: https://travis-ci.org/PyCQA/pycodestyle\n   :alt: Build status\n\n.. image:: https://readthedocs.org/projects/pycodestyle/badge/?version=latest\n    :target: https://pycodestyle.readthedocs.io\n    :alt: Documentation Status\n\n.. image:: https://img.shields.io/pypi/wheel/pycodestyle.svg\n   :target: https://pypi.python.org/pypi/pycodestyle\n   :alt: Wheel Status\n\n.. image:: https://badges.gitter.im/PyCQA/pycodestyle.svg\n   :alt: Join the chat at https://gitter.im/PyCQA/pycodestyle\n   :target: https://gitter.im/PyCQA/pycodestyle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge\n\npycodestyle is a tool to check your Python code against some of the style\nconventions in `PEP 8`_.\n\n.. _PEP 8: http://www.python.org/dev/peps/pep-0008/\n\n.. note::\n\n    This package used to be called ``pep8`` but was renamed to ``pycodestyle``\n    to reduce confusion. Further discussion can be found `in the issue where\n    Guido requested this\n    change <https://github.com/PyCQA/pycodestyle/issues/466>`_, or in the\n    lightning talk at PyCon 2016 by @IanLee1521:\n    `slides <https://speakerdeck.com/ianlee1521/pep8-vs-pep-8>`_\n    `video <https://youtu.be/PulzIT8KYLk?t=36m>`_.\n\nFeatures\n--------\n\n* Plugin architecture: Adding new checks is easy.\n\n* Parseable output: Jump to error location in your editor.\n\n* Small: Just one Python file, requires only stdlib. You can use just\n  the ``pycodestyle.py`` file for this purpose.\n\n* Comes with a comprehensive test suite.\n\nInstallation\n------------\n\nYou can install, upgrade, and uninstall ``pycodestyle.py`` with these commands::\n\n  $ pip install pycodestyle\n  $ pip install --upgrade pycodestyle\n  $ pip uninstall pycodestyle\n\nThere's also a package for Debian/Ubuntu, but it's not always the\nlatest version.\n\nExample usage and output\n------------------------\n\n::\n\n  $ pycodestyle --first optparse.py\n  optparse.py:69:11: E401 multiple imports on one line\n  optparse.py:77:1: E302 expected 2 blank lines, found 1\n  optparse.py:88:5: E301 expected 1 blank line, found 0\n  optparse.py:222:34: W602 deprecated form of raising exception\n  optparse.py:347:31: E211 whitespace before '('\n  optparse.py:357:17: E201 whitespace after '{'\n  optparse.py:472:29: E221 multiple spaces before operator\n  optparse.py:544:21: W601 .has_key() is deprecated, use 'in'\n\nYou can also make ``pycodestyle.py`` show the source code for each error, and\neven the relevant text from PEP 8::\n\n  $ pycodestyle --show-source --show-pep8 testsuite/E40.py\n  testsuite/E40.py:2:10: E401 multiple imports on one line\n  import os, sys\n           ^\n      Imports should usually be on separate lines.\n\n      Okay: import os\\nimport sys\n      E401: import sys, os\n\n\nOr you can display how often each error was found::\n\n  $ pycodestyle --statistics -qq Python-2.5/Lib\n  232     E201 whitespace after '['\n  599     E202 whitespace before ')'\n  631     E203 whitespace before ','\n  842     E211 whitespace before '('\n  2531    E221 multiple spaces before operator\n  4473    E301 expected 1 blank line, found 0\n  4006    E302 expected 2 blank lines, found 1\n  165     E303 too many blank lines (4)\n  325     E401 multiple imports on one line\n  3615    E501 line too long (82 characters)\n  612     W601 .has_key() is deprecated, use 'in'\n  1188    W602 deprecated form of raising exception\n\nLinks\n-----\n\n* `Read the documentation <https://pycodestyle.readthedocs.io/>`_\n\n* `Fork me on GitHub <http://github.com/PyCQA/pycodestyle>`_\n\n\nChangelog\n=========\n\n2.4.0 (2018-04-10)\n------------------\n\nNew checks:\n\n* Add W504 warning for checking that a break doesn't happen after a binary\n  operator. This check is ignored by default. PR #502.\n* Add W605 warning for invalid escape sequences in string literals. PR #676.\n* Add W606 warning for 'async' and 'await' reserved keywords being introduced\n  in Python 3.7. PR #684.\n* Add E252 error for missing whitespace around equal sign in type annotated\n  function arguments with defaults values. PR #717.\n\nChanges:\n\n* An internal bisect search has replaced a linear search in order to improve\n  efficiency. PR #648.\n* pycodestyle now uses PyPI trove classifiers in order to document supported\n  python versions on PyPI. PR #654.\n* 'setup.cfg' '[wheel]' section has been renamed to '[bdist_wheel]', as\n  the former is legacy. PR #653.\n* pycodestyle now handles very long lines much more efficiently for python\n  3.2+. Fixes #643. PR #644.\n* You can now write 'pycodestyle.StyleGuide(verbose=True)' instead of\n  'pycodestyle.StyleGuide(verbose=True, paths=['-v'])' in order to achieve\n  verbosity. PR #663.\n* The distribution of pycodestyle now includes the license text in order to\n  comply with open source licenses which require this. PR #694.\n* 'maximum_line_length' now ignores shebang ('#!') lines. PR #736.\n* Add configuration option for the allowed number of blank lines. It is\n  implemented as a top level dictionary which can be easily overwritten. Fixes\n  #732. PR #733.\n\nBugs:\n\n* Prevent a 'DeprecationWarning', and a 'SyntaxError' in future python, caused\n  by an invalid escape sequence. PR #625.\n* Correctly report E501 when the first line of a docstring is too long.\n  Resolves #622. PR #630.\n* Support variable annotation when variable start by a keyword, such as class\n  variable type annotations in python 3.6. PR #640.\n* pycodestyle internals have been changed in order to allow 'python3 -m\n  cProfile' to report correct metrics. PR #647.\n* Fix a spelling mistake in the description of E722. PR #697.\n* 'pycodestyle --diff' now does not break if your 'gitconfig' enables\n  'mnemonicprefix'. PR #706.\n\n2.3.1 (2017-01-31)\n------------------\n\nBugs:\n\n* Fix regression in detection of E302 and E306; #618, #620\n\n2.3.0 (2017-01-30)\n------------------\n\nNew Checks:\n\n* Add E722 warning for bare ``except`` clauses\n* Report E704 for async function definitions (``async def``)\n\nBugs:\n\n* Fix another E305 false positive for variables beginning with \"class\" or\n  \"def\"\n* Fix detection of multiple spaces between ``async`` and ``def``\n* Fix handling of variable annotations. Stop reporting E701 on Python 3.6 for\n  variable annotations.\n\n2.2.0 (2016-11-14)\n------------------\n\nAnnouncements:\n\n* Added Make target to obtain proper tarball file permissions; #599\n\nBugs:\n\n* Fixed E305 regression caused by #400; #593\n\n2.1.0 (2016-11-04)\n------------------\n\nAnnouncements:\n\n* Change all references to the pep8 project to say pycodestyle; #530\n\nChanges:\n\n* Report E302 for blank lines before an \"async def\"; #556\n* Update our list of tested and supported Python versions which are 2.6, 2.7,\n  3.2, 3.3, 3.4 and 3.5 as well as the nightly Python build and PyPy.\n* Report E742 and E743 for functions and classes badly named 'l', 'O', or 'I'.\n* Report E741 on 'global' and 'nonlocal' statements, as well as prohibited\n  single-letter variables.\n* Deprecated use of `[pep8]` section name in favor of `[pycodestyle]`; #591\n* Report E722 when bare except clause is used; #579\n\nBugs:\n\n* Fix opt_type AssertionError when using Flake8 2.6.2 and pycodestyle; #561\n* Require two blank lines after toplevel def, class; #536\n* Remove accidentally quadratic computation based on the number of colons. This\n  will make pycodestyle faster in some cases; #314\n\n2.0.0 (2016-05-31)\n------------------\n\nAnnouncements:\n\n* Repository renamed to `pycodestyle`; Issue #466 / #481.\n* Added joint Code of Conduct as member of PyCQA; #483\n\nChanges:\n\n* Added tox test support for Python 3.5 and pypy3\n* Added check E275 for whitespace on `from ... import ...` lines; #489 / #491\n* Added W503 to the list of codes ignored by default ignore list; #498\n* Removed use of project level `.pep8` configuration file; #364\n\nBugs:\n\n* Fixed bug with treating `~` operator as binary; #383 / #384\n* Identify binary operators as unary; #484 / #485\n\n1.7.0 (2016-01-12)\n------------------\n\nAnnouncements:\n\n* Repository moved to PyCQA Organization on GitHub:\n  https://github.com/pycqa/pep8\n\nChanges:\n\n* Reverted the fix in #368, \"options passed on command line are only ones\n  accepted\" feature. This has many unintended consequences in pep8 and flake8\n  and needs to be reworked when I have more time.\n* Added support for Python 3.5. (Issue #420 & #459)\n* Added support for multi-line config_file option parsing. (Issue #429)\n* Improved parameter parsing. (Issues #420 & #456)\n\nBugs:\n\n* Fixed BytesWarning on Python 3. (Issue #459)\n\n1.6.2 (2015-02-15)\n------------------\n\nChanges:\n\n* Added check for breaking around a binary operator. (Issue #197, Pull #305)\n\nBugs:\n\n* Restored config_file parameter in process_options(). (Issue #380)\n\n\n1.6.1 (2015-02-08)\n------------------\n\nChanges:\n\n* Assign variables before referenced. (Issue #287)\n\nBugs:\n\n* Exception thrown due to unassigned ``local_dir`` variable. (Issue #377)\n\n\n1.6.0 (2015-02-06)\n------------------\n\nNews:\n\n* Ian Lee <ianlee1521@gmail.com> joined the project as a maintainer.\n\nChanges:\n\n* Report E731 for lambda assignment. (Issue #277)\n\n* Report E704 for one-liner def instead of E701.\n  Do not report this error in the default configuration. (Issue #277)\n\n* Replace codes E111, E112 and E113 with codes E114, E115 and E116\n  for bad indentation of comments. (Issue #274)\n\n* Report E266 instead of E265 when the block comment starts with\n  multiple ``#``. (Issue #270)\n\n* Report E402 for import statements not at the top of the file. (Issue #264)\n\n* Do not enforce whitespaces around ``**`` operator. (Issue #292)\n\n* Strip whitespace from around paths during normalization. (Issue #339 / #343)\n\n* Update ``--format`` documentation. (Issue #198 / Pull Request #310)\n\n* Add ``.tox/`` to default excludes. (Issue #335)\n\n* Do not report E121 or E126 in the default configuration. (Issues #256 / #316)\n\n* Allow spaces around the equals sign in an annotated function. (Issue #357)\n\n* Allow trailing backslash if in an inline comment. (Issue #374)\n\n* If ``--config`` is used, only that configuration is processed. Otherwise,\n  merge the user and local configurations are merged. (Issue #368 / #369)\n\nBug fixes:\n\n* Don't crash if Checker.build_tokens_line() returns None. (Issue #306)\n\n* Don't crash if os.path.expanduser() throws an ImportError. (Issue #297)\n\n* Missing space around keyword parameter equal not always reported, E251.\n  (Issue #323)\n\n* Fix false positive E711/E712/E713. (Issues #330 and #336)\n\n* Do not skip physical checks if the newline is escaped. (Issue #319)\n\n* Flush sys.stdout to avoid race conditions with printing. See flake8 bug:\n  https://gitlab.com/pycqa/flake8/issues/17 for more details. (Issue #363)\n\n\n1.5.7 (2014-05-29)\n------------------\n\nBug fixes:\n\n* Skip the traceback on \"Broken pipe\" signal. (Issue #275)\n\n* Do not exit when an option in ``setup.cfg`` or ``tox.ini``\n  is not recognized.\n\n* Check the last line even if it does not end with a newline. (Issue #286)\n\n* Always open files in universal newlines mode in Python 2. (Issue #288)\n\n\n1.5.6 (2014-04-14)\n------------------\n\nBug fixes:\n\n* Check the last line even if it has no end-of-line. (Issue #273)\n\n\n1.5.5 (2014-04-10)\n------------------\n\nBug fixes:\n\n* Fix regression with E22 checks and inline comments. (Issue #271)\n\n\n1.5.4 (2014-04-07)\n------------------\n\nBug fixes:\n\n* Fix negative offset with E303 before a multi-line docstring.\n  (Issue #269)\n\n\n1.5.3 (2014-04-04)\n------------------\n\nBug fixes:\n\n* Fix wrong offset computation when error is on the last char\n  of a physical line. (Issue #268)\n\n\n1.5.2 (2014-04-04)\n------------------\n\nChanges:\n\n* Distribute a universal wheel file.\n\nBug fixes:\n\n* Report correct line number for E303 with comments. (Issue #60)\n\n* Do not allow newline after parameter equal. (Issue #252)\n\n* Fix line number reported for multi-line strings. (Issue #220)\n\n* Fix false positive E121/E126 with multi-line strings. (Issue #265)\n\n* Fix E501 not detected in comments with Python 2.5.\n\n* Fix caret position with ``--show-source`` when line contains tabs.\n\n\n1.5.1 (2014-03-27)\n------------------\n\nBug fixes:\n\n* Fix a crash with E125 on multi-line strings. (Issue #263)\n\n\n1.5 (2014-03-26)\n----------------\n\nChanges:\n\n* Report E129 instead of E125 for visually indented line with same\n  indent as next logical line.  (Issue #126)\n\n* Report E265 for space before block comment. (Issue #190)\n\n* Report E713 and E714 when operators ``not in`` and ``is not`` are\n  recommended. (Issue #236)\n\n* Allow long lines in multiline strings and comments if they cannot\n  be wrapped. (Issue #224).\n\n* Optionally disable physical line checks inside multiline strings,\n  using ``# noqa``. (Issue #242)\n\n* Change text for E121 to report \"continuation line under-indented\n  for hanging indent\" instead of indentation not being a\n  multiple of 4.\n\n* Report E131 instead of E121 / E126 if the hanging indent is not\n  consistent within the same continuation block.  It helps when\n  error E121 or E126 is in the ``ignore`` list.\n\n* Report E126 instead of E121 when the continuation line is hanging\n  with extra indentation, even if indentation is not a multiple of 4.\n\nBug fixes:\n\n* Allow the checkers to report errors on empty files. (Issue #240)\n\n* Fix ignoring too many checks when ``--select`` is used with codes\n  declared in a flake8 extension. (Issue #216)\n\n* Fix regression with multiple brackets. (Issue #214)\n\n* Fix ``StyleGuide`` to parse the local configuration if the\n  keyword argument ``paths`` is specified. (Issue #246)\n\n* Fix a false positive E124 for hanging indent. (Issue #254)\n\n* Fix a false positive E126 with embedded colon. (Issue #144)\n\n* Fix a false positive E126 when indenting with tabs. (Issue #204)\n\n* Fix behaviour when ``exclude`` is in the configuration file and\n  the current directory is not the project directory. (Issue #247)\n\n* The logical checks can return ``None`` instead of an empty iterator.\n  (Issue #250)\n\n* Do not report multiple E101 if only the first indentation starts\n  with a tab. (Issue #237)\n\n* Fix a rare false positive W602. (Issue #34)\n\n\n1.4.6 (2013-07-02)\n------------------\n\nChanges:\n\n* Honor ``# noqa`` for errors E711 and E712. (Issue #180)\n\n* When both a ``tox.ini`` and a ``setup.cfg`` are present in the project\n  directory, merge their contents.  The ``tox.ini`` file takes\n  precedence (same as before). (Issue #182)\n\n* Give priority to ``--select`` over ``--ignore``. (Issue #188)\n\n* Compare full path when excluding a file. (Issue #186)\n\n* New option ``--hang-closing`` to switch to the alternative style of\n  closing bracket indentation for hanging indent.  Add error E133 for\n  closing bracket which is missing indentation. (Issue #103)\n\n* Accept both styles of closing bracket indentation for hanging indent.\n  Do not report error E123 in the default configuration. (Issue #103)\n\nBug fixes:\n\n* Do not crash when running AST checks and the document contains null bytes.\n  (Issue #184)\n\n* Correctly report other E12 errors when E123 is ignored. (Issue #103)\n\n* Fix false positive E261/E262 when the file contains a BOM. (Issue #193)\n\n* Fix E701, E702 and E703 not detected sometimes. (Issue #196)\n\n* Fix E122 not detected in some cases. (Issue #201 and #208)\n\n* Fix false positive E121 with multiple brackets. (Issue #203)\n\n\n1.4.5 (2013-03-06)\n------------------\n\n* When no path is specified, do not try to read from stdin.  The feature\n  was added in 1.4.3, but it is not supported on Windows.  Use ``-``\n  filename argument to read from stdin.  This usage is supported\n  since 1.3.4. (Issue #170)\n\n* Do not require ``setuptools`` in setup.py.  It works around an issue\n  with ``pip`` and Python 3. (Issue #172)\n\n* Add ``__pycache__`` to the ignore list.\n\n* Change misleading message for E251. (Issue #171)\n\n* Do not report false E302 when the source file has a coding cookie or a\n  comment on the first line. (Issue #174)\n\n* Reorganize the tests and add tests for the API and for the command line\n  usage and options. (Issues #161 and #162)\n\n* Ignore all checks which are not explicitly selected when ``select`` is\n  passed to the ``StyleGuide`` constructor.\n\n\n1.4.4 (2013-02-24)\n------------------\n\n* Report E227 or E228 instead of E225 for whitespace around bitwise, shift\n  or modulo operators. (Issue #166)\n\n* Change the message for E226 to make clear that it is about arithmetic\n  operators.\n\n* Fix a false positive E128 for continuation line indentation with tabs.\n\n* Fix regression with the ``--diff`` option. (Issue #169)\n\n* Fix the ``TestReport`` class to print the unexpected warnings and\n  errors.\n\n\n1.4.3 (2013-02-22)\n------------------\n\n* Hide the ``--doctest`` and ``--testsuite`` options when installed.\n\n* Fix crash with AST checkers when the syntax is invalid. (Issue #160)\n\n* Read from standard input if no path is specified.\n\n* Initiate a graceful shutdown on ``Control+C``.\n\n* Allow changing the ``checker_class`` for the ``StyleGuide``.\n\n\n1.4.2 (2013-02-10)\n------------------\n\n* Support AST checkers provided by third-party applications.\n\n* Register new checkers with ``register_check(func_or_cls, codes)``.\n\n* Allow constructing a ``StyleGuide`` with a custom parser.\n\n* Accept visual indentation without parenthesis after the ``if``\n  statement. (Issue #151)\n\n* Fix UnboundLocalError when using ``# noqa`` with continued lines.\n  (Issue #158)\n\n* Re-order the lines for the ``StandardReport``.\n\n* Expand tabs when checking E12 continuation lines. (Issue #155)\n\n* Refactor the testing class ``TestReport`` and the specific test\n  functions into a separate test module.\n\n\n1.4.1 (2013-01-18)\n------------------\n\n* Allow sphinx.ext.autodoc syntax for comments. (Issue #110)\n\n* Report E703 instead of E702 for the trailing semicolon. (Issue #117)\n\n* Honor ``# noqa`` in addition to ``# nopep8``. (Issue #149)\n\n* Expose the ``OptionParser`` factory for better extensibility.\n\n\n1.4 (2012-12-22)\n----------------\n\n* Report E226 instead of E225 for optional whitespace around common\n  operators (``*``, ``**``, ``/``, ``+`` and ``-``).  This new error\n  code is ignored in the default configuration because PEP 8 recommends\n  to \"use your own judgement\". (Issue #96)\n\n* Lines with a ``# nopep8`` at the end will not issue errors on line\n  length E501 or continuation line indentation E12*. (Issue #27)\n\n* Fix AssertionError when the source file contains an invalid line\n  ending ``\"\\r\\r\\n\"``. (Issue #119)\n\n* Read the ``[pep8]`` section of ``tox.ini`` or ``setup.cfg`` if present.\n  (Issue #93 and #141)\n\n* Add the Sphinx-based documentation, and publish it\n  on https://pycodestyle.readthedocs.io/. (Issue #105)\n\n\n1.3.4 (2012-12-18)\n------------------\n\n* Fix false positive E124 and E128 with comments. (Issue #100)\n\n* Fix error on stdin when running with bpython. (Issue #101)\n\n* Fix false positive E401. (Issue #104)\n\n* Report E231 for nested dictionary in list. (Issue #142)\n\n* Catch E271 at the beginning of the line. (Issue #133)\n\n* Fix false positive E126 for multi-line comments. (Issue #138)\n\n* Fix false positive E221 when operator is preceded by a comma. (Issue #135)\n\n* Fix ``--diff`` failing on one-line hunk. (Issue #137)\n\n* Fix the ``--exclude`` switch for directory paths. (Issue #111)\n\n* Use ``-`` filename to read from standard input. (Issue #128)\n\n\n1.3.3 (2012-06-27)\n------------------\n\n* Fix regression with continuation line checker. (Issue #98)\n\n\n1.3.2 (2012-06-26)\n------------------\n\n* Revert to the previous behaviour for ``--show-pep8``:\n  do not imply ``--first``. (Issue #89)\n\n* Add E902 for IO errors. (Issue #87)\n\n* Fix false positive for E121, and missed E124. (Issue #92)\n\n* Set a sensible default path for config file on Windows. (Issue #95)\n\n* Allow ``verbose`` in the configuration file. (Issue #91)\n\n* Show the enforced ``max-line-length`` in the error message. (Issue #86)\n\n\n1.3.1 (2012-06-18)\n------------------\n\n* Explain which configuration options are expected.  Accept and recommend\n  the options names with hyphen instead of underscore. (Issue #82)\n\n* Do not read the user configuration when used as a module\n  (except if ``config_file=True`` is passed to the ``StyleGuide`` constructor).\n\n* Fix wrong or missing cases for the E12 series.\n\n* Fix cases where E122 was missed. (Issue #81)\n\n\n1.3 (2012-06-15)\n----------------\n\n.. warning::\n   The internal API is backwards incompatible.\n\n* Remove global configuration and refactor the library around\n  a ``StyleGuide`` class; add the ability to configure various\n  reporters. (Issue #35 and #66)\n\n* Read user configuration from ``~/.config/pep8``\n  and local configuration from ``./.pep8``. (Issue #22)\n\n* Fix E502 for backslash embedded in multi-line string. (Issue #68)\n\n* Fix E225 for Python 3 iterable unpacking (PEP 3132). (Issue #72)\n\n* Enable the new checkers from the E12 series in the default\n  configuration.\n\n* Suggest less error-prone alternatives for E712 errors.\n\n* Rewrite checkers to run faster (E22, E251, E27).\n\n* Fixed a crash when parsed code is invalid (too many\n  closing brackets).\n\n* Fix E127 and E128 for continuation line indentation. (Issue #74)\n\n* New option ``--format`` to customize the error format. (Issue #23)\n\n* New option ``--diff`` to check only modified code.  The unified\n  diff is read from STDIN.  Example: ``hg diff | pep8 --diff``\n  (Issue #39)\n\n* Correctly report the count of failures and set the exit code to 1\n  when the ``--doctest`` or the ``--testsuite`` fails.\n\n* Correctly detect the encoding in Python 3. (Issue #69)\n\n* Drop support for Python 2.3, 2.4 and 3.0. (Issue #78)\n\n\n1.2 (2012-06-01)\n----------------\n\n* Add E121 through E128 for continuation line indentation.  These\n  checks are disabled by default.  If you want to force all checks,\n  use switch ``--select=E,W``.  Patch by Sam Vilain. (Issue #64)\n\n* Add E721 for direct type comparisons. (Issue #47)\n\n* Add E711 and E712 for comparisons to singletons. (Issue #46)\n\n* Fix spurious E225 and E701 for function annotations. (Issue #29)\n\n* Add E502 for explicit line join between brackets.\n\n* Fix E901 when printing source with ``--show-source``.\n\n* Report all errors for each checker, instead of reporting only the\n  first occurrence for each line.\n\n* Option ``--show-pep8`` implies ``--first``.\n\n\n1.1 (2012-05-24)\n----------------\n\n* Add E901 for syntax errors. (Issues #63 and #30)\n\n* Add E271, E272, E273 and E274 for extraneous whitespace around\n  keywords. (Issue #57)\n\n* Add ``tox.ini`` configuration file for tests. (Issue #61)\n\n* Add ``.travis.yml`` configuration file for continuous integration.\n  (Issue #62)\n\n\n1.0.1 (2012-04-06)\n------------------\n\n* Fix inconsistent version numbers.\n\n\n1.0 (2012-04-04)\n----------------\n\n* Fix W602 ``raise`` to handle multi-char names. (Issue #53)\n\n\n0.7.0 (2012-03-26)\n------------------\n\n* Now ``--first`` prints only the first occurrence of each error.\n  The ``--repeat`` flag becomes obsolete because it is the default\n  behaviour. (Issue #6)\n\n* Allow specifying ``--max-line-length``. (Issue #36)\n\n* Make the shebang more flexible. (Issue #26)\n\n* Add testsuite to the bundle. (Issue #25)\n\n* Fixes for Jython. (Issue #49)\n\n* Add PyPI classifiers. (Issue #43)\n\n* Fix the ``--exclude`` option. (Issue #48)\n\n* Fix W602, accept ``raise`` with 3 arguments. (Issue #34)\n\n* Correctly select all tests if ``DEFAULT_IGNORE == ''``.\n\n\n0.6.1 (2010-10-03)\n------------------\n\n* Fix inconsistent version numbers. (Issue #21)\n\n\n0.6.0 (2010-09-19)\n------------------\n\n* Test suite reorganized and enhanced in order to check more failures\n  with fewer test files.  Read the ``run_tests`` docstring for details\n  about the syntax.\n\n* Fix E225: accept ``print >>sys.stderr, \"...\"`` syntax.\n\n* Fix E501 for lines containing multibyte encoded characters. (Issue #7)\n\n* Fix E221, E222, E223, E224 not detected in some cases. (Issue #16)\n\n* Fix E211 to reject ``v = dic['a'] ['b']``. (Issue #17)\n\n* Exit code is always 1 if any error or warning is found. (Issue #10)\n\n* ``--ignore`` checks are now really ignored, especially in\n  conjunction with ``--count``. (Issue #8)\n\n* Blank lines with spaces yield W293 instead of W291: some developers\n  want to ignore this warning and indent the blank lines to paste their\n  code easily in the Python interpreter.\n\n* Fix E301: do not require a blank line before an indented block. (Issue #14)\n\n* Fix E203 to accept NumPy slice notation ``a[0, :]``. (Issue #13)\n\n* Performance improvements.\n\n* Fix decoding and checking non-UTF8 files in Python 3.\n\n* Fix E225: reject ``True+False`` when running on Python 3.\n\n* Fix an exception when the line starts with an operator.\n\n* Allow a new line before closing ``)``, ``}`` or ``]``. (Issue #5)\n\n\n0.5.0 (2010-02-17)\n------------------\n\n* Changed the ``--count`` switch to print to sys.stderr and set\n  exit code to 1 if any error or warning is found.\n\n* E241 and E242 are removed from the standard checks. If you want to\n  include these checks, use switch ``--select=E,W``. (Issue #4)\n\n* Blank line is not mandatory before the first class method or nested\n  function definition, even if there's a docstring. (Issue #1)\n\n* Add the switch ``--version``.\n\n* Fix decoding errors with Python 3. (Issue #13 [1]_)\n\n* Add ``--select`` option which is mirror of ``--ignore``.\n\n* Add checks E261 and E262 for spaces before inline comments.\n\n* New check W604 warns about deprecated usage of backticks.\n\n* New check W603 warns about the deprecated operator ``<>``.\n\n* Performance improvement, due to rewriting of E225.\n\n* E225 now accepts:\n\n  - no whitespace after unary operator or similar. (Issue #9 [1]_)\n\n  - lambda function with argument unpacking or keyword defaults.\n\n* Reserve \"2 blank lines\" for module-level logical blocks. (E303)\n\n* Allow multi-line comments. (E302, issue #10 [1]_)\n\n\n0.4.2 (2009-10-22)\n------------------\n\n* Decorators on classes and class methods are OK now.\n\n\n0.4 (2009-10-20)\n----------------\n\n* Support for all versions of Python from 2.3 to 3.1.\n\n* New and greatly expanded self tests.\n\n* Added ``--count`` option to print the total number of errors and warnings.\n\n* Further improvements to the handling of comments and blank lines.\n  (Issue #1 [1]_ and others changes.)\n\n* Check all py files in directory when passed a directory (Issue\n  #2 [1]_). This also prevents an exception when traversing directories\n  with non ``*.py`` files.\n\n* E231 should allow commas to be followed by ``)``. (Issue #3 [1]_)\n\n* Spaces are no longer required around the equals sign for keyword\n  arguments or default parameter values.\n\n\n.. [1] These issues refer to the `previous issue tracker`__.\n.. __:  http://github.com/cburroughs/pep8.py/issues\n\n\n0.3.1 (2009-09-14)\n------------------\n\n* Fixes for comments: do not count them when checking for blank lines between\n  items.\n\n* Added setup.py for pypi upload and easy_installability.\n\n\n0.2 (2007-10-16)\n----------------\n\n* Loads of fixes and improvements.\n\n\n0.1 (2006-10-01)\n----------------\n\n* First release.\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://pycodestyle.readthedocs.io/",
+        "keywords": "pycodestyle,pep8,PEP 8,PEP-8,PEP8",
+        "license": "Expat license",
+        "maintainer": "Ian Lee",
+        "maintainer_email": "IanLee1521@gmail.com",
+        "name": "pycodestyle",
+        "package_url": "https://pypi.org/project/pycodestyle/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/pycodestyle/",
+        "release_url": "https://pypi.org/project/pycodestyle/2.4.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Python style guide checker",
+        "version": "2.4.0"
+    },
+    "last_serial": 3835962,
+    "releases": {
+        "0.0.0": [],
+        "1.8.0.dev0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc3a77e0b3d7e6c031ff8b8ec2702036",
+                    "sha256": "015b6d6372dd5b7da024e0a526a4d11686e87442bdf4ebfcafe949f0d67131ef"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-1.8.0.dev0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cc3a77e0b3d7e6c031ff8b8ec2702036",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 42375,
+                "upload_time": "2016-05-31T00:09:03",
+                "url": "https://files.pythonhosted.org/packages/ba/d1/9973e3eb4a45342b6b377f7d3f40f02c25b49fe783c42199ea653f41e87a/pycodestyle-1.8.0.dev0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "89036205d4ea5c8970081ba8372aa838",
+                    "sha256": "ea59e187052d370de6f7ea5fb1a167e847f16fe8c4fb2b98310791163fdacbef"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-1.8.0.dev0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "89036205d4ea5c8970081ba8372aa838",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81725,
+                "upload_time": "2016-05-31T00:09:19",
+                "url": "https://files.pythonhosted.org/packages/dd/66/fda85afe66edcd5e41a8cca7cc6a1da0cabef0fca8fdff197d82adf17a7a/pycodestyle-1.8.0.dev0.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25ad6c33896472973bc849d058b36c30",
+                    "sha256": "2ce83f2046f5ab85c652ceceddfbde7a64a909900989b4b43e92b10b743d0ce5"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "25ad6c33896472973bc849d058b36c30",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 42251,
+                "upload_time": "2016-06-01T00:23:50",
+                "url": "https://files.pythonhosted.org/packages/73/31/136a79364c1681a3c276796d1f5090833bd03461b78a1b037638d1a2c484/pycodestyle-2.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "733291d308def897c0c48c7840b7f6bc",
+                    "sha256": "37f0420b14630b0eaaf452978f3a6ea4816d787c3e6dcbba6fb255030adae2e7"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "733291d308def897c0c48c7840b7f6bc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81701,
+                "upload_time": "2016-06-01T00:25:01",
+                "url": "https://files.pythonhosted.org/packages/db/b1/9f798e745a4602ab40bf6a9174e1409dcdde6928cf800d3aab96a65b1bbf/pycodestyle-2.0.0.tar.gz"
+            }
+        ],
+        "2.0.0a1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b7389420f5577cdf1ed0dd05b8076db",
+                    "sha256": "be51c0b7f5cf9f773bcc7e02bb77e044a40ad20ecc66ca5c6e543e3df8e2d263"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.0.0a1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5b7389420f5577cdf1ed0dd05b8076db",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 42488,
+                "upload_time": "2016-05-31T19:07:07",
+                "url": "https://files.pythonhosted.org/packages/f3/af/5b89bfeb26b1ddc7ca6b502e2e6bf92ea3eeb04099929288753b084100a5/pycodestyle-2.0.0a1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c9b5ddd26d0d78a729f2cc3cafe450e7",
+                    "sha256": "de39c5fd2761ff2e5fbf7546dc39d53f82a7bb62e6c71c7da0c2a866315a1d0c"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.0.0a1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c9b5ddd26d0d78a729f2cc3cafe450e7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81889,
+                "upload_time": "2016-05-31T19:11:59",
+                "url": "https://files.pythonhosted.org/packages/e7/9c/2b551f54271c08fd920edbefcea3defe2edf662a86757708df9ca866a033/pycodestyle-2.0.0a1.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f9697d0c8ce9ff29c2bfd1981afb2fcd",
+                    "sha256": "14588a4a51f464b784eb199ade0a04103e93f9ed7d69551f29f295a9e9668030"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f9697d0c8ce9ff29c2bfd1981afb2fcd",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 44307,
+                "upload_time": "2016-11-04T15:48:55",
+                "url": "https://files.pythonhosted.org/packages/49/16/455af11e9afef9a38804c516910ba8093f673981a55dbfd4688974b45f40/pycodestyle-2.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1eb1f0b36abdc5e59d14d1cbbcd6a744",
+                    "sha256": "5b540e4f19b4938c082cfd13f5d778d1ad2308b337abbc687ab9335233f5f3e2"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1eb1f0b36abdc5e59d14d1cbbcd6a744",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 85519,
+                "upload_time": "2016-11-04T15:48:58",
+                "url": "https://files.pythonhosted.org/packages/1d/31/c63f6dbede25dc53135e54175b5cbbc4932f417e169c0a4b2339a69bffc5/pycodestyle-2.1.0.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a81fed42208142ddb530d8e953991511",
+                    "sha256": "60c4e1c36f301ac539a550a29e9d16862069ec240472d86e5e71c4fc645829cb"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a81fed42208142ddb530d8e953991511",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 44452,
+                "upload_time": "2016-11-14T18:43:24",
+                "url": "https://files.pythonhosted.org/packages/46/95/0b74196cb512cbf5127c27636115d63126c0f1a10383d828b9ad7295f381/pycodestyle-2.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "642c31fc2a72a55a4acdf8ac46d5fb64",
+                    "sha256": "df81dc3293e0123e2e8d1f2aaf819600e4ae287d8b3af8b72181af50257e5d9a"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "642c31fc2a72a55a4acdf8ac46d5fb64",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 85811,
+                "upload_time": "2016-11-14T18:43:27",
+                "url": "https://files.pythonhosted.org/packages/43/9f/56e824b197398582b0c1aaaa2272560bc51f395fe3e45e1dd88de4bb24dc/pycodestyle-2.2.0.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ef05f646493089bd7fa95cd6cc0a949b",
+                    "sha256": "ae308be77310759b722965cfe4a81b69c10aacaecb2db2c874ceb1720cc8f1aa"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ef05f646493089bd7fa95cd6cc0a949b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 45095,
+                "upload_time": "2017-01-30T12:17:20",
+                "url": "https://files.pythonhosted.org/packages/32/09/8e580517e4af96141c41f531bca14c4408e7cb716864022737811aaac1be/pycodestyle-2.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2822fb1633f842ecaef825f7235b22ed",
+                    "sha256": "a5910db118cf7e66ff92fb281a203c19ca2b5134620dd2538a794e636253863b"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2822fb1633f842ecaef825f7235b22ed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 88122,
+                "upload_time": "2017-01-30T12:17:23",
+                "url": "https://files.pythonhosted.org/packages/ab/59/bfe563694774450cf6e614b67b2a03f57827c716b7468c64254d9f8c0ec6/pycodestyle-2.3.0.tar.gz"
+            }
+        ],
+        "2.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "44c7a6ef1a52f66f706f0fdccae64046",
+                    "sha256": "6c4245ade1edfad79c3446fadfc96b0de2759662dc29d07d80a6f27ad1ca6ba9"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.3.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "44c7a6ef1a52f66f706f0fdccae64046",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 45156,
+                "upload_time": "2017-01-31T00:00:01",
+                "url": "https://files.pythonhosted.org/packages/e4/81/78fe51eb4038d1388b7217dd63770b0f428370207125047312886c923b26/pycodestyle-2.3.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "240e342756af30cae0983b16303a2055",
+                    "sha256": "682256a5b318149ca0d2a9185d365d8864a768a28db66a84a2ea946bcc426766"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "240e342756af30cae0983b16303a2055",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 89460,
+                "upload_time": "2017-01-31T00:00:03",
+                "url": "https://files.pythonhosted.org/packages/e1/88/0e2cbf412bd849ea6f1af1f97882add46a374f4ba1d2aea39353609150ad/pycodestyle-2.3.1.tar.gz"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b065cf96df8d6731ddf28b5b0964543",
+                    "sha256": "cbc619d09254895b0d12c2c691e237b2e91e9b2ecf5e84c26b35400f93dcfb83"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0b065cf96df8d6731ddf28b5b0964543",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 62342,
+                "upload_time": "2018-04-10T11:28:37",
+                "url": "https://files.pythonhosted.org/packages/e5/c6/ce130213489969aa58610042dff1d908c25c731c9575af6935c2dfad03aa/pycodestyle-2.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed35f7d6a1bc30e5aeb6745f44ad843a",
+                    "sha256": "74abc4e221d393ea5ce1f129ea6903209940c1ecd29e002e8c6933c2b21026e0"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.4.0-py3.6.egg",
+                "has_sig": false,
+                "md5_digest": "ed35f7d6a1bc30e5aeb6745f44ad843a",
+                "packagetype": "bdist_egg",
+                "python_version": "3.6",
+                "size": 121823,
+                "upload_time": "2018-04-10T11:28:41",
+                "url": "https://files.pythonhosted.org/packages/4f/b3/eeab0685e0acdd2e16c12d3b6d0113aeb2ab89619feb4f3040460cca1267/pycodestyle-2.4.0-py3.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "85bbebd2c90d2f833c1db467d4d0e9a3",
+                    "sha256": "cbfca99bd594a10f674d0cd97a3d802a1fdef635d4361e1a2658de47ed261e3a"
+                },
+                "downloads": -1,
+                "filename": "pycodestyle-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "85bbebd2c90d2f833c1db467d4d0e9a3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 96665,
+                "upload_time": "2018-04-10T11:28:42",
+                "url": "https://files.pythonhosted.org/packages/28/ad/cae9654d7fd64eb3d2ab2c44c9bf8dc5bd4fb759625beab99532239aa6e8/pycodestyle-2.4.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0b065cf96df8d6731ddf28b5b0964543",
+                "sha256": "cbc619d09254895b0d12c2c691e237b2e91e9b2ecf5e84c26b35400f93dcfb83"
+            },
+            "downloads": -1,
+            "filename": "pycodestyle-2.4.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "0b065cf96df8d6731ddf28b5b0964543",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 62342,
+            "upload_time": "2018-04-10T11:28:37",
+            "url": "https://files.pythonhosted.org/packages/e5/c6/ce130213489969aa58610042dff1d908c25c731c9575af6935c2dfad03aa/pycodestyle-2.4.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "ed35f7d6a1bc30e5aeb6745f44ad843a",
+                "sha256": "74abc4e221d393ea5ce1f129ea6903209940c1ecd29e002e8c6933c2b21026e0"
+            },
+            "downloads": -1,
+            "filename": "pycodestyle-2.4.0-py3.6.egg",
+            "has_sig": false,
+            "md5_digest": "ed35f7d6a1bc30e5aeb6745f44ad843a",
+            "packagetype": "bdist_egg",
+            "python_version": "3.6",
+            "size": 121823,
+            "upload_time": "2018-04-10T11:28:41",
+            "url": "https://files.pythonhosted.org/packages/4f/b3/eeab0685e0acdd2e16c12d3b6d0113aeb2ab89619feb4f3040460cca1267/pycodestyle-2.4.0-py3.6.egg"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "85bbebd2c90d2f833c1db467d4d0e9a3",
+                "sha256": "cbfca99bd594a10f674d0cd97a3d802a1fdef635d4361e1a2658de47ed261e3a"
+            },
+            "downloads": -1,
+            "filename": "pycodestyle-2.4.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "85bbebd2c90d2f833c1db467d4d0e9a3",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 96665,
+            "upload_time": "2018-04-10T11:28:42",
+            "url": "https://files.pythonhosted.org/packages/28/ad/cae9654d7fd64eb3d2ab2c44c9bf8dc5bd4fb759625beab99532239aa6e8/pycodestyle-2.4.0.tar.gz"
+        }
+    ],
+    "package_name": "pycodestyle"
+}

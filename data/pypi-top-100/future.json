@@ -1,0 +1,875 @@
+{
+    "info": {
+        "author": "Ed Schofield",
+        "author_email": "ed@pythoncharmers.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 4 - Beta",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5"
+        ],
+        "description": "future: Easy, safe support for Python 2/3 compatibility\n=======================================================\n\n``future`` is the missing compatibility layer between Python 2 and Python\n3. It allows you to use a single, clean Python 3.x-compatible codebase to\nsupport both Python 2 and Python 3 with minimal overhead.\n\nIt is designed to be used as follows::\n\n    from __future__ import (absolute_import, division,\n                            print_function, unicode_literals)\n    from builtins import (\n             bytes, dict, int, list, object, range, str,\n             ascii, chr, hex, input, next, oct, open,\n             pow, round, super,\n             filter, map, zip)\n\nfollowed by predominantly standard, idiomatic Python 3 code that then runs\nsimilarly on Python 2.6/2.7 and Python 3.3+.\n\nThe imports have no effect on Python 3. On Python 2, they shadow the\ncorresponding builtins, which normally have different semantics on Python 3\nversus 2, to provide their Python 3 semantics.\n\n\nStandard library reorganization\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n``future`` supports the standard library reorganization (PEP 3108) through the\nfollowing Py3 interfaces:\n\n    >>> # Top-level packages with Py3 names provided on Py2:\n    >>> import html.parser\n    >>> import queue\n    >>> import tkinter.dialog\n    >>> import xmlrpc.client\n    >>> # etc.\n\n    >>> # Aliases provided for extensions to existing Py2 module names:\n    >>> from future.standard_library import install_aliases\n    >>> install_aliases()\n\n    >>> from collections import Counter, OrderedDict   # backported to Py2.6\n    >>> from collections import UserDict, UserList, UserString\n    >>> import urllib.request\n    >>> from itertools import filterfalse, zip_longest\n    >>> from subprocess import getoutput, getstatusoutput\n\n\nAutomatic conversion\n--------------------\n\nAn included script called `futurize\n<http://python-future.org/automatic_conversion.html>`_ aids in converting\ncode (from either Python 2 or Python 3) to code compatible with both\nplatforms. It is similar to ``python-modernize`` but goes further in\nproviding Python 3 compatibility through the use of the backported types\nand builtin functions in ``future``.\n\n\nDocumentation\n-------------\n\nSee: http://python-future.org\n\n\nCredits\n-------\n\n:Author:  Ed Schofield\n:Sponsor: Python Charmers Pty Ltd, Australia, and Python Charmers Pte\n          Ltd, Singapore. http://pythoncharmers.com\n:Others:  See docs/credits.rst or http://python-future.org/credits.html\n\n\nLicensing\n---------\nCopyright 2013-2016 Python Charmers Pty Ltd, Australia.\nThe software is distributed under an MIT licence. See LICENSE.txt.",
+        "description_content_type": null,
+        "docs_url": "https://pythonhosted.org/future/",
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://python-future.org",
+        "keywords": "future past python3 migration futurize backport six 2to3 modernize pasteurize 3to2",
+        "license": "MIT",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "future",
+        "package_url": "https://pypi.org/project/future/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/future/",
+        "release_url": "https://pypi.org/project/future/0.16.0/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Clean single-source support for Python 3 and 2",
+        "version": "0.16.0"
+    },
+    "last_serial": 2427017,
+    "releases": {
+        "0.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "63135b6d0771961ecab37e9e1279f606",
+                    "sha256": "a4bb0bbfd389ad7c709e84381e291df51b3b0d7b3f966390c1920d285a19410d"
+                },
+                "downloads": -1,
+                "filename": "future-0.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "63135b6d0771961ecab37e9e1279f606",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8570,
+                "upload_time": "2013-07-14T14:48:41",
+                "url": "https://files.pythonhosted.org/packages/97/22/1f2ed10053f338c41e622ca0ea155990d5cdb6ffd602c951649554cc9723/future-0.0.1.tar.gz"
+            }
+        ],
+        "0.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d7948a98be41882c04a3305ae84b55b1",
+                    "sha256": "28ce8c7c9f2f70223c247279c9029a6a12e60bd76e9f0944a7726dd59cade943"
+                },
+                "downloads": -1,
+                "filename": "future-0.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d7948a98be41882c04a3305ae84b55b1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9202,
+                "upload_time": "2013-07-20T04:42:00",
+                "url": "https://files.pythonhosted.org/packages/6a/d7/8a0dc06421cde141a4f1345e19fd08967901c3ab969c47feb8f1157d81ec/future-0.0.2.tar.gz"
+            }
+        ],
+        "0.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed7f5b16a2de6886fc311582caa9dee3",
+                    "sha256": "3df7e0074a1c94c35dd2ce83d67d71e85eecb64f9e6bc9aa6737a1f31160adab"
+                },
+                "downloads": -1,
+                "filename": "future-0.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ed7f5b16a2de6886fc311582caa9dee3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14091,
+                "upload_time": "2013-07-21T07:06:47",
+                "url": "https://files.pythonhosted.org/packages/70/3d/8110f3a9eba14fa50ad8773a25715294117ce8364c3cb5b7fec3cec94b45/future-0.0.3.tar.gz"
+            }
+        ],
+        "0.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd8a275860cfb38f2a441c0402593158",
+                    "sha256": "f11b05b486d88dd1ea4fe48e3d3742cafdc71160eb1edbfe8032b48b908dd568"
+                },
+                "downloads": -1,
+                "filename": "future-0.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fd8a275860cfb38f2a441c0402593158",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18932,
+                "upload_time": "2013-07-22T09:32:51",
+                "url": "https://files.pythonhosted.org/packages/af/cf/4fbe349bcf9a08f2c329a66cc4d4a417387acc9033ad5238160b3f266e05/future-0.1.0.tar.gz"
+            }
+        ],
+        "0.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ca1bc46a1632050d4e69c2cf6fce56d2",
+                    "sha256": "583cc8cdf60de925e8ac2b1c53476bdae1e880724250f5b818f75b59ead0b1be"
+                },
+                "downloads": -1,
+                "filename": "future-0.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ca1bc46a1632050d4e69c2cf6fce56d2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 271799,
+                "upload_time": "2013-12-01T13:23:39",
+                "url": "https://files.pythonhosted.org/packages/14/7b/a841b12ed2fd1da2db3833943a077acc7882a5657bb0cdfab6a22f9ed2c4/future-0.10.0.tar.gz"
+            }
+        ],
+        "0.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d7da17940f00b51f7e64f963058ef3da",
+                    "sha256": "d703b41f14cb513de560a2ec2583b95f70e664411747e9c37f90b93c3045477d"
+                },
+                "downloads": -1,
+                "filename": "future-0.10.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d7da17940f00b51f7e64f963058ef3da",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 272376,
+                "upload_time": "2013-12-07T14:46:25",
+                "url": "https://files.pythonhosted.org/packages/c9/77/a67f45ce02080d57bb6da0577e85cfcde8bf155c90dbedbcd4d43d21591a/future-0.10.1.tar.gz"
+            }
+        ],
+        "0.10.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb90cba89b8f7bab05e9e0df588155ce",
+                    "sha256": "36dddb829d358fcb4368e0b73cfcefda3c7a8eceb01323f0f9ef4d83b13f666b"
+                },
+                "downloads": -1,
+                "filename": "future-0.10.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cb90cba89b8f7bab05e9e0df588155ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 277980,
+                "upload_time": "2014-01-11T00:50:11",
+                "url": "https://files.pythonhosted.org/packages/4b/26/efbffa48a3ddd910c039b62fdc1b619f1e995eeff46a895ac14f7accafb8/future-0.10.2.tar.gz"
+            }
+        ],
+        "0.11.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e90a7da13e150babc80cb8acff86fc10",
+                    "sha256": "2e6765f781b7f00c6485702f15c212e4cbf4c5c9ab5dc2ee9097437ef870598b"
+                },
+                "downloads": -1,
+                "filename": "future-0.11.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e90a7da13e150babc80cb8acff86fc10",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 322160,
+                "upload_time": "2014-01-28T06:57:45",
+                "url": "https://files.pythonhosted.org/packages/5e/05/b1c3543d934e289d879e91a5ba4d8d53dd97f794a23c555b13757b2c6bf6/future-0.11.0.tar.gz"
+            }
+        ],
+        "0.11.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "00db7b1f7034dcd60287d8b9bf61274d",
+                    "sha256": "b19d1ae9b78b9f3c13c82fcf81dac73c8d04cd435f4040cbc7ac36e4ebf01655"
+                },
+                "downloads": -1,
+                "filename": "future-0.11.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "00db7b1f7034dcd60287d8b9bf61274d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 321353,
+                "upload_time": "2014-01-28T12:41:41",
+                "url": "https://files.pythonhosted.org/packages/50/ee/213a1d99b19b9b37e26698ef20b704a27bfaaa7fd98de67464f15f36af1c/future-0.11.1.tar.gz"
+            }
+        ],
+        "0.11.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b85a7097b331641883ab8832d768cef4",
+                    "sha256": "b2465f2d14acc3b279d1e6fab9bd8b2e89992c9ddaad37cdf10347a5ee14369a"
+                },
+                "downloads": -1,
+                "filename": "future-0.11.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b85a7097b331641883ab8832d768cef4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 321615,
+                "upload_time": "2014-01-28T14:34:44",
+                "url": "https://files.pythonhosted.org/packages/fe/4a/5697d5a9681607f9c34b87af13782cb8eb832bc3a4ea2747b9433a2d7e52/future-0.11.2.tar.gz"
+            }
+        ],
+        "0.11.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a5e11b2574ea99a6eb0cf19233a46c60",
+                    "sha256": "8f4cc0ad30918e01a9ed054d062d1be28419a0c0eb03afd502775fdf07e32000"
+                },
+                "downloads": -1,
+                "filename": "future-0.11.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a5e11b2574ea99a6eb0cf19233a46c60",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 329507,
+                "upload_time": "2014-02-28T05:22:58",
+                "url": "https://files.pythonhosted.org/packages/48/04/0f72f4e005490d07b25ce5b8ac023ecf4bfb2d38ece2bc55b0f03f1ae45d/future-0.11.3.tar.gz"
+            }
+        ],
+        "0.11.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "883e971706d7c4553ac2053c14e9a46f",
+                    "sha256": "e9ba55f1ebfb0d99fdf8545df77a60ffe6a04f699f3525d2a5911462b6e2a531"
+                },
+                "downloads": -1,
+                "filename": "future-0.11.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "883e971706d7c4553ac2053c14e9a46f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 331672,
+                "upload_time": "2014-03-24T13:59:33",
+                "url": "https://files.pythonhosted.org/packages/9e/be/c3adca8bdf3e452622e085e0cf9cb5c9f45e9e14a8ff77f7e7ae9cd34604/future-0.11.4.tar.gz"
+            }
+        ],
+        "0.12.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8b18075b5289685e2bf7b6ad6ff7a363",
+                    "sha256": "bc49f4ccd55b289234b09bb4b4b2ab8017ce91845f7013a9b5daa3f25855794e"
+                },
+                "downloads": -1,
+                "filename": "future-0.12.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8b18075b5289685e2bf7b6ad6ff7a363",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 553855,
+                "upload_time": "2014-05-05T17:09:50",
+                "url": "https://files.pythonhosted.org/packages/02/f8/f284a56149af9e72da9605cb178175f4acdfedc4655aabee19a138acd6fe/future-0.12.0.tar.gz"
+            }
+        ],
+        "0.12.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "204fdcf4bc67041384fd5627975c59fb",
+                    "sha256": "3ae3e71387b6b3669228f60608025b6405bb8f1b2410f945d3fc85e4f2bf71dc"
+                },
+                "downloads": -1,
+                "filename": "future-0.12.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "204fdcf4bc67041384fd5627975c59fb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 554725,
+                "upload_time": "2014-05-14T13:38:51",
+                "url": "https://files.pythonhosted.org/packages/db/74/22c98655ae91486061cd2fe3058bd8a8422e213a36d3ae315bef023d062b/future-0.12.1.tar.gz"
+            }
+        ],
+        "0.12.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "11c1fb29f7fb181396cbc1b73443d431",
+                    "sha256": "b5ef01195260bbd302e4bb565c0915f62e2c18331a43c45ae0838f378ae8b0c6"
+                },
+                "downloads": -1,
+                "filename": "future-0.12.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "11c1fb29f7fb181396cbc1b73443d431",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 555950,
+                "upload_time": "2014-05-25T13:18:01",
+                "url": "https://files.pythonhosted.org/packages/9d/47/5cdb58d1ce9035d6f6b4bde347354f262d2cddd568c51c3053baa88fc59d/future-0.12.2.tar.gz"
+            }
+        ],
+        "0.12.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f06ca1635ea8308842a3921d758a0978",
+                    "sha256": "39e254b43f135575a94092766ef17c507f9339419422a820f8128414d040f7f4"
+                },
+                "downloads": -1,
+                "filename": "future-0.12.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f06ca1635ea8308842a3921d758a0978",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 843228,
+                "upload_time": "2014-06-19T10:47:22",
+                "url": "https://files.pythonhosted.org/packages/ac/7f/f925ed0e29af42ed3273a1eceaf90b9c3d6bd51bca8aaba49725e9c0d9b5/future-0.12.3.tar.gz"
+            }
+        ],
+        "0.12.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e68b9b3d95f9fb6db7f2386541e38e38",
+                    "sha256": "d5767f16a6c739c4829eb465abbd33f36cf4b8668e575cf1ec56949027030eaa"
+                },
+                "downloads": -1,
+                "filename": "future-0.12.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e68b9b3d95f9fb6db7f2386541e38e38",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 840322,
+                "upload_time": "2014-07-18T10:05:05",
+                "url": "https://files.pythonhosted.org/packages/ea/a9/8f9d4a952a681b860b4d08759dc3fa768b8d611c72048497c872bee6e54b/future-0.12.4.tar.gz"
+            }
+        ],
+        "0.13.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a183d2646cf2dfd05f3029126d9bbbe",
+                    "sha256": "7fb75607a7a2af3aa975a39373dc7b5db7edbc4e37d54065e6a04b1d4a1bc2c8"
+                },
+                "downloads": -1,
+                "filename": "future-0.13.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3a183d2646cf2dfd05f3029126d9bbbe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 898408,
+                "upload_time": "2014-08-13T02:49:22",
+                "url": "https://files.pythonhosted.org/packages/08/94/9f023d3443f00f62d5f3e44e6daaef059bd28300d92d59c60bedfdc298da/future-0.13.0.tar.gz"
+            }
+        ],
+        "0.13.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6ab8aafb3b76c6e93d4d9de87210a88",
+                    "sha256": "6e91722eaec7d9324ac1060858f5211f822fea698b1f88492aa91d08fc2a62e2"
+                },
+                "downloads": -1,
+                "filename": "future-0.13.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6ab8aafb3b76c6e93d4d9de87210a88",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 893369,
+                "upload_time": "2014-09-23T04:40:31",
+                "url": "https://files.pythonhosted.org/packages/b4/e6/07e207c894654762689a37c1b697c16aee1360df6eeafcbd66d3a16b9812/future-0.13.1.tar.gz"
+            }
+        ],
+        "0.14.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ae458811275c8dafefdd699ebbe95724",
+                    "sha256": "af25a0ee915d8d8720d8fe8b4516e55ac27f354d5d57af3c900757f4b6ccca8c"
+                },
+                "downloads": -1,
+                "filename": "future-0.14.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ae458811275c8dafefdd699ebbe95724",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 936849,
+                "upload_time": "2014-10-02T05:57:09",
+                "url": "https://files.pythonhosted.org/packages/4b/ab/3e42d1f0227e3a23d02338506e24007a1d9c21bda028735efb19285578f9/future-0.14.0.tar.gz"
+            }
+        ],
+        "0.14.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "993eccc219723e88f232038596c955ce",
+                    "sha256": "854d893d57b894193169c65661884fd318d6e106ae84c1fb9f30604d89ee9de1"
+                },
+                "downloads": -1,
+                "filename": "future-0.14.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "993eccc219723e88f232038596c955ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 940182,
+                "upload_time": "2014-10-02T13:09:37",
+                "url": "https://files.pythonhosted.org/packages/dc/a6/57718937bc25e602367d82ff86a6689b677f18e29e30ff9bab58cc17f5dc/future-0.14.1.tar.gz"
+            }
+        ],
+        "0.14.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a35e86bb292fa2d5b3779a3ce31865d",
+                    "sha256": "1af14fadd7779520345b4376ca24c4ff16fe9e59cbfb453dfe7a3e44fe76a1f7"
+                },
+                "downloads": -1,
+                "filename": "future-0.14.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0a35e86bb292fa2d5b3779a3ce31865d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 796672,
+                "upload_time": "2014-11-21T11:53:40",
+                "url": "https://files.pythonhosted.org/packages/d6/c1/3e8cee376151bd70744e7f1290212f887333323f260da22eb834c709d236/future-0.14.2.tar.gz"
+            }
+        ],
+        "0.14.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e94079b0bd1fc054929e8769fc0f6083",
+                    "sha256": "62857d51881d97dd5492b9295b9f51d92108a52a4c88e2c40054c1d3e5995be9"
+                },
+                "downloads": -1,
+                "filename": "future-0.14.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e94079b0bd1fc054929e8769fc0f6083",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1485390,
+                "upload_time": "2014-12-14T22:09:23",
+                "url": "https://files.pythonhosted.org/packages/83/80/8ef3a11a15f8eaafafa0937b20c1b3f73527e69ab6b3fa1cf94a5a96aabb/future-0.14.3.tar.gz"
+            }
+        ],
+        "0.15.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cf1ee211567cc0b1021de5839064fe7b",
+                    "sha256": "7f8ad46e287ac32e3dae78be41098c83d690b364142e0a5f11958c2b549420b0"
+                },
+                "downloads": -1,
+                "filename": "future-0.15.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cf1ee211567cc0b1021de5839064fe7b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 810148,
+                "upload_time": "2015-07-25T10:53:06",
+                "url": "https://files.pythonhosted.org/packages/7c/eb/1d7403c6d187ec097394685b0ea8a69faadaeb63f222d6c9b85ae165f915/future-0.15.0.tar.gz"
+            }
+        ],
+        "0.15.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e7f0acf03544be4a11452da9e337469a",
+                    "sha256": "d61405f32beb357eeef6e32bbfe4c0e463cac658f59601a5ddeabf87bb8c46c1"
+                },
+                "downloads": -1,
+                "filename": "future-0.15.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e7f0acf03544be4a11452da9e337469a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 810641,
+                "upload_time": "2015-09-09T01:27:45",
+                "url": "https://files.pythonhosted.org/packages/41/b7/b646f0140a752ea87bb0b4c3a4af6a1e6e5fa676b9b1314a702368b75d4b/future-0.15.1.tar.gz"
+            }
+        ],
+        "0.15.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a68eb3c90b3b76714c5ceb8c09ea3a06",
+                    "sha256": "3d3b193f20ca62ba7d8782589922878820d0a023b885882deec830adbf639b97"
+                },
+                "downloads": -1,
+                "filename": "future-0.15.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a68eb3c90b3b76714c5ceb8c09ea3a06",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1583441,
+                "upload_time": "2015-09-11T07:23:15",
+                "url": "https://files.pythonhosted.org/packages/5a/f4/99abde815842bc6e97d5a7806ad51236630da14ca2f3b1fce94c0bb94d3d/future-0.15.2.tar.gz"
+            }
+        ],
+        "0.16.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3e8e88a2bda48d54b1da7634d04760d7",
+                    "sha256": "e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
+                },
+                "downloads": -1,
+                "filename": "future-0.16.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3e8e88a2bda48d54b1da7634d04760d7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 824484,
+                "upload_time": "2016-10-27T20:07:22",
+                "url": "https://files.pythonhosted.org/packages/00/2b/8d082ddfed935f3608cc61140df6dcbf0edea1bc3ab52fb6c29ae3e81e85/future-0.16.0.tar.gz"
+            }
+        ],
+        "0.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1a00161ba598b552b71d810971ec784",
+                    "sha256": "b4f4d1938fd3df9b7e0e94370f4c2ce23f4ccdb7e912274d5ee29dc1eef58bcd"
+                },
+                "downloads": -1,
+                "filename": "future-0.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d1a00161ba598b552b71d810971ec784",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28895,
+                "upload_time": "2013-07-26T04:41:52",
+                "url": "https://files.pythonhosted.org/packages/47/71/85e86ca16d116369e327aeece8f383d896fb2e55f3033d03753ae3c717a9/future-0.2.0.tar.gz"
+            }
+        ],
+        "0.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f7afca67538fa7a38bd3cde6166d9e1d",
+                    "sha256": "874d60acb23d7a3ea0c40ee71ec5f6855725eb7bf88e2f59761565ee8b6c9193"
+                },
+                "downloads": -1,
+                "filename": "future-0.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f7afca67538fa7a38bd3cde6166d9e1d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 151173,
+                "upload_time": "2013-07-28T23:23:42",
+                "url": "https://files.pythonhosted.org/packages/8d/96/0c1b5bd252dad69587f2f38f13d4e611bc3582d51f985a2ec3001f5a56e3/future-0.3.0.tar.gz"
+            }
+        ],
+        "0.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "18b296aec71fe4682b4b529c4eba9358",
+                    "sha256": "8507366ad5b81c4215e30d895102851e962f425104732c879513dd9a5ff7e08d"
+                },
+                "downloads": -1,
+                "filename": "future-0.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "18b296aec71fe4682b4b529c4eba9358",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 222537,
+                "upload_time": "2013-08-04T12:54:40",
+                "url": "https://files.pythonhosted.org/packages/0d/e6/37fd66577d0d0f2f647949e8e2d9096b03562e71ffd38046e2a0491e3b6e/future-0.3.1.tar.gz"
+            }
+        ],
+        "0.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f91486ee9428af056b065250989af56",
+                    "sha256": "01eabc535be50de4332289ea3722879492761888b7ab50040cdddf8c1c1e70c5"
+                },
+                "downloads": -1,
+                "filename": "future-0.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0f91486ee9428af056b065250989af56",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 223078,
+                "upload_time": "2013-08-04T23:48:13",
+                "url": "https://files.pythonhosted.org/packages/1a/fa/e955d2aaa4ea5d518837e5ff45dd3f5e8a7857312c57292232caf8d064f5/future-0.3.2.tar.gz"
+            }
+        ],
+        "0.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "067e4c7d48f369449bd80442595ed934",
+                    "sha256": "e3321b66f32f23a342f6db71229446dc3e9fd26682536a0e1377cfa908780382"
+                },
+                "downloads": -1,
+                "filename": "future-0.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "067e4c7d48f369449bd80442595ed934",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 179461,
+                "upload_time": "2013-08-05T06:27:52",
+                "url": "https://files.pythonhosted.org/packages/36/8d/403c370d25bde232bef32e8e306942b1a95c62e5146b7d3586c2548c6171/future-0.3.3.tar.gz"
+            }
+        ],
+        "0.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0584f4d0b70f08f02c4e799fa57f660",
+                    "sha256": "d1f46dbe5cefbf49f2a36a2ad5c9833a54d703582525ba6f211dfaab639bde97"
+                },
+                "downloads": -1,
+                "filename": "future-0.3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d0584f4d0b70f08f02c4e799fa57f660",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 183843,
+                "upload_time": "2013-08-08T11:39:32",
+                "url": "https://files.pythonhosted.org/packages/ed/52/ed0ce839b5b8cf521e2361296c8a5892a242824a7a7e294a3fdbb8d2d79d/future-0.3.4.tar.gz"
+            }
+        ],
+        "0.3.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "55c6510a7552f83a0c744d385b1ecb70",
+                    "sha256": "9f63f2ff5725b3417c9146cddcfb6b9ac3c756b2a324681c373d873b2e712623"
+                },
+                "downloads": -1,
+                "filename": "future-0.3.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "55c6510a7552f83a0c744d385b1ecb70",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 183850,
+                "upload_time": "2013-08-08T12:24:27",
+                "url": "https://files.pythonhosted.org/packages/76/49/512ff7efa41f0b63d311bb4f5260d63f547f8bfb0fb8ad2e84268932491e/future-0.3.5.tar.gz"
+            }
+        ],
+        "0.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b4646246b37878b6e9dc5af5330ae12",
+                    "sha256": "a2e6800b24a31d6117c27dc1ad0477f7be59fd5c6a035a700264553349a594b9"
+                },
+                "downloads": -1,
+                "filename": "future-0.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b4646246b37878b6e9dc5af5330ae12",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 191092,
+                "upload_time": "2013-08-09T15:19:47",
+                "url": "https://files.pythonhosted.org/packages/39/20/35ff22a9737f14d4d036811a3f7f7f06f3a936f176496ac99021de80c2f5/future-0.4.0.tar.gz"
+            }
+        ],
+        "0.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "97ec3a9dac1bc47efb530e3b5eff08d4",
+                    "sha256": "567d6d1cee5645cf99678cf22eeb0a742087f7ed46ae926f898af4f9dd52ce8d"
+                },
+                "downloads": -1,
+                "filename": "future-0.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "97ec3a9dac1bc47efb530e3b5eff08d4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 213375,
+                "upload_time": "2013-09-12T13:51:13",
+                "url": "https://files.pythonhosted.org/packages/35/34/f3ab317ef4dc8c68a4e263ff2698e56e77a5c6eb2dfaf32c933022dab408/future-0.4.1.tar.gz"
+            }
+        ],
+        "0.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1bc9a0cc6d6560d4e269e3a1276ef7ce",
+                    "sha256": "d9c4294ae110a8e2c5509a0229d026831a25d3f5c44cb0c5d1b36a96af8a80e8"
+                },
+                "downloads": -1,
+                "filename": "future-0.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1bc9a0cc6d6560d4e269e3a1276ef7ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 208460,
+                "upload_time": "2013-09-18T14:31:52",
+                "url": "https://files.pythonhosted.org/packages/19/af/6e9bcbd4d75c0529e01951cdcc5d4ceea2ff5503c166eceb829c938442b4/future-0.5.0.tar.gz"
+            }
+        ],
+        "0.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4eab6ebfed63434fa2cdc3f468fbc35d",
+                    "sha256": "f8020c7b3b6bccdd2ca825f1e856e3c090c46d1955c78549113a936dea4d3011"
+                },
+                "downloads": -1,
+                "filename": "future-0.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4eab6ebfed63434fa2cdc3f468fbc35d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 224221,
+                "upload_time": "2013-09-21T20:49:21",
+                "url": "https://files.pythonhosted.org/packages/bd/f1/3969374107374de0133022284302829ce57bb3aae40d3652954725c730d4/future-0.5.1.tar.gz"
+            }
+        ],
+        "0.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c9ad29520090fbfad1c38c49b5b58972",
+                    "sha256": "eb68b4fd25a753f04454223fcfaf8eadab30ce5ab16bfabefd183fd1a17a0eb0"
+                },
+                "downloads": -1,
+                "filename": "future-0.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c9ad29520090fbfad1c38c49b5b58972",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 221112,
+                "upload_time": "2013-09-24T06:48:07",
+                "url": "https://files.pythonhosted.org/packages/6a/f5/79aed4c3961bd5a33ed259a6d700dfb91cddde963c03f1e0f5fe8c4f9800/future-0.5.2.tar.gz"
+            }
+        ],
+        "0.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b49f91188f830d105c849a84efe76ff4",
+                    "sha256": "2e7ae9fafea7df29b834300ed6d7e702c9794b7662506c7142305ee6fde33d07"
+                },
+                "downloads": -1,
+                "filename": "future-0.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b49f91188f830d105c849a84efe76ff4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 221008,
+                "upload_time": "2013-10-02T00:26:11",
+                "url": "https://files.pythonhosted.org/packages/1f/b8/b1c98f9a79016720b87516e83281278c470140a15621531ab32b13ffe243/future-0.6.0.tar.gz"
+            }
+        ],
+        "0.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2817e4eac50af354117ca6f37167df95",
+                    "sha256": "7268b0ef5db1b4fe9eb8b77556695868fb8a96a026bb387b359d5287d0c9395f"
+                },
+                "downloads": -1,
+                "filename": "future-0.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2817e4eac50af354117ca6f37167df95",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 229814,
+                "upload_time": "2013-10-24T12:25:05",
+                "url": "https://files.pythonhosted.org/packages/02/d7/f598e05b40dab77125a08d79409e2993b464a72bd8f6e30748fb25c8d2ff/future-0.7.0.tar.gz"
+            }
+        ],
+        "0.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cad98897db7cc58a12f90250b4d8793e",
+                    "sha256": "b567816dc752bb32881dc25b87ecdaeee12f38ee03cd4b35edbc55495efcd946"
+                },
+                "downloads": -1,
+                "filename": "future-0.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cad98897db7cc58a12f90250b4d8793e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 230490,
+                "upload_time": "2013-10-28T04:55:34",
+                "url": "https://files.pythonhosted.org/packages/57/57/970dcbc3d2ea887f286a4d3caa03ad772fba910de2bb0da83a3b960614aa/future-0.8.0.tar.gz"
+            }
+        ],
+        "0.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c9ff5a78fb5e862bf52df1c0d007db91",
+                    "sha256": "1ec83ca5d540b2186962367a50677c30669a3f2f3fbc1a25d41606c9181520ba"
+                },
+                "downloads": -1,
+                "filename": "future-0.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c9ff5a78fb5e862bf52df1c0d007db91",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 237749,
+                "upload_time": "2013-10-29T02:15:58",
+                "url": "https://files.pythonhosted.org/packages/2f/b1/202444d6c09a6d7af12fe2a8aa1ca82231497fbd3c4db0851c13af773ad1/future-0.8.1.tar.gz"
+            }
+        ],
+        "0.8.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "333f9ab29dd8a1b1428cc7f81f31d847",
+                    "sha256": "a96597d95a60ffcd874d5e53df78e96e1a1fddaeb15e6960bd2cce8ae48c6d4d"
+                },
+                "downloads": -1,
+                "filename": "future-0.8.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "333f9ab29dd8a1b1428cc7f81f31d847",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 238502,
+                "upload_time": "2013-10-30T06:31:04",
+                "url": "https://files.pythonhosted.org/packages/39/62/85c024887fe4c3740856e4ee5b7fa69f73fe4e3edce06f7435d90dc5fbdf/future-0.8.2.tar.gz"
+            }
+        ],
+        "0.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6d5af6b5e85faad86404e0cfc1abdb26",
+                    "sha256": "78d83fd71340d0f443bda0f4ee088dc1aa273154c0a2d9103fb7a1924256ac85"
+                },
+                "downloads": -1,
+                "filename": "future-0.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6d5af6b5e85faad86404e0cfc1abdb26",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 267930,
+                "upload_time": "2013-11-15T20:47:12",
+                "url": "https://files.pythonhosted.org/packages/f7/19/0a60b692f34dae382bff5ca243dd5727b0205d8ee7ace62dee8348e5751e/future-0.9.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "3e8e88a2bda48d54b1da7634d04760d7",
+                "sha256": "e39ced1ab767b5936646cedba8bcce582398233d6a627067d4c6a454c90cfedb"
+            },
+            "downloads": -1,
+            "filename": "future-0.16.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "3e8e88a2bda48d54b1da7634d04760d7",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 824484,
+            "upload_time": "2016-10-27T20:07:22",
+            "url": "https://files.pythonhosted.org/packages/00/2b/8d082ddfed935f3608cc61140df6dcbf0edea1bc3ab52fb6c29ae3e81e85/future-0.16.0.tar.gz"
+        }
+    ],
+    "package_name": "future"
+}

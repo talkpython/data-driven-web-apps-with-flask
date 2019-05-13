@@ -1,0 +1,521 @@
+{
+    "info": {
+        "author": "Kim Davies",
+        "author_email": "kim@cynosure.com.au",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Intended Audience :: System Administrators",
+            "License :: OSI Approved :: BSD License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Topic :: Internet :: Name Service (DNS)",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Utilities"
+        ],
+        "description": "Internationalized Domain Names in Applications (IDNA)\n=====================================================\n\nSupport for the Internationalised Domain Names in Applications\n(IDNA) protocol as specified in `RFC 5891 <http://tools.ietf.org/html/rfc5891>`_.\nThis is the latest version of the protocol and is sometimes referred to as\n\u201cIDNA 2008\u201d.\n\nThis library also provides support for Unicode Technical Standard 46,\n`Unicode IDNA Compatibility Processing <http://unicode.org/reports/tr46/>`_.\n\nThis acts as a suitable replacement for the \u201cencodings.idna\u201d module that\ncomes with the Python standard library, but only supports the\nold, deprecated IDNA specification (`RFC 3490 <http://tools.ietf.org/html/rfc3490>`_).\n\nBasic functions are simply executed:\n\n.. code-block:: pycon\n\n    # Python 3\n    >>> import idna\n    >>> idna.encode('\u30c9\u30e1\u30a4\u30f3.\u30c6\u30b9\u30c8')\n    b'xn--eckwd4c7c.xn--zckzah'\n    >>> print(idna.decode('xn--eckwd4c7c.xn--zckzah'))\n    \u30c9\u30e1\u30a4\u30f3.\u30c6\u30b9\u30c8\n\n    # Python 2\n    >>> import idna\n    >>> idna.encode(u'\u30c9\u30e1\u30a4\u30f3.\u30c6\u30b9\u30c8')\n    'xn--eckwd4c7c.xn--zckzah'\n    >>> print idna.decode('xn--eckwd4c7c.xn--zckzah')\n    \u30c9\u30e1\u30a4\u30f3.\u30c6\u30b9\u30c8\n\nPackages\n--------\n\nThe latest tagged release version is published in the PyPI repository:\n\n.. image:: https://badge.fury.io/py/idna.svg\n   :target: http://badge.fury.io/py/idna\n\n\nInstallation\n------------\n\nTo install this library, you can use pip:\n\n.. code-block:: bash\n\n    $ pip install idna\n\nAlternatively, you can install the package using the bundled setup script:\n\n.. code-block:: bash\n\n    $ python setup.py install\n\nThis library works with Python 2.6 or later, and Python 3.3 or later.\n\n\nUsage\n-----\n\nFor typical usage, the ``encode`` and ``decode`` functions will take a domain\nname argument and perform a conversion to A-labels or U-labels respectively.\n\n.. code-block:: pycon\n\n    # Python 3\n    >>> import idna\n    >>> idna.encode('\u30c9\u30e1\u30a4\u30f3.\u30c6\u30b9\u30c8')\n    b'xn--eckwd4c7c.xn--zckzah'\n    >>> print(idna.decode('xn--eckwd4c7c.xn--zckzah'))\n    \u30c9\u30e1\u30a4\u30f3.\u30c6\u30b9\u30c8\n\nYou may use the codec encoding and decoding methods using the\n``idna.codec`` module:\n\n.. code-block:: pycon\n\n    # Python 2\n    >>> import idna.codec\n    >>> print u'\u0434\u043e\u043c\u0435\u043d\u0430.\u0438\u0441\u043f\u044b\u0442\u0430\u043d\u0438\u0435'.encode('idna')\n    xn--80ahd1agd.xn--80akhbyknj4f\n    >>> print 'xn--80ahd1agd.xn--80akhbyknj4f'.decode('idna')\n    \u0434\u043e\u043c\u0435\u043d\u0430.\u0438\u0441\u043f\u044b\u0442\u0430\u043d\u0438\u0435\n\nConversions can be applied at a per-label basis using the ``ulabel`` or ``alabel``\nfunctions if necessary:\n\n.. code-block:: pycon\n\n    # Python 2\n    >>> idna.alabel(u'\u6d4b\u8bd5')\n    'xn--0zwm56d'\n\nCompatibility Mapping (UTS #46)\n+++++++++++++++++++++++++++++++\n\nAs described in `RFC 5895 <http://tools.ietf.org/html/rfc5895>`_, the IDNA\nspecification no longer normalizes input from different potential ways a user\nmay input a domain name. This functionality, known as a \u201cmapping\u201d, is now\nconsidered by the specification to be a local user-interface issue distinct\nfrom IDNA conversion functionality.\n\nThis library provides one such mapping, that was developed by the Unicode\nConsortium. Known as `Unicode IDNA Compatibility Processing <http://unicode.org/reports/tr46/>`_,\nit provides for both a regular mapping for typical applications, as well as\na transitional mapping to help migrate from older IDNA 2003 applications.\n\nFor example, \u201cK\u00f6nigsg\u00e4\u00dfchen\u201d is not a permissible label as *LATIN CAPITAL\nLETTER K* is not allowed (nor are capital letters in general). UTS 46 will\nconvert this into lower case prior to applying the IDNA conversion.\n\n.. code-block:: pycon\n\n    # Python 3\n    >>> import idna\n    >>> idna.encode(u'K\u00f6nigsg\u00e4\u00dfchen')\n    ...\n    idna.core.InvalidCodepoint: Codepoint U+004B at position 1 of 'K\u00f6nigsg\u00e4\u00dfchen' not allowed\n    >>> idna.encode('K\u00f6nigsg\u00e4\u00dfchen', uts46=True)\n    b'xn--knigsgchen-b4a3dun'\n    >>> print(idna.decode('xn--knigsgchen-b4a3dun'))\n    k\u00f6nigsg\u00e4\u00dfchen\n\nTransitional processing provides conversions to help transition from the older\n2003 standard to the current standard. For example, in the original IDNA\nspecification, the *LATIN SMALL LETTER SHARP S* (\u00df) was converted into two\n*LATIN SMALL LETTER S* (ss), whereas in the current IDNA specification this\nconversion is not performed.\n\n.. code-block:: pycon\n\n    # Python 2\n    >>> idna.encode(u'K\u00f6nigsg\u00e4\u00dfchen', uts46=True, transitional=True)\n    'xn--knigsgsschen-lcb0w'\n\nImplementors should use transitional processing with caution, only in rare\ncases where conversion from legacy labels to current labels must be performed\n(i.e. IDNA implementations that pre-date 2008). For typical applications\nthat just need to convert labels, transitional processing is unlikely to be\nbeneficial and could produce unexpected incompatible results.\n\n``encodings.idna`` Compatibility\n++++++++++++++++++++++++++++++++\n\nFunction calls from the Python built-in ``encodings.idna`` module are\nmapped to their IDNA 2008 equivalents using the ``idna.compat`` module.\nSimply substitute the ``import`` clause in your code to refer to the\nnew module name.\n\nExceptions\n----------\n\nAll errors raised during the conversion following the specification should\nraise an exception derived from the ``idna.IDNAError`` base class.\n\nMore specific exceptions that may be generated as ``idna.IDNABidiError``\nwhen the error reflects an illegal combination of left-to-right and right-to-left\ncharacters in a label; ``idna.InvalidCodepoint`` when a specific codepoint is\nan illegal character in an IDN label (i.e. INVALID); and ``idna.InvalidCodepointContext``\nwhen the codepoint is illegal based on its positional context (i.e. it is CONTEXTO\nor CONTEXTJ but the contextual requirements are not satisfied.)\n\nBuilding and Diagnostics\n------------------------\n\nThe IDNA and UTS 46 functionality relies upon pre-calculated lookup tables for\nperformance. These tables are derived from computing against eligibility criteria\nin the respective standards. These tables are computed using the command-line\nscript ``tools/idna-data``.\n\nThis tool will fetch relevant tables from the Unicode Consortium and perform the\nrequired calculations to identify eligibility. It has three main modes:\n\n* ``idna-data make-libdata``. Generates ``idnadata.py`` and ``uts46data.py``,\n  the pre-calculated lookup tables using for IDNA and UTS 46 conversions. Implementors\n  who wish to track this library against a different Unicode version may use this tool\n  to manually generate a different version of the ``idnadata.py`` and ``uts46data.py``\n  files.\n\n* ``idna-data make-table``. Generate a table of the IDNA disposition\n  (e.g. PVALID, CONTEXTJ, CONTEXTO) in the format found in Appendix B.1 of RFC\n  5892 and the pre-computed tables published by `IANA <http://iana.org/>`_.\n\n* ``idna-data U+0061``. Prints debugging output on the various properties\n  associated with an individual Unicode codepoint (in this case, U+0061), that are\n  used to assess the IDNA and UTS 46 status of a codepoint. This is helpful in debugging\n  or analysis.\n\nThe tool accepts a number of arguments, described using ``idna-data -h``. Most notably,\nthe ``--version`` argument allows the specification of the version of Unicode to use\nin computing the table data. For example, ``idna-data --version 9.0.0 make-libdata``\nwill generate library data against Unicode 9.0.0.\n\nNote that this script requires Python 3, but all generated library data will work\nin Python 2.6+.\n\n\nTesting\n-------\n\nThe library has a test suite based on each rule of the IDNA specification, as\nwell as tests that are provided as part of the Unicode Technical Standard 46,\n`Unicode IDNA Compatibility Processing <http://unicode.org/reports/tr46/>`_.\n\nThe tests are run automatically on each commit at Travis CI:\n\n.. image:: https://travis-ci.org/kjd/idna.svg?branch=master\n   :target: https://travis-ci.org/kjd/idna",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/kjd/idna",
+        "keywords": "",
+        "license": "BSD-like",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "idna",
+        "package_url": "https://pypi.org/project/idna/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/idna/",
+        "release_url": "https://pypi.org/project/idna/2.6/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Internationalized Domain Names in Applications (IDNA)",
+        "version": "2.6"
+    },
+    "last_serial": 3080111,
+    "releases": {
+        "0.1": [],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "36d5a8db3d6d46cb5d401d0ead4acde6",
+                    "sha256": "e28fdff4b1d47edd13e053399f642818d2f591cb9c215eb626bde6b14d6f4575"
+                },
+                "downloads": -1,
+                "filename": "idna-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "36d5a8db3d6d46cb5d401d0ead4acde6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18236,
+                "upload_time": "2013-07-16T19:29:45",
+                "url": "https://files.pythonhosted.org/packages/22/35/04dedec60e9366ba19ac7c147cd715c88a7e87d43cda47a75802190c0950/idna-0.2.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5e01837926a3d293cd8e6e27c4244ea",
+                    "sha256": "e092b7d8f5f8aeb751f841249b28ec9861da96328d4491febfb5df3f9c0e4f72"
+                },
+                "downloads": -1,
+                "filename": "idna-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b5e01837926a3d293cd8e6e27c4244ea",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17842,
+                "upload_time": "2013-07-18T13:32:01",
+                "url": "https://files.pythonhosted.org/packages/8e/52/8146be5f86bf668895e68e85d564572addae141a12a0344347c921002246/idna-0.3.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3d9ad8650e630ffe7d47cd9756bcc126",
+                    "sha256": "7d73ab5a3c44d20178ace6c94e1dde549cb45c8a39b5980a7892b191a495fe47"
+                },
+                "downloads": -1,
+                "filename": "idna-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3d9ad8650e630ffe7d47cd9756bcc126",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17856,
+                "upload_time": "2014-01-07T17:38:29",
+                "url": "https://files.pythonhosted.org/packages/d5/af/5d5ed7f2a78182724234c025e5ab5f2166a5212b0c6bf9a9fa891f139c5d/idna-0.4.tar.gz"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "590a2dc0fb09b5647d6a86d1585dfc1a",
+                    "sha256": "a83e47c77e733a274ca8aa662ff7ede9cec32421784baf0dd095135369630576"
+                },
+                "downloads": -1,
+                "filename": "idna-0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "590a2dc0fb09b5647d6a86d1585dfc1a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18790,
+                "upload_time": "2014-02-05T17:39:53",
+                "url": "https://files.pythonhosted.org/packages/c9/8a/14a079eeb7e89449dd8af6037e57ff53722be0d927a11bd21490a5d0a7b0/idna-0.5.tar.gz"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3bedb7eb5a386b0bd8b5549c8e36378a",
+                    "sha256": "2631ec61bb02eaec2b89a78acfe1722cc5ce172fab20300adabe692997fee3d0"
+                },
+                "downloads": -1,
+                "filename": "idna-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3bedb7eb5a386b0bd8b5549c8e36378a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18840,
+                "upload_time": "2014-04-29T16:23:46",
+                "url": "https://files.pythonhosted.org/packages/be/06/2c523c1aa1d85aafb21e95e6e207de373e5fad4f2062242ca3b69c69758d/idna-0.6.tar.gz"
+            }
+        ],
+        "0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "235729aa2bf99e1b940eba53fcbfb37c",
+                    "sha256": "bd053a6d0e5231bec41da6ef524369d64dc9a7f27c5075914ae1b1abc4dd33e5"
+                },
+                "downloads": -1,
+                "filename": "idna-0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "235729aa2bf99e1b940eba53fcbfb37c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 20294,
+                "upload_time": "2014-07-10T03:37:29",
+                "url": "https://files.pythonhosted.org/packages/cf/57/53ac056e1a9d028dfce896929d0fc769e53a1e4d0917c2ec163acae4528f/idna-0.7.tar.gz"
+            }
+        ],
+        "0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2bf526060960309de59d5dbbf7789a26",
+                    "sha256": "1d2cc002082a0835cc6a4d3710f01f6ca565e65dca013144fa73c652c7d224af"
+                },
+                "downloads": -1,
+                "filename": "idna-0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2bf526060960309de59d5dbbf7789a26",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 95341,
+                "upload_time": "2014-07-10T04:00:20",
+                "url": "https://files.pythonhosted.org/packages/65/4a/a571c5d86b11d98244fc822bf75322d2f5663372b8a80d2348d8a55c4332/idna-0.8.tar.gz"
+            }
+        ],
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "adeaa25679040dc6f8098a2e2ab6c42d",
+                    "sha256": "b3c0ed4d658247193fb38fb3e99c5c54a7d517b5c5bbda88feaff04f8cda12a4"
+                },
+                "downloads": -1,
+                "filename": "idna-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "adeaa25679040dc6f8098a2e2ab6c42d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 97888,
+                "upload_time": "2014-07-18T18:00:41",
+                "url": "https://files.pythonhosted.org/packages/c8/6b/d109774559ad508c094c6e7d9b7f97722e61a964976c24ca3a4fa0a0b870/idna-0.9.tar.gz"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01abd8bd98f119e02aad6e686ff6181b",
+                    "sha256": "c31140a69ecae014d65e936e9a45d8a66e2ee29f5abbc656f69c705ad2f1507d"
+                },
+                "downloads": -1,
+                "filename": "idna-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "01abd8bd98f119e02aad6e686ff6181b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99754,
+                "upload_time": "2014-10-12T18:32:04",
+                "url": "https://files.pythonhosted.org/packages/c4/93/a80bccdee90d97b113b76e2f0ba8e3260034bd0e55cea3ccb66098e710d8/idna-1.0.tar.gz"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9f5bfff6b317763c5a6f674707744dbe",
+                    "sha256": "3dab514abd255ada7994a57161750e8f054b938bf7adb8b40b96f13df54efaed"
+                },
+                "downloads": -1,
+                "filename": "idna-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9f5bfff6b317763c5a6f674707744dbe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 99242,
+                "upload_time": "2015-01-27T17:54:59",
+                "url": "https://files.pythonhosted.org/packages/0d/3b/ebe79efc3c00fc8dfd391938c6594c73539aeb55d5a38ebb901bae95c770/idna-1.1.tar.gz"
+            }
+        ],
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "40fa688bb01833b2a807fcc40ddaa8c0",
+                    "sha256": "9b2fc50bd3c4ba306b9651b69411ef22026d4d8335b93afc2214cef1246ce707"
+                },
+                "downloads": -1,
+                "filename": "idna-2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "40fa688bb01833b2a807fcc40ddaa8c0",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 61339,
+                "upload_time": "2015-05-30T01:02:03",
+                "url": "https://files.pythonhosted.org/packages/7c/75/b566d769455929ee6ab308d8a1c6c5aecc4928e72b25d42dd019c99f7015/idna-2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bd17a9d15e755375f48a62c13b25b801",
+                    "sha256": "16199aad938b290f5be1057c0e1efc6546229391c23cea61ca940c115f7d3d3b"
+                },
+                "downloads": -1,
+                "filename": "idna-2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bd17a9d15e755375f48a62c13b25b801",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 135150,
+                "upload_time": "2015-05-19T00:41:07",
+                "url": "https://files.pythonhosted.org/packages/69/27/5f76009f13c6dda4ed5016cbfebf68773f21374f9792db02821c05326a75/idna-2.0.tar.gz"
+            }
+        ],
+        "2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d87a2689779f273f3a67c97cdda2352d",
+                    "sha256": "4cfe64db2804351249d8d13ec1f3a2b0be9dc84b409b65c2a646c4d673fa55bc"
+                },
+                "downloads": -1,
+                "filename": "idna-2.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d87a2689779f273f3a67c97cdda2352d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 54240,
+                "upload_time": "2016-03-20T23:12:58",
+                "url": "https://files.pythonhosted.org/packages/ff/ee/57ca2b52dea2df65a15d4ab2669c89ff29fa227668917cebc43e689360be/idna-2.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3504ea3c28f95c5ce00fa02c07e1dba6",
+                    "sha256": "f28df695e9bede8a19b18a8e4429b4bad4d664e8e98aff27bc39b630f1ae2b42"
+                },
+                "downloads": -1,
+                "filename": "idna-2.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3504ea3c28f95c5ce00fa02c07e1dba6",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 54244,
+                "upload_time": "2016-03-21T00:51:14",
+                "url": "https://files.pythonhosted.org/packages/71/02/dee75fc3e6f7455bf69221164f94586ee13552c5f33c8002335667a3d122/idna-2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f6473caa9c5e0cc1ad3fd5d04c3c114b",
+                    "sha256": "ed36f281aebf3cd0797f163bb165d84c31507cedd15928b095b1675e2d04c676"
+                },
+                "downloads": -1,
+                "filename": "idna-2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f6473caa9c5e0cc1ad3fd5d04c3c114b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 128996,
+                "upload_time": "2016-03-20T23:12:52",
+                "url": "https://files.pythonhosted.org/packages/fb/84/8c27516fbaa8147acd2e431086b473c453c428e24e8fb99a1d89ce381851/idna-2.1.tar.gz"
+            }
+        ],
+        "2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fbda7cc9f538bc08e4b23745eba6abac",
+                    "sha256": "16402893379702342a662d3f7fa7e9369e4b4770876b245dbbab1eb12d0a60cf"
+                },
+                "downloads": -1,
+                "filename": "idna-2.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fbda7cc9f538bc08e4b23745eba6abac",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 55347,
+                "upload_time": "2016-12-21T04:58:13",
+                "url": "https://files.pythonhosted.org/packages/6b/f4/bb42887fb16eb5f5957897fec9e16d18c56dd8cdd2a729c13947ed786b92/idna-2.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e2d3f8a45d3d048a653eb186896e9e3e",
+                    "sha256": "0ac27740937d86850010e035c6a10a564158a5accddf1aa24df89b0309252426"
+                },
+                "downloads": -1,
+                "filename": "idna-2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e2d3f8a45d3d048a653eb186896e9e3e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 130203,
+                "upload_time": "2016-12-21T04:58:11",
+                "url": "https://files.pythonhosted.org/packages/94/fe/efb1cb6f505e1a560b3d080ae6b9fddc11e7c542d694ce4635c49b1ccdcb/idna-2.2.tar.gz"
+            }
+        ],
+        "2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a91c6e3a19352cc06f493e768a926d5",
+                    "sha256": "0a33cde64e2d7ba1afdd9586c5ebd000b07b6907c7141562bffe9cbcde4bc367"
+                },
+                "downloads": -1,
+                "filename": "idna-2.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9a91c6e3a19352cc06f493e768a926d5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 55094,
+                "upload_time": "2017-02-28T05:21:23",
+                "url": "https://files.pythonhosted.org/packages/e6/d7/930b670f75990f8fa5b2ad598b997d66afbf24b672ce504df224e6a4d760/idna-2.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b2e3cb6afde43ebd521c3b7484d22235",
+                    "sha256": "fe077ccaefbcc84b1b1fe8fae9dc0c3b71079df4bf5398796ece0b84be9cbdc3"
+                },
+                "downloads": -1,
+                "filename": "idna-2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b2e3cb6afde43ebd521c3b7484d22235",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 130105,
+                "upload_time": "2017-02-28T05:21:20",
+                "url": "https://files.pythonhosted.org/packages/81/62/c32d933d487d9756f55782de85a70b90cd6827a59a3e330f6adada408241/idna-2.3.tar.gz"
+            }
+        ],
+        "2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "952d5c1df7fca0ca4b1a050e77781bea",
+                    "sha256": "12468b2e4a71b1cbc342da70fb437dddbfb9d420272c313bd7129a6a22a2dd6a"
+                },
+                "downloads": -1,
+                "filename": "idna-2.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "952d5c1df7fca0ca4b1a050e77781bea",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 55103,
+                "upload_time": "2017-03-01T04:29:33",
+                "url": "https://files.pythonhosted.org/packages/08/c6/71319d9ac2055156562992b16cb01dbee74f431c0372d580a8fef6ca0e4c/idna-2.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b27328914784bf3e4f6fae16f4b75ba9",
+                    "sha256": "2a07165f6288f4b920aa8ab4357c1e59073c5d62e048a400510982769e039bd9"
+                },
+                "downloads": -1,
+                "filename": "idna-2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b27328914784bf3e4f6fae16f4b75ba9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 130182,
+                "upload_time": "2017-03-01T04:29:30",
+                "url": "https://files.pythonhosted.org/packages/a3/06/40cb383eaea6e97047666db51abc2f2b32046f3e2a6e5ab2b946630f6062/idna-2.4.tar.gz"
+            }
+        ],
+        "2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a7e9abecc669f5bd2ddb53b453008d32",
+                    "sha256": "cc19709fd6d0cbfed39ea875d29ba6d4e22c0cebc510a76d6302a28385e8bb70"
+                },
+                "downloads": -1,
+                "filename": "idna-2.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a7e9abecc669f5bd2ddb53b453008d32",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 55106,
+                "upload_time": "2017-03-07T03:27:27",
+                "url": "https://files.pythonhosted.org/packages/11/7d/9bbbd7bb35f34b0169542487d2a8859e44306bb2e6a4455d491800a5621f/idna-2.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc1d992bef73e8824db411bb5d21f012",
+                    "sha256": "3cb5ce08046c4e3a560fc02f138d0ac63e00f8ce5901a56b32ec8b7994082aab"
+                },
+                "downloads": -1,
+                "filename": "idna-2.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fc1d992bef73e8824db411bb5d21f012",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 130211,
+                "upload_time": "2017-03-07T03:27:25",
+                "url": "https://files.pythonhosted.org/packages/d8/82/28a51052215014efc07feac7330ed758702fc0581347098a81699b5281cb/idna-2.5.tar.gz"
+            }
+        ],
+        "2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "875c4a7b32b4897537d5ea9247b5c79e",
+                    "sha256": "8c7309c718f94b3a625cb648ace320157ad16ff131ae0af362c9f21b80ef6ec4"
+                },
+                "downloads": -1,
+                "filename": "idna-2.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "875c4a7b32b4897537d5ea9247b5c79e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 56450,
+                "upload_time": "2017-08-08T03:45:11",
+                "url": "https://files.pythonhosted.org/packages/27/cc/6dd9a3869f15c2edfab863b992838277279ce92663d334df9ecf5106f5c6/idna-2.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c706e2790b016bd0ed4edd2d4ba4d147",
+                    "sha256": "2c6a5de3089009e3da7c5dde64a141dbc8551d5b7f6cf4ed7c2568d0cc520a8f"
+                },
+                "downloads": -1,
+                "filename": "idna-2.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c706e2790b016bd0ed4edd2d4ba4d147",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 135992,
+                "upload_time": "2017-08-08T03:44:58",
+                "url": "https://files.pythonhosted.org/packages/f4/bd/0467d62790828c23c47fc1dfa1b1f052b24efdf5290f071c7a91d0d82fd3/idna-2.6.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "875c4a7b32b4897537d5ea9247b5c79e",
+                "sha256": "8c7309c718f94b3a625cb648ace320157ad16ff131ae0af362c9f21b80ef6ec4"
+            },
+            "downloads": -1,
+            "filename": "idna-2.6-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "875c4a7b32b4897537d5ea9247b5c79e",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 56450,
+            "upload_time": "2017-08-08T03:45:11",
+            "url": "https://files.pythonhosted.org/packages/27/cc/6dd9a3869f15c2edfab863b992838277279ce92663d334df9ecf5106f5c6/idna-2.6-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "c706e2790b016bd0ed4edd2d4ba4d147",
+                "sha256": "2c6a5de3089009e3da7c5dde64a141dbc8551d5b7f6cf4ed7c2568d0cc520a8f"
+            },
+            "downloads": -1,
+            "filename": "idna-2.6.tar.gz",
+            "has_sig": false,
+            "md5_digest": "c706e2790b016bd0ed4edd2d4ba4d147",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 135992,
+            "upload_time": "2017-08-08T03:44:58",
+            "url": "https://files.pythonhosted.org/packages/f4/bd/0467d62790828c23c47fc1dfa1b1f052b24efdf5290f071c7a91d0d82fd3/idna-2.6.tar.gz"
+        }
+    ],
+    "package_name": "idna"
+}

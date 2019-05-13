@@ -1,0 +1,952 @@
+{
+    "info": {
+        "author": "Ethan Furman",
+        "author_email": "ethan@stoneleaf.us",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.4",
+            "Programming Language :: Python :: 2.5",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Topic :: Software Development"
+        ],
+        "description": "enum --- support for enumerations\n========================================\n\nAn enumeration is a set of symbolic names (members) bound to unique, constant\nvalues.  Within an enumeration, the members can be compared by identity, and\nthe enumeration itself can be iterated over.\n\n    from enum import Enum\n\n    class Fruit(Enum):\n        apple = 1\n        banana = 2\n        orange = 3\n\n    list(Fruit)\n    # [<Fruit.apple: 1>, <Fruit.banana: 2>, <Fruit.orange: 3>]\n\n    len(Fruit)\n    # 3\n\n    Fruit.banana\n    # <Fruit.banana: 2>\n\n    Fruit['banana']\n    # <Fruit.banana: 2>\n\n    Fruit(2)\n    # <Fruit.banana: 2>\n\n    Fruit.banana is Fruit['banana'] is Fruit(2)\n    # True\n\n    Fruit.banana.name\n    # 'banana'\n\n    Fruit.banana.value\n    # 2\n\nRepository and Issue Tracker at https://bitbucket.org/stoneleaf/enum34.",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://bitbucket.org/stoneleaf/enum34",
+        "keywords": "",
+        "license": "BSD License",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "enum34",
+        "package_url": "https://pypi.org/project/enum34/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/enum34/",
+        "release_url": "https://pypi.org/project/enum34/1.1.6/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7, 2.6, 2.5, and 2.4",
+        "version": "1.1.6"
+    },
+    "last_serial": 2117417,
+    "releases": {
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b755cc3d0e2a3fbc0dd4f10c040ff68",
+                    "sha256": "5c5eddef9d9a1a0d794b9ed023be6aee8ce5e911c8f039b8492f9e7f3f527d66"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5b755cc3d0e2a3fbc0dd4f10c040ff68",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35611,
+                "upload_time": "2013-06-16T06:47:56",
+                "url": "https://files.pythonhosted.org/packages/55/43/1d35c15b379e45e253852edeb6a959a7b40682418941a46c0b55f0f3e8bd/enum34-0.9.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4717b8c328083d816b3b987f24446ad8",
+                    "sha256": "e4ea8c4e1b66c1c13f9ce342312f1c78fb8c7a28c7533f32a6df902a660927a6"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.zip",
+                "has_sig": false,
+                "md5_digest": "4717b8c328083d816b3b987f24446ad8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 46842,
+                "upload_time": "2013-06-16T06:47:54",
+                "url": "https://files.pythonhosted.org/packages/e3/95/ce4125ad70ecfbe3888fa26cd7ce8dc5bc7aa43dbc1b56afb688f6a2ebdf/enum34-0.9.zip"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b73a56cd0a6cadec6ec74e62ebdadbc",
+                    "sha256": "48ec8e5e9b04481e89323818b48c797be05119c8726c2dd154d8eb32bcca9997"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6b73a56cd0a6cadec6ec74e62ebdadbc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35723,
+                "upload_time": "2013-07-01T19:08:31",
+                "url": "https://files.pythonhosted.org/packages/03/81/a80cd26b7edbd089a7e8e2e2505cbc4310d6385c36469b3eb29e05a49d91/enum34-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc3f406959c5ac8c1aa303d3fbda64d3",
+                    "sha256": "bbbfe3f5bd981bf59b41861550222b021c088f3580ed573c6262534654bb5e1b"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fc3f406959c5ac8c1aa303d3fbda64d3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35715,
+                "upload_time": "2013-07-01T21:02:10",
+                "url": "https://files.pythonhosted.org/packages/80/c9/5474b4177b7872172cee13ca0323aa40cc4925a831677b28318341e5ef4d/enum34-0.9.11.tar.gz"
+            }
+        ],
+        "0.9.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3d8df950c2fc6195479204732817491",
+                    "sha256": "ceb990c2c67d1f51c652828be5a4454f516109c67c6fe7493fa05ecc688837c0"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c3d8df950c2fc6195479204732817491",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35832,
+                "upload_time": "2013-07-23T18:32:43",
+                "url": "https://files.pythonhosted.org/packages/5c/c7/4c4356a9c4dba9ed836ce6391fc174a8cc93a4b6b1c556a376f917b55933/enum34-0.9.12.tar.gz"
+            }
+        ],
+        "0.9.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "49da54058e2533477710c70ca9d0afbe",
+                    "sha256": "da3331aae6aab862eb08f4fb481aef63c04f28de7e5501639e681511df165b0d"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "49da54058e2533477710c70ca9d0afbe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35946,
+                "upload_time": "2013-07-25T20:52:07",
+                "url": "https://files.pythonhosted.org/packages/7a/db/d480ed32f65000ca2f9d98e2896e73443e8b2f45d00d440c2b289e455bd0/enum34-0.9.13.tar.gz"
+            }
+        ],
+        "0.9.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "99c41e880dda94b8b434c8339c455ab6",
+                    "sha256": "ed76884d723fb5e4dd68b7204c507a04f944fee5e25fd14374660bf87dd98b74"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "99c41e880dda94b8b434c8339c455ab6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35778,
+                "upload_time": "2013-07-30T19:07:03",
+                "url": "https://files.pythonhosted.org/packages/50/e3/ffe94e24b660ca0516af1b5c5396e8ff130403c669b948aee76c1710af96/enum34-0.9.14.tar.gz"
+            }
+        ],
+        "0.9.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "792f6a21f504fb43d63d18ecfa10e706",
+                    "sha256": "05e033fd46d8f9809d5f1a014e743b8ddc3b9e739c5de394bdd25b231b0ed0b6"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.15.tar.gz",
+                "has_sig": false,
+                "md5_digest": "792f6a21f504fb43d63d18ecfa10e706",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35950,
+                "upload_time": "2013-08-12T23:10:17",
+                "url": "https://files.pythonhosted.org/packages/0c/84/7d9edf8deae23564f7a547bfae13cdbe8b219f205af5985a681033a7626c/enum34-0.9.15.tar.gz"
+            }
+        ],
+        "0.9.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ac21f3bff1bcf97575fae7cf47db710",
+                    "sha256": "9fd8f65c278e7f1423bea65fedefd93aef1be60353a1c28ea58683a9cfed1fb6"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.16.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7ac21f3bff1bcf97575fae7cf47db710",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35967,
+                "upload_time": "2013-08-12T23:34:25",
+                "url": "https://files.pythonhosted.org/packages/b3/e0/d30be82fd2a7282ed4f0043ec0a75096ffada4e1f2add9cc61bb0b459b9d/enum34-0.9.16.tar.gz"
+            }
+        ],
+        "0.9.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d4280dfe042e1921c4d92961359d95e8",
+                    "sha256": "00a3e1a3c4c78fe43a1c6982792f2a2076bc072f70a387d480314ec26523fabd"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.17.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d4280dfe042e1921c4d92961359d95e8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 37179,
+                "upload_time": "2013-09-04T14:08:33",
+                "url": "https://files.pythonhosted.org/packages/43/ad/3ecb7efcb8bea6176e9245c1544a539b1a5471c3c69455dec09364ee7221/enum34-0.9.17.tar.gz"
+            }
+        ],
+        "0.9.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2e8204f0a432f68e90dd4e0f0b5c285b",
+                    "sha256": "099e6f584169876cd7305aaf57fdcc541a4802184fd71988606cea360ea5d06f"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.18.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2e8204f0a432f68e90dd4e0f0b5c285b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 37612,
+                "upload_time": "2013-09-04T14:19:19",
+                "url": "https://files.pythonhosted.org/packages/3c/7f/ea9951bf550a3171e1da976853552ed656cfdc8571a926d74bac9521cb74/enum34-0.9.18.tar.gz"
+            }
+        ],
+        "0.9.19": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "efb6a497f51e480ed356e976d0369cb3",
+                    "sha256": "b6b9f3da58ff8de7a94df71df52e614db111805e8a81d9cbea9f73a37fc3253c"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.19.tar.gz",
+                "has_sig": false,
+                "md5_digest": "efb6a497f51e480ed356e976d0369cb3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42646,
+                "upload_time": "2013-10-09T16:56:21",
+                "url": "https://files.pythonhosted.org/packages/fe/1e/1a261186fd2d14a443cb38a415660055e8a8805a88923d9512edbd5c7977/enum34-0.9.19.tar.gz"
+            }
+        ],
+        "0.9.20": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b2ba91deeb2ca74eb47a90966914ead7",
+                    "sha256": "907cd566ac18a786b718c92ac1b1a55c7ff2f8d07dc392ecb34b6e6817d1c2c6"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.20.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b2ba91deeb2ca74eb47a90966914ead7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42666,
+                "upload_time": "2014-01-30T03:50:23",
+                "url": "https://files.pythonhosted.org/packages/f3/3e/63a48338bd274ea06fd64b1c54a578a63c6ed81ca8052199560fdaced4b9/enum34-0.9.20.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b71e3df5e35b9e0761dd7f2fe1ec895",
+                    "sha256": "3e78854c02f901a2df45bd7f9ab6a84de4ac70740f4f69a5e3413308b19fb906"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.20.zip",
+                "has_sig": false,
+                "md5_digest": "5b71e3df5e35b9e0761dd7f2fe1ec895",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 53374,
+                "upload_time": "2014-01-30T03:50:18",
+                "url": "https://files.pythonhosted.org/packages/b7/87/96d377b73f89cb7f5ac27ff76a1743b7af3ab8bff7552000cc5b8909e6f9/enum34-0.9.20.zip"
+            }
+        ],
+        "0.9.21": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc69a925910ed15efa405d0ae11baa29",
+                    "sha256": "b1c41db8bb38dfe62c24095a7de702304564f5d71b18ff27c2b050313b03a930"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.21.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fc69a925910ed15efa405d0ae11baa29",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43465,
+                "upload_time": "2014-02-07T01:21:39",
+                "url": "https://files.pythonhosted.org/packages/e6/a9/8bd89dfa586b24475554dc80f5b69dae54a2588f10cab4407eb42202a51a/enum34-0.9.21.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "304ab6d782b55a0bea5aa028e6f03263",
+                    "sha256": "5589918b0366a5b8f6c615a50f75bf0c09ba428a7cd4f147a7df536472f24e64"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.21.zip",
+                "has_sig": false,
+                "md5_digest": "304ab6d782b55a0bea5aa028e6f03263",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54330,
+                "upload_time": "2014-02-07T01:21:34",
+                "url": "https://files.pythonhosted.org/packages/af/e2/06facff2d0b3b4098d30bbaa9b1bcc6621c671bbdeee4f6e8e2ea812a4a2/enum34-0.9.21.zip"
+            }
+        ],
+        "0.9.22": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fcbea288974e0af1fb4f4b20c9bd1af7",
+                    "sha256": "c9553b92d15b5f40b140d76992560a66f44e95a565fd60c23012e1af15cda003"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.22.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fcbea288974e0af1fb4f4b20c9bd1af7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44728,
+                "upload_time": "2014-02-12T17:24:24",
+                "url": "https://files.pythonhosted.org/packages/fd/eb/be9470809e1c56b92f37f9abf547bccde3360fec591d2a1bb1dd86daabca/enum34-0.9.22.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b50d555de5637eba095b891028dadec",
+                    "sha256": "6cb3edeb46768793d46290301dc4a0abbf2cf5cf3437017c4569a8aa734f42f9"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.22.zip",
+                "has_sig": false,
+                "md5_digest": "6b50d555de5637eba095b891028dadec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 55658,
+                "upload_time": "2014-02-12T17:24:22",
+                "url": "https://files.pythonhosted.org/packages/bf/46/ff446687437ae6d4269c6b5fcddfb55fde2c54181e0bcf06d4c27df631f7/enum34-0.9.22.zip"
+            }
+        ],
+        "0.9.23": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cac9d9f00440d03df1d3bf6516d6e878",
+                    "sha256": "cfc05f11b5169c7b5c4adfae6de51cb8ad608c269b2496fbb75a115a5b572440"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.23.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cac9d9f00440d03df1d3bf6516d6e878",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44720,
+                "upload_time": "2014-02-13T22:22:38",
+                "url": "https://files.pythonhosted.org/packages/8c/f7/904b8b91fda072a569960491007dbe91088156e4632e160fdd7de850e0c6/enum34-0.9.23.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6415120b5e77e2e265fb811ec45d85ec",
+                    "sha256": "2a0951adbb02465b727d768dc2a3d94249fc91d5df6b3338c285d7636b46dc21"
+                },
+                "downloads": -1,
+                "filename": "enum34-0.9.23.zip",
+                "has_sig": false,
+                "md5_digest": "6415120b5e77e2e265fb811ec45d85ec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 55640,
+                "upload_time": "2014-02-13T22:22:33",
+                "url": "https://files.pythonhosted.org/packages/e4/c7/eef81cef56dcfd40d52b6ae5447d9b26cb963861154e9cc07efe470f1c16/enum34-0.9.23.zip"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d57f5454c70c11707998ea26c1b0a7c",
+                    "sha256": "384b593703b057e0b19d90ff62844b1c8796da2e6bd9957d6ce9119bdeade635"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9d57f5454c70c11707998ea26c1b0a7c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32331,
+                "upload_time": "2014-05-05T17:38:52",
+                "url": "https://files.pythonhosted.org/packages/2f/63/6c3fa92c2f1c6c4fb09d3b2b04e38c036c17de4698d20a85192ef4a6cabb/enum34-1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d952b8d7fe114a96b6e4a79993df4d9b",
+                    "sha256": "35b14cfc9d45aaeae0b1b6092eb8597a53c84c8143002b6e9cc43043f9f7d47d"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.zip",
+                "has_sig": false,
+                "md5_digest": "d952b8d7fe114a96b6e4a79993df4d9b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42288,
+                "upload_time": "2014-05-05T17:38:49",
+                "url": "https://files.pythonhosted.org/packages/3f/3f/45e14086a33c3faee83dc11feb0a7ba0c2cb16ee1e39f616b40d91516c85/enum34-1.0.zip"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e80d15cd9139d659c404a387bb9b869",
+                    "sha256": "afcdc06c57c2944c70f4bd468fd14b122e549c37c56616b31f83fba7c56e6412"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8e80d15cd9139d659c404a387bb9b869",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32448,
+                "upload_time": "2014-10-21T18:33:02",
+                "url": "https://files.pythonhosted.org/packages/64/d9/07c823d1587bbf08feb7e501d0dcce146da0d98ea0dcd86237a864b4019e/enum34-1.0.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "533b1bdb39199a4431438dcdb92c0298",
+                    "sha256": "574813801def588d254fc788726446e956aa860a030ad4f9327195268b50fdd2"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.1.zip",
+                "has_sig": false,
+                "md5_digest": "533b1bdb39199a4431438dcdb92c0298",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42475,
+                "upload_time": "2014-10-21T18:33:05",
+                "url": "https://files.pythonhosted.org/packages/1a/b7/e52cc2e40e1012620d160aec22ae841062cf082b2f851e0003ead133b593/enum34-1.0.1.zip"
+            }
+        ],
+        "1.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "387f294549501b4a88a48941b027e4c3",
+                    "sha256": "bc5d1f1f049a3dc41250e2870a96b8be430a9735c4f8583ae2bcdbd31e571583"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "387f294549501b4a88a48941b027e4c3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32566,
+                "upload_time": "2014-10-21T19:54:07",
+                "url": "https://files.pythonhosted.org/packages/88/93/f9113ac7007de1c9685e6a59ebcbf78b4f46a90f164b6d379030cf33732f/enum34-1.0.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1af43de52f10404e5f93aacc58c53512",
+                    "sha256": "76323030e6b47e2c0e2b15c43aa00931566bf002868ca29e3c312f70fb7f4317"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.2.zip",
+                "has_sig": false,
+                "md5_digest": "1af43de52f10404e5f93aacc58c53512",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42617,
+                "upload_time": "2014-10-21T19:54:10",
+                "url": "https://files.pythonhosted.org/packages/f5/1d/7913c47f6e3a5c3aaa727e2d5c4b26f6e0a4bdf44dc3a3f840f4e9bfb3bf/enum34-1.0.2.zip"
+            }
+        ],
+        "1.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e47a51cd3af14b57cea91bd2ac43a462",
+                    "sha256": "399bb2814e4fcf3d1fe3ab3bb582e16b5c0edc357cbf6356911e7f246a2fe84c"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e47a51cd3af14b57cea91bd2ac43a462",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32585,
+                "upload_time": "2014-10-21T20:32:13",
+                "url": "https://files.pythonhosted.org/packages/35/28/796e6802bcdef21d12da3d232cbd7788989f0323c297a21f45ed1096acdc/enum34-1.0.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7fb23366bcec23ba87bdfa0ff4a2fd67",
+                    "sha256": "f89ab33ab767674806824b6f36637170d968285a76ef301cb2a33e4eb8060dde"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.3.zip",
+                "has_sig": false,
+                "md5_digest": "7fb23366bcec23ba87bdfa0ff4a2fd67",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42631,
+                "upload_time": "2014-10-21T20:32:14",
+                "url": "https://files.pythonhosted.org/packages/cd/df/9743d5998ad2d853f3327c0811459ecab2b4c1ef38703eb606dfeb79a882/enum34-1.0.3.zip"
+            }
+        ],
+        "1.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ac80f432ac9373e7d162834b264034b6",
+                    "sha256": "d3c19f26a6a34629c18c775f59dfc5dd595764c722b57a2da56ebfb69b94e447"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ac80f432ac9373e7d162834b264034b6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32944,
+                "upload_time": "2014-11-26T16:56:20",
+                "url": "https://files.pythonhosted.org/packages/72/c9/3c640a9cd54a731f3c54d97515b06aae6f6d16a5878a632dbfa9ffe5e663/enum34-1.0.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9843e97527f3126c851df7afeb0524b3",
+                    "sha256": "7583d80aca2a2b2a8a411f141c4d744de06a6bc43a32253f6b81d14d48f6c90e"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.0.4.zip",
+                "has_sig": false,
+                "md5_digest": "9843e97527f3126c851df7afeb0524b3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43057,
+                "upload_time": "2014-11-26T16:56:22",
+                "url": "https://files.pythonhosted.org/packages/18/1d/9c27a9452c811ddf820d955f0b42bb3971a05201bceed1934e2853add2bd/enum34-1.0.4.zip"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "804ce293e468ee4878be4435166353ee",
+                    "sha256": "f7b996726cf3e72bfc083b0fc35383b19b10e129642cfa485daf73620aa9a17b"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "804ce293e468ee4878be4435166353ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42139,
+                "upload_time": "2015-11-29T07:50:12",
+                "url": "https://files.pythonhosted.org/packages/f0/82/5608c8bc528388a43b13b42a627fb1f07ebf49645c1064d680a9a1ce87e4/enum34-1.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c0b726bb89243a8c4393b0a02189f5da",
+                    "sha256": "9e4c1fe67c2cc884d747724eebcb94822b1c2d16411ff15eb0686d9b302ae377"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "c0b726bb89243a8c4393b0a02189f5da",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 53467,
+                "upload_time": "2015-11-29T07:50:17",
+                "url": "https://files.pythonhosted.org/packages/35/25/9e755853a1ae29fe0f102b1d6b805104344df70e460f4b908f1c98e1fe67/enum34-1.1.0.zip"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5edaf22a14ec2769fc973a0443bf02d5",
+                    "sha256": "9d4a9220e4ebabd7ff60d853e69c3dd89debad5ddeb9ac5e768af811ece7708e"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5edaf22a14ec2769fc973a0443bf02d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 46678,
+                "upload_time": "2015-11-29T09:44:30",
+                "url": "https://files.pythonhosted.org/packages/2a/aa/713a32614841c98a563f6e519205089768910482896a2ac522a6890d1beb/enum34-1.1.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "51c7ad7ec459e7db38388d5fb3461f3d",
+                    "sha256": "4d33459c33254e1badcfdb47a340a801cd80466e46fbe35d25d308bf148dad70"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.1.zip",
+                "has_sig": false,
+                "md5_digest": "51c7ad7ec459e7db38388d5fb3461f3d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49640,
+                "upload_time": "2015-11-29T09:44:35",
+                "url": "https://files.pythonhosted.org/packages/2e/a8/1430b36bf50f447a6aeb196b326cf493a53850cbb28dc06a5497d8327284/enum34-1.1.1.zip"
+            }
+        ],
+        "1.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "025bb71b3f9d2fad15d0ee53e48dc873",
+                    "sha256": "2475d7fcddf5951e92ff546972758802de5260bf409319a9f1934e6bbc8b1dc7"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "025bb71b3f9d2fad15d0ee53e48dc873",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 46757,
+                "upload_time": "2015-12-22T22:09:49",
+                "url": "https://files.pythonhosted.org/packages/6f/e9/08fd439384b7e3d613e75a6c8236b8e64d90c47d23413493b38d4229a9a5/enum34-1.1.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a9ebbad4ce451c1298cf094de07cdf69",
+                    "sha256": "35907defb0f992b75ab7788f65fedc1cf20ffa22688e0e6f6f12afc06b3ea501"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.2.zip",
+                "has_sig": false,
+                "md5_digest": "a9ebbad4ce451c1298cf094de07cdf69",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49707,
+                "upload_time": "2015-12-22T22:09:55",
+                "url": "https://files.pythonhosted.org/packages/e2/2c/17f8aba7f80bf2d0acc1b5e0122a79ea6e79535f3b8ab8110d974175e941/enum34-1.1.2.zip"
+            }
+        ],
+        "1.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8c06365a725a6a1ba9b77404e46cf556",
+                    "sha256": "994fe36b8fa494e37e60d3edefbd11c08dc2f884e26e35e71527f7e984890810"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8c06365a725a6a1ba9b77404e46cf556",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 61307,
+                "upload_time": "2016-04-14T06:28:47",
+                "url": "https://files.pythonhosted.org/packages/03/ef/643b63a6b93d77d2806744b983c67a45d7267c37dca34cc1a32695b95b99/enum34-1.1.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f31c81947ff8e54ec0eb162633d134ce",
+                    "sha256": "865506c22462236b3a2e87a7d9587633e18470e7a93a79b594791de2d31e9bc8"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f31c81947ff8e54ec0eb162633d134ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39773,
+                "upload_time": "2016-04-14T06:28:37",
+                "url": "https://files.pythonhosted.org/packages/ec/30/c3b0a1bd6acf8dfa22d8d9634a46c13eea9b9ed19909d68263ea1094e24e/enum34-1.1.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62608e6b0c209a0bedd3ed00796c13f0",
+                    "sha256": "d3c5a5241ca8670b20fa9629ec480b78382b18077d7f0de96e275f3ce1ca0a52"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.3.zip",
+                "has_sig": false,
+                "md5_digest": "62608e6b0c209a0bedd3ed00796c13f0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44487,
+                "upload_time": "2016-04-14T06:28:42",
+                "url": "https://files.pythonhosted.org/packages/ee/e4/5644bb98bc1e2e189b4d0d16ef76e4748ae8bb238ff20921eb64d4e9f5af/enum34-1.1.3.zip"
+            }
+        ],
+        "1.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c41dcd04e1077e7bb533e4328d48939e",
+                    "sha256": "fb882434f2ae319f454b6b5d07bfac73104a16c1fcdbb30c3cef70df216610e9"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c41dcd04e1077e7bb533e4328d48939e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 61368,
+                "upload_time": "2016-04-26T13:50:39",
+                "url": "https://files.pythonhosted.org/packages/30/3c/7b6debc06c8f6bbfa20104fa31aeaae4a425e45c51f3522d87e35dcfc910/enum34-1.1.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d54e15da1558b399a402756c729459a",
+                    "sha256": "0efc3e3ee0cb7cc12ea9e4813cdf1154f69ab47e518f4924fbd9e238df41d628"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4d54e15da1558b399a402756c729459a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39840,
+                "upload_time": "2016-04-26T13:50:14",
+                "url": "https://files.pythonhosted.org/packages/eb/c2/ea4077a72a167fb75f38bac63801910dfa2d5083e23ddaa0c4062848f78c/enum34-1.1.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "250b8cd9ff404fdbfbf645d7f491b26a",
+                    "sha256": "c0379e8193e55dbb84892cddab4eb5cb965b3176f8442378994ca4de4b3a8b27"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.4.zip",
+                "has_sig": false,
+                "md5_digest": "250b8cd9ff404fdbfbf645d7f491b26a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44544,
+                "upload_time": "2016-04-26T13:50:31",
+                "url": "https://files.pythonhosted.org/packages/66/b9/ea04f447a7815b4774544e8970a7983312e6920c18445020d3e97b871eb8/enum34-1.1.4.zip"
+            }
+        ],
+        "1.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f99d5056e8fae92578a506fac6c5c720",
+                    "sha256": "01a4abc326ead6c92169ab8c6f6af3cff9706a6a047c8738168f7a50b8def231"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f99d5056e8fae92578a506fac6c5c720",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 61541,
+                "upload_time": "2016-05-08T20:36:41",
+                "url": "https://files.pythonhosted.org/packages/a6/4b/d2614fef376fcc5d0de1e86d1758c75ef79eda345ecfa07e0d16676706c3/enum34-1.1.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4c4ee33a974d5fa97e4f6e7bd56dddb7",
+                    "sha256": "35cf09a65db802269a76b7df60f548940575579a0e8a00ec45294995d28b0862"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4c4ee33a974d5fa97e4f6e7bd56dddb7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40004,
+                "upload_time": "2016-05-08T20:36:21",
+                "url": "https://files.pythonhosted.org/packages/66/18/bbdbe6a09b2dd4517913a8cd7aed246dc78ae11a9ed108b88e6695819ee4/enum34-1.1.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6c7c689da32248524f5967284139dd0b",
+                    "sha256": "7580699f440ebc08ce51e04efd34e685264779e64bb5312112a785eac769e037"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.5.zip",
+                "has_sig": false,
+                "md5_digest": "6c7c689da32248524f5967284139dd0b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44731,
+                "upload_time": "2016-05-08T20:36:30",
+                "url": "https://files.pythonhosted.org/packages/f0/0b/8a8665427c6ad17083958eb8df3987cde8206ad5c27c3ba17373316be34c/enum34-1.1.5.zip"
+            }
+        ],
+        "1.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "68f6982cc07dde78f4b500db829860bd",
+                    "sha256": "6bd0f6ad48ec2aa117d3d141940d484deccda84d4fcd884f5c3d93c23ecd8c79"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.6-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "68f6982cc07dde78f4b500db829860bd",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 12427,
+                "upload_time": "2016-05-16T03:31:13",
+                "url": "https://files.pythonhosted.org/packages/c5/db/e56e6b4bbac7c4a06de1c50de6fe1ef3810018ae11732a50f15f62c7d050/enum34-1.1.6-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a63ecb4f0b1b85fb69be64bdea999b43",
+                    "sha256": "644837f692e5f550741432dd3f223bbb9852018674981b1664e5dc339387588a"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.6-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a63ecb4f0b1b85fb69be64bdea999b43",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 12428,
+                "upload_time": "2016-05-16T03:31:19",
+                "url": "https://files.pythonhosted.org/packages/af/42/cb9355df32c69b553e72a2e28daee25d1611d2c0d9c272aa1d34204205b2/enum34-1.1.6-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f13a0841a61f7fc295c514490d120d0",
+                    "sha256": "8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5f13a0841a61f7fc295c514490d120d0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40048,
+                "upload_time": "2016-05-16T03:31:30",
+                "url": "https://files.pythonhosted.org/packages/bf/3e/31d502c25302814a7c2f1d3959d2a3b3f78e509002ba91aea64993936876/enum34-1.1.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61ad7871532d4ce2d77fac2579237a9e",
+                    "sha256": "2d81cbbe0e73112bdfe6ef8576f2238f2ba27dd0d55752a776c41d38b7da2850"
+                },
+                "downloads": -1,
+                "filename": "enum34-1.1.6.zip",
+                "has_sig": false,
+                "md5_digest": "61ad7871532d4ce2d77fac2579237a9e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44773,
+                "upload_time": "2016-05-16T03:31:48",
+                "url": "https://files.pythonhosted.org/packages/e8/26/a6101edcf724453845c850281b96b89a10dac6bd98edebc82634fccce6a5/enum34-1.1.6.zip"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "68f6982cc07dde78f4b500db829860bd",
+                "sha256": "6bd0f6ad48ec2aa117d3d141940d484deccda84d4fcd884f5c3d93c23ecd8c79"
+            },
+            "downloads": -1,
+            "filename": "enum34-1.1.6-py2-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "68f6982cc07dde78f4b500db829860bd",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2",
+            "size": 12427,
+            "upload_time": "2016-05-16T03:31:13",
+            "url": "https://files.pythonhosted.org/packages/c5/db/e56e6b4bbac7c4a06de1c50de6fe1ef3810018ae11732a50f15f62c7d050/enum34-1.1.6-py2-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "a63ecb4f0b1b85fb69be64bdea999b43",
+                "sha256": "644837f692e5f550741432dd3f223bbb9852018674981b1664e5dc339387588a"
+            },
+            "downloads": -1,
+            "filename": "enum34-1.1.6-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "a63ecb4f0b1b85fb69be64bdea999b43",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "size": 12428,
+            "upload_time": "2016-05-16T03:31:19",
+            "url": "https://files.pythonhosted.org/packages/af/42/cb9355df32c69b553e72a2e28daee25d1611d2c0d9c272aa1d34204205b2/enum34-1.1.6-py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "5f13a0841a61f7fc295c514490d120d0",
+                "sha256": "8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1"
+            },
+            "downloads": -1,
+            "filename": "enum34-1.1.6.tar.gz",
+            "has_sig": false,
+            "md5_digest": "5f13a0841a61f7fc295c514490d120d0",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 40048,
+            "upload_time": "2016-05-16T03:31:30",
+            "url": "https://files.pythonhosted.org/packages/bf/3e/31d502c25302814a7c2f1d3959d2a3b3f78e509002ba91aea64993936876/enum34-1.1.6.tar.gz"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "61ad7871532d4ce2d77fac2579237a9e",
+                "sha256": "2d81cbbe0e73112bdfe6ef8576f2238f2ba27dd0d55752a776c41d38b7da2850"
+            },
+            "downloads": -1,
+            "filename": "enum34-1.1.6.zip",
+            "has_sig": false,
+            "md5_digest": "61ad7871532d4ce2d77fac2579237a9e",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 44773,
+            "upload_time": "2016-05-16T03:31:48",
+            "url": "https://files.pythonhosted.org/packages/e8/26/a6101edcf724453845c850281b96b89a10dac6bd98edebc82634fccce6a5/enum34-1.1.6.zip"
+        }
+    ],
+    "package_name": "enum34"
+}

@@ -1,0 +1,441 @@
+{
+    "info": {
+        "author": "Jason Pellerin",
+        "author_email": "jpellerin+nose@gmail.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)",
+            "Natural Language :: English",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3",
+            "Topic :: Software Development :: Testing"
+        ],
+        "description": "nose extends the test loading and running features of unittest, making\n    it easier to write, find and run tests.\n\n    By default, nose will run tests in files or directories under the current\n    working directory whose names include \"test\" or \"Test\" at a word boundary\n    (like \"test_this\" or \"functional_test\" or \"TestClass\" but not\n    \"libtest\"). Test output is similar to that of unittest, but also includes\n    captured stdout output from failing tests, for easy print-style debugging.\n\n    These features, and many more, are customizable through the use of\n    plugins. Plugins included with nose provide support for doctest, code\n    coverage and profiling, flexible attribute-based test selection,\n    output capture and more. More information about writing plugins may be\n    found on in the nose API documentation, here:\n    http://readthedocs.org/docs/nose/\n\n    If you have recently reported a bug marked as fixed, or have a craving for\n    the very latest, you may want the development version instead:\n    https://github.com/nose-devs/nose/tarball/master#egg=nose-dev",
+        "description_content_type": null,
+        "docs_url": "https://pythonhosted.org/nose/",
+        "download_url": null,
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://readthedocs.org/docs/nose/",
+        "keywords": "test unittest doctest automatic discovery",
+        "license": "GNU LGPL",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "nose",
+        "package_url": "https://pypi.org/project/nose/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/nose/",
+        "release_url": "https://pypi.org/project/nose/1.3.7/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "nose extends unittest to make testing easier",
+        "version": "1.3.7"
+    },
+    "last_serial": 1736893,
+    "releases": {
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc89b2f4f06fb8f4a1623d8fa3601702",
+                    "sha256": "4074ba3705077980921d846e68cec759d9e7f0dbae02e41877bc97deebcc0c11"
+                },
+                "downloads": -1,
+                "filename": "nose-1.0.0-py3.1.egg",
+                "has_sig": false,
+                "md5_digest": "fc89b2f4f06fb8f4a1623d8fa3601702",
+                "packagetype": "bdist_egg",
+                "python_version": "3.1",
+                "size": 326575,
+                "upload_time": "2010-12-14T23:20:57",
+                "url": "https://files.pythonhosted.org/packages/15/f1/f8eef5e98ddeeac545b9abffa7eb59d90587eb0bd58ba6afddf4a5925442/nose-1.0.0-py3.1.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47a4784c817afa6ef11a505b574584ed",
+                    "sha256": "0f8d6e6e0223b8fb04114b4a7209380e1acf27e0a1dd1ab98fece085a7c3c525"
+                },
+                "downloads": -1,
+                "filename": "nose-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "47a4784c817afa6ef11a505b574584ed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 718762,
+                "upload_time": "2010-12-14T23:20:25",
+                "url": "https://files.pythonhosted.org/packages/82/14/8d5a795de5d3b5f2284af19773b8832faee027a4c04e5aa151a5e3600671/nose-1.0.0.tar.gz"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "629167a34d4f6dd4dfaa4de8ee323c93",
+                    "sha256": "3de8a9ec8380bf5ee5d2d33fa5aad31158dc6b256403b36542ff77b73ce19246"
+                },
+                "downloads": -1,
+                "filename": "nose-1.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "629167a34d4f6dd4dfaa4de8ee323c93",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 265093,
+                "upload_time": "2011-07-26T17:15:21",
+                "url": "https://files.pythonhosted.org/packages/0b/4d/eba792c9e37a0d010e231839aa28a913e8cb17698717ee2467bd56c05abc/nose-1.1.0.tar.gz"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc3025249c7abd27ac9020ec13b40db9",
+                    "sha256": "83dbaf09aa25d1cc3ea5f2839b027a99156c37b40f78661d5257123a8f6e7b34"
+                },
+                "downloads": -1,
+                "filename": "nose-1.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "dc3025249c7abd27ac9020ec13b40db9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 729308,
+                "upload_time": "2011-07-27T00:05:53",
+                "url": "https://files.pythonhosted.org/packages/fe/41/c79f39e4f05ce3b3a3ba2210f609f06d53224900c6ea3c16581b5a1f9443/nose-1.1.1.tar.gz"
+            }
+        ],
+        "1.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "144f237b615e23f21f6a50b2183aa817",
+                    "sha256": "b1ba12c1c45323fd8695be68ce7228456b86e51234f167027ebbc4ccda852c61"
+                },
+                "downloads": -1,
+                "filename": "nose-1.1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "144f237b615e23f21f6a50b2183aa817",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 729206,
+                "upload_time": "2011-07-31T01:55:19",
+                "url": "https://files.pythonhosted.org/packages/38/96/7aa1c2583ddec558a230175d6aeddba796cde7191852bf3e6eb3cfb873e1/nose-1.1.2.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0db7fcfa8aefc5a461e90a1fc193863c",
+                    "sha256": "93c1d8b4741c69aa95e4a7c3e095414472473831869ccb9e8dd98a461f39529d"
+                },
+                "downloads": -1,
+                "filename": "nose-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0db7fcfa8aefc5a461e90a1fc193863c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 400334,
+                "upload_time": "2012-09-09T13:58:53",
+                "url": "https://files.pythonhosted.org/packages/af/42/704c843a177dacd76f718f009c526d70640ff6a6c5b0fef8bb7e45204179/nose-1.2.0.tar.gz"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "735e3f1ce8b07e70ee1b742a8a53585a",
+                    "sha256": "2171e9202d118d302d5db1decb52dd862b79e2a626ca19653a6914574a6ca7d9"
+                },
+                "downloads": -1,
+                "filename": "nose-1.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "735e3f1ce8b07e70ee1b742a8a53585a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 400377,
+                "upload_time": "2012-09-12T20:01:06",
+                "url": "https://files.pythonhosted.org/packages/d0/50/cfc93700ec57b5f124e5f16e267039a0dbb3b8e96e8dd32b326a26fa867f/nose-1.2.1.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "95d6d32b9d6b029c3c65674bd9e7eabe",
+                    "sha256": "4e63cc3325de75cf98ffad40be72fa69753de824695173178f74c034fe4f5260"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "95d6d32b9d6b029c3c65674bd9e7eabe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 404909,
+                "upload_time": "2013-04-08T13:15:00",
+                "url": "https://files.pythonhosted.org/packages/de/f4/b205776cf5cbddbc1e2c3223fa29c0d05f18a9b8afad8cfa23438c217434/nose-1.3.0.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "672398801ddf5ba745c55c6eed79c5aa",
+                    "sha256": "85273b87ab3db9307e3b1452b071e25c1db1cc812bc337d2a97ea0b0cf2ab6ba"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "672398801ddf5ba745c55c6eed79c5aa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 274469,
+                "upload_time": "2014-03-10T21:44:33",
+                "url": "https://files.pythonhosted.org/packages/1d/a3/6df9d0d59cf0b20c505359ddef33d7ce4fe4388dba0948aadf3e75722f33/nose-1.3.1.tar.gz"
+            }
+        ],
+        "1.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "00f33853c494cc7aee01b61cc4a91348",
+                    "sha256": "b65e0f0c76ff586bedba756d722c6a9f13673d06a7a58fd86a494543c3416787"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "00f33853c494cc7aee01b61cc4a91348",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 275046,
+                "upload_time": "2014-05-03T14:19:00",
+                "url": "https://files.pythonhosted.org/packages/51/cb/bc138b0cf36070ab308311a85bf4562819ca5b96d8cc38a7b91b31f6fc69/nose-1.3.2.tar.gz"
+            }
+        ],
+        "1.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42776061bf5206670cb819176dc78654",
+                    "sha256": "b40c2ff268beb85356ada25f626ca0dabc89705f31051649772cf00fc9510326"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "42776061bf5206670cb819176dc78654",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 274973,
+                "upload_time": "2014-05-06T09:54:10",
+                "url": "https://files.pythonhosted.org/packages/54/a4/32d15f534c2b0ec899f8058da165aaa920a84d6eeaf77ed64f03716dd7f0/nose-1.3.3.tar.gz"
+            }
+        ],
+        "1.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd999cc6fca635efa6021ebfd2c4eb4e",
+                    "sha256": "78b03116badd0dbb2ed4dedc96a4a3d42138b94bb89fc2eb99f7f3bdfd199f56"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.4-py2-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "fd999cc6fca635efa6021ebfd2c4eb4e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 154272,
+                "upload_time": "2015-01-08T09:36:28",
+                "url": "https://files.pythonhosted.org/packages/79/61/6b0f82f55dd2307439ae89a92550458633221a652d75b49608a77071c2be/nose-1.3.4-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c17bb3302bacff93a09894be4e267b1c",
+                    "sha256": "cc8aebdec5a5fb989912f157f77b3c21a5e2f2da623af90a7b476b106a834abf"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.4-py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c17bb3302bacff93a09894be4e267b1c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 154326,
+                "upload_time": "2015-01-08T09:47:40",
+                "url": "https://files.pythonhosted.org/packages/07/c6/0667b318b01832320829b32b9858bc8897710b373d3f7c88a0e6fca742e9/nose-1.3.4-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6ed7169887580ddc9a8e16048d38274d",
+                    "sha256": "76bc63a4e2d5e5a0df77ca7d18f0f56e2c46cfb62b71103ba92a92c79fab1e03"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6ed7169887580ddc9a8e16048d38274d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 277488,
+                "upload_time": "2014-08-24T11:10:36",
+                "url": "https://files.pythonhosted.org/packages/97/48/4ffd60717dd66325e98e185055c0746f4c07808f23884d61dd80c0cfb3b2/nose-1.3.4.tar.gz"
+            }
+        ],
+        "1.3.5": [],
+        "1.3.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "145e15a5672342f0ec349077216bd6cf",
+                    "sha256": "4772ab5189229392d16c70ba7b8bb66b5d3c18076694c55347afb98c950b283c"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.6-py2-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "145e15a5672342f0ec349077216bd6cf",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 154686,
+                "upload_time": "2015-04-04T11:46:38",
+                "url": "https://files.pythonhosted.org/packages/df/37/989287c470262fd36ecbe9e170a273529dc9a123d10a264ab4fab5000465/nose-1.3.6-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a7a88a94cab2bb4949a85aff2c216270",
+                    "sha256": "e19b4f8a495681c367ab56c3c04f8bef30ddd7907ddfd9bee663a3f3286762b6"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.6-py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "a7a88a94cab2bb4949a85aff2c216270",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 154757,
+                "upload_time": "2015-04-04T11:47:56",
+                "url": "https://files.pythonhosted.org/packages/91/dc/1211a07f7c3a4e3b02a7e6e2c726fb763d13357d712987151a4ca44f821a/nose-1.3.6-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0ca546d81ca8309080fc80cb389e7a16",
+                    "sha256": "f61e0909a743eed37b1207e38a8e7b4a2fe0a82185e36f2be252ef1b3f901758"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0ca546d81ca8309080fc80cb389e7a16",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 276273,
+                "upload_time": "2015-04-04T11:46:42",
+                "url": "https://files.pythonhosted.org/packages/70/c7/469e68148d17a0d3db5ed49150242fd70a74a8147b8f3f8b87776e028d99/nose-1.3.6.tar.gz"
+            }
+        ],
+        "1.3.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a10ed5020bd4785a91f96893204f65b",
+                    "sha256": "dadcddc0aefbf99eea214e0f1232b94f2fa9bd98fa8353711dacb112bfcbbb2a"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.7-py2-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "2a10ed5020bd4785a91f96893204f65b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 154663,
+                "upload_time": "2015-06-02T09:12:36",
+                "url": "https://files.pythonhosted.org/packages/99/4f/13fb671119e65c4dce97c60e67d3fd9e6f7f809f2b307e2611f4701205cb/nose-1.3.7-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3135984cc9cfcbe5d9c46e166d6743b0",
+                    "sha256": "9ff7c6cc443f8c51994b34a667bbcf45afd6d945be7477b52e97516fd17c53ac"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.7-py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "3135984cc9cfcbe5d9c46e166d6743b0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 154731,
+                "upload_time": "2015-06-02T09:12:40",
+                "url": "https://files.pythonhosted.org/packages/15/d8/dd071918c040f50fa1cf80da16423af51ff8ce4a0f2399b7bf8de45ac3d9/nose-1.3.7-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d3ad0ff07b61373d2cefc89c5d0b20b",
+                    "sha256": "f1bffef9cbc82628f6e7d7b40d7e255aefaa1adb6a1b1d26c69a8b79e6208a98"
+                },
+                "downloads": -1,
+                "filename": "nose-1.3.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4d3ad0ff07b61373d2cefc89c5d0b20b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 280488,
+                "upload_time": "2015-06-02T09:12:32",
+                "url": "https://files.pythonhosted.org/packages/58/a5/0dc93c3ec33f4e281849523a5a913fa1eea9a3068acfa754d44d88107a44/nose-1.3.7.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "2a10ed5020bd4785a91f96893204f65b",
+                "sha256": "dadcddc0aefbf99eea214e0f1232b94f2fa9bd98fa8353711dacb112bfcbbb2a"
+            },
+            "downloads": -1,
+            "filename": "nose-1.3.7-py2-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "2a10ed5020bd4785a91f96893204f65b",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2",
+            "size": 154663,
+            "upload_time": "2015-06-02T09:12:36",
+            "url": "https://files.pythonhosted.org/packages/99/4f/13fb671119e65c4dce97c60e67d3fd9e6f7f809f2b307e2611f4701205cb/nose-1.3.7-py2-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "3135984cc9cfcbe5d9c46e166d6743b0",
+                "sha256": "9ff7c6cc443f8c51994b34a667bbcf45afd6d945be7477b52e97516fd17c53ac"
+            },
+            "downloads": -1,
+            "filename": "nose-1.3.7-py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "3135984cc9cfcbe5d9c46e166d6743b0",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "size": 154731,
+            "upload_time": "2015-06-02T09:12:40",
+            "url": "https://files.pythonhosted.org/packages/15/d8/dd071918c040f50fa1cf80da16423af51ff8ce4a0f2399b7bf8de45ac3d9/nose-1.3.7-py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "4d3ad0ff07b61373d2cefc89c5d0b20b",
+                "sha256": "f1bffef9cbc82628f6e7d7b40d7e255aefaa1adb6a1b1d26c69a8b79e6208a98"
+            },
+            "downloads": -1,
+            "filename": "nose-1.3.7.tar.gz",
+            "has_sig": true,
+            "md5_digest": "4d3ad0ff07b61373d2cefc89c5d0b20b",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 280488,
+            "upload_time": "2015-06-02T09:12:32",
+            "url": "https://files.pythonhosted.org/packages/58/a5/0dc93c3ec33f4e281849523a5a913fa1eea9a3068acfa754d44d88107a44/nose-1.3.7.tar.gz"
+        }
+    ],
+    "package_name": "nose"
+}

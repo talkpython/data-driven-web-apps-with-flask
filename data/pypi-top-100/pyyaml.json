@@ -1,0 +1,865 @@
+{
+    "info": {
+        "author": "Kirill Simonov",
+        "author_email": "xi@resolvent.net",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Text Processing :: Markup"
+        ],
+        "description": "YAML is a data serialization format designed for human readability\nand interaction with scripting languages.  PyYAML is a YAML parser\nand emitter for Python.\n\nPyYAML features a complete YAML 1.1 parser, Unicode support, pickle\nsupport, capable extension API, and sensible error messages.  PyYAML\nsupports standard YAML tags and provides Python-specific tags that\nallow to represent an arbitrary Python object.\n\nPyYAML is applicable for a broad range of tasks from complex\nconfiguration files to object serialization and persistance.",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "http://pyyaml.org/download/pyyaml/PyYAML-3.12.tar.gz",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://pyyaml.org/wiki/PyYAML",
+        "keywords": null,
+        "license": "MIT",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "PyYAML",
+        "package_url": "https://pypi.org/project/PyYAML/",
+        "platform": "Any",
+        "project_url": "https://pypi.org/project/PyYAML/",
+        "release_url": "https://pypi.org/project/PyYAML/3.12/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "YAML parser and emitter for Python",
+        "version": "3.12"
+    },
+    "last_serial": 3178801,
+    "releases": {
+        "3.01": [],
+        "3.02": [],
+        "3.03": [],
+        "3.04": [],
+        "3.05": [],
+        "3.06": [],
+        "3.07": [],
+        "3.08": [],
+        "3.09": [],
+        "3.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74c94a383886519e9e7b3dd1ee540247",
+                    "sha256": "e713da45c96ca53a3a8b48140d4120374db622df16ab71759c9ceb5b8d46fe7c"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "74c94a383886519e9e7b3dd1ee540247",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 241524,
+                "upload_time": "2011-07-01T22:59:26",
+                "url": "https://files.pythonhosted.org/packages/00/17/3b822893a1789a025d3f676a381338516a8f65e686d915b0834ecc9b4979/PyYAML-3.10.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dfb573ab41cdfee1b2794b7a155e72e6",
+                    "sha256": "f7c8a1c45c54e939acf2819b10eee61d29212962d96431653b01556f5ea5b660"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.10.win32-py2.5.exe",
+                "has_sig": false,
+                "md5_digest": "dfb573ab41cdfee1b2794b7a155e72e6",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.5",
+                "size": 186626,
+                "upload_time": "2011-07-01T23:00:44",
+                "url": "https://files.pythonhosted.org/packages/cf/e2/3567dec97968e36c027aa5143016c211c8f02e4cbaf1155f1223671dae55/PyYAML-3.10.win32-py2.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4c1a374cb89fa0ff43f3b94b5692edd9",
+                    "sha256": "3cf9e8298df49f80888ab3d95bcfa0e970788c3c92248497b21c75431bb78493"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.10.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "4c1a374cb89fa0ff43f3b94b5692edd9",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 330407,
+                "upload_time": "2011-07-01T23:01:11",
+                "url": "https://files.pythonhosted.org/packages/da/82/435334c350fc480e598301521f86d7bfbdc436341a674b4076cdf2812d1f/PyYAML-3.10.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "73309e5fe73d7d84e0af3213b2c957ff",
+                    "sha256": "65d4bc2de0aa3b63c1139d22987d895a0db5da494885e01dc7b20580aa648f9c"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.10.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "73309e5fe73d7d84e0af3213b2c957ff",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 330315,
+                "upload_time": "2011-07-01T23:01:35",
+                "url": "https://files.pythonhosted.org/packages/a1/8b/c2fbad63a8022278fded695d29002b0ddb7aa0dc1fc4424df16eb64b44c7/PyYAML-3.10.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0360710722fdc58e519d6a76324aa1d7",
+                    "sha256": "bf52ee7e6f62c247d2dd1102304cadd47a0bddde41fe04c46b1f147c97895744"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.10.win32-py3.0.exe",
+                "has_sig": false,
+                "md5_digest": "0360710722fdc58e519d6a76324aa1d7",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.0",
+                "size": 329165,
+                "upload_time": "2011-07-01T23:02:06",
+                "url": "https://files.pythonhosted.org/packages/33/eb/e73b546cb82e24bd8ca30aa8c57d3a7d13294039592a5df980089a913ffa/PyYAML-3.10.win32-py3.0.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6c830441d9df703458e2f34c2e6a413a",
+                    "sha256": "906e8229128b19f716467725d271d0054ce78a8eb4e42c1cfec461e49f0adf1f"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.10.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "6c830441d9df703458e2f34c2e6a413a",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.1",
+                "size": 329139,
+                "upload_time": "2011-07-01T23:02:29",
+                "url": "https://files.pythonhosted.org/packages/17/5f/fa55c61560ba9e7eda66b7847ae0a0fdaf1c51dcb9dddde5befa54ea9eab/PyYAML-3.10.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc582f2f46f6494a97c9cae938a19f59",
+                    "sha256": "76ee2cbe4131047828aed07ccee9b5019eeed3c68f62d82dc4493683361b9dda"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.10.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "fc582f2f46f6494a97c9cae938a19f59",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 329011,
+                "upload_time": "2011-07-01T23:02:55",
+                "url": "https://files.pythonhosted.org/packages/59/ba/a764604baa98a4d4a5a9d64c28c4e37758be0592905a20f730288e437b4b/PyYAML-3.10.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1a2b30cdf481da4249c917c3307f129",
+                    "sha256": "4a612876bfac22be403a39cbff64b8aac7ce3fed4c11778c59f79232943b22e4"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.10.zip",
+                "has_sig": false,
+                "md5_digest": "b1a2b30cdf481da4249c917c3307f129",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 364455,
+                "upload_time": "2011-07-01T23:00:10",
+                "url": "https://files.pythonhosted.org/packages/e4/a4/6c1f6c989d97c62ea50329b3803ca214ccfed7e4c1f82fe30c6e048645a0/PyYAML-3.10.zip"
+            }
+        ],
+        "3.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f50e08ef0fe55178479d3a618efe21db",
+                    "sha256": "c36c938a872e5ff494938b33b14aaa156cb439ec67548fcab3535bb78b0846e8"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f50e08ef0fe55178479d3a618efe21db",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 248685,
+                "upload_time": "2014-03-27T01:48:59",
+                "url": "https://files.pythonhosted.org/packages/75/5e/b84feba55e20f8da46ead76f14a3943c8cb722d40360702b2365b91dec00/PyYAML-3.11.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83b0f47825feac2da99b75bfbd65a3ab",
+                    "sha256": "e3bc2528c3a0f396908b5f8784795f3f7b62e8b2573c2db736addccfb22449e4"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win32-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "83b0f47825feac2da99b75bfbd65a3ab",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 370771,
+                "upload_time": "2014-03-27T01:49:40",
+                "url": "https://files.pythonhosted.org/packages/a7/fc/348f24960dd7363bb54b541fc2d10cd3a87e65680bcdf08d66ad7a0f511d/PyYAML-3.11.win32-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d75320c7a904731d6e27418e346a92e1",
+                    "sha256": "ca129663271174f9783e1177195e4288945a504db89f5c3889da75e0abbd0a67"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "d75320c7a904731d6e27418e346a92e1",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 370603,
+                "upload_time": "2014-03-27T01:50:01",
+                "url": "https://files.pythonhosted.org/packages/a5/55/47bf6e4a09a889db739b1ae02b05d5a2c1d7792aca14078728887f41815c/PyYAML-3.11.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1b3b956bbe638c50eb80273b639be692",
+                    "sha256": "d44be6e77802ea845911e000e29d781ba2900a0fe3b38fc0f5b74f5f77d2e4f0"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win32-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "1b3b956bbe638c50eb80273b639be692",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.1",
+                "size": 369330,
+                "upload_time": "2014-03-27T01:50:14",
+                "url": "https://files.pythonhosted.org/packages/13/9f/d065366ee3733cc35d7b955e3e0c185e52098f1e2ddeb9a944187141bf9b/PyYAML-3.11.win32-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b40a15302b494d0bcc79568ff38ab43c",
+                    "sha256": "2abbe0b237b42e075e5a59f90766c0a18cc29aea3baa7a152cc16f62fa556daa"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win32-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "b40a15302b494d0bcc79568ff38ab43c",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 369797,
+                "upload_time": "2014-03-27T01:50:32",
+                "url": "https://files.pythonhosted.org/packages/35/ed/37bf4758d977a7440a2b1538e44b0fc5992e3726d12aebbb41d79794241d/PyYAML-3.11.win32-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3990781cc999744cd21df473068f388",
+                    "sha256": "ad55a89cc264b74be59df9fdcea1dffd14f435d955eae2ac822a28563be2fe48"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win32-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "c3990781cc999744cd21df473068f388",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.3",
+                "size": 368057,
+                "upload_time": "2014-03-27T01:50:50",
+                "url": "https://files.pythonhosted.org/packages/69/2f/73448cf6a52cebe584da7a44fec19044e0d9e9b193f3b50d6f80d87361c6/PyYAML-3.11.win32-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5c14b49d828766c23bb9c83d6a60aaf5",
+                    "sha256": "e25c2074189eb72056778c88344f47e5e7378afd52da62014bb3e86efce947c1"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "5c14b49d828766c23bb9c83d6a60aaf5",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.4",
+                "size": 366060,
+                "upload_time": "2014-03-27T01:51:05",
+                "url": "https://files.pythonhosted.org/packages/f5/34/e557935bbd64db72b9cc20ab71ddce508556bfe7074d2494e063d0f0e19e/PyYAML-3.11.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "af7eade45dcb408473928953f430e7db",
+                    "sha256": "b54b4782da60c7dfe5d850524416dd03f3b9a516ed476ce1d5a2712cde75d683"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win-amd64-py2.6.exe",
+                "has_sig": false,
+                "md5_digest": "af7eade45dcb408473928953f430e7db",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 408473,
+                "upload_time": "2014-03-27T01:51:25",
+                "url": "https://files.pythonhosted.org/packages/79/1a/1a5ac6111ec2586ee2cc689e8e587222b0be25b65e9fbfa086569210bb78/PyYAML-3.11.win-amd64-py2.6.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "538cd92d63068161d229cb8a65db7f23",
+                    "sha256": "2db3d4c54d3eb47ad7169806e684d5243d4a14749cb9741ef5d1ac3291d67a1a"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win-amd64-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "538cd92d63068161d229cb8a65db7f23",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 408247,
+                "upload_time": "2014-03-27T01:51:39",
+                "url": "https://files.pythonhosted.org/packages/77/a9/92e09914e3d7768b0cab5a5432d019be393df50e89b284ad1c67562dcbdd/PyYAML-3.11.win-amd64-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d52af84d2cd6ce9b7cfddb2c525bd957",
+                    "sha256": "3e8c104861b5839a36e6b30c2f964d6fbf4a2e2b87ae9c289da699b21e35c91b"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win-amd64-py3.1.exe",
+                "has_sig": false,
+                "md5_digest": "d52af84d2cd6ce9b7cfddb2c525bd957",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.1",
+                "size": 406240,
+                "upload_time": "2014-03-27T01:51:54",
+                "url": "https://files.pythonhosted.org/packages/fe/65/2735b15d118765bdc23be7d9b2ffbf843e2e87c18cd4e8193d63fd09c901/PyYAML-3.11.win-amd64-py3.1.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "328bfd749ee42279b9d8a75397e9444d",
+                    "sha256": "7a02d22209e41ba55bd8a65fa69ee593af30a857f6e33fc9c80589e6b477c36b"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win-amd64-py3.2.exe",
+                "has_sig": false,
+                "md5_digest": "328bfd749ee42279b9d8a75397e9444d",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.2",
+                "size": 406678,
+                "upload_time": "2014-03-27T01:52:07",
+                "url": "https://files.pythonhosted.org/packages/58/ef/05f956add22b886f5f5fbcc42d006bfb171782ccf765ef2694ca301912c9/PyYAML-3.11.win-amd64-py3.2.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "672275294ababb18794b328a24c836b4",
+                    "sha256": "d9b72815d3cdc5e1c3f1f44498a5e884fe4dcdb3f6428fa086e35af8160d2809"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win-amd64-py3.3.exe",
+                "has_sig": false,
+                "md5_digest": "672275294ababb18794b328a24c836b4",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.3",
+                "size": 408872,
+                "upload_time": "2014-03-27T01:52:19",
+                "url": "https://files.pythonhosted.org/packages/af/98/94fb3e555d1f8c6664c3080d71bbe1af74d90029ea99ef5aea8fd5b36c29/PyYAML-3.11.win-amd64-py3.3.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0dfcdae003642dfdfb49d5f16ff63717",
+                    "sha256": "c81b0cccf6b6bfc0432c1a96c07b64b76472118ec789bc4891447cc5298bd1c7"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.win-amd64-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "0dfcdae003642dfdfb49d5f16ff63717",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.4",
+                "size": 407007,
+                "upload_time": "2014-03-27T01:52:37",
+                "url": "https://files.pythonhosted.org/packages/9f/41/6e6ca6b982aecc8ecd3e833590de9dae85ce542c581985c11a8b52106e6a/PyYAML-3.11.win-amd64-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "89cbc92cda979042533b640b76e6e055",
+                    "sha256": "19bb3ac350ef878dda84a62d37c7d5c17a137386dde9c2ce7249c7a21d7f6ac9"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.11.zip",
+                "has_sig": false,
+                "md5_digest": "89cbc92cda979042533b640b76e6e055",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 371754,
+                "upload_time": "2014-03-27T01:49:15",
+                "url": "https://files.pythonhosted.org/packages/04/60/abfb3a665ee0569b60c89148b7187ddd8a36cb65e254fba945ae1315645d/PyYAML-3.11.zip"
+            }
+        ],
+        "3.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f12d8328a19ad25ca1cc6baba576b9da",
+                    "sha256": "3262c96a1ca437e7e4763e2843746588a965426550f3797a79fca9c6199c431f"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12-cp27-cp27m-win32.whl",
+                "has_sig": false,
+                "md5_digest": "f12d8328a19ad25ca1cc6baba576b9da",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 182620,
+                "upload_time": "2016-08-29T00:18:25",
+                "url": "https://files.pythonhosted.org/packages/0b/13/eb09da839a8c8b3be81322b0a5f546e0f549e06c774350e34e38f797893e/PyYAML-3.12-cp27-cp27m-win32.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a48252d96ba9af8cf6fdddb3bfb390f",
+                    "sha256": "16b20e970597e051997d90dc2cddc713a2876c47e3d92d59ee198700c5427736"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12-cp27-cp27m-win_amd64.whl",
+                "has_sig": false,
+                "md5_digest": "0a48252d96ba9af8cf6fdddb3bfb390f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 197484,
+                "upload_time": "2016-08-29T00:18:44",
+                "url": "https://files.pythonhosted.org/packages/54/73/948e534e63f338a382737364a2c5ce89792478a11bae3cff1bf5e42897ee/PyYAML-3.12-cp27-cp27m-win_amd64.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d72fa8128e01a03a39bcf4e4a5b83f2",
+                    "sha256": "e863072cdf4c72eebf179342c94e6989c67185842d9997960b3e69290b2fa269"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12-cp34-cp34m-win32.whl",
+                "has_sig": false,
+                "md5_digest": "9d72fa8128e01a03a39bcf4e4a5b83f2",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 183583,
+                "upload_time": "2016-08-29T00:18:59",
+                "url": "https://files.pythonhosted.org/packages/b5/3f/658f63e3cc92d1ffe189297f75088a45c5cdd0c1e1c5b373d762e147bc89/PyYAML-3.12-cp34-cp34m-win32.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ded3dd616cb77a02cb3a6b2b84c61ea2",
+                    "sha256": "bc6bced57f826ca7cb5125a10b23fd0f2fff3b7c4701d64c439a300ce665fff8"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12-cp34-cp34m-win_amd64.whl",
+                "has_sig": false,
+                "md5_digest": "ded3dd616cb77a02cb3a6b2b84c61ea2",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 195595,
+                "upload_time": "2016-08-29T00:19:15",
+                "url": "https://files.pythonhosted.org/packages/63/45/107cbbbf40ab721b07b5b73a6bd62a4cdf2f2c0be197b7780a8fb806a53a/PyYAML-3.12-cp34-cp34m-win_amd64.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d32d5b3c1d4d183df7d81631565de56c",
+                    "sha256": "c01b880ec30b5a6e6aa67b09a2fe3fb30473008c85cd6a67359a1b15ed6d83a4"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12-cp35-cp35m-win32.whl",
+                "has_sig": false,
+                "md5_digest": "d32d5b3c1d4d183df7d81631565de56c",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 179617,
+                "upload_time": "2016-08-29T00:19:31",
+                "url": "https://files.pythonhosted.org/packages/f7/3c/57e71eccfb6b737c48fd5c7ae0b33a747b79fa8070ad5e517e30f7d3f954/PyYAML-3.12-cp35-cp35m-win32.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8c1cd6270280967ca713d96b82fd4091",
+                    "sha256": "827dc04b8fa7d07c44de11fabbc888e627fa8293b695e0f99cb544fdfa1bf0d1"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12-cp35-cp35m-win_amd64.whl",
+                "has_sig": false,
+                "md5_digest": "8c1cd6270280967ca713d96b82fd4091",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 195059,
+                "upload_time": "2016-08-29T00:19:42",
+                "url": "https://files.pythonhosted.org/packages/13/f2/9f13805a9b7eaeaf0a4406a3decba7ed1bc834e5e4b07bdbd8699f4f6034/PyYAML-3.12-cp35-cp35m-win_amd64.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4c129761b661d181ebf7ff4eb2d79950",
+                    "sha256": "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4c129761b661d181ebf7ff4eb2d79950",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 253011,
+                "upload_time": "2016-08-29T00:15:37",
+                "url": "https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5dcf1a3d92ec480e6d4612069858ebaf",
+                    "sha256": "5f84523c076ad14ff5e6c037fe1c89a7f73a3e04cf0377cb4d017014976433f3"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12.win32-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "5dcf1a3d92ec480e6d4612069858ebaf",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 377132,
+                "upload_time": "2016-08-29T00:16:31",
+                "url": "https://files.pythonhosted.org/packages/dc/69/1fe8dee4728e69aae332c9f4edf356e4dd59a4a5f95bf910ab4c0210d6a3/PyYAML-3.12.win32-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6bc4685063e241f97615a4f5294c1fb9",
+                    "sha256": "0c507b7f74b3d2dd4d1322ec8a94794927305ab4cebbe89cc47fe5e81541e6e8"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12.win32-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "6bc4685063e241f97615a4f5294c1fb9",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.4",
+                "size": 372922,
+                "upload_time": "2016-08-29T00:16:51",
+                "url": "https://files.pythonhosted.org/packages/a3/56/e9c29363f8c70c0117fd583ad98f4cacc13cd9d261ec77435929a0215659/PyYAML-3.12.win32-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52c98a791fa57ab312dd4fd25ffb7443",
+                    "sha256": "b4c423ab23291d3945ac61346feeb9a0dc4184999ede5e7c43e1ffb975130ae6"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12.win32-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "52c98a791fa57ab312dd4fd25ffb7443",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.5",
+                "size": 307001,
+                "upload_time": "2016-08-29T00:17:12",
+                "url": "https://files.pythonhosted.org/packages/a5/de/23cad8dafd6439e4439f50cb6f08abefb92fa0c3addab579e76e4b5e5db6/PyYAML-3.12.win32-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "49e84078efd63701336f667b76d3d7bb",
+                    "sha256": "ca233c64c6e40eaa6c66ef97058cdc80e8d0157a443655baa1b2966e812807ca"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12.win-amd64-py2.7.exe",
+                "has_sig": false,
+                "md5_digest": "49e84078efd63701336f667b76d3d7bb",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.7",
+                "size": 419632,
+                "upload_time": "2016-08-29T00:17:24",
+                "url": "https://files.pythonhosted.org/packages/af/be/a0b2db944133c832bc094960850f4129f1180d341fe1660b72d80b806ecc/PyYAML-3.12.win-amd64-py2.7.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61abc1ef5a186e6b36e5fb4b8e6c8700",
+                    "sha256": "4474f8ea030b5127225b8894d626bb66c01cda098d47a2b0d3429b6700af9fd8"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12.win-amd64-py3.4.exe",
+                "has_sig": false,
+                "md5_digest": "61abc1ef5a186e6b36e5fb4b8e6c8700",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.4",
+                "size": 416167,
+                "upload_time": "2016-08-29T00:17:41",
+                "url": "https://files.pythonhosted.org/packages/aa/c9/a36ebedc2128c4a371258b03ae84ee1268a797cd206a55fce472eaa71b6d/PyYAML-3.12.win-amd64-py3.4.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a771f67088b43725ae6694b59320400d",
+                    "sha256": "326420cbb492172dec84b0f65c80942de6cedb5233c413dd824483989c000608"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12.win-amd64-py3.5.exe",
+                "has_sig": false,
+                "md5_digest": "a771f67088b43725ae6694b59320400d",
+                "packagetype": "bdist_wininst",
+                "python_version": "3.5",
+                "size": 329600,
+                "upload_time": "2016-08-29T00:18:02",
+                "url": "https://files.pythonhosted.org/packages/23/65/4d170a802b35e27d295e6168e3db339e220ca207df71c766166beb90751b/PyYAML-3.12.win-amd64-py3.5.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa5e762e79b19bb80dbcf04f82178832",
+                    "sha256": "5ac82e411044fb129bae5cfbeb3ba626acb2af31a8d17d175004b70862a741a7"
+                },
+                "downloads": -1,
+                "filename": "PyYAML-3.12.zip",
+                "has_sig": false,
+                "md5_digest": "aa5e762e79b19bb80dbcf04f82178832",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 375811,
+                "upload_time": "2016-08-29T00:15:53",
+                "url": "https://files.pythonhosted.org/packages/6b/f0/a0250248ea260d55748fff586d89a32afbb22656f4498b08d2636a48d4ec/PyYAML-3.12.zip"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "f12d8328a19ad25ca1cc6baba576b9da",
+                "sha256": "3262c96a1ca437e7e4763e2843746588a965426550f3797a79fca9c6199c431f"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12-cp27-cp27m-win32.whl",
+            "has_sig": false,
+            "md5_digest": "f12d8328a19ad25ca1cc6baba576b9da",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 182620,
+            "upload_time": "2016-08-29T00:18:25",
+            "url": "https://files.pythonhosted.org/packages/0b/13/eb09da839a8c8b3be81322b0a5f546e0f549e06c774350e34e38f797893e/PyYAML-3.12-cp27-cp27m-win32.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0a48252d96ba9af8cf6fdddb3bfb390f",
+                "sha256": "16b20e970597e051997d90dc2cddc713a2876c47e3d92d59ee198700c5427736"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12-cp27-cp27m-win_amd64.whl",
+            "has_sig": false,
+            "md5_digest": "0a48252d96ba9af8cf6fdddb3bfb390f",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 197484,
+            "upload_time": "2016-08-29T00:18:44",
+            "url": "https://files.pythonhosted.org/packages/54/73/948e534e63f338a382737364a2c5ce89792478a11bae3cff1bf5e42897ee/PyYAML-3.12-cp27-cp27m-win_amd64.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "9d72fa8128e01a03a39bcf4e4a5b83f2",
+                "sha256": "e863072cdf4c72eebf179342c94e6989c67185842d9997960b3e69290b2fa269"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12-cp34-cp34m-win32.whl",
+            "has_sig": false,
+            "md5_digest": "9d72fa8128e01a03a39bcf4e4a5b83f2",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.4",
+            "size": 183583,
+            "upload_time": "2016-08-29T00:18:59",
+            "url": "https://files.pythonhosted.org/packages/b5/3f/658f63e3cc92d1ffe189297f75088a45c5cdd0c1e1c5b373d762e147bc89/PyYAML-3.12-cp34-cp34m-win32.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "ded3dd616cb77a02cb3a6b2b84c61ea2",
+                "sha256": "bc6bced57f826ca7cb5125a10b23fd0f2fff3b7c4701d64c439a300ce665fff8"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12-cp34-cp34m-win_amd64.whl",
+            "has_sig": false,
+            "md5_digest": "ded3dd616cb77a02cb3a6b2b84c61ea2",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.4",
+            "size": 195595,
+            "upload_time": "2016-08-29T00:19:15",
+            "url": "https://files.pythonhosted.org/packages/63/45/107cbbbf40ab721b07b5b73a6bd62a4cdf2f2c0be197b7780a8fb806a53a/PyYAML-3.12-cp34-cp34m-win_amd64.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "d32d5b3c1d4d183df7d81631565de56c",
+                "sha256": "c01b880ec30b5a6e6aa67b09a2fe3fb30473008c85cd6a67359a1b15ed6d83a4"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12-cp35-cp35m-win32.whl",
+            "has_sig": false,
+            "md5_digest": "d32d5b3c1d4d183df7d81631565de56c",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.5",
+            "size": 179617,
+            "upload_time": "2016-08-29T00:19:31",
+            "url": "https://files.pythonhosted.org/packages/f7/3c/57e71eccfb6b737c48fd5c7ae0b33a747b79fa8070ad5e517e30f7d3f954/PyYAML-3.12-cp35-cp35m-win32.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "8c1cd6270280967ca713d96b82fd4091",
+                "sha256": "827dc04b8fa7d07c44de11fabbc888e627fa8293b695e0f99cb544fdfa1bf0d1"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12-cp35-cp35m-win_amd64.whl",
+            "has_sig": false,
+            "md5_digest": "8c1cd6270280967ca713d96b82fd4091",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.5",
+            "size": 195059,
+            "upload_time": "2016-08-29T00:19:42",
+            "url": "https://files.pythonhosted.org/packages/13/f2/9f13805a9b7eaeaf0a4406a3decba7ed1bc834e5e4b07bdbd8699f4f6034/PyYAML-3.12-cp35-cp35m-win_amd64.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "4c129761b661d181ebf7ff4eb2d79950",
+                "sha256": "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12.tar.gz",
+            "has_sig": false,
+            "md5_digest": "4c129761b661d181ebf7ff4eb2d79950",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 253011,
+            "upload_time": "2016-08-29T00:15:37",
+            "url": "https://files.pythonhosted.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "5dcf1a3d92ec480e6d4612069858ebaf",
+                "sha256": "5f84523c076ad14ff5e6c037fe1c89a7f73a3e04cf0377cb4d017014976433f3"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12.win32-py2.7.exe",
+            "has_sig": false,
+            "md5_digest": "5dcf1a3d92ec480e6d4612069858ebaf",
+            "packagetype": "bdist_wininst",
+            "python_version": "2.7",
+            "size": 377132,
+            "upload_time": "2016-08-29T00:16:31",
+            "url": "https://files.pythonhosted.org/packages/dc/69/1fe8dee4728e69aae332c9f4edf356e4dd59a4a5f95bf910ab4c0210d6a3/PyYAML-3.12.win32-py2.7.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "6bc4685063e241f97615a4f5294c1fb9",
+                "sha256": "0c507b7f74b3d2dd4d1322ec8a94794927305ab4cebbe89cc47fe5e81541e6e8"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12.win32-py3.4.exe",
+            "has_sig": false,
+            "md5_digest": "6bc4685063e241f97615a4f5294c1fb9",
+            "packagetype": "bdist_wininst",
+            "python_version": "3.4",
+            "size": 372922,
+            "upload_time": "2016-08-29T00:16:51",
+            "url": "https://files.pythonhosted.org/packages/a3/56/e9c29363f8c70c0117fd583ad98f4cacc13cd9d261ec77435929a0215659/PyYAML-3.12.win32-py3.4.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "52c98a791fa57ab312dd4fd25ffb7443",
+                "sha256": "b4c423ab23291d3945ac61346feeb9a0dc4184999ede5e7c43e1ffb975130ae6"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12.win32-py3.5.exe",
+            "has_sig": false,
+            "md5_digest": "52c98a791fa57ab312dd4fd25ffb7443",
+            "packagetype": "bdist_wininst",
+            "python_version": "3.5",
+            "size": 307001,
+            "upload_time": "2016-08-29T00:17:12",
+            "url": "https://files.pythonhosted.org/packages/a5/de/23cad8dafd6439e4439f50cb6f08abefb92fa0c3addab579e76e4b5e5db6/PyYAML-3.12.win32-py3.5.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "49e84078efd63701336f667b76d3d7bb",
+                "sha256": "ca233c64c6e40eaa6c66ef97058cdc80e8d0157a443655baa1b2966e812807ca"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12.win-amd64-py2.7.exe",
+            "has_sig": false,
+            "md5_digest": "49e84078efd63701336f667b76d3d7bb",
+            "packagetype": "bdist_wininst",
+            "python_version": "2.7",
+            "size": 419632,
+            "upload_time": "2016-08-29T00:17:24",
+            "url": "https://files.pythonhosted.org/packages/af/be/a0b2db944133c832bc094960850f4129f1180d341fe1660b72d80b806ecc/PyYAML-3.12.win-amd64-py2.7.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "61abc1ef5a186e6b36e5fb4b8e6c8700",
+                "sha256": "4474f8ea030b5127225b8894d626bb66c01cda098d47a2b0d3429b6700af9fd8"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12.win-amd64-py3.4.exe",
+            "has_sig": false,
+            "md5_digest": "61abc1ef5a186e6b36e5fb4b8e6c8700",
+            "packagetype": "bdist_wininst",
+            "python_version": "3.4",
+            "size": 416167,
+            "upload_time": "2016-08-29T00:17:41",
+            "url": "https://files.pythonhosted.org/packages/aa/c9/a36ebedc2128c4a371258b03ae84ee1268a797cd206a55fce472eaa71b6d/PyYAML-3.12.win-amd64-py3.4.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "a771f67088b43725ae6694b59320400d",
+                "sha256": "326420cbb492172dec84b0f65c80942de6cedb5233c413dd824483989c000608"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12.win-amd64-py3.5.exe",
+            "has_sig": false,
+            "md5_digest": "a771f67088b43725ae6694b59320400d",
+            "packagetype": "bdist_wininst",
+            "python_version": "3.5",
+            "size": 329600,
+            "upload_time": "2016-08-29T00:18:02",
+            "url": "https://files.pythonhosted.org/packages/23/65/4d170a802b35e27d295e6168e3db339e220ca207df71c766166beb90751b/PyYAML-3.12.win-amd64-py3.5.exe"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "aa5e762e79b19bb80dbcf04f82178832",
+                "sha256": "5ac82e411044fb129bae5cfbeb3ba626acb2af31a8d17d175004b70862a741a7"
+            },
+            "downloads": -1,
+            "filename": "PyYAML-3.12.zip",
+            "has_sig": false,
+            "md5_digest": "aa5e762e79b19bb80dbcf04f82178832",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 375811,
+            "upload_time": "2016-08-29T00:15:53",
+            "url": "https://files.pythonhosted.org/packages/6b/f0/a0250248ea260d55748fff586d89a32afbb22656f4498b08d2636a48d4ec/PyYAML-3.12.zip"
+        }
+    ],
+    "package_name": "pyyaml"
+}

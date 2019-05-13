@@ -1,0 +1,793 @@
+{
+    "info": {
+        "author": "Julian Berman",
+        "author_email": "Julian@GrayVines.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy"
+        ],
+        "description": ".. image:: https://img.shields.io/pypi/v/jsonschema.svg\n    :target: https://pypi.python.org/pypi/jsonschema\n.. image:: https://travis-ci.org/Julian/jsonschema.svg?branch=master\n    :target: https://travis-ci.org/Julian/jsonschema\n.. image:: https://img.shields.io/pypi/l/jsonschema.svg\n    :target: https://pypi.python.org/pypi/jsonschema\n\n==========\njsonschema\n==========\n\n``jsonschema`` is an implementation of `JSON Schema <http://json-schema.org>`_\nfor Python (supporting 2.7+ including Python 3).\n\n.. code-block:: python\n\n    >>> from jsonschema import validate\n\n    >>> # A sample schema, like what we'd get from json.load()\n    >>> schema = {\n    ...     \"type\" : \"object\",\n    ...     \"properties\" : {\n    ...         \"price\" : {\"type\" : \"number\"},\n    ...         \"name\" : {\"type\" : \"string\"},\n    ...     },\n    ... }\n\n    >>> # If no exception is raised by validate(), the instance is valid.\n    >>> validate({\"name\" : \"Eggs\", \"price\" : 34.99}, schema)\n\n    >>> validate(\n    ...     {\"name\" : \"Eggs\", \"price\" : \"Invalid\"}, schema\n    ... )                                   # doctest: +IGNORE_EXCEPTION_DETAIL\n    Traceback (most recent call last):\n        ...\n    ValidationError: 'Invalid' is not of type 'number'\n\nIt can also be used from console:\n\n.. code-block:: bash\n\n    $ jsonschema -i sample.json sample.schema\n\nFeatures\n--------\n\n* Full support for\n  `Draft 3 <https://python-jsonschema.readthedocs.io/en/latest/validate/#jsonschema.Draft3Validator>`_\n  **and** `Draft 4 <https://python-jsonschema.readthedocs.io/en/latest/validate/#jsonschema.Draft4Validator>`_\n  of the schema.\n\n* `Lazy validation <https://python-jsonschema.readthedocs.io/en/latest/validate/#jsonschema.IValidator.iter_errors>`_\n  that can iteratively report *all* validation errors.\n\n* Small and extensible\n\n* `Programmatic querying <https://python-jsonschema.readthedocs.io/en/latest/errors/#module-jsonschema>`_\n  of which properties or items failed validation.\n\n\nRelease Notes\n-------------\n\nVersion 2.5.0 is mainly a performance release. The interface for `RefResolver`\nwas extended to add methods that improve performance on CPython.\n\nSupport for custom `RefResolver` objects with the legacy interface should *not*\nbe affected. If you notice something amiss please file an issue ticket.\n\n\nRunning the Test Suite\n----------------------\n\nIf you have ``tox`` installed (perhaps via ``pip install tox`` or your\npackage manager), running``tox`` in the directory of your source checkout will\nrun ``jsonschema``'s test suite on all of the versions of Python ``jsonschema``\nsupports. Note that you'll need to have all of those versions installed in\norder to run the tests on each of them, otherwise ``tox`` will skip (and fail)\nthe tests on that version.\n\nOf course you're also free to just run the tests on a single version with your\nfavorite test runner. The tests live in the ``jsonschema.tests`` package.\n\n\nCommunity\n---------\n\nThere's a `mailing list <https://groups.google.com/forum/#!forum/jsonschema>`_\nfor this implementation on Google Groups.\n\nPlease join, and feel free to send questions there.\n\n\nContributing\n------------\n\nI'm Julian Berman.\n\n``jsonschema`` is on `GitHub <http://github.com/Julian/jsonschema>`_.\n\nGet in touch, via GitHub or otherwise, if you've got something to contribute,\nit'd be most welcome!\n\nYou can also generally find me on Freenode (nick: ``tos9``) in various\nchannels, including ``#python``.\n\nIf you feel overwhelmingly grateful, you can woo me with beer money on\n`Gittip <https://www.gittip.com/Julian/>`_ or via Google Wallet with the email\nin my GitHub profile.\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://github.com/Julian/jsonschema",
+        "keywords": "",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "jsonschema",
+        "package_url": "https://pypi.org/project/jsonschema/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/jsonschema/",
+        "release_url": "https://pypi.org/project/jsonschema/2.6.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "An implementation of JSON Schema validation for Python",
+        "version": "2.6.0"
+    },
+    "last_serial": 2620404,
+    "releases": {
+        "0.1a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "192077d2606bf4c0e5f928aee4cc62b2",
+                    "sha256": "c8de412778f7ee76e137000db007618e33affa7c3c0b8542f886cd5436c149cd"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.1a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "192077d2606bf4c0e5f928aee4cc62b2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6846,
+                "upload_time": "2012-01-02T03:52:12",
+                "url": "https://files.pythonhosted.org/packages/cd/d8/8316660a62d54e3eccd18c738ce12ce701f0cf2b3c9b1407f045defaa68c/jsonschema-0.1a.tar.gz"
+            }
+        ],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d91f3c642f37faf557ab07ed78ee8961",
+                    "sha256": "c9d0c63ea7582623dd0f2ed2cb55af811cf3326f7db2418061fee9cdf34c6d0e"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d91f3c642f37faf557ab07ed78ee8961",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8316,
+                "upload_time": "2012-01-16T21:13:14",
+                "url": "https://files.pythonhosted.org/packages/e4/2e/8ea5f2ba3694936ddaeec29f77e56d5393c4aec8be16590c8b29dfab371c/jsonschema-0.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bc0b3bc754cee9cc64b3444835ba237a",
+                    "sha256": "7d325a55014935afc28b43777e03246bc40f96a3b266e57508cdaf8f88bbfe17"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.2.zip",
+                "has_sig": false,
+                "md5_digest": "bc0b3bc754cee9cc64b3444835ba237a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9621,
+                "upload_time": "2012-01-16T21:13:16",
+                "url": "https://files.pythonhosted.org/packages/41/ff/60cb1c61ae9aaed5c8d69f045c4f6646721dbbf4b8eea8f38ff0ca48de82/jsonschema-0.2.zip"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a6fb0661190871c62088e95fc443292",
+                    "sha256": "dfd5fbadfcee79862735bc0398947cf02afc81ea9b4596f0dadb10b5d12c33dc"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9a6fb0661190871c62088e95fc443292",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11537,
+                "upload_time": "2012-06-06T01:35:46",
+                "url": "https://files.pythonhosted.org/packages/06/06/db64793985ec82de622dfe7838f6ace5b726d9909022c2b33378b2648df7/jsonschema-0.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7277b0b163db18a74eb76baf7ca58b90",
+                    "sha256": "9a6c85bc14305bf60f26af677611ed92a827f79866375852c161b79045f2e4b4"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.3.zip",
+                "has_sig": false,
+                "md5_digest": "7277b0b163db18a74eb76baf7ca58b90",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13899,
+                "upload_time": "2012-06-06T01:35:47",
+                "url": "https://files.pythonhosted.org/packages/c8/77/af536f2b4cb89e51727ec6a77105cce123f17fb60392134a35e93eda8204/jsonschema-0.3.zip"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff2be534ee0fa141031327a90ca7447e",
+                    "sha256": "6b0f632bcd53b84add27bc1899af8e7cbdb31f256daaa66a65ac7c39d98f6be5"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ff2be534ee0fa141031327a90ca7447e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14010,
+                "upload_time": "2012-06-19T16:00:42",
+                "url": "https://files.pythonhosted.org/packages/01/67/65e96213f8fed8c3b740647ba8757c21a68ae670ba592945a4a52c72ac43/jsonschema-0.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "936c5ab7bf44c134c4d00b1864f43a9c",
+                    "sha256": "7a0b81f840bc8cdd740a3c83ac32c50b542770e9fdc58349dc42513ef8b8889a"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.4.zip",
+                "has_sig": false,
+                "md5_digest": "936c5ab7bf44c134c4d00b1864f43a9c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17448,
+                "upload_time": "2012-06-19T16:00:43",
+                "url": "https://files.pythonhosted.org/packages/0f/61/ab7011ad717a99700f5699b9705d61adb6583c8e8deec5c5a777c7c5a542/jsonschema-0.4.zip"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c60ce41f27ac2f0c10625ed8f786817f",
+                    "sha256": "c3cabe2196c9e613785969d785e8f602fa855228dcc0e59b1946ab4432966d51"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c60ce41f27ac2f0c10625ed8f786817f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13341,
+                "upload_time": "2012-07-17T21:33:48",
+                "url": "https://files.pythonhosted.org/packages/e9/5d/0f5962d614384006bea4b0c6117f95bd032d571bc4ac28ede501a305d74f/jsonschema-0.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d1c25a548e4bcba5fa205b3d2ad8115",
+                    "sha256": "dd10b70a6707ceb873d351e1b5da3ced57acfe91ef67ca4bbc347f12ebe15efd"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.5.zip",
+                "has_sig": false,
+                "md5_digest": "7d1c25a548e4bcba5fa205b3d2ad8115",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15967,
+                "upload_time": "2012-07-17T21:33:51",
+                "url": "https://files.pythonhosted.org/packages/3b/8f/b2e43b7f28c86d29f1f5a10e25c590d8878598ae002d0ccd984ca4d2201d/jsonschema-0.5.zip"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f48327683818b2db47611599c7c04cc0",
+                    "sha256": "e55d50467b3f1a813e62ab8d2d9d46a095ccc1238e9183e650b078359f5a9356"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f48327683818b2db47611599c7c04cc0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13779,
+                "upload_time": "2012-09-21T13:59:22",
+                "url": "https://files.pythonhosted.org/packages/d0/71/20368c997b8de44d1242d6059aeb04cbe0cf4f3f500e66bfa7903a8349dc/jsonschema-0.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42e47f1645b8a7cc9fea1a91e05242f3",
+                    "sha256": "ccdb6071aea90a00ffe19dd75b3a0fe1941d3b9c7ef3b164e5d12b21da31198a"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.6.zip",
+                "has_sig": false,
+                "md5_digest": "42e47f1645b8a7cc9fea1a91e05242f3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16586,
+                "upload_time": "2012-09-21T13:59:23",
+                "url": "https://files.pythonhosted.org/packages/b2/ed/faaadef8a34b9640b99634c0dbabeb3f4803a530ebaf5d84e9cbb8e2beca/jsonschema-0.6.zip"
+            }
+        ],
+        "0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "27af155499dec2c974976b7043894a94",
+                    "sha256": "b459747a1f615bcdb13ec20cbc753f486118e3b589d8ef7e72857bd33996ea44"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "27af155499dec2c974976b7043894a94",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15656,
+                "upload_time": "2012-10-29T01:02:06",
+                "url": "https://files.pythonhosted.org/packages/d1/55/df5537a00e1064ba808b812796ddea25975ed5591c915f13b3bb282b8f0a/jsonschema-0.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b93f9bd7864d7c5c587951efa4c0a80f",
+                    "sha256": "703b92b969d245b060b37055305110539507dfdc64ac1760b1868ca489c121e0"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.7.zip",
+                "has_sig": false,
+                "md5_digest": "b93f9bd7864d7c5c587951efa4c0a80f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18769,
+                "upload_time": "2012-10-29T01:02:08",
+                "url": "https://files.pythonhosted.org/packages/d1/9e/81a4a63eecea5948b820da9a7afe97817c019098a5871c3ffb56cb9703b5/jsonschema-0.7.zip"
+            }
+        ],
+        "0.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d7ce08ec89a66f2ff014ab58bee01359",
+                    "sha256": "2db223fca5e285798ff7f15ce3595657abb148c628306d06c8ecc1c166542429"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d7ce08ec89a66f2ff014ab58bee01359",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17809,
+                "upload_time": "2013-01-14T04:34:10",
+                "url": "https://files.pythonhosted.org/packages/7d/9a/f77716541bb8558d8d61c9b2160835a70a15d2cf81b9d6c842067babd197/jsonschema-0.8.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d3b18d69c116ec0a8ff045aa01e7c001",
+                    "sha256": "e9ae328244bb53023df620e76fd5affaaef6a5d92b9ce21054862949c93c2ba5"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-0.8.0.zip",
+                "has_sig": false,
+                "md5_digest": "d3b18d69c116ec0a8ff045aa01e7c001",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26920,
+                "upload_time": "2013-01-14T04:34:13",
+                "url": "https://files.pythonhosted.org/packages/9d/b2/17a274276d300d4f4acb1ec85bc82392ac83a2fac314cf6bf91c36de3260/jsonschema-0.8.0.zip"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3dc2b069467d5e306984ecb57f760595",
+                    "sha256": "98faa077c3b46ac52cff836dc3a4c8436392b65ec3f98e758fab792a2efe053d"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3dc2b069467d5e306984ecb57f760595",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33437,
+                "upload_time": "2013-02-25T01:40:16",
+                "url": "https://files.pythonhosted.org/packages/12/96/753ff58fb1d03f24b574272bee40efecf578dd21fac99b0c36d91478aa0a/jsonschema-1.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ac410669a21c2734b287fa895709b95",
+                    "sha256": "18095bf45cb3b9ccbf32ec0931dc08956ee7044af1eae8a3f6ffc368ec8a4025"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-1.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "1ac410669a21c2734b287fa895709b95",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54328,
+                "upload_time": "2013-02-25T01:40:22",
+                "url": "https://files.pythonhosted.org/packages/a3/89/af6e42540e46b8d95f12878e391d646a4ec4c51ed13430b3223f3392da4d/jsonschema-1.0.0.zip"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "57e9885e47e631ce6d800a3d6c33cf0a",
+                    "sha256": "f260c1e2374a880fed3513baa8c7b510e8002cf5fed6325c03b0fd271a01843e"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "57e9885e47e631ce6d800a3d6c33cf0a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34284,
+                "upload_time": "2013-03-03T23:24:26",
+                "url": "https://files.pythonhosted.org/packages/d1/eb/bfd9c8bffdb6acf52f2d48ccd53c70b9aa4ebaaad7ba084b48b1624ea136/jsonschema-1.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a60b79a754e05eaf8dab6ad68f15b45",
+                    "sha256": "4d75f51e6292e6b93f1eec671bce1c342eabb4f2f1fb49b80f3e1a7c3c85e0cd"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-1.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "9a60b79a754e05eaf8dab6ad68f15b45",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 55413,
+                "upload_time": "2013-03-03T23:24:29",
+                "url": "https://files.pythonhosted.org/packages/d7/98/dc16669a24901c4bee058829e40f692e1ce8bffd4ffb26869920e21fc180/jsonschema-1.1.0.zip"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4444d99c60489b7e00e5e395504302e4",
+                    "sha256": "1618fcb2114b08bd786b0487c82a1ea233b82ee686b12831beddf869506fd3f8"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4444d99c60489b7e00e5e395504302e4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35697,
+                "upload_time": "2013-04-12T19:07:22",
+                "url": "https://files.pythonhosted.org/packages/a4/02/8613ad24d62caaa820c4a3834fb9640e05895648f1f230798407d0accf3b/jsonschema-1.2.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5b526c551710bbb0f683bcced741806",
+                    "sha256": "7a37ef443ca0348b29c6717c8d705fb0a93e7e5ced77cbb8596f1f742e4f0db6"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-1.2.0.zip",
+                "has_sig": false,
+                "md5_digest": "b5b526c551710bbb0f683bcced741806",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 56569,
+                "upload_time": "2013-04-12T19:07:26",
+                "url": "https://files.pythonhosted.org/packages/64/7d/6e103371935691dd0f2a1229cbd463f10cbffcc517bb37d3d77a0b610fb3/jsonschema-1.2.0.zip"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4fa8d609d997a2189fdcacd3ff2eaa3e",
+                    "sha256": "c2a5b7bcf7f8e013e1ce2760c4c379a13719b2ce7006d295c50756f6ddd313e5"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-1.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4fa8d609d997a2189fdcacd3ff2eaa3e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 37038,
+                "upload_time": "2013-04-21T13:26:55",
+                "url": "https://files.pythonhosted.org/packages/5b/10/3eadf46b863dc47bf2ed54e41487ccd053c4c31587afadd3392fe9567871/jsonschema-1.3.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "02c0bacc8995926c6856b713adf4d2ce",
+                    "sha256": "d1168efcc5c76f2bf31552e638d5c49f7bd474af3bc13a38396b0fbf646e10b8"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-1.3.0.zip",
+                "has_sig": false,
+                "md5_digest": "02c0bacc8995926c6856b713adf4d2ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57816,
+                "upload_time": "2013-04-21T13:26:57",
+                "url": "https://files.pythonhosted.org/packages/0c/b3/8c05965ff89f22416065bbd4f86530c87b209db47a23f9ff1b2609c01b87/jsonschema-1.3.0.zip"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1793d97a668760ef540fadd342aa08e5",
+                    "sha256": "c2c8483be59aea3df568d8aad2b3296ef7ea767639efe6e0363c722f7f096322"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1793d97a668760ef540fadd342aa08e5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39933,
+                "upload_time": "2013-05-21T13:41:41",
+                "url": "https://files.pythonhosted.org/packages/c9/1f/da11bf890ee8c99440fe0e0dd413e38abb984717b78e3891f16d998c554a/jsonschema-2.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "71d0f614329aa6b3474c02ff062ccaeb",
+                    "sha256": "db49eff2752cc5f550b338c812131b2f0f90ef066b74a507bbc8efe41565690c"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "71d0f614329aa6b3474c02ff062ccaeb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65082,
+                "upload_time": "2013-05-21T13:41:44",
+                "url": "https://files.pythonhosted.org/packages/fc/74/b12ab61c554ad173e999cf954a675be798f90f236a9ad429d41fb8663baf/jsonschema-2.0.0.zip"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6ec15a72a3dd21c5f6e4feb468bf08d6",
+                    "sha256": "6a5121630363eb6631822d74d350066a79e5c57c0c02117eb24e93c522ba2e17"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6ec15a72a3dd21c5f6e4feb468bf08d6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40744,
+                "upload_time": "2013-09-22T16:41:03",
+                "url": "https://files.pythonhosted.org/packages/04/3b/17bf9dbcf8683f933802978ca25d044d56e887f93f90a912ffb1fffd0c0f/jsonschema-2.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "48dbbddbcddbe7e3cd8c53a785f0945f",
+                    "sha256": "3c5c61ce76f6c234d0bb2179a0fa412adc613933db043380a28e2d4ff9a0196e"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "48dbbddbcddbe7e3cd8c53a785f0945f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65671,
+                "upload_time": "2013-09-22T16:41:07",
+                "url": "https://files.pythonhosted.org/packages/f5/b8/28147e173ef881ffe857a18765bb76df282e7fedcb71f89350088ffd7718/jsonschema-2.1.0.zip"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1b038582077eda577b0a508e115960d",
+                    "sha256": "98071d52706e30b01fbb72567fbe26e342db9d7cc89bea04bff44e9304685763"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b1b038582077eda577b0a508e115960d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40963,
+                "upload_time": "2013-10-18T17:46:53",
+                "url": "https://files.pythonhosted.org/packages/37/80/d9ca3a25c9749605e7dfcf37aea4d1e7b4f5cf19a256a24c1a872081e6b3/jsonschema-2.2.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4be60b2a1af5b74f667dd1834634aced",
+                    "sha256": "87380feb9244865b78eb6fe5fec2c63cd59e49d3ae3d771efc4fc3ea2b95d9b7"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.2.0.zip",
+                "has_sig": false,
+                "md5_digest": "4be60b2a1af5b74f667dd1834634aced",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65856,
+                "upload_time": "2013-10-18T17:46:57",
+                "url": "https://files.pythonhosted.org/packages/19/97/52cd077a1b68cb55805d5b8da71ea5ae65d4a8bff92e90f4ffb2d4711f9a/jsonschema-2.2.0.zip"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "616e79adde5d57b053f19f5a56598542",
+                    "sha256": "8f66ba100a86f9ad60b4bd0ac5d0fc7472854c2c725c999bb89017dadad288dd"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "616e79adde5d57b053f19f5a56598542",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 32370,
+                "upload_time": "2013-11-15T00:16:37",
+                "url": "https://files.pythonhosted.org/packages/20/1c/52812523feebd744ac0e268224b5bae048b1559c88728f3628d169427947/jsonschema-2.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "410075e1969a9ec1838b5a6e1313c32b",
+                    "sha256": "a79dcee3769d7cf749836da840966a83cd2e33e361264e77b74df9490ffe5c89"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "410075e1969a9ec1838b5a6e1313c32b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43115,
+                "upload_time": "2013-11-03T01:06:36",
+                "url": "https://files.pythonhosted.org/packages/b3/31/7e02d05fc78ebcae059e7986132a482231da5046de321b69edb7a57bbe64/jsonschema-2.3.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0275f70c5f7c65657555ff478a4fc89c",
+                    "sha256": "c085fca29eeb7e42500aa2769f933b003becd95a95819b4565a734170de84497"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.3.0.zip",
+                "has_sig": false,
+                "md5_digest": "0275f70c5f7c65657555ff478a4fc89c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68796,
+                "upload_time": "2013-11-03T01:06:38",
+                "url": "https://files.pythonhosted.org/packages/e3/bd/5974ede69fc7f56bd50f3b66ae934dccd24eb492bc4e379c8d186c01f35e/jsonschema-2.3.0.zip"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1ea8c8b3653689bc2c78dcc4fb478d2",
+                    "sha256": "5af36686c271097f25ec023546c397cb99bc67a5db3836e52e6b37bdb45ca21e"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d1ea8c8b3653689bc2c78dcc4fb478d2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 37277,
+                "upload_time": "2014-08-19T00:56:05",
+                "url": "https://files.pythonhosted.org/packages/5e/55/9e973774cb3a47d0d025fc9626c8cff96b104e3764493f91b49fa125d8ec/jsonschema-2.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "661f85c3d23094afbb9ac3c0673840bf",
+                    "sha256": "1298a2f1b2f4c4a7b921cccd159e4e42f6d7b0fb75c86c0cdecfc71f061833fa"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "661f85c3d23094afbb9ac3c0673840bf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 48293,
+                "upload_time": "2014-08-19T00:55:52",
+                "url": "https://files.pythonhosted.org/packages/ca/c7/9079166add83ecabd7e269d58c225f8b616b0827dbe316e2d1bac91c86b1/jsonschema-2.4.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f645c88123189976058fcf550c02e50f",
+                    "sha256": "acf1e360b4682d64ba6acc35dbc65d81d9bde68a291a97f14f16f4282733f5a4"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.4.0.zip",
+                "has_sig": false,
+                "md5_digest": "f645c88123189976058fcf550c02e50f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 78087,
+                "upload_time": "2014-08-19T00:55:54",
+                "url": "https://files.pythonhosted.org/packages/51/d5/66d3d9494945806961139adea9b435030ecc619f427abff40075e3696fd4/jsonschema-2.4.0.zip"
+            }
+        ],
+        "2.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9fe4ce3e364fbdf05d0461128f804d3a",
+                    "sha256": "037140cfe956eeaa2fad09ef829634ee86d6492c709caeaaa572fed9cf5af8d9"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9fe4ce3e364fbdf05d0461128f804d3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 50637,
+                "upload_time": "2015-06-05T13:06:37",
+                "url": "https://files.pythonhosted.org/packages/b5/07/ed5948245fcc478e7e433e733cb6bbf4169c88f5dce08b08d295e3833d45/jsonschema-2.5.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "92dc00ddd98308a320c1e146c37901fd",
+                    "sha256": "d3daa59dc98bf8cbad0d8c18a751a739fb752461c509597598cf2d9595702c65"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.5.0.zip",
+                "has_sig": false,
+                "md5_digest": "92dc00ddd98308a320c1e146c37901fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81149,
+                "upload_time": "2015-06-05T13:06:41",
+                "url": "https://files.pythonhosted.org/packages/7b/ba/139de79e48de67999ac3b0de5503fd46dbe11d105b70c3611b1538f61fb5/jsonschema-2.5.0.zip"
+            }
+        ],
+        "2.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "20a47c9d9bc9357d8c731cfc19e3f968",
+                    "sha256": "71e7b3bcf9fca408bcb65bb60892f375d3abdd2e4f296eeeb8fe0bbbfcde598e"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "20a47c9d9bc9357d8c731cfc19e3f968",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 38953,
+                "upload_time": "2015-06-08T19:37:27",
+                "url": "https://files.pythonhosted.org/packages/bd/cc/5388547ea3504bd8cbf99ba2ae7a3231598f54038e9b228cbd174f8ec6a1/jsonschema-2.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "374e848fdb69a3ce8b7e778b47c30640",
+                    "sha256": "36673ac378feed3daa5956276a829699056523d7961027911f064b52255ead41"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "374e848fdb69a3ce8b7e778b47c30640",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 50855,
+                "upload_time": "2015-06-08T19:37:30",
+                "url": "https://files.pythonhosted.org/packages/58/0d/c816f5ea5adaf1293a1d81d32e4cdfdaf8496973aa5049786d7fdb14e7e7/jsonschema-2.5.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e491298485bdefeecb0f1ca3d65e5292",
+                    "sha256": "9088494da4c74497a7a27842ae4ca9c3355b5f7754121edc440463eaf020f079"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.5.1.zip",
+                "has_sig": false,
+                "md5_digest": "e491298485bdefeecb0f1ca3d65e5292",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81519,
+                "upload_time": "2015-06-08T19:37:33",
+                "url": "https://files.pythonhosted.org/packages/f1/85/974bd633b8fc23b0ad4169dfff7f6ebd503ca1b1d8ec5ef6bae3cd78dbe2/jsonschema-2.5.1.zip"
+            }
+        ],
+        "2.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75592600a936792bec99788424ce8291",
+                    "sha256": "000e68abd33c972a5248544925a0cae7d1125f9bf6c58280d37546b946769a08"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "75592600a936792bec99788424ce8291",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 39524,
+                "upload_time": "2017-02-05T12:23:20",
+                "url": "https://files.pythonhosted.org/packages/77/de/47e35a97b2b05c2fadbec67d44cfcdcd09b8086951b331d82de90d2912da/jsonschema-2.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "50c6b69a373a8b55ff1e0ec6e78f13f4",
+                    "sha256": "6ff5f3180870836cae40f06fa10419f557208175f13ad7bc26caa77beb1f6e02"
+                },
+                "downloads": -1,
+                "filename": "jsonschema-2.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "50c6b69a373a8b55ff1e0ec6e78f13f4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 53252,
+                "upload_time": "2017-02-05T12:23:22",
+                "url": "https://files.pythonhosted.org/packages/58/b9/171dbb07e18c6346090a37f03c7e74410a1a56123f847efed59af260a298/jsonschema-2.6.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "75592600a936792bec99788424ce8291",
+                "sha256": "000e68abd33c972a5248544925a0cae7d1125f9bf6c58280d37546b946769a08"
+            },
+            "downloads": -1,
+            "filename": "jsonschema-2.6.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "75592600a936792bec99788424ce8291",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 39524,
+            "upload_time": "2017-02-05T12:23:20",
+            "url": "https://files.pythonhosted.org/packages/77/de/47e35a97b2b05c2fadbec67d44cfcdcd09b8086951b331d82de90d2912da/jsonschema-2.6.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "50c6b69a373a8b55ff1e0ec6e78f13f4",
+                "sha256": "6ff5f3180870836cae40f06fa10419f557208175f13ad7bc26caa77beb1f6e02"
+            },
+            "downloads": -1,
+            "filename": "jsonschema-2.6.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "50c6b69a373a8b55ff1e0ec6e78f13f4",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 53252,
+            "upload_time": "2017-02-05T12:23:22",
+            "url": "https://files.pythonhosted.org/packages/58/b9/171dbb07e18c6346090a37f03c7e74410a1a56123f847efed59af260a298/jsonschema-2.6.0.tar.gz"
+        }
+    ],
+    "package_name": "jsonschema"
+}

@@ -1,0 +1,3113 @@
+{
+    "info": {
+        "author": "Mike Bayer",
+        "author_email": "mike_mp@zzzcomputing.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Database :: Front-Ends"
+        ],
+        "description": "SQLAlchemy\n==========\n\nThe Python SQL Toolkit and Object Relational Mapper\n\nIntroduction\n-------------\n\nSQLAlchemy is the Python SQL toolkit and Object Relational Mapper\nthat gives application developers the full power and\nflexibility of SQL. SQLAlchemy provides a full suite\nof well known enterprise-level persistence patterns,\ndesigned for efficient and high-performing database\naccess, adapted into a simple and Pythonic domain\nlanguage.\n\nMajor SQLAlchemy features include:\n\n* An industrial strength ORM, built \n  from the core on the identity map, unit of work,\n  and data mapper patterns.   These patterns\n  allow transparent persistence of objects \n  using a declarative configuration system.\n  Domain models\n  can be constructed and manipulated naturally,\n  and changes are synchronized with the\n  current transaction automatically.\n* A relationally-oriented query system, exposing\n  the full range of SQL's capabilities \n  explicitly, including joins, subqueries, \n  correlation, and most everything else, \n  in terms of the object model.\n  Writing queries with the ORM uses the same \n  techniques of relational composition you use \n  when writing SQL.  While you can drop into\n  literal SQL at any time, it's virtually never\n  needed.\n* A comprehensive and flexible system \n  of eager loading for related collections and objects.\n  Collections are cached within a session,\n  and can be loaded on individual access, all \n  at once using joins, or by query per collection\n  across the full result set.\n* A Core SQL construction system and DBAPI \n  interaction layer.  The SQLAlchemy Core is\n  separate from the ORM and is a full database\n  abstraction layer in its own right, and includes\n  an extensible Python-based SQL expression \n  language, schema metadata, connection pooling, \n  type coercion, and custom types.\n* All primary and foreign key constraints are \n  assumed to be composite and natural.  Surrogate\n  integer primary keys are of course still the \n  norm, but SQLAlchemy never assumes or hardcodes\n  to this model.\n* Database introspection and generation.  Database\n  schemas can be \"reflected\" in one step into\n  Python structures representing database metadata;\n  those same structures can then generate \n  CREATE statements right back out - all within\n  the Core, independent of the ORM.\n\nSQLAlchemy's philosophy:\n\n* SQL databases behave less and less like object\n  collections the more size and performance start to\n  matter; object collections behave less and less like\n  tables and rows the more abstraction starts to matter.\n  SQLAlchemy aims to accommodate both of these\n  principles.\n* An ORM doesn't need to hide the \"R\".   A relational\n  database provides rich, set-based functionality\n  that should be fully exposed.   SQLAlchemy's\n  ORM provides an open-ended set of patterns\n  that allow a developer to construct a custom\n  mediation layer between a domain model and \n  a relational schema, turning the so-called\n  \"object relational impedance\" issue into\n  a distant memory.\n* The developer, in all cases, makes all decisions\n  regarding the design, structure, and naming conventions\n  of both the object model as well as the relational\n  schema.   SQLAlchemy only provides the means\n  to automate the execution of these decisions.\n* With SQLAlchemy, there's no such thing as \n  \"the ORM generated a bad query\" - you \n  retain full control over the structure of \n  queries, including how joins are organized,\n  how subqueries and correlation is used, what \n  columns are requested.  Everything SQLAlchemy\n  does is ultimately the result of a developer-\n  initiated decision.\n* Don't use an ORM if the problem doesn't need one.\n  SQLAlchemy consists of a Core and separate ORM\n  component.   The Core offers a full SQL expression\n  language that allows Pythonic construction \n  of SQL constructs that render directly to SQL\n  strings for a target database, returning\n  result sets that are essentially enhanced DBAPI\n  cursors.\n* Transactions should be the norm.  With SQLAlchemy's\n  ORM, nothing goes to permanent storage until\n  commit() is called.  SQLAlchemy encourages applications\n  to create a consistent means of delineating\n  the start and end of a series of operations.\n* Never render a literal value in a SQL statement.\n  Bound parameters are used to the greatest degree\n  possible, allowing query optimizers to cache \n  query plans effectively and making SQL injection\n  attacks a non-issue.\n\nDocumentation\n-------------\n\nLatest documentation is at:\n\nhttp://www.sqlalchemy.org/docs/\n\nInstallation / Requirements\n---------------------------\n\nFull documentation for installation is at \n`Installation <http://www.sqlalchemy.org/docs/intro.html#installation>`_.\n\nGetting Help / Development / Bug reporting\n------------------------------------------\n\nPlease refer to the `SQLAlchemy Community Guide <http://www.sqlalchemy.org/support.html>`_.\n\nLicense\n-------\n\nSQLAlchemy is distributed under the `MIT license\n<http://www.opensource.org/licenses/mit-license.php>`_.",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://www.sqlalchemy.org",
+        "keywords": "",
+        "license": "MIT License",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "SQLAlchemy",
+        "package_url": "https://pypi.org/project/SQLAlchemy/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/SQLAlchemy/",
+        "release_url": "https://pypi.org/project/SQLAlchemy/1.2.8/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Database Abstraction Library",
+        "version": "1.2.8"
+    },
+    "last_serial": 3906601,
+    "releases": {
+        "0.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b74ed3d0d824ffaba34fc887784db4f3",
+                    "sha256": "ead5b2c46626ef00aeb5a876a239b2700d33f74346a5b4c48957f23541f99e45"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b74ed3d0d824ffaba34fc887784db4f3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 356759,
+                "upload_time": "2006-02-14T03:11:34",
+                "url": "https://files.pythonhosted.org/packages/6e/45/466aea0e76572490d2684ba91c1c109a913ffad6d2215e33be819b7c9d83/SQLAlchemy-0.1.0.tar.gz"
+            }
+        ],
+        "0.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d88344c2a5628cc05d8d70ac5ddbe8ee",
+                    "sha256": "8dd00dcb287398fdbb51fcaba54961f12b85acf7ba9462d1dcefabfc8c89e88c"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.1-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "d88344c2a5628cc05d8d70ac5ddbe8ee",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 262525,
+                "upload_time": "2006-02-23T03:08:58",
+                "url": "https://files.pythonhosted.org/packages/e9/66/314b73db61add6632cfc04668a908b8be68016fbf2c9b32a3b324898125a/SQLAlchemy-0.1.1-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c5de520f25e12ed84f216da8b28a8ed",
+                    "sha256": "5ca3f4ece5cefb4afe52d9356cd8d2fb51633a03e54553c351b38208a40b2267"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3c5de520f25e12ed84f216da8b28a8ed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 373335,
+                "upload_time": "2006-02-23T03:08:32",
+                "url": "https://files.pythonhosted.org/packages/39/e8/9a88c3d9f84dd77d4076bcf354be2d834b0e4664e04477a1445163929898/SQLAlchemy-0.1.1.tar.gz"
+            }
+        ],
+        "0.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74862475a8366f74ccca6ca1ce9b0c99",
+                    "sha256": "239dc42183088d8e6ec4b5bbaeef13bae2ca2a8500d8e6ec2383eaaf878d3fe7"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.2-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "74862475a8366f74ccca6ca1ce9b0c99",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 262538,
+                "upload_time": "2006-02-24T00:18:38",
+                "url": "https://files.pythonhosted.org/packages/f5/86/c4c197d901f35dae0ddcabd0e637be0b752ec0411f2a4fc454f67904dec2/SQLAlchemy-0.1.2-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed9915ef36053cb30a634641d1757679",
+                    "sha256": "516ccacb8401213a98c8163cfa7f394a50bc52ed181125e0595b6087c60b39d6"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ed9915ef36053cb30a634641d1757679",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 369528,
+                "upload_time": "2006-02-24T00:18:08",
+                "url": "https://files.pythonhosted.org/packages/ac/2d/b86b711946aa68301d589a6dc9c6a274b5b1c903183dd73c12c57c3716c1/SQLAlchemy-0.1.2.tar.gz"
+            }
+        ],
+        "0.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e0a074a8afad39511b422e7cfede6d9",
+                    "sha256": "d6a9239b1bd6662f8c8ec26201275d575a2a9711b7f305487d12d8b8a79fd977"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.3-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "0e0a074a8afad39511b422e7cfede6d9",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 266548,
+                "upload_time": "2006-03-02T02:25:03",
+                "url": "https://files.pythonhosted.org/packages/ee/81/377268ba374a0f200fdf8a0ce64ccf8eb0def152b56ddfec31f4bb998bf5/SQLAlchemy-0.1.3-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d3f65309c03815209e73e6239e4cad1",
+                    "sha256": "51e0ae35e6b357afa39680447fd36c1ba5f9483a3dff869ee481ce4c8617c3e7"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9d3f65309c03815209e73e6239e4cad1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 381479,
+                "upload_time": "2006-03-02T02:24:51",
+                "url": "https://files.pythonhosted.org/packages/7f/f1/9c3bb0f43acff64895494be8d5774b2cf727584fd90b243046ad5d2de215/SQLAlchemy-0.1.3.tar.gz"
+            }
+        ],
+        "0.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b3565b23e7b016c94cd43b32d4c8ae09",
+                    "sha256": "2c0f2441c3c49dbae7caec33b1096f12bce24c4f9de30f18f4792f23f04337cc"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.4-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "b3565b23e7b016c94cd43b32d4c8ae09",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 287948,
+                "upload_time": "2006-03-13T18:04:26",
+                "url": "https://files.pythonhosted.org/packages/14/ea/bf6fc443d422a76f15c767b18eca4eaa1a0b1f5f0a89f58fab9afeb6a472/SQLAlchemy-0.1.4-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d5263aca51ffd9396e5ba8b9def9cf04",
+                    "sha256": "98e5f152e449dbbb5f2b625b707f7257b5ea3f9d1524da35a55686d8415f5ba2"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d5263aca51ffd9396e5ba8b9def9cf04",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 410293,
+                "upload_time": "2006-03-13T18:04:12",
+                "url": "https://files.pythonhosted.org/packages/a9/8e/b3f33ad64ea3210fc0ce3e57d4617662e961d2b9902da0aa0a823601c325/SQLAlchemy-0.1.4.tar.gz"
+            }
+        ],
+        "0.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d762c8d53ec39fb1edb1fbc351a77c6",
+                    "sha256": "860bd720febb22240ae9b88f321b8be3b4a49d59cb62441dba39cae91a503984"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0d762c8d53ec39fb1edb1fbc351a77c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 465424,
+                "upload_time": "2006-03-27T03:46:42",
+                "url": "https://files.pythonhosted.org/packages/8f/f6/4ee99175175132f3d3c732fb49e1ad960fc0c2a52a8a7097e99d9ad1dad8/SQLAlchemy-0.1.5.tar.gz"
+            }
+        ],
+        "0.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3f8f2766e94f7c13100abedb7021d00",
+                    "sha256": "0c6b93d4138cee1dbf94128108ae56e271f0daa6b03306c5d593a320be5fb95d"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c3f8f2766e94f7c13100abedb7021d00",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 478288,
+                "upload_time": "2006-04-12T20:12:00",
+                "url": "https://files.pythonhosted.org/packages/a2/b9/48278de2cc5fb5bb6de2e587b2762770b1535c32bca086cfcfe2d6d806fa/SQLAlchemy-0.1.6.tar.gz"
+            }
+        ],
+        "0.1.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1c9c0124ad057c9fbcf8c4e16ecae960",
+                    "sha256": "92fd841c3bf992d8f538d624b539f44a80be759eca7aa4400894e088936e16cd"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.1.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1c9c0124ad057c9fbcf8c4e16ecae960",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 483538,
+                "upload_time": "2006-05-05T18:01:36",
+                "url": "https://files.pythonhosted.org/packages/b9/e0/ce517d120516ccccc4cc47bd75bf8fd648cb7242131e76298b5098e4ae76/SQLAlchemy-0.1.7.tar.gz"
+            }
+        ],
+        "0.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6aff5da3003d171280e889d690486128",
+                    "sha256": "7011390320dc97ca25312811392f2960adf2eabd65ab98a1f42b335fddc18644"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6aff5da3003d171280e889d690486128",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 578581,
+                "upload_time": "2006-05-27T21:04:04",
+                "url": "https://files.pythonhosted.org/packages/27/9c/33372c2ac95c37add7a48248d8c493bac61e689e08bb7beddbca5decc29e/SQLAlchemy-0.2.0.tar.gz"
+            }
+        ],
+        "0.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2756451f806c33bb83f301b1df1199f4",
+                    "sha256": "f4bf2ed743cce586d745ca24b159e206ecea802443ded52b3369561be213780b"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2756451f806c33bb83f301b1df1199f4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 582618,
+                "upload_time": "2006-05-29T03:34:14",
+                "url": "https://files.pythonhosted.org/packages/7d/75/7a2b1db59649a5e71145fd3a9bcd8936a7f623ba75dbe385952272a82a80/SQLAlchemy-0.2.1.tar.gz"
+            }
+        ],
+        "0.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "388f5a24fcb9ac43ee418fc38f2fe6a3",
+                    "sha256": "ee1551bd038fcdcbf51860086fa8cc6dc257d50efc9becadd70b6f5c1f628673"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "388f5a24fcb9ac43ee418fc38f2fe6a3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 591497,
+                "upload_time": "2006-06-05T19:48:58",
+                "url": "https://files.pythonhosted.org/packages/51/a6/14fa61e141f1c2e5ec57c912fab347eb24a735b7067ff61a27f6213d7eaa/SQLAlchemy-0.2.2.tar.gz"
+            }
+        ],
+        "0.2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f25d45b3199e2c680fd520c682c8519",
+                    "sha256": "ba1cb7ecd572030658380f1a36c49eccb4c597956594d6e9555901d3a8062b0f"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2f25d45b3199e2c680fd520c682c8519",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 596789,
+                "upload_time": "2006-06-17T02:13:06",
+                "url": "https://files.pythonhosted.org/packages/9f/80/9e56d886eb35ec364bcf73642e2a3e9b2a01f1608d75952f75803870654a/SQLAlchemy-0.2.3.tar.gz"
+            }
+        ],
+        "0.2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "08b02a5c4e39e6ed494c5cff760da978",
+                    "sha256": "543b3ad8f8f19847e35d6679505c66279944619b0b432aaa0ec4f4394547b966"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "08b02a5c4e39e6ed494c5cff760da978",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 603852,
+                "upload_time": "2006-06-28T00:19:38",
+                "url": "https://files.pythonhosted.org/packages/5d/22/7c8eae3e7671d511eb02050593f1188aae84717e488cf724443932e36729/SQLAlchemy-0.2.4.tar.gz"
+            }
+        ],
+        "0.2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df50b57baa9b2bc964818b4fbc12f7be",
+                    "sha256": "b199cf707e3915e677e40df7449c5f5cce9c5e9d415df74cb69246f31645404a"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "df50b57baa9b2bc964818b4fbc12f7be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 605484,
+                "upload_time": "2006-07-08T18:49:49",
+                "url": "https://files.pythonhosted.org/packages/1b/ed/5a301504e43783d5f638887a9a0c9100de48e6cfea5c9d4d29a1914b7038/SQLAlchemy-0.2.5.tar.gz"
+            }
+        ],
+        "0.2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "feb6c89b24a6b9b20ece9a1f78bccda4",
+                    "sha256": "31a03b1099e99ab5b54c637b38db84c06777c6067d568c23892c0841c6eac07f"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "feb6c89b24a6b9b20ece9a1f78bccda4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 614870,
+                "upload_time": "2006-07-20T02:01:26",
+                "url": "https://files.pythonhosted.org/packages/5a/0f/6cbf0373473b4d53021e00d9883ec1feff8f2de53ea59adc79b14858276e/SQLAlchemy-0.2.6.tar.gz"
+            }
+        ],
+        "0.2.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1c4e9f4c512d6d68e3e453f10df896e",
+                    "sha256": "d12ff098ae9206114d0d024469b3f93cc4c9dc5febfd92390391c6155642f19e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d1c4e9f4c512d6d68e3e453f10df896e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 626974,
+                "upload_time": "2006-08-12T22:41:49",
+                "url": "https://files.pythonhosted.org/packages/d1/7e/5e081d732f3590b53f3eef50464a74890cb1e0abddda3cca072c21e2a619/SQLAlchemy-0.2.7.tar.gz"
+            }
+        ],
+        "0.2.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd9898c75d2773d075db89c6a99d31d6",
+                    "sha256": "d9e1f1b4ba456b56207d3c76328c275d1caa339971a88721355d7575af4055b2"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.2.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fd9898c75d2773d075db89c6a99d31d6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 645500,
+                "upload_time": "2006-09-05T17:55:29",
+                "url": "https://files.pythonhosted.org/packages/1f/8e/fa9e9b17077ad28ed53283efb7ce46bc7abb510619cc1a59cb0e6b148e9b/SQLAlchemy-0.2.8.tar.gz"
+            }
+        ],
+        "0.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e0205562cd6c07d0ceab22f54ddc4112",
+                    "sha256": "befacd33779d1c6bc641b07c71a952cf14ca38d7107d8a13f104294819963381"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e0205562cd6c07d0ceab22f54ddc4112",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 547551,
+                "upload_time": "2006-10-22T18:34:36",
+                "url": "https://files.pythonhosted.org/packages/52/e9/6079bc7502bbd295d564587e2af08d51edcd8f544ddae12b43c8a2634466/SQLAlchemy-0.3.0.tar.gz"
+            }
+        ],
+        "0.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb5e17096ed50389687c62bad8c5a67a",
+                    "sha256": "ddf34423d55233fcf39005bf10767dcf7aa8021039289615aa9e80419ccff93e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cb5e17096ed50389687c62bad8c5a67a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 585351,
+                "upload_time": "2006-11-12T23:57:35",
+                "url": "https://files.pythonhosted.org/packages/1c/6a/8621f04cb6c1d77815638570e8ddc74ee24ed6d5f40a6cd5bdd3e7467d9b/SQLAlchemy-0.3.1.tar.gz"
+            }
+        ],
+        "0.3.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e91e7430b7ec64d5f5ff51e5a9ddf58",
+                    "sha256": "49b75b85e3691e6e6a38d6372d0b7153efa929cf5df31abf1b612574c1b062f6"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1e91e7430b7ec64d5f5ff51e5a9ddf58",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 937890,
+                "upload_time": "2007-07-20T21:33:23",
+                "url": "https://files.pythonhosted.org/packages/08/c3/e3cdd3d33aa37fd6bdab79a984ae2628c0153a5600e24e7bb0cf48eb59db/SQLAlchemy-0.3.10.tar.gz"
+            }
+        ],
+        "0.3.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b8c0921de350343814ed7ed50499578",
+                    "sha256": "7b2f0668ee9a2596c945b54ae64d558cdd2fa45d34b7eaaf63b246d1fda99245"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4b8c0921de350343814ed7ed50499578",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 944270,
+                "upload_time": "2007-10-14T19:34:24",
+                "url": "https://files.pythonhosted.org/packages/04/56/5b4c1b5650330034a734d0c4c986273494bfde17a2af09f1a37ebe9d5ab7/SQLAlchemy-0.3.11.tar.gz"
+            }
+        ],
+        "0.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bff15c1a9bc32072dcd9742a1206d2e2",
+                    "sha256": "f6147c3c25cd606bcb9953c6172f831c6b7f26dbe0a9606968f4fd993494a8a7"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bff15c1a9bc32072dcd9742a1206d2e2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 731830,
+                "upload_time": "2006-12-10T17:44:21",
+                "url": "https://files.pythonhosted.org/packages/70/05/2d642239c186bc8d0a041d9dde76e6600980db26e75c4a158c4dec23c523/SQLAlchemy-0.3.2.tar.gz"
+            }
+        ],
+        "0.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1336d87f659944f131f7f2c340e81e02",
+                    "sha256": "fd425065ba70ce199508c3bde9cf7198dd84dd72980ca36a05a24bcbdd095c15"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1336d87f659944f131f7f2c340e81e02",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 737019,
+                "upload_time": "2006-12-15T07:05:43",
+                "url": "https://files.pythonhosted.org/packages/31/d6/1285da035a3f33f89b0637c6374f547865464a8b75711ae12840c1b7f27e/SQLAlchemy-0.3.3.tar.gz"
+            }
+        ],
+        "0.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "38b258725d3c76c9d5aa36f471789064",
+                    "sha256": "c68f56ffe6986a331ab83be29ca2fa57ee9330b609f6c003ef8034603d122e1c"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "38b258725d3c76c9d5aa36f471789064",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 769753,
+                "upload_time": "2007-01-23T19:54:24",
+                "url": "https://files.pythonhosted.org/packages/cf/30/3aa8de9b511ce6fd11b4524e451a4eae9df1b24818ce0809b1fa38d00958/SQLAlchemy-0.3.4.tar.gz"
+            }
+        ],
+        "0.3.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d4a317c542247f82d1ed7e256976117",
+                    "sha256": "b47083487335d037f01f5bce59fdce069a96870d6cc7a2b677f026ca178e5882"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5d4a317c542247f82d1ed7e256976117",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 794157,
+                "upload_time": "2007-02-22T02:41:28",
+                "url": "https://files.pythonhosted.org/packages/4b/a6/9e974b3f7a21fac222e6f6ccc682b0fbe7e11edea6359ff2568a178687e3/SQLAlchemy-0.3.5.tar.gz"
+            }
+        ],
+        "0.3.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "06cd60950d8f97f9466a323d3fae5cb5",
+                    "sha256": "32099b7d3190fe2c4dba14890eae829d403e4780f68d270dfe410c484d521c05"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "06cd60950d8f97f9466a323d3fae5cb5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 824550,
+                "upload_time": "2007-03-23T22:32:41",
+                "url": "https://files.pythonhosted.org/packages/13/db/a88866901f64788b48f13e7b8e3fdd0c83b5ced0e69580247ed7a54adbdf/SQLAlchemy-0.3.6.tar.gz"
+            }
+        ],
+        "0.3.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f3314698a270e8fc6a69fe95e98cf34e",
+                    "sha256": "3db2b4509541cc568bbcc1110f013c622cb648670d04cc686085fe9f6d1c1c12"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f3314698a270e8fc6a69fe95e98cf34e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 879706,
+                "upload_time": "2007-04-30T04:30:49",
+                "url": "https://files.pythonhosted.org/packages/65/06/95023faec4a1fd9ef5ef53466497e40a059f71ba122c40a738e1f4328acc/SQLAlchemy-0.3.7.tar.gz"
+            }
+        ],
+        "0.3.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6c1036020e0b6dad192c170aef891bb1",
+                    "sha256": "92d2ca1e0eaa3250730c74fee0b35a896e5c0b052cdcb209a599896dce4ebdf4"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6c1036020e0b6dad192c170aef891bb1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 918082,
+                "upload_time": "2007-06-02T21:19:34",
+                "url": "https://files.pythonhosted.org/packages/a2/d0/5816898e4c3d6c398371e0fdcfa2cfcb396c319b58a49b4f86e6660d9427/SQLAlchemy-0.3.8.tar.gz"
+            }
+        ],
+        "0.3.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d624ef8c56f8224b79b3d0bb2b4a825c",
+                    "sha256": "34a2a15acb87df0deacf5b30802794bcd07e1684dda87f9f6ae30a28459aeeb5"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.3.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d624ef8c56f8224b79b3d0bb2b4a825c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 934305,
+                "upload_time": "2007-07-15T16:38:26",
+                "url": "https://files.pythonhosted.org/packages/88/50/e0bb8283efb396d49b58324c26af18dcf19bcd73fc7d2d8ce2ee79140c43/SQLAlchemy-0.3.9.tar.gz"
+            }
+        ],
+        "0.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c8476f6417a630f36d6046c1faf721e1",
+                    "sha256": "69ff443acc1ad0d070ab2bf55a583864a81ce0f7b2b67f23e14d88e5d18d5adf"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c8476f6417a630f36d6046c1faf721e1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1109056,
+                "upload_time": "2007-10-17T18:07:52",
+                "url": "https://files.pythonhosted.org/packages/38/13/ec0b5ed95e35b3cb72c33b01058768482c4b1ab1534d27b8d4604b4283a8/SQLAlchemy-0.4.0.tar.gz"
+            }
+        ],
+        "0.4.0beta1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26fd9922f522f6c441c80eaf923b70ff",
+                    "sha256": "1bd2884292ffca80d4d789005f54274283a396a45ee563509949d14360c9240a"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.0beta1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "26fd9922f522f6c441c80eaf923b70ff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1049358,
+                "upload_time": "2007-08-12T16:51:20",
+                "url": "https://files.pythonhosted.org/packages/8b/88/d62186e75d25c554e8498b802e677b2cb57da429068967ffa59fd8ce6383/SQLAlchemy-0.4.0beta1.tar.gz"
+            }
+        ],
+        "0.4.0beta2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "90f24559ab398ae24d4483161d1db363",
+                    "sha256": "d063981122ef37e131f6a501a1be59a1fc31c24935c71f3e55ea6fa7bc3c541c"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.0beta2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "90f24559ab398ae24d4483161d1db363",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1060815,
+                "upload_time": "2007-08-14T15:21:11",
+                "url": "https://files.pythonhosted.org/packages/b7/d9/65ee3eb90db4539a0e41a02f1a25a07c7f595cb0f0b012f77c76a1d7c9b9/SQLAlchemy-0.4.0beta2.tar.gz"
+            }
+        ],
+        "0.4.0beta3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ba22b38ebf88293e1db55e49635a379",
+                    "sha256": "5d11e6aabcb814283c44a64d054af318c0ffd801c4c5227d9e928daef9985e80"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.0beta3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2ba22b38ebf88293e1db55e49635a379",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1062821,
+                "upload_time": "2007-08-16T15:21:12",
+                "url": "https://files.pythonhosted.org/packages/97/51/6af6cd0f747c1532c69dbf1fefd39a6b74fb20e34cf08b939798e05810fd/SQLAlchemy-0.4.0beta3.tar.gz"
+            }
+        ],
+        "0.4.0beta4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "97b00cfba5bcb7cc947320a66c2ce085",
+                    "sha256": "77ca740182c8261dc0952a3466e5875f64e4162b02ee0a5f408dca61b4c11b64"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.0beta4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "97b00cfba5bcb7cc947320a66c2ce085",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1063414,
+                "upload_time": "2007-08-22T20:02:51",
+                "url": "https://files.pythonhosted.org/packages/d2/01/c6097476f896a0e972d004a4890e94299f1ec0422c9299d8eb5409d2bbce/SQLAlchemy-0.4.0beta4.tar.gz"
+            }
+        ],
+        "0.4.0beta5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b00125102578a603497bfb0dcc72473c",
+                    "sha256": "8584a3f9fbe43cfb3b34f6a2aa4f9356f471c4c1760bfd6f9729099cf1587fd7"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.0beta5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b00125102578a603497bfb0dcc72473c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1068506,
+                "upload_time": "2007-09-02T00:38:56",
+                "url": "https://files.pythonhosted.org/packages/2b/22/60382e8d553f2986148c4da280621f821d23dbf0067adc42fddbc3b24dd6/SQLAlchemy-0.4.0beta5.tar.gz"
+            }
+        ],
+        "0.4.0beta6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a5b1d1345d9b3ddd50fa997d202efac4",
+                    "sha256": "69285d27b2b4b585c4c776d26294625d1a1c98e278e62fcb66ba5c36d4f15f73"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.0beta6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a5b1d1345d9b3ddd50fa997d202efac4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1080946,
+                "upload_time": "2007-09-27T00:50:33",
+                "url": "https://files.pythonhosted.org/packages/a2/58/906743aa57c00e88c15252c38c90186b5464cbe6b33dc69e8f107621facd/SQLAlchemy-0.4.0beta6.tar.gz"
+            }
+        ],
+        "0.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "be6fe319806141d577f8ab02f90870a2",
+                    "sha256": "edf94259daaede6182465442c4d97572839b8cc34f2593b32a4950d96c257ecd"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "be6fe319806141d577f8ab02f90870a2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1143337,
+                "upload_time": "2007-11-18T23:00:13",
+                "url": "https://files.pythonhosted.org/packages/71/72/ccc7c8bdad80bd6c9c4c298b41147ec6e7084af660b8d64a987a14bef5a2/SQLAlchemy-0.4.1.tar.gz"
+            }
+        ],
+        "0.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2bcf1bc2fd4ae77c87e528e9c886a1cc",
+                    "sha256": "e3a29717516c8535973edd5d9a5bfd1a40311d4c226fe9debd69722d3a757143"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2bcf1bc2fd4ae77c87e528e9c886a1cc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1187392,
+                "upload_time": "2008-01-02T02:06:17",
+                "url": "https://files.pythonhosted.org/packages/87/cd/5aca6914f3b3da7b1d52c4507151c119ee4a967d0f22b678fd2288d389a7/SQLAlchemy-0.4.2.tar.gz"
+            }
+        ],
+        "0.4.2a": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f8c72b143a7a6864022aa9a4647207a8",
+                    "sha256": "a9972f5fb6433073af754c39e5951c447a710de0ddcf85c2cde5e5862e4b2382"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.2a.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f8c72b143a7a6864022aa9a4647207a8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1189389,
+                "upload_time": "2008-01-05T18:46:24",
+                "url": "https://files.pythonhosted.org/packages/08/4b/2b42b2b0f7c53493765089b078e6b0b22d75a04d6f19e19ac14335d4e116/SQLAlchemy-0.4.2a.tar.gz"
+            }
+        ],
+        "0.4.2b": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "696284480db9999617a827e09f12bad6",
+                    "sha256": "03aa998ea12a9bf28656716f61a351bf6ca70abccd660a6b419ace7726172fb7"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.2b.tar.gz",
+                "has_sig": false,
+                "md5_digest": "696284480db9999617a827e09f12bad6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1194340,
+                "upload_time": "2008-01-07T20:12:06",
+                "url": "https://files.pythonhosted.org/packages/13/6f/e1b4702f4ffd5d0bbc0c0e2b9f67ab912d6205614d4874ed8468021d4b8d/SQLAlchemy-0.4.2b.tar.gz"
+            }
+        ],
+        "0.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f0a1401ab11246d59a535206e5043c65",
+                    "sha256": "bfc235aa0ec43aa0d784a6379fc08f3be9838ee2851e95a1332cb7892fac6562"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f0a1401ab11246d59a535206e5043c65",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1239649,
+                "upload_time": "2008-02-14T23:57:23",
+                "url": "https://files.pythonhosted.org/packages/ed/38/b5052b6d7f66fd0826eb894ada2a880b0f3a9b68b33c6e32d5ee7430a0a4/SQLAlchemy-0.4.3.tar.gz"
+            }
+        ],
+        "0.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff8ec0cfda50563575f1cfaa07764554",
+                    "sha256": "5e8d78155013278211fa2375361226022c68c7dd48dd46144c986ec1a3d5408b"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ff8ec0cfda50563575f1cfaa07764554",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1276253,
+                "upload_time": "2008-03-12T00:11:16",
+                "url": "https://files.pythonhosted.org/packages/88/80/4b25a59a5e02cd0f2635ce9dbbdc18262860430b20240fab1b56994abb35/SQLAlchemy-0.4.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b1d072f6493421088126e451bd8cb6e",
+                    "sha256": "e45fa933da5eccfa014b376b5f788a9acc48ed82349f0173f4f3b04a40d55ef9"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.4.zip",
+                "has_sig": false,
+                "md5_digest": "4b1d072f6493421088126e451bd8cb6e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1657336,
+                "upload_time": "2008-03-14T19:10:15",
+                "url": "https://files.pythonhosted.org/packages/0f/b0/74df692164cf9a3175b5a0d58a7384769178afa89de4c892480e858e8b14/SQLAlchemy-0.4.4.zip"
+            }
+        ],
+        "0.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ebd41cfb27a8d8b4e2a18192b6afad95",
+                    "sha256": "0d65ae9c7551679f410eb37beddf410cbec7123659a4dcd74b9e0c96dd206fc4"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ebd41cfb27a8d8b4e2a18192b6afad95",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1295058,
+                "upload_time": "2008-04-04T01:18:56",
+                "url": "https://files.pythonhosted.org/packages/83/25/88d97b4762a6decb0351d14bd1855f64e6ec6d4fe97390372cf07b418706/SQLAlchemy-0.4.5.tar.gz"
+            }
+        ],
+        "0.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3d1e737bb408de25b2fadb19a736b40e",
+                    "sha256": "ec747c6e96c49a5ac5733353b030f8d43f6e0059b648dfcf4be62bc0947d02d0"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3d1e737bb408de25b2fadb19a736b40e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1311536,
+                "upload_time": "2008-05-14T18:52:09",
+                "url": "https://files.pythonhosted.org/packages/f6/b4/939aed841fa60116e3f57907c594fad32e2cc2fbedd827bd634b35c9a228/SQLAlchemy-0.4.6.tar.gz"
+            }
+        ],
+        "0.4.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "05ca8a49c3e34fa2ed4d679c640ec65d",
+                    "sha256": "9e6b625887f163a524dfde5845c77cfd22a72c72e682bffd8a8dd3318817a6b6"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "05ca8a49c3e34fa2ed4d679c640ec65d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1317203,
+                "upload_time": "2008-07-26T16:47:04",
+                "url": "https://files.pythonhosted.org/packages/1c/97/d28125b4145b8ec4ce591bdc469dde128015f6f14dbcfff7f81e2e51c8cc/SQLAlchemy-0.4.7.tar.gz"
+            }
+        ],
+        "0.4.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f084c61fbea91eeb23f6e081b038002",
+                    "sha256": "c97a967b715bd86e86809c7631dceeea3a8a156adfa9f6ba0a5dc228623a84c9"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.4.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5f084c61fbea91eeb23f6e081b038002",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1320938,
+                "upload_time": "2008-10-12T17:41:20",
+                "url": "https://files.pythonhosted.org/packages/0e/10/1a518e161b0f339782b4519394a1564da11ec913e99d84e79ef2e5370405/SQLAlchemy-0.4.8.tar.gz"
+            }
+        ],
+        "0.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df49f403b2db3c54aace64aebe26cf90",
+                    "sha256": "30c1649025f76e414400edd957f46b2932b5d3f8e2404779c76e693cb5776949"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "df49f403b2db3c54aace64aebe26cf90",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1430087,
+                "upload_time": "2009-01-06T18:52:07",
+                "url": "https://files.pythonhosted.org/packages/e2/3a/19cd1d3e5b614ae22ed11abc2329d7bb9cb16aae1004c6437a02d659ccd4/SQLAlchemy-0.5.0.tar.gz"
+            }
+        ],
+        "0.5.0beta1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ebcabad52dd1c21fcd91b0e409cf63e3",
+                    "sha256": "2cb34476f4d1f40cffdb56fc69c35595899dad9a1b11076d44c2468ef4930c3f"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.0beta1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ebcabad52dd1c21fcd91b0e409cf63e3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1341209,
+                "upload_time": "2008-06-12T20:47:44",
+                "url": "https://files.pythonhosted.org/packages/19/d7/b0091de8df171c572e20882c908ef0c2540199ca5a56d5b94e78fb2e5ddb/SQLAlchemy-0.5.0beta1.tar.gz"
+            }
+        ],
+        "0.5.0beta2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dbeb04b76a32ac841ce9c98e72cf24ad",
+                    "sha256": "1c6eac0373bcfec5c49c9d16d423e07cea068e1ced04caf27af1c1dfc941f814"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.0beta2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dbeb04b76a32ac841ce9c98e72cf24ad",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1350226,
+                "upload_time": "2008-07-14T20:19:54",
+                "url": "https://files.pythonhosted.org/packages/21/c5/b31f3260e015ab5ce427cdde85480e44e150a1c7d1d39be60cdcad619333/SQLAlchemy-0.5.0beta2.tar.gz"
+            }
+        ],
+        "0.5.0beta3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4141012a9c71207b82dcabb7ea7a15cb",
+                    "sha256": "9d15f546a57394dff92bf2d5c2d7bbf79308e2a7964e92cb71907752598fc78f"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.0beta3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4141012a9c71207b82dcabb7ea7a15cb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1365446,
+                "upload_time": "2008-08-04T22:39:37",
+                "url": "https://files.pythonhosted.org/packages/0a/32/47721f947dce9b0fb258ac6cf476352ce78ac04a78ee8e1f9d35bb1aed80/SQLAlchemy-0.5.0beta3.tar.gz"
+            }
+        ],
+        "0.5.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c5974daf789f069c012b5f33bd501ef",
+                    "sha256": "c44708be4841249a7216c221bda8a604178e2fead7b77a8094b30267f77a1735"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2c5974daf789f069c012b5f33bd501ef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1381581,
+                "upload_time": "2008-09-11T21:11:40",
+                "url": "https://files.pythonhosted.org/packages/4a/54/ec91454e463cfc64ae6bc0f0ada27df273146688da0eb28e98c9c8d72bb4/SQLAlchemy-0.5.0rc1.tar.gz"
+            }
+        ],
+        "0.5.0rc2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0039a7a7ffb9ff1b38e67eb169f0a765",
+                    "sha256": "d577e773fc59c2e55039c0878b2bba238b976c16a33bae42ce23aebfafa1d78d"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.0rc2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0039a7a7ffb9ff1b38e67eb169f0a765",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1386925,
+                "upload_time": "2008-10-12T17:50:04",
+                "url": "https://files.pythonhosted.org/packages/d0/35/613090ca915cc5140f073ab832beeda38189bf8a185de3bee2baa8c63af5/SQLAlchemy-0.5.0rc2.tar.gz"
+            }
+        ],
+        "0.5.0rc3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9ae8976f2365ce9464c48753dac21a03",
+                    "sha256": "bea601e5a8a03cb840077177cca77dc4071aed17b09bc5d6e7b87b2b71835346"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.0rc3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9ae8976f2365ce9464c48753dac21a03",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1404449,
+                "upload_time": "2008-11-07T19:02:09",
+                "url": "https://files.pythonhosted.org/packages/b2/b4/650de38a0e8b28122573cdf8fee97bc4cd95d1731162d176c3a4c41e4f51/SQLAlchemy-0.5.0rc3.tar.gz"
+            }
+        ],
+        "0.5.0rc4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f931e6d0de35b4c63b04d4daa6a4910c",
+                    "sha256": "0b9a517eb147872cd53698dffb7bdfe97ff51a46f1faf4ee1b3dd75c77899719"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.0rc4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f931e6d0de35b4c63b04d4daa6a4910c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1414319,
+                "upload_time": "2008-11-14T21:45:23",
+                "url": "https://files.pythonhosted.org/packages/74/71/8e1b779c810f2472c2edaab23bf013c7c23d730daf6a2a3478520184bd74/SQLAlchemy-0.5.0rc4.tar.gz"
+            }
+        ],
+        "0.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3374e8c7af39696eed26367631960d22",
+                    "sha256": "0b5326bb49054d6c0ab2e3f4833147de51c9c82fa596c0aa99fd4cb20ec26658"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3374e8c7af39696eed26367631960d22",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1443988,
+                "upload_time": "2009-01-17T21:57:36",
+                "url": "https://files.pythonhosted.org/packages/3a/0d/ea99f69b1d0ef7763c5b12cb54f24616c886008f3e8f9ae46fbff60bc3d8/SQLAlchemy-0.5.1.tar.gz"
+            }
+        ],
+        "0.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "616893cbfb7b04a4f0ca9587bded3a1c",
+                    "sha256": "c7e5aa36b5a12993c297b561fdebecf4bb55ddf6995163a291c4059e23555bd8"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "616893cbfb7b04a4f0ca9587bded3a1c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1448835,
+                "upload_time": "2009-01-24T19:26:12",
+                "url": "https://files.pythonhosted.org/packages/bf/48/2ec61436f64b3ec7af8efa45e87b4315d1fc7d2b6fb92cb0fafd596650ea/SQLAlchemy-0.5.2.tar.gz"
+            }
+        ],
+        "0.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8a03ac93aa28a9f4ea5ecc0557e90954",
+                    "sha256": "ae4f9c95586a64bbda6f5979359da2f4e621d074f9dd5e116a36c3c144944450"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8a03ac93aa28a9f4ea5ecc0557e90954",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1455432,
+                "upload_time": "2009-03-25T18:46:51",
+                "url": "https://files.pythonhosted.org/packages/5c/1c/b20fd7644d951a13e2bb8f89aadb08b0c17cad52eb051e5fe1974a4c378a/SQLAlchemy-0.5.3.tar.gz"
+            }
+        ],
+        "0.5.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8fa4584bf5f857b87a731fad9f8b4e0a",
+                    "sha256": "770e96691718247641cc7edf2cf82d1fd8fc575604e012ba6cfb9bf3d38b899a"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8fa4584bf5f857b87a731fad9f8b4e0a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1469829,
+                "upload_time": "2009-05-18T01:10:04",
+                "url": "https://files.pythonhosted.org/packages/5a/d5/4d692487e50650ee050a2132b6da591b092d05a8366d5d4856c5df4a1fed/SQLAlchemy-0.5.4.tar.gz"
+            }
+        ],
+        "0.5.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6a518d2c16caf10bdbce85ad06e08abb",
+                    "sha256": "f6e52c4052c9ab58f3dd5f04776889b47bd0d7392385ba4aae023d8d53601c48"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6a518d2c16caf10bdbce85ad06e08abb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1453147,
+                "upload_time": "2009-07-13T21:12:41",
+                "url": "https://files.pythonhosted.org/packages/70/d6/bf0d77aec5afed78739293e23309ccf3426619daf41680b9e5fba5728f46/SQLAlchemy-0.5.5.tar.gz"
+            }
+        ],
+        "0.5.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "65c6d2007969bf5d70307afc65687391",
+                    "sha256": "5b426b697010fcd0b6c4a8d3b1b9ea5ad054d93958ad5a35d1bffb873385e4fb"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "65c6d2007969bf5d70307afc65687391",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1468366,
+                "upload_time": "2009-09-13T17:04:44",
+                "url": "https://files.pythonhosted.org/packages/30/d6/aa04b30fb106a43fcbcf582731f9d0d99c865485ff1145ccf9a1ea58bd2f/SQLAlchemy-0.5.6.tar.gz"
+            }
+        ],
+        "0.5.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "857769f0739dcfc48466f96361e83421",
+                    "sha256": "bccad29e4c26efe50a121eebfcd5c2566e7a93f8a5ff700bf05d81000811a300"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "857769f0739dcfc48466f96361e83421",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1542836,
+                "upload_time": "2009-12-27T00:34:03",
+                "url": "https://files.pythonhosted.org/packages/39/2a/c2067ea5f7e3a3bce8993b4164c0ee5800caee05ac7c149e308ca6d3ed39/SQLAlchemy-0.5.7.tar.gz"
+            }
+        ],
+        "0.5.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "11292211f2634151d240025d58791210",
+                    "sha256": "9fa95c3fcd5e38dcbc49c216963e71bf8220c54f8e5aff564c9a811f534b959a"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.5.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "11292211f2634151d240025d58791210",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1546583,
+                "upload_time": "2010-01-16T21:55:07",
+                "url": "https://files.pythonhosted.org/packages/f3/f1/9008f8ebb25333b0965be65d78f8ba6ddbd69dc2ea3dd7c5df1e99d56d85/SQLAlchemy-0.5.8.tar.gz"
+            }
+        ],
+        "0.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f18ea1117c57d3991d4978123248109",
+                    "sha256": "b97714633f81b93bbcaf18dd6219518cba6f82db2c3129970eb1b4b64407c87d"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f18ea1117c57d3991d4978123248109",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1830659,
+                "upload_time": "2010-04-19T01:32:57",
+                "url": "https://files.pythonhosted.org/packages/c3/c5/7943d9db4709b4e571a5b66afeba3df86523c7dd4fe38d9e9983a3868662/SQLAlchemy-0.6.0.tar.gz"
+            }
+        ],
+        "0.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a3278f88aba9d39c6b8ac86a85e1ed5",
+                    "sha256": "1433412394da72e1395d6b30056104c5f9c1a88e493259e4b554416b10910ceb"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3a3278f88aba9d39c6b8ac86a85e1ed5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1842433,
+                "upload_time": "2010-05-31T21:22:41",
+                "url": "https://files.pythonhosted.org/packages/42/92/c770af168c41429acaf679df748bcc7ad40d73da187eaa4eee41bd006105/SQLAlchemy-0.6.1.tar.gz"
+            }
+        ],
+        "0.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5312521069b5ccace76bf3b71ed34125",
+                    "sha256": "aaa75bb6000cf37bcc16a5faf1894bf5c7f8fb24ddea148e3ebac8853e2accd5"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5312521069b5ccace76bf3b71ed34125",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1883408,
+                "upload_time": "2010-07-06T23:57:17",
+                "url": "https://files.pythonhosted.org/packages/c4/f9/38cd921410aa247f33967a4a06624ebe46c926e3e3abff77972012eb3be3/SQLAlchemy-0.6.2.tar.gz"
+            }
+        ],
+        "0.6.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14953e2d511123eef2f5f9527f318f0a",
+                    "sha256": "0f837e7aa124d6837f18c7a97474087079b9b27ddf6e887f2d8a92b885b9700a"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "14953e2d511123eef2f5f9527f318f0a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1890779,
+                "upload_time": "2010-07-15T18:44:52",
+                "url": "https://files.pythonhosted.org/packages/15/65/a7cb105fb475a36b50cebbac16efb35955d57eb5780a3478acefc4ae2e41/SQLAlchemy-0.6.3.tar.gz"
+            }
+        ],
+        "0.6.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f1e553e73ca989c162ea039b55bd93f5",
+                    "sha256": "c439342f0e6fd46f564431c9ae4b04a0088897214265e2d18d41ae818d3d6ff1"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f1e553e73ca989c162ea039b55bd93f5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1922090,
+                "upload_time": "2010-09-07T19:22:38",
+                "url": "https://files.pythonhosted.org/packages/cf/e9/caeff6cc8861249183bd403e4540458a17fd6e0ce0361d2947b18836f9af/SQLAlchemy-0.6.4.tar.gz"
+            }
+        ],
+        "0.6.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a64f3d3115285d50ec52349e5e8e0214",
+                    "sha256": "21c8fea3518e2ab0be4f8c19616233af95d1e6a45ddeed92f233fc6cf2a26542"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a64f3d3115285d50ec52349e5e8e0214",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2062676,
+                "upload_time": "2010-10-24T19:39:05",
+                "url": "https://files.pythonhosted.org/packages/21/75/dc8dd49ba3802e84ba7c68682ce6b6706e19fda33468b2c195675769f65b/SQLAlchemy-0.6.5.tar.gz"
+            }
+        ],
+        "0.6.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "359f02242c52e92aa881c36c8e3720d8",
+                    "sha256": "14a881a8a0ed6623a1b7abccc1221032b604dab1b80250383b84c46bcc4ad246"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "359f02242c52e92aa881c36c8e3720d8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2084833,
+                "upload_time": "2011-01-08T23:38:35",
+                "url": "https://files.pythonhosted.org/packages/0e/a6/732b93ca53774a7a572477b5debc11ecd556ae685ca5bd2a073560765d18/SQLAlchemy-0.6.6.tar.gz"
+            }
+        ],
+        "0.6.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e87e91440d3e4f3a62c477295e1547d1",
+                    "sha256": "eb47750532a065b7228d3312eebdd39196c911e7053c9930cb71f09f030f1ae4"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e87e91440d3e4f3a62c477295e1547d1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2110529,
+                "upload_time": "2011-04-14T02:43:36",
+                "url": "https://files.pythonhosted.org/packages/a9/ce/cadc7b72ca96151bfd18887b4460ab2ca3918741e42bde8ac575f3597e0d/SQLAlchemy-0.6.7.tar.gz"
+            }
+        ],
+        "0.6.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c54db66a679ee5e71e35970363a3dea1",
+                    "sha256": "8fb51d3cb96e9a758303ef95391a9185ef6a3326f0c33966bf04b9139a3db583"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c54db66a679ee5e71e35970363a3dea1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2131737,
+                "upload_time": "2011-06-05T19:31:42",
+                "url": "https://files.pythonhosted.org/packages/bc/60/ba5da7414f97cbf09a3802f1f175867d1ea2a58e913e910bb16151e17f01/SQLAlchemy-0.6.8.tar.gz"
+            }
+        ],
+        "0.6.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e5730d01358db66811ea2e2f221b14f5",
+                    "sha256": "e383b26082bb2e0529657dbf7cdd7d02da3fdaa6b5989ccaf28165cd3915a4f1"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e5730d01358db66811ea2e2f221b14f5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2174399,
+                "upload_time": "2012-05-06T01:22:54",
+                "url": "https://files.pythonhosted.org/packages/47/6f/de7020735ac188b759b8ba27f21fb1dcd76a52b3e88a181bc4b72bccd753/SQLAlchemy-0.6.9.tar.gz"
+            }
+        ],
+        "0.6beta1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e8e172594d73eac912bd4e66dc88f809",
+                    "sha256": "41a93d58aaa3b28722a238d850d1a7284443ac151524aa59df1e1d9b02e37593"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6beta1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e8e172594d73eac912bd4e66dc88f809",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1704629,
+                "upload_time": "2010-02-03T18:08:22",
+                "url": "https://files.pythonhosted.org/packages/07/15/7c7775575ef34e1b3650c65dbe79ef5903100ee98a6a08e47b3133d4dc52/SQLAlchemy-0.6beta1.tar.gz"
+            }
+        ],
+        "0.6beta2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "58b9d40aedb831fbe67e73bd6614cee7",
+                    "sha256": "e64087fd33567c1b999a896ccc6184f99d350d30720e5e5588c0432a683dd781"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6beta2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "58b9d40aedb831fbe67e73bd6614cee7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1782522,
+                "upload_time": "2010-03-20T19:49:53",
+                "url": "https://files.pythonhosted.org/packages/64/3d/7f25a57d347e7a5b521ebef222dd71cd4441d23402312694a7a710999901/SQLAlchemy-0.6beta2.tar.gz"
+            }
+        ],
+        "0.6beta3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1556518d889521ab0bd9a8c36bb7489e",
+                    "sha256": "13f992426d246781eba9ce3847879d9d0c0281acf357b956d128f833bd046743"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.6beta3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1556518d889521ab0bd9a8c36bb7489e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1808987,
+                "upload_time": "2010-03-28T19:24:05",
+                "url": "https://files.pythonhosted.org/packages/1f/62/3e02b70649584a21d6f5bc2f0558b8e5149aac970d5c29b93b6a3f2d6518/SQLAlchemy-0.6beta3.tar.gz"
+            }
+        ],
+        "0.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "93808916c240ef4f27bf82fe7562e41a",
+                    "sha256": "1c83c4bf83ffaa6d484ed6ae5b2a6fcfd2fd8483246f78abf47280f59822c4ee"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "93808916c240ef4f27bf82fe7562e41a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2318694,
+                "upload_time": "2011-05-21T00:35:41",
+                "url": "https://files.pythonhosted.org/packages/ae/03/9f24085eff7f920ccc2b0e878066da05eae9a55aef81996e583413794a0f/SQLAlchemy-0.7.0.tar.gz"
+            }
+        ],
+        "0.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f422e5979c83da65641b33f90ec1964a",
+                    "sha256": "5ef95d19c31a8cd3905c697be0a7e94e70ab1926ecd4159c3e6c1cf01fc3c492"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f422e5979c83da65641b33f90ec1964a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2341426,
+                "upload_time": "2011-06-05T19:32:11",
+                "url": "https://files.pythonhosted.org/packages/aa/63/5ddf80758f953fdd6669ff90300f7d58d51bf315072f930a4f1bd459d2f9/SQLAlchemy-0.7.1.tar.gz"
+            }
+        ],
+        "0.7.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ecc0cd1cd906d17818a5f08fe13ae19e",
+                    "sha256": "77aa39d65c9d043eba6ba329b359ff867424fd6c403b7c0cb112b65e507e1d66"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.10.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ecc0cd1cd906d17818a5f08fe13ae19e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3541639,
+                "upload_time": "2013-02-08T00:27:56",
+                "url": "https://files.pythonhosted.org/packages/a1/12/550cd1743c57be079694a378d4c344605b94313f141b4018c140a94914a9/SQLAlchemy-0.7.10.tar.gz"
+            }
+        ],
+        "0.7.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b84a26ae2e5de6f518d7069b29bf8f72",
+                    "sha256": "b58805ca9f8f5123e609f253a916e87a1e3eac446a0aae128ede630485c8f406"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b84a26ae2e5de6f518d7069b29bf8f72",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2380989,
+                "upload_time": "2011-08-01T01:51:39",
+                "url": "https://files.pythonhosted.org/packages/d4/ac/f348873cf69fa5590e60e725e321d137efe376948917eb687f5ff7d98da3/SQLAlchemy-0.7.2.tar.gz"
+            }
+        ],
+        "0.7.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0280527f7a80775a770cb3e4bdadaf6f",
+                    "sha256": "54e6e9fb30bef740b036c69cffbcb369cae2e61f95b69af4c086fca9c15308fa"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0280527f7a80775a770cb3e4bdadaf6f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2463979,
+                "upload_time": "2011-10-16T20:43:27",
+                "url": "https://files.pythonhosted.org/packages/e7/99/afb6de97df22dc3acb26022d28b52afbfae25a6e332ccf6779c185036949/SQLAlchemy-0.7.3.tar.gz"
+            }
+        ],
+        "0.7.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "731dbd55ec9011437a842d781417eae7",
+                    "sha256": "86157a5579dd67cb61600dcab9eb3edebe4cf344fa42e46e8f3edf1890cdfa87"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "731dbd55ec9011437a842d781417eae7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2514647,
+                "upload_time": "2011-12-09T23:31:43",
+                "url": "https://files.pythonhosted.org/packages/44/d6/437d7c8c2d5dff854597629feb6df7076b99b68f4ad5ff65eb1dfbe954f7/SQLAlchemy-0.7.4.tar.gz"
+            }
+        ],
+        "0.7.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5bce21d5dcf055addf564442698e58e5",
+                    "sha256": "7e31190a15753694dcb6f4399ce7d02091b0bccf825272d6254e56144debfd18"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5bce21d5dcf055addf564442698e58e5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2562719,
+                "upload_time": "2012-01-28T23:58:33",
+                "url": "https://files.pythonhosted.org/packages/45/de/bd722826c457aaf1afc8dee4ebce25a0efee02e63bc9e9921ec7ffaa34db/SQLAlchemy-0.7.5.tar.gz"
+            }
+        ],
+        "0.7.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6383cade61ecff1a236708fae066447a",
+                    "sha256": "606a48a2d53ad959043347dec1d9f9cc561d9b66d79f463a7a8fe302058119e5"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6383cade61ecff1a236708fae066447a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2597214,
+                "upload_time": "2012-03-15T05:37:17",
+                "url": "https://files.pythonhosted.org/packages/2a/65/cd2790a010fe107a37fd19aed022d50bf6f1382f509917562e0d2438113b/SQLAlchemy-0.7.6.tar.gz"
+            }
+        ],
+        "0.7.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ddf6df7e014cea318fa981364f3f93b9",
+                    "sha256": "b405621bba1b2c1e760e670a9b06d7315aea5f2921b3270bd417a45b415c0502"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ddf6df7e014cea318fa981364f3f93b9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2602780,
+                "upload_time": "2012-05-06T01:23:19",
+                "url": "https://files.pythonhosted.org/packages/3d/7e/aab0cdb7f5101f0601a827638b609f40491d457ee0ca500707efd59ced48/SQLAlchemy-0.7.7.tar.gz"
+            }
+        ],
+        "0.7.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6181c6892bf2bff93285614c53d91f7",
+                    "sha256": "13daccf34a660ab4708766bb18f49b50368bdbd6a1a8b409104f725f7f562dc8"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6181c6892bf2bff93285614c53d91f7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2611374,
+                "upload_time": "2012-06-17T03:14:01",
+                "url": "https://files.pythonhosted.org/packages/21/10/56fc57576fa2233946dab451022002d93d80ee8f030cc3ffbf769f760480/SQLAlchemy-0.7.8.tar.gz"
+            }
+        ],
+        "0.7.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a0b58defc5ad0c7e1baeb932f62d08dd",
+                    "sha256": "4a89556cb55275d1af694dc4d5700d8bf0f83690bac16ab30340092ff25bb4d7"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.7.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a0b58defc5ad0c7e1baeb932f62d08dd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2649932,
+                "upload_time": "2012-10-02T00:10:20",
+                "url": "https://files.pythonhosted.org/packages/ac/4d/d61718acee20e931d6f6383ffb70fc251d8b45917b2405c53ac1cda7f88b/SQLAlchemy-0.7.9.tar.gz"
+            }
+        ],
+        "0.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "11cd07ca81fab78d53f2922b5fb187a3",
+                    "sha256": "8929dc6f3d4aedf4d8c59600cdefc99e7731791f346cbed605bb9779b0038129"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "11cd07ca81fab78d53f2922b5fb187a3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3751669,
+                "upload_time": "2013-03-10T01:42:40",
+                "url": "https://files.pythonhosted.org/packages/06/c6/f2e220c55798642d453c9ceb24212dcda4796799829ed4d4ddcb33425cf4/SQLAlchemy-0.8.0.tar.gz"
+            }
+        ],
+        "0.8.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "09537c7b425d0be433f7aceabbf23d68",
+                    "sha256": "3f4db3890742e6b8648b7e4ed27dd7258f1fd91043ca8b597fef802399634d30"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "09537c7b425d0be433f7aceabbf23d68",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3699695,
+                "upload_time": "2012-12-14T20:56:22",
+                "url": "https://files.pythonhosted.org/packages/5d/79/eb30cdbc647962bd5200af3b72e4630a5fee4bd1fe498977332f98642fcb/SQLAlchemy-0.8.0b2.tar.gz"
+            }
+        ],
+        "0.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "65d1f3a9f25f3cd558b6001b11392ce1",
+                    "sha256": "5646f87ab781755b116d718433637a341b74c8214999e606c2e4134279ba5bbb"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "65d1f3a9f25f3cd558b6001b11392ce1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3776304,
+                "upload_time": "2013-04-27T21:50:41",
+                "url": "https://files.pythonhosted.org/packages/2e/24/c51af0096e723006d2032acb12f4b8b10a9ec26010a48feca7e8f486fb74/SQLAlchemy-0.8.1.tar.gz"
+            }
+        ],
+        "0.8.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a33fb43dea93468dbb2a6562ee80b54",
+                    "sha256": "71ce685f0e643bae95c7d4ace7ff8d6dcb37e99605cab3cf31c2be006c17905f"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5a33fb43dea93468dbb2a6562ee80b54",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3816467,
+                "upload_time": "2013-07-03T20:07:14",
+                "url": "https://files.pythonhosted.org/packages/57/ec/dc85798d1e456cb725cfd41f0724773935c2b23dc87f81e9053bbf29210f/SQLAlchemy-0.8.2.tar.gz"
+            }
+        ],
+        "0.8.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "48b344cf6948473ef2050a9e210114a0",
+                    "sha256": "80702cd95ade2d31d018e27accd4a75afb5b82e1b77b206c4ea463378c08197b"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "48b344cf6948473ef2050a9e210114a0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3895285,
+                "upload_time": "2013-10-26T21:26:19",
+                "url": "https://files.pythonhosted.org/packages/56/22/b8adadb27e44e81041f135b2440bce811f1afe35ffa3ecdccbf77bce9a47/SQLAlchemy-0.8.3.tar.gz"
+            }
+        ],
+        "0.8.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd517e1bb4031cac1e3fa00108111b38",
+                    "sha256": "92646ef7567d85d42ad7abf4ccc4327d664d32d4e9e4fd8a241f865c639a98c0"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "fd517e1bb4031cac1e3fa00108111b38",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3918372,
+                "upload_time": "2013-12-08T20:16:06",
+                "url": "https://files.pythonhosted.org/packages/93/a8/a6f5194d2e3b62366ee1b1e866724e61ef9082a9f5fdb0b87fe611e66d86/SQLAlchemy-0.8.4.tar.gz"
+            }
+        ],
+        "0.8.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ecf0738eaf1229bae27ad2be0f9978a8",
+                    "sha256": "0090a868e5534ea1cfe12011c9c2f38bba17ab97b38a02d05720b0761388b7fa"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ecf0738eaf1229bae27ad2be0f9978a8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3986742,
+                "upload_time": "2014-02-20T04:24:03",
+                "url": "https://files.pythonhosted.org/packages/99/19/04e3eb860dcc38d3d36419777a476aff4d7318f38410c4bc0a9d2b9b9565/SQLAlchemy-0.8.5.tar.gz"
+            }
+        ],
+        "0.8.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fe8766d913c1d0eb5c353650f11de624",
+                    "sha256": "109b5a8fe61b63c74bcc195e32c4bec6f01cf18c62dc66c72c51d3d380a1ed37"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "fe8766d913c1d0eb5c353650f11de624",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3999163,
+                "upload_time": "2014-03-28T23:42:35",
+                "url": "https://files.pythonhosted.org/packages/39/78/7a89ad51b84838fa42a6fcf69e245653a3c59cffe648addc32077aca0244/SQLAlchemy-0.8.6.tar.gz"
+            }
+        ],
+        "0.8.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4f3377306309e46739696721b1785335",
+                    "sha256": "9edb47d137db42d57fd26673d6c841e189b1aeb9b566cca908962fcc8448c0bc"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.8.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4f3377306309e46739696721b1785335",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3548308,
+                "upload_time": "2014-07-22T21:06:49",
+                "url": "https://files.pythonhosted.org/packages/9e/c4/b1a32cccd30f699d40c22a5cb18446869572c59ce16d3890ebbdea3738b6/SQLAlchemy-0.8.7.tar.gz"
+            }
+        ],
+        "0.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "acfd77b6ca71678237b1066a3fda05b0",
+                    "sha256": "116ad17f9f672ea474979d29ea429ffff8e38996e3783fda4a05e3c41c2c267c"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "acfd77b6ca71678237b1066a3fda05b0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4258024,
+                "upload_time": "2013-12-30T23:51:40",
+                "url": "https://files.pythonhosted.org/packages/fc/b5/64610cac01209463557f19b9e71bebdf6b630626f7bd38b52ad6a8352b12/SQLAlchemy-0.9.0.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d59a03e56ee37fc7b53ff1ef5f4310d",
+                    "sha256": "95f1c3c48556fd281c60f7ca352783fb728604d0c9c48b7ada7fdf9d7b45953e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4d59a03e56ee37fc7b53ff1ef5f4310d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4289561,
+                "upload_time": "2014-01-06T00:31:34",
+                "url": "https://files.pythonhosted.org/packages/89/09/4dcee6da830e16bb4a9dcb8a1387712f07d1a19d13cb4f4cabbd4e2f516e/SQLAlchemy-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e5db88746961c36bcda67147f4c335c3",
+                    "sha256": "445cba2d5e36b9334aa06c06e00fbedb71f1b1dd03d1d2763b6cf77b9cd6163b"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.10.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e5db88746961c36bcda67147f4c335c3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4274855,
+                "upload_time": "2015-07-22T17:51:09",
+                "url": "https://files.pythonhosted.org/packages/80/3c/6c3dca2ac92fa01e59642cd85a1b7178e75d8ce16ed7f211676226ca150c/SQLAlchemy-0.9.10.tar.gz"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c36a958e46a8514583be82523785269d",
+                    "sha256": "1411b6e93446350e533ed0b892ba5cbce9afdfab8ce09f060add8ada8911e1ee"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c36a958e46a8514583be82523785269d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4389966,
+                "upload_time": "2014-02-03T00:37:54",
+                "url": "https://files.pythonhosted.org/packages/ad/cb/53fbefae0c4afa93c3826fb11ba54a25352f14e37b06ffc8fd4fec694d5e/SQLAlchemy-0.9.2.tar.gz"
+            }
+        ],
+        "0.9.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a27989b9d4b3f14ea0b1600aa45559c4",
+                    "sha256": "56d302c86c589e18757d6fd6a4ee6a4e39005def3815e681bf84d22a3e023708"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a27989b9d4b3f14ea0b1600aa45559c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4415461,
+                "upload_time": "2014-02-20T04:24:26",
+                "url": "https://files.pythonhosted.org/packages/fe/42/6c01669b201594383facfc5f2ddecfe554de8c0d74fc7e397ce3f4db75a5/SQLAlchemy-0.9.3.tar.gz"
+            }
+        ],
+        "0.9.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c008ea5e2565ec1418ee8461393a99b1",
+                    "sha256": "bc87674f5ac9962e0efe96f060ba22a07e2c61fbebf531efc383b82db5b291ec"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c008ea5e2565ec1418ee8461393a99b1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4492988,
+                "upload_time": "2014-03-28T23:43:06",
+                "url": "https://files.pythonhosted.org/packages/71/21/6376d2370bb8fce901230993c42dcaa5bfb9a4e423203b0823166f647156/SQLAlchemy-0.9.4.tar.gz"
+            }
+        ],
+        "0.9.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "80f31fb7f429c51650e8229ae007aa61",
+                    "sha256": "d1c42daa34adfe627010749f64f708c2fefc3d1eb2b791f7898828e703d5e54b"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "80f31fb7f429c51650e8229ae007aa61",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4022032,
+                "upload_time": "2014-06-23T15:28:54",
+                "url": "https://files.pythonhosted.org/packages/63/a3/12aea1b8c9ce4430b4711f68aa60ee11fabdcc0f5904634779618b0ae0fb/SQLAlchemy-0.9.5.tar.gz"
+            }
+        ],
+        "0.9.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f8494d85834ba6a465b4a32078d36ee8",
+                    "sha256": "0a9ad46f32df2ba87d3092b89e4c760c796ad481b21544485eb97cb8ca321b6b"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "f8494d85834ba6a465b4a32078d36ee8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4022439,
+                "upload_time": "2014-06-23T23:53:28",
+                "url": "https://files.pythonhosted.org/packages/31/9f/ffa12d8d0cb55ebc10af12947f64bf7e642926921135c2a1f5c774cbea1a/SQLAlchemy-0.9.6.tar.gz"
+            }
+        ],
+        "0.9.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e3c8f836ea9b48886718f59b9d8646ff",
+                    "sha256": "5fff261d0cff21c39913f9d30682659a52bfa2875699b2b7d908d0225df42a15"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e3c8f836ea9b48886718f59b9d8646ff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4053445,
+                "upload_time": "2014-07-22T21:07:15",
+                "url": "https://files.pythonhosted.org/packages/28/ac/5862dd538dbc3c673be59b95fa1ce5cd0be91c27402d85e69ad620c653ef/SQLAlchemy-0.9.7.tar.gz"
+            }
+        ],
+        "0.9.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "470ca4da4a0081efc830f0d90dd91682",
+                    "sha256": "de3ac04ecab0a7e0af64eee30a71e723ba5886b958205f7354dd62439da60389"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "470ca4da4a0081efc830f0d90dd91682",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4080098,
+                "upload_time": "2014-10-13T17:16:15",
+                "url": "https://files.pythonhosted.org/packages/e2/21/34dd095ddd2d5a6b04d0d990e2a31a70400db6a3da2f045fc672d5943f0a/SQLAlchemy-0.9.8.tar.gz"
+            }
+        ],
+        "0.9.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8a10a9bd13ed3336ef7333ac2cc679ff",
+                    "sha256": "72a51f6ae99116ea969381f65fe471aafe14c21f6760f259b46f919f21345f91"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-0.9.9.tar.gz",
+                "has_sig": true,
+                "md5_digest": "8a10a9bd13ed3336ef7333ac2cc679ff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4213948,
+                "upload_time": "2015-03-10T19:55:54",
+                "url": "https://files.pythonhosted.org/packages/28/f7/1bbfd0d8597e8c358d5e15a166a486ad82fc5579b4e67b6ef7c05b1d182b/SQLAlchemy-0.9.9.tar.gz"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4e6835135f13fe00ac7f3d175d7e4e08",
+                    "sha256": "85286929727ff4aaad63785655c3baa413521b4d4955b81aa14d2f2cfb5b84cb"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4e6835135f13fe00ac7f3d175d7e4e08",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4462558,
+                "upload_time": "2015-04-16T19:19:45",
+                "url": "https://files.pythonhosted.org/packages/9b/3f/5a238769c03048a112ebe59e681c0b641ad64f774b1e2cd03048d21e19e6/SQLAlchemy-1.0.0.tar.gz"
+            }
+        ],
+        "1.0.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "33f9521614fca493de43cad761f90b6c",
+                    "sha256": "8cc78571e9e28ce64d3f71fee229ca941f81f614d37686e58dc6b92b6c96f92e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.0b1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "33f9521614fca493de43cad761f90b6c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4438325,
+                "upload_time": "2015-03-13T21:02:41",
+                "url": "https://files.pythonhosted.org/packages/03/95/79b7eacd638a2915da55443327628d7d6a4810c39d718836800c08ead589/SQLAlchemy-1.0.0b1.tar.gz"
+            }
+        ],
+        "1.0.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b52ef08615d2811769110ab13520f32",
+                    "sha256": "24f9c2104e94ea3c04b31b891e1c59634d3f72066faf3b7956d82a0d3d74d592"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.0b2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6b52ef08615d2811769110ab13520f32",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4447752,
+                "upload_time": "2015-03-20T20:44:27",
+                "url": "https://files.pythonhosted.org/packages/95/a4/3726b6c59f721ee4a8b066e36ef80915a29f60008601b93264382d670c39/SQLAlchemy-1.0.0b2.tar.gz"
+            }
+        ],
+        "1.0.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9440a4cea49538229535becd554a58a",
+                    "sha256": "1555233bbad380bdd92121619b493d1c061de2543e935cde1ecb6a1cd698f002"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.0b3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d9440a4cea49538229535becd554a58a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4447677,
+                "upload_time": "2015-03-20T23:58:22",
+                "url": "https://files.pythonhosted.org/packages/33/ca/d5811b24c75e0f77eab584e8ecf5da71263e879c0ace418fd0d6db51f2d3/SQLAlchemy-1.0.0b3.tar.gz"
+            }
+        ],
+        "1.0.0b4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8aa0deaf0bbceaf4782c58879ed12850",
+                    "sha256": "562da5a9b9d760142af49386d17a46525616f7cc3ef5a9cd7fbadeaecb9a0a5e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.0b4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "8aa0deaf0bbceaf4782c58879ed12850",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4450787,
+                "upload_time": "2015-03-29T14:10:24",
+                "url": "https://files.pythonhosted.org/packages/65/67/9ddb47e75cb769f3be18d43cc1f7abdba1d43b37a3202707166acb143d78/SQLAlchemy-1.0.0b4.tar.gz"
+            }
+        ],
+        "1.0.0b5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1fd66459dfb51e3532a5b7def92451e8",
+                    "sha256": "6378682cd347397860e9f65b5e30d4aec08672633544b765fbd65a8481ff8853"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.0b5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1fd66459dfb51e3532a5b7def92451e8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4456094,
+                "upload_time": "2015-04-03T18:10:54",
+                "url": "https://files.pythonhosted.org/packages/2b/63/437804ba9ad846ab55345fd30906dc9c580f02a5e7bfa007f3bd798d5b18/SQLAlchemy-1.0.0b5.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "207bf771d804f1593b2e16df68f9a615",
+                    "sha256": "6ac42ca2f7cccf3242558cc7559a2d1a835296ee81ba8a8b85e553de45a8a1ab"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "207bf771d804f1593b2e16df68f9a615",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4475316,
+                "upload_time": "2015-04-23T18:25:03",
+                "url": "https://files.pythonhosted.org/packages/41/b1/88efaf3898a32b69d8f04335e726935236442820865b214286f2e4215ae2/SQLAlchemy-1.0.1.tar.gz"
+            }
+        ],
+        "1.0.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84f01631cc4813a0298bf68ce27d9c5d",
+                    "sha256": "963415bf4ea4fa13698893464bc6917d291331e0e8202dddd0ebfed2864ef7e3"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.10.tar.gz",
+                "has_sig": true,
+                "md5_digest": "84f01631cc4813a0298bf68ce27d9c5d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4705865,
+                "upload_time": "2015-12-11T21:08:24",
+                "url": "https://files.pythonhosted.org/packages/1e/14/d2923a8c87d8e50e3a7d1654b83ba009f7e766b5706180f7f2c8a4884c1d/SQLAlchemy-1.0.10.tar.gz"
+            }
+        ],
+        "1.0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0bff4f96f0a25f44415a6bab7a741148",
+                    "sha256": "0b24729787fa1455009770880ea32b1fa5554e75170763b1aef8b1eb470de8a3"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.11.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0bff4f96f0a25f44415a6bab7a741148",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4708987,
+                "upload_time": "2015-12-23T01:49:24",
+                "url": "https://files.pythonhosted.org/packages/14/7e/2767e484a78bce84869e628c2406c1cf0eb7a955582380c6ee0ac7a7ac58/SQLAlchemy-1.0.11.tar.gz"
+            }
+        ],
+        "1.0.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6d19ef29883bbebdcac6613cf391cac4",
+                    "sha256": "6679e20eae780b67ba136a4a76f83bb264debaac2542beefe02069d0206518d1"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.12.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6d19ef29883bbebdcac6613cf391cac4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4748974,
+                "upload_time": "2016-02-15T19:50:34",
+                "url": "https://files.pythonhosted.org/packages/5c/52/9b48cd58eac58cae2a27923ff34c783f390b95413ff65669a86e98f80829/SQLAlchemy-1.0.12.tar.gz"
+            }
+        ],
+        "1.0.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cef0c4aa0e2464a6f903a9cac9b280d8",
+                    "sha256": "e755fd23b8bd574163d392ae85f41f6cd32eca8fe5bd7b5692de77265bb220cf"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.13.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cef0c4aa0e2464a6f903a9cac9b280d8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4757399,
+                "upload_time": "2016-05-16T20:46:29",
+                "url": "https://files.pythonhosted.org/packages/1d/e2/3df2e0e8cd3cf7e6e2905f1a3d44f1ba51c4fceab0968cc0cb3dcefcb53a/SQLAlchemy-1.0.13.tar.gz"
+            }
+        ],
+        "1.0.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "173c9d1ea5cf51893e65d213c280bd2a",
+                    "sha256": "da4d1a39c1e99c7fecc2aaa3a050094b6aa7134de7d89f77e6216e7abd1705b3"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.14.tar.gz",
+                "has_sig": true,
+                "md5_digest": "173c9d1ea5cf51893e65d213c280bd2a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4765726,
+                "upload_time": "2016-07-06T21:29:00",
+                "url": "https://files.pythonhosted.org/packages/aa/cb/e3990b9da48facbe48b80a281a51fb925ff84aaaca44d368d658b0160fcf/SQLAlchemy-1.0.14.tar.gz"
+            }
+        ],
+        "1.0.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "740ee7f2efddc8388170e14b8d1d938f",
+                    "sha256": "586f5ccf068211795a89ed22d196c5cc3006b6be00261bcac6f584c0b8e0845a"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.15.tar.gz",
+                "has_sig": true,
+                "md5_digest": "740ee7f2efddc8388170e14b8d1d938f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4776213,
+                "upload_time": "2016-09-01T17:21:22",
+                "url": "https://files.pythonhosted.org/packages/18/7d/f230ac50198cfe3cdc957c3572a18dc92600047ce707b5b923c56ab92c1b/SQLAlchemy-1.0.15.tar.gz"
+            }
+        ],
+        "1.0.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42c81726e7e145c206dac46964b4a167",
+                    "sha256": "e2dfdaa0983931ac1b0522dd637f08a52cf3081746513ac79c50843277ebe463"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.16.tar.gz",
+                "has_sig": true,
+                "md5_digest": "42c81726e7e145c206dac46964b4a167",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4785416,
+                "upload_time": "2016-11-15T18:08:47",
+                "url": "https://files.pythonhosted.org/packages/cf/92/e5bb1e1f883da19c330ae6aae1fbd88e1ee1de8f32affba992dca843b2f8/SQLAlchemy-1.0.16.tar.gz"
+            }
+        ],
+        "1.0.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "472f3b9b64ab4838c4bbdc6778c3b32e",
+                    "sha256": "4352b8ddc625fe648e9e93929fa217c234d7b1a1a2412a3021924b5c2bd95194"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.17.tar.gz",
+                "has_sig": true,
+                "md5_digest": "472f3b9b64ab4838c4bbdc6778c3b32e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4787165,
+                "upload_time": "2017-01-17T21:30:54",
+                "url": "https://files.pythonhosted.org/packages/dc/a9/ddd8c9f479c81c0b52149897e38a85a3bb6fa4adbe4a8042886ca1505d8c/SQLAlchemy-1.0.17.tar.gz"
+            }
+        ],
+        "1.0.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c95d17b239e0591ca2e835f780c3ff09",
+                    "sha256": "2389fc2344f46c928ebe65e37c6664ece804f9cb4806ed0bd5f85537d7fea372"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.18.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c95d17b239e0591ca2e835f780c3ff09",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4788038,
+                "upload_time": "2017-07-24T21:30:18",
+                "url": "https://files.pythonhosted.org/packages/12/63/dffae7d7fbde34f5fd2358096287cbc8e1157d6d91ed69d66928404290ed/SQLAlchemy-1.0.18.tar.gz"
+            }
+        ],
+        "1.0.19": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a5bf07ace8630e929b68f47c6a163f08",
+                    "sha256": "7dbca608466796816fda85282b9c90b9e0897805f4210450f18f9c2c8eee9eb5"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.19.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a5bf07ace8630e929b68f47c6a163f08",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4788659,
+                "upload_time": "2017-08-03T15:46:24",
+                "url": "https://files.pythonhosted.org/packages/e8/61/df42aca74a56d2db8c97b872db66a711c448279fd1b167add2923e561aa2/SQLAlchemy-1.0.19.tar.gz"
+            }
+        ],
+        "1.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cbb49d275d250e5eb534f603e2ea92f5",
+                    "sha256": "20eb7f1b545500f768921e67e258b6223ba6f1807bc89c335b0e805900fdd1e7"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cbb49d275d250e5eb534f603e2ea92f5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4476754,
+                "upload_time": "2015-04-24T23:09:28",
+                "url": "https://files.pythonhosted.org/packages/ce/2a/b230d7b3349e3872ba31eca363e07ab3fc4c4198725fffafa6dda8d2750c/SQLAlchemy-1.0.2.tar.gz"
+            }
+        ],
+        "1.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "35abc709164cbf8a37e4a39fafe9207b",
+                    "sha256": "3c25d5e038b4f49d8492c18608ead181b09b7a38d301faccecc12b80e2c2f6c1"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "35abc709164cbf8a37e4a39fafe9207b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4492091,
+                "upload_time": "2015-05-01T03:15:40",
+                "url": "https://files.pythonhosted.org/packages/44/39/e314711fa5585a817f3cfaa4de05f22c510e6c3b8159814bda6159586918/SQLAlchemy-1.0.3.tar.gz"
+            }
+        ],
+        "1.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ad1a8a2064dd9c8e76d5692a8eb4e864",
+                    "sha256": "9eb568d6381c6a45e3cc5616333deab653a15b3c6f9958419abeb055b400400e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ad1a8a2064dd9c8e76d5692a8eb4e864",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4580773,
+                "upload_time": "2015-05-08T01:12:11",
+                "url": "https://files.pythonhosted.org/packages/13/31/57b1d6f937b33fccc59296fab324372555a900be93efc26c8ed91670d7ef/SQLAlchemy-1.0.4.tar.gz"
+            }
+        ],
+        "1.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e9e54eb24b148d065e42e0826523657a",
+                    "sha256": "b57d3a35c39ed956e3002118a51502918b2fd357eca7523a6b50ef8d329a29be"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e9e54eb24b148d065e42e0826523657a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4600531,
+                "upload_time": "2015-06-07T21:59:38",
+                "url": "https://files.pythonhosted.org/packages/67/4c/abe8cd2e503ef340d171ce7c18176d6cf4a64ee49d9ab6f6d7b56451f434/SQLAlchemy-1.0.5.tar.gz"
+            }
+        ],
+        "1.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a433793d8dea5d302553217d8dbbf3be",
+                    "sha256": "99a8a54bec4988f704c54ee9f769aa196db43a5ef7ed655b78a80a129c9c65f3"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "a433793d8dea5d302553217d8dbbf3be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4615939,
+                "upload_time": "2015-06-25T15:47:16",
+                "url": "https://files.pythonhosted.org/packages/6b/f8/85995a41451123838548463ff2334cabd385e63396b5da16cc2dd32476d2/SQLAlchemy-1.0.6.tar.gz"
+            }
+        ],
+        "1.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "beba858557f422d3c1d7f8f9154dc07a",
+                    "sha256": "9c9a26abc759f25d9229e01e151c4649a374e058419d2f82ca757d0f5b62dafb"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "beba858557f422d3c1d7f8f9154dc07a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4624826,
+                "upload_time": "2015-07-20T18:10:35",
+                "url": "https://files.pythonhosted.org/packages/f2/4e/efe92ada837cd8d233ee469a5e17cccfb9927eec5b858f8a8231a4ab470b/SQLAlchemy-1.0.7.tar.gz"
+            }
+        ],
+        "1.0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7cfd005be63945c96a78c67764ac3a85",
+                    "sha256": "950c79c0abf9e9f99c43c627c51d40d14a946810a90c35e7cd827bfd0bffe46f"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "7cfd005be63945c96a78c67764ac3a85",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4627601,
+                "upload_time": "2015-07-23T00:08:31",
+                "url": "https://files.pythonhosted.org/packages/4f/1a/a175e650b9671079bb81d04e150b730ccc377342485321839f19689f4ea7/SQLAlchemy-1.0.8.tar.gz"
+            }
+        ],
+        "1.0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e2d7442e70d02c9f6346a5bf0ec2265",
+                    "sha256": "c3d37501e36ec5d74c2d7b4a3764719db86a9cdab4a24431bf58b386743ab10e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.0.9.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0e2d7442e70d02c9f6346a5bf0ec2265",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4662673,
+                "upload_time": "2015-10-20T22:10:17",
+                "url": "https://files.pythonhosted.org/packages/54/70/7f9924a10611d1a21e7b77422364e5dce763d99aab7543747e1c4e632673/SQLAlchemy-1.0.9.tar.gz"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "30f47273d7d14d1021ca964a6c083960",
+                    "sha256": "3b06994fafb472b5db3fdb73284f8fdc412016d481516fa93b03219e52601c2c"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "30f47273d7d14d1021ca964a6c083960",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5098804,
+                "upload_time": "2016-10-05T21:24:47",
+                "url": "https://files.pythonhosted.org/packages/c6/5f/f59837133252ba3c773fd06fa3faf0c40d412709e9fcd2a9970d8dd0a070/SQLAlchemy-1.1.0.tar.gz"
+            }
+        ],
+        "1.1.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4176d9f50207c0f521a7b846e4d04522",
+                    "sha256": "756727bead7732c2798d71ce724aaeba45d182777f0da5fa0bc6a1299592aa3c"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.0b1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4176d9f50207c0f521a7b846e4d04522",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5040585,
+                "upload_time": "2016-06-16T20:03:46",
+                "url": "https://files.pythonhosted.org/packages/f9/3a/59668505e295b8ab9ef93d8d89c8f8943537cf66cec2de07b6ae755e913f/SQLAlchemy-1.1.0b1.tar.gz"
+            }
+        ],
+        "1.1.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5aa266d8442eb9edbfe9f79c5eb084d",
+                    "sha256": "974b726edd69d01f2f369b0ec4f0acb916bbd8afb284847df908e3f94b9c150e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.0b2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b5aa266d8442eb9edbfe9f79c5eb084d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5050908,
+                "upload_time": "2016-07-01T15:50:23",
+                "url": "https://files.pythonhosted.org/packages/d5/c6/921dc392e11c3cb4eb8a473dfab8c07601a2212c472c70cf8dc749aec663/SQLAlchemy-1.1.0b2.tar.gz"
+            }
+        ],
+        "1.1.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6399b5f501ae9b95a08e5343d50b9718",
+                    "sha256": "e1468e94b8cf88e62c183a824a03489d840d6b44afb16954ad3a0d39149bf390"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.0b3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6399b5f501ae9b95a08e5343d50b9718",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5058266,
+                "upload_time": "2016-07-26T15:54:14",
+                "url": "https://files.pythonhosted.org/packages/10/bc/0d8295727414015369ab8840ee5e48bf0f5019562b3c6394c5298d0c9a8b/SQLAlchemy-1.1.0b3.tar.gz"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "21d37532c7eff674d303c94dee45c07c",
+                    "sha256": "2ef167c95042c43e48e51fe4e9745178be3dafb53efc6d091d2485fff9160230"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "21d37532c7eff674d303c94dee45c07c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5099869,
+                "upload_time": "2016-10-07T15:13:20",
+                "url": "https://files.pythonhosted.org/packages/32/36/1832bb28acc4a99c42b7b97f2fea9ac8bff0de6350596836872a4907d70f/SQLAlchemy-1.1.1.tar.gz"
+            }
+        ],
+        "1.1.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "64b9a3bf34e17944f844cbf460bd14e6",
+                    "sha256": "dbd92b8af2306d600efa98ed36262d73aad227440a758c8dc3a067ca30096bd3"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.10.tar.gz",
+                "has_sig": true,
+                "md5_digest": "64b9a3bf34e17944f844cbf460bd14e6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5191849,
+                "upload_time": "2017-05-19T20:21:46",
+                "url": "https://files.pythonhosted.org/packages/a7/8c/cc24b9794ffa87506aedf528ba3a236e11cc537f81a1e3b52193e5e948cd/SQLAlchemy-1.1.10.tar.gz"
+            }
+        ],
+        "1.1.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3de387eddb4012083a4562928c511e43",
+                    "sha256": "76f76965e9a968ba3aecd2a8bc0d991cea04fd9a182e6c95c81f1551487b0211"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.11.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3de387eddb4012083a4562928c511e43",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5197520,
+                "upload_time": "2017-06-19T15:02:40",
+                "url": "https://files.pythonhosted.org/packages/59/f1/28f2205c3175e6bf32300c0f30f9d91dbc9eb910debbff3ffecb88d18528/SQLAlchemy-1.1.11.tar.gz"
+            }
+        ],
+        "1.1.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3e6427a4a0bfc45a9440f5b0cfa390c",
+                    "sha256": "d501527319f51a3d9eb639b654222c6f67287228a98ba102b1d0b598eb3266c9"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.12.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c3e6427a4a0bfc45a9440f5b0cfa390c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5178158,
+                "upload_time": "2017-07-24T21:30:43",
+                "url": "https://files.pythonhosted.org/packages/16/a9/90c6b5f90d7d04beb88e7b60a44a12332d7ada4410caa81a03c2775b4122/SQLAlchemy-1.1.12.tar.gz"
+            }
+        ],
+        "1.1.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6353eb8223b8476bb0399c28adff5850",
+                    "sha256": "2a98ac87b30eaa2bee1f1044848b9590e476e7f93d033c6542e60b993a5cf898"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.13.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6353eb8223b8476bb0399c28adff5850",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5179952,
+                "upload_time": "2017-08-03T15:47:27",
+                "url": "https://files.pythonhosted.org/packages/a2/43/e90732a93d512c1c8b27f38990a8531b208c34fae0de661ef81668131095/SQLAlchemy-1.1.13.tar.gz"
+            }
+        ],
+        "1.1.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b32669d53e903b3512065026552f3bff",
+                    "sha256": "f1191e29e35b6fe1aef7175a09b1707ebb7bd08d0b17cb0feada76c49e5a2d1e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.14.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b32669d53e903b3512065026552f3bff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5183519,
+                "upload_time": "2017-09-05T16:13:06",
+                "url": "https://files.pythonhosted.org/packages/a3/d1/eacdedd964ad43fbc4cc7110dac33fbf1dbd7bf50dedb4dc1799c42972c1/SQLAlchemy-1.1.14.tar.gz"
+            }
+        ],
+        "1.1.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "077f9bd3339957f53068b5572a152674",
+                    "sha256": "8b79a5ed91cdcb5abe97b0045664c55c140aec09e5dd5c01303e23de5fe7a95a"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.15.tar.gz",
+                "has_sig": true,
+                "md5_digest": "077f9bd3339957f53068b5572a152674",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5197858,
+                "upload_time": "2017-11-03T21:08:41",
+                "url": "https://files.pythonhosted.org/packages/c2/f6/11fcc1ce19a7cb81b1c9377f4e27ce3813265611922e355905e57c44d164/SQLAlchemy-1.1.15.tar.gz"
+            }
+        ],
+        "1.1.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12d4fc7c7f3ce8c5c0aee26af41c7389",
+                    "sha256": "35094cbf0466dbf0b08d12a417afeb9f057e2951ef02197928627474bc625a82"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.16.tar.gz",
+                "has_sig": true,
+                "md5_digest": "12d4fc7c7f3ce8c5c0aee26af41c7389",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5283542,
+                "upload_time": "2018-02-16T22:03:51",
+                "url": "https://files.pythonhosted.org/packages/6c/e1/22e66c5c389548de1f8ce7755ae11cd7d87cd085f86ae8acc2a270d1921e/SQLAlchemy-1.1.16.tar.gz"
+            }
+        ],
+        "1.1.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "03db1c8f8ae911977c0bf3950a4c9c21",
+                    "sha256": "6b55ec379c11ad696f9371ce8e0de93c7f21134323f56a56a1b0d8fbef17013c"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.17.tar.gz",
+                "has_sig": true,
+                "md5_digest": "03db1c8f8ae911977c0bf3950a4c9c21",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5285761,
+                "upload_time": "2018-02-22T21:15:54",
+                "url": "https://files.pythonhosted.org/packages/02/11/d4f5d437258d747976e540b6df60cd843bab6d0dff9adc4f493bf0228673/SQLAlchemy-1.1.17.tar.gz"
+            }
+        ],
+        "1.1.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "20ff08323dfcf76556f0fd29c5b8d9a9",
+                    "sha256": "8b0ec71af9291191ba83a91c03d157b19ab3e7119e27da97932a4773a3f664a9"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.18.tar.gz",
+                "has_sig": true,
+                "md5_digest": "20ff08323dfcf76556f0fd29c5b8d9a9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5286357,
+                "upload_time": "2018-03-06T19:10:13",
+                "url": "https://files.pythonhosted.org/packages/cc/4d/96d93ff77cd67aca7618e402191eee3490d8f5f245d6ab7622d35fe504f4/SQLAlchemy-1.1.18.tar.gz"
+            }
+        ],
+        "1.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b7f4029a9825ceaf39eeff2a6fcf3b9",
+                    "sha256": "1692c35bc0f7026d20cabd43b0f6f265e855129f44eb4574fea361e3c5cc89a5"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3b7f4029a9825ceaf39eeff2a6fcf3b9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5104171,
+                "upload_time": "2016-10-17T18:46:43",
+                "url": "https://files.pythonhosted.org/packages/44/88/a86ba3fddb1fd7fc2c271355fc11e5f50634e30a0859ccc613fe62973a98/SQLAlchemy-1.1.2.tar.gz"
+            }
+        ],
+        "1.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d3a1e8d18f1e51a561db339b847ede0f",
+                    "sha256": "8b0ed90292a294e17d24482c9328abe69eb8e3143e2bd7103b6fadae2562638f"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d3a1e8d18f1e51a561db339b847ede0f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5111411,
+                "upload_time": "2016-10-27T15:08:31",
+                "url": "https://files.pythonhosted.org/packages/84/83/322a268e3187c088aa2867c2560869227da5fc7b9a697c5e382df811bd3c/SQLAlchemy-1.1.3.tar.gz"
+            }
+        ],
+        "1.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "be5af1bebe595206b71b513a14836e4f",
+                    "sha256": "701b57d628b9fa1cfb82f10665e7214d5d2db23251ca6f23b91c5f56fcdbdeb5"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "be5af1bebe595206b71b513a14836e4f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5117489,
+                "upload_time": "2016-11-15T18:09:19",
+                "url": "https://files.pythonhosted.org/packages/ca/ca/c2436fdb7bb75d772d9fa17ba60c4cfded6284eed053a7274b2beb96596a/SQLAlchemy-1.1.4.tar.gz"
+            }
+        ],
+        "1.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "50685d97dca4b91945ae6309d03ab8c9",
+                    "sha256": "68fb40049690e567ebda7b270176f5abf0d53d9fbd515fec4e43326f601119b6"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "50685d97dca4b91945ae6309d03ab8c9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5134252,
+                "upload_time": "2017-01-17T21:37:50",
+                "url": "https://files.pythonhosted.org/packages/da/04/8048a5075d6e29235bbd6f1ea092a38dbe2630c670e73d4aa923a4e5521c/SQLAlchemy-1.1.5.tar.gz"
+            }
+        ],
+        "1.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cdd2f57967c67e174dd99342111a7db1",
+                    "sha256": "815924e3218d878ddd195d2f9f5bf3d2bb39fabaddb1ea27dace6ac27d9865e4"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cdd2f57967c67e174dd99342111a7db1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5157222,
+                "upload_time": "2017-02-28T16:47:25",
+                "url": "https://files.pythonhosted.org/packages/24/de/66d96cbad7a91443af1399469e9aa0aec8a41669ba6d0faae8b8411ddb27/SQLAlchemy-1.1.6.tar.gz"
+            }
+        ],
+        "1.1.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "888fd3fd50a03714d9b30b023d2a0f29",
+                    "sha256": "9308b2886285dec57aa9e569a0519220e83515e15c6e3eda803c07deb7c1cbad"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "888fd3fd50a03714d9b30b023d2a0f29",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5160537,
+                "upload_time": "2017-03-27T21:35:16",
+                "url": "https://files.pythonhosted.org/packages/29/18/a78469bc449d9f92f6269cc62d0d6fbe6bf394d1031b447ad5e54463c3a0/SQLAlchemy-1.1.7.tar.gz"
+            }
+        ],
+        "1.1.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54e0eb2c42099a4120740829d794a14f",
+                    "sha256": "e6f2b0c0b89fad86ff589c2d1da88cc8a88f88a2818a8c5e3b9717ac81ce979e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "54e0eb2c42099a4120740829d794a14f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5162282,
+                "upload_time": "2017-03-31T18:32:43",
+                "url": "https://files.pythonhosted.org/packages/b8/df/cf8fa190708f1b50144f185e1fcd63f25ec51dbe2e6240933ea7565c2e16/SQLAlchemy-1.1.8.tar.gz"
+            }
+        ],
+        "1.1.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "938b1e5ca2372c3ec9a586996a3b5653",
+                    "sha256": "b65cdc73cd348448ef0164f6c77d45a9f27ca575d3c5d71ccc33adf684bc6ef0"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.1.9.tar.gz",
+                "has_sig": true,
+                "md5_digest": "938b1e5ca2372c3ec9a586996a3b5653",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5164787,
+                "upload_time": "2017-04-04T18:13:01",
+                "url": "https://files.pythonhosted.org/packages/02/69/9473d60abef55445f8e967cfae215da5de29ca21b865c99d2bf02a45ee01/SQLAlchemy-1.1.9.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25c02c5715f681f10decad0ef07e3afc",
+                    "sha256": "7dda3e0b1b12215e3bb05368d1abbf7d747112a43738e0a4e6deb466b83fd88e"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "25c02c5715f681f10decad0ef07e3afc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5451303,
+                "upload_time": "2017-12-27T20:02:06",
+                "url": "https://files.pythonhosted.org/packages/be/d1/0008f4ee8d8eaae328efbf9cc513c1bee6f6793de11ab82cb31b3045ee06/SQLAlchemy-1.2.0.tar.gz"
+            }
+        ],
+        "1.2.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e2c7b2a9b6b6c5940cfe7965f3786fad",
+                    "sha256": "226b8efc00607fcacbcbef343976b0a5aeb58a81adff10c29e3590cebed617f5"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.0b1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e2c7b2a9b6b6c5940cfe7965f3786fad",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5353721,
+                "upload_time": "2017-07-10T13:37:03",
+                "url": "https://files.pythonhosted.org/packages/da/20/916504f50f6c9a6987ed236b29d92ca35340623ac0170173301dc42205c8/SQLAlchemy-1.2.0b1.tar.gz"
+            }
+        ],
+        "1.2.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9f75b4e4aceab9efaf77894a4117fe0c",
+                    "sha256": "2a01c36941b87cdc5ab32aec5b0f315f1a3dfb8d8b8efc97be0419cfd78fc590"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.0b2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "9f75b4e4aceab9efaf77894a4117fe0c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5335278,
+                "upload_time": "2017-07-24T21:31:59",
+                "url": "https://files.pythonhosted.org/packages/59/11/f7877b47db0df1576568846f06dca8fc403bb404118c641418c3183a0eeb/SQLAlchemy-1.2.0b2.tar.gz"
+            }
+        ],
+        "1.2.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4cfefee719b0f78cf66ebb72654cfb66",
+                    "sha256": "c041c590af00c800858489a81ca6565a143aa968502fec61b240ab4f887cad0a"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.0b3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4cfefee719b0f78cf66ebb72654cfb66",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5391173,
+                "upload_time": "2017-10-13T17:49:30",
+                "url": "https://files.pythonhosted.org/packages/5a/f9/dcd7d863eef4ad003370fa2c0561aeb972fa5516410a1a995f2231840833/SQLAlchemy-1.2.0b3.tar.gz"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "de71a32ec54073581c6439d779c7958c",
+                    "sha256": "9ede7070d6fd18f28058be88296ed67893e2637465516d6a596cd9afea97b154"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "de71a32ec54073581c6439d779c7958c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5457455,
+                "upload_time": "2018-01-15T14:41:16",
+                "url": "https://files.pythonhosted.org/packages/b1/94/311326207d43dd0bcc7c98b9abef223a38841d2baf1a3bb53b09b7f5f625/SQLAlchemy-1.2.1.tar.gz"
+            }
+        ],
+        "1.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "968e07dc0aa92f9205bb3877f33f498f",
+                    "sha256": "64b4720f0a8e033db0154d3824f5bf677cf2797e11d44743cf0aebd2a0499d9d"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "968e07dc0aa92f9205bb3877f33f498f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5460157,
+                "upload_time": "2018-01-25T02:31:12",
+                "url": "https://files.pythonhosted.org/packages/b9/fb/a56d2fc0ce3571328fa872734ad124cae25a4cea422088987f865fb71787/SQLAlchemy-1.2.2.tar.gz"
+            }
+        ],
+        "1.2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b82f3d717f562eb9cb34fe482122266c",
+                    "sha256": "9e9ec143e2e246f385cfb2de8daa89d2fa466279addcb7be9e102988fdf33d24"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b82f3d717f562eb9cb34fe482122266c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5550800,
+                "upload_time": "2018-02-16T23:21:37",
+                "url": "https://files.pythonhosted.org/packages/39/fb/de422365a4ec9e9ca2f94e8edf59f734de46e70cb158b7d86ff0a6cb8b61/SQLAlchemy-1.2.3.tar.gz"
+            }
+        ],
+        "1.2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26b29e5e450a951de6a00e0168336a11",
+                    "sha256": "6997507af46b10630e13b605ac278b78885fd683d038896dbee0e7ec41d809d2"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "26b29e5e450a951de6a00e0168336a11",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5555033,
+                "upload_time": "2018-02-22T21:04:45",
+                "url": "https://files.pythonhosted.org/packages/f3/b7/d8725042f105cc6b71c7bae0ffd46e49f762e5a08f421f1eddd855a1f723/SQLAlchemy-1.2.4.tar.gz"
+            }
+        ],
+        "1.2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "43afa81d0c78e367c7d0aa79d2f9a48e",
+                    "sha256": "249000654107a420a40200f1e0b555a79dfd4eff235b2ff60bc77714bd045f2d"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "43afa81d0c78e367c7d0aa79d2f9a48e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5559969,
+                "upload_time": "2018-03-06T18:58:03",
+                "url": "https://files.pythonhosted.org/packages/7e/57/435347429f4ff5016b72c9b179c70a6cc67e5f9b4d3f3e9b51362c40b356/SQLAlchemy-1.2.5.tar.gz"
+            }
+        ],
+        "1.2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a899887f458bf842558f1e4270eaf40",
+                    "sha256": "7cb00cc9b9f92ef8b4391c8a2051f81eeafefe32d63c6b395fd51401e9a39edb"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5a899887f458bf842558f1e4270eaf40",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5565074,
+                "upload_time": "2018-03-30T20:29:34",
+                "url": "https://files.pythonhosted.org/packages/da/ef/f10a6892f8ff3c1fec1c25699a7379d1f72f291c8fa40b71c31cab3f779e/SQLAlchemy-1.2.6.tar.gz"
+            }
+        ],
+        "1.2.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d228d11a6f41b94cb3a3789b5cdbd111",
+                    "sha256": "d6cda03b0187d6ed796ff70e87c9a7dce2c2c9650a7bc3c022cd331416853c31"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d228d11a6f41b94cb3a3789b5cdbd111",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5571719,
+                "upload_time": "2018-04-20T20:34:55",
+                "url": "https://files.pythonhosted.org/packages/c1/c8/392fcd2d01534bc871c65cb964e0b39d59feb777e51649e6eaf00f6377b5/SQLAlchemy-1.2.7.tar.gz"
+            }
+        ],
+        "1.2.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c946af59804e07729eb20586c98799f3",
+                    "sha256": "2d5f08f714a886a1382c18be501e614bce50d362384dc089474019ce0768151c"
+                },
+                "downloads": -1,
+                "filename": "SQLAlchemy-1.2.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c946af59804e07729eb20586c98799f3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5586724,
+                "upload_time": "2018-05-28T19:23:19",
+                "url": "https://files.pythonhosted.org/packages/b4/9c/411a9bac1a471bed54ec447dc183aeed12a75c1b648307e18b56e3829363/SQLAlchemy-1.2.8.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "c946af59804e07729eb20586c98799f3",
+                "sha256": "2d5f08f714a886a1382c18be501e614bce50d362384dc089474019ce0768151c"
+            },
+            "downloads": -1,
+            "filename": "SQLAlchemy-1.2.8.tar.gz",
+            "has_sig": true,
+            "md5_digest": "c946af59804e07729eb20586c98799f3",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 5586724,
+            "upload_time": "2018-05-28T19:23:19",
+            "url": "https://files.pythonhosted.org/packages/b4/9c/411a9bac1a471bed54ec447dc183aeed12a75c1b648307e18b56e3829363/SQLAlchemy-1.2.8.tar.gz"
+        }
+    ],
+    "package_name": "sqlalchemy"
+}

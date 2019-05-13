@@ -1,0 +1,3237 @@
+{
+    "info": {
+        "author": "",
+        "author_email": "",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Apache Software License",
+            "Operating System :: MacOS :: MacOS X",
+            "Operating System :: Microsoft :: Windows",
+            "Operating System :: POSIX",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Software Development :: Testing"
+        ],
+        "description": "======================\nSelenium Client Driver\n======================\n\nIntroduction\n============\n\nPython language bindings for Selenium WebDriver.\n\nThe `selenium` package is used to automate web browser interaction from Python.\n\n+-----------+--------------------------------------------------------------------------------------+\n| **Home**: | http://www.seleniumhq.org                                                            |\n+-----------+--------------------------------------------------------------------------------------+\n| **Docs**: | `selenium package API <https://seleniumhq.github.io/selenium/docs/api/py/api.html>`_ |\n+-----------+--------------------------------------------------------------------------------------+\n| **Dev**:  | https://github.com/SeleniumHQ/Selenium                                               |\n+-----------+--------------------------------------------------------------------------------------+\n| **PyPI**: | https://pypi.python.org/pypi/selenium                                                |\n+-----------+--------------------------------------------------------------------------------------+\n| **IRC**:  | **#selenium** channel on freenode                                                    |\n+-----------+--------------------------------------------------------------------------------------+\n\nSeveral browsers/drivers are supported (Firefox, Chrome, Internet Explorer), as well as the Remote protocol.\n\nSupported Python Versions\n=========================\n\n* Python 2.7, 3.4+\n\nInstalling\n==========\n\nIf you have `pip <https://pip.pypa.io/>`_ on your system, you can simply install or upgrade the Python bindings::\n\n    pip install -U selenium\n\nAlternately, you can download the source distribution from `PyPI <http://pypi.python.org/pypi/selenium>`_ (e.g. selenium-3.12.0.tar.gz), unarchive it, and run::\n\n    python setup.py install\n\nNote: You may want to consider using `virtualenv <http://www.virtualenv.org/>`_ to create isolated Python environments.\n\nDrivers\n=======\n\nSelenium requires a driver to interface with the chosen browser. Firefox,\nfor example, requires `geckodriver <https://github.com/mozilla/geckodriver/releases>`_, which needs to be installed before the below examples can be run. Make sure it's in your `PATH`, e. g., place it in `/usr/bin` or `/usr/local/bin`.\n\nFailure to observe this step will give you an error `selenium.common.exceptions.WebDriverException: Message: 'geckodriver' executable needs to be in PATH.`\n\nOther supported browsers will have their own drivers available. Links to some of the more popular browser drivers follow.\n\n+--------------+-----------------------------------------------------------------------+\n| **Chrome**:  | https://sites.google.com/a/chromium.org/chromedriver/downloads        |\n+--------------+-----------------------------------------------------------------------+\n| **Edge**:    | https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ |\n+--------------+-----------------------------------------------------------------------+\n| **Firefox**: | https://github.com/mozilla/geckodriver/releases                       |\n+--------------+-----------------------------------------------------------------------+\n| **Safari**:  | https://webkit.org/blog/6900/webdriver-support-in-safari-10/          |\n+--------------+-----------------------------------------------------------------------+\n\nExample 0:\n==========\n\n* open a new Firefox browser\n* load the page at the given URL\n\n.. code-block:: python\n\n    from selenium import webdriver\n\n    browser = webdriver.Firefox()\n    browser.get('http://seleniumhq.org/')\n\nExample 1:\n==========\n\n* open a new Firefox browser\n* load the Yahoo homepage\n* search for \"seleniumhq\"\n* close the browser\n\n.. code-block:: python\n\n    from selenium import webdriver\n    from selenium.webdriver.common.keys import Keys\n\n    browser = webdriver.Firefox()\n\n    browser.get('http://www.yahoo.com')\n    assert 'Yahoo' in browser.title\n\n    elem = browser.find_element_by_name('p')  # Find the search box\n    elem.send_keys('seleniumhq' + Keys.RETURN)\n\n    browser.quit()\n\nExample 2:\n==========\n\nSelenium WebDriver is often used as a basis for testing web applications.  Here is a simple example uisng Python's standard `unittest <http://docs.python.org/3/library/unittest.html>`_ library:\n\n.. code-block:: python\n\n    import unittest\n    from selenium import webdriver\n\n    class GoogleTestCase(unittest.TestCase):\n\n        def setUp(self):\n            self.browser = webdriver.Firefox()\n            self.addCleanup(self.browser.quit)\n\n        def testPageTitle(self):\n            self.browser.get('http://www.google.com')\n            self.assertIn('Google', self.browser.title)\n\n    if __name__ == '__main__':\n        unittest.main(verbosity=2)\n\nSelenium Server (optional)\n==========================\n\nFor normal WebDriver scripts (non-Remote), the Java server is not needed.\n\nHowever, to use Selenium Webdriver Remote or the legacy Selenium API (Selenium-RC), you need to also run the Selenium server.  The server requires a Java Runtime Environment (JRE).\n\nDownload the server separately, from: http://selenium-release.storage.googleapis.com/3.12/selenium-server-standalone-3.12.0.jar\n\nRun the server from the command line::\n\n    java -jar selenium-server-standalone-3.12.0.jar\n\nThen run your Python client scripts.\n\nUse The Source Luke!\n====================\n\nView source code online:\n\n+-----------+-------------------------------------------------------+\n| official: | https://github.com/SeleniumHQ/selenium/tree/master/py |\n+-----------+-------------------------------------------------------+\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/SeleniumHQ/selenium/",
+        "keywords": "",
+        "license": "Apache 2.0",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "selenium",
+        "package_url": "https://pypi.org/project/selenium/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/selenium/",
+        "release_url": "https://pypi.org/project/selenium/3.12.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Python bindings for Selenium",
+        "version": "3.12.0"
+    },
+    "last_serial": 3844434,
+    "releases": {
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3edab6319548ae43d26d46bec50498e4",
+                    "sha256": "449c8e9e457cb1112148b9689a3a6716c28bbf46f06970411845fe3f432f48f3"
+                },
+                "downloads": -1,
+                "filename": "selenium-0.9.2-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "3edab6319548ae43d26d46bec50498e4",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 35856,
+                "upload_time": "2008-04-25T16:22:32",
+                "url": "https://files.pythonhosted.org/packages/d5/5b/20c49c005dad9b29b02d7652a76d8592059bdae54483178aa464d766dc95/selenium-0.9.2-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "70fa46a641d137a356c15d2c5657ee62",
+                    "sha256": "31fd83a8c2d2f6281744b63a74adf05c573bb0df65025a6637cc794dbcde4ecf"
+                },
+                "downloads": -1,
+                "filename": "selenium-0.9.2-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "70fa46a641d137a356c15d2c5657ee62",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 32867,
+                "upload_time": "2008-05-20T23:56:58",
+                "url": "https://files.pythonhosted.org/packages/ef/db/e0f33468f4377956b08fd286d89d9cabc517c5a39564f9cbf8140b590a1f/selenium-0.9.2-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f705474d762085f12bd14a47924dbff",
+                    "sha256": "6b231fc1ed0d17a79c655527793f040f655b889f2df6b969760e0832e01bfb50"
+                },
+                "downloads": -1,
+                "filename": "selenium-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f705474d762085f12bd14a47924dbff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15687,
+                "upload_time": "2008-05-21T00:04:17",
+                "url": "https://files.pythonhosted.org/packages/ac/41/e4e91ed847ea5044cae7b30b55faeb2497174948de3ed9d075c2ba64aeaa/selenium-0.9.2.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e0adda18010a7d9facc38b3fd85f8f3",
+                    "sha256": "9596c8dfc5db55ecbdfc36d39bb4f005877d6296e9233527279bf439dd183632"
+                },
+                "downloads": -1,
+                "filename": "selenium-1.0.1-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "8e0adda18010a7d9facc38b3fd85f8f3",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 43486,
+                "upload_time": "2009-06-17T21:02:06",
+                "url": "https://files.pythonhosted.org/packages/9b/69/67d2369490f18ca8ff5067787c488060bbe1821bfb01080b78d5446d12b7/selenium-1.0.1-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "81b70dec2cb152896982e40536340264",
+                    "sha256": "432942c1afd71da1eb96dd2bbee969c7a47b867d6d7b952ca39f8eb1e9eb7435"
+                },
+                "downloads": -1,
+                "filename": "selenium-1.0.1-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "81b70dec2cb152896982e40536340264",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 43293,
+                "upload_time": "2009-06-17T21:11:01",
+                "url": "https://files.pythonhosted.org/packages/60/90/3f1063b6084cc704a9c466385f4b803cec5763b7ee72783277a389e98b2a/selenium-1.0.1-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4575012325a01b42151392e89f0d0c5a",
+                    "sha256": "c236eb6e7931b86473f3925b9568433d7c9e027a8f39accf0f2204fe56358fbf"
+                },
+                "downloads": -1,
+                "filename": "selenium-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4575012325a01b42151392e89f0d0c5a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24193,
+                "upload_time": "2009-06-17T20:58:25",
+                "url": "https://files.pythonhosted.org/packages/9c/01/d1cbe326de228b3c8d774858712916c4ff9d57d5c0df1d3614f1b0673270/selenium-1.0.1.tar.gz"
+            }
+        ],
+        "1.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6a8a7181852f615eb18ae86ab2882e5f",
+                    "sha256": "6c9aa1d8284e16d971228605239ae30252b0de1a52eea5b1759f01447951083c"
+                },
+                "downloads": -1,
+                "filename": "selenium-1.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6a8a7181852f615eb18ae86ab2882e5f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 19288,
+                "upload_time": "2010-05-26T06:26:59",
+                "url": "https://files.pythonhosted.org/packages/f8/74/a1a2da0a0d0890c8d90d0b1ccd219558c15706d0398b1e9fbd5d6d6d1414/selenium-1.0.3.tar.gz"
+            }
+        ],
+        "2.0-dev": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1659afa726f2b6cdd9803cf1ebb2f21c",
+                    "sha256": "a117eed86cd639c6dfe06a1490ee8a89058385493ffd0ede8e85f4cdc1ee84a5"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1659afa726f2b6cdd9803cf1ebb2f21c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 197596,
+                "upload_time": "2010-06-08T15:15:24",
+                "url": "https://files.pythonhosted.org/packages/f6/ef/3bf4c4176b667f6439758c1a830a938c457908458fcf5c5ad84a2b9f5dbe/selenium-2.0-dev.tar.gz"
+            }
+        ],
+        "2.0-dev-9138": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2d502b476031df60ff54aca190f6443",
+                    "sha256": "a289f6d3b738599aba78319d5200cbe90cd36ba3683119ef2dbd1bbe77cf3c67"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9138.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f2d502b476031df60ff54aca190f6443",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 198683,
+                "upload_time": "2010-06-12T01:14:50",
+                "url": "https://files.pythonhosted.org/packages/0b/07/18fcc8c9135c9b36d6e34033b7f2426bcd46e97922a83ce6697ee151e3fa/selenium-2.0-dev-9138.tar.gz"
+            }
+        ],
+        "2.0-dev-9212": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b4706b6168ce41b42c695a6360899ace",
+                    "sha256": "509d01ae53c7a5b0d75baadb50ec7dda3fc837bc7cb5ca66bc5da9af9d778a62"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9212.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b4706b6168ce41b42c695a6360899ace",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 200058,
+                "upload_time": "2010-06-25T16:40:40",
+                "url": "https://files.pythonhosted.org/packages/7a/c4/9cc7b5406a23f3a215e0a113fab87e827e0bb1d736f550bccf067093d56f/selenium-2.0-dev-9212.tar.gz"
+            }
+        ],
+        "2.0-dev-9231": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "afca590db41612e32c4c34597f5d66cf",
+                    "sha256": "ecd1089f4a875f3e94f7a083b3ff78720c114259f5e6b1667232c48a5ee39f45"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9231.tar.gz",
+                "has_sig": false,
+                "md5_digest": "afca590db41612e32c4c34597f5d66cf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 200078,
+                "upload_time": "2010-06-30T19:02:12",
+                "url": "https://files.pythonhosted.org/packages/bc/f0/803eb94ed85c3b014d5a9c1ee575784aa48515935765476f50968d574315/selenium-2.0-dev-9231.tar.gz"
+            }
+        ],
+        "2.0-dev-9284": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "649b07a6ad0dc50aedd828605a82884a",
+                    "sha256": "4c7fe4ce7c83995d7503341fc7b78e112f1f9ce474fb627aeed66aa4a52e205b"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9284.tar.gz",
+                "has_sig": false,
+                "md5_digest": "649b07a6ad0dc50aedd828605a82884a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 490497,
+                "upload_time": "2010-07-07T06:55:04",
+                "url": "https://files.pythonhosted.org/packages/97/1e/77f1b90fa891e1747ec0ab6b1689329d1d862bb7a26606f2691418ecd32c/selenium-2.0-dev-9284.tar.gz"
+            }
+        ],
+        "2.0-dev-9306": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1107153eb12137dc217c56c75bab6c76",
+                    "sha256": "8417eb15173fcdedba4183981747acaa6d4262de9503b474862422676621dd80"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9306.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1107153eb12137dc217c56c75bab6c76",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 608358,
+                "upload_time": "2010-07-10T06:42:20",
+                "url": "https://files.pythonhosted.org/packages/60/c7/664ca1055f35078ca69c81708ecf2ca98a83179e9ab2de35e2d2a6d93b1c/selenium-2.0-dev-9306.tar.gz"
+            }
+        ],
+        "2.0-dev-9307": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "53d755952c78a281f6d5b9451b69928a",
+                    "sha256": "c050cf5d827d241f0da47d443fdbc41af7d2cf86aac19926ad4983f84291ce1f"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9307.tar.gz",
+                "has_sig": false,
+                "md5_digest": "53d755952c78a281f6d5b9451b69928a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 608444,
+                "upload_time": "2010-07-10T06:52:32",
+                "url": "https://files.pythonhosted.org/packages/99/b4/faccc4dba9f2ff6e9b35c69acff253a19bbba313ba57d56af3cef74424d1/selenium-2.0-dev-9307.tar.gz"
+            }
+        ],
+        "2.0-dev-9310": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d371c2b8fa60e426f271949e1151b97",
+                    "sha256": "0e3fe0eb62482fb106751d24d7773110c838cc434458d993d1b59a4ffe3dae1e"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9310.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4d371c2b8fa60e426f271949e1151b97",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 652154,
+                "upload_time": "2010-07-16T22:17:03",
+                "url": "https://files.pythonhosted.org/packages/c5/08/6daaf40f932e524712840ba6737b68d41a6eea8d513989fa0ed09837ca6e/selenium-2.0-dev-9310.tar.gz"
+            }
+        ],
+        "2.0-dev-9338": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "49de0e76557e213d3fe6f7ad10bf9bfd",
+                    "sha256": "879b120e38baab8c57fa51f8f2a26e5091d93fc63e93fbd5d10f936942c3f841"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9338.tar.gz",
+                "has_sig": false,
+                "md5_digest": "49de0e76557e213d3fe6f7ad10bf9bfd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 652156,
+                "upload_time": "2010-07-16T22:18:22",
+                "url": "https://files.pythonhosted.org/packages/fa/1d/2e0413cb52912e4aecf51727e0dad26bac75d36291dfd828b58d3962df2c/selenium-2.0-dev-9338.tar.gz"
+            }
+        ],
+        "2.0-dev-9340": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c286a6addb36fbc060e7de5c8e3e3bd3",
+                    "sha256": "f8c9bfa0fe58392845a05b53b52373d210854b67e77c6a7ba2cdd5f4f18d5692"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9340.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c286a6addb36fbc060e7de5c8e3e3bd3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 652166,
+                "upload_time": "2010-07-17T01:12:49",
+                "url": "https://files.pythonhosted.org/packages/6c/38/de920e54ba24f5d315d3d940cdf54953819295d2056862ff28f7c9aaa720/selenium-2.0-dev-9340.tar.gz"
+            }
+        ],
+        "2.0-dev-9341": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1504809685b25a800f34e9a8fc1a5a87",
+                    "sha256": "8a81d83938e09f0a9921a82a2f7fef4261acd7355f4e0eff897c6751e085f53d"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9341.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1504809685b25a800f34e9a8fc1a5a87",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1177947,
+                "upload_time": "2010-07-17T01:35:27",
+                "url": "https://files.pythonhosted.org/packages/d8/26/3c033bfa6c1a5e8a3cf969574dbef278b32cc0e92c8b4b1cd3f80080e008/selenium-2.0-dev-9341.tar.gz"
+            }
+        ],
+        "2.0-dev-9429": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f48a920c0e238aad98599b71b530ebfd",
+                    "sha256": "72bafa13531d8884bd729536169b1b3fdbf99de5d0cab9d8dc06d9132936316e"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0-dev-9429.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f48a920c0e238aad98599b71b530ebfd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1175575,
+                "upload_time": "2010-08-05T17:41:50",
+                "url": "https://files.pythonhosted.org/packages/1c/ad/a677203eee2628b70ff2f44733d89fb6805e1bc117efd22bb3d41dfd4409/selenium-2.0-dev-9429.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d172f6d901a9013b35cc8c6e62288c7b",
+                    "sha256": "38407505f0c95708644dacbd8fe3d169ba001b331a32c01f4e7ad28f1bca5299"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d172f6d901a9013b35cc8c6e62288c7b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1487721,
+                "upload_time": "2011-07-08T01:57:11",
+                "url": "https://files.pythonhosted.org/packages/8b/8c/8a9dfe9f965cc331d316f14cdc8778bbbd65f28c99ea2ef2843a30c01518/selenium-2.0.0.tar.gz"
+            }
+        ],
+        "2.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25bcbdc27130bbf1a957f1524f7bc3ee",
+                    "sha256": "2c429914bed3323bef05e4b67fcd2f015e3289487bb4eb96a3ede9e5b1568133"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "25bcbdc27130bbf1a957f1524f7bc3ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1487676,
+                "upload_time": "2011-07-08T09:54:46",
+                "url": "https://files.pythonhosted.org/packages/db/ea/1cdc82c0f7dc24dd62eff282ee6f54b4b815643108b0a81efd3278241807/selenium-2.0.1.tar.gz"
+            }
+        ],
+        "2.0a5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "18fb0f6af1f8f540d340edbe1b13098f",
+                    "sha256": "4e6c9aff94ce21c3013759f613ce899f3d291444c97d956139d3b9ba46a6fb06"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0a5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "18fb0f6af1f8f540d340edbe1b13098f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1188034,
+                "upload_time": "2010-08-13T07:32:55",
+                "url": "https://files.pythonhosted.org/packages/50/48/e68df147bb9250030f527f5e960ee6b40fbf56b3966d749f0614a27d9cc4/selenium-2.0a5.tar.gz"
+            }
+        ],
+        "2.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "39827d4d5f00bcc2ecb913483304547e",
+                    "sha256": "669421607c89b8391aad7b386d48fb3490764e1ff748ea2a463f78d066b04baa"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "39827d4d5f00bcc2ecb913483304547e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1254156,
+                "upload_time": "2011-02-14T20:54:59",
+                "url": "https://files.pythonhosted.org/packages/05/29/e130b06df28103be5b2eda8fc550be3d2b16ea2b192a70f07504a5887389/selenium-2.0b2.tar.gz"
+            }
+        ],
+        "2.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d98f6b6d838dd8deb22bb48d8d34f976",
+                    "sha256": "a8030b449e8546c95534ed6927ca9648fab2217018342b9ee6a3fdaabb6f9ceb"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0b3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d98f6b6d838dd8deb22bb48d8d34f976",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1076325,
+                "upload_time": "2011-03-21T20:08:38",
+                "url": "https://files.pythonhosted.org/packages/f9/5b/06d6feaf0360ba83173eaf469e6bcfc49bd4bc105f0b9e651c6c70594cd4/selenium-2.0b3.tar.gz"
+            }
+        ],
+        "2.0b3dev": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7cfa656bd75974c29779f0b4aaa29db1",
+                    "sha256": "cc671ce880ae3d7ebaaeed68781c775e8d037d82f46db25635ba09c9c5b182d7"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0b3dev.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7cfa656bd75974c29779f0b4aaa29db1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1286188,
+                "upload_time": "2011-03-21T19:28:18",
+                "url": "https://files.pythonhosted.org/packages/66/ca/2a09b045baca3e176bb3af6ac4704c9b5747dd383c4a4a48bc52c5dbe929/selenium-2.0b3dev.tar.gz"
+            }
+        ],
+        "2.0b4dev": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b7086bd3909820a4e98834341607e8b5",
+                    "sha256": "52303d0ce7191b3f38606aa5cb9a435daccf212bb2fc1ea0c9e2101979b59729"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0b4dev.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b7086bd3909820a4e98834341607e8b5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 955986,
+                "upload_time": "2011-04-14T20:31:44",
+                "url": "https://files.pythonhosted.org/packages/ae/1c/52ac88abf2905ea2281a8644aa479b4bb1afd9c1efe9df84bfa7aefdd172/selenium-2.0b4dev.tar.gz"
+            }
+        ],
+        "2.0dev1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "35a170f2e2a225d8dcce6a5310c4f27c",
+                    "sha256": "ad4b00e1b268cc0c2c730b0286ce1db47ad5180b23390da8488c0661f283c4bc"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0dev1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "35a170f2e2a225d8dcce6a5310c4f27c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 841793,
+                "upload_time": "2011-02-14T17:00:13",
+                "url": "https://files.pythonhosted.org/packages/5c/14/e31b1416094260d0da691c7eafb13dbe1392073078eaf92c85c90a239e75/selenium-2.0dev1.tar.gz"
+            }
+        ],
+        "2.0dev2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a5183aa9c698e48ae3ee291131ae7b7f",
+                    "sha256": "086000db2150f4b0959e916383b8d42e4db06282b894cdef62b0ed72a1a624aa"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0dev2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a5183aa9c698e48ae3ee291131ae7b7f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 841673,
+                "upload_time": "2011-02-14T17:27:04",
+                "url": "https://files.pythonhosted.org/packages/66/86/5baa66ab61b9fdbabfc6cda8431eed91bb2971b4601c8b5b15218971071f/selenium-2.0dev2.tar.gz"
+            }
+        ],
+        "2.0dev3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d08578170baf91395fa9c7ae81568a70",
+                    "sha256": "a9c902eeceda6a2c2efd68e5b9d84f990370e607d2b13334f1eb0af857d6ab1c"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0dev3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d08578170baf91395fa9c7ae81568a70",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 617417,
+                "upload_time": "2011-02-14T17:34:03",
+                "url": "https://files.pythonhosted.org/packages/3d/2f/48b1dd6129b7b3e5d1be6abf32220ffebe2bd5eb904da31ef889b61e10e6/selenium-2.0dev3.tar.gz"
+            }
+        ],
+        "2.0dev4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb268dfebff5e29868c08d0473ec02e4",
+                    "sha256": "456856a65657b9a83955bd568a1c7310923cbdad9a1f56ef8113dfbf5aac1bca"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0dev4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fb268dfebff5e29868c08d0473ec02e4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1027198,
+                "upload_time": "2011-02-14T17:48:17",
+                "url": "https://files.pythonhosted.org/packages/0d/7f/c6feaa974ba6b99d9118077175a72af5096b46ff9a979716f6d37693e38c/selenium-2.0dev4.tar.gz"
+            }
+        ],
+        "2.0dev5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fbc23c8ae541bf68096064807805b71d",
+                    "sha256": "94aa466d139bdc6584819c015aabff97af2c45941d9b36bc05a08a07632c10bd"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0dev5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fbc23c8ae541bf68096064807805b71d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1027200,
+                "upload_time": "2011-02-14T18:00:02",
+                "url": "https://files.pythonhosted.org/packages/91/e4/8bf578893ce4762e58422e8e84ce3b2ef501c1fbf42d33e28215c1d16c57/selenium-2.0dev5.tar.gz"
+            }
+        ],
+        "2.0dev6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1dd255a284bb9e24ecd7bc1d69e279d7",
+                    "sha256": "6af26df01b7775a8f001df98f8832dd3abdfc28533d2f592e908dcbe69b22250"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0dev6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1dd255a284bb9e24ecd7bc1d69e279d7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1028028,
+                "upload_time": "2011-02-14T18:49:16",
+                "url": "https://files.pythonhosted.org/packages/96/16/21fe08cb38df620525b0c4741f84f39e8779bb65acc7284a6098e54eae98/selenium-2.0dev6.tar.gz"
+            }
+        ],
+        "2.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee92eb82720d35c4c9d467fd28808052",
+                    "sha256": "465e5fe2ccada723ef2ddbccf509b73b404e8cde73be0e0784ddbcc333333ce6"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ee92eb82720d35c4c9d467fd28808052",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1028273,
+                "upload_time": "2011-06-01T20:46:44",
+                "url": "https://files.pythonhosted.org/packages/42/bb/3d64c032d618e4ae2597a1dbbf7be44957cc87e0286558136d6fb912d30a/selenium-2.0rc1.tar.gz"
+            }
+        ],
+        "2.0rc2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0fa57aeedf3ce1334a14c2b5c21c596f",
+                    "sha256": "6ccdd2177e0d441cb91da5edd5ff941cd3e6e16d96668d1f76b41c013eeb37c4"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0rc2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0fa57aeedf3ce1334a14c2b5c21c596f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1028478,
+                "upload_time": "2011-06-02T14:27:16",
+                "url": "https://files.pythonhosted.org/packages/f2/fc/f440e096acf0da1fc9f7f3de80a5c92623d65bea3420ce6af37b95db89a9/selenium-2.0rc2.tar.gz"
+            }
+        ],
+        "2.0rc3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c87b8659cdc96da7b9f73ed2db1bcdaa",
+                    "sha256": "8f8c29fe0fd289f596309420842659837be74c4bdd382b369bdb67c644150c7f"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.0rc3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c87b8659cdc96da7b9f73ed2db1bcdaa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1076395,
+                "upload_time": "2011-06-20T20:11:33",
+                "url": "https://files.pythonhosted.org/packages/6b/7a/3cf2426c2ac64c0ebe57d20514d500b6b4c5e2522a36e0a2a5a342335770/selenium-2.0rc3.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "956743f4b69d3b1588c40a19d864711f",
+                    "sha256": "41b13c6d5b3013d5e48545ab59ac38fd0fff8b05923d01b57094683c85b89e8e"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "956743f4b69d3b1588c40a19d864711f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1472359,
+                "upload_time": "2011-07-18T13:39:20",
+                "url": "https://files.pythonhosted.org/packages/08/de/cc0f647ef48f5a160c265273efe817b94d42d7fa49ae653be2d2f42ce1bf/selenium-2.1.0.tar.gz"
+            }
+        ],
+        "2.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2e878e1e57133b1303ae43f3a7b2ee36",
+                    "sha256": "9db4fa3d4ddac46572a984ed467285379ff2d31181e9169b8e867efd6b44ff76"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2e878e1e57133b1303ae43f3a7b2ee36",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2901400,
+                "upload_time": "2011-10-28T00:04:42",
+                "url": "https://files.pythonhosted.org/packages/0a/2a/5c1d2167e4f545cfc0a932401c21c5af3d5566d25942588b4772bd019c85/selenium-2.10.0.tar.gz"
+            }
+        ],
+        "2.11.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "065f27bfa90d92492fc0258e45b63e1b",
+                    "sha256": "7dbe6d334d534b311fb853dcdeb83047e6be8f92c390ea87c225eea069409bfe"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.11.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "065f27bfa90d92492fc0258e45b63e1b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2901838,
+                "upload_time": "2011-10-28T19:11:18",
+                "url": "https://files.pythonhosted.org/packages/cc/94/b74ccf0b9fb5c6c603d9b28cdcbc92fdca262ec790de7e2e86a5ea12da79/selenium-2.11.0.tar.gz"
+            }
+        ],
+        "2.11.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1162f8cc926aa3285c88a3f0955c2035",
+                    "sha256": "0f557a48bb1c3676e13f784c6bbb30445b776e60f54d62c9ea8d26f7e442af22"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.11.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1162f8cc926aa3285c88a3f0955c2035",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2901805,
+                "upload_time": "2011-10-28T21:44:27",
+                "url": "https://files.pythonhosted.org/packages/53/3f/9b532dd7d01c1c5df8a6a18901c7961c03a3eef6af97a7e800f90c3278bf/selenium-2.11.1.tar.gz"
+            }
+        ],
+        "2.12.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "08a5c600d352d17377a4d84426d21fa4",
+                    "sha256": "b856d224ef42295599dade001f97eabcb3059c45d76cf0e9f7365bc369141323"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.12.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "08a5c600d352d17377a4d84426d21fa4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3283587,
+                "upload_time": "2011-11-10T20:29:51",
+                "url": "https://files.pythonhosted.org/packages/51/b2/f48649040ed1747251752ab1d50764649df5b1900fb9c6d670167c0c228b/selenium-2.12.0.tar.gz"
+            }
+        ],
+        "2.12.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b963a06d7c1bed1ec47322e96b624b2",
+                    "sha256": "4c776325d0fe5e520d8901629db06fd24cbeab42135312a18548977dc333b15c"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.12.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5b963a06d7c1bed1ec47322e96b624b2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3296268,
+                "upload_time": "2011-11-10T20:40:28",
+                "url": "https://files.pythonhosted.org/packages/9d/69/b90bcc403a8e19eb9964bcc427cab6a39f1a15f9aafe32b976c8ef814706/selenium-2.12.1.tar.gz"
+            }
+        ],
+        "2.13.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9912a454ce22f0d7522149eea720c316",
+                    "sha256": "10aaa897045cc22f96d62b3507d3728f91f08b50167d654cf3ee979697dc75d3"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.13.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9912a454ce22f0d7522149eea720c316",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3318566,
+                "upload_time": "2011-11-18T15:50:15",
+                "url": "https://files.pythonhosted.org/packages/68/1b/696b998532183d858867b73f4548b776c66aa0eab4716c32a61312cd0c47/selenium-2.13.0.tar.gz"
+            }
+        ],
+        "2.13.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "124105a5bf3e8fe0205932b6444ddfb4",
+                    "sha256": "3e357041195d0cd4906858064e3379e0e4560821ece9827ad0fb560a740aee39"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.13.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "124105a5bf3e8fe0205932b6444ddfb4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3318724,
+                "upload_time": "2011-11-18T18:50:05",
+                "url": "https://files.pythonhosted.org/packages/fa/8a/67355d29872d87946cc710bacb071d509b0e86c423d29e22632c64822a67/selenium-2.13.1.tar.gz"
+            }
+        ],
+        "2.14.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8de9ee26d699d699f846f14f9a184e60",
+                    "sha256": "c7cb55b1e57bb7da18db1e5679f7dc8da8215cbfb3a25a078cc25283dc041bd9"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.14.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8de9ee26d699d699f846f14f9a184e60",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3333690,
+                "upload_time": "2011-11-29T21:30:56",
+                "url": "https://files.pythonhosted.org/packages/2b/b0/215255b4128382ff634e3d3ffcb7b01d7611a9e8be0c74a7b331940dbb8c/selenium-2.14.0.tar.gz"
+            }
+        ],
+        "2.15.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "683cfd4cb7e259a909d669e7b24f7b16",
+                    "sha256": "fe76f2c4aea72ed590fa279a56c33a4a52e1fb346a16ea49d983eace7990fcb8"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.15.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "683cfd4cb7e259a909d669e7b24f7b16",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3553513,
+                "upload_time": "2011-12-08T11:44:50",
+                "url": "https://files.pythonhosted.org/packages/22/9d/3c159f3a00678140bcb76f7928703cbe05fdc49c4f02f6d0650bd6ab049a/selenium-2.15.0.tar.gz"
+            }
+        ],
+        "2.16.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4a90f02edcfefae905796281bf0647c7",
+                    "sha256": "298960669d83ad653dfa472d89353a8d868b7b633bbb1613951e3ae9cac058f9"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.16.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4a90f02edcfefae905796281bf0647c7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3948694,
+                "upload_time": "2012-01-04T22:14:19",
+                "url": "https://files.pythonhosted.org/packages/a8/ff/c267421c2391d496bd4aab99e3c0cb877edc3492966fe27de3919a0ee52c/selenium-2.16.0.tar.gz"
+            }
+        ],
+        "2.17.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "176a0af40521e5362924d3d5a9824c1f",
+                    "sha256": "1652112964f11bdba95e946ec6fd28c9b9a3637fa62dee0aa66df66d314674ce"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.17.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "176a0af40521e5362924d3d5a9824c1f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3961220,
+                "upload_time": "2012-01-16T21:14:11",
+                "url": "https://files.pythonhosted.org/packages/4f/70/852e5ab01dcd17e4659031fd3c8b76c6322bdac0775b22961b15aa6548ba/selenium-2.17.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bd777f3b0635c6e6458ad19d4e9c3124",
+                    "sha256": "ed698e0b7c13f499cd06c94e41e425038135b4fc4fe6f9baa4ee6853689a7dc8"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.18.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bd777f3b0635c6e6458ad19d4e9c3124",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3978217,
+                "upload_time": "2012-01-27T20:02:38",
+                "url": "https://files.pythonhosted.org/packages/72/c7/d9e065f7ca733301ba3f4bd279ad8d7cf3ec1749c253c95ce322eb758c40/selenium-2.18.0.tar.gz"
+            }
+        ],
+        "2.18.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "818efe4c6dcd103c2e4eea8830272773",
+                    "sha256": "4d1868560a4b2711ed89648b2919c898ad202cf0b15d979d735b4339bb374b30"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.18.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "818efe4c6dcd103c2e4eea8830272773",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3971056,
+                "upload_time": "2012-01-27T21:02:50",
+                "url": "https://files.pythonhosted.org/packages/b5/58/946da95c0137dcd9bd0b09e901f3711a4dea3c4294a61dd16d90b0656af2/selenium-2.18.1.tar.gz"
+            }
+        ],
+        "2.19.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "216c15190b27a80444cb5490977f4f7e",
+                    "sha256": "7e054f00cbaccdc6bd967e50dc5ffee0ae8e46656b1d78321d92a5d7995dda6f"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.19.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "216c15190b27a80444cb5490977f4f7e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3978038,
+                "upload_time": "2012-02-08T17:57:16",
+                "url": "https://files.pythonhosted.org/packages/58/db/0e287918fc5bb1b97352b06122e0f396bd819dbdf74e226d81d7d8b40381/selenium-2.19.0.tar.gz"
+            }
+        ],
+        "2.19.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc856390a87800c463c7e2d3800e3112",
+                    "sha256": "3b7070977d2d63f55fca85228f1177ac76745a0766dd2618782c00f07c4f63df"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.19.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fc856390a87800c463c7e2d3800e3112",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3978023,
+                "upload_time": "2012-02-08T18:02:55",
+                "url": "https://files.pythonhosted.org/packages/89/97/e703fff9c7fe632ca2527ff8fc07a348821ee3ec30884596c18d5d2cc23f/selenium-2.19.1.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3848e7bdf58e886031fa7389f6ca4876",
+                    "sha256": "f2e7ea5215d48115ab776d9e008dbcac10d05c9eaba81ada0d1085f73a4cbec3"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3848e7bdf58e886031fa7389f6ca4876",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1473814,
+                "upload_time": "2011-07-26T16:56:42",
+                "url": "https://files.pythonhosted.org/packages/77/9b/deeed3a49be8686325cd827ccf7cd224b8acbe3bbc64bbf069d0261842eb/selenium-2.2.0.tar.gz"
+            }
+        ],
+        "2.20.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1a7d86758b1b0e8561cd4a341c860e5",
+                    "sha256": "9808c5dfdd9f028d0361ba5a0ea717743849f4dee3eefc397a0b65e6cb3f06fd"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.20.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a1a7d86758b1b0e8561cd4a341c860e5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4200623,
+                "upload_time": "2012-02-27T21:12:45",
+                "url": "https://files.pythonhosted.org/packages/59/2f/cc5c809142f87184cd7be461b33100382ae266c9e8daffc889fdd3f8fdf7/selenium-2.20.0.tar.gz"
+            }
+        ],
+        "2.21.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "24bd50aec4fdc6bfcdad360754625fbd",
+                    "sha256": "ae2d1bcd8e3e79ca62dc4847197ae3aee5ed1bc584a22650d2ab34679fa2c1ec"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.21.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "24bd50aec4fdc6bfcdad360754625fbd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2548723,
+                "upload_time": "2012-04-11T21:25:02",
+                "url": "https://files.pythonhosted.org/packages/c8/37/355ab47f73edea959126ad0d7ea48d4a65d2307edd118deb8c7ab0a89690/selenium-2.21.0.tar.gz"
+            }
+        ],
+        "2.21.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d8ffc76712461e91759bc7ecdf83cd1",
+                    "sha256": "1ee0e83733981fd1e805aa90f3ac5b7273ea9f80e2b0706ff716f859820d8125"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.21.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9d8ffc76712461e91759bc7ecdf83cd1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2548625,
+                "upload_time": "2012-04-11T22:20:52",
+                "url": "https://files.pythonhosted.org/packages/d6/cd/254b993bdeac0467802ec47b10b7888557f6c1117c165b1b64d76915381c/selenium-2.21.1.tar.gz"
+            }
+        ],
+        "2.21.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a781b059c325e7981fa65efd9972c961",
+                    "sha256": "cac18c32c1e39e2a3959872dcac5cc0386d6f4f553c6dafb59cbaea8178dc7fc"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.21.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a781b059c325e7981fa65efd9972c961",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2546022,
+                "upload_time": "2012-04-16T22:43:06",
+                "url": "https://files.pythonhosted.org/packages/00/a3/a060871407468905d82378ec2c0150b4ef8b95781dfa8e92511f4dc56310/selenium-2.21.2.tar.gz"
+            }
+        ],
+        "2.21.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "02aadd3c412f8f705a03f3f548c327ee",
+                    "sha256": "7603ea407dd4f2be76c55d551f7058b7ea55f78e49157723dedc9d35e0b62bd8"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.21.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "02aadd3c412f8f705a03f3f548c327ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2645487,
+                "upload_time": "2012-05-08T22:36:23",
+                "url": "https://files.pythonhosted.org/packages/8d/f2/1849863d0ab693fbf2e99bb1f2851b49b7ca5a270a1b2f13067c010c85a9/selenium-2.21.3.tar.gz"
+            }
+        ],
+        "2.22.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14a1f9b11360dfed2e73d69bb9525025",
+                    "sha256": "afb90da7f3a6422597e5963f084424b1d5f1e81ead17184f6eb8e0fa166d19e3"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.22.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "14a1f9b11360dfed2e73d69bb9525025",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3211688,
+                "upload_time": "2012-05-29T16:24:55",
+                "url": "https://files.pythonhosted.org/packages/b3/4a/fb311f8161c2fdc9ee3aadf5ac370a799ee2f4a8de6924a62739dd1f13ba/selenium-2.22.0.tar.gz"
+            }
+        ],
+        "2.22.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ef6103aacc1a4ba4bed23dc453fe2bf8",
+                    "sha256": "ff232a336c5f5811178ae45d60a6c0dbc48301a89f3bdace539b1b2ec440a683"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.22.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ef6103aacc1a4ba4bed23dc453fe2bf8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3211710,
+                "upload_time": "2012-05-29T16:38:22",
+                "url": "https://files.pythonhosted.org/packages/cb/f5/788632a118a39159c6f69e90aabab7a45d6f7d64587d47e3718e986baf1f/selenium-2.22.1.tar.gz"
+            }
+        ],
+        "2.23.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a9e77c09cfc4db164c9b036666826058",
+                    "sha256": "5f77e3fe377ceb2d43b59f1e5368c96bef5de8679e75a68222fce68606d1df27"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.23.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a9e77c09cfc4db164c9b036666826058",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3212631,
+                "upload_time": "2012-06-07T18:36:34",
+                "url": "https://files.pythonhosted.org/packages/47/d5/5c89d9cbdd2c3b8785fe57da7d88e1633c69fee51e10ab540ba88559dba3/selenium-2.23.0.tar.gz"
+            }
+        ],
+        "2.24.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b1b1e5d05fce68c2fe94ef6d536de15",
+                    "sha256": "b436587ad1b5ad9e6270d95c5ce28b4c16d59e318a01143ad3518227dfbc8706"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.24.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b1b1e5d05fce68c2fe94ef6d536de15",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1942877,
+                "upload_time": "2012-06-19T23:53:12",
+                "url": "https://files.pythonhosted.org/packages/12/d3/6bc921017b5039c005749c28c6a5d7592903ee87661cf676c0bccd641cef/selenium-2.24.0.tar.gz"
+            }
+        ],
+        "2.25.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9b799caef8fe32e50094ff78f856265a",
+                    "sha256": "0ad4a4fe9eca21774d715080213cc42e292d84b780694260f38de41d7cbe3646"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.25.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9b799caef8fe32e50094ff78f856265a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1979498,
+                "upload_time": "2012-07-18T23:23:16",
+                "url": "https://files.pythonhosted.org/packages/03/87/a81a4be2a55edf03995c1c772efd0e1a5be310847a6ad7938e7276e5b9ad/selenium-2.25.0.tar.gz"
+            }
+        ],
+        "2.26.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "20b26e22af731eaee4c9efea7e96e5c2",
+                    "sha256": "a1d623503739c1bede1fe3b53ece2893c546d9130bf0d7b26b03f33cf3031794"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.26.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "20b26e22af731eaee4c9efea7e96e5c2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2103520,
+                "upload_time": "2012-11-01T20:20:27",
+                "url": "https://files.pythonhosted.org/packages/c1/fe/7082d53b012481c590caedef6310b0d2e3cf4d077fefc829553c727c10f4/selenium-2.26.0.tar.gz"
+            }
+        ],
+        "2.27.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab054478319f5e08f7b73f61ce47ddc6",
+                    "sha256": "565a46bfec20b414dc335a8a360ee5643d494a08a8886f813a8fa315471e5e53"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.27.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ab054478319f5e08f7b73f61ce47ddc6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2105065,
+                "upload_time": "2012-12-05T20:16:05",
+                "url": "https://files.pythonhosted.org/packages/13/75/dbb364641ec1ba1af7dc280dbd22e723c024a7e9115cafe752d6431522aa/selenium-2.27.0.tar.gz"
+            }
+        ],
+        "2.28.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd253a2ea94fe14cc5f3e8328cda7a53",
+                    "sha256": "6caf5c53baa37d42155ea4f90542d2916508c17a189a0f2b9dd88453b9c833c7"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.28.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fd253a2ea94fe14cc5f3e8328cda7a53",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2106870,
+                "upload_time": "2012-12-11T21:27:37",
+                "url": "https://files.pythonhosted.org/packages/e3/01/6c478ceb567539d817d179faa432d74bf3c7cd0d7157ed5536583cad9269/selenium-2.28.0.tar.gz"
+            }
+        ],
+        "2.29.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ac110cdba134344eccbe16e25a2055c",
+                    "sha256": "f12e1fc9346a8365f1803af7e5801d571a4c63879344aa15f562eeee4a2d29b3"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.29.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4ac110cdba134344eccbe16e25a2055c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2085853,
+                "upload_time": "2013-01-17T20:53:30",
+                "url": "https://files.pythonhosted.org/packages/84/76/c24785e9f1c1a72c1fa7e25050945146a822350091f5749e5379e782fd71/selenium-2.29.0.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f33a5b7e86dbfda6119bbd6ac608d914",
+                    "sha256": "e0576195d3d1c7d203440563f978aa4f041c33b52e0fbff81c8ea7bdcb657bb9"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f33a5b7e86dbfda6119bbd6ac608d914",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1477932,
+                "upload_time": "2011-08-01T19:35:29",
+                "url": "https://files.pythonhosted.org/packages/f9/8a/9b96c01532ee65154219e242105d4a46b75eb56b595906f006bc243ef8b0/selenium-2.3.0.tar.gz"
+            }
+        ],
+        "2.30.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15a8aace0de5c1be17ed1c69060f5be3",
+                    "sha256": "34facfcff397c078377b822536f3213b53288b96078c782d1024c20e535494c4"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.30.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "15a8aace0de5c1be17ed1c69060f5be3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2499495,
+                "upload_time": "2013-02-19T17:46:18",
+                "url": "https://files.pythonhosted.org/packages/37/f0/5d8fb9a177f118e12949f605df7af88f81dee1da45e7bbf73c79a7e4ee10/selenium-2.30.0.tar.gz"
+            }
+        ],
+        "2.31.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8ed4e8e1907dd06b0d9801b4d6b512ad",
+                    "sha256": "1986819d4038f07a6cc9c923b8b9bc32a274db8923136692e7108a8218e2d831"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.31.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8ed4e8e1907dd06b0d9801b4d6b512ad",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2499429,
+                "upload_time": "2013-02-27T21:42:20",
+                "url": "https://files.pythonhosted.org/packages/f8/30/f2b885ee2bfeb2092250bdc4cd9790d022643cabe3ac01af6b9f92cb99b6/selenium-2.31.0.tar.gz"
+            }
+        ],
+        "2.32.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "08b38ca2ae35c1f41666effc477cb3f0",
+                    "sha256": "338ec50b06f94e52b66f1baf2e39e4f06e2ddb80569bc7fa30c4291944906b71"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.32.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "08b38ca2ae35c1f41666effc477cb3f0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2506082,
+                "upload_time": "2013-04-10T14:08:50",
+                "url": "https://files.pythonhosted.org/packages/47/88/57245d9a9b567c84dfb675519c9e35a477e73c1d5063af38592173ddc350/selenium-2.32.0.tar.gz"
+            }
+        ],
+        "2.33.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b97a8d5b336a6614a70ef7fe1aae9444",
+                    "sha256": "6508690bad70881eb851c3921b7cb51faa0e3409e605b437058e600677ede89b"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.33.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b97a8d5b336a6614a70ef7fe1aae9444",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2536129,
+                "upload_time": "2013-05-22T19:49:32",
+                "url": "https://files.pythonhosted.org/packages/b5/e2/1e17f524f270d3de2724b5b70c144db19745b3800f4c02623bb14930ebc3/selenium-2.33.0.tar.gz"
+            }
+        ],
+        "2.34.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a4d3526916b55a9af024701012c46e53",
+                    "sha256": "b7d0d3d2259d5fa9ee4804cff1d0736d93a674db507a450c1cb077c4acff5c2f"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.34.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a4d3526916b55a9af024701012c46e53",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2578371,
+                "upload_time": "2013-08-06T19:08:48",
+                "url": "https://files.pythonhosted.org/packages/dc/17/9cb647c186f462971b05aa9ee015a6d0222b3c12226855a4c5547dc02502/selenium-2.34.0.tar.gz"
+            }
+        ],
+        "2.35.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "96540476201df2b15127148396351239",
+                    "sha256": "605ace5c73f5cefad14cf77e8e9cad63b8661bf8b1b1ed739d284a344abb0a31"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.35.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "96540476201df2b15127148396351239",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2579216,
+                "upload_time": "2013-08-13T05:06:57",
+                "url": "https://files.pythonhosted.org/packages/0b/c5/51b6d2f2fba02ab2734ddf6ba1679aa760421118dea75d87597e77b2fdaf/selenium-2.35.0.tar.gz"
+            }
+        ],
+        "2.36.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "68738026b891672eb0ca68e3f812c56c",
+                    "sha256": "74f281a423fc32e3013dcc09c816d20908508f1f8c0d885ee4212e8581222f48"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.36.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "68738026b891672eb0ca68e3f812c56c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2647609,
+                "upload_time": "2013-10-17T18:50:13",
+                "url": "https://files.pythonhosted.org/packages/9f/5d/c618cf6e4e5a83b43e3dbecc2cea25d82734874312a199a8147b20cde895/selenium-2.36.0.tar.gz"
+            }
+        ],
+        "2.37.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54296f5658bcb2958ce7d862cf616985",
+                    "sha256": "8de586687a1b2132c88e89d011645f0636d3b3a9b97a03066f434c74df9a5093"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.37.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "54296f5658bcb2958ce7d862cf616985",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2647262,
+                "upload_time": "2013-10-18T16:46:00",
+                "url": "https://files.pythonhosted.org/packages/ed/38/f94b24d7291f92c54cd3d803564f350d4a7d0b35bf74c9f3e03eb4e53136/selenium-2.37.0.tar.gz"
+            }
+        ],
+        "2.37.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b477d0a94c0f102173043d110c9ad5d0",
+                    "sha256": "ea9f1554cc5892146d2f71ffcfca050456a81b6fa7d31a970c34fcf9f93e64ab"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.37.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b477d0a94c0f102173043d110c9ad5d0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2647597,
+                "upload_time": "2013-10-21T20:43:57",
+                "url": "https://files.pythonhosted.org/packages/d2/f5/9f462dc6d27e9d911f99a7ed6e7d25502ca804ea67dd7bd08146844e1307/selenium-2.37.1.tar.gz"
+            }
+        ],
+        "2.37.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f3fffaae0bc789676c4e2ab285f7b04f",
+                    "sha256": "c490ea8d5f74d2217c9d29d574841a0d658b8e148fca3759cd23da273b123d41"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.37.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f3fffaae0bc789676c4e2ab285f7b04f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2647671,
+                "upload_time": "2013-10-22T05:14:07",
+                "url": "https://files.pythonhosted.org/packages/f6/32/be00794749d645065958775b79605f5ba0686f576f878b5fa1d22e7c9c81/selenium-2.37.2.tar.gz"
+            }
+        ],
+        "2.38.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "79ed084513569d72c92edd2827fba683",
+                    "sha256": "8e7bd193e3d52f07e7eda826a88f80877f77d44e5d68a568cf1d0d8cf502d771"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.38.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "79ed084513569d72c92edd2827fba683",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2458909,
+                "upload_time": "2013-12-05T16:19:21",
+                "url": "https://files.pythonhosted.org/packages/e9/62/c0208dec5d46fd3382bdcd9b3aa0fd41480c55f6d6edcf902e6edcc736fc/selenium-2.38.0.tar.gz"
+            }
+        ],
+        "2.38.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a408c768eff9018850f6932cf1a768ba",
+                    "sha256": "21a8deee922e237f37a0b0453c49e7616ff0f316d58e0a60d891bc8348a42ed1"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.38.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a408c768eff9018850f6932cf1a768ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2459895,
+                "upload_time": "2013-12-05T18:23:25",
+                "url": "https://files.pythonhosted.org/packages/f0/64/b19a68c028da6c6456a10025aaf724bd84c77ae60e47f8438f56c574ba8e/selenium-2.38.1.tar.gz"
+            }
+        ],
+        "2.38.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fa2bbbb7df4c62c3f7f17ef9612fa238",
+                    "sha256": "bed28409cf28cae956d245134ca4f6f08fd4029f9355baee3eb62cc85273f039"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.38.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fa2bbbb7df4c62c3f7f17ef9612fa238",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2462715,
+                "upload_time": "2013-12-09T17:32:39",
+                "url": "https://files.pythonhosted.org/packages/5a/9b/b431c1a25b0df673ba37daf75954081d497db9d39854ce3aa46f1ea453f4/selenium-2.38.2.tar.gz"
+            }
+        ],
+        "2.38.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dae21e5d9ce2f286cb6e2c3f653e9aaa",
+                    "sha256": "af8bdb48512e46e9d7706b60643c1a46e957c086e950a280afcbedd3240f378d"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.38.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dae21e5d9ce2f286cb6e2c3f653e9aaa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2462708,
+                "upload_time": "2013-12-09T17:51:46",
+                "url": "https://files.pythonhosted.org/packages/d9/f0/e61428da08f59c8b8497b77521e9837e32827785dd1015d2f30f3cb39836/selenium-2.38.3.tar.gz"
+            }
+        ],
+        "2.38.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "21bbb47d8e6a50c6d329bd7b79a4354c",
+                    "sha256": "9d790a51918b86299459ad88f96d42933cd95c1bbebb21680dc4eda13498d557"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.38.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "21bbb47d8e6a50c6d329bd7b79a4354c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2460745,
+                "upload_time": "2013-12-12T21:53:55",
+                "url": "https://files.pythonhosted.org/packages/e7/ff/69ed8728a9da2beb02c96cb34b6eaeb374f1b8af0b5e0082fef1f8a42ff9/selenium-2.38.4.tar.gz"
+            }
+        ],
+        "2.39.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f7aaad3eb52a218854bf0196c9daeda",
+                    "sha256": "10c21581ce26ea1e95d4ee85e8fb681109dc61191dab5b14d01be8447fb33ace"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.39.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f7aaad3eb52a218854bf0196c9daeda",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2476790,
+                "upload_time": "2013-12-16T20:59:51",
+                "url": "https://files.pythonhosted.org/packages/db/88/eba305d72cfa270a02597091de7555bd5c3f789d1091a968a40dc7e65175/selenium-2.39.0.tar.gz"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ad0c97d8c8a8aebf6bc5590055c31a39",
+                    "sha256": "b0688d2f13112f92dba92c508807f9f8b86d28a5ab07718111e97c3f958f38bd"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ad0c97d8c8a8aebf6bc5590055c31a39",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2059531,
+                "upload_time": "2011-08-11T21:04:24",
+                "url": "https://files.pythonhosted.org/packages/53/5e/b5cfd3c1423f35eb5a9e60946142ca9ecb3708e26e24de5fc854b807c4d3/selenium-2.4.0.tar.gz"
+            }
+        ],
+        "2.40.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25a990c1b253ef452eec878cd63c894e",
+                    "sha256": "108beb7aa97b974323bb75fdf350c3238ddfdafe1f0cb4723bcfbae71a6b6734"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.40.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "25a990c1b253ef452eec878cd63c894e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2474976,
+                "upload_time": "2014-02-19T20:12:50",
+                "url": "https://files.pythonhosted.org/packages/9f/01/61c2969d3ab3640e1eb1da95a3c09a1a65ae00240da1be589c8cda10408f/selenium-2.40.0.tar.gz"
+            }
+        ],
+        "2.41.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "291dbbe220dc18696718fbccb5f0b2fe",
+                    "sha256": "7a5872f4e772fe8e338b585895701e4316920025923cf23fe04d04350d4e4f9c"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.41.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "291dbbe220dc18696718fbccb5f0b2fe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2478255,
+                "upload_time": "2014-03-28T14:59:49",
+                "url": "https://files.pythonhosted.org/packages/89/ee/90a490f0a0dcb8f3411524426f5c3e3499f1f6b0e603761f990a97d1a556/selenium-2.41.0.tar.gz"
+            }
+        ],
+        "2.42.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "455bb6da2fd758ac035f541d575546a6",
+                    "sha256": "6570a984d75873b3372e8cf6d82104b9572acd31bdb22d04f4bc60844b40e2a9"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.42.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "455bb6da2fd758ac035f541d575546a6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2512909,
+                "upload_time": "2014-05-22T20:08:04",
+                "url": "https://files.pythonhosted.org/packages/f5/a5/6df6efdd93ac463c6b37e3b9a92a9c1202ad431a3872c1ec1c86381864ac/selenium-2.42.0.tar.gz"
+            }
+        ],
+        "2.42.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "628be3f9426c0ec973d421fd08854552",
+                    "sha256": "96ea31c628f1d908572422c7caba074efba86422005a6d43fd55428d20f960c6"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.42.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "628be3f9426c0ec973d421fd08854552",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2512942,
+                "upload_time": "2014-05-27T22:59:40",
+                "url": "https://files.pythonhosted.org/packages/b9/14/0513ab6430670b656a0b93fadb273aaab73d1b17484155477ea5fc35f476/selenium-2.42.1.tar.gz"
+            }
+        ],
+        "2.43.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf2b46caa5c1ea4b68434809c695d69b",
+                    "sha256": "6a2182991852f2181fa7c1cbd191e5e85addde115109ff88d074d39b2579944e"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.43.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bf2b46caa5c1ea4b68434809c695d69b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2564632,
+                "upload_time": "2014-09-09T20:36:59",
+                "url": "https://files.pythonhosted.org/packages/34/64/be80da5426c1edb06399632c0d3fe3cd370c0f3b045e5249cec53c233c13/selenium-2.43.0.tar.gz"
+            }
+        ],
+        "2.44.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8802d73fb989d007ba1b43f070361cd1",
+                    "sha256": "058a688add476bc624362e8c913ff1372269d1db61a0c6a85f3522f438bee050"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.44.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8802d73fb989d007ba1b43f070361cd1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2563724,
+                "upload_time": "2014-10-23T20:24:33",
+                "url": "https://files.pythonhosted.org/packages/c7/fc/16347477d1b62b64abc0962f6f446f43cf1dc371c1700943596749d6acfe/selenium-2.44.0.tar.gz"
+            }
+        ],
+        "2.45.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "120813af730474a62a5a13058da4f602",
+                    "sha256": "72394ce72928c87d36501a75fcc535737d16654fefd6c216c315158294bcc126"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.45.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "120813af730474a62a5a13058da4f602",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2622200,
+                "upload_time": "2015-02-27T00:29:52",
+                "url": "https://files.pythonhosted.org/packages/5d/ed/213b0b7a0b790195d2d2c4812e1da7f22f583ea5364de77270c54a4d9a4c/selenium-2.45.0.tar.gz"
+            }
+        ],
+        "2.46.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6db65e1e7653da0fdc514df5db76d662",
+                    "sha256": "fffce2696f1dfd64662086aac276e657e33953b32e265e34c4d28f5f1787e62c"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.46.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6db65e1e7653da0fdc514df5db76d662",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2621186,
+                "upload_time": "2015-06-04T17:04:57",
+                "url": "https://files.pythonhosted.org/packages/ed/35/2295dbdd511aaa6c6d7c02d8fd4fa7e24360b6e6af428ee0592660ad44ed/selenium-2.46.0.tar.gz"
+            }
+        ],
+        "2.46.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d6705588eb91db030410711b30c4c489",
+                    "sha256": "49ecb96e53871d0272f141d77a28c8b82aa8629cddde7558ad89bcba965e5c8d"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.46.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d6705588eb91db030410711b30c4c489",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2574865,
+                "upload_time": "2015-07-20T12:18:30",
+                "url": "https://files.pythonhosted.org/packages/f8/cf/7bf453a909dec1a038e259dfeeded555b94b22b5663774e7375fd87b8021/selenium-2.46.1.tar.gz"
+            }
+        ],
+        "2.47.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a6ae00bc62b3cda0f0f293c1dc3b90f6",
+                    "sha256": "e1f08a1f545c936bef6ad94a52c1ae267e6ccc29b499fa6119901f35b9b829e1"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.47.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a6ae00bc62b3cda0f0f293c1dc3b90f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2577333,
+                "upload_time": "2015-07-29T22:58:36",
+                "url": "https://files.pythonhosted.org/packages/27/75/5e3af066595385965eb0813bce7b002147f0aa60f4ba5b0404d8327da8f4/selenium-2.47.0.tar.gz"
+            }
+        ],
+        "2.47.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2aef39b0b81128eb99f3acbc909bf7db",
+                    "sha256": "622d06c0713a7e8022455b75957360246b1453abcb6fa9b0fef3db8c6eac13f3"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.47.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2aef39b0b81128eb99f3acbc909bf7db",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 3039376,
+                "upload_time": "2015-08-10T19:21:20",
+                "url": "https://files.pythonhosted.org/packages/46/20/30a2d24d62561dd69b9ae167b4ccd84095a5ec1351132100367f36f9b22c/selenium-2.47.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7a2e267e8ef5c221bfd6387c2ad5f3bc",
+                    "sha256": "f046a0d4c7feba438c94e3a69e18338ccdccb38a0171fdb4495bd6da56e136d6"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.47.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7a2e267e8ef5c221bfd6387c2ad5f3bc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2577428,
+                "upload_time": "2015-08-03T21:10:51",
+                "url": "https://files.pythonhosted.org/packages/ef/05/bd0d41cb6abfd8a0412284994d2d96dd1faa4f0fb93fbd184aac929fdf79/selenium-2.47.1.tar.gz"
+            }
+        ],
+        "2.47.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "841e721b7075b9c0c978b9f6ce7037e2",
+                    "sha256": "8cd575edf883ebfb3c3c3419297b8f4f722134c1e70daa26e2dd771542f7f6b2"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.47.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "841e721b7075b9c0c978b9f6ce7037e2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2576704,
+                "upload_time": "2015-09-15T16:58:35",
+                "url": "https://files.pythonhosted.org/packages/8c/23/8356a4c4b6512fd45d566c10563887f29d5a32478c375cd7f84630beacd8/selenium-2.47.2.tar.gz"
+            }
+        ],
+        "2.47.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bdf508d73acfacebed40df1d1ef7f43e",
+                    "sha256": "412817c661f5261b77e31bff25744de0cf930cd2fa22fd5d6c4eb7731bf7b02f"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.47.3-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "bdf508d73acfacebed40df1d1ef7f43e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 2643760,
+                "upload_time": "2015-09-15T19:27:26",
+                "url": "https://files.pythonhosted.org/packages/bd/60/10c7026f67fffc82b84265c51950bb2a33f736ad3ed9bb971b6e8f11b1d3/selenium-2.47.3-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9410299a1f3225c8a44b66faa8f3f733",
+                    "sha256": "74bde8f310287bbb5c404714379be1c80e2a033021cca018e50cd77c0993dc7f"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.47.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9410299a1f3225c8a44b66faa8f3f733",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2576294,
+                "upload_time": "2015-09-15T18:55:07",
+                "url": "https://files.pythonhosted.org/packages/a6/15/09903ed94a75d0183b18e5e256aad4d505798c2bb642e947bca61f9f5349/selenium-2.47.3.tar.gz"
+            }
+        ],
+        "2.48.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c49520275f930b796bcc034d3340eee6",
+                    "sha256": "30b97338c0d9f1e60e72ecee0579b0f0845d55025342c3d5ccb224fb8a07b787"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.48.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c49520275f930b796bcc034d3340eee6",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 872401,
+                "upload_time": "2015-10-07T15:55:20",
+                "url": "https://files.pythonhosted.org/packages/cc/21/59ee8189b8597bf3f6f83b650d6f55c802347dc6507361fe42b9c90cafa8/selenium-2.48.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1e0635b427151d86457170825b96cf8",
+                    "sha256": "d5dca746955315dc83ec789acff1f298b8517732cf23a24809e4e5939eb919d8"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.48.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d1e0635b427151d86457170825b96cf8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 805110,
+                "upload_time": "2015-10-07T15:54:21",
+                "url": "https://files.pythonhosted.org/packages/d1/46/16760572785e62262da64b2624acf3b51e50a1581b14aea17aa61e145309/selenium-2.48.0.tar.gz"
+            }
+        ],
+        "2.49.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83c0795c48659581d6dcddf97e84d59b",
+                    "sha256": "6abce6e15d92fa5fb563491324b1e0260c256e03490f92868adee22cb99d9176"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.49.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "83c0795c48659581d6dcddf97e84d59b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 874081,
+                "upload_time": "2016-01-13T18:35:33",
+                "url": "https://files.pythonhosted.org/packages/2c/58/b9bdf4ff778a8c1b1c8cb7217b7f93165ae41c029cff0ca795f9be8a80cd/selenium-2.49.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1159b53312109b75fd9cd896c379a63",
+                    "sha256": "b94fc480797ff30d09ba39a93b54f5ee00a1255cfee05a4448d3126130993ff9"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.49.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b1159b53312109b75fd9cd896c379a63",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 805927,
+                "upload_time": "2016-01-13T18:35:02",
+                "url": "https://files.pythonhosted.org/packages/60/ee/c50f99aeb3cbcdf3c1127d7f302aceee0b3df8935e79ad1ee1d0c24b3b70/selenium-2.49.0.tar.gz"
+            }
+        ],
+        "2.49.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "23a50d484dc109159688b92b7a4d282f",
+                    "sha256": "ae3c40f97f19158edbfbc9744a0ee59681f26b0a14ba4241403e985b7317cedf"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.49.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "23a50d484dc109159688b92b7a4d282f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 874201,
+                "upload_time": "2016-01-18T22:23:07",
+                "url": "https://files.pythonhosted.org/packages/10/6c/e3021db70e5dddbde1eccc8df70b96fecc2ebbf1ca7a7531359d6de5e11b/selenium-2.49.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f06300278c2fdaca491f1d7dcbb935d",
+                    "sha256": "5fcda19a6d546122bc868a5d36c8e3a40e2593c14b8a3123e5a911b0281fad47"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.49.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0f06300278c2fdaca491f1d7dcbb935d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 806215,
+                "upload_time": "2016-01-18T22:22:43",
+                "url": "https://files.pythonhosted.org/packages/49/ee/ce4d0dc915863f147a8a338018b7ec15d42d838f112eef088dbd0bbc25c4/selenium-2.49.1.tar.gz"
+            }
+        ],
+        "2.49.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ba1cd8fae32be0cb3daff2ec6554e4e",
+                    "sha256": "98ebbf9c54506d7e3742f04762cad43a66a87ac5ff05e18eb5488be9d274fc13"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.49.2-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4ba1cd8fae32be0cb3daff2ec6554e4e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 874238,
+                "upload_time": "2016-01-19T10:08:07",
+                "url": "https://files.pythonhosted.org/packages/73/ba/3ffa999193703350fe3880892e61fcc646921e90c7b484f50e5b20d0fd55/selenium-2.49.2-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17cfe7c6adb2cad1f64a61cf753f0738",
+                    "sha256": "3bb230b0de34ae26a93b1a84e5922cddc761f6c601fdd7011616884654e4dab1"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.49.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "17cfe7c6adb2cad1f64a61cf753f0738",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 806270,
+                "upload_time": "2016-01-19T10:07:47",
+                "url": "https://files.pythonhosted.org/packages/c5/a5/33efe0515deca1fbf7a0f404040388a1400c25dd1ba7fa24475100d9b238/selenium-2.49.2.tar.gz"
+            }
+        ],
+        "2.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5472b4a8e127ecb48230343599ad9e6c",
+                    "sha256": "c2d42834e791cb76c24a3d58b2319148b605ec77e63ace2731372359b0a67066"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5472b4a8e127ecb48230343599ad9e6c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2410360,
+                "upload_time": "2011-08-23T22:20:07",
+                "url": "https://files.pythonhosted.org/packages/21/0f/dbc8580df0eb4b2ea451f1901573ae09629e3135dacb70e504b950ec0cad/selenium-2.5.0.tar.gz"
+            }
+        ],
+        "2.50.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e008769b6d071b7c1ff01b20da31706a",
+                    "sha256": "f2a878de3a867ae47f166e5c1b16d77d41e76630789b4bc6232703def7719d57"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.50.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e008769b6d071b7c1ff01b20da31706a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 876653,
+                "upload_time": "2016-01-27T22:34:00",
+                "url": "https://files.pythonhosted.org/packages/aa/af/98dedce91455f940c04005f8fea6fa9f717656f5167ba926e52a473e4609/selenium-2.50.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a4acfa754db6cf4dd325921fc2105fd4",
+                    "sha256": "efd9166665df44fd2a1174641ccae9171172f93558c7a631cd4ee82d5448ad02"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.50.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a4acfa754db6cf4dd325921fc2105fd4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 808886,
+                "upload_time": "2016-01-27T22:33:38",
+                "url": "https://files.pythonhosted.org/packages/8c/13/e8491f01cc676d0e071bbcb7694d1cc539b081450caba09259841727c787/selenium-2.50.0.tar.gz"
+            }
+        ],
+        "2.50.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b53a89a427d996a4c65a802cf9cc381d",
+                    "sha256": "0eabd34bdb914d9580ae293c69bb2c10c6dcff20b77169914d87a844068d884b"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.50.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b53a89a427d996a4c65a802cf9cc381d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 876891,
+                "upload_time": "2016-02-01T14:10:51",
+                "url": "https://files.pythonhosted.org/packages/18/f4/ebd33b8611f763c80449173fa770fc7fbb2898b70efad0cda9d08a22e745/selenium-2.50.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c2dc97dab1bf499a57a5b665814c2e75",
+                    "sha256": "1bd6ade474eebc7132dde2d44ab0df24ff299eb07958f49331602a9b6684330d"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.50.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c2dc97dab1bf499a57a5b665814c2e75",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 809232,
+                "upload_time": "2016-02-01T14:10:30",
+                "url": "https://files.pythonhosted.org/packages/51/3a/c3ae960a6df754cca1d052293974e65d29fbd8eabfbda48835efec709f60/selenium-2.50.1.tar.gz"
+            }
+        ],
+        "2.51.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1b04ab2b891de9e843ddd2c49477b678",
+                    "sha256": "3df28dbc0cd83ff2fb7245697b14355f6881d82b01344b4c945d4d2f956577a9"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.51.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1b04ab2b891de9e843ddd2c49477b678",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 808818,
+                "upload_time": "2016-02-05T20:39:47",
+                "url": "https://files.pythonhosted.org/packages/44/d1/fa0b62eee493e582c25b0848059575f8b986c96e20688eea98382882cc42/selenium-2.51.0.tar.gz"
+            }
+        ],
+        "2.51.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "38f318a0e235ff94de5cec4ef5382671",
+                    "sha256": "05671887f59206abc04d16496c0a3d92ee08497abfc8328a6811eab326fd61a8"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.51.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "38f318a0e235ff94de5cec4ef5382671",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 809217,
+                "upload_time": "2016-02-05T21:24:49",
+                "url": "https://files.pythonhosted.org/packages/d4/73/f289d348e83d4aba745b77b7ff7631c35314683c3e125c8508fe7314300a/selenium-2.51.1.tar.gz"
+            }
+        ],
+        "2.52.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "671884a102b7c9653c5b19520cd9d516",
+                    "sha256": "820550a740ca1f746c399a0101986c0e6f94fbfe3c6f976e3f694db452cbe124"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.52.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "671884a102b7c9653c5b19520cd9d516",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 809661,
+                "upload_time": "2016-02-11T23:22:53",
+                "url": "https://files.pythonhosted.org/packages/06/fb/a2f0d81f6b82d7d52f63d2c540a07cfe732a3eb1bd3eab5b31d945088587/selenium-2.52.0.tar.gz"
+            }
+        ],
+        "2.53.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "96c59bf1af1f536bc247fccca0c2661b",
+                    "sha256": "db28d065c57511dfb92bff89192ee915a7de649c3f8a9375ce8bbf5522e7c1c2"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "96c59bf1af1f536bc247fccca0c2661b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 884452,
+                "upload_time": "2016-03-15T21:01:19",
+                "url": "https://files.pythonhosted.org/packages/74/ba/9ce98994d7ebf1fc7040b41ee036cb1d1031fc34bfd4ff557171e9d8ffc6/selenium-2.53.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "89b76bc55e9c8f153e729b791f403c61",
+                    "sha256": "579569ba3492cd102e7086ccbdb151af87b48b25ad2702346a9d2ace8615f4e1"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "89b76bc55e9c8f153e729b791f403c61",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 815856,
+                "upload_time": "2016-03-15T21:00:58",
+                "url": "https://files.pythonhosted.org/packages/c6/3c/b07ce83ed5a62b2eb8dd4c48f3f293197f70d63e537be14ec5d2bd328cc9/selenium-2.53.0.tar.gz"
+            }
+        ],
+        "2.53.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9e35dd81525f5719a2bdba81651813a",
+                    "sha256": "b1af142650ed7025f906349ae0d7ed1f1a1e635e6ce7ac67e2b2f854f9f8fdc1"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d9e35dd81525f5719a2bdba81651813a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 884489,
+                "upload_time": "2016-03-16T18:23:28",
+                "url": "https://files.pythonhosted.org/packages/07/6e/abd1c2592ba71b09990b6851a7b13590331c6d8322410d801d01f79e9382/selenium-2.53.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8d8b532348a5b7c6717593cae11a656b",
+                    "sha256": "53929418a41295b526fbb68e43bc32fe93c3ef99c030b9e705caf1de486440de"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8d8b532348a5b7c6717593cae11a656b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 815928,
+                "upload_time": "2016-03-16T18:23:07",
+                "url": "https://files.pythonhosted.org/packages/d0/36/6dd45e3a73326a1a0740a16486987494c18c931b35a3dbed7b292fdf23ca/selenium-2.53.1.tar.gz"
+            }
+        ],
+        "2.53.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "81ce6cbf3ed030bdaf921fae58024a4f",
+                    "sha256": "fa8333cf3013497e60d87ba68cae65ead8e7fa208be88ab9c561556103f540ef"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "81ce6cbf3ed030bdaf921fae58024a4f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 884372,
+                "upload_time": "2016-04-19T22:11:02",
+                "url": "https://files.pythonhosted.org/packages/1e/27/47f73510c6b80d1ff0829474947537ae9ab8d516cc48c6320b7f3677fa54/selenium-2.53.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "602095e5e8a1d9df03a1d5a1abc103ee",
+                    "sha256": "46cbac4ef30bff7a00a5ef1e5438af78c5da9735b1351b12e3392010105e5fe9"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "602095e5e8a1d9df03a1d5a1abc103ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 815879,
+                "upload_time": "2016-04-19T22:10:38",
+                "url": "https://files.pythonhosted.org/packages/c1/f8/0c4e6d36d42fc7a4c0b90ad0e9ac7de9c5561425321b408f0e1cda32029c/selenium-2.53.2.tar.gz"
+            }
+        ],
+        "2.53.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cf7632bb405aa081b89e260a4a327935",
+                    "sha256": "2cb992057dd3dafa80510bbcd8a20a761366d625109f7769bb7ebe1ed3c94e69"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cf7632bb405aa081b89e260a4a327935",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 885057,
+                "upload_time": "2016-06-08T11:48:19",
+                "url": "https://files.pythonhosted.org/packages/c9/98/bd9a74c47b69475222ff9dd46aa353c90856499c2af3013de7492e82e94b/selenium-2.53.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1428e1d75b08870d5e48c6fafd04ab39",
+                    "sha256": "e5ba6b9b5d91275c265b459e78214eccd98fdb23705e21f96a10a8fa898d722c"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1428e1d75b08870d5e48c6fafd04ab39",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 816754,
+                "upload_time": "2016-06-08T11:47:57",
+                "url": "https://files.pythonhosted.org/packages/53/3c/f515867475b5d333dbf58e4b5fb79fe8d3bd9a89ebd17136d6b4afde0df9/selenium-2.53.3.tar.gz"
+            }
+        ],
+        "2.53.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "450e3a6a5c8636027caa03208c504c2c",
+                    "sha256": "6f4befc2179c9087f286acc640f8595c2d9047b218d66684cd0b6d8d94d1214c"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "450e3a6a5c8636027caa03208c504c2c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 1091532,
+                "upload_time": "2016-06-08T21:51:07",
+                "url": "https://files.pythonhosted.org/packages/31/55/98b2a3091bb5dedff7ab22651af033be00173df5568a55bd109492cc270c/selenium-2.53.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f796b0fe9884758e550a33314b477047",
+                    "sha256": "044d98e2ad7ac85bed945ac5569eee03251d12f3fcdfdf1316652ee266f275ff"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f796b0fe9884758e550a33314b477047",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 816667,
+                "upload_time": "2016-06-08T21:50:59",
+                "url": "https://files.pythonhosted.org/packages/78/38/ecb7e3e184439c48dde9cc1b5955048e4d952b8c978aa4d414516c3c74e5/selenium-2.53.4.tar.gz"
+            }
+        ],
+        "2.53.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d8f65c861a14ad315e6d71a79f9edc8d",
+                    "sha256": "2db746d0a2fea378fbc7950da6bd8073df1a31fdcedf1b01b579849d43efc574"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d8f65c861a14ad315e6d71a79f9edc8d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 884864,
+                "upload_time": "2016-06-10T09:56:38",
+                "url": "https://files.pythonhosted.org/packages/24/1d/9e7cba7fd1f92d9aaf4fc83fd7d27b2a92dadfd4400dca443c79764100dc/selenium-2.53.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c7e40c360d73e267234e166f252f574c",
+                    "sha256": "783e0064a34a026b924d0a1679d5b2ec633462e5091dd71ebd6e6d078674c597"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c7e40c360d73e267234e166f252f574c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 816761,
+                "upload_time": "2016-06-10T09:56:17",
+                "url": "https://files.pythonhosted.org/packages/41/ff/d77fd45739a2290da74ba314182fcfbe98b4e617e89b973bc5c667444334/selenium-2.53.5.tar.gz"
+            }
+        ],
+        "2.53.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25f7c462bc6fa8824c07690d6db3b830",
+                    "sha256": "5071f43daa2e698d60d5633ab0a6630cc68a852b360be99144f1c4c1ace2746c"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "25f7c462bc6fa8824c07690d6db3b830",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 884576,
+                "upload_time": "2016-06-28T20:34:05",
+                "url": "https://files.pythonhosted.org/packages/3f/f8/e46684764161fee7b7d2e0fd9b82d56915438b68e498181dc45183643c82/selenium-2.53.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "66f2f89e46377247fb9df010568c5d1d",
+                    "sha256": "f507181f13768d73b98dd9647a466ea5758ef5c7f07b62a285d2bd8de9b27016"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.53.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "66f2f89e46377247fb9df010568c5d1d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 816593,
+                "upload_time": "2016-06-28T20:33:44",
+                "url": "https://files.pythonhosted.org/packages/c9/d4/4c032f93dd8d198d51d06ce41005d02ae2e806d4e5b550255ddbeee4143b/selenium-2.53.6.tar.gz"
+            }
+        ],
+        "2.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2239f5a1e97a46d408217301c11535d8",
+                    "sha256": "8d070239844e8986a6085afffa29e5aad3f4470f0ea18b2f3232b11ee22cf19c"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2239f5a1e97a46d408217301c11535d8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2421222,
+                "upload_time": "2011-09-13T16:54:07",
+                "url": "https://files.pythonhosted.org/packages/3d/16/88787503bdd1bf19d7d75ac8d085281522b8a62595fa0b4a0564a5538fcb/selenium-2.6.0.tar.gz"
+            }
+        ],
+        "2.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "80027b9412c28ffccbf62b9fb7706cac",
+                    "sha256": "15f66ca86bcbbc36bc5057d97f54471d3996c710421efdf3b380ee022c787214"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "80027b9412c28ffccbf62b9fb7706cac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2511086,
+                "upload_time": "2011-09-26T17:44:12",
+                "url": "https://files.pythonhosted.org/packages/c4/0d/ffc53e7846897b26818e69cee2ced4d5f31a6670e1ee7c6c7d5ae298468c/selenium-2.7.0.tar.gz"
+            }
+        ],
+        "2.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7dabfb66d38f1a1a507805f51bc5ba5d",
+                    "sha256": "fc266d7c6f767086c8a3135494dbaeb81e9a9096d5c40fcdd9c4f3cfad70a421"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7dabfb66d38f1a1a507805f51bc5ba5d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2905155,
+                "upload_time": "2011-10-06T15:43:29",
+                "url": "https://files.pythonhosted.org/packages/8f/28/f35b4e7e8e8a4c17ab053e8a790f970f1b66930ebb768a5815d7609c7875/selenium-2.8.0.tar.gz"
+            }
+        ],
+        "2.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3983eae904eb4cca5e351ba585132d52",
+                    "sha256": "cd72d940fbf616e37976eb0c0458624290c20f792f6e8c06ae07ded7199e2a5e"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3983eae904eb4cca5e351ba585132d52",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2905153,
+                "upload_time": "2011-10-06T16:00:53",
+                "url": "https://files.pythonhosted.org/packages/26/62/1021b9dcca6a6f57b226f745a369d8bf5824e6f44950f5994dc5f4a7e021/selenium-2.8.1.tar.gz"
+            }
+        ],
+        "2.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1362d3c602bf77c67b66a99302ff1b9",
+                    "sha256": "d3dbe78a2ece795052eb93414e61a09f58a6393773efcf6f7429c8dc25b19610"
+                },
+                "downloads": -1,
+                "filename": "selenium-2.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d1362d3c602bf77c67b66a99302ff1b9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 2916433,
+                "upload_time": "2011-10-21T00:04:57",
+                "url": "https://files.pythonhosted.org/packages/46/da/817c5b8ba1f6d2a4a0cb4cf74354e15f4cd80ce06ef871de86ba28196ef0/selenium-2.9.0.tar.gz"
+            }
+        ],
+        "3.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54cf469f4f3c27079492ab501206649f",
+                    "sha256": "afe9e7b7fb61c77559bbde785f0a9b79c000a325712c96d3eefd32ab7291b168"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "54cf469f4f3c27079492ab501206649f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 913692,
+                "upload_time": "2016-10-13T20:37:12",
+                "url": "https://files.pythonhosted.org/packages/68/a4/2c4f71562d3da860c4945831065915778a96742b1a11b70a93b73112387c/selenium-3.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "92178996aef4ad6fae4308be6262ad1f",
+                    "sha256": "6ae7f4e728d178e20a94e1c72ad9f68a013cec56494814fa3e519783a17208b7"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "92178996aef4ad6fae4308be6262ad1f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 825218,
+                "upload_time": "2016-10-13T20:36:53",
+                "url": "https://files.pythonhosted.org/packages/1c/06/60912cecc2204c9256ec0ce46f6110d26f537f6c478a39783f2666b5f9d9/selenium-3.0.0.tar.gz"
+            }
+        ],
+        "3.0.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a8f042c197af888d692e3de907bcc8aa",
+                    "sha256": "7749d362d9bd1f82ac761bfd725273b5f349888e2da2101abc7e06b5e42ddef0"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.0b1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a8f042c197af888d692e3de907bcc8aa",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 865408,
+                "upload_time": "2016-07-29T20:53:49",
+                "url": "https://files.pythonhosted.org/packages/58/08/22e244e428f2b1f96afe24d0cebcfa6f183518cf84b0b498360d3bfd2304/selenium-3.0.0b1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c100f011531173af53b51aa927a1b92",
+                    "sha256": "e8ffa42c26f91743588c09145f09e5f7d0b722b87cc50cbcf5a6e43d52419b11"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3c100f011531173af53b51aa927a1b92",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 797387,
+                "upload_time": "2016-07-29T20:53:30",
+                "url": "https://files.pythonhosted.org/packages/b3/38/2c01becf47caec6fd1d0ecc15870fd3eb7accaaa4b1bc8fcbca117afda01/selenium-3.0.0b1.tar.gz"
+            }
+        ],
+        "3.0.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c9499da466f55e191c65402e9d67c955",
+                    "sha256": "ce62af732618579ba847b8e15238febaa21207c818a718c19d89d37e75d2b38f"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.0b2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c9499da466f55e191c65402e9d67c955",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 865420,
+                "upload_time": "2016-08-02T23:15:08",
+                "url": "https://files.pythonhosted.org/packages/c2/e9/b6f4de89d68f062127a51226e2244c952a2f5dc8e9fa2f2ccc55c29421f5/selenium-3.0.0b2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b67ea8885cd1039845dadd4b742f1ba2",
+                    "sha256": "a950489c236313fb79089cb82fb83b5e8a934a6904f02b850c802b2c266b5167"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b67ea8885cd1039845dadd4b742f1ba2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 797415,
+                "upload_time": "2016-08-02T23:14:42",
+                "url": "https://files.pythonhosted.org/packages/5d/9f/6bae7490ad5691bf6118c077a986b9eb2c31b93fe230708a286ee97f3b94/selenium-3.0.0b2.tar.gz"
+            }
+        ],
+        "3.0.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9dc9a046509586d6c5eecd91870aeeee",
+                    "sha256": "2253ca6b273be90dad5a1e1daa6453ba526b03b9c25eb9fafe8c5e6c777c5342"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.0b3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9dc9a046509586d6c5eecd91870aeeee",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 912238,
+                "upload_time": "2016-09-14T21:12:05",
+                "url": "https://files.pythonhosted.org/packages/74/a6/ffcba3e6cc542b35414fb5a1c9045678e8479df4428e9774918f67473928/selenium-3.0.0b3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "794adea4d20d6dc66d48891c2287ade0",
+                    "sha256": "77da1af83660ada4f4a3e6e18026337fb14f8e0e84f14fbbecbef916afca00c4"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.0b3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "794adea4d20d6dc66d48891c2287ade0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 823587,
+                "upload_time": "2016-09-14T21:11:47",
+                "url": "https://files.pythonhosted.org/packages/54/4e/5efe0adb5210c2d96c060287d70274d5aa1987c052a0e56e4d8fe31207ad/selenium-3.0.0b3.tar.gz"
+            }
+        ],
+        "3.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "08b3f27ad1210d40b56a6d45e7259a78",
+                    "sha256": "a9e4f1398302e771ada4a0a268650815b43b354baf2de4e7e5023fb5f9675e50"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "08b3f27ad1210d40b56a6d45e7259a78",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 913379,
+                "upload_time": "2016-10-14T17:10:35",
+                "url": "https://files.pythonhosted.org/packages/2f/ff/4fa04b4785bae16c04e431a820e2178eb69febc2087b410366da4ee4539d/selenium-3.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed5da4a35e1e643a53386d3e8f5960af",
+                    "sha256": "0705803349964c7a2a144f1796a5d29905fe2a09931b2bb945ee0cb4deab75d7"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ed5da4a35e1e643a53386d3e8f5960af",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 825112,
+                "upload_time": "2016-10-14T17:10:39",
+                "url": "https://files.pythonhosted.org/packages/3a/a3/e4ab60a0229a85f468a36367bc0672a4bca2720f24391eda33704a5f0ad5/selenium-3.0.1.tar.gz"
+            }
+        ],
+        "3.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12704119cd1466064d5cc67a8893f1e4",
+                    "sha256": "33be5a03d87bf0e6c7a57d3f9bba5314cc66ce4acd44f003465386af2f5a7b4f"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "12704119cd1466064d5cc67a8893f1e4",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 915216,
+                "upload_time": "2016-11-28T10:52:55",
+                "url": "https://files.pythonhosted.org/packages/d2/20/86e729322e3cb42e1b134900e4e4735c83380b08fb4decaa925294f09bf0/selenium-3.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0440b3156f26678dfc904cae5aa594ab",
+                    "sha256": "85daad4d09be86bddd4f45579986ac316c1909c3b4653ed471ea4519eb413c8f"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0440b3156f26678dfc904cae5aa594ab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 830314,
+                "upload_time": "2016-11-28T10:52:50",
+                "url": "https://files.pythonhosted.org/packages/0c/42/20c235e604bf736bc970c1275a78c4ea28c6453a0934002f95df9c49dad0/selenium-3.0.2.tar.gz"
+            }
+        ],
+        "3.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4508370dd2e0c7642e779c34e315811c",
+                    "sha256": "60b45c045e9e658ac033ccdafb36000f39088b94336e078c89e8df18d0ef080e"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.10.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4508370dd2e0c7642e779c34e315811c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 943023,
+                "upload_time": "2018-03-05T10:45:04",
+                "url": "https://files.pythonhosted.org/packages/f5/e6/38e291a19e20d835ddbf59ceb58a9d9cb0d4387b8417b1af0ceb754b74d9/selenium-3.10.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d93cde324ac34c2030c01b54c9fb93ff",
+                    "sha256": "6a76deef7d5ea9749e3348b6c1f39df26dbffb9f0ce19ae37bcef02ce9032e41"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d93cde324ac34c2030c01b54c9fb93ff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 846969,
+                "upload_time": "2018-03-05T10:44:41",
+                "url": "https://files.pythonhosted.org/packages/9a/d8/1e4d3e8393883e260ffc47fc475e322e8fbecf58fe6fcbd20ea52f915cd5/selenium-3.10.0.tar.gz"
+            }
+        ],
+        "3.11.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4644b52a12a4acf352586794ef792bc9",
+                    "sha256": "2b6f018e55f50e9c67a67caec2f73f806f72c162fb38cf3ea79e0a8f6506bf56"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.11.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4644b52a12a4acf352586794ef792bc9",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 943204,
+                "upload_time": "2018-03-12T11:52:42",
+                "url": "https://files.pythonhosted.org/packages/5e/1f/6c2204b9ae14eddab615c5e2ee4956c65ed533e0a9986c23eabd801ae849/selenium-3.11.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c565de302e12ffaf7e59c1e47b45bbef",
+                    "sha256": "5841fb30c3965866220c34d16de8e3d091e2833fcac385160a63db0c3522a297"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.11.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c565de302e12ffaf7e59c1e47b45bbef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 847231,
+                "upload_time": "2018-03-12T11:52:26",
+                "url": "https://files.pythonhosted.org/packages/d4/28/8124d32415bd3d67fabea52480395427576b582771283e89ce10a56d9e5b/selenium-3.11.0.tar.gz"
+            }
+        ],
+        "3.12.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e014b371e631b30df58dab3dd5cfc492",
+                    "sha256": "1372101ad23798462038481f92ba1c7fab8385c788b05da6b44318f10ea52422"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.12.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e014b371e631b30df58dab3dd5cfc492",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 946193,
+                "upload_time": "2018-05-08T14:38:15",
+                "url": "https://files.pythonhosted.org/packages/57/bc/17164fd471ccdf0df3a992c710c0c3c47743462ff41ab72a02c6ede96e90/selenium-3.12.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f0b47ca1b331e2ff9c31122d868be23e",
+                    "sha256": "b8a2630fd858636c894960726ca3c94d8277e516ea3a9d81614fb819a5844764"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.12.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f0b47ca1b331e2ff9c31122d868be23e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 848738,
+                "upload_time": "2018-05-08T14:37:59",
+                "url": "https://files.pythonhosted.org/packages/12/40/c7a59c20848895dd9bd73d94a7b6f12f7cdc4fef3a5e6c86baf8d251d669/selenium-3.12.0.tar.gz"
+            }
+        ],
+        "3.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b20351c14f7ff0a73999bc63b1ab5e97",
+                    "sha256": "acc1b6867ba1e6fc75c709dcfccc1447b29e961fcaea3bba675e9ad719e8b905"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b20351c14f7ff0a73999bc63b1ab5e97",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 925093,
+                "upload_time": "2017-03-08T12:03:30",
+                "url": "https://files.pythonhosted.org/packages/63/48/e0c1f21bca77d7e1c9c8878f905294bda8dc0eb45ac39abf193c3063c641/selenium-3.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a940252deb42a62c54accb3ad6a35c8",
+                    "sha256": "43ec925d704928f7a34cb8615354a55a6666b952db2041112473f41e815fb6ab"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0a940252deb42a62c54accb3ad6a35c8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 830286,
+                "upload_time": "2017-03-08T12:02:56",
+                "url": "https://files.pythonhosted.org/packages/6e/b6/a0881686c3e2eb09d7e5ba79b197325a88d786317a4e742dc6a9f5029c7a/selenium-3.3.0.tar.gz"
+            }
+        ],
+        "3.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee834757b54e4cc73fd885d6248dea6e",
+                    "sha256": "1ca1c6afef1fd66e8094c495224950d5d56279d5b22227e5c5b9c65b32206161"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.3.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ee834757b54e4cc73fd885d6248dea6e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 930585,
+                "upload_time": "2017-03-13T11:14:34",
+                "url": "https://files.pythonhosted.org/packages/c9/7f/5741fd1360176c12732e501d697c093d5d2702f3e35b6c3e23ff9c530a57/selenium-3.3.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec23a8ef649a27bdaddacfadbf9d0b44",
+                    "sha256": "2cf187c6876d8c633df70f8242dc081c53dfaba128f499a0e4fb2186a38a5c9f"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ec23a8ef649a27bdaddacfadbf9d0b44",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 836332,
+                "upload_time": "2017-03-13T11:14:10",
+                "url": "https://files.pythonhosted.org/packages/d4/0c/8429b64f9035b8db9a30c39a90fa07a460ebc4bd3639b868a1081b80a868/selenium-3.3.1.tar.gz"
+            }
+        ],
+        "3.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17c8dc42dc8476dbae22d3647d601599",
+                    "sha256": "aa9770daebc7daca080c5250ba95d1edeb148ecaf13f4baf3c2dc726ddef4e14"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.3.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "17c8dc42dc8476dbae22d3647d601599",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 931662,
+                "upload_time": "2017-04-04T13:24:12",
+                "url": "https://files.pythonhosted.org/packages/2d/dc/fa361dee8474212e208d5c6c518fb1d202886ade3a16cef7ef128b05204d/selenium-3.3.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eb84b0837b99e68fc6c18214ebef9791",
+                    "sha256": "739c0db935417e7fbbb2899c5e3312e1b0311f7be2c6d387c989ee188aa4ebad"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "eb84b0837b99e68fc6c18214ebef9791",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 837846,
+                "upload_time": "2017-04-04T13:23:46",
+                "url": "https://files.pythonhosted.org/packages/e2/5b/dbd3b41daf733cb58073109677079b4a5cc332727d947024e2af09c3e666/selenium-3.3.2.tar.gz"
+            }
+        ],
+        "3.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "723f1c9a74233a6683d5856f8b4661e4",
+                    "sha256": "5e4d78103ac13288a43fc3e750e51e09db6506323c4d1dc5a9cff6fde9d24819"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.3.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "723f1c9a74233a6683d5856f8b4661e4",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 931664,
+                "upload_time": "2017-04-04T19:28:42",
+                "url": "https://files.pythonhosted.org/packages/b7/a3/63a9a9564de5ac80d939259969e7f00a4fef47d5e4aa57deb5da03dee379/selenium-3.3.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2612e76ff91204df455438ee1fac14b4",
+                    "sha256": "0e3da774f5f3abf4b756b240196b005ff112fa8df653359370c7b078cf197a4d"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2612e76ff91204df455438ee1fac14b4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 837886,
+                "upload_time": "2017-04-04T19:28:17",
+                "url": "https://files.pythonhosted.org/packages/0c/2d/6c51aceb5ad1f9fa75edc7dd47062af19ae79fe49b70ad0089060fb7ac69/selenium-3.3.3.tar.gz"
+            }
+        ],
+        "3.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f023e01a96b006df9c885dfe043ca16",
+                    "sha256": "6a5f3564503e881bc889e4ad4454fb403353a73dfbdc929530f8598cd1b59e6a"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0f023e01a96b006df9c885dfe043ca16",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 931830,
+                "upload_time": "2017-04-21T20:26:15",
+                "url": "https://files.pythonhosted.org/packages/f2/90/ac985492f2c392340ccc9d96eb6f6af3a9d35ef89f751eb772961aee66d9/selenium-3.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f869785a289bd42df1c4d1f65f88df8",
+                    "sha256": "49d904b59016c5defa7818433b2477b769c53118be2b1a4152a0c5b5f65dffb4"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f869785a289bd42df1c4d1f65f88df8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 838541,
+                "upload_time": "2017-04-21T20:25:49",
+                "url": "https://files.pythonhosted.org/packages/e8/42/3cbe4cbde83a0bf6470c456301f2140d0b315e720660564919766e778e58/selenium-3.4.0.tar.gz"
+            }
+        ],
+        "3.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6db18c15f666a66e890352484d9c3f41",
+                    "sha256": "b873704984b3cc8c1be8c62e1729d77ba823de8f780980392237fe2e6b403619"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.4.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6db18c15f666a66e890352484d9c3f41",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 931870,
+                "upload_time": "2017-04-27T10:54:12",
+                "url": "https://files.pythonhosted.org/packages/eb/eb/c16702c88f3c1cc79f9c19d82ef6ba509046618f02d407a6ed68bdd6ed34/selenium-3.4.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "70ba2452cd12cbdf1ce41202f430df51",
+                    "sha256": "ea10cb739d3d2c27dfdd5ed60cdc28a36e6bafb7b6021ac7acd01dfc4aef005b"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "70ba2452cd12cbdf1ce41202f430df51",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 838624,
+                "upload_time": "2017-04-27T10:53:56",
+                "url": "https://files.pythonhosted.org/packages/f1/68/4d0990587b9495e2e15d6859a0f42faf90a3a41f12926bfde2e7647ffce2/selenium-3.4.1.tar.gz"
+            }
+        ],
+        "3.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bd26bef5e2805d51757bff70605aefed",
+                    "sha256": "046439d9370105fdb0dc99caee7dbf3290a22b8cf42d182b064abdaed030bd30"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.4.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "bd26bef5e2805d51757bff70605aefed",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 931872,
+                "upload_time": "2017-05-18T12:56:22",
+                "url": "https://files.pythonhosted.org/packages/dd/2a/4d8022fec8fb7728b6c25a499e68906adfec1927612a567fde45ba7cacb3/selenium-3.4.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b30ae75463e0e951c39ebcb2ebbd573",
+                    "sha256": "2befcd8a18c4a88fe7af1f848277d83aa89682516fb2ac95942cb13ea6eaad02"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5b30ae75463e0e951c39ebcb2ebbd573",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 838714,
+                "upload_time": "2017-05-18T12:56:07",
+                "url": "https://files.pythonhosted.org/packages/47/63/611503113c00cb3ba0ab310567b4f7d7c2a3178e7ebc07f66ae4b997d56a/selenium-3.4.2.tar.gz"
+            }
+        ],
+        "3.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd4e23aae252aca03f23e0ad67bb2e2b",
+                    "sha256": "9e4885e7c72e20126b22ce5fc5981bbedd80bff99474c0757f62d5e68e1f17ac"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.4.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "dd4e23aae252aca03f23e0ad67bb2e2b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 931865,
+                "upload_time": "2017-05-30T20:33:57",
+                "url": "https://files.pythonhosted.org/packages/51/8b/21edaaee627c8e1c37b6c281eff2240b1eba0cf472c08c03b1920c1227a4/selenium-3.4.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "da50afa759fc6fe661db33a2e7d76872",
+                    "sha256": "0c09f437f4f6754c0543d79bae4e58b8fd40b3d7cd10889eca66dd1c7af24c63"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "da50afa759fc6fe661db33a2e7d76872",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 838781,
+                "upload_time": "2017-05-30T20:33:38",
+                "url": "https://files.pythonhosted.org/packages/a5/af/923433edac3027518f2c956781d9c579a8662828eaad8f127473219aacf1/selenium-3.4.3.tar.gz"
+            }
+        ],
+        "3.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bd121d7ca85732f163f95ef1693ea344",
+                    "sha256": "69b479bdfa1ab2fee86a75086f7d5c6ef93cdad8cb6521cb0596554c6722f3eb"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "bd121d7ca85732f163f95ef1693ea344",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 921501,
+                "upload_time": "2017-08-10T14:29:54",
+                "url": "https://files.pythonhosted.org/packages/42/29/36ca3fc503bebcf9daefe7dbda1a058dcabe4d1f1156fce2153a3dd3fd1c/selenium-3.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "986702fdd0e2aec6a4eda134678b8b3f",
+                    "sha256": "267418f5fde1a4f8c180e5b8f45bd57c6d45b1f7d8fa5ad699a48e9a98fa79a3"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "986702fdd0e2aec6a4eda134678b8b3f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 831117,
+                "upload_time": "2017-08-10T14:29:39",
+                "url": "https://files.pythonhosted.org/packages/ac/d7/1928416439d066c60f26c87a8d1b78a8edd64c7d05a0aa917fa97a8ee02d/selenium-3.5.0.tar.gz"
+            }
+        ],
+        "3.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "11022f864bf7075841486a0b30e173a8",
+                    "sha256": "fb6a2a5d80bf6f1de145d3a92a5d1331755e43aae07cff7b2588aa6e66fa8eaf"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "11022f864bf7075841486a0b30e173a8",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 924635,
+                "upload_time": "2017-09-25T22:41:22",
+                "url": "https://files.pythonhosted.org/packages/48/90/29bcfa7ced2836016a400e8216e5a4166a71923b05d452ee7ee9e8775156/selenium-3.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47ddd3354004a7a1c8822e5415c917e4",
+                    "sha256": "9563021c5cba084041e13c218eb531d9c6920dcfa0ba1024bb5bf2b6c0df1797"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "47ddd3354004a7a1c8822e5415c917e4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 833548,
+                "upload_time": "2017-09-25T22:41:01",
+                "url": "https://files.pythonhosted.org/packages/e1/25/ad1ee3c019e45933c201ae3c8b3c84ab335a64a8172051ace583b7371b35/selenium-3.6.0.tar.gz"
+            }
+        ],
+        "3.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52fc71d16b86204e467002c1930d7b65",
+                    "sha256": "d53964d00170a5f3630f1af26bbe6c952225c4c71a1ec250b95550dde7d93e32"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.7.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "52fc71d16b86204e467002c1930d7b65",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 935759,
+                "upload_time": "2017-11-02T22:18:44",
+                "url": "https://files.pythonhosted.org/packages/d0/b1/1c9d9cc3fd6c1cd802d897d78a9ea5ad01b07c6c0f422b235717b74270ae/selenium-3.7.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5d26470803c93a02909e87240ccc56b",
+                    "sha256": "70be7e090042303564ff48bedef0b34477d463056a2d282c1dbd4c4c180ef8e1"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f5d26470803c93a02909e87240ccc56b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 844257,
+                "upload_time": "2017-11-02T22:18:27",
+                "url": "https://files.pythonhosted.org/packages/bc/37/aea63b9651d5f27c9349895fc72862e2e14ed264e8f5d3eedc602c41254a/selenium-3.7.0.tar.gz"
+            }
+        ],
+        "3.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "02eda5b2e09efb31cefacba95c630c9c",
+                    "sha256": "af448c15b3225056cd406b435cda10bfcee250460a4811e4fd8b21be9f61626c"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.8.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "02eda5b2e09efb31cefacba95c630c9c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 941229,
+                "upload_time": "2017-11-30T11:58:10",
+                "url": "https://files.pythonhosted.org/packages/2c/10/5ed4ece1869781c4420de7983fcb2f1bf6522a5d6f6bd0b634ce057f4984/selenium-3.8.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75cd56d258e61c007aeb21bf28407488",
+                    "sha256": "3af07d7a4b5d523540fa4f32902b9dec15e0379862406aef974729f42411053d"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "75cd56d258e61c007aeb21bf28407488",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 847605,
+                "upload_time": "2017-11-30T11:58:08",
+                "url": "https://files.pythonhosted.org/packages/1a/7d/1e4aadfffc9c0de596839347e29a799c4124987ec6cdb3bcb46fa1970ffa/selenium-3.8.0.tar.gz"
+            }
+        ],
+        "3.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e9fe33248881a1f4377c320417131a8",
+                    "sha256": "5acb9cdbc2d1a7fbb3e16a8ce9246211cc371f0367ad9c6bc2273cca60a6b045"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.8.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8e9fe33248881a1f4377c320417131a8",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 942733,
+                "upload_time": "2018-01-04T19:12:35",
+                "url": "https://files.pythonhosted.org/packages/14/d6/650f5d2e149b83cd24989653efedf47a24cafb72e9d2dd03191a9f52f2f4/selenium-3.8.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7cb125b315cfa9d8d9f9fda3f7295ca5",
+                    "sha256": "9abd2dbd4a5e9b778483ce7e5adf1ea9364fcbc29da488e979213c825a1515d3"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7cb125b315cfa9d8d9f9fda3f7295ca5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 849407,
+                "upload_time": "2018-01-04T19:12:32",
+                "url": "https://files.pythonhosted.org/packages/59/2e/43cc1233703228e6752dc5ddfa59a254c430312c96ea6817419239fac137/selenium-3.8.1.tar.gz"
+            }
+        ],
+        "3.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b8849f36bc4fa040c9be85581147a64",
+                    "sha256": "b0a06afa31a80d7dcb627eafb62776488b20bdaffcd807ac4158fadbc11061f4"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.9.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5b8849f36bc4fa040c9be85581147a64",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 942836,
+                "upload_time": "2018-02-05T20:51:02",
+                "url": "https://files.pythonhosted.org/packages/dc/58/15b95bd4caf968bad482860c41d620e22e3c50c301c75a6121a5e7157bd8/selenium-3.9.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a717bfcc26781c77a597c3fca335ccf",
+                    "sha256": "a34a833d89bcfb463bfba5e5515a9276bb94221787b409f0ad28d2f91903e31d"
+                },
+                "downloads": -1,
+                "filename": "selenium-3.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0a717bfcc26781c77a597c3fca335ccf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 849571,
+                "upload_time": "2018-02-05T20:50:59",
+                "url": "https://files.pythonhosted.org/packages/b4/54/ba7059b254a72fc30f1d8b838eb951003ee6e5ba716bb9b0ce0e4c58e308/selenium-3.9.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "e014b371e631b30df58dab3dd5cfc492",
+                "sha256": "1372101ad23798462038481f92ba1c7fab8385c788b05da6b44318f10ea52422"
+            },
+            "downloads": -1,
+            "filename": "selenium-3.12.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "e014b371e631b30df58dab3dd5cfc492",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.6",
+            "size": 946193,
+            "upload_time": "2018-05-08T14:38:15",
+            "url": "https://files.pythonhosted.org/packages/57/bc/17164fd471ccdf0df3a992c710c0c3c47743462ff41ab72a02c6ede96e90/selenium-3.12.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "f0b47ca1b331e2ff9c31122d868be23e",
+                "sha256": "b8a2630fd858636c894960726ca3c94d8277e516ea3a9d81614fb819a5844764"
+            },
+            "downloads": -1,
+            "filename": "selenium-3.12.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "f0b47ca1b331e2ff9c31122d868be23e",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 848738,
+            "upload_time": "2018-05-08T14:37:59",
+            "url": "https://files.pythonhosted.org/packages/12/40/c7a59c20848895dd9bd73d94a7b6f12f7cdc4fef3a5e6c86baf8d251d669/selenium-3.12.0.tar.gz"
+        }
+    ],
+    "package_name": "selenium"
+}

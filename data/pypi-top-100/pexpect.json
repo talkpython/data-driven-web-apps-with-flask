@@ -1,0 +1,492 @@
+{
+    "info": {
+        "author": "Noah Spurrier; Thomas Kluyver; Jeff Quast",
+        "author_email": "noah@noah.org, thomas@kluyver.me.uk, contact@jeffquast.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "Intended Audience :: System Administrators",
+            "License :: OSI Approved :: ISC License (ISCL)",
+            "Operating System :: MacOS :: MacOS X",
+            "Operating System :: POSIX",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Topic :: Software Development",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Software Development :: Quality Assurance",
+            "Topic :: Software Development :: Testing",
+            "Topic :: System",
+            "Topic :: System :: Archiving :: Packaging",
+            "Topic :: System :: Installation/Setup",
+            "Topic :: System :: Shells",
+            "Topic :: System :: Software Distribution",
+            "Topic :: Terminals"
+        ],
+        "description": "\nPexpect is a pure Python module for spawning child applications; controlling\nthem; and responding to expected patterns in their output. Pexpect works like\nDon Libes' Expect. Pexpect allows your script to spawn a child application and\ncontrol it as if a human were typing commands.\n\nPexpect can be used for automating interactive applications such as ssh, ftp,\npasswd, telnet, etc. It can be used to a automate setup scripts for duplicating\nsoftware package installations on different servers. It can be used for\nautomated software testing. Pexpect is in the spirit of Don Libes' Expect, but\nPexpect is pure Python.\n\nThe main features of Pexpect require the pty module in the Python standard\nlibrary, which is only available on Unix-like systems. Some features\u2014waiting\nfor patterns from file descriptors or subprocesses\u2014are also available on\nWindows.\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://pexpect.readthedocs.io/",
+        "keywords": "",
+        "license": "ISC license",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "pexpect",
+        "package_url": "https://pypi.org/project/pexpect/",
+        "platform": "UNIX",
+        "project_url": "https://pypi.org/project/pexpect/",
+        "release_url": "https://pypi.org/project/pexpect/4.6.0/",
+        "requires_dist": [
+            "ptyprocess (>=0.5)"
+        ],
+        "requires_python": "",
+        "summary": "Pexpect allows easy control of interactive console applications.",
+        "version": "4.6.0"
+    },
+    "last_serial": 3908945,
+    "releases": {
+        "0.97": [],
+        "2.01": [],
+        "2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fe82d69be19ec96d3a6650af947d5665",
+                    "sha256": "43c788f59dcf4bed677fd0b16891787dbf747e210ffedb6e90156fbbbd4d3b7b"
+                },
+                "downloads": -1,
+                "filename": "pexpect-2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fe82d69be19ec96d3a6650af947d5665",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 113251,
+                "upload_time": "2008-08-18T23:31:55",
+                "url": "https://files.pythonhosted.org/packages/fa/e1/c1f8fce7e7d578ae69aff616cabd5e61b6cb734aade2486b2140853d0f26/pexpect-2.4.tar.gz"
+            }
+        ],
+        "3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e9f2afd58dc3c9fa4037eed2b6cca856",
+                    "sha256": "1d6cee0fa5ab212f9ddac9852bab0df5fff11a173ed1bfde9346d5c8aa42d14c"
+                },
+                "downloads": -1,
+                "filename": "pexpect-3.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e9f2afd58dc3c9fa4037eed2b6cca856",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 146662,
+                "upload_time": "2013-11-11T18:42:48",
+                "url": "https://files.pythonhosted.org/packages/30/c7/8363e869de4a8306fbb95b7491798230bf1155c8805b6444dc2834b88d6b/pexpect-3.0.tar.gz"
+            }
+        ],
+        "3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a8e1573062e2e2c203c9a6d213b16e7",
+                    "sha256": "bd0045066718fba98481032303f07565cca6b22b3b7f104efe3e077a55e9ee8d"
+                },
+                "downloads": -1,
+                "filename": "pexpect-3.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5a8e1573062e2e2c203c9a6d213b16e7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 130404,
+                "upload_time": "2014-01-22T19:33:00",
+                "url": "https://files.pythonhosted.org/packages/e3/00/0b40a92d6c091c84c3766cb6348c6482ac0d092b1a413765f7140901c53f/pexpect-3.1.tar.gz"
+            }
+        ],
+        "3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f316a668b03a567387e76e05e20d8a5",
+                    "sha256": "dbc4c9a01c118e198d1b6ca76f31eb7292f212567f253e6b36a880e5168e961f"
+                },
+                "downloads": -1,
+                "filename": "pexpect-3.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3f316a668b03a567387e76e05e20d8a5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 131070,
+                "upload_time": "2014-04-15T01:34:57",
+                "url": "https://files.pythonhosted.org/packages/31/68/1e35464981d578f1985c16f9d3d1f7d8da74e803905ae8014920cf0111ae/pexpect-3.2.tar.gz"
+            }
+        ],
+        "3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0de72541d3f1374b795472fed841dce8",
+                    "sha256": "dfea618d43e83cfff21504f18f98019ba520f330e4142e5185ef7c73527de5ba"
+                },
+                "downloads": -1,
+                "filename": "pexpect-3.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0de72541d3f1374b795472fed841dce8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 132330,
+                "upload_time": "2014-06-26T01:09:54",
+                "url": "https://files.pythonhosted.org/packages/52/97/13924c85a4b7544a4174781360e0530a7fff23e62d76da0e211369dd61f5/pexpect-3.3.tar.gz"
+            }
+        ],
+        "4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "00dcea09c486f03aa7857cbe2b916085",
+                    "sha256": "350147e569b1031700007decfb0d3580e3361b698aff219e6848f7b2fa36cf5b"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "00dcea09c486f03aa7857cbe2b916085",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 143648,
+                "upload_time": "2015-10-05T11:00:27",
+                "url": "https://files.pythonhosted.org/packages/a7/19/10dc0af083fbd483313a977187f56ca6a83815eae40be129ae5956d3a802/pexpect-4.0.tar.gz"
+            }
+        ],
+        "4.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "056df81e6ca7081f1015b4b147b977b7",
+                    "sha256": "232795ebcaaf2e120396dbbaa3a129eda51757eeaae1911558f4ef8ee414fc6c"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "056df81e6ca7081f1015b4b147b977b7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 143657,
+                "upload_time": "2015-10-06T14:36:55",
+                "url": "https://files.pythonhosted.org/packages/88/50/3aa199018e996bcf963a81160083fd30557c3d4dab72eb1e9cce3afb69e7/pexpect-4.0.1.tar.gz"
+            }
+        ],
+        "4.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c650495cfa9c157b78e57955857b0967",
+                    "sha256": "09b0a7727ce012e0fa668ef848591102d6667521655f4e72d51197c872cb9fb9"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c650495cfa9c157b78e57955857b0967",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 54527,
+                "upload_time": "2016-05-21T11:51:17",
+                "url": "https://files.pythonhosted.org/packages/b2/c1/0d2f841943604867ff237e77fff3b0d9b81cbcc80f7cf24d6b3f0cf3b378/pexpect-4.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "562a1a21f2a60b36dfd5d906dbf0943e",
+                    "sha256": "c381c60f1987355b65df8f08a27f428831914c8a81091bd1778ac336fa2f27e7"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "562a1a21f2a60b36dfd5d906dbf0943e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 140294,
+                "upload_time": "2016-05-21T11:51:25",
+                "url": "https://files.pythonhosted.org/packages/56/2b/9c9c113fb88082950067a42cc99e3c61f1df72035f89bb0bdf0a60308ca0/pexpect-4.1.0.tar.gz"
+            }
+        ],
+        "4.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ffc40d37cdbf9704457a53d7c314c54b",
+                    "sha256": "4028556aa07ba31912041513124ecd4a094a15da9328feea1c35d9084f9f6ca8"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ffc40d37cdbf9704457a53d7c314c54b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 56437,
+                "upload_time": "2016-07-05T14:31:11",
+                "url": "https://files.pythonhosted.org/packages/67/5a/acfc2cae5ccc457aa49ef0cdbae33a16b81986f3384186be171a8c0a5db3/pexpect-4.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8071ec5df0f3d515daedafad672d1632",
+                    "sha256": "bf6816b8cc8d301a499e7adf338828b39bc7548eb64dbed4dd410ed93d95f853"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8071ec5df0f3d515daedafad672d1632",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 147948,
+                "upload_time": "2016-07-05T14:31:05",
+                "url": "https://files.pythonhosted.org/packages/b3/7b/7b3659b9d7059d6d21e23b2464c5c84bffd4a34450cbf0ed19c9a8a4a52f/pexpect-4.2.0.tar.gz"
+            }
+        ],
+        "4.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "90ca8fbd1a8d75c0e506b359b9362843",
+                    "sha256": "f853b52afaf3b064d29854771e2db509ef80392509bde2dd7a6ecf2dfc3f0018"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.2.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "90ca8fbd1a8d75c0e506b359b9362843",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 55375,
+                "upload_time": "2016-08-21T20:17:03",
+                "url": "https://files.pythonhosted.org/packages/5b/16/4859a0376be8b87bf3920b1f6e63b8a3c0ee42488babee07c87ca9316e03/pexpect-4.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3694410001a99dff83f0b500a1ca1c95",
+                    "sha256": "3d132465a75b57aa818341c6521392a06cc660feb3988d7f1074f39bd23c9a92"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3694410001a99dff83f0b500a1ca1c95",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 143980,
+                "upload_time": "2016-08-21T20:17:06",
+                "url": "https://files.pythonhosted.org/packages/e8/13/d0b0599099d6cd23663043a2a0bb7c61e58c6ba359b2656e6fb000ef5b98/pexpect-4.2.1.tar.gz"
+            }
+        ],
+        "4.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0647e72afcd7fab3ecbaf9e59134be54",
+                    "sha256": "2b50dd8caa5007b10b0afcf075095814780b104b4a5cf9d8fbdc8bbc754e5ca4"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0647e72afcd7fab3ecbaf9e59134be54",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 55699,
+                "upload_time": "2017-11-09T16:59:04",
+                "url": "https://files.pythonhosted.org/packages/7d/51/883102f3f288deda0c29e5177d7bdef5b9f6d60098c0d37a1f5c8f765a93/pexpect-4.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "047a486dcd26134b74f2e67046bb61a0",
+                    "sha256": "00ab0872f80f5db740499e7a1283a7c3b97bea542d72df84d83dea17d0afd2d9"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "047a486dcd26134b74f2e67046bb61a0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 146576,
+                "upload_time": "2017-11-09T16:59:06",
+                "url": "https://files.pythonhosted.org/packages/f8/44/5466c30e49762bb92e442bbdf4472d6904608d211258eb3198a11f0309a4/pexpect-4.3.0.tar.gz"
+            }
+        ],
+        "4.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "278ccf6de1f3f6f094a8fc32cb813da6",
+                    "sha256": "144939a072a46d32f6e5ecc866509e1d613276781f7182148a08df52eaa7b022"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.3.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "278ccf6de1f3f6f094a8fc32cb813da6",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 55818,
+                "upload_time": "2017-12-12T10:58:40",
+                "url": "https://files.pythonhosted.org/packages/49/d1/1503ce5e3c41690333949cb887cf569933ef8835aa30af7e3b1b07fbd867/pexpect-4.3.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "16aa4549136b2d1b2bf1e0e9788d75a6",
+                    "sha256": "8e287b171dbaf249d0b06b5f2e88cb7e694651d2d0b8c15bccb83170d3c55575"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "16aa4549136b2d1b2bf1e0e9788d75a6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 146852,
+                "upload_time": "2017-12-12T10:58:42",
+                "url": "https://files.pythonhosted.org/packages/14/05/47c8bca66390c9b18c91f6152db4b74eb850382e8e13aa2f06dfb3036466/pexpect-4.3.1.tar.gz"
+            }
+        ],
+        "4.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c5fcfe7a8952151eec2089adfba1dcd5",
+                    "sha256": "6ff881b07aff0cb8ec02055670443f784434395f90c3285d2ae470f921ade52a"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c5fcfe7a8952151eec2089adfba1dcd5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 56084,
+                "upload_time": "2018-02-10T12:45:37",
+                "url": "https://files.pythonhosted.org/packages/05/80/3a8f823aadc85a8ba3744d95ba591cbe999fbca5d97429a056fd82c4ea92/pexpect-4.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e9b07f0765df8245ac72201d757baaef",
+                    "sha256": "67b85a1565968e3d5b5e7c9283caddc90c3947a2625bed1905be27bd5a03e47d"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e9b07f0765df8245ac72201d757baaef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 145884,
+                "upload_time": "2018-02-10T12:45:50",
+                "url": "https://files.pythonhosted.org/packages/fa/c3/60c0cbf96f242d0b47a82e9ca634dcd6dcb043832cf05e17540812e1c707/pexpect-4.4.0.tar.gz"
+            }
+        ],
+        "4.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4bef54a91af6fd35ebe022c7f7123d35",
+                    "sha256": "9783f4644a3ef8528a6f20374eeb434431a650c797ca6d8df0d81e30fffdfa24"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4bef54a91af6fd35ebe022c7f7123d35",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 57450,
+                "upload_time": "2018-04-13T18:21:04",
+                "url": "https://files.pythonhosted.org/packages/b9/3c/e51a76fe78a877afd9acd95a51e3b7610c0983b19ef5a5dfa11735a619b8/pexpect-4.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "913fc0a68a915cdf6ad4250493c94cf7",
+                    "sha256": "9f8eb3277716a01faafaba553d629d3d60a1a624c7cf45daa600d2148c30020c"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "913fc0a68a915cdf6ad4250493c94cf7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 148247,
+                "upload_time": "2018-04-13T18:21:06",
+                "url": "https://files.pythonhosted.org/packages/09/0e/75f0c093654988b8f17416afb80f7621bcf7d36bbd6afb4f823acdb4bcdc/pexpect-4.5.0.tar.gz"
+            }
+        ],
+        "4.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01c6e598410e31fc837b73ef43b2b55d",
+                    "sha256": "3fbd41d4caf27fa4a377bfd16fef87271099463e6fa73e92a52f92dfee5d425b"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "01c6e598410e31fc837b73ef43b2b55d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 57892,
+                "upload_time": "2018-05-29T12:33:07",
+                "url": "https://files.pythonhosted.org/packages/89/e6/b5a1de8b0cc4e07ca1b305a4fcc3f9806025c1b651ea302646341222f88b/pexpect-4.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d4f3372965a996238d57d19b95d2e03a",
+                    "sha256": "2a8e88259839571d1251d278476f3eec5db26deb73a70be5ed5dc5435e418aba"
+                },
+                "downloads": -1,
+                "filename": "pexpect-4.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d4f3372965a996238d57d19b95d2e03a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 148966,
+                "upload_time": "2018-05-29T12:33:09",
+                "url": "https://files.pythonhosted.org/packages/89/43/07d07654ee3e25235d8cea4164cdee0ec39d1fda8e9203156ebe403ffda4/pexpect-4.6.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "01c6e598410e31fc837b73ef43b2b55d",
+                "sha256": "3fbd41d4caf27fa4a377bfd16fef87271099463e6fa73e92a52f92dfee5d425b"
+            },
+            "downloads": -1,
+            "filename": "pexpect-4.6.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "01c6e598410e31fc837b73ef43b2b55d",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 57892,
+            "upload_time": "2018-05-29T12:33:07",
+            "url": "https://files.pythonhosted.org/packages/89/e6/b5a1de8b0cc4e07ca1b305a4fcc3f9806025c1b651ea302646341222f88b/pexpect-4.6.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "d4f3372965a996238d57d19b95d2e03a",
+                "sha256": "2a8e88259839571d1251d278476f3eec5db26deb73a70be5ed5dc5435e418aba"
+            },
+            "downloads": -1,
+            "filename": "pexpect-4.6.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "d4f3372965a996238d57d19b95d2e03a",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 148966,
+            "upload_time": "2018-05-29T12:33:09",
+            "url": "https://files.pythonhosted.org/packages/89/43/07d07654ee3e25235d8cea4164cdee0ec39d1fda8e9203156ebe403ffda4/pexpect-4.6.0.tar.gz"
+        }
+    ],
+    "package_name": "pexpect"
+}

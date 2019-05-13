@@ -1,0 +1,3680 @@
+{
+    "info": {
+        "author": "The IPython Development Team",
+        "author_email": "ipython-dev@python.org",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Framework :: IPython",
+            "Intended Audience :: Developers",
+            "Intended Audience :: Science/Research",
+            "License :: OSI Approved :: BSD License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3 :: Only",
+            "Topic :: System :: Shells"
+        ],
+        "description": "\nIPython provides a rich toolkit to help you make the most out of using Python\ninteractively.  Its main components are:\n\n* A powerful interactive Python shell\n* A `Jupyter <http://jupyter.org/>`_ kernel to work with Python code in Jupyter\n  notebooks and other interactive frontends.\n\nThe enhanced interactive Python shells have the following main features:\n\n* Comprehensive object introspection.\n\n* Input history, persistent across sessions.\n\n* Caching of output results during a session with automatically generated\n  references.\n\n* Extensible tab completion, with support by default for completion of python\n  variables and keywords, filenames and function keywords.\n\n* Extensible system of 'magic' commands for controlling the environment and\n  performing many tasks related either to IPython or the operating system.\n\n* A rich configuration system with easy switching between different setups\n  (simpler than changing $PYTHONSTARTUP environment variables every time).\n\n* Session logging and reloading.\n\n* Extensible syntax processing for special purpose situations.\n\n* Access to the system shell with user-extensible alias system.\n\n* Easily embeddable in other Python programs and GUIs.\n\n* Integrated access to the pdb debugger and the Python profiler.\n\nThe latest development version is always available from IPython's `GitHub\nsite <http://github.com/ipython>`_.\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://ipython.org",
+        "keywords": "Interactive,Interpreter,Shell,Embedding",
+        "license": "BSD",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "ipython",
+        "package_url": "https://pypi.org/project/ipython/",
+        "platform": "Linux",
+        "project_url": "https://pypi.org/project/ipython/",
+        "release_url": "https://pypi.org/project/ipython/6.4.0/",
+        "requires_dist": [
+            "numpy; python_version >= \"3.4\" and extra == 'test'",
+            "ipykernel; extra == 'test'",
+            "nbformat; extra == 'test'",
+            "pygments; extra == 'test'",
+            "testpath; extra == 'test'",
+            "requests; extra == 'test'",
+            "nose (>=0.10.1); extra == 'test'",
+            "qtconsole; extra == 'qtconsole'",
+            "ipyparallel; extra == 'parallel'",
+            "ipywidgets; extra == 'notebook'",
+            "notebook; extra == 'notebook'",
+            "nbformat; extra == 'nbformat'",
+            "nbconvert; extra == 'nbconvert'",
+            "ipykernel; extra == 'kernel'",
+            "Sphinx (>=1.3); extra == 'doc'",
+            "pygments; extra == 'all'",
+            "nbconvert; extra == 'all'",
+            "ipywidgets; extra == 'all'",
+            "qtconsole; extra == 'all'",
+            "testpath; extra == 'all'",
+            "Sphinx (>=1.3); extra == 'all'",
+            "requests; extra == 'all'",
+            "ipyparallel; extra == 'all'",
+            "nose (>=0.10.1); extra == 'all'",
+            "notebook; extra == 'all'",
+            "ipykernel; extra == 'all'",
+            "nbformat; extra == 'all'",
+            "win-unicode-console (>=0.5); sys_platform == \"win32\" and python_version < \"3.6\"",
+            "colorama; sys_platform == \"win32\"",
+            "appnope; sys_platform == \"darwin\"",
+            "pexpect; sys_platform != \"win32\"",
+            "pathlib2; python_version == \"3.3\"",
+            "typing; python_version <= \"3.4\"",
+            "backcall",
+            "pygments",
+            "prompt-toolkit (<2.0.0,>=1.0.15)",
+            "traitlets (>=4.2)",
+            "simplegeneric (>0.8)",
+            "pickleshare",
+            "decorator",
+            "jedi (>=0.10)",
+            "setuptools (>=18.5)"
+        ],
+        "requires_python": ">=3.3",
+        "summary": "IPython: Productive Interactive Computing",
+        "version": "6.4.0"
+    },
+    "last_serial": 3851483,
+    "releases": {
+        "0.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ba94f7095f19af07ce2b4de8a7560d8",
+                    "sha256": "f40e13367161d3961d1cfaeba6e8a62dea50e27dc293e9252a2050339b375332"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "2ba94f7095f19af07ce2b4de8a7560d8",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 6932207,
+                "upload_time": "2010-09-01T01:31:28",
+                "url": "https://files.pythonhosted.org/packages/e1/3d/231d6d3a2b95678c64e6fb67f0e73b75dffee2465c8dd2fd2b86f1e4e292/ipython-0.10-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2d7dc5f7c03b795d4469d6683c5746f6",
+                    "sha256": "7b00df13795bd068a235cea217e2108dc5ce33cb4e5ca2a45cb6bf8cccd76d3e"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10-py25.noarch.rpm",
+                "has_sig": false,
+                "md5_digest": "2d7dc5f7c03b795d4469d6683c5746f6",
+                "packagetype": "bdist_rpm",
+                "python_version": "2.5",
+                "size": 6260161,
+                "upload_time": "2010-09-01T01:33:44",
+                "url": "https://files.pythonhosted.org/packages/8d/fe/736996d07881bd1890cebffd403f95a12957e642c0c4f1a7003053cc34ac/ipython-0.10-py25.noarch.rpm"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "106db488676e0a5f213e228ce97371ff",
+                    "sha256": "37f6b693ae2321f506bdb2d3c914d44031871735f9c3e2f69b7542a453ab6b72"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "106db488676e0a5f213e228ce97371ff",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 6930847,
+                "upload_time": "2010-09-01T01:41:51",
+                "url": "https://files.pythonhosted.org/packages/1f/6a/c419b0bd1b630d85cda8eb678cbc664b0e161b060d4ec637aa5068ec2bb1/ipython-0.10-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc900a183e7034b720b62045202f4e9e",
+                    "sha256": "2ec930f2f5add6c30537fbf50f7a3524378f39c7a16291828db7d2a41f54e28c"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10-py26.noarch.rpm",
+                "has_sig": false,
+                "md5_digest": "dc900a183e7034b720b62045202f4e9e",
+                "packagetype": "bdist_rpm",
+                "python_version": "2.6",
+                "size": 6260489,
+                "upload_time": "2010-09-01T01:43:11",
+                "url": "https://files.pythonhosted.org/packages/88/e9/739e96568776b3c482a07fa12a0470f6861e7ed07a71306bc5687f978356/ipython-0.10-py26.noarch.rpm"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd10cd1b622c16c1afca2239fcc0dfdf",
+                    "sha256": "60d602637dc5f078b083a4ca5ab64364ba816bd72439844012ed11a30f88228c"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd10cd1b622c16c1afca2239fcc0dfdf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5829939,
+                "upload_time": "2010-09-01T01:36:26",
+                "url": "https://files.pythonhosted.org/packages/1b/10/7ff50e6e57418703fe1e4b17f11af0cd5e92dae8b39f0a289e2981de4a96/ipython-0.10.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b45f7a84851f17ce97a8dcc366250afe",
+                    "sha256": "ad2bb7ee94c8823bcefa5bb2500c73a74c15f5a2452bbe53958eec1dff4480d5"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10.win32-setup.exe",
+                "has_sig": false,
+                "md5_digest": "b45f7a84851f17ce97a8dcc366250afe",
+                "packagetype": "bdist_wininst",
+                "python_version": "2.6",
+                "size": 6083306,
+                "upload_time": "2010-09-01T01:39:19",
+                "url": "https://files.pythonhosted.org/packages/a9/6b/0be70cdae208c1c3cfd7b8854caaf43f0b91a3c2519bc94f3826b09074a4/ipython-0.10.win32-setup.exe"
+            }
+        ],
+        "0.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54ae47079b0e9a0998593a99ce76ec1f",
+                    "sha256": "227607ce3768ff84c2d7a272e50200f7ad180267bf735633e1e2d85fc4cbfca3"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "54ae47079b0e9a0998593a99ce76ec1f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5837840,
+                "upload_time": "2010-10-12T08:40:01",
+                "url": "https://files.pythonhosted.org/packages/db/c9/22e91a53d537ef6d2f7c1393c5eb1a2acba513112153acc5069e7d9b4014/ipython-0.10.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f636c7ea03ff626a6ef9bd9a901de691",
+                    "sha256": "123fb0d6f1de396a5849a21fd90666e34f6b3405a1941db6585f7637325317e0"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10.1.zip",
+                "has_sig": false,
+                "md5_digest": "f636c7ea03ff626a6ef9bd9a901de691",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6419900,
+                "upload_time": "2010-10-12T08:40:38",
+                "url": "https://files.pythonhosted.org/packages/a0/e1/1dce8a833373eaaf5bb25d07a436e27025572b4d641a42d1c755127fc331/ipython-0.10.1.zip"
+            }
+        ],
+        "0.10.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dda59bfc6e256ce786c4bc4aadb220a4",
+                    "sha256": "9ed5fe693d92e6ba9ecc3e367ae5607b80d66db53b0a636fa39fe15ae3df8c47"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dda59bfc6e256ce786c4bc4aadb220a4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5842688,
+                "upload_time": "2011-04-09T09:43:10",
+                "url": "https://files.pythonhosted.org/packages/10/af/c50fd55e962df2d545b485c3e95c8560eb410dfb3bd4f4e07619be73679a/ipython-0.10.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "228d0bd2fe4f5064082d7952a41bc96d",
+                    "sha256": "6262dbc2753e6f6e95ca23bd321725161ea493ba994b242814c6a2dd59c6445f"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.10.2.zip",
+                "has_sig": false,
+                "md5_digest": "228d0bd2fe4f5064082d7952a41bc96d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6423782,
+                "upload_time": "2011-04-09T09:43:47",
+                "url": "https://files.pythonhosted.org/packages/0f/f0/ec214ec8e941488e11ae0e068d8f00ea9bcc26d005a24cf071a14adb493b/ipython-0.10.2.zip"
+            }
+        ],
+        "0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "efc899e752a4a4a67a99575cea1719ef",
+                    "sha256": "0303ae92cd42a4d0441d3391a9f85ef890d97a6c2cf382b2e26bead5cabe3fce"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "efc899e752a4a4a67a99575cea1719ef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7958871,
+                "upload_time": "2011-07-31T17:34:16",
+                "url": "https://files.pythonhosted.org/packages/f0/d0/eadd8213366a5694c47413ef8e3dbd1952fc38e39a2858dbce3b3a677d11/ipython-0.11.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e4155313a2e29addcec100835fe39ce",
+                    "sha256": "85de1fad9b16e05bd87eeac7a4e7c0ffcd648af264ba23914861e704bbe943e4"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.11.zip",
+                "has_sig": false,
+                "md5_digest": "8e4155313a2e29addcec100835fe39ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8626165,
+                "upload_time": "2011-07-31T17:35:28",
+                "url": "https://files.pythonhosted.org/packages/9e/b7/775131e0e0659b3c0ec274995bb0943e6cb8bdf9e745cf6507ed871c123a/ipython-0.11.zip"
+            }
+        ],
+        "0.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0199b62aa65986726b46247db3cb06cf",
+                    "sha256": "2221e3ee198cfbcaa8482ec166e4631c82b8e2f50db368ef980fed873ff6dc30"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0199b62aa65986726b46247db3cb06cf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9317254,
+                "upload_time": "2011-12-19T11:01:30",
+                "url": "https://files.pythonhosted.org/packages/2e/4f/b31f972136b3844340943cb9eb37c5911053e7d046a1e8b4baeab6702331/ipython-0.12.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec135100af088a9607fd3eed91fc476f",
+                    "sha256": "1f22027a987ea3344a6d94d4aeeb2ef211e515af503df03d10a33fc2ee2c8ee3"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.12.zip",
+                "has_sig": false,
+                "md5_digest": "ec135100af088a9607fd3eed91fc476f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10232524,
+                "upload_time": "2011-12-19T11:02:38",
+                "url": "https://files.pythonhosted.org/packages/be/38/f42e9635853989ff56af86ac992ae3db391265e6a748baac7dc329a7824c/ipython-0.12.zip"
+            }
+        ],
+        "0.12.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "81704b5d76a095575cae2c66fda3daaa",
+                    "sha256": "99ae4f9103771bae34ba9811d13545df02150eb0a313d844435542a64fca4a44"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.12.1-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "81704b5d76a095575cae2c66fda3daaa",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 3202952,
+                "upload_time": "2012-04-22T06:50:46",
+                "url": "https://files.pythonhosted.org/packages/38/fd/3fc734c2b61133922dc3138160db7ce11440e50508fbb727ddb089c8fe82/ipython-0.12.1-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cf9645e30bed6ba0629fa3c610af7a5b",
+                    "sha256": "a35dcbe99dda51c66bd9191776535d148608f123408bfec8aab07ce81bc06660"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.12.1-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "cf9645e30bed6ba0629fa3c610af7a5b",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 3194724,
+                "upload_time": "2012-04-22T06:34:58",
+                "url": "https://files.pythonhosted.org/packages/3b/50/bd60cb1949eb34e0d202ff493a7194fccbb5936ffabaed0526aee5d87298/ipython-0.12.1-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ae3a9851cd99f40ba5227efec58c7a6c",
+                    "sha256": "f5cadf0e24c997be47d3ac562a87b546be4a893d58ac8fdf63141bc353812ef5"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.12.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ae3a9851cd99f40ba5227efec58c7a6c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4272666,
+                "upload_time": "2012-04-22T06:34:04",
+                "url": "https://files.pythonhosted.org/packages/88/53/4ad4b14da7f4502f800880f8c27a6c1ae59aa546ffe3e854d0aa4ff65ba7/ipython-0.12.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "471dae23ce46eb74027ef08828b91eb9",
+                    "sha256": "fffc9efe165a71f18fd138c15670c4acc4f4560589b208031fc51fde3c36e8ca"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.12.1.win32.exe",
+                "has_sig": false,
+                "md5_digest": "471dae23ce46eb74027ef08828b91eb9",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2059777,
+                "upload_time": "2012-04-22T06:48:38",
+                "url": "https://files.pythonhosted.org/packages/5f/fb/b74d35ffaaae3ee0cbbd9b2e48217e6eea4c8cf228abbd3132464f95479d/ipython-0.12.1.win32.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d7c11a21948d75cec7b45f90d557f0d1",
+                    "sha256": "100f228a006537b4efec558300314c0f06967160de50b29da7baeb11a05de873"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.12.1.win-amd64.exe",
+                "has_sig": false,
+                "md5_digest": "d7c11a21948d75cec7b45f90d557f0d1",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2225942,
+                "upload_time": "2012-04-22T06:49:14",
+                "url": "https://files.pythonhosted.org/packages/b7/54/e8abf99bf0129b00c87dec01da2db7ee96cafd42de3b36060b3c62731c33/ipython-0.12.1.win-amd64.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "af3582d09815829d745a7179d6dc2d49",
+                    "sha256": "847627208505772b7668f40163e5d06beafd33318ff0f06ce5fca5a4fdfa2f90"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.12.1.zip",
+                "has_sig": false,
+                "md5_digest": "af3582d09815829d745a7179d6dc2d49",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4674077,
+                "upload_time": "2012-04-22T06:34:34",
+                "url": "https://files.pythonhosted.org/packages/70/5e/6cafaf1559a33820f537d1937678b82c83cbdfd080f3585881691a9ec407/ipython-0.12.1.zip"
+            }
+        ],
+        "0.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "694ce5981bf163922bd09617a4742a61",
+                    "sha256": "2e0cb07621bb4479c1d7c992dd32e4e58914211d587ed052c0fc1af74cf8b33f"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "694ce5981bf163922bd09617a4742a61",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 3348451,
+                "upload_time": "2012-06-30T10:43:27",
+                "url": "https://files.pythonhosted.org/packages/4c/5b/704d54991eeeffa99f1c41ed1bb77bc9dac1c91ef610e617c4a498e77985/ipython-0.13-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9ef302f4db18944d3523eb2e77bdd5ab",
+                    "sha256": "4c9f88ca51ac945a39c386d823c3c9b2afb16ae2ae0d634484f4a430e7782703"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.py2-win32.exe",
+                "has_sig": false,
+                "md5_digest": "9ef302f4db18944d3523eb2e77bdd5ab",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2492859,
+                "upload_time": "2012-07-01T21:34:20",
+                "url": "https://files.pythonhosted.org/packages/ca/7f/87c8e07f493304efe01ce65b2861f61c0bfb3826ad5b5f729a36c7ac64cd/ipython-0.13.py2-win32.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "945fc78dfd38631c4720c58139a83255",
+                    "sha256": "1535c33e53bae7a68fab604904047150032e1a15cad0af1195ff543f2b773d9f"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.py2-win-amd64.exe",
+                "has_sig": false,
+                "md5_digest": "945fc78dfd38631c4720c58139a83255",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2529912,
+                "upload_time": "2012-06-30T19:13:38",
+                "url": "https://files.pythonhosted.org/packages/64/2a/adc14066e8007686c2e1967b758363bf66bc3a2a408dca2011a6a4fdbfb1/ipython-0.13.py2-win-amd64.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "16cfebdb126ca7a07d51b2f6b2302edd",
+                    "sha256": "4e277aa21892cd4e65d2df17d898e5114c44b53fdae778491eb4324473fe7730"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.py3-win32.exe",
+                "has_sig": false,
+                "md5_digest": "16cfebdb126ca7a07d51b2f6b2302edd",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2486903,
+                "upload_time": "2012-07-01T05:46:51",
+                "url": "https://files.pythonhosted.org/packages/20/16/b9fe07825797a1084bf5c7ad923916babd48c2632126315d95a8a8b50a00/ipython-0.13.py3-win32.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d180adb3e48f8e4704bd88c1dc7b2c72",
+                    "sha256": "6f369fafef6253d950a60a7ff85444e5b428284f4b7c00deda0f282ab78ab383"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.py3-win-amd64.exe",
+                "has_sig": false,
+                "md5_digest": "d180adb3e48f8e4704bd88c1dc7b2c72",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2515063,
+                "upload_time": "2012-07-01T05:50:08",
+                "url": "https://files.pythonhosted.org/packages/27/ec/6f75e580bd20fc640d4608f2e3730523dec3fecc71e55667e5d7c1a34d03/ipython-0.13.py3-win-amd64.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9f04b590463dfe981e56ff1aebc90e23",
+                    "sha256": "82976ebeb79b08ec0886eb5fb14fbfc29871118082da959f63d1523adc0795d4"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9f04b590463dfe981e56ff1aebc90e23",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6055987,
+                "upload_time": "2012-06-30T10:42:24",
+                "url": "https://files.pythonhosted.org/packages/2d/48/c56c01b31bee8c9ddb9f3f7fb90333adda61d1b46f4d4d95d576b2e23cdb/ipython-0.13.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a644023f079bdc22797f3b7ca3f076a0",
+                    "sha256": "5d40f3f47ea3702f1aec699f773e8ff2c9bdf6b679ea357a03369059109e27d6"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.zip",
+                "has_sig": false,
+                "md5_digest": "a644023f079bdc22797f3b7ca3f076a0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6404915,
+                "upload_time": "2012-06-30T10:43:02",
+                "url": "https://files.pythonhosted.org/packages/05/17/d35f928b27162983320832e10e2be0ef57f97f8e4eade22183d9461268cd/ipython-0.13.zip"
+            }
+        ],
+        "0.13.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d4bbe64ccefaf9c46536ab94b846db6f",
+                    "sha256": "d94dc32a9650258f36ba00fc15dbdacaabdb7b0131f056df2ee0c7d22c656edf"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.1-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "d4bbe64ccefaf9c46536ab94b846db6f",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 3351107,
+                "upload_time": "2012-10-21T00:33:10",
+                "url": "https://files.pythonhosted.org/packages/d4/6a/f40572838bf62b9a975c8090157e3516807268962e6cb2afd031204801c4/ipython-0.13.1-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2da9b1e60382c97da6f05e8caece3180",
+                    "sha256": "684c15268ffc3805c4867be1dc1638ae16af290b57ed449795d67089989d3a36"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.1.py2-win32-PROPER.exe",
+                "has_sig": false,
+                "md5_digest": "2da9b1e60382c97da6f05e8caece3180",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2492624,
+                "upload_time": "2012-11-04T00:55:31",
+                "url": "https://files.pythonhosted.org/packages/43/0c/d65ba979e71f146ccf25d21161231a833ca73d9084bd6cff4cbd91431ef9/ipython-0.13.1.py2-win32-PROPER.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc0f7aa01342eeeb5c6a2a0950c28562",
+                    "sha256": "94cf25724deb31bbf429703ea53f56f24e39e351a83954d065bf2457e742ab97"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.1.py2-win-amd64.exe",
+                "has_sig": false,
+                "md5_digest": "fc0f7aa01342eeeb5c6a2a0950c28562",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2529672,
+                "upload_time": "2012-10-21T00:40:17",
+                "url": "https://files.pythonhosted.org/packages/0d/05/e87a977ffbd301e77f23a5b8ac755f20b7db6aaff54b4943900edda0b7cd/ipython-0.13.1.py2-win-amd64.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "43c1c567b920b718a38fffd1866a4392",
+                    "sha256": "3544e17969d1cbe097754cb5c203940608ac0e900effcdfbf308f70cc707527b"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.1.py3-win32.exe",
+                "has_sig": false,
+                "md5_digest": "43c1c567b920b718a38fffd1866a4392",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2491585,
+                "upload_time": "2012-10-21T00:42:10",
+                "url": "https://files.pythonhosted.org/packages/32/19/3a67279034b983842b949d9638167a1856677cd6682e8a91aca0ba2eebe9/ipython-0.13.1.py3-win32.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c4e26db957529cac7e61d0c7e411f92",
+                    "sha256": "3364dbdba326efe71c52678ff1ffe83bef3661d84b8098d7e4654e00f3561c72"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.1.py3-win-amd64-PROPER.exe",
+                "has_sig": false,
+                "md5_digest": "2c4e26db957529cac7e61d0c7e411f92",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2527103,
+                "upload_time": "2012-11-04T00:57:12",
+                "url": "https://files.pythonhosted.org/packages/d0/19/cb374d2eb1e4aaa24c2d48ff757b42c512a8c904be00b82bf227483a132e/ipython-0.13.1.py3-win-amd64-PROPER.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ca7e75f7c802afc6aaa0a1ea59846420",
+                    "sha256": "3bbf1095c4fd1fbf0a0871d9e26571a1ce3c4113d83ee3b688fa58e7e917f8c0"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ca7e75f7c802afc6aaa0a1ea59846420",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5921953,
+                "upload_time": "2012-10-21T00:32:49",
+                "url": "https://files.pythonhosted.org/packages/8d/0f/dfc2ec9f09d5612176ad900f3b0b71bf71ff91f78f3b4c9566f2eb7d013c/ipython-0.13.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75ace1afede8fe8cd6143e35ca4418bd",
+                    "sha256": "1282fc122fa00622bb4b2e71d560dbff20e977a0ec6bacf0042f7b50e2b5c1c1"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.1.zip",
+                "has_sig": false,
+                "md5_digest": "75ace1afede8fe8cd6143e35ca4418bd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6276907,
+                "upload_time": "2012-10-21T00:32:59",
+                "url": "https://files.pythonhosted.org/packages/ad/40/64d0723bea580c1eb16ff8e5391bc08bb771771690d63832835b14b106d5/ipython-0.13.1.zip"
+            }
+        ],
+        "0.13.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aaff656b351fcb05ca5745ca703b4ade",
+                    "sha256": "67333603ec835f206e7246dbc09df4bfb6d941aa579c7bd0087765b50c2b85cb"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.2.py2-win32.exe",
+                "has_sig": false,
+                "md5_digest": "aaff656b351fcb05ca5745ca703b4ade",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2504790,
+                "upload_time": "2013-04-05T21:01:52",
+                "url": "https://files.pythonhosted.org/packages/d5/f2/9235c2f2b8554f59675d5e0b71bbb53b99def6a0feab867d2a880f3243b9/ipython-0.13.2.py2-win32.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7dc34c2042ab0efff74ede38c87dbdc5",
+                    "sha256": "eba42d36393cf3ad7e8484bab19fe9bd5c03c2abc797e4ea1684eb03c198cf94"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.2.py2-win-amd64.exe",
+                "has_sig": false,
+                "md5_digest": "7dc34c2042ab0efff74ede38c87dbdc5",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2541838,
+                "upload_time": "2013-04-05T21:02:23",
+                "url": "https://files.pythonhosted.org/packages/ce/62/b7cdd31f9021fd31406416be47329b67b06268cf2166ca9092035f6f3b40/ipython-0.13.2.py2-win-amd64.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "094c24c083f243d525bde24195704bb6",
+                    "sha256": "6ff4ec0ae78a8b839316e4f99c33ddd374230c97746e35eace12ca6dcca2ddc3"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.2.py3-win32.exe",
+                "has_sig": false,
+                "md5_digest": "094c24c083f243d525bde24195704bb6",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2498617,
+                "upload_time": "2013-04-05T21:04:03",
+                "url": "https://files.pythonhosted.org/packages/ad/e6/15109b0f50fb63a89161fdad7a323398ac56dfb63197af7e8f4957acbe57/ipython-0.13.2.py3-win32.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "91de7d2b9c0397e93b87c8790863d3bf",
+                    "sha256": "d66aaf18cbfe61b6d99e71857ba981b00fad641c45199a45a8500616c80a4273"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.2.py3-win-amd64.exe",
+                "has_sig": false,
+                "md5_digest": "91de7d2b9c0397e93b87c8790863d3bf",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 2539252,
+                "upload_time": "2013-04-05T21:04:25",
+                "url": "https://files.pythonhosted.org/packages/74/81/0fa3d4fbd0e4f7f30e950d097a437f7aafe23ab02e0ea84f4c0674673113/ipython-0.13.2.py3-win-amd64.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ead3b7eb70c653b537fb9d96d71b8b2a",
+                    "sha256": "17fbeea1dff2318d617d90fdf7af4eb35dc48c61389a2dffaab8ff100fb100ea"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ead3b7eb70c653b537fb9d96d71b8b2a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5982733,
+                "upload_time": "2013-04-05T20:56:47",
+                "url": "https://files.pythonhosted.org/packages/0e/7c/c045ffff0c3ff8b67700c12be0ba79d7eee40199934a41667c8997b04a88/ipython-0.13.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "76195c97e426fbc641f66c55faa0318a",
+                    "sha256": "c2ee1ab86cc6f1f4160e359ce070ce3cc8c1485217a529f8963d72b978cd3eb6"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.13.2.zip",
+                "has_sig": false,
+                "md5_digest": "76195c97e426fbc641f66c55faa0318a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6358132,
+                "upload_time": "2013-04-05T20:56:54",
+                "url": "https://files.pythonhosted.org/packages/24/c0/6a589a5e9aab102f175dedf342a66acb0b15e684a9c7303ec6dd670ec627/ipython-0.13.2.zip"
+            }
+        ],
+        "0.6.10": [],
+        "0.6.11": [],
+        "0.6.12": [],
+        "0.6.13": [],
+        "0.6.14": [],
+        "0.6.15": [],
+        "0.6.4": [],
+        "0.6.5": [],
+        "0.6.6": [],
+        "0.6.7": [],
+        "0.6.8": [],
+        "0.6.9": [],
+        "0.7.0": [],
+        "0.7.1": [],
+        "0.7.1.fix1": [],
+        "0.7.2": [],
+        "0.7.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "76df2f3f9dcd0a4f087c558c9a6f94a4",
+                    "sha256": "0d080601ce87e02990e259b3c28efdaa816229051499796c1b38462558b0b5d1"
+                },
+                "downloads": -1,
+                "filename": "ipython-0.7.3-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "76df2f3f9dcd0a4f087c558c9a6f94a4",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 1659352,
+                "upload_time": "2007-01-05T08:33:22",
+                "url": "https://files.pythonhosted.org/packages/8f/59/af8038a87acf75d3b460cd522c30d3718b88bde38dd71b881c4446a85f9c/ipython-0.7.3-py2.5.egg"
+            }
+        ],
+        "0.7.4.svn.r2010": [],
+        "0.8.0": [],
+        "0.8.1": [],
+        "0.8.2": [],
+        "0.8.3": [],
+        "0.8.4": [],
+        "0.9": [],
+        "0.9.1": [],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2268fa83f257d14943eb04e3333a6fac",
+                    "sha256": "0d07521b4784e1b1f676b4b32c1f708a026cf398a0e6c3f095fce41f1402911c"
+                },
+                "downloads": -1,
+                "filename": "ipython-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2268fa83f257d14943eb04e3333a6fac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8658118,
+                "upload_time": "2013-08-09T06:07:33",
+                "url": "https://files.pythonhosted.org/packages/55/61/84a4210737ac0f5afb1f109854cc1a045fff2e2cb322b4fc00d1918374e7/ipython-1.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "931bb0cd54d83316f8e9640292496c22",
+                    "sha256": "082da162cc94ddfe2cfb896867571f825f3210f9b06c59747fc598b05ac80a03"
+                },
+                "downloads": -1,
+                "filename": "ipython-1.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "931bb0cd54d83316f8e9640292496c22",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9244857,
+                "upload_time": "2013-08-09T06:08:02",
+                "url": "https://files.pythonhosted.org/packages/96/21/04974c03d4b232805813f98233752d50e692f58a09774e203882b752300d/ipython-1.0.0.zip"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "70d69c78122923879232567ac3c47cef",
+                    "sha256": "6c4e4a65225ab45be923f6bd0b71b604ddf8acd769c4e2818fac89793cdf91be"
+                },
+                "downloads": -1,
+                "filename": "ipython-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "70d69c78122923879232567ac3c47cef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8658909,
+                "upload_time": "2013-09-09T22:46:45",
+                "url": "https://files.pythonhosted.org/packages/4f/c2/50cd516b1fb4f861bc7dbb023e01e5663e7abebced2e0c57ed7d521cf351/ipython-1.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b383afb9f367eb387d36e11f6e7c4cc",
+                    "sha256": "4efa7eff87c3fdc04e0dbce2ed4e80956daddbedab02220d063f4914487de548"
+                },
+                "downloads": -1,
+                "filename": "ipython-1.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "3b383afb9f367eb387d36e11f6e7c4cc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9249720,
+                "upload_time": "2013-09-09T22:46:50",
+                "url": "https://files.pythonhosted.org/packages/83/99/f01b0c1f3013c59fce128049589b6581b684f1e107f0759b9b35338284fe/ipython-1.1.0.zip"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b4cb02d5c48ca1776fb6127d37e9319",
+                    "sha256": "c4b4e250d2a68ded2ef267d8deae2a972f5f94481d2e4015bd5c1922b5f318d7"
+                },
+                "downloads": -1,
+                "filename": "ipython-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6b4cb02d5c48ca1776fb6127d37e9319",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8665978,
+                "upload_time": "2014-02-10T21:53:22",
+                "url": "https://files.pythonhosted.org/packages/f3/04/18eb302994bf2d1a70e7385543f48f47ef04340066e2d280352ba4df5850/ipython-1.2.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8cf63de32fffd79cb4fb563b22a8ff32",
+                    "sha256": "f567035109ca0ed350a445388c1ad80728054b8314a963faadb5b5eb3e0b4195"
+                },
+                "downloads": -1,
+                "filename": "ipython-1.2.0.zip",
+                "has_sig": false,
+                "md5_digest": "8cf63de32fffd79cb4fb563b22a8ff32",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9257539,
+                "upload_time": "2014-02-10T21:53:28",
+                "url": "https://files.pythonhosted.org/packages/b9/cb/5dde70bac7dcd90a190b7b873ee4a84e14b8cec2ad553ff52fc06b109475/ipython-1.2.0.zip"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ffb36697f7ca8cb4a2de0f5b30bc89c",
+                    "sha256": "c27aeae9b8e5c4a2d28ba0f04b879216d6f96f36380cd465a823b1efb0595874"
+                },
+                "downloads": -1,
+                "filename": "ipython-1.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4ffb36697f7ca8cb4a2de0f5b30bc89c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8666632,
+                "upload_time": "2014-02-24T22:08:50",
+                "url": "https://files.pythonhosted.org/packages/42/a0/204ecd8b4e76f3399b51addbd39980ec5fa90275ff853879e25508030922/ipython-1.2.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a4b36d55e2671c6e821018a63d50b8b1",
+                    "sha256": "76abac7416499e90d836914ec6db45c28b0657ec6a0a36fe1d7e6b499e7258ea"
+                },
+                "downloads": -1,
+                "filename": "ipython-1.2.1.zip",
+                "has_sig": false,
+                "md5_digest": "a4b36d55e2671c6e821018a63d50b8b1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9257909,
+                "upload_time": "2014-02-24T22:08:57",
+                "url": "https://files.pythonhosted.org/packages/63/e1/d73e2f4d48ffc87eb8669c3d5de30f698aed9289c54d6b05848bac8edd35/ipython-1.2.1.zip"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6122692edc6fb0150e0369fa38b25e7a",
+                    "sha256": "2bfedd60662be74460f7e7348b4a519761a237245b337a8e7dae3979136b6578"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.0.0-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6122692edc6fb0150e0369fa38b25e7a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 2762789,
+                "upload_time": "2014-04-02T19:33:33",
+                "url": "https://files.pythonhosted.org/packages/4b/e0/68ae60683b7e2503a10a52935711c2c3dfee89a4a77a3ebdb775fd8c8df5/ipython-2.0.0-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c037036abd0f70b6848cd4e019059f9",
+                    "sha256": "a1c1052e13cfa3d5e24ed823a2c866607cc0e776649659d89d417d9269822a96"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.0.0-py33-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2c037036abd0f70b6848cd4e019059f9",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 2762816,
+                "upload_time": "2014-04-02T19:39:51",
+                "url": "https://files.pythonhosted.org/packages/b0/4f/0c04108f436af367ea8123e3259902bfdbed9efbf3b38d777cd8e42471a9/ipython-2.0.0-py33-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd209ff8c7b08565478e4fc04bdf33ee",
+                    "sha256": "4e83c08f8d6fd0e8848c68fc0eb2f9b054f9b742f917c8d164c20fd4edd7893a"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd209ff8c7b08565478e4fc04bdf33ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11877967,
+                "upload_time": "2014-04-02T05:38:13",
+                "url": "https://files.pythonhosted.org/packages/a7/75/b388620e4ab8f4c6a672c50900ea92c24bae8043e7ef34f5d96fddcbc555/ipython-2.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c1e032071d266237c31a5c2758e81f3f",
+                    "sha256": "efb8b271e8fdc3b89b5436c9904d9157617dfeb4b5e0b2a6b70be3484cd78f49"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "c1e032071d266237c31a5c2758e81f3f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 12553905,
+                "upload_time": "2014-04-02T05:38:26",
+                "url": "https://files.pythonhosted.org/packages/71/1a/f3c23bb9ad24102a0a10066e8c71f878b6aded67de5eb52a4103654b961b/ipython-2.0.0.zip"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "377fa807db47b7d273e4acacf8091688",
+                    "sha256": "3644ea4ee970e86a2231b172463e5e684599173e076042a37333327d1b06f39d"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.1.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "377fa807db47b7d273e4acacf8091688",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 2767407,
+                "upload_time": "2014-05-21T19:29:57",
+                "url": "https://files.pythonhosted.org/packages/17/eb/466c1336b10e48d129a7782bc3becb1a137f589455419272d824e82cb88d/ipython-2.1.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "732009ff05c5617ee6f31b19740445fb",
+                    "sha256": "8cc12b244b3b8544aee1762da73876e2438eccb7873a05d5488690ce89f1b6d8"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.1.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "732009ff05c5617ee6f31b19740445fb",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 2767420,
+                "upload_time": "2014-05-21T19:30:24",
+                "url": "https://files.pythonhosted.org/packages/06/2e/f883375d02a152d9d58884eadfaf4444cd40c6eb8a4b3571a0503c903753/ipython-2.1.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "785c7b6364c6a0dd34aa4ea970cf83b9",
+                    "sha256": "ca86a6308c4b53ea8a040ba776066dc9a7af4ac738ad43ab2059a016c09b0c2d"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "785c7b6364c6a0dd34aa4ea970cf83b9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11886492,
+                "upload_time": "2014-05-21T19:27:05",
+                "url": "https://files.pythonhosted.org/packages/94/66/08131175d9e32fee399dd3ae883dec84e9c99d336612018ce4a3de85d1e4/ipython-2.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2e5381a6f754339cd7dd30b61a172fc5",
+                    "sha256": "36bf73e1c2072c3350ed27b7215c842cfab8986c2fb6cf099c5ca2aedb290947"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "2e5381a6f754339cd7dd30b61a172fc5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 12574763,
+                "upload_time": "2014-05-21T19:27:14",
+                "url": "https://files.pythonhosted.org/packages/7e/a6/75adf66229a3d4f1a1adff6cde79abafeed5a628773feccaf494124a5b99/ipython-2.1.0.zip"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1503523a69baec078487d862c3d9415b",
+                    "sha256": "8a285e2192676b47e3a4d04b51cdfae78f9dba57f2a0994a67f8797387d06995"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.2.0-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1503523a69baec078487d862c3d9415b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 2772265,
+                "upload_time": "2014-08-06T22:59:51",
+                "url": "https://files.pythonhosted.org/packages/05/ce/03c76a5dc7108d7eb58b3400c845129b0684ce15396420cb176b8eaa8696/ipython-2.2.0-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c8edd4c4a881b04a155675d18645be8b",
+                    "sha256": "4a73b60b259123d1403f7b7dc0957c3332e9af96224612172daccb717481cc99"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.2.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c8edd4c4a881b04a155675d18645be8b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 2768533,
+                "upload_time": "2014-08-06T23:00:01",
+                "url": "https://files.pythonhosted.org/packages/95/9a/ed1ea422d5bc77d66c98e4a6bfba5f3e46986b5c4c605ba49271af2f622b/ipython-2.2.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b91d3724f655a8e16d022772f696cfd5",
+                    "sha256": "b7ca77ba54a02f032055b73f5f62b01431f818ae00f63716b78f881c2b2564e2"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b91d3724f655a8e16d022772f696cfd5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11912007,
+                "upload_time": "2014-08-06T22:58:13",
+                "url": "https://files.pythonhosted.org/packages/83/5a/04c59a82ca2fb0208009f0e11d8659b59790ea5fd7af6ae557210ddc89df/ipython-2.2.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0fe93ebfb0c352110d5efb57ca60867b",
+                    "sha256": "d82693be697858b6fa23cef8303a0f8adf83f539aa03a4db4a3b79bbff67eb4c"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.2.0.zip",
+                "has_sig": false,
+                "md5_digest": "0fe93ebfb0c352110d5efb57ca60867b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 12563491,
+                "upload_time": "2014-08-06T22:58:20",
+                "url": "https://files.pythonhosted.org/packages/05/06/67bcaa283707899905a084db1247adc56781ecf4cceb32c830b527b94e14/ipython-2.2.0.zip"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "35650a773252913e9fe184d208e6b9fb",
+                    "sha256": "8b4aecec608e6475498c885b60b159ba7a7d88efecf7c52ce295bbfb5d64d704"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.3.0-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "35650a773252913e9fe184d208e6b9fb",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 2770768,
+                "upload_time": "2014-10-08T21:59:35",
+                "url": "https://files.pythonhosted.org/packages/45/c8/a5b7d3ee99499f83d8f20304b77e055550ff6d0fd32bd796a7bceed55343/ipython-2.3.0-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "48ece5075f72215f11986bb1f08f3a7e",
+                    "sha256": "257105a8b57f5a1bab4d48d44ac6209e10d0de9bd6216114c28b4fa4064ee02c"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.3.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "48ece5075f72215f11986bb1f08f3a7e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 2768597,
+                "upload_time": "2014-10-08T21:59:25",
+                "url": "https://files.pythonhosted.org/packages/17/05/e4e4fb2b5be3873d4efec15eb4c15b3192f4e0e406fcbc1092ef183ebf5d/ipython-2.3.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "222eecd3a8299c0119c56954c79e4d0f",
+                    "sha256": "a2f81afe3eca5c8b2e8cf4ec35518fd007a39231770e67e6c2c4f9bd2b857aae"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "222eecd3a8299c0119c56954c79e4d0f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11913980,
+                "upload_time": "2014-10-01T23:56:47",
+                "url": "https://files.pythonhosted.org/packages/95/c5/fabf7ab5763958706445b68b764d8e173d690f83f90f5df2475076e7c747/ipython-2.3.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7930f128d50b6610bc780f00dbfadf90",
+                    "sha256": "14903075fa91564fa81e0433a73e9516081521cb5a028856bd631cae1b3820a2"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.3.0.zip",
+                "has_sig": false,
+                "md5_digest": "7930f128d50b6610bc780f00dbfadf90",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 12565951,
+                "upload_time": "2014-10-01T23:56:51",
+                "url": "https://files.pythonhosted.org/packages/e5/90/9be581fbc42f1f7a19c92326eee7f96f4bc5392df10ba361c39249599f89/ipython-2.3.0.zip"
+            }
+        ],
+        "2.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14b9c7c5280ded28777559c434947573",
+                    "sha256": "ab8d3d55a9c4b56f97cb60f6d6b93dd94954c16114f0ae872c247ace823f15db"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.3.1-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "14b9c7c5280ded28777559c434947573",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 2772423,
+                "upload_time": "2014-11-12T23:18:51",
+                "url": "https://files.pythonhosted.org/packages/96/95/caf98d9cbc76df505a1475599a285cc4adb4778f841181151d9d11bf2070/ipython-2.3.1-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "68dc5a6ff17731400a32a702d89b2d4e",
+                    "sha256": "8f2d2fba9ef6dbc6ff6b69a6efafd8835be82879b8ae79a43361c7d64e363dec"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.3.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "68dc5a6ff17731400a32a702d89b2d4e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 2770390,
+                "upload_time": "2014-11-12T23:19:01",
+                "url": "https://files.pythonhosted.org/packages/ed/a3/096c06f3c8a48b8e611f32d462f8f10ca6e1bbc1e1ba90ed2033c5095ecf/ipython-2.3.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b7085525dac11190bfb45bb8ec8dcbf",
+                    "sha256": "3e98466aa2fe54540bcba9aa6e01a39f40110d67668c297340c4b9514b7cc49c"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b7085525dac11190bfb45bb8ec8dcbf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11884781,
+                "upload_time": "2014-11-12T23:10:35",
+                "url": "https://files.pythonhosted.org/packages/7b/90/9f795400c4780f6a3bbeaf8c2eaeb745319b922e3ae76492af244332af24/ipython-2.3.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0affd51ad4a620fe304018094def85cc",
+                    "sha256": "3263fc9ea2070be1cff8445786d6f318b76768c0068389fb3853b0d2eb3f4c72"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.3.1.zip",
+                "has_sig": false,
+                "md5_digest": "0affd51ad4a620fe304018094def85cc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 12566347,
+                "upload_time": "2014-11-12T23:10:42",
+                "url": "https://files.pythonhosted.org/packages/1e/e6/ed339a59dc1af30046a134302b657936ccc4c0c05b3a8bcc946289eac40f/ipython-2.3.1.zip"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "afb24ced30860ba8fe8d332255578de1",
+                    "sha256": "716fc5dbd2f117336cc6bea87d50c228f51f41ea64e82d2ed9be9e0214c7be7b"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.4.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "afb24ced30860ba8fe8d332255578de1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 2794194,
+                "upload_time": "2015-01-30T20:45:18",
+                "url": "https://files.pythonhosted.org/packages/b9/68/e31fa137b527440077aec78c5b1392eb8268fd076e37df0ab1dbd5041e42/ipython-2.4.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f4b16ec7adf85fd065f444e8e33f9a63",
+                    "sha256": "4047b54bfbcb788b43f50066699b4d803e9cfc6e3f5d8dc0b9630c1462fe46cf"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.4.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f4b16ec7adf85fd065f444e8e33f9a63",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 2794187,
+                "upload_time": "2015-01-30T20:45:25",
+                "url": "https://files.pythonhosted.org/packages/8f/ac/415e6ae57c641008659cfc1e07020e031790f5d508ba9e0013b22f6aa65f/ipython-2.4.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c386d654d1291e8afaf3643720044893",
+                    "sha256": "013698a61229c8beaf7182fb3c7132ab70de1ba9b66366e690237cc86e5f7a84"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c386d654d1291e8afaf3643720044893",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11895397,
+                "upload_time": "2015-01-30T20:45:05",
+                "url": "https://files.pythonhosted.org/packages/fd/e2/1fc9817225d830d395dbcd10c0246208c005ee182ad6c7e0a398a3742ae9/ipython-2.4.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "23f454140e42269eb1e419bf26221453",
+                    "sha256": "bcc2b1a0066575970bbb60e30856035b3e89925016ae5b37b23b25c1c769f607"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.4.0.zip",
+                "has_sig": false,
+                "md5_digest": "23f454140e42269eb1e419bf26221453",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 12592549,
+                "upload_time": "2015-01-30T20:45:11",
+                "url": "https://files.pythonhosted.org/packages/2f/ff/672c438b563ef3c970597e84cd40e66c3f49753721561445c3651512a6c0/ipython-2.4.0.zip"
+            }
+        ],
+        "2.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "622b830b2e9f94144daf6cec8f255a70",
+                    "sha256": "5730d5e6e81140d2dcfe50d2cf920396d14bd22f8bfe0172e89898763e242bf3"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.4.1-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "622b830b2e9f94144daf6cec8f255a70",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 2797181,
+                "upload_time": "2015-02-09T23:00:54",
+                "url": "https://files.pythonhosted.org/packages/97/ec/8e48c8b12d639485acf68c55c3950c38b6268256fa0bbfa2e5edc9f8dcb5/ipython-2.4.1-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e377fe675a88eb49e720c98de4a7ee4",
+                    "sha256": "25282f69595bf89e1c31fe211df99e21ae3cd98ac187c31f643b9b85e9c7740c"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.4.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7e377fe675a88eb49e720c98de4a7ee4",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 2794864,
+                "upload_time": "2015-02-09T23:01:02",
+                "url": "https://files.pythonhosted.org/packages/c6/b9/34f2dfb4c8281892b8a202561ba112acc7d0d5438e7bd2401310b0c31112/ipython-2.4.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "70149981d6515d77ecb3d7507de2d7d9",
+                    "sha256": "6d350b5c2d3e925b0ff6167658812d720b891e476238d924504e2f7f483e9217"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "70149981d6515d77ecb3d7507de2d7d9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11896092,
+                "upload_time": "2015-02-09T23:00:41",
+                "url": "https://files.pythonhosted.org/packages/75/cd/a0864ecbbfac95dc88eb551bd8a486c4607514ffce96f61f322f14d13837/ipython-2.4.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec85134374d063488e7ebe46da270571",
+                    "sha256": "a519a53b5b478e2f8fd36056bdb72406eaa64e043629166cdc3d6097718ddf9a"
+                },
+                "downloads": -1,
+                "filename": "ipython-2.4.1.zip",
+                "has_sig": false,
+                "md5_digest": "ec85134374d063488e7ebe46da270571",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 12593364,
+                "upload_time": "2015-02-09T23:00:47",
+                "url": "https://files.pythonhosted.org/packages/85/fd/c4ac4c3f878397ce7ecf2c7f05c8f72f661ba40610b65a8f70690cd6277c/ipython-2.4.1.zip"
+            }
+        ],
+        "3.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e241d0c4faf07ba4161f41a1e656a1b6",
+                    "sha256": "f56687423394d7c8d7afc96112e4f7d6eb25d736a77336b7b18ab09e9b1c0cd2"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.0.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e241d0c4faf07ba4161f41a1e656a1b6",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 3398062,
+                "upload_time": "2015-02-27T23:52:36",
+                "url": "https://files.pythonhosted.org/packages/88/b3/d889f23a8f1a3f46370fc4119af4ba8acea121d13173020c59effe167e20/ipython-3.0.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "10f7b64e14954d5578eaaa07e0658c2d",
+                    "sha256": "e09e2d43fee46bd4fb4e21c23fe72585dc3c3437073027ff897609dd5b7574bc"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.0.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "10f7b64e14954d5578eaaa07e0658c2d",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 3398013,
+                "upload_time": "2015-02-27T23:52:51",
+                "url": "https://files.pythonhosted.org/packages/d3/fc/1dd5fce0025f4b0b54e8bbab40dd6900345673906c24e67e4f77e0507dc3/ipython-3.0.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b3f00f3c0be036fafef3b0b9d663f27e",
+                    "sha256": "86070141110101b6b55e6dc31a40461c437d391a5337a6e5e349357dc18bfbb4"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b3f00f3c0be036fafef3b0b9d663f27e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10867678,
+                "upload_time": "2015-02-27T23:52:17",
+                "url": "https://files.pythonhosted.org/packages/e6/58/8c9cad1768e8d5b6390b794cbe3837409998b36f134250428b59b55f5fd4/ipython-3.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e60b2dc9958ba4a35aef1101e5eebd6",
+                    "sha256": "3a9682ef14a319347ed153ae171465bc76f628e5b596596b40cf0a29e37bf707"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "0e60b2dc9958ba4a35aef1101e5eebd6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11573856,
+                "upload_time": "2015-02-27T23:52:23",
+                "url": "https://files.pythonhosted.org/packages/12/87/52f13fcc6610f23645d64d576a60c79b3cf42a92658713f5347386965949/ipython-3.0.0.zip"
+            }
+        ],
+        "3.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c9fb71b20ca7223649a57a4b965588a5",
+                    "sha256": "c258d0f5e37b3575546fbd401036a3960842d5d982249fd8965aa806e9a494ef"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.1.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c9fb71b20ca7223649a57a4b965588a5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 3416872,
+                "upload_time": "2015-04-03T21:13:00",
+                "url": "https://files.pythonhosted.org/packages/90/71/360e0e5d332a0c772fa84f61ae12d977c51665e740e6fd4252fc3abaa613/ipython-3.1.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e149386e11472f9cf730773b2d824253",
+                    "sha256": "f8bbed15f8809b3e224157e49567ecf691827f1940df85364ec4ca7277f98ab6"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.1.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e149386e11472f9cf730773b2d824253",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 3416846,
+                "upload_time": "2015-04-03T21:13:10",
+                "url": "https://files.pythonhosted.org/packages/94/79/c858da16c81b3acf18398832ca2f6aaac700b3a7017ff2e3fcc1e928b883/ipython-3.1.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a749d90c16068687b0ec45a27e72ef8f",
+                    "sha256": "532092d3f06f82b1d8d1e5c37097eae19fcf025f8f6a4b670dd49c3c338d5624"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a749d90c16068687b0ec45a27e72ef8f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10915828,
+                "upload_time": "2015-04-03T21:12:43",
+                "url": "https://files.pythonhosted.org/packages/06/91/120c0835254c120af89f066afaabf81289bc2726c1fc3ca0555df6882f58/ipython-3.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dfa0766ee4b035f6048740e8fcc9b8bb",
+                    "sha256": "e95deb1761bab8fec9a5deab805b4196c1dac0edb498d9eaf7ab31ab5f95587a"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "dfa0766ee4b035f6048740e8fcc9b8bb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11638000,
+                "upload_time": "2015-04-03T21:12:49",
+                "url": "https://files.pythonhosted.org/packages/bc/c5/f5ce9b14159ad1068eabcd3bb608bec182785a27f898ad4c17c059c970dc/ipython-3.1.0.zip"
+            }
+        ],
+        "3.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a90449b96ad77d357d0328fdd14a4605",
+                    "sha256": "5645b311f2ebcd2b54dcd993c0b6ad2eb5cad90f5f2fe3d45c184c843f44d407"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a90449b96ad77d357d0328fdd14a4605",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 3419902,
+                "upload_time": "2015-06-22T01:17:16",
+                "url": "https://files.pythonhosted.org/packages/d7/92/f115b11ab2b23f2eb41f64c142459c8d5cef98e8ff1e91ca6375a937f2d5/ipython-3.2.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fef0007941d595e126ec2ae5b095129f",
+                    "sha256": "e6790c69428fa6c3e0e4d633e26ad178970e468baffe03a98629054bdb84308e"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fef0007941d595e126ec2ae5b095129f",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 3419893,
+                "upload_time": "2015-06-22T01:18:42",
+                "url": "https://files.pythonhosted.org/packages/2e/d4/7931264032cd118c9bda717827c020db2f0ffd88355226ab85008b65eec8/ipython-3.2.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "41aa9b34f39484861e77c46ffb29b699",
+                    "sha256": "8e64b441e16298c08025b826126b2d7bc5c1776d2d2f071672166f615f327887"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "41aa9b34f39484861e77c46ffb29b699",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10883925,
+                "upload_time": "2015-06-22T01:16:22",
+                "url": "https://files.pythonhosted.org/packages/45/49/ff3af2c98e91a97b9bcdaf5ee5075257da07e53bd142ae4e1ec6a7cabc52/ipython-3.2.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a2521ead0885cd5fd69b533a1f9471a",
+                    "sha256": "31f5d4e65ac0e72a7eafc31ecb95ab7c981bb49ed314b69311bca45c6ab8facb"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.0.zip",
+                "has_sig": false,
+                "md5_digest": "5a2521ead0885cd5fd69b533a1f9471a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11597521,
+                "upload_time": "2015-06-22T01:16:45",
+                "url": "https://files.pythonhosted.org/packages/ca/43/7557e46926b009f6a5e0ec3fab035fafca0c61500b86f9546674bcfd16ff/ipython-3.2.0.zip"
+            }
+        ],
+        "3.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b51eb2e9fa7861fe4bdad24e0a3a4bba",
+                    "sha256": "81717b6e2b83c42428391d5b5624afbaad650cc1d860b4a514607dd4bcbf9fa0"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b51eb2e9fa7861fe4bdad24e0a3a4bba",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 3419128,
+                "upload_time": "2015-07-12T15:46:32",
+                "url": "https://files.pythonhosted.org/packages/b6/84/41f0d87acc5b2c335733818a32b5a79b695039a42c781c0bd453d0c77153/ipython-3.2.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "de24dc14c7df366e2bfd3bf9d2cb59cf",
+                    "sha256": "9e392762723dc7b5a90cb02a290dcfada63857663fd8ec4fd2bee4562dce0525"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "de24dc14c7df366e2bfd3bf9d2cb59cf",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 3419113,
+                "upload_time": "2015-07-12T15:46:45",
+                "url": "https://files.pythonhosted.org/packages/df/55/a4d517c8d0d163419eb00fb17c09b71931ce04bce433adbde569f32331dc/ipython-3.2.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61c2d5665ff1bd65eceb19fa7f1b23c7",
+                    "sha256": "c913adee7ae5b338055274c51a7d2b3cea468b5b316046fa520cd8a434b09177"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "61c2d5665ff1bd65eceb19fa7f1b23c7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10884249,
+                "upload_time": "2015-07-12T15:46:06",
+                "url": "https://files.pythonhosted.org/packages/73/a1/d6661a9768757f69443c8fd79e2ece4b3d69130070f7f70c53afe00c984a/ipython-3.2.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b084f3281d5f8f098d13fac99fdc847",
+                    "sha256": "898c4861b6d303e0cc47171665f7e8ff276c69b69298ef93f7ce9f1e22f5b44a"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.1.zip",
+                "has_sig": false,
+                "md5_digest": "5b084f3281d5f8f098d13fac99fdc847",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11598091,
+                "upload_time": "2015-07-12T15:46:19",
+                "url": "https://files.pythonhosted.org/packages/7f/6f/4905ef55f8c87c3f3ecd3cd2df2a7c5e94daac2284c6083269fc5174640b/ipython-3.2.1.zip"
+            }
+        ],
+        "3.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1373b7c18a8db63859b80a2bcc6ccc53",
+                    "sha256": "76e62bfc1a845253553f4ece0341afe3c9cd20a1156a25abd3cbc1dfe263808d"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.2-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1373b7c18a8db63859b80a2bcc6ccc53",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 3419167,
+                "upload_time": "2015-09-22T08:34:21",
+                "url": "https://files.pythonhosted.org/packages/89/cc/f6d46ca1b552cf6cef600a3df3a602cfc79dbb281f1cb1261f72de672bca/ipython-3.2.2-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a05be8f8b3fda81878ea5bc9fc0242b",
+                    "sha256": "c94cb94aea4f24150d7e5132e31c2390999ca3f04180d37a790bb413ce050abe"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.2-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5a05be8f8b3fda81878ea5bc9fc0242b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 3419172,
+                "upload_time": "2015-09-22T08:34:37",
+                "url": "https://files.pythonhosted.org/packages/15/9e/b70c388e1cf965b983de5319be398ee3b0a3e6c8f17979720ad917537e12/ipython-3.2.2-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8cfb27e040b6a95a2bc526f36bd45905",
+                    "sha256": "906bf6a94898e5f3b46c63a85ab8a77a4508c0c778e02df2ab8e1746c5b2bfb6"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8cfb27e040b6a95a2bc526f36bd45905",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10884521,
+                "upload_time": "2015-09-22T08:33:41",
+                "url": "https://files.pythonhosted.org/packages/4b/c1/a08c128e8d1bf3132c426557b51d106fd2fe63e40ae4795da25c3a8a5a17/ipython-3.2.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2e230ae60c64c59f32a26386aa867e6b",
+                    "sha256": "3b4665fd32cd2a74b0b433dbfa19094fd3add5fea2cdb5d5933777233a71e277"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.2.zip",
+                "has_sig": false,
+                "md5_digest": "2e230ae60c64c59f32a26386aa867e6b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11598200,
+                "upload_time": "2015-09-22T08:33:56",
+                "url": "https://files.pythonhosted.org/packages/5a/9b/53d17d24aaefdd160b6bb793dd528fdc3ce733c49dcc8e138645eed09002/ipython-3.2.2.zip"
+            }
+        ],
+        "3.2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "089636f96e341a445fcda50f9dac36b4",
+                    "sha256": "0ec713b5a1287aea0e9f79b683f6938f3d53c7e27531ebe92fc5bffe77341cda"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.3-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "089636f96e341a445fcda50f9dac36b4",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 3419075,
+                "upload_time": "2015-11-25T14:25:05",
+                "url": "https://files.pythonhosted.org/packages/a8/be/4903b69c5dfb06e4537adbe4b5497048d303258c6d439466a648a0a05be9/ipython-3.2.3-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "05635d7fff4f1d5ff721d25d3d02155b",
+                    "sha256": "00f7d377e3a3ef81d0c28c1305c424194cb86e8557763248d1ad792b18913a81"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.3-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "05635d7fff4f1d5ff721d25d3d02155b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 3419072,
+                "upload_time": "2015-11-25T14:25:27",
+                "url": "https://files.pythonhosted.org/packages/28/57/25d9092744d24f05b94437a560c40d1441fe6220794e5e22a45ccbe880e5/ipython-3.2.3-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74138ea620fb828a356d8d02a08ba29c",
+                    "sha256": "2e9a467f918c68d2e4d744c7c62407ad2ba2db136c10afcc5bcadc00e983f02b"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "74138ea620fb828a356d8d02a08ba29c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10885849,
+                "upload_time": "2015-11-25T14:24:31",
+                "url": "https://files.pythonhosted.org/packages/17/20/be313d2f0d15dfc85070acd729e99f4aa2fc55426278e27fdec2a6ff2be0/ipython-3.2.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3be0bf825fd2a4c3e430911ed37b2f8f",
+                    "sha256": "6398452c63d2db498f7b40ded6e3625a8d74b4215d2beea5d40da8bf7856a261"
+                },
+                "downloads": -1,
+                "filename": "ipython-3.2.3.zip",
+                "has_sig": false,
+                "md5_digest": "3be0bf825fd2a4c3e430911ed37b2f8f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11598774,
+                "upload_time": "2015-11-25T14:24:41",
+                "url": "https://files.pythonhosted.org/packages/d2/f7/73577a49715f52561460def3e5494acbcab91a068a0a21d038b4cc90d5dd/ipython-3.2.3.zip"
+            }
+        ],
+        "4.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f60fe0df448641c6e743ed0d2bad65cd",
+                    "sha256": "9541ce679e51ebbd0dbd3226cb434cc3ac9321b52f03badad2975f60d6c9f0ba"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f60fe0df448641c6e743ed0d2bad65cd",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 730651,
+                "upload_time": "2015-08-12T01:09:20",
+                "url": "https://files.pythonhosted.org/packages/a6/b1/b09cb059b715ec48c8c2ee971b5c244c4e097cf241a0492d83215647266e/ipython-4.0.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8070db2f31a27e78576b44007bd44a2c",
+                    "sha256": "56c047c989aeec6685ee2a8b25c07ecdca042a23749e6ea23cfb194844e157bc"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8070db2f31a27e78576b44007bd44a2c",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 730658,
+                "upload_time": "2015-08-12T01:09:27",
+                "url": "https://files.pythonhosted.org/packages/5c/8d/b674daa2e6f7bdce09800a632a343e93d4d49c0a01bbd41ec3bfb777bfcd/ipython-4.0.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c2fecbcf1c0fbdc82625c77a50733dd6",
+                    "sha256": "2fd276c407fb0b29e5d4884a7029a2c27fef0a06fd7a34924cce69b7cc43f4da"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c2fecbcf1c0fbdc82625c77a50733dd6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6205133,
+                "upload_time": "2015-08-12T01:09:07",
+                "url": "https://files.pythonhosted.org/packages/3a/e6/486285e4aa0d9b7c5cc074743ccad753370d42d99deda48c2267e3a3620d/ipython-4.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0ba5dff36c5bf40ee383d9eb93f0d6d4",
+                    "sha256": "5a794c7734494cf8536a67d509cf1443f4e5488837a27c2c5b348d84059147c1"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "0ba5dff36c5bf40ee383d9eb93f0d6d4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6397850,
+                "upload_time": "2015-08-12T01:09:13",
+                "url": "https://files.pythonhosted.org/packages/2c/82/d5742ccb7034aa275f17cee7cc0f94a0ef7ef46c1e3cc5081d8ade37c080/ipython-4.0.0.zip"
+            }
+        ],
+        "4.0.0-b1": [],
+        "4.0.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "31a663119b52416bb1745952c1b94c8a",
+                    "sha256": "8274254c518407f5a4bdf27ccd58e64daef87ed0a5a68c7369d175b3dc2a04df"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.0b1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "31a663119b52416bb1745952c1b94c8a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 731605,
+                "upload_time": "2015-07-11T20:05:38",
+                "url": "https://files.pythonhosted.org/packages/6a/6b/94d31749cf6d8a2c3caf04e0dee502fa34c7832afa703a39eecf7c5c5380/ipython-4.0.0b1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "69927eddcf34cdd45b7749db3d220b96",
+                    "sha256": "1b2b690b81960d458267b29530dbaaae2864c6e9c47745a0f515e2caf362dcea"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.0b1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "69927eddcf34cdd45b7749db3d220b96",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 731602,
+                "upload_time": "2015-07-11T20:05:46",
+                "url": "https://files.pythonhosted.org/packages/fa/08/fa2356a2a082da54bcf4d6fb1fe3b87e37509c30cd6a722c12813cf8fc7b/ipython-4.0.0b1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e32e4ea0ed8312311bb8cb3e0af0bea1",
+                    "sha256": "b0e581dcb9de78161d0b491079967b90597095961152034d2be29eff05f19d84"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e32e4ea0ed8312311bb8cb3e0af0bea1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6408846,
+                "upload_time": "2015-07-11T20:05:23",
+                "url": "https://files.pythonhosted.org/packages/ad/e0/dd9c43a850939cec8d4f7bce0991a3e2b35b4be2a3bf97d36d1c827d7be0/ipython-4.0.0b1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "798f0513e2ab848ec9d2741b23fd06a2",
+                    "sha256": "a05d5e3916958fad5f8c8f61ff965a37964c75409bae1752382c43a81477f205"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.0b1.zip",
+                "has_sig": false,
+                "md5_digest": "798f0513e2ab848ec9d2741b23fd06a2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6608861,
+                "upload_time": "2015-07-11T20:05:29",
+                "url": "https://files.pythonhosted.org/packages/7b/76/12e8ce4b290df57176ce2d16cbf14caafcda215762675f59ef976c98fff0/ipython-4.0.0b1.zip"
+            }
+        ],
+        "4.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cd58cf328e6512850a810e074e5e046d",
+                    "sha256": "e444e340098a5ec01b7239d3590fa4e22ac618e3ead1593367f2f0b0808f9ef2"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cd58cf328e6512850a810e074e5e046d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 730810,
+                "upload_time": "2015-11-25T14:17:50",
+                "url": "https://files.pythonhosted.org/packages/11/1e/4d631ddcd93c7763af09de4054d1d67cd94e53a38428c855c5cc100cd343/ipython-4.0.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a122dacd9bc3255c33fdb7e39d78cd69",
+                    "sha256": "a44c9f5cd78c27382bae0d48e4f19d57f43467a42016dcc7b5c5363c45fdc607"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a122dacd9bc3255c33fdb7e39d78cd69",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 730814,
+                "upload_time": "2015-11-25T14:18:20",
+                "url": "https://files.pythonhosted.org/packages/d7/73/258505e845c8370a1636f815aa68bc596a7a1871731484ed4e8d5d207709/ipython-4.0.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "059841210e12543d50a409cb766120ea",
+                    "sha256": "3bd3b78abc4f43b9ea7fa5353a2a9ba01af8ac4aec5d11e78fa5cbcec105432e"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "059841210e12543d50a409cb766120ea",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6207566,
+                "upload_time": "2015-11-25T14:10:06",
+                "url": "https://files.pythonhosted.org/packages/2b/7a/28d25ecd1ac29655669a37553462f0025e3288ece27f0568dc9c045199c3/ipython-4.0.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "274fe8b87d9c1a5816579933f0825c66",
+                    "sha256": "42293f40d14197bed731184b42f90362a180b743777590936799bb97030f9620"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.1.zip",
+                "has_sig": false,
+                "md5_digest": "274fe8b87d9c1a5816579933f0825c66",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6398525,
+                "upload_time": "2015-11-25T14:10:26",
+                "url": "https://files.pythonhosted.org/packages/3a/d2/91cededc2dbbdc9c42a46e37a6fef26711afcad823a8888a06023cba5dba/ipython-4.0.1.zip"
+            }
+        ],
+        "4.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "65756eff4049f60c85635183917971e9",
+                    "sha256": "e3aae5e2879741cb280150b7aad961533a7b07942a177c2e05dd385eb1fa5240"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.2-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "65756eff4049f60c85635183917971e9",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 730967,
+                "upload_time": "2016-01-13T14:22:57",
+                "url": "https://files.pythonhosted.org/packages/07/95/857eb547c92cea889b62329d5c4d2f04ac7ae0ec45492b963c4bab756d87/ipython-4.0.2-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52f9768c617b01f4272b7be11dfe6503",
+                    "sha256": "1018eb3c61b334df21fbab86f7994b38d3d1dcc4c48b8c4ac469e2d0900f61c1"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.2-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "52f9768c617b01f4272b7be11dfe6503",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 730968,
+                "upload_time": "2016-01-13T14:23:06",
+                "url": "https://files.pythonhosted.org/packages/87/8d/14ded9f8b313aaa7ee46aa333fbf95fc81c6f414a0869208444d1c474f93/ipython-4.0.2-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dcc5f52fe353af05e82aa532dc8d2ea8",
+                    "sha256": "10cb9cd4b7730349241bb9053dcd90c3e1f11f2b5baafa2a914b69acc94a35a8"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dcc5f52fe353af05e82aa532dc8d2ea8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6206506,
+                "upload_time": "2016-01-13T14:22:35",
+                "url": "https://files.pythonhosted.org/packages/8c/d7/eeeb40348c7eacd6bdf7609629b35051b697ee8b17baa5737034f6876996/ipython-4.0.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c442a4506dd4a854b17ebdb6bf6e038",
+                    "sha256": "1b1022e754a259ac335f233e2349b5482d0a1a1dc14dcafa373ce11be415cf68"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.2.zip",
+                "has_sig": false,
+                "md5_digest": "2c442a4506dd4a854b17ebdb6bf6e038",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6398752,
+                "upload_time": "2016-01-13T14:22:44",
+                "url": "https://files.pythonhosted.org/packages/a2/66/3ac110f148239c2edd5fdf18cdfd3aa7ac325004af7d29932860f3c5c84d/ipython-4.0.2.zip"
+            }
+        ],
+        "4.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6567a52aa2fb8b772ec20b2f084307e9",
+                    "sha256": "a1660c83f651de5f2eade7d75591de0606bc8693fb0468f1250d08cd1a64a952"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.3-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6567a52aa2fb8b772ec20b2f084307e9",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 730949,
+                "upload_time": "2016-01-19T19:04:55",
+                "url": "https://files.pythonhosted.org/packages/88/33/ecc00bafd9f3eab00cbbb7bac15874f8d0eac9cad0bb966d2e27bec78f65/ipython-4.0.3-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6d41e9ec874864d3342724dc350d9ba6",
+                    "sha256": "5233a3d31eb567c8135db32c5fd68413906dfcbaf225af03d38f045528aa3f90"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.3-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6d41e9ec874864d3342724dc350d9ba6",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 730952,
+                "upload_time": "2016-01-19T19:01:14",
+                "url": "https://files.pythonhosted.org/packages/d6/3d/0fc2ae117a8e3bd2123534c55a1c4095b9dcf7f1fba5f1ff22f892eb4062/ipython-4.0.3-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "16d4c8e79510ba427fb5336e15b0ea34",
+                    "sha256": "3a928f59e8ac8dd97858c28390867c87c09510f1f8bbe97e4e9c6b036eb84fc0"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "16d4c8e79510ba427fb5336e15b0ea34",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6207899,
+                "upload_time": "2016-01-19T19:02:35",
+                "url": "https://files.pythonhosted.org/packages/6c/c2/2c18902ba3f050d0c2790eaf66073da07477bf628766a73480b3bdc3dbb6/ipython-4.0.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e9e7a22050f41bd0914c9beab22e5c4",
+                    "sha256": "5c2d84dbe2a9c183dc01a3b3daba5caaf4bd0cfc6c8348c17f2102df12b19977"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.0.3.zip",
+                "has_sig": false,
+                "md5_digest": "0e9e7a22050f41bd0914c9beab22e5c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6398798,
+                "upload_time": "2016-01-19T19:03:18",
+                "url": "https://files.pythonhosted.org/packages/67/1f/3cd1b690665d8a5d16e338dc2cc2b92b669659f89a84d6d64a08529ef0a6/ipython-4.0.3.zip"
+            }
+        ],
+        "4.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "19816b11e017ef2bcdc8a92dac19bc30",
+                    "sha256": "02b87283031114bed0665d2120b0d1b2d554a7a1bbdd098374dab7f035d96731"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "19816b11e017ef2bcdc8a92dac19bc30",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 736851,
+                "upload_time": "2016-02-03T01:10:19",
+                "url": "https://files.pythonhosted.org/packages/b9/db/fb76a0e78f92ea78f7f22a869ec4c116a6b810d9355bdcfca9a7a1f059dd/ipython-4.1.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "955c0dd72186ab10c67f28f211461370",
+                    "sha256": "f2ff5d42fbda7c2624e0f5265d0d05ef2563ad2c713b3649e7282f675e3efa09"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "955c0dd72186ab10c67f28f211461370",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 736834,
+                "upload_time": "2016-02-03T01:10:30",
+                "url": "https://files.pythonhosted.org/packages/0a/22/6d636e37415e318fb3fe985029c15b96556039bd813af3740d9e62f54b23/ipython-4.1.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e4c648002bf966c234d6e99efa6d7fef",
+                    "sha256": "c35e658c3a5b35fa0e196c143f46a78de8a89cf2b4a19aa00be502e39f334167"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e4c648002bf966c234d6e99efa6d7fef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4935005,
+                "upload_time": "2016-02-03T01:10:41",
+                "url": "https://files.pythonhosted.org/packages/60/37/851109cf100818180654c2aec363273192bb3b256b8350a52fe2897fe599/ipython-4.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "76e3d9f30bd1dca458b26a6165df9001",
+                    "sha256": "651e7130c7ad7fabc540a4b88346b46b0bc741d4345ec38518d90761615d888e"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "76e3d9f30bd1dca458b26a6165df9001",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5100253,
+                "upload_time": "2016-02-03T01:10:47",
+                "url": "https://files.pythonhosted.org/packages/b9/d8/b525a3f696d6419f36ac9ebe2f8c4be29210046ecc7e3d9e3433ed15c514/ipython-4.1.0.zip"
+            }
+        ],
+        "4.1.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "512f0431c850c75a12baa9f8c4a9f12f",
+                    "sha256": "4d0a08f3fd8837502bf33e9497a5ab28fe63e2fa4201765f378cb139c7a60d5f"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0rc1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "512f0431c850c75a12baa9f8c4a9f12f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 736900,
+                "upload_time": "2016-01-26T19:58:35",
+                "url": "https://files.pythonhosted.org/packages/ac/02/04a5d372b4e64f9c97b2846646aec1ce4532885005aa4ba51eb20b80e17f/ipython-4.1.0rc1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2aff56d8e78341f64663bcbc81366376",
+                    "sha256": "6244a8e3293088ee31c1854abe1a1e7a409cf3ac2fb7579aa9616bdfadd3d4dc"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2aff56d8e78341f64663bcbc81366376",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4933377,
+                "upload_time": "2016-01-26T19:58:53",
+                "url": "https://files.pythonhosted.org/packages/a0/de/f71f0c8b8a26ef28cc968fbf1859729ad3e68146cd2eb4a759e9c88da218/ipython-4.1.0rc1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a9ff233f176dd99b076b81dc8904ab7a",
+                    "sha256": "efa3a5a676648cb18e2a2d3cd6353f3c83f0f704df8eb0eb6ae7d0dcbf187ea1"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0rc1.zip",
+                "has_sig": false,
+                "md5_digest": "a9ff233f176dd99b076b81dc8904ab7a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5100723,
+                "upload_time": "2016-01-26T19:59:14",
+                "url": "https://files.pythonhosted.org/packages/71/f0/9d670266b840b8b921dc7106ecddd892f6fb893424883498e1ba3ec3a3a1/ipython-4.1.0rc1.zip"
+            }
+        ],
+        "4.1.0rc2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "64e8aec3f7559256c88cd3295ec59b07",
+                    "sha256": "7f858e17a1679766545d91a8b19902f4459043a03edc5c9afa3cb1596add0509"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0rc2-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "64e8aec3f7559256c88cd3295ec59b07",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 736891,
+                "upload_time": "2016-01-29T23:24:58",
+                "url": "https://files.pythonhosted.org/packages/f8/99/df9d8e446106f00720eaac7853f69c316174dbaa74114668629472786de1/ipython-4.1.0rc2-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "621424862ccdbaf923ae98ba72641e1e",
+                    "sha256": "93d4fa7a8f7fbeafdce11dd85ceae411e3fe1a241383628f243960d8dbcb6e75"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0rc2-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "621424862ccdbaf923ae98ba72641e1e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 736873,
+                "upload_time": "2016-01-29T23:25:10",
+                "url": "https://files.pythonhosted.org/packages/d0/d6/87e86ce8b7143f1441400e93d7e1357ead249602f084401a3d0ec3daed08/ipython-4.1.0rc2-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1337191d423ef5402bf72a99fca08c0e",
+                    "sha256": "e7376fb70fc262d04c93e835fd7fa5ea2e196a62933cb0bfa309c98df76032d5"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0rc2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1337191d423ef5402bf72a99fca08c0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4934582,
+                "upload_time": "2016-01-29T23:25:19",
+                "url": "https://files.pythonhosted.org/packages/8f/04/4439322beb06b796f9a13f7d60f51d6f8bc00f07eeb2cb5211d4e95faf51/ipython-4.1.0rc2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c78ce35044e43f6168cf5dda7b1ba95",
+                    "sha256": "8589cfcfa4926b1ec15e77a5391138aa2dade374911cb8a130c2d71d2a55a614"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.0rc2.zip",
+                "has_sig": false,
+                "md5_digest": "0c78ce35044e43f6168cf5dda7b1ba95",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5102635,
+                "upload_time": "2016-01-29T23:25:26",
+                "url": "https://files.pythonhosted.org/packages/93/2c/bee2a9b07e68b2c8310fa903e0bf32f830994346a278f23579d291b8ac39/ipython-4.1.0rc2.zip"
+            }
+        ],
+        "4.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6935367967dd21dc1ac653de2f0d7bbc",
+                    "sha256": "2cea1b50f9bbe477ba69e8a17595bc94ad854cb6cff0247e6417eb55ba764a91"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6935367967dd21dc1ac653de2f0d7bbc",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 737058,
+                "upload_time": "2016-02-03T17:28:20",
+                "url": "https://files.pythonhosted.org/packages/27/a6/2aab4e934b251d16ff5b4201d986afbe7c28791f6f69372d7b912a4acdb4/ipython-4.1.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1370971c997538c1d59718eba567cf1c",
+                    "sha256": "94c2bccb135477e3b4f551d37bf350081434da71fbfc17c60870c118a292ece9"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1370971c997538c1d59718eba567cf1c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 737059,
+                "upload_time": "2016-02-03T17:28:35",
+                "url": "https://files.pythonhosted.org/packages/4a/29/1dd02d14c445ffb57b258c9d50bd88d4ef5f6f6d8032837fdd93c22d55e5/ipython-4.1.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3da622447b3b7ca7d41c868c80bb8b0e",
+                    "sha256": "1cb340dfdf6ec306b9ded72071742c87fa5247929db7ab704e17defe1975e38f"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3da622447b3b7ca7d41c868c80bb8b0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4938684,
+                "upload_time": "2016-02-03T17:28:48",
+                "url": "https://files.pythonhosted.org/packages/17/30/1a8edd394eade1013058453391855d6f34aaf6e78675827d7566c130c0c4/ipython-4.1.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "445ff597cccb7818c23c988010f62838",
+                    "sha256": "54d4221fc0c80027a344ca332f6f44e4fc2891b995d2e24c49e74f68fa21d614"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.1.zip",
+                "has_sig": false,
+                "md5_digest": "445ff597cccb7818c23c988010f62838",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5100236,
+                "upload_time": "2016-02-03T17:29:11",
+                "url": "https://files.pythonhosted.org/packages/c5/32/08ccf1135360e140cac186097a03674beaf25126fbba5f713cfe6e04fec2/ipython-4.1.1.zip"
+            }
+        ],
+        "4.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "564543ff3d70040076111ced09d01472",
+                    "sha256": "e3a06c7bda40f7f798c7d30dc2db350c78dab1ba316a225844ff257a3d6c88fd"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.2-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "564543ff3d70040076111ced09d01472",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 736832,
+                "upload_time": "2016-03-01T12:00:08",
+                "url": "https://files.pythonhosted.org/packages/80/eb/27a89210781827a904d4d0182044b3fbd2dd4c4537766a375a289f3eea83/ipython-4.1.2-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "414e5b95661e2c9b058244d740428ef5",
+                    "sha256": "3d41173fa853e527e5ccb16d0c36ab70535a5f20bab708b7b41942e7102de0f9"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.2-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "414e5b95661e2c9b058244d740428ef5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 736840,
+                "upload_time": "2016-03-01T12:00:38",
+                "url": "https://files.pythonhosted.org/packages/f4/15/8ee0bb4907c386994bac5cda2ac1bf4f0bad171aa6cec385df86c11c6c57/ipython-4.1.2-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28c9ebd1abfb9b4a07cb87005f285edd",
+                    "sha256": "052f9692a227f285febecec856d749811ac6a20b32c7629b4de31f04ea701692"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "28c9ebd1abfb9b4a07cb87005f285edd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4953949,
+                "upload_time": "2016-03-01T12:01:11",
+                "url": "https://files.pythonhosted.org/packages/79/69/dc4a12328149848f4cc05fd6784b13626bb250baec157ada023d3b7d94cf/ipython-4.1.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "639f8b63aa446d2c0a597a9a8c63a6f0",
+                    "sha256": "802dddb9a56375cc08d69a0c93a2dc6f2af27bea38275d5150b4c5dde9169e5f"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.1.2.zip",
+                "has_sig": false,
+                "md5_digest": "639f8b63aa446d2c0a597a9a8c63a6f0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5122930,
+                "upload_time": "2016-03-01T12:01:29",
+                "url": "https://files.pythonhosted.org/packages/17/0c/cd84179146710b990f74c9835baebe0b74674953a60d73da222ea42178f2/ipython-4.1.2.zip"
+            }
+        ],
+        "4.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f440b6222effe9ad5e86b7eacbd8f052",
+                    "sha256": "0480354f25b2f443e4ef1456b48f28ad1caaa6d316fca5a5eaa9ca7745ae7923"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.2.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f440b6222effe9ad5e86b7eacbd8f052",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 736936,
+                "upload_time": "2016-04-20T12:11:51",
+                "url": "https://files.pythonhosted.org/packages/25/a2/20859e0134ffdbfb47b436239fa919d3e176b32e8edd24547821d4ca1fa2/ipython-4.2.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b7807fc2df74e0a09012972eef72e1c7",
+                    "sha256": "98452af6450e28c9c742d567d75eb6e3a7b391ad4ce8abd5679c5f85ce7fad00"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.2.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b7807fc2df74e0a09012972eef72e1c7",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 736950,
+                "upload_time": "2016-04-20T12:12:22",
+                "url": "https://files.pythonhosted.org/packages/c0/e0/9a9ea143c0fd508e3c294b78a04d187d1698df78009d0eb6d040c0d10e21/ipython-4.2.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9c7c28eddbc39eb874d2c22025772d63",
+                    "sha256": "dba42f182b5f6f26630d2202efd30383712d9f7d8d8d9896b37ae2145deca616"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9c7c28eddbc39eb874d2c22025772d63",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4935042,
+                "upload_time": "2016-04-20T12:12:46",
+                "url": "https://files.pythonhosted.org/packages/4e/c7/519b95112dba6f3ae91530bcb8564454c575fcb1fdb323b2b0ee9eff1227/ipython-4.2.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b2b27aa1936685878ab157787fcedde",
+                    "sha256": "d852fed59da67c7e45cb2192027da8bfd920a7856d295c247a45105968d24d5a"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.2.0.zip",
+                "has_sig": false,
+                "md5_digest": "4b2b27aa1936685878ab157787fcedde",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5100560,
+                "upload_time": "2016-04-20T12:13:02",
+                "url": "https://files.pythonhosted.org/packages/df/c3/9ea18f57e78e38aa3c84f5272a137b438e2571d06a1cdcbdb5c6f5ff0a00/ipython-4.2.0.zip"
+            }
+        ],
+        "4.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b39b91bf09fff2733d1279300e207f23",
+                    "sha256": "7ab1d9da8d2c5661971174548e66e2c9c7880b2e6d374edd1a2dba6d0a927abc"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.2.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b39b91bf09fff2733d1279300e207f23",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 737242,
+                "upload_time": "2016-07-01T22:36:20",
+                "url": "https://files.pythonhosted.org/packages/ee/96/f0a5d737f7c2818caea3425d0351faf817c457f3c10e5e6e022d0c097435/ipython-4.2.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e1618e90535a4e9afa417d36a90cc058",
+                    "sha256": "2369ec8eb7826edca0a275234eff3b1e55314e4da79116608214a299472c30c1"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.2.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e1618e90535a4e9afa417d36a90cc058",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 737241,
+                "upload_time": "2016-07-01T22:36:24",
+                "url": "https://files.pythonhosted.org/packages/f0/b7/c801138e58df6ef9fd47bd2d7eed32ab0b47df22929c53e142f96d2247c5/ipython-4.2.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f86f4fe7a80997704294383ea775627d",
+                    "sha256": "e21c3d7f410014b04d36fe12998f132ed9ef4c6119b81016c04eedb09f0716a5"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f86f4fe7a80997704294383ea775627d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4936617,
+                "upload_time": "2016-07-01T22:36:29",
+                "url": "https://files.pythonhosted.org/packages/24/94/a38aebdeb696e03dc4b8a4d3243c8ae4a5ab232a00ed590c74ad063412f2/ipython-4.2.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "89dc41fcbb17ff074f8e0dc697d1625a",
+                    "sha256": "ee21aa2287464ebc8416a5e7be5731e95b90503aa6852d18b8cfc2bf5e226780"
+                },
+                "downloads": -1,
+                "filename": "ipython-4.2.1.zip",
+                "has_sig": false,
+                "md5_digest": "89dc41fcbb17ff074f8e0dc697d1625a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5100935,
+                "upload_time": "2016-07-01T22:36:37",
+                "url": "https://files.pythonhosted.org/packages/61/18/633fbc555fbff2e934e7d5334009784e0889587761af03edea6240624f9a/ipython-4.2.1.zip"
+            }
+        ],
+        "5.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e716373c18355d9a35fb13e5989109f1",
+                    "sha256": "f733c21e2217a680225d5d0a90eb79fa13ee5515c819d48e8b49a043b3a51f98"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e716373c18355d9a35fb13e5989109f1",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 743981,
+                "upload_time": "2016-07-08T02:54:55",
+                "url": "https://files.pythonhosted.org/packages/eb/b6/3ed54fe22c284108d9676029b7cdca0ce94bcb8dc24487af0c88d57c53a1/ipython-5.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9c00df2f7e2e2636aba02671f45eea6b",
+                    "sha256": "7ec0737169c74056c7fc8298246db5478a2d6c90cfd19c3253222112357545df"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9c00df2f7e2e2636aba02671f45eea6b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4955981,
+                "upload_time": "2016-07-08T02:55:00",
+                "url": "https://files.pythonhosted.org/packages/09/2e/870d1058768f5240062beb0bd2ff789ac689923501b0dd6b480fb83314fc/ipython-5.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "693bcdc21db0b5c83c149e2e217b5a7a",
+                    "sha256": "af62519a637358219b033f8572c94a0969cd3710f9e38509b23fad02e92f4694"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "693bcdc21db0b5c83c149e2e217b5a7a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5127901,
+                "upload_time": "2016-07-08T02:55:10",
+                "url": "https://files.pythonhosted.org/packages/8f/ed/81354eebd20f445447e00ee8a7d13c8a837a0738b5125a0fc1daca51be6f/ipython-5.0.0.zip"
+            }
+        ],
+        "5.0.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74c030cb597bf45f644a593321702755",
+                    "sha256": "048f52c26c95613726159985f1f1cff3334a4a21b69259302f51fe8e3b3be698"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "74c030cb597bf45f644a593321702755",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 741564,
+                "upload_time": "2016-06-03T20:08:49",
+                "url": "https://files.pythonhosted.org/packages/ec/29/bcf921c85679f9924268160b7740bcd700670c29dc924ce5b57efed49cc9/ipython-5.0.0b1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ce753a0feca52471d7ae29983817983",
+                    "sha256": "a830592faec736f4f5043079cf133ab5471212aece4ba2a91197354c5f47a17b"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4ce753a0feca52471d7ae29983817983",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4936760,
+                "upload_time": "2016-06-03T20:08:55",
+                "url": "https://files.pythonhosted.org/packages/f9/79/4440c0d335daa99e52c1585bda99222029afec066a7a5243215dc7e68230/ipython-5.0.0b1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e3283f6c1ca42c042dcda175e02d48f",
+                    "sha256": "49570987ec02643edacb287838ac61e5d162bc8285f451ea8c78be0ba36c08c4"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b1.zip",
+                "has_sig": false,
+                "md5_digest": "8e3283f6c1ca42c042dcda175e02d48f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5109712,
+                "upload_time": "2016-06-03T20:09:07",
+                "url": "https://files.pythonhosted.org/packages/18/a6/258d8443653ea30c35dc3b96cb69082d8203d3f6bef18fe85b7fc5bf852e/ipython-5.0.0b1.zip"
+            }
+        ],
+        "5.0.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "935cfa7452671f621a019710085712b6",
+                    "sha256": "a3277ee1329c4241a2624348585034a60bd25459ae910db95278cfef91c120b0"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "935cfa7452671f621a019710085712b6",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 742554,
+                "upload_time": "2016-06-07T23:06:53",
+                "url": "https://files.pythonhosted.org/packages/9f/2b/c8ff2e7f8f0d8c0951d7bc3b94708019414042abc04072c9279c6b103cb6/ipython-5.0.0b2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c630fc3e6375012e7556d1af5b30b7c7",
+                    "sha256": "6a3457fef3629f5403937fbf5031f954c25351c038b0499c5ee1975cb0691430"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c630fc3e6375012e7556d1af5b30b7c7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4940683,
+                "upload_time": "2016-06-07T23:07:04",
+                "url": "https://files.pythonhosted.org/packages/a4/7d/19b7e5f17ac9261147ce05cda48a19063ba31fe7e5fdcd92941244cb3dc1/ipython-5.0.0b2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b93907226c10083d1b440f97b21be68d",
+                    "sha256": "a14913b2fb8dcc84b44d581a5be74d311b54727a48bbc8df0cc171ec2f51cbd5"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b2.zip",
+                "has_sig": false,
+                "md5_digest": "b93907226c10083d1b440f97b21be68d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5114193,
+                "upload_time": "2016-06-07T23:07:18",
+                "url": "https://files.pythonhosted.org/packages/d1/6f/b26b5fe22defb3b3cd7331c7fcac9d230cd4cc8088f3721ba0b033cd78f8/ipython-5.0.0b2.zip"
+            }
+        ],
+        "5.0.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "56bea275a75c6b8ec24894155df385e1",
+                    "sha256": "e3bedb2ef99b6271683f7008693cb2111d9f89faac26f145db0410d73096fd7d"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "56bea275a75c6b8ec24894155df385e1",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 743198,
+                "upload_time": "2016-06-09T21:53:31",
+                "url": "https://files.pythonhosted.org/packages/1a/d1/8ab55f20c7748710efd76aea59c57cdaba3cd4f1e182ce6f394c9f5ae04a/ipython-5.0.0b3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "41e9797d788f8f91d951b41d73d84991",
+                    "sha256": "3a97e5948d6b067be3484d240d20dea22274408cad673b120f8d0fbc849e5fbc"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "41e9797d788f8f91d951b41d73d84991",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4938932,
+                "upload_time": "2016-06-09T21:53:37",
+                "url": "https://files.pythonhosted.org/packages/83/e4/f0d626ddcc8d9f524d8027605f74c43b9675097554f92a3e90b16052eb94/ipython-5.0.0b3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ebf744a915a2d45fc7c2488e281e059f",
+                    "sha256": "f2aefd01dfe62591cacfc882a986d3776eee07decf6df472c8d667dcefcc46a6"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b3.zip",
+                "has_sig": false,
+                "md5_digest": "ebf744a915a2d45fc7c2488e281e059f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5112391,
+                "upload_time": "2016-06-09T21:53:46",
+                "url": "https://files.pythonhosted.org/packages/5f/28/ed912064d91c274e7a680fb8f3b1aa41adfba4d6c3807a3a8414814bda5f/ipython-5.0.0b3.zip"
+            }
+        ],
+        "5.0.0b4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "523403602484d5932b71e5f51ebdf2fa",
+                    "sha256": "2a19fccd857671ff90908cc9cf6d208a492ec4b78aacf079243928485a6a58e4"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "523403602484d5932b71e5f51ebdf2fa",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 744051,
+                "upload_time": "2016-06-16T22:31:43",
+                "url": "https://files.pythonhosted.org/packages/0a/d1/305dd3e923f89987d5d2460b9b8c5ceafaf3d0a026790473e5ab59273153/ipython-5.0.0b4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b13ced9bacc59ce5767659e1eb5f9bb2",
+                    "sha256": "bd3480b3f898f71fb5e22413f5813d8cedc3f0d3b28d0898d63326d4a97bc457"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b13ced9bacc59ce5767659e1eb5f9bb2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4940199,
+                "upload_time": "2016-06-16T22:31:59",
+                "url": "https://files.pythonhosted.org/packages/7c/d9/de5a9a280fdab82ff148f6a42b43d35700841d492028e1c3726d6b9f1107/ipython-5.0.0b4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4480c1bfff3130884e18dd93640ad608",
+                    "sha256": "3670e94e45d1952b6740b5791d5f710d721e55c822396d7653e838826db6b1d4"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0b4.zip",
+                "has_sig": false,
+                "md5_digest": "4480c1bfff3130884e18dd93640ad608",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5113666,
+                "upload_time": "2016-06-16T22:32:20",
+                "url": "https://files.pythonhosted.org/packages/4a/b8/97976f737f0f17654ffcb22b4ada6b3824c5badddde8de991d1727784611/ipython-5.0.0b4.zip"
+            }
+        ],
+        "5.0.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a93eac46ce62ef763be543d3ecee03d0",
+                    "sha256": "7a8092bef315c6b5af2c8fcc8175a3f0374f73be47ff8c3910f91a7452ff0082"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0rc1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a93eac46ce62ef763be543d3ecee03d0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 743853,
+                "upload_time": "2016-07-05T16:32:20",
+                "url": "https://files.pythonhosted.org/packages/0a/74/9c2f97942c71da5f02c5f9bc8a8a6458cba9018c4b3ed73d1370ddabb6e2/ipython-5.0.0rc1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a1c05b309880c30db147a7376946f54",
+                    "sha256": "2837020a3cbede9a99a6ae74d8e888c48ec765fa5f4046be551fda770e7bc7e0"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1a1c05b309880c30db147a7376946f54",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4956855,
+                "upload_time": "2016-07-05T16:36:22",
+                "url": "https://files.pythonhosted.org/packages/e6/83/f247f871c38502bda5168d5c8bf8d5ebe855af5bdbeb971ed14c307b9f2f/ipython-5.0.0rc1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f86c1868c604cd33a10accd93e155ac2",
+                    "sha256": "bf7e6f279c25fb481019e0576b32ad2e9b8f3d47454ae2ce9ba2bfd4b1e9d74f"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.0.0rc1.zip",
+                "has_sig": false,
+                "md5_digest": "f86c1868c604cd33a10accd93e155ac2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5132329,
+                "upload_time": "2016-07-05T16:36:43",
+                "url": "https://files.pythonhosted.org/packages/4f/a1/519bda0b173c3daf06bbab2ef55007ff6e8db7e2ff2b286b40291f0b59ca/ipython-5.0.0rc1.zip"
+            }
+        ],
+        "5.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "13525ae7bf410004d2b1e44f9e8764da",
+                    "sha256": "e0dcab13f935afbb6441a1c34a882cd558dcb590ef295560f5a1af247e554931"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.1.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "13525ae7bf410004d2b1e44f9e8764da",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 747182,
+                "upload_time": "2016-08-13T13:05:51",
+                "url": "https://files.pythonhosted.org/packages/17/81/edc7c7c2acf4009db35a183e5a898679fdc18c2b078d847d3e745b11faa4/ipython-5.1.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e8d09ad4ba46f983fb44d066231e13f1",
+                    "sha256": "4452b99ed28453c68dbd2765899d3df8fa5b2bb98dcceb2028ca9c0ccbcc37eb"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.1.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e8d09ad4ba46f983fb44d066231e13f1",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 747182,
+                "upload_time": "2016-08-13T13:05:55",
+                "url": "https://files.pythonhosted.org/packages/66/d3/8830812574574c39f97bd6390475ba76294ed70cf489995dd30bd9b38245/ipython-5.1.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47c8122420f65b58784cb4b9b4af35e3",
+                    "sha256": "7ef4694e1345913182126b219aaa4a0047e191af414256da6772cf249571b961"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "47c8122420f65b58784cb4b9b4af35e3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4945490,
+                "upload_time": "2016-08-13T13:06:06",
+                "url": "https://files.pythonhosted.org/packages/89/63/a9292f7cd9d0090a0f995e1167f3f17d5889dcbc9a175261719c513b9848/ipython-5.1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d6a0bd4d4c18a4dc88d2f69dfefdea7",
+                    "sha256": "2db893efa27c237f314a4f28294279f5dabafff1d0a7bbb45f95e44edb17810c"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.1.0.zip",
+                "has_sig": false,
+                "md5_digest": "9d6a0bd4d4c18a4dc88d2f69dfefdea7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5130060,
+                "upload_time": "2016-08-13T13:06:19",
+                "url": "https://files.pythonhosted.org/packages/d4/0b/70c913ed4c99eb84c589e5e25b28985ba93ca2a57e08959bb14372f7f5f8/ipython-5.1.0.zip"
+            }
+        ],
+        "5.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2175336d1f2d2f5ec017abb3365d084",
+                    "sha256": "c0f3cfc9e84874eb2286002aa66a564e1ce46bd96c997b7d024092e5b4fd14e8"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f2175336d1f2d2f5ec017abb3365d084",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 749438,
+                "upload_time": "2017-01-29T23:39:38",
+                "url": "https://files.pythonhosted.org/packages/86/07/174bfee6780e2ade78130734905aa4b3a824333fab13f31f41a23219fe7e/ipython-5.2.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3bc7dae2df765de33647fbb1e4104f9c",
+                    "sha256": "fa2486bc71c46d267b05aa177652617c111609454152d390a8302a3a239c27af"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3bc7dae2df765de33647fbb1e4104f9c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 749440,
+                "upload_time": "2017-01-29T23:39:41",
+                "url": "https://files.pythonhosted.org/packages/15/1d/513da98caeb62fea01468a6db3ea8e91f856e09db57889bfff89e5a32480/ipython-5.2.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4eb87cb68f97309c8821a80544ac53aa",
+                    "sha256": "d043ac22f360a329b9f1e1ce68905339b76460d373579224c071ee52b6120231"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4eb87cb68f97309c8821a80544ac53aa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4962360,
+                "upload_time": "2017-01-29T23:39:45",
+                "url": "https://files.pythonhosted.org/packages/df/44/0eee6ed339641d88e2be32ddfd695a39c954b66e5a10ba701629ce3454e9/ipython-5.2.0.tar.gz"
+            }
+        ],
+        "5.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b3edafd05e57efda5e3573c3a32c024",
+                    "sha256": "a1617ac6953f508aaf2c773f324079c0d7e475f48b112f0a1abf49704d5d715f"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5b3edafd05e57efda5e3573c3a32c024",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 749280,
+                "upload_time": "2017-01-31T14:05:08",
+                "url": "https://files.pythonhosted.org/packages/03/be/01ba38cc14fcafa64d44d4fd2d4d67875379af68f2685cf375d274ffbe55/ipython-5.2.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1af57a8a4e4c9bccdbe99a89287dfa56",
+                    "sha256": "ea15ee74ca89c16a23390515c6b2c01c229e96794dfd30598c80dea1ea0b7a8d"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1af57a8a4e4c9bccdbe99a89287dfa56",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 749289,
+                "upload_time": "2017-01-31T14:05:10",
+                "url": "https://files.pythonhosted.org/packages/d7/a3/56a1502206c77c2131a6d81a9cac16aabf4ccbe9c02dc201980bd51ad7ce/ipython-5.2.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f750a482cd740fdd2f8b142d4bbbd7a0",
+                    "sha256": "04dafc37c8876e10e797264302e4333dbcd2854ef6d16bb57cc12ce26515bfdb"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f750a482cd740fdd2f8b142d4bbbd7a0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4965978,
+                "upload_time": "2017-01-31T14:05:15",
+                "url": "https://files.pythonhosted.org/packages/e7/75/7c981d2d7f25754ef64f955b595c2d80e2fec1aa47e52bd55ab35dbc8ccf/ipython-5.2.1.tar.gz"
+            }
+        ],
+        "5.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "22685cc6de282056d1b4e2e9bd9dba53",
+                    "sha256": "d3e4e195a00a12f38effa9fe20baba7b26ec478b9444abbb90626ed9ca74a7f2"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.2-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "22685cc6de282056d1b4e2e9bd9dba53",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 749290,
+                "upload_time": "2017-02-03T14:40:54",
+                "url": "https://files.pythonhosted.org/packages/45/c9/65f1b4d44570eb466052a0334c16595bc180bc43db8d91a0e26936615ad9/ipython-5.2.2-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1867b4bb8ac78100c9b884352b9c4b9b",
+                    "sha256": "56c1ffe6a8b6825ba38258acb432be46f6d5b66152255f1c9c7f7981484ccef2"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.2-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1867b4bb8ac78100c9b884352b9c4b9b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 749290,
+                "upload_time": "2017-02-03T14:40:57",
+                "url": "https://files.pythonhosted.org/packages/01/b0/88772e73721345aa0b31dc27ad2c667f78b0bbd83f880dba6a2b9e6bdeac/ipython-5.2.2-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "19e4a46ec7d7a32d068de4c253c9b459",
+                    "sha256": "6ee1c89f6031e0c86727820ad394c6eb4d3ac28de48e0df3b9367ccf92e212e2"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "19e4a46ec7d7a32d068de4c253c9b459",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4948601,
+                "upload_time": "2017-02-03T14:40:59",
+                "url": "https://files.pythonhosted.org/packages/6e/cf/c2a3ca5942e2d8084574157a8f818efafb7218204cd9e41166c92c452e07/ipython-5.2.2.tar.gz"
+            }
+        ],
+        "5.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "82e2adeb1e6673a8c201d32d24739022",
+                    "sha256": "fb342e89069c9ef176063b14888d7fe774253762f1eda19f09332f1440e6f3c7"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.3.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "82e2adeb1e6673a8c201d32d24739022",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 750620,
+                "upload_time": "2017-02-24T15:16:01",
+                "url": "https://files.pythonhosted.org/packages/b0/2f/7c8ba9581b538b91ea4c9df6a08b5d2901519003956bad059458bfab73f1/ipython-5.3.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b3f6c0cfe6c08fff6e66c4898e7748a",
+                    "sha256": "54d2ec3ba66ae2e0a34b2b48c85c4818d8ca040edd36ffe81f1e460dd5e03ae5"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.3.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7b3f6c0cfe6c08fff6e66c4898e7748a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 750624,
+                "upload_time": "2017-02-24T15:15:59",
+                "url": "https://files.pythonhosted.org/packages/a9/aa/cfb6fa600dd4b57d80c4da55e64213d10ff5536c4c859932407245a1a481/ipython-5.3.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26c175feb92f1c9033968432a93845ea",
+                    "sha256": "bf5e615e7d96dac5a61fbf98d9e2926d98aa55582681bea7e9382992a3f43c1d"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "26c175feb92f1c9033968432a93845ea",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4967956,
+                "upload_time": "2017-02-24T15:16:11",
+                "url": "https://files.pythonhosted.org/packages/a4/70/d07a28ea595953acacc128a6efe25696be20b2e1d3e3c81ef4b55410b488/ipython-5.3.0.tar.gz"
+            }
+        ],
+        "5.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7de41c7c7a54401c26d18d3efca4ebec",
+                    "sha256": "6bf30eed7a55c74fc937ea2975e3a3dec2b5a5bd654ffd8ddf05a62672b3baea"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.4.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7de41c7c7a54401c26d18d3efca4ebec",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 757561,
+                "upload_time": "2017-05-31T22:23:10",
+                "url": "https://files.pythonhosted.org/packages/8f/aa/b81db9bbbfb68f7b170871ce5c71cad319e4af26d6486ccab2de2b6b07a8/ipython-5.4.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dedc31aac203e18a5cb4b9bfb2c7dfe5",
+                    "sha256": "b92a53dfdd0d49841a319818ffaf7640b0ff9b99ff9ceeb9531c69b1a027ca7e"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.4.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "dedc31aac203e18a5cb4b9bfb2c7dfe5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 757558,
+                "upload_time": "2017-05-31T22:23:14",
+                "url": "https://files.pythonhosted.org/packages/c6/7b/a221704fd27c30a313e2f0ccb4d5ab10034a70afac43e4375648877b3b62/ipython-5.4.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d8cc938f46801060239184a35ec9c5a6",
+                    "sha256": "6907826c427c917bf0cdab71ee728288b1f1975c4b94b3ed608b67db3183c974"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d8cc938f46801060239184a35ec9c5a6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4975714,
+                "upload_time": "2017-05-31T22:23:28",
+                "url": "https://files.pythonhosted.org/packages/36/cd/765f53135bbbbcd691858aba3af124453a230fe0c752f009f69012fce5d5/ipython-5.4.0.tar.gz"
+            }
+        ],
+        "5.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b801f50b5e82a3fabca42b661568bf5",
+                    "sha256": "af2b1ca3e073b7230b975858c0f5fcc659aa25181335b40ab09b00bf91134d93"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.4.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2b801f50b5e82a3fabca42b661568bf5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 757559,
+                "upload_time": "2017-06-01T01:27:04",
+                "url": "https://files.pythonhosted.org/packages/f7/48/5702699caf20208d61a92157c01d1eb281093e3e02e9bcd4b5031ccea6a1/ipython-5.4.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b5d1b2b288bea4cf3e4dcc7b5305b91",
+                    "sha256": "0a45d844d11bec910974ed4adf5de60d42dc34b60960f8cc2b857e2008fba550"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.4.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0b5d1b2b288bea4cf3e4dcc7b5305b91",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 757562,
+                "upload_time": "2017-06-01T01:27:12",
+                "url": "https://files.pythonhosted.org/packages/3d/f0/3770e603de61f62bc9f1935305daf0a66ec2e699b8617d466cc47803f5ba/ipython-5.4.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1375f1503316e483d13f8997ed654828",
+                    "sha256": "afaa92343c20cf4296728161521d84f606d8817f963beaf7198e63dfede897fb"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1375f1503316e483d13f8997ed654828",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4973571,
+                "upload_time": "2017-06-01T01:27:24",
+                "url": "https://files.pythonhosted.org/packages/21/86/58d06db0c82af66c2d47faead027c3ce775cfbf9bc9d2f13f85d95f0a162/ipython-5.4.1.tar.gz"
+            }
+        ],
+        "5.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b961563984da3def3345ac8b0ca5e157",
+                    "sha256": "578e2f3d779ed130a3cfefc09b2eb965a81457f6a31a25cd38e0bab622d4777d"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.5.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b961563984da3def3345ac8b0ca5e157",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 758874,
+                "upload_time": "2017-09-15T17:16:41",
+                "url": "https://files.pythonhosted.org/packages/08/2c/6285504003b4eadce5540f3ee3adc081468b26723f3eef07d9d5d7d97ed8/ipython-5.5.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26885dfa01708f3fe648a1718b2d509a",
+                    "sha256": "185ef2093dbac6d7250fe9ed4d4dd0f18f10d0a6ac6169f3eeb2ff0663d96b92"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.5.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "26885dfa01708f3fe648a1718b2d509a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 758925,
+                "upload_time": "2017-09-15T17:16:44",
+                "url": "https://files.pythonhosted.org/packages/07/63/c987612bcf82c56eaacaf6bf01e31e53a244a0a3a0fb036ec5adc377e0fe/ipython-5.5.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61f627b9365f630887beb30a002f76fd",
+                    "sha256": "66469e894d1f09d14a1f23b971a410af131daa9ad2a19922082e02e0ddfd150f"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "61f627b9365f630887beb30a002f76fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4975920,
+                "upload_time": "2017-09-15T17:16:50",
+                "url": "https://files.pythonhosted.org/packages/14/7c/bbc1e749e1739208324af3f05ac7256985e21fc5f24d3c8da20aae844ad0/ipython-5.5.0.tar.gz"
+            }
+        ],
+        "5.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e208f5df634ca557501f8d41fdb3838f",
+                    "sha256": "c3efde0784b422538959a048d63a283f6a73d9cf5ec51b80600a8d382db0d59e"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.6.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e208f5df634ca557501f8d41fdb3838f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 760107,
+                "upload_time": "2018-04-02T10:26:18",
+                "url": "https://files.pythonhosted.org/packages/16/af/fbc5ecbb283344365ac98079524f8d61fd1b2afcef31d469023cba80b439/ipython-5.6.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "51b6468203d400b2cc47eebce5fb0097",
+                    "sha256": "d778329d0a12d084e08661ac147df99df8a64ab4400632a886449a9c444f2b6e"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.6.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "51b6468203d400b2cc47eebce5fb0097",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 760160,
+                "upload_time": "2018-04-02T10:26:22",
+                "url": "https://files.pythonhosted.org/packages/28/4b/901f509201b9ceb45460faab694f329b36009fe39d3bb48b6b38490e92a9/ipython-5.6.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd9d62b4219ee6a1e38df045a41cfd02",
+                    "sha256": "8ba332d1ac80261e176e737e934fade9b252fc3adb32afc7252ccc9cb249e601"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd9d62b4219ee6a1e38df045a41cfd02",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5022169,
+                "upload_time": "2018-04-02T10:26:29",
+                "url": "https://files.pythonhosted.org/packages/64/a1/e6af3c22dadcf3497eccea20b45b8fe9c8a94055af1d341d1db831569192/ipython-5.6.0.tar.gz"
+            }
+        ],
+        "5.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5c0d234f907196f0f25d64926142dd85",
+                    "sha256": "707d1bbfc81e41e39ead1012af931bec6f80357b87e520af352e539cf5961dc0"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.7.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5c0d234f907196f0f25d64926142dd85",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 760413,
+                "upload_time": "2018-05-10T18:56:05",
+                "url": "https://files.pythonhosted.org/packages/52/19/aadde98d6bde1667d0bf431fb2d22451f880aaa373e0a241c7e7cb5815a0/ipython-5.7.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "56ac3349436886c7dd0a8bbc620de26e",
+                    "sha256": "fc0464e68f9c65cd8c453474b4175432cc29ecb6c83775baedf6dbfcee9275ab"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.7.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "56ac3349436886c7dd0a8bbc620de26e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 760415,
+                "upload_time": "2018-05-10T18:56:07",
+                "url": "https://files.pythonhosted.org/packages/c7/b6/03e0b5b0972e6161d16c4cec8d41a20372bd0634f8cb4cc0c984b8a91db6/ipython-5.7.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ccf4f85bab1b086a439c1f9256e30c9a",
+                    "sha256": "8db43a7fb7619037c98626613ff08d03dda9d5d12c84814a4504c78c0da8323c"
+                },
+                "downloads": -1,
+                "filename": "ipython-5.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ccf4f85bab1b086a439c1f9256e30c9a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4977745,
+                "upload_time": "2018-05-10T18:56:17",
+                "url": "https://files.pythonhosted.org/packages/3c/fd/559fead731a29eaa55cc235c8029807b2520976a937c30e9ee603f3bb566/ipython-5.7.0.tar.gz"
+            }
+        ],
+        "6.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0abc5522c52d9378c79df3b8da2bd4ff",
+                    "sha256": "9cdbfa1af3a92cf019d1a592646e27159b3cac1ab9f2be7643d5e3bc413d3b5c"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.0.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0abc5522c52d9378c79df3b8da2bd4ff",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 736020,
+                "upload_time": "2017-04-19T21:34:04",
+                "url": "https://files.pythonhosted.org/packages/b9/87/1d7eba99c0108796ef643ac0e99d1d1dccf657bcff68e223bfb967c2512a/ipython-6.0.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4169cfe24253c342d7a0b966f5c76281",
+                    "sha256": "f429b82b8d9807068da734b15965768bd21b15d0b706340b6d1b4d6f6f5b98a4"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4169cfe24253c342d7a0b966f5c76281",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5054823,
+                "upload_time": "2017-04-19T21:34:10",
+                "url": "https://files.pythonhosted.org/packages/75/03/bb1ce0cf9f8a86f52b34090708e1806bc11e2d29b193e7d6fe0afe9a61e5/ipython-6.0.0.tar.gz"
+            }
+        ],
+        "6.0.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b379762f064bcac7aa2d4e4ca63fde65",
+                    "sha256": "268fe970a15bded4f8c2bf69f0f9babc486eec004e946fac118e6274abbd62ee"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.0.0rc1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b379762f064bcac7aa2d4e4ca63fde65",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 736081,
+                "upload_time": "2017-04-10T21:55:38",
+                "url": "https://files.pythonhosted.org/packages/8e/dc/f85658f8bdf3d148874dd6207e5c8903dab2d50b7acccbf250673b26d314/ipython-6.0.0rc1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e57acb5fabd9f18b739de35a1f00eac5",
+                    "sha256": "6f97990969ee3f628774c55916d6849c9021fc625d9a9a12e1e518090db9ab9f"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.0.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e57acb5fabd9f18b739de35a1f00eac5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5058415,
+                "upload_time": "2017-04-10T21:55:46",
+                "url": "https://files.pythonhosted.org/packages/76/46/c505c48d264715136edde1a1960f9158133e34c03bbfe4c955dbc5948ce4/ipython-6.0.0rc1.tar.gz"
+            }
+        ],
+        "6.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "98366660f9e2ee3c892f378aecda7df0",
+                    "sha256": "cd44c7f5ccb2b349ffd6ede10d8e4204c9ab1ede4a8a6c40220cfeb07069171a"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.1.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "98366660f9e2ee3c892f378aecda7df0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 741426,
+                "upload_time": "2017-05-31T22:40:29",
+                "url": "https://files.pythonhosted.org/packages/11/c5/216306933592d6aa8396c5b25f50d9b8bfbf2c11221af637c5911f3dd5c5/ipython-6.1.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e15e1ce3f3f722da6935d7ac0e51346",
+                    "sha256": "5c53e8ee4d4bec27879982b9f3b4aa2d6e3cfd7b26782d250fa117f85bb29814"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1e15e1ce3f3f722da6935d7ac0e51346",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5066094,
+                "upload_time": "2017-05-31T22:41:12",
+                "url": "https://files.pythonhosted.org/packages/79/63/b671fc2bf0051739e87a7478a207bbeb45cfae3c328d38ccdd063d9e0074/ipython-6.1.0.tar.gz"
+            }
+        ],
+        "6.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "070b5796e7b732d7254c8fc795b0cc4f",
+                    "sha256": "0faac098d0e5a79272d1a8dd95d568c7ae7a823c9b21b1bca5800541aa994e6f"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.2.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "070b5796e7b732d7254c8fc795b0cc4f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 745878,
+                "upload_time": "2017-09-15T17:50:59",
+                "url": "https://files.pythonhosted.org/packages/0c/0f/352b60b69bdc5120f7afa71b2e7e0edfab1b736b943dc049f1d8a8d4f72b/ipython-6.2.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c15797a698f15f31ecb5f969f65a6342",
+                    "sha256": "81b0d6936f87002e6972eccc7e4085f5c2d0673decff22724b53cf34809ffacf"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c15797a698f15f31ecb5f969f65a6342",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5075205,
+                "upload_time": "2017-09-15T17:51:43",
+                "url": "https://files.pythonhosted.org/packages/9e/3f/28518ed1f5701ba42299c7243caacfa188dac495278de54592069ac43c10/ipython-6.2.0.tar.gz"
+            }
+        ],
+        "6.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cfcb3d691040b749d528a226e3e6d239",
+                    "sha256": "fcc6d46f08c3c4de7b15ae1c426e15be1b7932bcda9d83ce1a4304e8c1129df3"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.2.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cfcb3d691040b749d528a226e3e6d239",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 745893,
+                "upload_time": "2017-09-29T19:01:44",
+                "url": "https://files.pythonhosted.org/packages/e1/87/294b718125085559b56453be87d90777863173470167e5f1d5de20b9eea3/ipython-6.2.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6873d91d340c6069a4f7c2d65258523b",
+                    "sha256": "51c158a6c8b899898d1c91c6b51a34110196815cc905f9be0fa5878e19355608"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6873d91d340c6069a4f7c2d65258523b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5075151,
+                "upload_time": "2017-09-29T19:01:47",
+                "url": "https://files.pythonhosted.org/packages/fa/50/974211502bd72873728d44c3013fe79875c819c8fb69f778bcfd67bc7d38/ipython-6.2.1.tar.gz"
+            }
+        ],
+        "6.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cac9898db97f2882b48ec91ace7a2f7e",
+                    "sha256": "938da96f2f5f50d82add1947958b7432e9f330cef7703210bffd1a783d7720ab"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.3.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cac9898db97f2882b48ec91ace7a2f7e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 749881,
+                "upload_time": "2018-04-02T10:33:53",
+                "url": "https://files.pythonhosted.org/packages/8f/d4/bca9b4b2eaa6a1801f366b562dd2fbda9554335105008f656e784a37aabb/ipython-6.3.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "db898a8e320d80bf030f770e9af53e3a",
+                    "sha256": "c785ab502b1a63624baeb89fedb873a118d4da6c9a796ae06e4f4aaef74e9ea0"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "db898a8e320d80bf030f770e9af53e3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5089724,
+                "upload_time": "2018-04-02T10:33:58",
+                "url": "https://files.pythonhosted.org/packages/a5/17/e296678250771b0ffaa4ad11e6e60ad14b2f734c902ee92a745d9fe64b7c/ipython-6.3.0.tar.gz"
+            }
+        ],
+        "6.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fe83d335215be13235a2cf64071e9e2c",
+                    "sha256": "85882f97d75122ff8cdfe129215a408085a26039527110c8d4a2b8a5e45b7639"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.3.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fe83d335215be13235a2cf64071e9e2c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 749891,
+                "upload_time": "2018-04-06T10:00:08",
+                "url": "https://files.pythonhosted.org/packages/3a/eb/38a4491ebdbb0d5be6f72abc177a7a49f82541bbebbe5fbfe64b041a782b/ipython-6.3.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6742ac2c91598277b31b16b5b77708fa",
+                    "sha256": "a6ac981381b3f5f604b37a293369963485200e3639fb0404fa76092383c10c41"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6742ac2c91598277b31b16b5b77708fa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5089918,
+                "upload_time": "2018-04-06T10:00:15",
+                "url": "https://files.pythonhosted.org/packages/4f/a7/fc647e9ce711cd630873c37219c0bd4438b8171211d813c7e6b316811e02/ipython-6.3.1.tar.gz"
+            }
+        ],
+        "6.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3398888b733f20e38f0862776ac16efe",
+                    "sha256": "a0c96853549b246991046f32d19db7140f5b1a644cc31f0dc1edc86713b7676f"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.4.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3398888b733f20e38f0862776ac16efe",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 750157,
+                "upload_time": "2018-05-10T19:07:12",
+                "url": "https://files.pythonhosted.org/packages/b1/7f/91d50f28af3e3a24342561983a7857e399ce24093876e6970b986a0b6677/ipython-6.4.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3709c9efe3132b72f1c7c13578d107f",
+                    "sha256": "eca537aa61592aca2fef4adea12af8e42f5c335004dfa80c78caf80e8b525e5c"
+                },
+                "downloads": -1,
+                "filename": "ipython-6.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c3709c9efe3132b72f1c7c13578d107f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5083614,
+                "upload_time": "2018-05-10T19:07:21",
+                "url": "https://files.pythonhosted.org/packages/ee/01/2a85cd07f5a43fa2e86d60001c213647252662d44a0c2e3d69471a058f1b/ipython-6.4.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "3398888b733f20e38f0862776ac16efe",
+                "sha256": "a0c96853549b246991046f32d19db7140f5b1a644cc31f0dc1edc86713b7676f"
+            },
+            "downloads": -1,
+            "filename": "ipython-6.4.0-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "3398888b733f20e38f0862776ac16efe",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "size": 750157,
+            "upload_time": "2018-05-10T19:07:12",
+            "url": "https://files.pythonhosted.org/packages/b1/7f/91d50f28af3e3a24342561983a7857e399ce24093876e6970b986a0b6677/ipython-6.4.0-py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "c3709c9efe3132b72f1c7c13578d107f",
+                "sha256": "eca537aa61592aca2fef4adea12af8e42f5c335004dfa80c78caf80e8b525e5c"
+            },
+            "downloads": -1,
+            "filename": "ipython-6.4.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "c3709c9efe3132b72f1c7c13578d107f",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 5083614,
+            "upload_time": "2018-05-10T19:07:21",
+            "url": "https://files.pythonhosted.org/packages/ee/01/2a85cd07f5a43fa2e86d60001c213647252662d44a0c2e3d69471a058f1b/ipython-6.4.0.tar.gz"
+        }
+    ],
+    "package_name": "ipython"
+}

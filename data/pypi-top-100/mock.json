@@ -1,0 +1,857 @@
+{
+    "info": {
+        "author": "Testing Cabal",
+        "author_email": "testing-in-python@lists.idyll.org",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: Jython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Software Development :: Testing"
+        ],
+        "description": "mock is a library for testing in Python. It allows you to replace parts of\nyour system under test with mock objects and make assertions about how they\nhave been used.\n\nmock is now part of the Python standard library, available as `unittest.mock\n<https://docs.python.org/dev/library/unittest.mock.html>`_ in Python 3.3\nonwards.\n\nThis package contains a rolling backport of the standard library mock code\ncompatible with Python 2.6 and up, and 3.3 and up.\n\nPlease see the standard library documentation for more details.\n\n:Homepage: `Mock Homepage`_\n:Download: `Mock on PyPI`_\n:Documentation: `Python Docs`_\n:License: `BSD License`_\n:Support: `Mailing list (testing-in-python@lists.idyll.org)\n <http://lists.idyll.org/listinfo/testing-in-python>`_\n:Issue tracker: `Github Issues\n <https://github.com/testing-cabal/mock/issues>`_\n:Build status:\n  .. image:: https://travis-ci.org/testing-cabal/mock.svg?branch=master\n      :target: https://travis-ci.org/testing-cabal/mock\n\n.. _Mock Homepage: https://github.com/testing-cabal/mock\n.. _BSD License: http://github.com/testing-cabal/mock/blob/master/LICENSE.txt\n.. _Python Docs: https://docs.python.org/dev/library/unittest.mock.html\n.. _mock on PyPI: http://pypi.python.org/pypi/mock",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/testing-cabal/mock",
+        "keywords": null,
+        "license": "UNKNOWN",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "mock",
+        "package_url": "https://pypi.org/project/mock/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/mock/",
+        "release_url": "https://pypi.org/project/mock/2.0.0/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Rolling backport of unittest.mock for all Pythons",
+        "version": "2.0.0"
+    },
+    "last_serial": 2048318,
+    "releases": {
+        "0.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e948e25b46f75d343a7fcdf24a36005c",
+                    "sha256": "cde44a12fb139ea1da4fe7a2d7d876a63a1e663444bc0a670f5ef5617c2fd6c2"
+                },
+                "downloads": -1,
+                "filename": "mock-0.4.0-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "e948e25b46f75d343a7fcdf24a36005c",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 5885,
+                "upload_time": "2008-10-12T16:22:30",
+                "url": "https://files.pythonhosted.org/packages/33/7f/031bd64d3acbf5447c107f55f592619eccdef6b30e87570592d413d6c9cc/mock-0.4.0-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "147f343ce516b6429883416cc5ffa7cd",
+                    "sha256": "232f8b4e1df369848e235c4fda85bba41e95b75be40674fea060c4fdee7ab04c"
+                },
+                "downloads": -1,
+                "filename": "mock-0.4.0-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "147f343ce516b6429883416cc5ffa7cd",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 5219,
+                "upload_time": "2008-10-12T16:22:44",
+                "url": "https://files.pythonhosted.org/packages/d3/ce/3691e7e85b1d48178d2379227fbfe448a788a816ee8e883f71a5526ba1e4/mock-0.4.0-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e7ca9c58532bd5807c4a071336f28d0",
+                    "sha256": "136d86d121fef17549bc55b24b8e6f5335e2d152ee7dea58c20535292db0f262"
+                },
+                "downloads": -1,
+                "filename": "mock-0.4.0-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "7e7ca9c58532bd5807c4a071336f28d0",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 5804,
+                "upload_time": "2008-10-12T16:23:10",
+                "url": "https://files.pythonhosted.org/packages/0b/6a/5e3ead38ff3f10031f16f3c834037a1f6c454f54a63b54b56843cd98a7cc/mock-0.4.0-py2.6.egg"
+            }
+        ],
+        "0.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "329fafdc91c83eab608ca80c8bb490f9",
+                    "sha256": "82a3a60c6ce832d0b799d33924dc40d766e95e2481f8758e8eafafc524b63531"
+                },
+                "downloads": -1,
+                "filename": "mock-0.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "329fafdc91c83eab608ca80c8bb490f9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21214,
+                "upload_time": "2009-04-20T00:29:27",
+                "url": "https://files.pythonhosted.org/packages/6c/44/2b50aa4a4146e27642fded9baf81a49d430c8b134d31e694e2d78c33aeed/mock-0.5.0.tar.gz"
+            }
+        ],
+        "0.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a52c791ebd454a196e1e57b43b493191",
+                    "sha256": "739035ceb9cdf5b4f183ea449e59879bc9a6bb4633459dca5f8d06428ebc3d41"
+                },
+                "downloads": -1,
+                "filename": "mock-0.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a52c791ebd454a196e1e57b43b493191",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3143,
+                "upload_time": "2009-08-22T13:21:24",
+                "url": "https://files.pythonhosted.org/packages/f5/69/b9846e620a8300a739c7229b6c5d88ed6bd808c53e947c6f97bf2980f309/mock-0.6.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d283cce6bd3c65f18ca617955298238",
+                    "sha256": "fa8a9cf366696c50ed8eb674d55da801963bbc19612ac6f2731a374e688b84cf"
+                },
+                "downloads": -1,
+                "filename": "mock-0.6.0.zip",
+                "has_sig": false,
+                "md5_digest": "9d283cce6bd3c65f18ca617955298238",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3665,
+                "upload_time": "2009-08-22T13:21:33",
+                "url": "https://files.pythonhosted.org/packages/1c/a0/dfa5f97ce4d4fedd63c4d8021b7b0b2ddd7747b818a15f93699c97ff8439/mock-0.6.0.zip"
+            }
+        ],
+        "0.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "be029f8c963c55250a452c400e10cf42",
+                    "sha256": "63af2b93c1f7d2c7a6982c45a90608eb6ae1ef649ce13c623d36be95944a1b91"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "be029f8c963c55250a452c400e10cf42",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 613785,
+                "upload_time": "2011-03-05T02:48:03",
+                "url": "https://files.pythonhosted.org/packages/c5/a9/14894518e15d84e4cf820f8f47e046b9feaf5af041718ba8900e58b455e9/mock-0.7.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1431fb57c557707039db1f59083acfc",
+                    "sha256": "8a207b59b9e89be7e47878562efae35f868f4c543e1b76c054b37cfdc4e5757a"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0.zip",
+                "has_sig": false,
+                "md5_digest": "d1431fb57c557707039db1f59083acfc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 654896,
+                "upload_time": "2011-03-05T02:46:15",
+                "url": "https://files.pythonhosted.org/packages/f0/4c/8adc2d53c476ddd7f2d30d1fd506d7545cfc747b5a4c55b5ba5bbcbf38b9/mock-0.7.0.zip"
+            }
+        ],
+        "0.7.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a21ba6804db7e30c7b5dc7025f72abac",
+                    "sha256": "137c5b376f85aa73c8c6730a09fabc13c7bde07c043e20622d288619687ee1fa"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a21ba6804db7e30c7b5dc7025f72abac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 190859,
+                "upload_time": "2010-06-22T16:24:43",
+                "url": "https://files.pythonhosted.org/packages/a9/c3/f205ab82a23ddfbd115020730fec77faffe17b9d47cdbfb9a70f4ed57eb4/mock-0.7.0b1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ba5124c632e0394a6e9ec25d681fd374",
+                    "sha256": "cff3bab0d0d65e7b3643d7b5b62f2e5484e5180997ba6c66a40140b2496c1e22"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0b1.zip",
+                "has_sig": false,
+                "md5_digest": "ba5124c632e0394a6e9ec25d681fd374",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 226994,
+                "upload_time": "2010-06-22T16:38:19",
+                "url": "https://files.pythonhosted.org/packages/ab/95/1d25cd0a0f5164aca0882d8fa35d76b4c6cb466c4ac30c08519684e17661/mock-0.7.0b1.zip"
+            }
+        ],
+        "0.7.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a411b39ef90120a4992a5d5dfdd0a52d",
+                    "sha256": "ae14217c608598603a7a1f1982b89ebaebde5dc37e1b24cbaf5fc1f6a524ca6e"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a411b39ef90120a4992a5d5dfdd0a52d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 207998,
+                "upload_time": "2010-06-23T17:05:40",
+                "url": "https://files.pythonhosted.org/packages/fd/2e/486c13326b3aac5aecb04149516361f67656a5490865c20518954b88db92/mock-0.7.0b2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e83f8af34d80e0491c19789aa9925267",
+                    "sha256": "6d7b2ea83333a15687f0b15380207d9e9ebd37058973772a6651c3d1a5c5d704"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0b2.zip",
+                "has_sig": false,
+                "md5_digest": "e83f8af34d80e0491c19789aa9925267",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 242685,
+                "upload_time": "2010-06-23T17:05:53",
+                "url": "https://files.pythonhosted.org/packages/ff/79/42b20e8a2310353465790abcf5c1c10725141d037baaf52fa14840a81699/mock-0.7.0b2.zip"
+            }
+        ],
+        "0.7.0b3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2799e896f528f5cecec8cc55a5d5da21",
+                    "sha256": "2e37eb6fe2802a59d213da7dcd9c09ae58d3d3d33661c31bec62247a7a9f9660"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0b3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2799e896f528f5cecec8cc55a5d5da21",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 486624,
+                "upload_time": "2010-09-18T23:02:42",
+                "url": "https://files.pythonhosted.org/packages/8e/86/78ebbe4e432c2404817525fd94e43d4af2fe4ced026338a509989cf007ee/mock-0.7.0b3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "af4a1053a9ad7e935ff86d1de9d1042c",
+                    "sha256": "ee322cafeecb87912d86f384e3396ff1ee6408572bdfd1da867ab9b86ce5dcca"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0b3.zip",
+                "has_sig": false,
+                "md5_digest": "af4a1053a9ad7e935ff86d1de9d1042c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 556725,
+                "upload_time": "2010-09-18T23:03:59",
+                "url": "https://files.pythonhosted.org/packages/3a/38/887679f1e350c1a28e4a37193caad9329f9af0e83eefabe82f0c23326c7c/mock-0.7.0b3.zip"
+            }
+        ],
+        "0.7.0b4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12af216898f08f85963139efe5d9582b",
+                    "sha256": "33fa0836d6e5871185e1c9aa57cdec1b8a5a78aa06ba8202e2c333602814e943"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0b4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "12af216898f08f85963139efe5d9582b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 270735,
+                "upload_time": "2010-11-12T16:31:12",
+                "url": "https://files.pythonhosted.org/packages/b1/09/7525c0ea5051a9615c71bcb73623ea94dea1d7e01c2520392cb3490c1099/mock-0.7.0b4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d85979ef556456aaf5a0766a2152831",
+                    "sha256": "f21d91e109f19e22870ee6409cf8e4cbc8ae1336eb118fa184d6acb1f49086c4"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0b4.zip",
+                "has_sig": false,
+                "md5_digest": "0d85979ef556456aaf5a0766a2152831",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 310565,
+                "upload_time": "2010-11-12T16:31:21",
+                "url": "https://files.pythonhosted.org/packages/d3/60/7a4f1942a79547f08e49b366890a6a4ceeccfbd5e1d830a596c85d0395dc/mock-0.7.0b4.zip"
+            }
+        ],
+        "0.7.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb4f34459e45607b75a304bde6353ac3",
+                    "sha256": "4c4dedfca75d2e3c37d74a3234c2e818de9913f23c745c27b8a1fb60ed1b831f"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cb4f34459e45607b75a304bde6353ac3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 282804,
+                "upload_time": "2011-02-16T18:12:11",
+                "url": "https://files.pythonhosted.org/packages/b8/ca/01d3cd94b3510e5adaac47484bca3317636e9fc5d1eef5814fe632032c12/mock-0.7.0rc1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84b71a6ce1e328e27fc4bdc37afd8029",
+                    "sha256": "876327fb68e1af1652bef50b5ebc7e6c5044288a4542c77c447970d8d569996c"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.0rc1.zip",
+                "has_sig": false,
+                "md5_digest": "84b71a6ce1e328e27fc4bdc37afd8029",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 322384,
+                "upload_time": "2011-02-16T18:12:29",
+                "url": "https://files.pythonhosted.org/packages/e0/7e/bb08dcb2e78e73e02717bccac087b4bd65927bde3470ca8c9f4a2ce491e0/mock-0.7.0rc1.zip"
+            }
+        ],
+        "0.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fe6a72d963b740ffa959b4746cf96be0",
+                    "sha256": "990d46cd6bd7a1a79fb73cc78c9be981547bf85b3cba52be503d2eecf6e3b772"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fe6a72d963b740ffa959b4746cf96be0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1083629,
+                "upload_time": "2011-05-10T23:15:54",
+                "url": "https://files.pythonhosted.org/packages/b3/5a/548cebaebb634fcfab5033486eddbc4aed63ba33967fc64e616da7b3cf7b/mock-0.7.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "31382f58aa4f064c366a620d70a8b2a0",
+                    "sha256": "bb830c261b4c30fd194f28f6f28f3ec99bef74625c4dd81284c07daf23927494"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.1.zip",
+                "has_sig": false,
+                "md5_digest": "31382f58aa4f064c366a620d70a8b2a0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1125291,
+                "upload_time": "2011-05-10T23:13:23",
+                "url": "https://files.pythonhosted.org/packages/2d/54/d64774f9b78629fe249e0fcc81378c6f3b00c542aafa1018a2b777a84e43/mock-0.7.1.zip"
+            }
+        ],
+        "0.7.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e63747b20e67f7d3e563bc6fd5b88d3",
+                    "sha256": "ec0d59c3f8ba6fa850cde44a63d592bb35b9b5b893e77227cf118e7ee14039f2"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0e63747b20e67f7d3e563bc6fd5b88d3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 896135,
+                "upload_time": "2011-05-30T21:58:35",
+                "url": "https://files.pythonhosted.org/packages/6d/7f/3dff8eb00b040fd25235c5aec76d24d17553b36b817662140c50ca63e94f/mock-0.7.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8a22e3748bc50667ef27536ff1a5cf8d",
+                    "sha256": "848ae35831e132d55bb30f9b36aa20106bb3d5d95f732b78749a028df1755caf"
+                },
+                "downloads": -1,
+                "filename": "mock-0.7.2.zip",
+                "has_sig": false,
+                "md5_digest": "8a22e3748bc50667ef27536ff1a5cf8d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 938653,
+                "upload_time": "2011-05-30T21:58:00",
+                "url": "https://files.pythonhosted.org/packages/4f/67/aae2df6a422936234be6f4bea3d9a52501f6a88a5a451d59adeb620e7179/mock-0.7.2.zip"
+            }
+        ],
+        "0.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1ac87a1ceab295aef11dcfc104a7a4a",
+                    "sha256": "96fa4def4e80200be827c3f51147dd7b3fa8873b9207e3325d47ba45bf29a5c1"
+                },
+                "downloads": -1,
+                "filename": "mock-0.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b1ac87a1ceab295aef11dcfc104a7a4a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 749663,
+                "upload_time": "2012-02-13T02:23:54",
+                "url": "https://files.pythonhosted.org/packages/52/22/05f0fb67c51e86b485914b1da519b2df6afd36c41f81a21328bc69a2e3b1/mock-0.8.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7dba423ce7994c433f6b84b101f1f4ba",
+                    "sha256": "e904edfb90da84129c06252cd3a05f90b4eebc1bb5b85ee96e56ff6cf69438d5"
+                },
+                "downloads": -1,
+                "filename": "mock-0.8.0.zip",
+                "has_sig": false,
+                "md5_digest": "7dba423ce7994c433f6b84b101f1f4ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 794767,
+                "upload_time": "2012-02-13T02:23:41",
+                "url": "https://files.pythonhosted.org/packages/32/f2/065f51e5e99081b6ce893cd99d9cd58111e0d41f6b51c9336974ee936625/mock-0.8.0.zip"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52642ad23c7a5202b33cb0234837676e",
+                    "sha256": "2d9fbe67001d2e8f02692075257f3c11e1b0194bd838c8ce3f49b31fc6c3f033"
+                },
+                "downloads": -1,
+                "filename": "mock-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "52642ad23c7a5202b33cb0234837676e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 819523,
+                "upload_time": "2012-10-07T17:36:08",
+                "url": "https://files.pythonhosted.org/packages/85/60/ec8c1af81337bab0caba188b218b6758bc94f125f49062f7c5f0647749d2/mock-1.0.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d2affbef8d628c27ea952bba5c556de",
+                    "sha256": "e13a8feabc1ccb2ce1c081553bf699fa2632bc37823b0851ecfd59886a492650"
+                },
+                "downloads": -1,
+                "filename": "mock-1.0.0.zip",
+                "has_sig": false,
+                "md5_digest": "4d2affbef8d628c27ea952bba5c556de",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 863320,
+                "upload_time": "2012-10-07T17:37:54",
+                "url": "https://files.pythonhosted.org/packages/8d/71/62f92fac972750254e31060ebe0802ad02cce2755a7844a94b3cf19b58a6/mock-1.0.0.zip"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3971991738caa55ec7c356bbc154ee2",
+                    "sha256": "b839dd2d9c117c701430c149956918a423a9863b48b09c90e30a6013e7d2f44f"
+                },
+                "downloads": -1,
+                "filename": "mock-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c3971991738caa55ec7c356bbc154ee2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 818644,
+                "upload_time": "2012-11-05T21:39:33",
+                "url": "https://files.pythonhosted.org/packages/a2/52/7edcd94f0afb721a2d559a5b9aae8af4f8f2c79bc63fdbe8a8a6c9b23bbe/mock-1.0.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "869f08d003c289a97c1a6610faf5e913",
+                    "sha256": "8f83080daa249d036cbccfb8ae5cc6ff007b88d6d937521371afabe7b19badbc"
+                },
+                "downloads": -1,
+                "filename": "mock-1.0.1.zip",
+                "has_sig": false,
+                "md5_digest": "869f08d003c289a97c1a6610faf5e913",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 861931,
+                "upload_time": "2012-11-05T21:39:04",
+                "url": "https://files.pythonhosted.org/packages/15/45/30273ee91feb60dabb8fbb2da7868520525f02cf910279b3047182feed80/mock-1.0.1.zip"
+            }
+        ],
+        "1.0.2.dev57": [],
+        "1.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf7e9acc7215eeb805bef1d77864e5f2",
+                    "sha256": "47840e23d2d18f9f41f9f4c09eeed20e43327f5909e8f9f85fbe70d7316ba62e"
+                },
+                "downloads": -1,
+                "filename": "mock-1.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bf7e9acc7215eeb805bef1d77864e5f2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 806862,
+                "upload_time": "2012-07-13T17:23:11",
+                "url": "https://files.pythonhosted.org/packages/c1/75/8deb813d87d409f691825accb1305f4444982f27c37337a63fd7aa8893dc/mock-1.0b1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "93495a8376e8fc9a3f6cb36524ebe15b",
+                    "sha256": "d75311055ca18061ab1a635ca6252ccdecda13d2b3b99b3085d8c03b32adff76"
+                },
+                "downloads": -1,
+                "filename": "mock-1.0b1.zip",
+                "has_sig": false,
+                "md5_digest": "93495a8376e8fc9a3f6cb36524ebe15b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 849785,
+                "upload_time": "2012-07-13T17:23:35",
+                "url": "https://files.pythonhosted.org/packages/49/35/dd8987d2f4b755a95c0e1650d70fa11cd61b30d6cdf71a793d9e1e3ec9cf/mock-1.0b1.zip"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d6fbc8f13f9c1126cfa473bb26b6e605",
+                    "sha256": "94f0a25591055990dd4034ca5a98ed80278ac9cfce1c3b84b5d1f9223991f9bd"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d6fbc8f13f9c1126cfa473bb26b6e605",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 55651,
+                "upload_time": "2015-07-10T02:57:38",
+                "url": "https://files.pythonhosted.org/packages/12/46/4761fcacd8e31ebe59d49c40aa41cc23f70e01702235153093cc1f8874ca/mock-1.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9350792aa747cb044c6576cf9f1568b9",
+                    "sha256": "a0f4c5dbdbe831f659ab719edbdf3b552e4c7648c3c26a8fd4635661cc0e7521"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "9350792aa747cb044c6576cf9f1568b9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69631,
+                "upload_time": "2015-07-10T02:57:27",
+                "url": "https://files.pythonhosted.org/packages/db/f3/1e83c840e5397cefc204bb29649ede7c20c8a1403e533955520afeb57405/mock-1.1.0.tar.gz"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8cb5eb66d88f09b13edc6aae80271f1c",
+                    "sha256": "797dfdbbc6e0d745cb3b1bdfbc063f9b18d08703b808356fe7b16e2dd039ac16"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "8cb5eb66d88f09b13edc6aae80271f1c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69688,
+                "upload_time": "2015-07-10T09:32:19",
+                "url": "https://files.pythonhosted.org/packages/2b/78/2b8bb89e311c3e11ea87bd29ab05a94c68ce2c9137f679e5cf275f1a73e5/mock-1.1.1.tar.gz"
+            }
+        ],
+        "1.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "be5bb226566cb467564cab023fd6e82d",
+                    "sha256": "ce0ff4139e99cb94c2fb14a63efd0fdbc8ff81eaa651eb402bc69621715fee42"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "be5bb226566cb467564cab023fd6e82d",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 55684,
+                "upload_time": "2015-07-10T23:52:17",
+                "url": "https://files.pythonhosted.org/packages/bd/c2/68ba303ccb4e4f7ea6ec70155707287eeaa70b9983e4e6ede68d75311d96/mock-1.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4f3f256655ab8f39a1d364ab868e1677",
+                    "sha256": "870ed9c40f370f2f77900a710040f46255efccae77c0266fb47169f1b5ecb9f1"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4f3f256655ab8f39a1d364ab868e1677",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69724,
+                "upload_time": "2015-07-10T23:52:08",
+                "url": "https://files.pythonhosted.org/packages/f4/c0/ff5bb8efbffb00167163ed0b667b9be27042a61657db3d7d839c1b798054/mock-1.1.2.tar.gz"
+            }
+        ],
+        "1.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d4ffaa94c141830976407663087180a9",
+                    "sha256": "8ce21b7be4ba5fca86cc3e2ea8a15ba998ae1133b93ca43ff953eb954ffc7374"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "d4ffaa94c141830976407663087180a9",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 55728,
+                "upload_time": "2015-07-14T02:17:56",
+                "url": "https://files.pythonhosted.org/packages/f5/b8/f3b341aed1402a866e8853a9e03a2be9db4435d1c241e804e79c68fb1e8e/mock-1.1.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6da0cb632ed5ba0201c922a3de8f86ab",
+                    "sha256": "202d44d1353abbbab5156a4a66a10540f6550bc65f16b482d244745533827bbe"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6da0cb632ed5ba0201c922a3de8f86ab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70046,
+                "upload_time": "2015-07-14T02:17:48",
+                "url": "https://files.pythonhosted.org/packages/7f/5e/1719c47d53f4bc93689cd2c72c6051e54e7801453d19c6695106a17cf2d9/mock-1.1.3.tar.gz"
+            }
+        ],
+        "1.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15bc5de126d963895c47311cdbca8e81",
+                    "sha256": "625845f1f026ec8cc73c9171f964cedc8280e8ba40173bf97a7b2515ad28a874"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "15bc5de126d963895c47311cdbca8e81",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 56089,
+                "upload_time": "2015-07-17T09:15:36",
+                "url": "https://files.pythonhosted.org/packages/9e/58/53ec7654a08549ee5191653e35776eeff5f98f13e38b43bdc491d8ddf53a/mock-1.1.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84afbeb2415bf3d6608dac4423a56325",
+                    "sha256": "9b10003448a058e76ca2dd545807978606803b4ee81ffcae15d134b7de221a21"
+                },
+                "downloads": -1,
+                "filename": "mock-1.1.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "84afbeb2415bf3d6608dac4423a56325",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70648,
+                "upload_time": "2015-07-17T09:15:20",
+                "url": "https://files.pythonhosted.org/packages/a3/eb/4f80a838be8a14e668c5efa2ed7638a54817c71c35b086b7d74753db0065/mock-1.1.4.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "498e779073d532ca5527e58856aa59cd",
+                    "sha256": "a99dae66ba27878bceb8fb4f94815b6855f5472a5b17095782a220ecfe9e6765"
+                },
+                "downloads": -1,
+                "filename": "mock-1.2.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "498e779073d532ca5527e58856aa59cd",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 55817,
+                "upload_time": "2015-07-17T19:48:57",
+                "url": "https://files.pythonhosted.org/packages/85/a4/9c8f854991f458a038f56333bb57abc2b7721429b76f0f76770391ffbd39/mock-1.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "94ec3b0bea7486018196d59c05ff8645",
+                    "sha256": "c2df20835beea1c018f4ecc8382317c50aea01351caae1730933f564757d571e"
+                },
+                "downloads": -1,
+                "filename": "mock-1.2.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "94ec3b0bea7486018196d59c05ff8645",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70370,
+                "upload_time": "2015-07-17T19:48:44",
+                "url": "https://files.pythonhosted.org/packages/d3/f0/308e5dd1a04922affc3fc8f14ccc386977a73d812983b96ca55bee3f0b9c/mock-1.2.0.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4e5dae615e14f9e3b34aea4771b50e1a",
+                    "sha256": "3f573a18be94de886d1191f27c168427ef693e8dcfcecf95b170577b2eb69cbb"
+                },
+                "downloads": -1,
+                "filename": "mock-1.3.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "4e5dae615e14f9e3b34aea4771b50e1a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 56278,
+                "upload_time": "2015-07-23T23:17:48",
+                "url": "https://files.pythonhosted.org/packages/b2/50/664a70b87408bb6c14c1af2337efa64eb8d1af80c933531758b8fb41ec25/mock-1.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "73ee8a4afb3ff4da1b4afa287f39fdeb",
+                    "sha256": "1e247dbecc6ce057299eb7ee019ad68314bb93152e81d9a6110d35f4d5eca0f6"
+                },
+                "downloads": -1,
+                "filename": "mock-1.3.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "73ee8a4afb3ff4da1b4afa287f39fdeb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70908,
+                "upload_time": "2015-07-23T23:17:28",
+                "url": "https://files.pythonhosted.org/packages/98/05/dd44a19f1dd9f274baae2018b843d31fbeff99399114b16ac965b4f99269/mock-1.3.0.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd5ca80a263f2a9e55832bfc63f01335",
+                    "sha256": "5ce3c71c5545b472da17b72268978914d0252980348636840bd34a00b5cc96c1"
+                },
+                "downloads": -1,
+                "filename": "mock-2.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "dd5ca80a263f2a9e55832bfc63f01335",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 56820,
+                "upload_time": "2016-04-06T01:38:18",
+                "url": "https://files.pythonhosted.org/packages/e6/35/f187bdf23be87092bd0f1200d43d23076cee4d0dec109f195173fd3ebc79/mock-2.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0febfafd14330c9dcaa40de2d82d40ad",
+                    "sha256": "b158b6df76edd239b8208d481dc46b6afd45a846b7812ff0ce58971cf5bc8bba"
+                },
+                "downloads": -1,
+                "filename": "mock-2.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0febfafd14330c9dcaa40de2d82d40ad",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 73684,
+                "upload_time": "2016-04-06T01:38:35",
+                "url": "https://files.pythonhosted.org/packages/0c/53/014354fc93c591ccc4abff12c473ad565a2eb24dcd82490fae33dbf2539f/mock-2.0.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "dd5ca80a263f2a9e55832bfc63f01335",
+                "sha256": "5ce3c71c5545b472da17b72268978914d0252980348636840bd34a00b5cc96c1"
+            },
+            "downloads": -1,
+            "filename": "mock-2.0.0-py2.py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "dd5ca80a263f2a9e55832bfc63f01335",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 56820,
+            "upload_time": "2016-04-06T01:38:18",
+            "url": "https://files.pythonhosted.org/packages/e6/35/f187bdf23be87092bd0f1200d43d23076cee4d0dec109f195173fd3ebc79/mock-2.0.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0febfafd14330c9dcaa40de2d82d40ad",
+                "sha256": "b158b6df76edd239b8208d481dc46b6afd45a846b7812ff0ce58971cf5bc8bba"
+            },
+            "downloads": -1,
+            "filename": "mock-2.0.0.tar.gz",
+            "has_sig": true,
+            "md5_digest": "0febfafd14330c9dcaa40de2d82d40ad",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 73684,
+            "upload_time": "2016-04-06T01:38:35",
+            "url": "https://files.pythonhosted.org/packages/0c/53/014354fc93c591ccc4abff12c473ad565a2eb24dcd82490fae33dbf2539f/mock-2.0.0.tar.gz"
+        }
+    ],
+    "package_name": "mock"
+}

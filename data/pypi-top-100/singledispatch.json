@@ -1,0 +1,189 @@
+{
+    "info": {
+        "author": "\u0141ukasz Langa",
+        "author_email": "lukasz@langa.pl",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Natural Language :: English",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "description": "==============\nsingledispatch\n==============\n\n`PEP 443 <http://www.python.org/dev/peps/pep-0443/>`_ proposed to expose\na mechanism in the ``functools`` standard library module in Python 3.4\nthat provides a simple form of generic programming known as\nsingle-dispatch generic functions.\n\nThis library is a backport of this functionality to Python 2.6 - 3.3.\n\nTo define a generic function, decorate it with the ``@singledispatch``\ndecorator. Note that the dispatch happens on the type of the first\nargument, create your function accordingly::\n\n  >>> from singledispatch import singledispatch\n  >>> @singledispatch\n  ... def fun(arg, verbose=False):\n  ...     if verbose:\n  ...         print(\"Let me just say,\", end=\" \")\n  ...     print(arg)\n\nTo add overloaded implementations to the function, use the\n``register()`` attribute of the generic function. It is a decorator,\ntaking a type parameter and decorating a function implementing the\noperation for that type::\n\n  >>> @fun.register(int)\n  ... def _(arg, verbose=False):\n  ...     if verbose:\n  ...         print(\"Strength in numbers, eh?\", end=\" \")\n  ...     print(arg)\n  ...\n  >>> @fun.register(list)\n  ... def _(arg, verbose=False):\n  ...     if verbose:\n  ...         print(\"Enumerate this:\")\n  ...     for i, elem in enumerate(arg):\n  ...         print(i, elem)\n\nTo enable registering lambdas and pre-existing functions, the\n``register()`` attribute can be used in a functional form::\n\n  >>> def nothing(arg, verbose=False):\n  ...     print(\"Nothing.\")\n  ...\n  >>> fun.register(type(None), nothing)\n\nThe ``register()`` attribute returns the undecorated function which\nenables decorator stacking, pickling, as well as creating unit tests for\neach variant independently::\n\n  >>> @fun.register(float)\n  ... @fun.register(Decimal)\n  ... def fun_num(arg, verbose=False):\n  ...     if verbose:\n  ...         print(\"Half of your number:\", end=\" \")\n  ...     print(arg / 2)\n  ...\n  >>> fun_num is fun\n  False\n\nWhen called, the generic function dispatches on the type of the first\nargument::\n\n  >>> fun(\"Hello, world.\")\n  Hello, world.\n  >>> fun(\"test.\", verbose=True)\n  Let me just say, test.\n  >>> fun(42, verbose=True)\n  Strength in numbers, eh? 42\n  >>> fun(['spam', 'spam', 'eggs', 'spam'], verbose=True)\n  Enumerate this:\n  0 spam\n  1 spam\n  2 eggs\n  3 spam\n  >>> fun(None)\n  Nothing.\n  >>> fun(1.23)\n  0.615\n\nWhere there is no registered implementation for a specific type, its\nmethod resolution order is used to find a more generic implementation.\nThe original function decorated with ``@singledispatch`` is registered\nfor the base ``object`` type, which means it is used if no better\nimplementation is found.\n\nTo check which implementation will the generic function choose for\na given type, use the ``dispatch()`` attribute::\n\n  >>> fun.dispatch(float)\n  <function fun_num at 0x1035a2840>\n  >>> fun.dispatch(dict)    # note: default implementation\n  <function fun at 0x103fe0000>\n\nTo access all registered implementations, use the read-only ``registry``\nattribute::\n\n  >>> fun.registry.keys()\n  dict_keys([<class 'NoneType'>, <class 'int'>, <class 'object'>,\n            <class 'decimal.Decimal'>, <class 'list'>,\n            <class 'float'>])\n  >>> fun.registry[float]\n  <function fun_num at 0x1035a2840>\n  >>> fun.registry[object]\n  <function fun at 0x103fe0000>\n\nThe vanilla documentation is available at\nhttp://docs.python.org/3/library/functools.html#functools.singledispatch.\n\n\nVersioning\n----------\n\nThis backport is intended to keep 100% compatibility with the vanilla\nrelease in Python 3.4+. To help maintaining a version you want and\nexpect, a versioning scheme is used where:\n\n* the first three numbers indicate the version of Python 3.x from which the\n  backport is done\n\n* a backport release number is provided after the last dot\n\nFor example, ``3.4.0.0`` is the **first** release of ``singledispatch``\ncompatible with the library found in Python **3.4.0**.\n\nA single exception from the 100% compatibility principle is that bugs\nfixed before releasing another minor Python 3.x.y version **will be\nincluded** in the backport releases done in the mean time. This rule\napplies to bugs only.\n\n\nMaintenance\n-----------\n\nThis backport is maintained on BitBucket by \u0141ukasz Langa, one of the\nmembers of the core CPython team:\n\n* `singledispatch Mercurial repository <https://bitbucket.org/ambv/singledispatch>`_\n\n* `singledispatch issue tracker <https://bitbucket.org/ambv/singledispatch/issues>`_\n\n\nChange Log\n----------\n\n3.4.0.3\n~~~~~~~\n\nShould now install flawlessly on PyPy as well. Thanks to Ryan Petrello\nfor finding and fixing the ``setup.py`` issue.\n\n3.4.0.2\n~~~~~~~\n\nUpdated to the reference implementation as of 02-July-2013.\n\n* more predictable dispatch order when abstract base classes are in use:\n  abstract base classes are now inserted into the MRO of the argument's\n  class where their functionality is introduced, i.e. issubclass(cls,\n  abc) returns True for the class itself but returns False for all its\n  direct base classes. Implicit ABCs for a given class (either\n  registered or inferred from the presence of a special method like\n  __len__) are inserted directly after the last ABC explicitly listed in\n  the MRO of said class. This also means there are less \"ambiguous\n  dispatch\" exceptions raised.\n\n* better test coverage and improved docstrings\n\n3.4.0.1\n~~~~~~~\n\nUpdated to the reference implementation as of 31-May-2013.\n\n* better performance\n\n* fixed a corner case with PEP 435 enums\n\n* calls to `dispatch()` also cached\n\n* dispatching algorithm now now a module-level routine called `_find_impl()`\n  with a simplified implementation and proper documentation\n\n* `dispatch()` now handles all caching-related activities\n\n* terminology more consistent: \"overload\" -> \"implementation\"\n\n3.4.0.0\n~~~~~~~\n\n* the first public release compatible with 3.4.0\n\n\nConversion Process\n------------------\n\nThis section is technical and should bother you only if you are\nwondering how this backport is produced. If the implementation details\nof this backport are not important for you, feel free to ignore the\nfollowing content.\n\n``singledispatch`` is converted using `six\n<http://pypi.python.org/pypi/six>`_ so that a single codebase can be\nused for all compatible Python versions.  Because a fully automatic\nconversion was not doable, I took the following branching approach:\n\n* the ``upstream`` branch holds unchanged files synchronized from the\n  upstream CPython repository. The synchronization is currently done by\n  manually copying the required code parts and stating from which\n  CPython changeset they come from. The tests should pass on Python 3.4\n  on this branch.\n\n* the ``default`` branch holds the manually translated version and this\n  is where all tests are run for all supported Python versions using\n  Tox.",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://docs.python.org/3/library/functools.html#functools.singledispatch",
+        "keywords": "single dispatch generic functions singledispatch genericfunctions decorator backport",
+        "license": "MIT",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "singledispatch",
+        "package_url": "https://pypi.org/project/singledispatch/",
+        "platform": "any",
+        "project_url": "https://pypi.org/project/singledispatch/",
+        "release_url": "https://pypi.org/project/singledispatch/3.4.0.3/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "This library brings functools.singledispatch from Python 3.4 to Python 2.6-3.3.",
+        "version": "3.4.0.3"
+    },
+    "last_serial": 1272197,
+    "releases": {
+        "3.4.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6d2bb9a725b76e231e11c75a974ce34",
+                    "sha256": "b9786c548b3dae01406ea66ae87b529da4cb708c6d71ead84e1ec5c1f5b5fe9e"
+                },
+                "downloads": -1,
+                "filename": "singledispatch-3.4.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6d2bb9a725b76e231e11c75a974ce34",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7537,
+                "upload_time": "2013-05-25T22:04:19",
+                "url": "https://files.pythonhosted.org/packages/57/df/c1384cd9f62842b0a9db726ff1b0c538a3a2c1d507991ab63b7c09b5a045/singledispatch-3.4.0.0.tar.gz"
+            }
+        ],
+        "3.4.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "807edf3d97d1b3dd39ef4f2d992ae08b",
+                    "sha256": "977476f2c4a149c808844a9e800d68d5ed0f7af35a8749bbae3f6b3293d8c922"
+                },
+                "downloads": -1,
+                "filename": "singledispatch-3.4.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "807edf3d97d1b3dd39ef4f2d992ae08b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8031,
+                "upload_time": "2013-05-31T11:03:48",
+                "url": "https://files.pythonhosted.org/packages/d9/9e/ac56d938b6af99122ab82b792b03794098a407bbf8755f6439fadd665d48/singledispatch-3.4.0.1.tar.gz"
+            }
+        ],
+        "3.4.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "faa3734b6919c5b33c4703bf192d1627",
+                    "sha256": "09199b85a954a691a465e9bd5246e6b8cdc580f13ffef074e8a674799efcffef"
+                },
+                "downloads": -1,
+                "filename": "singledispatch-3.4.0.2-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "faa3734b6919c5b33c4703bf192d1627",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 12668,
+                "upload_time": "2014-10-16T06:02:20",
+                "url": "https://files.pythonhosted.org/packages/ca/b4/aa1fe53f789bd1b475218a2cb8ed5a13ad52c6bf23fc78e969f3bdd59353/singledispatch-3.4.0.2-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a8e91e6953767614fabb6b6e974fea0e",
+                    "sha256": "4bdd0307cae0d13abb0546df1ab85201b9067090d191e33387e27e1463a7bfd5"
+                },
+                "downloads": -1,
+                "filename": "singledispatch-3.4.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a8e91e6953767614fabb6b6e974fea0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9499,
+                "upload_time": "2013-07-02T09:04:45",
+                "url": "https://files.pythonhosted.org/packages/40/47/f4e53374f4a1d1f4aa0f88c9d57ac3483510ba319a108b9cf59a5267fec6/singledispatch-3.4.0.2.tar.gz"
+            }
+        ],
+        "3.4.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d633bac187d681455ab065c645be845d",
+                    "sha256": "833b46966687b3de7f438c761ac475213e53b306740f1abfaa86e1d1aae56aa8"
+                },
+                "downloads": -1,
+                "filename": "singledispatch-3.4.0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d633bac187d681455ab065c645be845d",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 12897,
+                "upload_time": "2014-10-16T06:08:36",
+                "url": "https://files.pythonhosted.org/packages/c5/10/369f50bcd4621b263927b0a1519987a04383d4a98fb10438042ad410cf88/singledispatch-3.4.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "af2fc6a3d6cc5a02d0bf54d909785fcb",
+                    "sha256": "5b06af87df13818d14f08a028e42f566640aef80805c3b50c5056b086e3c2b9c"
+                },
+                "downloads": -1,
+                "filename": "singledispatch-3.4.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "af2fc6a3d6cc5a02d0bf54d909785fcb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9529,
+                "upload_time": "2014-03-18T20:42:08",
+                "url": "https://files.pythonhosted.org/packages/d9/e9/513ad8dc17210db12cb14f2d4d190d618fb87dd38814203ea71c87ba5b68/singledispatch-3.4.0.3.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "d633bac187d681455ab065c645be845d",
+                "sha256": "833b46966687b3de7f438c761ac475213e53b306740f1abfaa86e1d1aae56aa8"
+            },
+            "downloads": -1,
+            "filename": "singledispatch-3.4.0.3-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "d633bac187d681455ab065c645be845d",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.4",
+            "size": 12897,
+            "upload_time": "2014-10-16T06:08:36",
+            "url": "https://files.pythonhosted.org/packages/c5/10/369f50bcd4621b263927b0a1519987a04383d4a98fb10438042ad410cf88/singledispatch-3.4.0.3-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "af2fc6a3d6cc5a02d0bf54d909785fcb",
+                "sha256": "5b06af87df13818d14f08a028e42f566640aef80805c3b50c5056b086e3c2b9c"
+            },
+            "downloads": -1,
+            "filename": "singledispatch-3.4.0.3.tar.gz",
+            "has_sig": false,
+            "md5_digest": "af2fc6a3d6cc5a02d0bf54d909785fcb",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 9529,
+            "upload_time": "2014-03-18T20:42:08",
+            "url": "https://files.pythonhosted.org/packages/d9/e9/513ad8dc17210db12cb14f2d4d190d618fb87dd38814203ea71c87ba5b68/singledispatch-3.4.0.3.tar.gz"
+        }
+    ],
+    "package_name": "singledispatch"
+}

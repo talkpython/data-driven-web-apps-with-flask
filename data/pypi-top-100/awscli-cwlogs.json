@@ -1,0 +1,155 @@
+{
+    "info": {
+        "author": "Amazon",
+        "author_email": "",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Intended Audience :: System Administrators",
+            "License :: OSI Approved",
+            "Natural Language :: English",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3"
+        ],
+        "description": "=============\nawscli-cwlogs\n=============\n\nThis awscli plugin provides the ``pull``, ``push`` and ``filter`` commands to access AWS CloudWatch Logs service.\n\n\nThe awscli-cwlogs package works on Python versions:\n\n* 2.6.5 and greater\n* 2.7.x and greater\n* 3.3.x and greater\n\n\n------------\nInstallation\n------------\n\nThe easiest way to install awscli-cwlogs is to use `pip`_::\n\n    $ pip install awscli-cwlogs\n\nor, if you are not installing in a ``virtualenv``::\n\n    $ sudo pip install awscli-cwlogs\n\nIf you have the awscli-cwlogs installed and want to upgrade to the latest version\nyou can run::\n\n    $ pip install --upgrade awscli-cwlogs\n\nThis will install the awscli-cwlogs package as well as all dependencies, including awscli.\n\n.. attention::\n    If you have awscli installed, installing awscli-cwlogs might upgrade or downgrade your awscli depending on whether the awscli version you have is older or newer than what the awscli-cwlogs depends on. After installing awscli-cwlogs, you can run ``pip install --upgrade awscli`` to upgrade your awscli though potentially the latest awscli might not work well with the plugin. If you want to isolate awscli-cwlogs plugin from your existing awscli, you may consider ``virtaulenv``. Be careful that awscli by default stores its configuration to ~/.aws/config (or in %UserProfile%\\.aws\\config on Windows), to also isolate the configuration, you can define a separate config file ``export AWS_CONFIG_FILE=/path/to/config_file``.\n\n\n---------------\nGetting Started\n---------------\n\nBefore using awscli-cwlogs plugin, you need to `configure awscli <http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html>`__ first.\n\nOnce that's done, to enable awscli-cwlogs, you can run::\n\n    $ aws configure set plugins.cwlogs cwlogs\n\nThe above command adds below section to your aws config file::\n\n    [plugins]\n    cwlogs = cwlogs\n\nTo verify if awscli-cwlogs plugin is installed and configured properly, you can run::\n\n    $ aws logs help\n\nYou will see the ``pull``, ``push`` and ``fitler`` commands from available commands, otherwise it means the cwlogs plugin is not registered properly.\n\nIf you see ``ImportError: No module named cwlogs`` error, it means the cwlogs plugin is registered in config file, but the plugin is not installed.\n\n^^^^^^^^\nExamples\n^^^^^^^^\n.............\n Push command\n.............\nYou can use ``aws logs push help`` to check supported options.\nThe ``push`` command is used by CloudWatch Logs agent, check the `CloudWatch Logs Agent Reference <https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AgentReference.html>`__ to see all supported options or if you want to keep the ``push`` command running.\n\n1) Uploading a single log event to CloudWatch Logs service. The log group and log stream get created automatically if they don't exist.\n\n::\n\n    echo \"Hello World\" | aws logs push --log-group-name MyLogGroup --log-stream-name MyLogStream\n\n2) The following ``push`` command pushes log events from a syslog file to log stream which is specified by ``/var/log/syslog`` and ``myhost1`` and exits after pushing all log events. This command doesn't push the incremental log events. To achieve that, use ``tail -f file | aws logs push ...``.\n\n::\n\n    cat /var/log/kernel.log | aws logs push --log-group-name /var/log/syslog --log-stream-name myhost1 --datetime-format '%b %d %H:%M:%S' --time-zone LOCAL --encoding ascii\n\n3) The following ``push`` command pushes log events from multiple files based on configuration file. The ``initial_position`` determines where to start if the state of  ``file`` is not available.\n\n::\n\n    aws logs push --config-file push.cfg\n\n::\n\n    [general]\n    state_file = push-state\n    [logstream-messages]\n    datetime_format = %b %d %H:%M:%S\n    time_zone = LOCAL\n    file = /var/log/messages\n    file_fingerprint_lines = 1\n    log_group_name = /var/log/messages\n    log_stream_name = {hostname}\n    initial_position = start_of_file\n    encoding = utf_8\n    buffer_duration = 5000\n    [logstream-system.log]\n    datetime_format = %b %d %H:%M:%S\n    time_zone = UTC\n    file = /var/log/system.log\n    file_fingerprint_lines = 1-3\n    log_group_name = /var/log/system.log\n    log_stream_name = {hostname}\n    initial_position = end_of_file\n    encoding = ascii\n    buffer_duration = 10000\n\n\n.............\n Pull command\n.............\nYou can use ``aws logs pull help`` to check supported options.\n\n1) The following ``pull`` command pulls log events starting at ``2014-01-23T00:00:00Z`` from one log stream which is specified by ``website1/access_log`` and ``webhost-001`` and exits after pulling all log events.\n\n::\n\n    aws logs pull --log-group-name website1/access_log --log-stream-name webhost-001 --start-time 2014-01-23T00:00:00Z\n\n2) When invoked with the ``--end-time`` option, the following ``pull`` command pulls all log events between ``2014-01-23T00:00:00Z`` (inclusive) and ``2014-01-23T01:00:00Z`` (not inclusive).\n\n::\n\n    aws logs pull --log-group-name website1/access_log --log-stream-name webhost-001 --start-time 2014-01-23T00:00:00Z --end-time 2014-01-23T01:00:00Z\n\n3) When invoked with the ``--follow`` option, the following ``pull`` command does not exit after pulling all log events, but polls continuously for new log events.\n\n::\n\n    aws logs pull --log-group-name website1/access_log --log-stream-name webhost-001 --start-time 2014-01-23T00:00:00Z --follow\n\n4) When invoked with the ``--output-format`` option, the following ``pull`` command only outputs the message field. By default, the output format is ``\"{timestamp} {message}\"``. Ingestion time can be included with ``\"{timestamp} {ingestionTime} {message}\"``.\n\n\n::\n\n    aws logs pull --log-group-name website1/access_log --log-stream-name webhost-001 --start-time 2014-01-23T00:00:00Z --output-format \"{message}\"\n\n...............\n Filter command\n...............\nSee `this AWS developer guide <http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/SearchDataFilterPattern.html>`__.\n\n.. _pip: ht`tp://www.pip-installer.org/en/latest/",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://aws.amazon.com/cli/",
+        "keywords": "",
+        "license": "Amazon Software License",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "awscli-cwlogs",
+        "package_url": "https://pypi.org/project/awscli-cwlogs/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/awscli-cwlogs/",
+        "release_url": "https://pypi.org/project/awscli-cwlogs/1.4.4/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "AWSCLI CloudWatch Logs plugin",
+        "version": "1.4.4"
+    },
+    "last_serial": 3249464,
+    "releases": {
+        "1.0.0": [],
+        "1.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d1f901b78935bb2d96f87be8030f6d5",
+                    "sha256": "a398bb8bcaffa8496198d6d12ea5f1eb672853d56a8291b501d998b3e5115781"
+                },
+                "downloads": -1,
+                "filename": "awscli-cwlogs-1.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9d1f901b78935bb2d96f87be8030f6d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32519,
+                "upload_time": "2016-02-15T17:27:46",
+                "url": "https://files.pythonhosted.org/packages/07/e1/87b15093df8ea80d33edf0f1dedfb95d07117423c8372b4598dd70ab65dd/awscli-cwlogs-1.3.3.tar.gz"
+            }
+        ],
+        "1.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6005bb8989dc7b4d8626e20d44e33502",
+                    "sha256": "dde9050dc5393b1058098c939c74b715a12ef1181a18fe70b5db30803c72cdff"
+                },
+                "downloads": -1,
+                "filename": "awscli-cwlogs-1.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6005bb8989dc7b4d8626e20d44e33502",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34438,
+                "upload_time": "2016-03-02T20:34:29",
+                "url": "https://files.pythonhosted.org/packages/26/ec/67b85c13ed655087732e6c72880a2e302b5a0f5ba35f4190eb2641b210e2/awscli-cwlogs-1.4.0.tar.gz"
+            }
+        ],
+        "1.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1d82730d209ccab83e059950c89512c6",
+                    "sha256": "628234cb742b24c045c1e23b8f86820ece36fe84eb596ca486819a4f54890b9c"
+                },
+                "downloads": -1,
+                "filename": "awscli-cwlogs-1.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1d82730d209ccab83e059950c89512c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34508,
+                "upload_time": "2017-05-04T23:56:16",
+                "url": "https://files.pythonhosted.org/packages/d2/2a/a6c8238279e374f9d72da8945b9a6233c8685145bc7099ddac96047d8c6e/awscli-cwlogs-1.4.2.tar.gz"
+            }
+        ],
+        "1.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a9c7fca19dc2bb5f2d7a66cafdc415c1",
+                    "sha256": "452873bac99a45c96aa942c427177512e198816146ad8501c974c4c656b2f5a9"
+                },
+                "downloads": -1,
+                "filename": "awscli-cwlogs-1.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a9c7fca19dc2bb5f2d7a66cafdc415c1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34637,
+                "upload_time": "2017-10-04T03:06:48",
+                "url": "https://files.pythonhosted.org/packages/20/81/b04857135a3780bd3d62e15cfe537b9561ad26c1ef703ad875cf9590e5fb/awscli-cwlogs-1.4.3.tar.gz"
+            }
+        ],
+        "1.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff56a5bf23e18555ac8c43319a91cd0a",
+                    "sha256": "ff5da60ecc366b3777891ab5977ceacd6ae812d529833fd1c687889574770109"
+                },
+                "downloads": -1,
+                "filename": "awscli-cwlogs-1.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ff56a5bf23e18555ac8c43319a91cd0a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34665,
+                "upload_time": "2017-10-14T01:21:04",
+                "url": "https://files.pythonhosted.org/packages/19/42/a9b75f2bbd7b05b28c529e504a0aa9e32d621489a04489a095515607bde3/awscli-cwlogs-1.4.4.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "ff56a5bf23e18555ac8c43319a91cd0a",
+                "sha256": "ff5da60ecc366b3777891ab5977ceacd6ae812d529833fd1c687889574770109"
+            },
+            "downloads": -1,
+            "filename": "awscli-cwlogs-1.4.4.tar.gz",
+            "has_sig": false,
+            "md5_digest": "ff56a5bf23e18555ac8c43319a91cd0a",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 34665,
+            "upload_time": "2017-10-14T01:21:04",
+            "url": "https://files.pythonhosted.org/packages/19/42/a9b75f2bbd7b05b28c529e504a0aa9e32d621489a04489a095515607bde3/awscli-cwlogs-1.4.4.tar.gz"
+        }
+    ],
+    "package_name": "awscli-cwlogs"
+}

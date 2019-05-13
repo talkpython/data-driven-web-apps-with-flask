@@ -1,0 +1,1391 @@
+{
+    "info": {
+        "author": "Daniel Holth",
+        "author_email": "dholth@fastmail.fm",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6"
+        ],
+        "description": "Wheel\n=====\n\nA built-package format for Python.\n\nA wheel is a ZIP-format archive with a specially formatted filename\nand the .whl extension. It is designed to contain all the files for a\nPEP 376 compatible install in a way that is very close to the on-disk\nformat. Many packages will be properly installed with only the \"Unpack\"\nstep (simply extracting the file onto sys.path), and the unpacked archive\npreserves enough information to \"Spread\" (copy data and scripts to their\nfinal locations) at any later time.\n\nThe wheel project provides a `bdist_wheel` command for setuptools\n(requires setuptools >= 0.8.0). Wheel files can be installed with a\nnewer `pip` from https://github.com/pypa/pip or with wheel's own command\nline utility.\n\nThe wheel documentation is at https://wheel.readthedocs.io/. The file format is\ndocumented in PEP 427 (https://www.python.org/dev/peps/pep-0427/).\n\nThe reference implementation is at https://github.com/pypa/wheel\n\nWhy not egg?\n------------\n\nPython's egg format predates the packaging related standards we have\ntoday, the most important being PEP 376 \"Database of Installed Python\nDistributions\" which specifies the .dist-info directory (instead of\n.egg-info) and PEP 426 \"Metadata for Python Software Packages 2.0\"\nwhich specifies how to express dependencies (instead of requires.txt\nin .egg-info).\n\nWheel implements these things. It also provides a richer file naming\nconvention that communicates the Python implementation and ABI as well\nas simply the language version used in a particular package.\n\nUnlike .egg, wheel will be a fully-documented standard at the binary\nlevel that is truly easy to install even if you do not want to use the\nreference implementation.\n\n\nCode of Conduct\n---------------\n\nEveryone interacting in the wheel project's codebases, issue trackers, chat\nrooms, and mailing lists is expected to follow the `PyPA Code of Conduct`_.\n\n.. _PyPA Code of Conduct: https://www.pypa.io/en/latest/code-of-conduct/\n\n\n0.31.1\n======\n- Fixed arch as ``None`` when converting eggs to wheels\n\n0.31.0\n======\n- Fixed displaying of errors on Python 3\n- Fixed single digit versions in wheel files not being properly recognized\n- Fixed wrong character encodings being used (instead of UTF-8) to read and\n  write ``RECORD`` (this sometimes crashed bdist_wheel too)\n- Enabled Zip64 support in wheels by default\n- Metadata-Version is now 2.1\n- Dropped DESCRIPTION.rst and metadata.json from the list of generated files\n- Dropped support for the non-standard, undocumented ``provides-extra`` and\n  ``requires-dist`` keywords in setup.cfg metadata\n- Deprecated all wheel signing and signature verification commands\n- Removed the (already defunct) ``tool`` extras from setup.py\n\n0.30.0\n======\n- Added py-limited-api {cp32|cp33|cp34|...} flag to produce cpNN.abi3.{arch}\n  tags on CPython 3.\n- Documented the ``license_file`` metadata key\n- Improved Python, abi tagging for `wheel convert`. Thanks Ales Erjavec.\n- Fixed `>` being prepended to lines starting with \"From\" in the long description\n- Added support for specifying a build number (as per PEP 427).\n  Thanks Ian Cordasco.\n- Made the order of files in generated ZIP files deterministic.\n  Thanks Matthias Bach.\n- Made the order of requirements in metadata deterministic. Thanks Chris Lamb.\n- Fixed `wheel install` clobbering existing files\n- Improved the error message when trying to verify an unsigned wheel file\n- Removed support for Python 2.6, 3.2 and 3.3.\n\n0.29.0\n======\n- Fix compression type of files in archive (Issue #155, Pull Request #62,\n  thanks Xavier Fernandez)\n\n0.28.0\n======\n- Fix file modes in archive (Issue #154)\n\n0.27.0\n======\n- Support forcing a platform tag using `--plat-name` on pure-Python wheels, as\n  well as nonstandard platform tags on non-pure wheels (Pull Request #60, Issue\n  #144, thanks Andr\u00e9s D\u00edaz)\n- Add SOABI tags to platform-specific wheels built for Python 2.X (Pull Request\n  #55, Issue #63, Issue #101)\n- Support reproducible wheel files, wheels that can be rebuilt and will hash to\n  the same values as previous builds (Pull Request #52, Issue #143, thanks\n  Barry Warsaw)\n- Support for changes in keyring >= 8.0 (Pull Request #61, thanks Jason R.\n  Coombs)\n- Use the file context manager when checking if dependency_links.txt is empty,\n  fixes problems building wheels under PyPy on Windows  (Issue #150, thanks\n  Cosimo Lupo)\n- Don't attempt to (recursively) create a build directory ending with `..`\n  (invalid on all platforms, but code was only executed on Windows) (Issue #91)\n- Added the PyPA Code of Conduct (Pull Request #56)\n\n0.26.0\n======\n- Fix multiple entrypoint comparison failure on Python 3 (Issue #148)\n\n0.25.0\n======\n- Add Python 3.5 to tox configuration\n- Deterministic (sorted) metadata\n- Fix tagging for Python 3.5 compatibility\n- Support py2-none-'arch' and py3-none-'arch' tags\n- Treat data-only wheels as pure\n- Write to temporary file and rename when using wheel install --force\n\n0.24.0\n======\n- The python tag used for pure-python packages is now .pyN (major version\n  only). This change actually occurred in 0.23.0 when the --python-tag\n  option was added, but was not explicitly mentioned in the changelog then.\n- wininst2wheel and egg2wheel removed. Use \"wheel convert [archive]\"\n  instead.\n- Wheel now supports setuptools style conditional requirements via the\n  extras_require={} syntax. Separate 'extra' names from conditions using\n  the : character. Wheel's own setup.py does this. (The empty-string\n  extra is the same as install_requires.) These conditional requirements\n  should work the same whether the package is installed by wheel or\n  by setup.py.\n\n0.23.0\n======\n- Compatibility tag flags added to the bdist_wheel command\n- sdist should include files necessary for tests\n- 'wheel convert' can now also convert unpacked eggs to wheel\n- Rename pydist.json to metadata.json to avoid stepping on the PEP\n- The --skip-scripts option has been removed, and not generating scripts is now\n  the default. The option was a temporary approach until installers could\n  generate scripts themselves. That is now the case with pip 1.5 and later.\n  Note that using pip 1.4 to install a wheel without scripts will leave the\n  installation without entry-point wrappers. The \"wheel install-scripts\"\n  command can be used to generate the scripts in such cases.\n- Thank you contributors\n\n0.22.0\n======\n- Include entry_points.txt, scripts a.k.a. commands, in experimental\n  pydist.json\n- Improved test_requires parsing\n- Python 2.6 fixes, \"wheel version\" command courtesy pombredanne\n\n0.21.0\n======\n- Pregenerated scripts are the default again.\n- \"setup.py bdist_wheel --skip-scripts\" turns them off.\n- setuptools is no longer a listed requirement for the 'wheel'\n  package. It is of course still required in order for bdist_wheel\n  to work.\n- \"python -m wheel\" avoids importing pkg_resources until it's necessary.\n\n0.20.0\n======\n- No longer include console_scripts in wheels. Ordinary scripts (shell files,\n  standalone Python files) are included as usual.\n- Include new command \"python -m wheel install-scripts [distribution\n  [distribution ...]]\" to install the console_scripts (setuptools-style\n  scripts using pkg_resources) for a distribution.\n\n0.19.0\n======\n- pymeta.json becomes pydist.json\n\n0.18.0\n======\n- Python 3 Unicode improvements\n\n0.17.0\n======\n- Support latest PEP-426 \"pymeta.json\" (json-format metadata)\n\n0.16.0\n======\n- Python 2.6 compatibility bugfix (thanks John McFarlane)\n- Non-prerelease version number\n\n1.0.0a2\n=======\n- Bugfix for C-extension tags for CPython 3.3 (using SOABI)\n\n1.0.0a1\n=======\n- Bugfix for bdist_wininst converter \"wheel convert\"\n- Bugfix for dists where \"is pure\" is None instead of True or False\n\n1.0.0a0\n=======\n- Update for version 1.0 of Wheel (PEP accepted).\n- Python 3 fix for moving Unicode Description to metadata body\n- Include rudimentary API documentation in Sphinx (thanks Kevin Horn)\n\n0.15.0\n======\n- Various improvements\n\n0.14.0\n======\n- Changed the signature format to better comply with the current JWS spec.\n  Breaks all existing signatures.\n- Include ``wheel unsign`` command to remove RECORD.jws from an archive.\n- Put the description in the newly allowed payload section of PKG-INFO\n  (METADATA) files.\n\n0.13.0\n======\n- Use distutils instead of sysconfig to get installation paths; can install\n  headers.\n- Improve WheelFile() sort.\n- Allow bootstrap installs without any pkg_resources.\n\n0.12.0\n======\n- Unit test for wheel.tool.install\n\n0.11.0\n======\n- API cleanup\n\n0.10.3\n======\n- Scripts fixer fix\n\n0.10.2\n======\n- Fix keygen\n\n0.10.1\n======\n- Preserve attributes on install.\n\n0.10.0\n======\n- Include a copy of pkg_resources. Wheel can now install into a virtualenv\n  that does not have distribute (though most packages still require\n  pkg_resources to actually work; wheel install distribute)\n- Define a new setup.cfg section [wheel]. universal=1 will\n  apply the py2.py3-none-any tag for pure python wheels.\n\n0.9.7\n=====\n- Only import dirspec when needed. dirspec is only needed to find the\n  configuration for keygen/signing operations.\n\n0.9.6\n=====\n- requires-dist from setup.cfg overwrites any requirements from setup.py\n  Care must be taken that the requirements are the same in both cases,\n  or just always install from wheel.\n- drop dirspec requirement on win32\n- improved command line utility, adds 'wheel convert [egg or wininst]' to\n  convert legacy binary formats to wheel\n\n0.9.5\n=====\n- Wheel's own wheel file can be executed by Python, and can install itself:\n  ``python wheel-0.9.5-py27-none-any/wheel install ...``\n- Use argparse; basic ``wheel install`` command should run with only stdlib\n  dependencies.\n- Allow requires_dist in setup.cfg's [metadata] section. In addition to\n  dependencies in setup.py, but will only be interpreted when installing\n  from wheel, not from sdist. Can be qualified with environment markers.\n\n0.9.4\n=====\n- Fix wheel.signatures in sdist\n\n0.9.3\n=====\n- Integrated digital signatures support without C extensions.\n- Integrated \"wheel install\" command (single package, no dependency\n  resolution) including compatibility check.\n- Support Python 3.3\n- Use Metadata 1.3 (PEP 426)\n\n0.9.2\n=====\n- Automatic signing if WHEEL_TOOL points to the wheel binary\n- Even more Python 3 fixes\n\n0.9.1\n=====\n- 'wheel sign' uses the keys generated by 'wheel keygen' (instead of generating\n  a new key at random each time)\n- Python 2/3 encoding/decoding fixes\n- Run tests on Python 2.6 (without signature verification)\n\n0.9\n===\n- Updated digital signatures scheme\n- Python 3 support for digital signatures\n- Always verify RECORD hashes on extract\n- \"wheel\" command line tool to sign, verify, unpack wheel files\n\n0.8\n===\n- none/any draft pep tags update\n- improved wininst2wheel script\n- doc changes and other improvements\n\n0.7\n===\n- sort .dist-info at end of wheel archive\n- Windows & Python 3 fixes from Paul Moore\n- pep8\n- scripts to convert wininst & egg to wheel\n\n0.6\n===\n- require distribute >= 0.6.28\n- stop using verlib\n\n0.5\n===\n- working pretty well\n\n0.4.2\n=====\n- hyphenated name fix\n\n0.4\n===\n- improve test coverage\n- improve Windows compatibility\n- include tox.ini courtesy of Marc Abramowitz\n- draft hmac sha-256 signing function\n\n0.3\n===\n- prototype egg2wheel conversion script\n\n0.2\n===\n- Python 3 compatibility\n\n0.1\n===\n- Initial version\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/pypa/wheel",
+        "keywords": "wheel,packaging",
+        "license": "MIT",
+        "maintainer": "Alex Gr\u00f6nholm",
+        "maintainer_email": "alex.gronholm@nextday.fi",
+        "name": "wheel",
+        "package_url": "https://pypi.org/project/wheel/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/wheel/",
+        "release_url": "https://pypi.org/project/wheel/0.31.1/",
+        "requires_dist": [
+            "pytest-cov; extra == 'test'",
+            "pytest (>=3.0.0); extra == 'test'",
+            "pyxdg; (sys_platform!=\"win32\") and extra == 'signatures'",
+            "keyrings.alt; extra == 'signatures'",
+            "keyring; extra == 'signatures'",
+            "ed25519ll; extra == 'faster-signatures'"
+        ],
+        "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+        "summary": "A built-package format for Python.",
+        "version": "0.31.1"
+    },
+    "last_serial": 3858866,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "41be870c61d8df1a6ddd23b36c6168b1",
+                    "sha256": "2cc0dd3d9465ae323ad6e85fc9dc54ab3664da2c60ce42189b9ae4c44de7d8bd"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "41be870c61d8df1a6ddd23b36c6168b1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6223,
+                "upload_time": "2012-07-01T07:33:22",
+                "url": "https://files.pythonhosted.org/packages/51/15/d31364732deb6e7d1490f8a08f011997b52b4b106d592d36e917404be613/wheel-0.1.tar.gz"
+            }
+        ],
+        "0.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "221870eab0f4daab0d0c5f37cb2d4310",
+                    "sha256": "dbdb989fd7a99eace561be0443f1c00784a46ac6f6e10233877919a95af3c05a"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.10.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "221870eab0f4daab0d0c5f37cb2d4310",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 102789,
+                "upload_time": "2012-10-01T02:20:30",
+                "url": "https://files.pythonhosted.org/packages/55/c3/6147192b7e74f476b529aa56d2a68d1decfffae084276869b990a70b3053/wheel-0.10.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "952a02f5a83cfc60b371cbb349125353",
+                    "sha256": "7b9745941475a44c30d9e4007b0d0ec06a4ba9783cf425af13f753a27fca6fd5"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "952a02f5a83cfc60b371cbb349125353",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91494,
+                "upload_time": "2012-10-01T02:20:37",
+                "url": "https://files.pythonhosted.org/packages/7d/23/7b42140d7c5de5cf184c99b9921066494fd1ac5049864aba84031df97447/wheel-0.10.0.tar.gz"
+            }
+        ],
+        "0.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bd71c740b406288133bd8460f9a84097",
+                    "sha256": "28f16c298102f35850945fad51d46fd094e6c2ba50bd8cdd4e2a7ec1093afbc1"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.10.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "bd71c740b406288133bd8460f9a84097",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 102874,
+                "upload_time": "2012-10-01T02:56:06",
+                "url": "https://files.pythonhosted.org/packages/bf/46/446356d9ee7bbcac41b9784720fe8d2312e62db7639a3cb37d3c35e766b2/wheel-0.10.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "64fe3c2fce6dab9e29cf141c8ba146d1",
+                    "sha256": "d05cad700d41c0053a7a1b9d062c0c135cd7da955b2e2ac50f0849d36ea4698a"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.10.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "64fe3c2fce6dab9e29cf141c8ba146d1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91576,
+                "upload_time": "2012-10-01T02:56:08",
+                "url": "https://files.pythonhosted.org/packages/48/67/928da8e188fb605c6723cb597dc2bcc269dad9aca725411f4e351bf84c0e/wheel-0.10.1.tar.gz"
+            }
+        ],
+        "0.10.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9151d8d0494deeea71ac157f2f1677a1",
+                    "sha256": "abfdc3fb4427901d7faff5c570508089c382ef750a39a520c6ce0f2e2d0b6c94"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.10.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9151d8d0494deeea71ac157f2f1677a1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 103327,
+                "upload_time": "2012-10-03T01:12:19",
+                "url": "https://files.pythonhosted.org/packages/cd/09/5471330c7f308a02256964f8935d1e5e95824f814c14b5396d7970c38378/wheel-0.10.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a87781ec1cac72418ab7d063c4c8d8e",
+                    "sha256": "d242e094b505073c2bdf53563fb2a2d8dc58a7bd5a7ae0de0e7d74f034cb6ce7"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.10.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2a87781ec1cac72418ab7d063c4c8d8e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91819,
+                "upload_time": "2012-10-03T01:12:23",
+                "url": "https://files.pythonhosted.org/packages/47/cc/2b9c2ec868d1dcefb995b6689f4fd7ecd271bd4e6572fbb046a8b126c20d/wheel-0.10.2.tar.gz"
+            }
+        ],
+        "0.10.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f352ee7119cec297e288c804a8c1a295",
+                    "sha256": "456f150509b57b16a2dfd9c882d8204990fafa55ad9f6410cd6cbb8795237c40"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.10.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "f352ee7119cec297e288c804a8c1a295",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 102119,
+                "upload_time": "2012-10-03T22:56:18",
+                "url": "https://files.pythonhosted.org/packages/54/8c/cde887de967cd0cffa166b01ad763171930ca86015a009427ba3fb7925ea/wheel-0.10.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "66cd5ae1963d9cf5708278a3625e1086",
+                    "sha256": "0827c883b021ec8903260601d1a77bdeb3e1df2d164db847b1e3e20fb4e4ef98"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.10.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "66cd5ae1963d9cf5708278a3625e1086",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91856,
+                "upload_time": "2012-10-03T22:56:23",
+                "url": "https://files.pythonhosted.org/packages/db/9e/7a4ceefae0950a291ff1cdf9aa927bbe61d5a67b187ae3aa11eba61a8138/wheel-0.10.3.tar.gz"
+            }
+        ],
+        "0.11.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f076a09e425d3a8de178b9bacc33361e",
+                    "sha256": "10a60ecaff2bde8bc58a04c3bd3e7518fefa4a6d7e7a297780c637f4c75530e9"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.11.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "f076a09e425d3a8de178b9bacc33361e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 102044,
+                "upload_time": "2012-10-06T12:19:38",
+                "url": "https://files.pythonhosted.org/packages/f0/c8/53fa58a736b1f842bf4e29e61fd89f97bbf75b9bef09c06575fe31f660e0/wheel-0.11.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2472f2f2834c79b290e6dc8f0c2c24a5",
+                    "sha256": "5e74c552d747c6300bd424ed0bcc6c85cbfd57b53cd871ab9ea29227264717cf"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.11.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "2472f2f2834c79b290e6dc8f0c2c24a5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 91901,
+                "upload_time": "2012-10-06T12:19:32",
+                "url": "https://files.pythonhosted.org/packages/00/6c/c02fa934c0df8f8aa870f25cccff1c041afba456e659e655feb2b7cdb050/wheel-0.11.0.tar.gz"
+            }
+        ],
+        "0.12.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e34b2cd99f9e8418584dfe10c723ecc",
+                    "sha256": "351b5f218032c8822410ecc419e41f5e7c40df4813dc9b17f9bd51a5688225f6"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.12.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "7e34b2cd99f9e8418584dfe10c723ecc",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 104056,
+                "upload_time": "2012-10-06T12:35:09",
+                "url": "https://files.pythonhosted.org/packages/fc/44/c7fabd874dc798e1734637b04aaba0d4c0cec1364fd3b09ca91f9372d866/wheel-0.12.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ea42d26a28ed66b722ce996d0f407d33",
+                    "sha256": "ef6468ae7f8e19dc05eee141e0c14ae15b6e81abf661e50d8937f70583e3e944"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.12.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ea42d26a28ed66b722ce996d0f407d33",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 92383,
+                "upload_time": "2012-10-06T12:34:47",
+                "url": "https://files.pythonhosted.org/packages/04/c4/98dc250c85a6a7807236cc11c0ae154326797b4ee654445ad817645915b7/wheel-0.12.0.tar.gz"
+            }
+        ],
+        "0.13.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b031c8852fa0c2630f5531003be59365",
+                    "sha256": "e22c0ee13924fa775a62d493da2abdc5fd8a1f757fa5ca012d4a0c892f5c76ce"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.13.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b031c8852fa0c2630f5531003be59365",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 49843,
+                "upload_time": "2012-10-18T00:16:58",
+                "url": "https://files.pythonhosted.org/packages/d0/f9/16c9e3f338309ee4d88435b4ed23aa43d8719b1c7d2ed9281aec6146d678/wheel-0.13.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "619e568bf37561f3cde240acadb97a5d",
+                    "sha256": "54eb152a88932f480ca7b52b4fe35566fff4adf32db16d64da496d8764a5d6b4"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.13.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "619e568bf37561f3cde240acadb97a5d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 41728,
+                "upload_time": "2012-10-18T00:17:03",
+                "url": "https://files.pythonhosted.org/packages/62/41/93774ef38ee9805ee46411873f53eea0a15cfc31f6bb9b8fbe58cdc1ba30/wheel-0.13.0.tar.gz"
+            }
+        ],
+        "0.14.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "742fda147e91ef93d3fb208989ccc688",
+                    "sha256": "41a973fa2d0a3b007d8afdfa6ca39f6b2f48b336a642c020ea2ffe5ea2ebf426"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.14.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "742fda147e91ef93d3fb208989ccc688",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 50507,
+                "upload_time": "2012-10-27T20:15:55",
+                "url": "https://files.pythonhosted.org/packages/49/1e/64bd498334aa061ecc281b92285d0eb6cbf8cedd12ed9ac8c9723362ef86/wheel-0.14.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f6bc967af5aa419a8425a0b225d4510",
+                    "sha256": "76c3c424dc79dde443007fbecedbb1ab7b54ec055cb72dd480a65f2af9645c55"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.14.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5f6bc967af5aa419a8425a0b225d4510",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42448,
+                "upload_time": "2012-10-27T20:15:50",
+                "url": "https://files.pythonhosted.org/packages/6a/ea/df18b5c87d11e29401af01320a2e3613effd4de3dfafe4353d9187fe5d8d/wheel-0.14.0.tar.gz"
+            }
+        ],
+        "0.15.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fae68c36ca5288f0ebc9b621519847f3",
+                    "sha256": "c719c414d4a192ee70c85e330421bd022fda91552e40ab74078cfeeeda3a35a1"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.15.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fae68c36ca5288f0ebc9b621519847f3",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 107279,
+                "upload_time": "2013-01-15T02:51:53",
+                "url": "https://files.pythonhosted.org/packages/4d/ae/38ff18147dc73de82fd5dd4fd1f2ecdaef6dccc0365ae2e460c404e83ef7/wheel-0.15.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "41df3ece27e7c7c4eb8be35865e60fa1",
+                    "sha256": "0522f7cbf7a658ab89f086cd1cc7e7b1abe808dfe16b6ad3559293b07a39c625"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.15.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "41df3ece27e7c7c4eb8be35865e60fa1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43250,
+                "upload_time": "2013-01-15T02:51:18",
+                "url": "https://files.pythonhosted.org/packages/82/07/d9680d331deb1247cf28804422a0e3050870481ac43234437f72547aacb4/wheel-0.15.0.tar.gz"
+            }
+        ],
+        "0.16.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "87976ed0420040f5994440e8564e3ca7",
+                    "sha256": "1451499fcc03da0de54eb0d8803f96b2cc94e1cb1f4294e260516442d64531d5"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.16.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "87976ed0420040f5994440e8564e3ca7",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 103155,
+                "upload_time": "2013-04-30T01:43:40",
+                "url": "https://files.pythonhosted.org/packages/16/7b/f4e0e59f5b8bd3756d9d2d4a4493700b420991cfd20218fd7b9077f95e83/wheel-0.16.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "375a8570066724148ddf815d06b19d09",
+                    "sha256": "4907bf9c716264f084198afbf1df80aaed64c28a3a09ca38ecd66e9d0f598756"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.16.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "375a8570066724148ddf815d06b19d09",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 37355,
+                "upload_time": "2013-04-30T01:43:36",
+                "url": "https://files.pythonhosted.org/packages/4d/31/bcc5270aa8f08764ab73de32bdc1b95a16b043bff42e8f808da3b344ff80/wheel-0.16.0.tar.gz"
+            }
+        ],
+        "0.17.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fcd52f9112ec310ebd75b18589eae858",
+                    "sha256": "b5affc730154325831d35b4fec11cc2647846443fbbca85dcb056cc0e5f015c7"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.17.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fcd52f9112ec310ebd75b18589eae858",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 53030,
+                "upload_time": "2013-06-23T18:37:52",
+                "url": "https://files.pythonhosted.org/packages/92/9c/6c4474034690084808c05c1bde6bd00d37ae777f7f94beb40aeb98b3a9e0/wheel-0.17.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f7812785b299fc99f714535d1e288180",
+                    "sha256": "c139e4acbc3c7c14194e1b49826f44d5517ef8052bb93a1a98b4b83fe95edd9e"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.17.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f7812785b299fc99f714535d1e288180",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 38300,
+                "upload_time": "2013-06-23T18:37:56",
+                "url": "https://files.pythonhosted.org/packages/16/f8/b06811f631f11f892ec88f6c073b96ab1c1a34f2993e7a460334f44b3637/wheel-0.17.0.tar.gz"
+            }
+        ],
+        "0.18.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "13773c37bab7f1c509af12a23ad0da36",
+                    "sha256": "50464317d6baf354a78df94b7a842ce1fe4e5752c9dd3a97c38e3219eeb5fbe8"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.18.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "13773c37bab7f1c509af12a23ad0da36",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 53208,
+                "upload_time": "2013-07-04T23:53:25",
+                "url": "https://files.pythonhosted.org/packages/ca/8e/f363a37db72b9ba3ae0eea72ba380a38d3e5b966adfd8c7a78eb0c54234c/wheel-0.18.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "debda4a48e676e637ab06afe39e83aa5",
+                    "sha256": "3a3f6b1ee1e0e46d19818b6e7d1100c1718bba3ee9a0b537cc1e62d7fd15f040"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.18.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "debda4a48e676e637ab06afe39e83aa5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39402,
+                "upload_time": "2013-07-04T23:53:19",
+                "url": "https://files.pythonhosted.org/packages/a3/eb/b4eb495e767d5f6be823f27d9e891eee154d4cded6d97941a1361468421c/wheel-0.18.0.tar.gz"
+            }
+        ],
+        "0.19.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "646416f822454cfdd038174debc820bb",
+                    "sha256": "c4393edc51986db56f4ee7ef542e1e183caef570d5e5a6b9021333b21a40683e"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.19.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "646416f822454cfdd038174debc820bb",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 53337,
+                "upload_time": "2013-07-19T16:07:04",
+                "url": "https://files.pythonhosted.org/packages/b8/58/9130ace9b544470908a68abcfb9201c383d2f734426bf7892badb37c5541/wheel-0.19.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f83973fbd602cf2a636c50cac2ca8016",
+                    "sha256": "a1e6118ca67ca0e7e302a2bc1d8ae08d0401534826a79477a343d947bcb8e236"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.19.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f83973fbd602cf2a636c50cac2ca8016",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 38670,
+                "upload_time": "2013-07-19T16:08:19",
+                "url": "https://files.pythonhosted.org/packages/b9/28/1ce455559c7502c082ccc876a22ec6fd61cc6910da0bc620d910cbe8fa11/wheel-0.19.0.tar.gz"
+            }
+        ],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "96d458e73e65f87c1354c78e2145ce30",
+                    "sha256": "82026a421ca379affefa9a0cb85807047e7184574a92f406670b2dcc3384da36"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "96d458e73e65f87c1354c78e2145ce30",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6081,
+                "upload_time": "2012-07-03T13:17:37",
+                "url": "https://files.pythonhosted.org/packages/e2/1e/aedf6a9c6c0a588f96e9fe6e953de0c9f9084baad05f3ed0bd4a9b4a469f/wheel-0.2.tar.gz"
+            }
+        ],
+        "0.21.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7f1418e9c5ff2f6ea23c15207ead2a88",
+                    "sha256": "b0798123cd67a763637991812ab866f609a81516228273e89270d4bc91b276cd"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.21.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7f1418e9c5ff2f6ea23c15207ead2a88",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 54184,
+                "upload_time": "2013-07-20T16:21:03",
+                "url": "https://files.pythonhosted.org/packages/0d/e6/60c6e03ae967d076e72ec5298cd136d658e4b8eb6773d6aef3ff1abc8d04/wheel-0.21.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c566fb6f3b77bfb9e9cc22340ea2549e",
+                    "sha256": "68ad3e66560e9df1f1f435b480183ba24ef913da26556af9e5ae16cd94dd26e1"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.21.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c566fb6f3b77bfb9e9cc22340ea2549e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39310,
+                "upload_time": "2013-07-20T16:21:20",
+                "url": "https://files.pythonhosted.org/packages/2a/a3/7a0a7d058bcaf0b08a50e7d55d5426522374ee466316489cc853d0d26dc1/wheel-0.21.0.tar.gz"
+            }
+        ],
+        "0.22.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f025b15a289269f396bbe218b25fe327",
+                    "sha256": "4ac0ec6404ef2dd3412fcdb1560206eaca86a4c73ff29895989320faca54be61"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.22.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f025b15a289269f396bbe218b25fe327",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 54823,
+                "upload_time": "2013-09-15T22:09:21",
+                "url": "https://files.pythonhosted.org/packages/d0/2f/dd989a40d4e1b85cf0826eb79b630efa52389eae5ee2760a74848156aa9a/wheel-0.22.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "16bb8eb3bdd3d93813295463bb949705",
+                    "sha256": "dffdf998910de1fd4267a1cb07db46def901bf3bc1e25b80f132addef4ebe46d"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.22.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "16bb8eb3bdd3d93813295463bb949705",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39772,
+                "upload_time": "2013-09-15T22:09:19",
+                "url": "https://files.pythonhosted.org/packages/df/cc/212d1a8cb8fadc3a6b923b1a1392cf2911d606117537ac62ae6897bde95b/wheel-0.22.0.tar.gz"
+            }
+        ],
+        "0.23.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a4b9b87a64441ad56c08bda1ea6e52a",
+                    "sha256": "cbc6b2e274557b5e8ee8b61ca4c0c781702956a80cdbeb7ec0446834b5078082"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.23.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2a4b9b87a64441ad56c08bda1ea6e52a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 61958,
+                "upload_time": "2014-04-01T02:08:03",
+                "url": "https://files.pythonhosted.org/packages/a9/67/43036e2db1a344ad24ba468b6262826b3837ce629b7b4c09c18d3e2b5800/wheel-0.23.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "273374d28127b821d61cdfe56e7c35dd",
+                    "sha256": "bf8eed43df6c88fdaef845d06ee7e2669310c500e80d19f6eb062869ae1b8f62"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.23.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "273374d28127b821d61cdfe56e7c35dd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 50110,
+                "upload_time": "2014-04-01T02:08:06",
+                "url": "https://files.pythonhosted.org/packages/24/dc/2b7134bce04139b67727bfc441ef77e8558df07103c12275e3617ffe6c57/wheel-0.23.0.tar.gz"
+            }
+        ],
+        "0.24.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4c24453cda2177fd42c5d62d6434679a",
+                    "sha256": "53a8b47d3db4ded8db41a1e9bbb77a1625074e7a4879bd0ebf97d6cb01576383"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.24.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4c24453cda2177fd42c5d62d6434679a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63270,
+                "upload_time": "2014-07-06T17:31:38",
+                "url": "https://files.pythonhosted.org/packages/e8/14/eaaac12b0432c984a27ad0050a5a0bedc6135df35a0f5f1f35228faf12d4/wheel-0.24.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b0d66f0d127ea8befaa5d11453107fd",
+                    "sha256": "ef832abfedea7ed86b6eae7400128f88053a1da81a37c00613b1279544d585aa"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.24.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3b0d66f0d127ea8befaa5d11453107fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 50597,
+                "upload_time": "2014-07-06T17:31:41",
+                "url": "https://files.pythonhosted.org/packages/aa/35/b7d0fcdfcf2151327afa6bea68839aed1f1914a4225b24750bb8baf057c8/wheel-0.24.0.tar.gz"
+            }
+        ],
+        "0.25.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e28b774983d9e238b18ab9f83ffc1b9",
+                    "sha256": "11d74730000531808916fcc069fb7bb5906caa0dba978b126cc807be8d4319f4"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.25.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7e28b774983d9e238b18ab9f83ffc1b9",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63852,
+                "upload_time": "2015-09-17T01:18:13",
+                "url": "https://files.pythonhosted.org/packages/2d/14/a561f8a503bd62bb1df33694b183cf3f280f6fba7bda589670efe65f09e9/wheel-0.25.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ef51b84dc2a5a3ca87e822210b832508",
+                    "sha256": "c7a72676357e26dd35006b8ddfe4335030a99ec8c69d04c0ac8974570d832a32"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.25.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ef51b84dc2a5a3ca87e822210b832508",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 51077,
+                "upload_time": "2015-09-17T01:18:18",
+                "url": "https://files.pythonhosted.org/packages/59/7b/00b6746e26e7c4ed9a2628418f5ff0d45c5e02b5317e65128173515739a2/wheel-0.25.0.tar.gz"
+            }
+        ],
+        "0.26.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "89b4111bb154b656f13723b5f93ccd67",
+                    "sha256": "c92ed3a2dd87c54a9e20024fb0a206fe591c352c745fff21e8f8c6cdac2086ea"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.26.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "89b4111bb154b656f13723b5f93ccd67",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63454,
+                "upload_time": "2015-09-18T18:07:21",
+                "url": "https://files.pythonhosted.org/packages/d9/6f/cfb45d489703e4843b30c28e01ab39c87b0648bfa11a6c4a959f426fe217/wheel-0.26.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4cfc6e7e3dc7377d0164914623922a10",
+                    "sha256": "eaad353805c180a47545a256e6508835b65a8e830ba1093ed8162f19a50a530c"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.26.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4cfc6e7e3dc7377d0164914623922a10",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 51207,
+                "upload_time": "2015-09-18T18:07:24",
+                "url": "https://files.pythonhosted.org/packages/91/66/ddc9410feba81767f53c87e78f958f884536cf37ca991b90ec2890706dcf/wheel-0.26.0.tar.gz"
+            }
+        ],
+        "0.27.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42a2484866e713a97e497895c3d7dd8d",
+                    "sha256": "b2e5cf1b3e5ca7873956bea1fadc160850a89fdb96a22515e72b5e3b61bb9c6a"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.27.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "42a2484866e713a97e497895c3d7dd8d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 179462,
+                "upload_time": "2016-02-05T16:43:34",
+                "url": "https://files.pythonhosted.org/packages/d9/e0/f0fd2f9d4777c56766752a03bc0e420dc65d50186c71ebaf73255156bd9a/wheel-0.27.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab8490eeb11e30a01d60bf7f156eac37",
+                    "sha256": "0beae2ec3a20df54869177ec00b4619219bc7cab5578984fb400517aee2df523"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.27.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ab8490eeb11e30a01d60bf7f156eac37",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54003,
+                "upload_time": "2016-02-05T16:43:42",
+                "url": "https://files.pythonhosted.org/packages/be/3d/73e36a9f4afaea62c4d91b858d061e8c7e0074dd67e5e80618b644756dc7/wheel-0.27.0.tar.gz"
+            }
+        ],
+        "0.28.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c93392475e7674ad8053b1c45bb8a69c",
+                    "sha256": "7a83f0fd22ccf4137673f21a4fbd6b522e3c826add9568adbf63eb17fb9ec90c"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.28.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c93392475e7674ad8053b1c45bb8a69c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 179661,
+                "upload_time": "2016-02-05T21:38:15",
+                "url": "https://files.pythonhosted.org/packages/c8/72/d51052bb24c9e551e292e87fc7376bad9ae5fa198b294f4ab4e2619f530c/wheel-0.28.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6d6b7e87dd744c6fac77ca9b43479207",
+                    "sha256": "70525cdda4fe80f3f4b7b5c00cffe4f5d967ec35f6ec55924b13ebd3f58694e1"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.28.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6d6b7e87dd744c6fac77ca9b43479207",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54052,
+                "upload_time": "2016-02-05T21:38:21",
+                "url": "https://files.pythonhosted.org/packages/8f/c6/c524fe41283b2820f85a8e38cedd19ebb6454365281549dcf98ae32feb85/wheel-0.28.0.tar.gz"
+            }
+        ],
+        "0.29.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d7db45db5c131af262b8ffccde46a88a",
+                    "sha256": "ea8033fc9905804e652f75474d33410a07404c1a78dd3c949a66863bd1050ebd"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.29.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d7db45db5c131af262b8ffccde46a88a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 66878,
+                "upload_time": "2016-02-06T17:22:39",
+                "url": "https://files.pythonhosted.org/packages/8a/e9/8468cd68b582b06ef554be0b96b59f59779627131aad48f8a5bce4b13450/wheel-0.29.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "555a67e4507cedee23a0deb9651e452f",
+                    "sha256": "1ebb8ad7e26b448e9caa4773d2357849bf80ff9e313964bcaf79cbf0201a1648"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.29.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "555a67e4507cedee23a0deb9651e452f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54143,
+                "upload_time": "2016-02-06T17:22:44",
+                "url": "https://files.pythonhosted.org/packages/c9/1d/bd19e691fd4cfe908c76c429fe6e4436c9e83583c4414b54f6c85471954a/wheel-0.29.0.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c5d5dd3bbba22ed39febd377aa1b4fb2",
+                    "sha256": "767c011ae408983b4886dc791158ea3c538992a12c8e5a0e3234e740fd1ff40b"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c5d5dd3bbba22ed39febd377aa1b4fb2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15650,
+                "upload_time": "2012-07-05T03:34:47",
+                "url": "https://files.pythonhosted.org/packages/87/cc/7e2672fda46ece9fd8880fe8784ec8013f87879fc35b785cbc53e7e85700/wheel-0.3.tar.gz"
+            }
+        ],
+        "0.30.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1d61793f816d6b60513364fe2de9c1b3",
+                    "sha256": "e721e53864f084f956f40f96124a74da0631ac13fbbd1ba99e8e2b5e9cafdf64"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.30.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1d61793f816d6b60513364fe2de9c1b3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 49751,
+                "upload_time": "2017-09-10T22:12:00",
+                "url": "https://files.pythonhosted.org/packages/0c/80/16a85b47702a1f47a63c104c91abdd0a6704ee8ae3b4ce4afc49bc39f9d9/wheel-0.30.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e48f8f2329f1419572d93b68a63272a9",
+                    "sha256": "9515fe0a94e823fd90b08d22de45d7bde57c90edce705b22f5e1ecf7e1b653c8"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.30.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e48f8f2329f1419572d93b68a63272a9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43087,
+                "upload_time": "2017-09-10T22:12:02",
+                "url": "https://files.pythonhosted.org/packages/fa/b4/f9886517624a4dcb81a1d766f68034344b7565db69f13d52697222daeb72/wheel-0.30.0.tar.gz"
+            }
+        ],
+        "0.30.0a0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ffa1ee60be515c04b4c13fd13feea27a",
+                    "sha256": "cd19aa9325d3af1c641b0a23502b12696159171d2a2f4b84308df9a075c2a4a0"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.30.0a0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ffa1ee60be515c04b4c13fd13feea27a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 69379,
+                "upload_time": "2016-09-14T22:22:25",
+                "url": "https://files.pythonhosted.org/packages/83/53/e120833aa2350db333df89a40dea3b310dd9dabf6f29eaa18934a597dc79/wheel-0.30.0a0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa1145d48e4da2f9415eac2d51468a83",
+                    "sha256": "98f3e09b4ad7f5649a7e3d00e0e005ec1824ddcd6ec16c5086c05b1d91ada6da"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.30.0a0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "aa1145d48e4da2f9415eac2d51468a83",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 55744,
+                "upload_time": "2016-09-14T22:22:28",
+                "url": "https://files.pythonhosted.org/packages/a7/37/947b4329c4a3c72093b6c8e9b4be8c7f10c32dbb78848d3a234ce01c059d/wheel-0.30.0a0.tar.gz"
+            }
+        ],
+        "0.31.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "240d714477a715bcd90e94cb2c44f28c",
+                    "sha256": "9cdc8ab2cc9c3c2e2727a4b67c22881dbb0e1c503d592992594c5e131c867107"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.31.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "240d714477a715bcd90e94cb2c44f28c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 41546,
+                "upload_time": "2018-04-01T20:40:42",
+                "url": "https://files.pythonhosted.org/packages/1b/d2/22cde5ea9af055f81814f9f2545f5ed8a053eb749c08d186b369959189a8/wheel-0.31.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b0fa0e058de28cd159de39790379ccf6",
+                    "sha256": "1ae8153bed701cb062913b72429bcf854ba824f973735427681882a688cb55ce"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.31.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b0fa0e058de28cd159de39790379ccf6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 38528,
+                "upload_time": "2018-04-01T20:40:43",
+                "url": "https://files.pythonhosted.org/packages/5d/c1/45947333669b31bc6b4933308dd07c2aa2fedcec0a95b14eedae993bd449/wheel-0.31.0.tar.gz"
+            }
+        ],
+        "0.31.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c6fad0d4eb25cfb29f986a5558479dc1",
+                    "sha256": "80044e51ec5bbf6c894ba0bc48d26a8c20a9ba629f4ca19ea26ecfcf87685f5f"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.31.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c6fad0d4eb25cfb29f986a5558479dc1",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 41567,
+                "upload_time": "2018-05-13T17:28:23",
+                "url": "https://files.pythonhosted.org/packages/81/30/e935244ca6165187ae8be876b6316ae201b71485538ffac1d718843025a9/wheel-0.31.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0ac15797d94ca759702b1d52425850c4",
+                    "sha256": "0a2e54558a0628f2145d2fc822137e322412115173e8a2ddbe1c9024338ae83c"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.31.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0ac15797d94ca759702b1d52425850c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 38574,
+                "upload_time": "2018-05-13T17:28:24",
+                "url": "https://files.pythonhosted.org/packages/2a/fb/aefe5d5dbc3f4fe1e815bcdb05cbaab19744d201bbc9b59cfa06ec7fc789/wheel-0.31.1.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26bc9277558d0ef63f467f3c4211c729",
+                    "sha256": "d159b9b80abbb60c52fff7bb86a4d7b7a8af667e220f2b4c8d72a808b5511a92"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "26bc9277558d0ef63f467f3c4211c729",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17068,
+                "upload_time": "2012-07-12T06:02:35",
+                "url": "https://files.pythonhosted.org/packages/c4/27/39e87b69a9a65cc89b6d83d21e7deca97bc31c7d0de492e63b4139890d11/wheel-0.4.tar.gz"
+            }
+        ],
+        "0.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4733fe824ee0d746a13fcf5f144503ca",
+                    "sha256": "68479e3af00ccb4d6a36e64f23859914187ef826f91beb2e05536e25c17b6a9b"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4733fe824ee0d746a13fcf5f144503ca",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17331,
+                "upload_time": "2012-07-12T06:03:17",
+                "url": "https://files.pythonhosted.org/packages/91/9f/23da62e10213c4a9e7b6a41913bca5592f7bf14de5181f07eed6ea65dedb/wheel-0.4.1.tar.gz"
+            }
+        ],
+        "0.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "edab36ba3b86ed63545799ef4c22c640",
+                    "sha256": "ca0e82e12241a71b962723c7723a84448f9e7c5b5b3a57b3fb80eee2d30cf51e"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "edab36ba3b86ed63545799ef4c22c640",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17366,
+                "upload_time": "2012-07-12T19:59:08",
+                "url": "https://files.pythonhosted.org/packages/37/81/ed812d6e0cb7b75e184015601ab4a83fed37606899595ba28d511ba349ee/wheel-0.4.2.tar.gz"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "67cbfbc1cfa4d99d977803db8339f0c9",
+                    "sha256": "8047cd740333631716d66bbff24e740cc2d19f8dd2457fe45b41d7d6531a4229"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "67cbfbc1cfa4d99d977803db8339f0c9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17434,
+                "upload_time": "2012-07-17T18:24:22",
+                "url": "https://files.pythonhosted.org/packages/a6/58/3ecc315c7809b9b44de37b615498b4fb51982c37d92be1b83640ddf94323/wheel-0.5.tar.gz"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52660b2f4398a3cce1e67fba20dfb2f5",
+                    "sha256": "c2ae5ea88f47ed0b1acf3129ad25f0a1449fc2ad05b785672a55ca3d7a39f245"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "52660b2f4398a3cce1e67fba20dfb2f5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17555,
+                "upload_time": "2012-07-23T18:30:02",
+                "url": "https://files.pythonhosted.org/packages/53/26/1880f84340dd8717105fc3e5c199479829fcfb3108b2afea92b5b0ae0e09/wheel-0.6.tar.gz"
+            }
+        ],
+        "0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "44b3b994f5f2943d0b63cf7b5149ea26",
+                    "sha256": "3bb349bde3db626f4d819ee4a2e9f318cd2f29c61c316d9f04cbed1a1ab3b048"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "44b3b994f5f2943d0b63cf7b5149ea26",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21044,
+                "upload_time": "2012-07-28T14:26:20",
+                "url": "https://files.pythonhosted.org/packages/1d/79/49416a92ca1ae8c30f9a489b6349c795794aa209cde2e7d0afd5614cbfa6/wheel-0.7.tar.gz"
+            }
+        ],
+        "0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5091c4fef6287d9781e14261abb4ba0",
+                    "sha256": "583831383bdf191fac1953595b8d9ec704718eb22e322b6fd4e9449aacd91f2b"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.8-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f5091c4fef6287d9781e14261abb4ba0",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 31271,
+                "upload_time": "2012-08-17T17:49:33",
+                "url": "https://files.pythonhosted.org/packages/0b/86/3c1687aba2d15cec12ed2dc9bb5276e9fb6d3d43ce7376e91fabdb400c0a/wheel-0.8-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4af8c9ca354913a0e439af426cbaec6a",
+                    "sha256": "8554dad22e0fda18753bea533eb091ea514725a30a00268046d9dc69d44aa784"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4af8c9ca354913a0e439af426cbaec6a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24482,
+                "upload_time": "2012-08-17T17:49:47",
+                "url": "https://files.pythonhosted.org/packages/27/22/83e4db59ad3ef6a1616c5db5c712b1d19803808d1e84001eae8e38c88db1/wheel-0.8.tar.gz"
+            }
+        ],
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c6751cbca92113f750edee4cc55d061b",
+                    "sha256": "c989d0fa556621341d46167389496e5c9191b5c4eb5a70d1190c473207ddd9c8"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c6751cbca92113f750edee4cc55d061b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 30867,
+                "upload_time": "2012-08-23T03:13:00",
+                "url": "https://files.pythonhosted.org/packages/98/53/d87853d5490feb0ec9295e645ce0fa631ed95c2020d3411103561563e045/wheel-0.9-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b8546f3d1b30ca8577bd7a096c7c645",
+                    "sha256": "4698c1d702ca4aa52225920ca53bce0f29576574cf5b7bfa06396487e6deca57"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9-py32-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3b8546f3d1b30ca8577bd7a096c7c645",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.2",
+                "size": 30866,
+                "upload_time": "2012-08-23T03:13:14",
+                "url": "https://files.pythonhosted.org/packages/34/4b/aa762fd3c034baa7fdc266bf8f54e442c9d1b0aedce74ff32d287af25db3/wheel-0.9-py32-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b730ea145e1166ea7ad080749c8fe27",
+                    "sha256": "a5092ad01848ab3bed38cf2e0aead3ca84fec6b7912562b9e8b69ba0a717df27"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3b730ea145e1166ea7ad080749c8fe27",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26286,
+                "upload_time": "2012-08-23T03:11:32",
+                "url": "https://files.pythonhosted.org/packages/fc/62/48c826c3d7c15367a855ebab08b37a72ee9f33f41d4536fb16b6aa124acd/wheel-0.9.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15c944b0070c92b3a503b48d92d04825",
+                    "sha256": "930a334a9df1e11b35580c89ce31a04a0a82859dd7a99e82191132eee0121adc"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "15c944b0070c92b3a503b48d92d04825",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27680,
+                "upload_time": "2012-08-28T23:08:24",
+                "url": "https://files.pythonhosted.org/packages/2a/52/28470f5d856acec391d04cf4570664d4174ee5e0482f3d3cab584c5e2ea5/wheel-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d37e7f6c02a4d9905400487a7cc50e2",
+                    "sha256": "a8ad92542fa0a5488774f36f3a00f43613d95c1a9fa6d064e60dd175339bd3c7"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0d37e7f6c02a4d9905400487a7cc50e2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27780,
+                "upload_time": "2012-08-29T23:36:35",
+                "url": "https://files.pythonhosted.org/packages/a9/cf/8223ae8f72eac39e409d555da52a1b744b27f632da4dcb1513312a3ff570/wheel-0.9.2.tar.gz"
+            }
+        ],
+        "0.9.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "45348db1d4980b0c9159d5db0f305127",
+                    "sha256": "75e69663f8817f23d446166fe7fc793d6f22158cb74168823c4ec4a2deab9781"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "45348db1d4980b0c9159d5db0f305127",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29453,
+                "upload_time": "2012-09-11T02:50:31",
+                "url": "https://files.pythonhosted.org/packages/b6/54/617e21cd9d8151f6cfc9f9bf1b6cde2f430f70ff2b66ccef477ada7f0c12/wheel-0.9.3.tar.gz"
+            }
+        ],
+        "0.9.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "327ec5aec7c559cf2d861a19a1276e75",
+                    "sha256": "3fa176a44642d666768bb54c58c5a7e53ea8f302c2c656d6c9ea30b4be703add"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "327ec5aec7c559cf2d861a19a1276e75",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33480,
+                "upload_time": "2012-09-11T12:33:30",
+                "url": "https://files.pythonhosted.org/packages/16/84/d42d28af9502073272b59c52dfc90091bf8efa1277dac1b8730aaa3eb867/wheel-0.9.4.tar.gz"
+            }
+        ],
+        "0.9.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "60cd496ec7381c9a0dba4f024069bb9d",
+                    "sha256": "2fafe3ab14e79a5cd4e3e3c8ec901a16e69ba9977ff528e1357afb79fd6adbf4"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "60cd496ec7381c9a0dba4f024069bb9d",
+                "packagetype": "bdist_wheel",
+                "python_version": "any",
+                "size": 41047,
+                "upload_time": "2012-09-16T03:07:41",
+                "url": "https://files.pythonhosted.org/packages/28/46/8ebdfe69b7ad35adf20b0e9335a0ec5790f9999d7c99fe5d180a55f9f963/wheel-0.9.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "13fd20036592386b5137061a98e84ab3",
+                    "sha256": "e9e6395873fecf89c5260aa8f9ea0b1de6ae359dcf887f5dac31a30a6f9a4329"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "13fd20036592386b5137061a98e84ab3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35276,
+                "upload_time": "2012-09-16T03:05:27",
+                "url": "https://files.pythonhosted.org/packages/cf/04/7cd10c6b78b55972a651e04affebc02fa4c0b45d943996540033b246eb42/wheel-0.9.5.tar.gz"
+            }
+        ],
+        "0.9.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "51a2d80dccbe2cc01c387bac311d7e26",
+                    "sha256": "89020b5f151462bc58da956efa92808e92e65f4426e2130253e222eed2e4ab76"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.6-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "51a2d80dccbe2cc01c387bac311d7e26",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 42088,
+                "upload_time": "2012-09-20T01:47:22",
+                "url": "https://files.pythonhosted.org/packages/34/da/0fb28917ed602bda9807eda0e9a9202a53d97a2b2ae4b0392fd9015dbcfd/wheel-0.9.6-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bbb240a2e3d4e798f7b0e0ca30ae99fe",
+                    "sha256": "a2409a6300454bc538862c6ec922f7a48cd46967700b9e94b23368af080b3322"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bbb240a2e3d4e798f7b0e0ca30ae99fe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36700,
+                "upload_time": "2012-09-20T01:47:21",
+                "url": "https://files.pythonhosted.org/packages/02/c5/0f17dc19cc58f15bc3e1d8d0ccf68277180b3898028e16ba15bda2010545/wheel-0.9.6.tar.gz"
+            }
+        ],
+        "0.9.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ae436649fb9314e84b573c0f03941ac",
+                    "sha256": "3110450f09bd937a8b25c32ea4409f2a2ef490ed490dea002617bebc8133e7b8"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.7-py27-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5ae436649fb9314e84b573c0f03941ac",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 42155,
+                "upload_time": "2012-09-20T15:53:35",
+                "url": "https://files.pythonhosted.org/packages/9a/2a/4a9de088db2a97bf5eec6f274875c369c50d634eb2096efccf80902e6d33/wheel-0.9.7-py27-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3b8358d70ae82e02dd0bafb4cc8566b",
+                    "sha256": "b8eef2651193edc4b1a81263ff8d93c5b43d10fd5a4d441a9fbc5783ce10b081"
+                },
+                "downloads": -1,
+                "filename": "wheel-0.9.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c3b8358d70ae82e02dd0bafb4cc8566b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36768,
+                "upload_time": "2012-09-20T15:53:34",
+                "url": "https://files.pythonhosted.org/packages/8d/47/0398c7707a3c6fe46d4d326bc063ce698beac7e6ab5af505f462bf50602d/wheel-0.9.7.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "c6fad0d4eb25cfb29f986a5558479dc1",
+                "sha256": "80044e51ec5bbf6c894ba0bc48d26a8c20a9ba629f4ca19ea26ecfcf87685f5f"
+            },
+            "downloads": -1,
+            "filename": "wheel-0.31.1-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "c6fad0d4eb25cfb29f986a5558479dc1",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 41567,
+            "upload_time": "2018-05-13T17:28:23",
+            "url": "https://files.pythonhosted.org/packages/81/30/e935244ca6165187ae8be876b6316ae201b71485538ffac1d718843025a9/wheel-0.31.1-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0ac15797d94ca759702b1d52425850c4",
+                "sha256": "0a2e54558a0628f2145d2fc822137e322412115173e8a2ddbe1c9024338ae83c"
+            },
+            "downloads": -1,
+            "filename": "wheel-0.31.1.tar.gz",
+            "has_sig": false,
+            "md5_digest": "0ac15797d94ca759702b1d52425850c4",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 38574,
+            "upload_time": "2018-05-13T17:28:24",
+            "url": "https://files.pythonhosted.org/packages/2a/fb/aefe5d5dbc3f4fe1e815bcdb05cbaab19744d201bbc9b59cfa06ec7fc789/wheel-0.31.1.tar.gz"
+        }
+    ],
+    "package_name": "wheel"
+}

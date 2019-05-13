@@ -1,0 +1,363 @@
+{
+    "info": {
+        "author": "Armin Ronacher",
+        "author_email": "armin.ronacher@active-4.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "License :: OSI Approved :: BSD License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3"
+        ],
+        "description": "It's Dangerous\n   ... so better sign this\n\nVarious helpers to pass data to untrusted environments and to get it back\nsafe and sound.\n\nThis repository provides a module that is a port of the django signing\nmodule.  It's not directly copied but some changes were applied to\nmake it work better on its own.\n\nAlso I plan to add some extra things.  Work in progress.\n",
+        "description_content_type": null,
+        "docs_url": "https://pythonhosted.org/itsdangerous/",
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://github.com/mitsuhiko/itsdangerous",
+        "keywords": null,
+        "license": "UNKNOWN",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "itsdangerous",
+        "package_url": "https://pypi.org/project/itsdangerous/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/itsdangerous/",
+        "release_url": "https://pypi.org/project/itsdangerous/0.24/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Various helpers to pass trusted data to untrusted environments and back.",
+        "version": "0.24"
+    },
+    "last_serial": 2559410,
+    "releases": {
+        "0.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ec216aac82761339a7599ef98b47914",
+                    "sha256": "be3ffc1b36ff6925cc06d048c43b8936e2a609353d9abfafe513c64321884a4c"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5ec216aac82761339a7599ef98b47914",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4706,
+                "upload_time": "2011-06-29T13:26:18",
+                "url": "https://files.pythonhosted.org/packages/c2/2c/574665fca71f3e9eb001a634fec1535c5ec1105e0901a2a2fb3b5b085020/itsdangerous-0.10.tar.gz"
+            }
+        ],
+        "0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2bd23801f051c344bc5f06e673b8d1e0",
+                    "sha256": "0ee8d8eae1b9c8846a4155618d335cb6d136b74a6317ad5b99125fe842bc1c64"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2bd23801f051c344bc5f06e673b8d1e0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4465,
+                "upload_time": "2011-07-07T11:38:06",
+                "url": "https://files.pythonhosted.org/packages/fc/12/4861d77da371bfc458cf7c6d5c1c75bcccc7aa7c03687a658690eb4f491c/itsdangerous-0.11.tar.gz"
+            }
+        ],
+        "0.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a83dbd4f42d284d497c0bc247ac04509",
+                    "sha256": "037c58575d7b78f8e7557da50db603c0014d1951966104f04a7874d8014d80a8"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a83dbd4f42d284d497c0bc247ac04509",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4739,
+                "upload_time": "2012-02-22T13:05:19",
+                "url": "https://files.pythonhosted.org/packages/ea/51/0886047dce5108a325fa6577b240266b08d4f624cb4a87280ac1f2b167eb/itsdangerous-0.12.tar.gz"
+            }
+        ],
+        "0.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d13b58d1ee2ef9e1f95d9133e7ecb4bf",
+                    "sha256": "44d3d8dbb02be37b438092f75e8c76487dd2a65cdbdf4c25b153387e8e594df8"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d13b58d1ee2ef9e1f95d9133e7ecb4bf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4821,
+                "upload_time": "2012-06-10T16:51:30",
+                "url": "https://files.pythonhosted.org/packages/a3/0d/88558ab8db0176374ed9cec90a3d253beb027f80179b0a977b3072f3399e/itsdangerous-0.13.tar.gz"
+            }
+        ],
+        "0.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "128e0a26a75e6640350749162697ffa3",
+                    "sha256": "5f86d2df4e822561ad84a02f927bf4860e5c21cb5552681ce020ee622052c740"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "128e0a26a75e6640350749162697ffa3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5881,
+                "upload_time": "2012-06-29T12:55:40",
+                "url": "https://files.pythonhosted.org/packages/f2/b2/855f0aa1bca10ed980638986e17f04908ae87249f5f4165d6416565b8c83/itsdangerous-0.14.tar.gz"
+            }
+        ],
+        "0.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f4125355528979570ec4ef18a64d000d",
+                    "sha256": "8409715cbc758ca6450b591002b44769711a92356e86c5987e71513acf3414c1"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.15.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f4125355528979570ec4ef18a64d000d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6989,
+                "upload_time": "2012-07-11T16:41:38",
+                "url": "https://files.pythonhosted.org/packages/02/f3/4c5e349f5cdb9f43a2c4c211182c78567c8d4998ff48b6423d8849533f06/itsdangerous-0.15.tar.gz"
+            }
+        ],
+        "0.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42f9a6d1c6727c6221207d96c9621b76",
+                    "sha256": "8ba9f6762249c3c200586f411363ecffdf550a56a71646ce7973e423d67e9765"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.16.tar.gz",
+                "has_sig": false,
+                "md5_digest": "42f9a6d1c6727c6221207d96c9621b76",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7028,
+                "upload_time": "2012-07-11T17:16:17",
+                "url": "https://files.pythonhosted.org/packages/9f/57/5aa16c781e45f2656f16f553a842fc2b7895fe973bcabcce866fb7cfe4b8/itsdangerous-0.16.tar.gz"
+            }
+        ],
+        "0.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f40c7dc39beb859988b0a801d13672aa",
+                    "sha256": "0253d0596134487e176dff351a6864491089b14a811e3886238d186c29e02c35"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.17.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f40c7dc39beb859988b0a801d13672aa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7028,
+                "upload_time": "2012-08-11T04:26:55",
+                "url": "https://files.pythonhosted.org/packages/ce/db/2ec096d89bbda3b7983de28bd07bcf322b8118adfd7b8da4c037f90bb4cb/itsdangerous-0.17.tar.gz"
+            }
+        ],
+        "0.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2549de4c366cd48ab0f9d32f363833e8",
+                    "sha256": "197cd09ed4c29acba6d563ea31b0cdee77e317cc6daace7435a7921af071a60c"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.18.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2549de4c366cd48ab0f9d32f363833e8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8134,
+                "upload_time": "2013-05-15T09:52:39",
+                "url": "https://files.pythonhosted.org/packages/7c/52/cc48bf6884cd1ab3e6d1969050ba7e760c0f29ebdb867e34d847d0b290ae/itsdangerous-0.18.tar.gz"
+            }
+        ],
+        "0.19": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0eb918080911b0829e1df36a513b48d5",
+                    "sha256": "a8d72928018bd6ea4b9c74a898477d2c15124fa00b8b730dc6cbfb6c25218a76"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.19.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0eb918080911b0829e1df36a513b48d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8529,
+                "upload_time": "2013-05-22T01:17:35",
+                "url": "https://files.pythonhosted.org/packages/91/67/6f09ca3c0b631814915955dc20d81391dd53da44f4698c79356e61c4e235/itsdangerous-0.19.tar.gz"
+            }
+        ],
+        "0.20": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "adb4f7e4dd5f717341384837ca058c9c",
+                    "sha256": "812397bfa88aceb07e1eb9f37bcb8c3e5705bcc0a6dad038d67947d19b9cbdf2"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.20.tar.gz",
+                "has_sig": false,
+                "md5_digest": "adb4f7e4dd5f717341384837ca058c9c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8593,
+                "upload_time": "2013-05-23T13:13:44",
+                "url": "https://files.pythonhosted.org/packages/e4/28/c4c6f1b9723110f0a298ca10d51893793cba37eb496a1beade4a24fbad62/itsdangerous-0.20.tar.gz"
+            }
+        ],
+        "0.21": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84d4b33f0a1e4d0f7f8f8755a5eb2580",
+                    "sha256": "c760381fc09dc120e4b459f5ba39ed55ea21fd77ac9f4d4101c0c237d8fc9d9e"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.21.tar.gz",
+                "has_sig": false,
+                "md5_digest": "84d4b33f0a1e4d0f7f8f8755a5eb2580",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8595,
+                "upload_time": "2013-05-26T09:52:40",
+                "url": "https://files.pythonhosted.org/packages/a3/f7/06b178102fac036b804d804907c28120ac0a6d9cafaeffc4b6f0e176a4e2/itsdangerous-0.21.tar.gz"
+            }
+        ],
+        "0.22": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ba715357eadfb045ca06e11869366bfd",
+                    "sha256": "9e63500ef4c2f30be66a69cd0def95966db889c32e7b4fe4dd8fc9c7ebe3f3fc"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.22.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ba715357eadfb045ca06e11869366bfd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9460,
+                "upload_time": "2013-07-03T10:10:49",
+                "url": "https://files.pythonhosted.org/packages/56/60/c4fd79a1855af1392257a423097c9cbfc69f66935dfed8a0bf959530f6c5/itsdangerous-0.22.tar.gz"
+            }
+        ],
+        "0.23": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "985e726eb76f18aca81e703f0a6c6efc",
+                    "sha256": "71c0bf6bde4dcc93d838415e728a961a7b16f324b8ae182525fbdadde9f55d62"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.23.tar.gz",
+                "has_sig": false,
+                "md5_digest": "985e726eb76f18aca81e703f0a6c6efc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 46176,
+                "upload_time": "2013-08-08T17:10:21",
+                "url": "https://files.pythonhosted.org/packages/c1/6c/ceefb52b2a5d7d1f2b1b407a96892182161904478b9ef86049e7b8162cb6/itsdangerous-0.23.tar.gz"
+            }
+        ],
+        "0.24": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a3d55aa79369aef5345c036a8a26307f",
+                    "sha256": "cbb3fcf8d3e33df861709ecaf89d9e6629cff0a217bc2848f1b41cd30d360519"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.24.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a3d55aa79369aef5345c036a8a26307f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 46541,
+                "upload_time": "2014-03-28T11:09:28",
+                "url": "https://files.pythonhosted.org/packages/dc/b4/a60bcdba945c00f6d608d8975131ab3f25b22f2bcfe1dab221165194b2d4/itsdangerous-0.24.tar.gz"
+            }
+        ],
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "36e0a40eb98e3b48fa37039617d1cd2b",
+                    "sha256": "21546de9ea0f86792c6dddf1d97f3639aad973f247dfeca666a5d4bdecf4dc93"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "36e0a40eb98e3b48fa37039617d1cd2b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4408,
+                "upload_time": "2011-06-24T02:53:45",
+                "url": "https://files.pythonhosted.org/packages/33/15/e4c8722f8c12a4f2ca275c9b8db7d364985b12709a5e050839f8f1ab81fd/itsdangerous-0.9.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "906506f36c4332059ba37b874da88d48",
+                    "sha256": "ba933c59d5c6c5ab5a4f284404fd57ff3517af0305616ede74a3f8c42d54a3de"
+                },
+                "downloads": -1,
+                "filename": "itsdangerous-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "906506f36c4332059ba37b874da88d48",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4342,
+                "upload_time": "2011-06-26T01:37:15",
+                "url": "https://files.pythonhosted.org/packages/41/6f/0246154a6f1c66ff13358db1ace0b62a7ce358aa6b5d52e61e053a527dc3/itsdangerous-0.9.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "a3d55aa79369aef5345c036a8a26307f",
+                "sha256": "cbb3fcf8d3e33df861709ecaf89d9e6629cff0a217bc2848f1b41cd30d360519"
+            },
+            "downloads": -1,
+            "filename": "itsdangerous-0.24.tar.gz",
+            "has_sig": false,
+            "md5_digest": "a3d55aa79369aef5345c036a8a26307f",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 46541,
+            "upload_time": "2014-03-28T11:09:28",
+            "url": "https://files.pythonhosted.org/packages/dc/b4/a60bcdba945c00f6d608d8975131ab3f25b22f2bcfe1dab221165194b2d4/itsdangerous-0.24.tar.gz"
+        }
+    ],
+    "package_name": "itsdangerous"
+}

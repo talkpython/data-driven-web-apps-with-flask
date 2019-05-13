@@ -1,0 +1,547 @@
+{
+    "info": {
+        "author": "docutils-develop list",
+        "author_email": "docutils-develop@lists.sourceforge.net",
+        "bugtrack_url": "http://sourceforge.net/tracker/?group_id=38414&atid=422030",
+        "classifiers": [
+            "Development Status :: 4 - Beta",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "Intended Audience :: End Users/Desktop",
+            "Intended Audience :: Other Audience",
+            "Intended Audience :: System Administrators",
+            "License :: OSI Approved :: BSD License",
+            "License :: OSI Approved :: GNU General Public License (GPL)",
+            "License :: OSI Approved :: Python Software Foundation License",
+            "License :: Public Domain",
+            "Natural Language :: Afrikaans",
+            "Natural Language :: Catalan",
+            "Natural Language :: Chinese (Simplified)",
+            "Natural Language :: Chinese (Traditional)",
+            "Natural Language :: Czech",
+            "Natural Language :: Dutch",
+            "Natural Language :: English",
+            "Natural Language :: Esperanto",
+            "Natural Language :: Finnish",
+            "Natural Language :: French",
+            "Natural Language :: Galician",
+            "Natural Language :: German",
+            "Natural Language :: Italian",
+            "Natural Language :: Japanese",
+            "Natural Language :: Polish",
+            "Natural Language :: Portuguese (Brazilian)",
+            "Natural Language :: Russian",
+            "Natural Language :: Slovak",
+            "Natural Language :: Spanish",
+            "Natural Language :: Swedish",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python :: 2.4",
+            "Programming Language :: Python :: 2.5",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Topic :: Documentation",
+            "Topic :: Software Development :: Documentation",
+            "Topic :: Text Processing"
+        ],
+        "description": "Docutils is a modular system for processing documentation\ninto useful formats, such as HTML, XML, and LaTeX.  For\ninput Docutils supports reStructuredText, an easy-to-read,\nwhat-you-see-is-what-you-get plaintext markup syntax.",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://docutils.sourceforge.net/",
+        "keywords": "",
+        "license": "public domain, Python, 2-Clause BSD, GPL 3 (see COPYING.txt)",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "docutils",
+        "package_url": "https://pypi.org/project/docutils/",
+        "platform": "OS-independent",
+        "project_url": "https://pypi.org/project/docutils/",
+        "release_url": "https://pypi.org/project/docutils/0.14/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Docutils -- Python Documentation Utilities",
+        "version": "0.14"
+    },
+    "last_serial": 3069388,
+    "releases": {
+        "0.10": [
+            {
+                "comment_text": "version 2.4 to 3.x",
+                "digests": {
+                    "md5": "d8d4660c08302c791b2d71a155a2f4bc",
+                    "sha256": "370624e61b6773da2f2fb17cc2a4eaea4bb596c3585d13f75ff193c1c738603e"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d8d4660c08302c791b2d71a155a2f4bc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1602552,
+                "upload_time": "2012-12-16T18:22:09",
+                "url": "https://files.pythonhosted.org/packages/66/40/2b11ec2ec96d527ef933332a5847cc90860fd8bbee46da2cc468794ea25b/docutils-0.10.tar.gz"
+            }
+        ],
+        "0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "20ac380a18b369824276864d98ec0ad6",
+                    "sha256": "9af4166adf364447289c5c697bb83c52f1d6f57e77849abcccd6a4a18a5e7ec9"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "20ac380a18b369824276864d98ec0ad6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1611755,
+                "upload_time": "2013-07-23T23:05:50",
+                "url": "https://files.pythonhosted.org/packages/7f/49/3ff69dcb212900199462a291886e2f30f57ab3a69dc88e31eda6404a17c0/docutils-0.11.tar.gz"
+            }
+        ],
+        "0.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cd86e38514d9032f0a6be8dd08d3818b",
+                    "sha256": "dcebd4928112631626f4c4d0df59787c748404e66dda952110030ea883d3b8cd"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.12-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cd86e38514d9032f0a6be8dd08d3818b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 508755,
+                "upload_time": "2015-05-07T15:02:58",
+                "url": "https://files.pythonhosted.org/packages/c7/16/29d8de2404c5b90243b51f91315b3ce375169ceb48a68aeec0862e0143c4/docutils-0.12-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4622263b62c5c771c03502afa3157768",
+                    "sha256": "c7db717810ab6965f66c8cf0398a98c9d8df982da39b4cd7f162911eb89596fa"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4622263b62c5c771c03502afa3157768",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1618353,
+                "upload_time": "2014-07-14T20:19:15",
+                "url": "https://files.pythonhosted.org/packages/37/38/ceda70135b9144d84884ae2fc5886c6baac4edea39550f28bcd144c1234d/docutils-0.12.tar.gz"
+            }
+        ],
+        "0.13.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "38a5870a20231f7b036badf948192acd",
+                    "sha256": "de454f1015958450b72641165c08afe7023cd7e3944396448f2fb1b0ccba9d77"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.13.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "38a5870a20231f7b036badf948192acd",
+                "packagetype": "bdist_wheel",
+                "python_version": "any",
+                "size": 537248,
+                "upload_time": "2016-12-09T13:07:06",
+                "url": "https://files.pythonhosted.org/packages/5f/6d/e864b3c61b81eec57386ac62082fccfe694c7c3046d8723258a37da6d5fc/docutils-0.13.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a16376a42e9a6c5033059b59053043d",
+                    "sha256": "cb3ebcb09242804f84bdbf0b26504077a054da6772c6f4d625f335cc53ebf94d"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.13.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9a16376a42e9a6c5033059b59053043d",
+                "packagetype": "bdist_wheel",
+                "python_version": "any",
+                "size": 536721,
+                "upload_time": "2016-12-09T13:07:38",
+                "url": "https://files.pythonhosted.org/packages/7c/30/8fb30d820c012a6f701a66618ce065b6d61d08ac0a77e47fc7808dbaee47/docutils-0.13.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ea4a893c633c788be9b8078b6b305d53",
+                    "sha256": "718c0f5fb677be0f34b781e04241c4067cbd9327b66bdd8e763201130f5175be"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.13.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ea4a893c633c788be9b8078b6b305d53",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1735216,
+                "upload_time": "2016-12-13T20:08:11",
+                "url": "https://files.pythonhosted.org/packages/05/25/7b5484aca5d46915493f1fd4ecb63c38c333bd32aa9ad6e19da8d08895ae/docutils-0.13.1.tar.gz"
+            }
+        ],
+        "0.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1d708ae8afa367394e836e6a4c37bdaa",
+                    "sha256": "7a4bd47eaf6596e1295ecb11361139febe29b084a87bf005bf899f9a42edc3c6"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.14-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1d708ae8afa367394e836e6a4c37bdaa",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2",
+                "size": 543728,
+                "upload_time": "2017-08-03T10:18:16",
+                "url": "https://files.pythonhosted.org/packages/50/09/c53398e0005b11f7ffb27b7aa720c617aba53be4fb4f4f3f06b9b5c60f28/docutils-0.14-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83231ed2d9b052e3ce6c60128516ddf3",
+                    "sha256": "02aec4bd92ab067f6ff27a38a38a41173bf01bed8f89157768c1573f53e474a6"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.14-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "83231ed2d9b052e3ce6c60128516ddf3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py3",
+                "size": 543213,
+                "upload_time": "2017-08-03T10:18:47",
+                "url": "https://files.pythonhosted.org/packages/36/fa/08e9e6e0e3cbd1d362c3bbee8d01d0aedb2155c4ac112b19ef3cae8eed8d/docutils-0.14-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c53768d63db3873b7d452833553469de",
+                    "sha256": "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c53768d63db3873b7d452833553469de",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1727105,
+                "upload_time": "2017-08-03T10:06:29",
+                "url": "https://files.pythonhosted.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c/docutils-0.14.tar.gz"
+            }
+        ],
+        "0.14rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "95a0994d9a4a74d895824482f7269f54",
+                    "sha256": "7ee93a6fbab0f46bdda4d94384de40a04bbbbb53dbd019ce0fbbbfed22f6589a"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.14rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "95a0994d9a4a74d895824482f7269f54",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1724711,
+                "upload_time": "2017-05-27T15:45:04",
+                "url": "https://files.pythonhosted.org/packages/05/fd/d62c2944d9df894b07eaa7430decc4c80977e644922a85fbdec337d6af82/docutils-0.14rc1.tar.gz"
+            }
+        ],
+        "0.14rc2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f4bee6451958252f7bec71f18b05be3",
+                    "sha256": "3caee0bcb2a49fdf24fcfa70849a60abb7a181aa68b030f7cb7494096181830c"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.14rc2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2f4bee6451958252f7bec71f18b05be3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1726742,
+                "upload_time": "2017-07-08T10:43:53",
+                "url": "https://files.pythonhosted.org/packages/6b/57/6e68a5457ea9579f970d7854c090a6c991c8ab481df12e6be25ff505a4b0/docutils-0.14rc2.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d8c78dd09610055431ac8df30312bdb9",
+                    "sha256": "13d4efb5c105a3440cfc2e4124a455016e9e117e2afda6bf3583142215dca988"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d8c78dd09610055431ac8df30312bdb9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 485575,
+                "upload_time": "2013-07-24T05:33:59",
+                "url": "https://files.pythonhosted.org/packages/3e/a3/381d27fae58a59915440374367712bf2442c3feda26d021263041b3809ba/docutils-0.3.tar.gz"
+            }
+        ],
+        "0.3.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b49007d4fb3a24305cc8f30313684925",
+                    "sha256": "45c53691e6ba7e96f60dfa6f93c012749d7d8068489419ef608766ad7f1a340f"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.3.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b49007d4fb3a24305cc8f30313684925",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 596691,
+                "upload_time": "2013-07-24T05:40:22",
+                "url": "https://files.pythonhosted.org/packages/b2/ff/5040ee72b3ec93fdeb6fec6c712f684d6811bebf87c413c651c47ab10580/docutils-0.3.5.tar.gz"
+            }
+        ],
+        "0.3.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fdd192d62bf5aebac6258a7ae8af5123",
+                    "sha256": "a7a81c71caa36b4576f33f8ab2acb62e9fdf868345e8215f1d1b19d83fd7beb4"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.3.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fdd192d62bf5aebac6258a7ae8af5123",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 625719,
+                "upload_time": "2013-07-24T05:45:10",
+                "url": "https://files.pythonhosted.org/packages/06/f0/ba91d2970562ac496a429c286006fac84c9f51b9296ad0d3a34b5cd0f923/docutils-0.3.7.tar.gz"
+            }
+        ],
+        "0.3.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b6727e4f53e88ae7cea7c296694fc6c",
+                    "sha256": "6b3cbd9b0fae3e2a7c7855e84a8cf9a5237fc2f52a946cbc669ccf7a72e6d1ab"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.3.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3b6727e4f53e88ae7cea7c296694fc6c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 692056,
+                "upload_time": "2013-07-24T05:45:24",
+                "url": "https://files.pythonhosted.org/packages/f0/a9/999787bf8b869b7ce2f7b5dd0f9fa1e77154875a8dd5ee0715768913b5b3/docutils-0.3.9.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0fe7b42bb3c2aa3680fe30f9a5fbf712",
+                    "sha256": "b81f29e4f39540d06c7d8c0dc1a2c209816c47ce33a66ac50ee28ae38d242c0e"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0fe7b42bb3c2aa3680fe30f9a5fbf712",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1237801,
+                "upload_time": "2013-07-24T05:47:23",
+                "url": "https://files.pythonhosted.org/packages/18/da/9e25e6178d452f1f47e6ca1bbd876038c9fd0df0a64d0a3db40c33071ad1/docutils-0.4.tar.gz"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd72dac92fc8e3eb0f48c3effeef80f6",
+                    "sha256": "747cf984edfca0575addbb42453274a1bdd98ec7780bd37a883dc8b2a66a610e"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd72dac92fc8e3eb0f48c3effeef80f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1271981,
+                "upload_time": "2013-07-23T23:12:06",
+                "url": "https://files.pythonhosted.org/packages/9d/21/3585fa6781b78b7fd7e257f64217188e97c775efd9f8c9bac90ced731bb7/docutils-0.5.tar.gz"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5c615479a965bc773892f585e0e08119",
+                    "sha256": "04aa91bd644169b23ed02d692f407a2a4e326fbfec9754bce7662fcf59c917f2"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5c615479a965bc773892f585e0e08119",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1368354,
+                "upload_time": "2009-12-28T09:54:57",
+                "url": "https://files.pythonhosted.org/packages/3c/85/3bee168f7fb06c3a48e0af4f6b3d02cfee91dec3a89b116b532ddf819364/docutils-0.6.tar.gz"
+            }
+        ],
+        "0.7": [
+            {
+                "comment_text": "version 2.3 up to 2.7    and convertible to 3.1 code.",
+                "digests": {
+                    "md5": "9aec716baf15d06b5aa57cf8d5591c15",
+                    "sha256": "cd8dc8e131813af9f4f1963f719611cccf23749dcf703f944bb4ac434393ea03"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9aec716baf15d06b5aa57cf8d5591c15",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1404131,
+                "upload_time": "2010-07-07T16:49:50",
+                "url": "https://files.pythonhosted.org/packages/6a/30/3891cb6d713bae4dd578493944d5f78bf22b624e81ca76782d68fd6a0d01/docutils-0.7.tar.gz"
+            }
+        ],
+        "0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f57474b69bfbf0eb608706a104f92dda",
+                    "sha256": "4aec93d5c3e00c56923751eb940ddd4942c191367e466f5c77cfdd49a9cacbf4"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f57474b69bfbf0eb608706a104f92dda",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1498546,
+                "upload_time": "2011-07-08T14:05:26",
+                "url": "https://files.pythonhosted.org/packages/e5/c0/7f7089b6d380d5d78cb37f5cfd5457959dd79c9e696c37f817a6f24a29be/docutils-0.8.tar.gz"
+            }
+        ],
+        "0.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ecf8ba3ece1be1ed666150a80c838c8",
+                    "sha256": "5a3b776518257a59fefaf48ef1e0635bc1179f8cafb02a9cc84c9644bb25df71"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2ecf8ba3ece1be1ed666150a80c838c8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1499832,
+                "upload_time": "2011-10-18T16:02:44",
+                "url": "https://files.pythonhosted.org/packages/35/8b/b9168ac215c60c92df40fd78551757c3239235497533b74616bb156404aa/docutils-0.8.1.tar.gz"
+            }
+        ],
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f79520bbbdb89b1a9b5f29832b37123",
+                    "sha256": "ff49bf77e9135490a73740d884b418ab8b982ad16ee52cfe796d059c592ea245"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2f79520bbbdb89b1a9b5f29832b37123",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1534138,
+                "upload_time": "2012-08-30T17:40:34",
+                "url": "https://files.pythonhosted.org/packages/13/98/de4fe2d3b085a4f408ec80117489f32ed0564c6d15eca0cf4a45441d8052/docutils-0.9.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b0d5cd5298fedf9c62f5fd364a274d56",
+                    "sha256": "e89f187dbbc6674f839239c89fec44af9f18809b66a8a55a41b57b9ee2356994"
+                },
+                "downloads": -1,
+                "filename": "docutils-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b0d5cd5298fedf9c62f5fd364a274d56",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1541437,
+                "upload_time": "2012-08-16T14:05:13",
+                "url": "https://files.pythonhosted.org/packages/d1/fd/e569a6139d5bfda5574b3a4bd840dd1b23d03fc7fcbb193bd1f450f98cc4/docutils-0.9.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "1d708ae8afa367394e836e6a4c37bdaa",
+                "sha256": "7a4bd47eaf6596e1295ecb11361139febe29b084a87bf005bf899f9a42edc3c6"
+            },
+            "downloads": -1,
+            "filename": "docutils-0.14-py2-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "1d708ae8afa367394e836e6a4c37bdaa",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2",
+            "size": 543728,
+            "upload_time": "2017-08-03T10:18:16",
+            "url": "https://files.pythonhosted.org/packages/50/09/c53398e0005b11f7ffb27b7aa720c617aba53be4fb4f4f3f06b9b5c60f28/docutils-0.14-py2-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "83231ed2d9b052e3ce6c60128516ddf3",
+                "sha256": "02aec4bd92ab067f6ff27a38a38a41173bf01bed8f89157768c1573f53e474a6"
+            },
+            "downloads": -1,
+            "filename": "docutils-0.14-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "83231ed2d9b052e3ce6c60128516ddf3",
+            "packagetype": "bdist_wheel",
+            "python_version": "py3",
+            "size": 543213,
+            "upload_time": "2017-08-03T10:18:47",
+            "url": "https://files.pythonhosted.org/packages/36/fa/08e9e6e0e3cbd1d362c3bbee8d01d0aedb2155c4ac112b19ef3cae8eed8d/docutils-0.14-py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "c53768d63db3873b7d452833553469de",
+                "sha256": "51e64ef2ebfb29cae1faa133b3710143496eca21c530f3f71424d77687764274"
+            },
+            "downloads": -1,
+            "filename": "docutils-0.14.tar.gz",
+            "has_sig": false,
+            "md5_digest": "c53768d63db3873b7d452833553469de",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 1727105,
+            "upload_time": "2017-08-03T10:06:29",
+            "url": "https://files.pythonhosted.org/packages/84/f4/5771e41fdf52aabebbadecc9381d11dea0fa34e4759b4071244fa094804c/docutils-0.14.tar.gz"
+        }
+    ],
+    "package_name": "docutils"
+}

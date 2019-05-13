@@ -1,0 +1,1197 @@
+{
+    "info": {
+        "author": "Armin Ronacher",
+        "author_email": "armin.ronacher@active-4.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "License :: OSI Approved :: BSD License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3"
+        ],
+        "description": "",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://github.com/mitsuhiko/click",
+        "keywords": "",
+        "license": "",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "click",
+        "package_url": "https://pypi.org/project/click/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/click/",
+        "release_url": "https://pypi.org/project/click/6.7/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "A simple wrapper around optparse for powerful command line utilities.",
+        "version": "6.7"
+    },
+    "last_serial": 2940560,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0cc6bb5069cd4aded45df121da94b482",
+                    "sha256": "6ece7fdc438597979abb5e237cd42ec9b0ed9342acfa13aabd0d57dae5122f00"
+                },
+                "downloads": -1,
+                "filename": "click-0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0cc6bb5069cd4aded45df121da94b482",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 21623,
+                "upload_time": "2014-04-28T11:24:09",
+                "url": "https://files.pythonhosted.org/packages/82/e9/39bc04e46ac4dc16f60d3c95d2a8238f8a86a738ecab723755470e1486d1/click-0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9f1eb0ea0d713e61c0a1a805095092a3",
+                    "sha256": "9f8290d502cf11fad5ccc64d19f2724abcbc11549e6a8e2cdafc530109f198b4"
+                },
+                "downloads": -1,
+                "filename": "click-0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9f1eb0ea0d713e61c0a1a805095092a3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17913,
+                "upload_time": "2014-04-28T11:22:51",
+                "url": "https://files.pythonhosted.org/packages/1a/65/bde2803d3f5d217fde361f7773d51d5c9b1332181f740bdd7adb2462607c/click-0.1.tar.gz"
+            }
+        ],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a8107b8c2ef4c28c0cb13957688656ee",
+                    "sha256": "54c90326cb37daf23389b909fa593660db74d68861cbc36d871d8c7ccc2fe003"
+                },
+                "downloads": -1,
+                "filename": "click-0.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a8107b8c2ef4c28c0cb13957688656ee",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 29196,
+                "upload_time": "2014-05-05T23:57:14",
+                "url": "https://files.pythonhosted.org/packages/ee/a5/97f43386352a0658f12842848c152479fce3162251c08339866da45e912e/click-0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5dfdd49507748b776db6c051191b367f",
+                    "sha256": "6a63700f090f0602c1f98e98c536e49e7db1f3d27de80c9bd55ab6eaf1470c57"
+                },
+                "downloads": -1,
+                "filename": "click-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5dfdd49507748b776db6c051191b367f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23888,
+                "upload_time": "2014-05-05T23:57:05",
+                "url": "https://files.pythonhosted.org/packages/bb/aa/c8b583d8d7cc5e21c8da30de6d8c605652836b4ef33b2b57c37f6a017c09/click-0.2.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5bcb7aee93c18342927bf1ff0f475462",
+                    "sha256": "15c3b9cb6ea8718ffd68c48cc70aa194dc1c5374fbc4481d3dd98cb256a667eb"
+                },
+                "downloads": -1,
+                "filename": "click-0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5bcb7aee93c18342927bf1ff0f475462",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 33378,
+                "upload_time": "2014-05-06T11:15:52",
+                "url": "https://files.pythonhosted.org/packages/dd/ce/ae6ede3636c212a9b33fbe93754e0caee570405d6af3b2b3c95988ce601b/click-0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d9563adb701eb6508dd03180b69d0a7",
+                    "sha256": "cdb62b2de39a2a92cc505dea476ee89c7ecfbe1bcc5df3f9e8001bedcc296571"
+                },
+                "downloads": -1,
+                "filename": "click-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5d9563adb701eb6508dd03180b69d0a7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25425,
+                "upload_time": "2014-05-06T11:15:49",
+                "url": "https://files.pythonhosted.org/packages/35/19/29f7f3ff89929a0a5b938a2a63ecb0d02e6faa4e9a6d84bcedbcc638e212/click-0.3.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f987186fcd3ceb83405542aeada54709",
+                    "sha256": "9c85e3c28d92316f8f4dad50a40d9b46a76c07c0cabc89061c9272c2716e49ee"
+                },
+                "downloads": -1,
+                "filename": "click-0.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f987186fcd3ceb83405542aeada54709",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 34746,
+                "upload_time": "2014-05-06T14:33:53",
+                "url": "https://files.pythonhosted.org/packages/88/e8/04c8f87706b72b470214502461c6c53081d64e6b82c8a2b4ba303a4caa53/click-0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5d95b8bafd0cf2e1c8938fade7058d0",
+                    "sha256": "98dee5f24b7043c9393f6b6015ba3bb4b45fdfe544aaa1c23d81c14c2c0e3a0b"
+                },
+                "downloads": -1,
+                "filename": "click-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f5d95b8bafd0cf2e1c8938fade7058d0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26725,
+                "upload_time": "2014-05-06T14:33:50",
+                "url": "https://files.pythonhosted.org/packages/1c/4d/98210295b2f14097de14db6be528af60ba9a3ef60b7e9efb207b08cdea1a/click-0.4.tar.gz"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "383371917b60bc71e94124f4ee76a396",
+                    "sha256": "6d9ac4c06a53ea8c5c4b994e1627d95eae2407cb6770b52f04cbb1c59ce52b54"
+                },
+                "downloads": -1,
+                "filename": "click-0.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "383371917b60bc71e94124f4ee76a396",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 34913,
+                "upload_time": "2014-05-06T22:04:10",
+                "url": "https://files.pythonhosted.org/packages/a3/01/a0f85fd64800f0f477f7d36ec7c3e87758e78d1e4b39a590b16a436a0ff9/click-0.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7717647596f0dbac3ea2abfbb14e9e8e",
+                    "sha256": "396ef5db7722d6930c85aa7b3f3600550605a80a9ea4cc3468b18a29c4f58193"
+                },
+                "downloads": -1,
+                "filename": "click-0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7717647596f0dbac3ea2abfbb14e9e8e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26892,
+                "upload_time": "2014-05-06T22:04:06",
+                "url": "https://files.pythonhosted.org/packages/72/de/ab7b1f0952b411a61bb155d3dbf6271e4d39841cb7b124b75f82117157a4/click-0.5.tar.gz"
+            }
+        ],
+        "0.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5eec0adef35a10bab82f5bdeb318e4ca",
+                    "sha256": "df980e97a93f784ae868a5ea67d608a0dd555bc7b33064529b51dfcfec6c0745"
+                },
+                "downloads": -1,
+                "filename": "click-0.5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5eec0adef35a10bab82f5bdeb318e4ca",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 34945,
+                "upload_time": "2014-05-06T22:09:17",
+                "url": "https://files.pythonhosted.org/packages/e9/4c/ce5c6a47f240de954cbcba430a7a4afdc13e3b7482d5302048a4e6611281/click-0.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "03aea68acd0402273d10846581c154ba",
+                    "sha256": "d7aa6a90114fa1cec7e2cea56901a85ba47ddacbc0e45ca8474fa95cde28ff7b"
+                },
+                "downloads": -1,
+                "filename": "click-0.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "03aea68acd0402273d10846581c154ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26898,
+                "upload_time": "2014-05-06T22:09:14",
+                "url": "https://files.pythonhosted.org/packages/82/46/e17055162fd9baa4ec7a4064ec313091fea3e3dad4047bf63b46471998ac/click-0.5.1.tar.gz"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f66a36e97a157788ab40168d1c696593",
+                    "sha256": "eac143634b9bcfbe4b50045672c9f91689cd61378d443392343bee5fd8952910"
+                },
+                "downloads": -1,
+                "filename": "click-0.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f66a36e97a157788ab40168d1c696593",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 35281,
+                "upload_time": "2014-05-07T19:18:38",
+                "url": "https://files.pythonhosted.org/packages/36/f2/648fe6bdc708b71c81c2db677ba7ac640aac7798a1198cc953eeac1d0041/click-0.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "49268a0b714d88499b0ae74ea315b706",
+                    "sha256": "2d2677d09378a4739ae325327741ea182e9c03c7e5643f1e02ba9058e2a84825"
+                },
+                "downloads": -1,
+                "filename": "click-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "49268a0b714d88499b0ae74ea315b706",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27237,
+                "upload_time": "2014-05-07T19:18:35",
+                "url": "https://files.pythonhosted.org/packages/3f/e3/18d6042b27cc41d4ca0ac9ce035d0d3d9cde2d6f0902d3f6f08d04aff596/click-0.6.tar.gz"
+            }
+        ],
+        "0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ed8c0b279f982048f0852088aca0389",
+                    "sha256": "8687723fc0d2728b0837bbf052c03362c3f89ac89a3575aea17553379778c93d"
+                },
+                "downloads": -1,
+                "filename": "click-0.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4ed8c0b279f982048f0852088aca0389",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 41196,
+                "upload_time": "2014-05-11T23:45:31",
+                "url": "https://files.pythonhosted.org/packages/f1/67/1b1c2077a99b9e2b5c4127e733ca4a90f8c9f0da05e256911aea8b25a31a/click-0.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "970c4f58099d8f0132e5c53ad26729a8",
+                    "sha256": "9ae357a9c48764c16ec0ed814c0a420c80c04ed08c858fd99f906e398355651c"
+                },
+                "downloads": -1,
+                "filename": "click-0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "970c4f58099d8f0132e5c53ad26729a8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32282,
+                "upload_time": "2014-05-11T23:45:26",
+                "url": "https://files.pythonhosted.org/packages/b4/7b/d57f1bc99f0776d79cfc1969a9e1eaffefe0fab153c5bd5abd1445b4805f/click-0.7.tar.gz"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3914880d0f97a722248d42a7d16e6b88",
+                    "sha256": "8bea8164a4fd3b687b4c025316a84f38f2e2ee115cd8a68dd423356283e25805"
+                },
+                "downloads": -1,
+                "filename": "click-1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3914880d0f97a722248d42a7d16e6b88",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 42336,
+                "upload_time": "2014-05-21T23:30:15",
+                "url": "https://files.pythonhosted.org/packages/25/71/234cf198880e0afd2edc69cafb97bbc34f5da90a29efa59787319c5f6c2d/click-1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1b373dba472fbb9328cfbddfde61da9e",
+                    "sha256": "396ffe2561331b7b68e2780a088f9be3d41c33cbfb6e5911e2178533ea6d31da"
+                },
+                "downloads": -1,
+                "filename": "click-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1b373dba472fbb9328cfbddfde61da9e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33410,
+                "upload_time": "2014-05-21T23:30:12",
+                "url": "https://files.pythonhosted.org/packages/69/f4/c8b37e427b1810069b84db6aba7cb5c6e569d64e762add3f77183a5c49b0/click-1.0.tar.gz"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ac934d5f166064d4b22ef9814f31f8b8",
+                    "sha256": "a57d2cc92df1e2db5ee8ad792f7251b08046f784ec68f59a34be9952961c0e70"
+                },
+                "downloads": -1,
+                "filename": "click-1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ac934d5f166064d4b22ef9814f31f8b8",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 42476,
+                "upload_time": "2014-05-23T18:31:44",
+                "url": "https://files.pythonhosted.org/packages/89/60/384e2ab6f408564c9b86cac3680d89ea1aa12dbf5e7e89009c37b3c75511/click-1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb5a9b715bfffe7a297d107829978f45",
+                    "sha256": "7d847fbbc4d227229dbc195f6bce58055e08a75b4273f089c548b3ff680c42ca"
+                },
+                "downloads": -1,
+                "filename": "click-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cb5a9b715bfffe7a297d107829978f45",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33527,
+                "upload_time": "2014-05-23T18:31:46",
+                "url": "https://files.pythonhosted.org/packages/0a/37/9c433ae49db7d89bdab56e33d712837f6bd9d76d697d0f532ba449998ad7/click-1.1.tar.gz"
+            }
+        ],
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "73f58892ba05d0fbdb56fa7c2c822c4a",
+                    "sha256": "d2752f89b1ebba748873c19662c2b2bfeccf8171e316fce0e1fb56066ceae178"
+                },
+                "downloads": -1,
+                "filename": "click-2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "73f58892ba05d0fbdb56fa7c2c822c4a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 57938,
+                "upload_time": "2014-06-06T14:20:30",
+                "url": "https://files.pythonhosted.org/packages/1a/31/d1dcb9d90345731eaef95ee28d21b549ad3f637076ba02a51ffd7c97cf36/click-2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "259ebb6fcf28a72df2104db8f5a22962",
+                    "sha256": "33a984fe73aa8c6bf69c38098b69dd38405529db54baf4c8cf64c50b2dee644f"
+                },
+                "downloads": -1,
+                "filename": "click-2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "259ebb6fcf28a72df2104db8f5a22962",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47342,
+                "upload_time": "2014-06-06T14:20:27",
+                "url": "https://files.pythonhosted.org/packages/f3/78/915ee51099f8244181e6a85628ad836c0b505ee2efc0323b3554055544e2/click-2.0.tar.gz"
+            }
+        ],
+        "2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1003edfac1fd82eb539b1b3ba01cb61",
+                    "sha256": "735bed165a9a1404c2e95c8a84860ff9018466ad138a1336c6b1f4b5e8414690"
+                },
+                "downloads": -1,
+                "filename": "click-2.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d1003edfac1fd82eb539b1b3ba01cb61",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 58336,
+                "upload_time": "2014-06-14T09:40:45",
+                "url": "https://files.pythonhosted.org/packages/a7/99/3a3fbb2cff270d1da99f7c78f54f75aa598c17af59f0eb77f4d2ff9a84fc/click-2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0ba97ba09af82c56e2d35f3412d0aa6e",
+                    "sha256": "163b97686c36492f24f5e5cca917d4f45c46bae4ff0c347bf9945cedba877fcd"
+                },
+                "downloads": -1,
+                "filename": "click-2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0ba97ba09af82c56e2d35f3412d0aa6e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47724,
+                "upload_time": "2014-06-14T09:40:42",
+                "url": "https://files.pythonhosted.org/packages/26/ef/9152572c7d926c587aa75c7d39030422a7d1cec883f02965797b48ec1352/click-2.1.tar.gz"
+            }
+        ],
+        "2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "70cd3b28d696c6e882b0818352352505",
+                    "sha256": "94002c7cc1b21be4f1f83d1b13c39aff2044d1b5f595d97017f7d9e87c6c88f5"
+                },
+                "downloads": -1,
+                "filename": "click-2.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "70cd3b28d696c6e882b0818352352505",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 58370,
+                "upload_time": "2014-06-26T11:30:19",
+                "url": "https://files.pythonhosted.org/packages/a3/36/d7fc5be7e81506c0687100f7cf0de443bf9467b2f4e47400f59e9c4a8bfd/click-2.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e07460aab221e1b7ceee0018122e04a9",
+                    "sha256": "bd2925d5b7aa9b3b4cab0041e3dc5fae7399afd23b60e4c41f9b5af16f5a3b4e"
+                },
+                "downloads": -1,
+                "filename": "click-2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e07460aab221e1b7ceee0018122e04a9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 155532,
+                "upload_time": "2014-06-26T11:30:21",
+                "url": "https://files.pythonhosted.org/packages/30/05/12c666a6c55e315d70897f80005a8fc09c17f1d4137dd25667d849e16088/click-2.2.tar.gz"
+            }
+        ],
+        "2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7898be3bf41c91d003dd9cced5a8b183",
+                    "sha256": "02332cfb031d7b178695ad052bdb635a2666ea1fb9d13bf725d91a7313cc1b24"
+                },
+                "downloads": -1,
+                "filename": "click-2.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7898be3bf41c91d003dd9cced5a8b183",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 58752,
+                "upload_time": "2014-07-03T09:38:17",
+                "url": "https://files.pythonhosted.org/packages/00/39/e0cb46e47f283e56e24107ee36456788106e744be284c998fbe8c7a7096e/click-2.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce4852da9d4c33855e6f55e1fd06c1ac",
+                    "sha256": "f11fd65f1a0fc7cc7927d550fe035a788354f67c9dc34242ed981aaeb9433665"
+                },
+                "downloads": -1,
+                "filename": "click-2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ce4852da9d4c33855e6f55e1fd06c1ac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 155944,
+                "upload_time": "2014-07-03T09:38:11",
+                "url": "https://files.pythonhosted.org/packages/90/b3/85bdfbdf0191ab1e691ec0530a1d65c9f5354a1caf635abdc1eb1bc59ac4/click-2.3.tar.gz"
+            }
+        ],
+        "2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52fb03573ab024cca207bd421888b08a",
+                    "sha256": "3aed70f20e55d444717a72c8565fcc05fddf772deffa1f6b893a83b1c102cfcd"
+                },
+                "downloads": -1,
+                "filename": "click-2.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "52fb03573ab024cca207bd421888b08a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 58461,
+                "upload_time": "2014-07-04T13:07:17",
+                "url": "https://files.pythonhosted.org/packages/fd/07/4df913eac02a5eed807a18e237f8d12e130cdf80085eab5a7a0b2fdffb07/click-2.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7affaac2973184810c018fab7cedca4f",
+                    "sha256": "fe09336d002cb66dac1289808a7023eeffd90a29607bf00f1eda5397a1c0d545"
+                },
+                "downloads": -1,
+                "filename": "click-2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7affaac2973184810c018fab7cedca4f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 155734,
+                "upload_time": "2014-07-04T13:07:13",
+                "url": "https://files.pythonhosted.org/packages/a9/19/87bff1b8e670e2763043bbc0125449ab9861bd20a40e348f7ba47539d8b2/click-2.4.tar.gz"
+            }
+        ],
+        "2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c1af149f5e10491831311f0e32aa7001",
+                    "sha256": "5cadc91a6be7aa087222d9bfda8c07f92ec9d916365a893fa888c69028a2f8bc"
+                },
+                "downloads": -1,
+                "filename": "click-2.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c1af149f5e10491831311f0e32aa7001",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 58465,
+                "upload_time": "2014-07-27T22:09:34",
+                "url": "https://files.pythonhosted.org/packages/83/93/b0209d3e0fcc1918808dd2eb2eb26f5edbc2722695cc4b8a63d1a11faebe/click-2.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1bff2d2270745affd5bc60e66e50c23",
+                    "sha256": "791885554ec2cef9926b4ad69ca2aeb52979fdc7f3520af0203a4e8c548c6428"
+                },
+                "downloads": -1,
+                "filename": "click-2.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a1bff2d2270745affd5bc60e66e50c23",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 155708,
+                "upload_time": "2014-07-27T22:09:30",
+                "url": "https://files.pythonhosted.org/packages/6b/ca/8441cb224f040af2a71056b6de5d7bfdfe60c580931f6226587ef7617870/click-2.5.tar.gz"
+            }
+        ],
+        "2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75941e4e80563ca134fda5045b537c78",
+                    "sha256": "a6f33923d9f920170119163a846e4fc28e61d31154b13bc64bc28f49d9976a4d"
+                },
+                "downloads": -1,
+                "filename": "click-2.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "75941e4e80563ca134fda5045b537c78",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 54980,
+                "upload_time": "2014-08-11T11:49:19",
+                "url": "https://files.pythonhosted.org/packages/d1/bc/9afb108a31cb0fd37e6774b23569197aee9974425d9c361a29e3eade9f32/click-2.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf5fbaecc1370934347b82ec707e3413",
+                    "sha256": "2167051d75e885c8c16ba641f243cd971c65d0cd62e2f504b8b4843d4ca93603"
+                },
+                "downloads": -1,
+                "filename": "click-2.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bf5fbaecc1370934347b82ec707e3413",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 151327,
+                "upload_time": "2014-08-11T11:49:16",
+                "url": "https://files.pythonhosted.org/packages/fc/92/403b0389319c017d9971570b6fc868e789fba31d96c53799ba726bae6a34/click-2.6.tar.gz"
+            }
+        ],
+        "3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "13cead4d730cf0184e981bc2b5748248",
+                    "sha256": "9fea2f0f24104922c883c2485fdf711a87266e1def40bec27e50930b02324a1a"
+                },
+                "downloads": -1,
+                "filename": "click-3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "13cead4d730cf0184e981bc2b5748248",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 57939,
+                "upload_time": "2014-08-12T21:24:45",
+                "url": "https://files.pythonhosted.org/packages/f6/66/65f7bcdcb6ace560cc5d6c4cdbb968bfc8d53f256ba206bf1884e547d786/click-3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6919bcf8dcbe99197893464a97f640d5",
+                    "sha256": "b63f7c9e485e39f314e4cb6bf864547d5dd2559db518f09017220d352e1a537f"
+                },
+                "downloads": -1,
+                "filename": "click-3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6919bcf8dcbe99197893464a97f640d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 257803,
+                "upload_time": "2014-08-12T21:24:42",
+                "url": "https://files.pythonhosted.org/packages/8d/f7/e4a41b165fbe0a1c52db0cfc1e2f4452fcbdfa240c66fd0300a3acc858b9/click-3.0.tar.gz"
+            }
+        ],
+        "3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "008bac40c0e11f6be2226a5667b67095",
+                    "sha256": "e3cc9589c9f055c437ac6c61d15a90df5c670cecd46720c841f7dc6c28183a51"
+                },
+                "downloads": -1,
+                "filename": "click-3.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "008bac40c0e11f6be2226a5667b67095",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 57951,
+                "upload_time": "2014-08-13T07:19:47",
+                "url": "https://files.pythonhosted.org/packages/a3/8a/7b995e58729456e0ce61cc1ec91b77835da0171e3dcc1283c09212bea2ed/click-3.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6fc0aa839e01ac1d05c4a823c698b6b2",
+                    "sha256": "e174693d89d4c2914b5f7a04a1fbf55864e4be168267303d156699d1455fe942"
+                },
+                "downloads": -1,
+                "filename": "click-3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6fc0aa839e01ac1d05c4a823c698b6b2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 257906,
+                "upload_time": "2014-08-13T07:19:44",
+                "url": "https://files.pythonhosted.org/packages/03/7b/4e36fd53099764fa70b5e56f2e089bfd9f433fb8da873326b5d8ee8b1820/click-3.1.tar.gz"
+            }
+        ],
+        "3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d0bf0ca4e8ce6056e35cc8135d21abd",
+                    "sha256": "f7d7bad1dd4164a683519c54a1bc589569dd40f85d481f10f8c4e8c7e5328ed1"
+                },
+                "downloads": -1,
+                "filename": "click-3.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7d0bf0ca4e8ce6056e35cc8135d21abd",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 58751,
+                "upload_time": "2014-08-22T20:49:59",
+                "url": "https://files.pythonhosted.org/packages/85/e4/a39441e8cd202d5ad4af4e8e97d4c49d59f5ef60368721fab29ec4247240/click-3.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f8a439029337ff39ed814ae5ce948318",
+                    "sha256": "51106b31333604f20c9617bc290883e9b43ca156942dcca2afc21cfcc39ae6bc"
+                },
+                "downloads": -1,
+                "filename": "click-3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f8a439029337ff39ed814ae5ce948318",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 259808,
+                "upload_time": "2014-08-22T20:49:56",
+                "url": "https://files.pythonhosted.org/packages/ee/0b/4bb57fb1115590ab62faf8552f3aaa4b9caf18af7b272abc379a31604371/click-3.2.tar.gz"
+            }
+        ],
+        "3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ca07a6c8b1eaca8e529cdb50a8a8349",
+                    "sha256": "c9972f4d2b80575bb9112500cfec750eaf4f04e07abda4b2c44e453cde65ee77"
+                },
+                "downloads": -1,
+                "filename": "click-3.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5ca07a6c8b1eaca8e529cdb50a8a8349",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 58750,
+                "upload_time": "2014-09-07T21:40:44",
+                "url": "https://files.pythonhosted.org/packages/b7/21/ce45306a697fc80ebe0b73ce04ecc08c54488b2dbe74babc068959683fd5/click-3.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "40edaba4d216915a8326c5b2cb52781d",
+                    "sha256": "f79c8c04d7eb50071bcad67fd23f3c10fab6c72d56857adf848367806845d6e5"
+                },
+                "downloads": -1,
+                "filename": "click-3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "40edaba4d216915a8326c5b2cb52781d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 259855,
+                "upload_time": "2014-09-07T21:40:41",
+                "url": "https://files.pythonhosted.org/packages/15/0f/9070074d2bdabf216f99b922a5c85ef1bfc304236086d3bf77c6b35eacfc/click-3.3.tar.gz"
+            }
+        ],
+        "4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c25cb7af50132bbf00eaf3b439815874",
+                    "sha256": "9ab1d313f99b209f8f71a629f36833030c8d7c72282cf7756834baf567dca662"
+                },
+                "downloads": -1,
+                "filename": "click-4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c25cb7af50132bbf00eaf3b439815874",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 62471,
+                "upload_time": "2015-03-31T16:02:02",
+                "url": "https://files.pythonhosted.org/packages/0c/d5/9b5cc74d3ac814140c1a0b89534b7d148c5b399b12f69883335d9c5cc622/click-4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "79b475a1dbd566d8ce7daba5e6c1aaa7",
+                    "sha256": "f49e03611f5f2557788ceeb80710b1c67110f97c5e6740b97edf70245eea2409"
+                },
+                "downloads": -1,
+                "filename": "click-4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "79b475a1dbd566d8ce7daba5e6c1aaa7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 270183,
+                "upload_time": "2015-03-31T16:01:59",
+                "url": "https://files.pythonhosted.org/packages/7b/61/80731d6bbf0dd05fe2fe9bac02cd7c5e3306f5ee19a9e6b9102b5784cf8c/click-4.0.tar.gz"
+            }
+        ],
+        "4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4c0dca35693367bf63b4290281dfeb2c",
+                    "sha256": "c6848c6ea265af7dc3264ab83c2671ea3777c7e433019c7be18c9cc7878ee1f2"
+                },
+                "downloads": -1,
+                "filename": "click-4.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4c0dca35693367bf63b4290281dfeb2c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 62925,
+                "upload_time": "2015-07-14T17:48:16",
+                "url": "https://files.pythonhosted.org/packages/6e/97/f25f4277d90efa3d34ced57137023ecb96e0c9aacf79b4f93efe6d94a2f8/click-4.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6a3fa88c738f2f775ec6de126feb99a4",
+                    "sha256": "e339ed09f25e2145314c902a870bc959adcb25653a2bd5cc1b48d9f56edf8ed8"
+                },
+                "downloads": -1,
+                "filename": "click-4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6a3fa88c738f2f775ec6de126feb99a4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 274489,
+                "upload_time": "2015-07-14T17:48:12",
+                "url": "https://files.pythonhosted.org/packages/4c/eb/dc135683e4865bbcba60b09b158bf491756a1c36d0e2820002235bf72a8a/click-4.1.tar.gz"
+            }
+        ],
+        "5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ae5a1032fb7e08e73213a847321044c2",
+                    "sha256": "b6cec65c0d6247a5992e4cda1c7838d63d24aaba985b00228a99f96ab2cb78f5"
+                },
+                "downloads": -1,
+                "filename": "click-5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ae5a1032fb7e08e73213a847321044c2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 65078,
+                "upload_time": "2015-08-16T17:28:01",
+                "url": "https://files.pythonhosted.org/packages/af/55/056901e9f504a7cda9e955592360ce2c516b2b92f3da9318ba074be5d280/click-5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7c91618e3b067319250770d6e1f0f5c7",
+                    "sha256": "46bd6c21828bf8ab43cbc8f14fb649f781dc9061573ea9a0a2698e4d23f87ed8"
+                },
+                "downloads": -1,
+                "filename": "click-5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7c91618e3b067319250770d6e1f0f5c7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 275525,
+                "upload_time": "2015-08-16T17:27:56",
+                "url": "https://files.pythonhosted.org/packages/3e/4f/e66a06ab731ba91faa60142d4e465fde941104fe9b6d27d1b9548f03ec64/click-5.0.tar.gz"
+            }
+        ],
+        "5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "03c35b9dc7332c55f2c202d57fba8394",
+                    "sha256": "0c22a2cd5a1d741e993834df99133de07eff6cc1bf06f137da2c5f3bab9073a6"
+                },
+                "downloads": -1,
+                "filename": "click-5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "03c35b9dc7332c55f2c202d57fba8394",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 65078,
+                "upload_time": "2015-08-17T11:24:23",
+                "url": "https://files.pythonhosted.org/packages/8f/98/14966b6d772fd5fba1eb3bb34a62a7f736d609572493397cdc5715c14514/click-5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9c5323008cccfe232a8b161fc8196d41",
+                    "sha256": "678c98275431fad324275dec63791e4a17558b40e5a110e20a82866139a85a5a"
+                },
+                "downloads": -1,
+                "filename": "click-5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9c5323008cccfe232a8b161fc8196d41",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 275592,
+                "upload_time": "2015-08-17T11:24:18",
+                "url": "https://files.pythonhosted.org/packages/b7/34/a496632c4fb6c1ee76efedf77bb8d28b29363d839953d95095b12defe791/click-5.1.tar.gz"
+            }
+        ],
+        "6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4cd377997401aa9fceb3f2e259ca598e",
+                    "sha256": "561a954a8740f1fc9c101679f43f3b75499192de1c44fbc05a5c27877047a76f"
+                },
+                "downloads": -1,
+                "filename": "click-6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4cd377997401aa9fceb3f2e259ca598e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 70475,
+                "upload_time": "2015-11-24T21:53:55",
+                "url": "https://files.pythonhosted.org/packages/af/3b/96f97aea83acce065079e31fc7befe9bb188e9e6474bc9ea4c6d60a2ee5d/click-6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7c7559180e5087de8e7b1c95ff1e8f95",
+                    "sha256": "3972ee95a32181e9069040414dd7c77001e9404c3c4d295300cdca06a8db026d"
+                },
+                "downloads": -1,
+                "filename": "click-6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7c7559180e5087de8e7b1c95ff1e8f95",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 281589,
+                "upload_time": "2015-11-24T21:53:48",
+                "url": "https://files.pythonhosted.org/packages/e6/d3/6168c106f28e263bd21facaba53d8430eb9651e7e33d68a9ff630b9dc9bd/click-6.0.tar.gz"
+            }
+        ],
+        "6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f02d3fc1806a592ce6fee3e94ae6dd3",
+                    "sha256": "01703b361ea6a30d20e961c63971c2be7c024efa42a67839871123223e510edf"
+                },
+                "downloads": -1,
+                "filename": "click-6.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2f02d3fc1806a592ce6fee3e94ae6dd3",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 70804,
+                "upload_time": "2015-11-27T11:30:24",
+                "url": "https://files.pythonhosted.org/packages/f5/3c/f784822f61697c30d630f42fdc755b7ba3b0231f999253887e6d83aaf9cf/click-6.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8fa2bc9a2c5e4006b68551d80e4f6912",
+                    "sha256": "9c59312c0349c26779bedfa4447ba9e4457929c65b4e921c6898d6af3632b126"
+                },
+                "downloads": -1,
+                "filename": "click-6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8fa2bc9a2c5e4006b68551d80e4f6912",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 281694,
+                "upload_time": "2015-11-27T11:30:18",
+                "url": "https://files.pythonhosted.org/packages/ed/b7/01b0c30d4940594a1a25664d9764db02a16441dbd5c0eaf0fea14e41acd9/click-6.1.tar.gz"
+            }
+        ],
+        "6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "87c1c86ea31e56ce88b02a26afeeb4f2",
+                    "sha256": "bbb49b513a663b9d93139b1ddadfa866edb41982d8b1c7b79a81f47e279bdb72"
+                },
+                "downloads": -1,
+                "filename": "click-6.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "87c1c86ea31e56ce88b02a26afeeb4f2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 70815,
+                "upload_time": "2015-11-27T17:43:12",
+                "url": "https://files.pythonhosted.org/packages/a0/90/0f5ea412a4d5b8e31cb514208e02824b45a8f4de52654733f0a862353fd9/click-6.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83252a8095397b1f5f710fdd58b484d9",
+                    "sha256": "fba0ff70f5ebb4cebbf64c40a8fbc222fb7cf825237241e548354dabe3da6a82"
+                },
+                "downloads": -1,
+                "filename": "click-6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "83252a8095397b1f5f710fdd58b484d9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 281717,
+                "upload_time": "2015-11-27T17:43:04",
+                "url": "https://files.pythonhosted.org/packages/bc/99/bdd231c8c5f411e1bfdef262085c34de7189fb35414b9db14ba94a97cc1c/click-6.2.tar.gz"
+            }
+        ],
+        "6.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d48f60f00acdeb2ac7caab82a1e168d",
+                    "sha256": "2edb68d966802dd1b28a5f3403bcd7d2e3cc4218c8a9ef6b8d152daa753bf6ca"
+                },
+                "downloads": -1,
+                "filename": "click-6.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7d48f60f00acdeb2ac7caab82a1e168d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 70883,
+                "upload_time": "2016-02-22T21:55:20",
+                "url": "https://files.pythonhosted.org/packages/29/29/cc644d46601e331d025feb51f9c3ac6c2b6ad0b2e4403199514ea394ea82/click-6.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2f171cdf12b8f2e284c224825f5e4634",
+                    "sha256": "b720d9faabe193287b71e3c26082b0f249501288e153b7e7cfce3bb87ac8cc1c"
+                },
+                "downloads": -1,
+                "filename": "click-6.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2f171cdf12b8f2e284c224825f5e4634",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 283062,
+                "upload_time": "2016-02-22T21:55:12",
+                "url": "https://files.pythonhosted.org/packages/f7/52/59fef62b1927215be58b5a76c114a87883d5dbf2a600b47cb221a43d3c34/click-6.3.tar.gz"
+            }
+        ],
+        "6.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4f343d0f3ddf2b3ef7b678fc4d80fe43",
+                    "sha256": "a5369d2fcd77dc47f2e4cf9eb7161ef526661de3e5dca88e629d6ec8d7103821"
+                },
+                "downloads": -1,
+                "filename": "click-6.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4f343d0f3ddf2b3ef7b678fc4d80fe43",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 70919,
+                "upload_time": "2016-03-23T23:58:50",
+                "url": "https://files.pythonhosted.org/packages/3a/6a/e4602135faa87282dab2d432c7d2e8b0e7a2663e487b5b4a335bda9bc9d4/click-6.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b95bc53237bac780599cb0372b73466",
+                    "sha256": "6eb86ac0e44e60b3085e7b87797fe2adf745dbea38b78d7db1f17ec96ca016ed"
+                },
+                "downloads": -1,
+                "filename": "click-6.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b95bc53237bac780599cb0372b73466",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 283282,
+                "upload_time": "2016-03-23T23:58:41",
+                "url": "https://files.pythonhosted.org/packages/50/b5/6e007052e13d7a38a15b527e5849a369cc70a772dc1ff088546c29261c26/click-6.4.tar.gz"
+            }
+        ],
+        "6.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a4ccf8c1b0bcd779f9297a1a8ac23d35",
+                    "sha256": "596b81cda1d84d8cb57ceefd17a78d084c60b134819067b0721a3b0f53dc3ad2"
+                },
+                "downloads": -1,
+                "filename": "click-6.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a4ccf8c1b0bcd779f9297a1a8ac23d35",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 283427,
+                "upload_time": "2016-04-04T16:48:55",
+                "url": "https://files.pythonhosted.org/packages/c5/69/cfba82517e863d6403560e7a6e0085ea67d7fa1fd618938b0bb28a34a870/click-6.5.tar.gz"
+            }
+        ],
+        "6.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ded5bf44698fd7def254d5cb9e5ad0b3",
+                    "sha256": "fcf697e1fd4b567d817c69dab10a4035937fe6af175c05fd6806b69f74cbc6c4"
+                },
+                "downloads": -1,
+                "filename": "click-6.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ded5bf44698fd7def254d5cb9e5ad0b3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 71011,
+                "upload_time": "2016-11-21T13:29:30",
+                "url": "https://files.pythonhosted.org/packages/1c/7c/10b4132dd952b6a04e37626258825b8aa8c1eb99545f2eb26a77c21efb55/click-6.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0b09582123605220ad6977175f3e51d",
+                    "sha256": "cc6a19da8ebff6e7074f731447ef7e112bd23adf3de5c597cf9989f2fd8defe9"
+                },
+                "downloads": -1,
+                "filename": "click-6.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d0b09582123605220ad6977175f3e51d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 283420,
+                "upload_time": "2016-04-04T16:51:37",
+                "url": "https://files.pythonhosted.org/packages/7a/00/c14926d8232b36b08218067bcd5853caefb4737cda3f0a47437151344792/click-6.6.tar.gz"
+            }
+        ],
+        "6.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5e7a4e296b3212da2ff11017675d7a4d",
+                    "sha256": "29f99fc6125fbc931b758dc053b3114e55c77a6e4c6c3a2674a2dc986016381d"
+                },
+                "downloads": -1,
+                "filename": "click-6.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5e7a4e296b3212da2ff11017675d7a4d",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 71175,
+                "upload_time": "2017-01-06T22:41:15",
+                "url": "https://files.pythonhosted.org/packages/34/c1/8806f99713ddb993c5366c362b2f908f18269f8d792aff1abfd700775a77/click-6.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc4cc00c4863833230d3af92af48abd4",
+                    "sha256": "f15516df478d5a56180fbf80e68f206010e6d160fc39fa508b65e035fd75130b"
+                },
+                "downloads": -1,
+                "filename": "click-6.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fc4cc00c4863833230d3af92af48abd4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 279019,
+                "upload_time": "2017-01-06T22:41:13",
+                "url": "https://files.pythonhosted.org/packages/95/d9/c3336b6b5711c3ab9d1d3a80f1a3e2afeb9d8c02a7166462f6cc96570897/click-6.7.tar.gz"
+            }
+        ],
+        "6.7.dev0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "82f2e6c9d56df3ef97e7166ea3f422a5",
+                    "sha256": "71c6adabc8afbcce77d9449cd447adecf3b9256cb213e8d593e4ff83880c8a4a"
+                },
+                "downloads": -1,
+                "filename": "click-6.7.dev0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "82f2e6c9d56df3ef97e7166ea3f422a5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 279028,
+                "upload_time": "2017-01-06T22:40:24",
+                "url": "https://files.pythonhosted.org/packages/7e/16/5a3cc0022ac505131fba3c9ea6ae5178fbb6de3d53580301b59d76b22ae3/click-6.7.dev0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "5e7a4e296b3212da2ff11017675d7a4d",
+                "sha256": "29f99fc6125fbc931b758dc053b3114e55c77a6e4c6c3a2674a2dc986016381d"
+            },
+            "downloads": -1,
+            "filename": "click-6.7-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "5e7a4e296b3212da2ff11017675d7a4d",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.5",
+            "size": 71175,
+            "upload_time": "2017-01-06T22:41:15",
+            "url": "https://files.pythonhosted.org/packages/34/c1/8806f99713ddb993c5366c362b2f908f18269f8d792aff1abfd700775a77/click-6.7-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "fc4cc00c4863833230d3af92af48abd4",
+                "sha256": "f15516df478d5a56180fbf80e68f206010e6d160fc39fa508b65e035fd75130b"
+            },
+            "downloads": -1,
+            "filename": "click-6.7.tar.gz",
+            "has_sig": false,
+            "md5_digest": "fc4cc00c4863833230d3af92af48abd4",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 279019,
+            "upload_time": "2017-01-06T22:41:13",
+            "url": "https://files.pythonhosted.org/packages/95/d9/c3336b6b5711c3ab9d1d3a80f1a3e2afeb9d8c02a7166462f6cc96570897/click-6.7.tar.gz"
+        }
+    ],
+    "package_name": "click"
+}

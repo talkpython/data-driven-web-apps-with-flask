@@ -1,0 +1,1269 @@
+{
+    "info": {
+        "author": "holger krekel, Ronny Pfannschmidt, Benjamin Peterson and others",
+        "author_email": "pytest-dev@python.org",
+        "bugtrack_url": "https://github.com/pytest-dev/py/issues",
+        "classifiers": [
+            "Development Status :: 6 - Mature",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: MacOS :: MacOS X",
+            "Operating System :: Microsoft :: Windows",
+            "Operating System :: POSIX",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Software Development :: Testing",
+            "Topic :: Utilities"
+        ],
+        "description": ".. image:: https://img.shields.io/pypi/v/py.svg\n    :target: https://pypi.org/project/py\n\n.. image:: https://anaconda.org/conda-forge/py/badges/version.svg\n    :target: https://anaconda.org/conda-forge/py\n\n.. image:: https://img.shields.io/pypi/pyversions/pytest.svg\n  :target: https://pypi.org/project/py\n\n.. image:: https://img.shields.io/travis/pytest-dev/py.svg\n   :target: https://travis-ci.org/pytest-dev/py\n\n.. image:: https://ci.appveyor.com/api/projects/status/10keglan6uqwj5al/branch/master?svg=true\n   :target: https://ci.appveyor.com/project/pytestbot/py\n\n\n**NOTE**: this library is in **maintenance mode** and should not be used in new code.\n\nThe py lib is a Python development support library featuring\nthe following tools and modules:\n\n* ``py.path``:  uniform local and svn path objects\n* ``py.apipkg``:  explicit API control and lazy-importing\n* ``py.iniconfig``:  easy parsing of .ini files\n* ``py.code``: dynamic code generation and introspection (deprecated, moved to ``pytest``).\n\n**NOTE**: prior to the 1.4 release this distribution used to\ncontain py.test which is now its own package, see http://pytest.org\n\nFor questions and more information please visit http://py.readthedocs.org\n\nBugs and issues: https://github.com/pytest-dev/py\n\nAuthors: Holger Krekel and others, 2004-2017\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://py.readthedocs.io/",
+        "keywords": "",
+        "license": "MIT license",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "py",
+        "package_url": "https://pypi.org/project/py/",
+        "platform": "unix",
+        "project_url": "https://pypi.org/project/py/",
+        "release_url": "https://pypi.org/project/py/1.5.3/",
+        "requires_dist": null,
+        "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+        "summary": "library with cross-python path, ini-parsing, io, code, log facilities",
+        "version": "1.5.3"
+    },
+    "last_serial": 3694828,
+    "releases": {
+        "0.8.0-alpha2": [],
+        "0.9.0": [],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "daab8d9a814eab31809d973370d23600",
+                    "sha256": "8a71f26930be0cd5dd4819567b87c8f688dc71bb246b7a7c32f6df42d16876c0"
+                },
+                "downloads": -1,
+                "filename": "py-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "daab8d9a814eab31809d973370d23600",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 358510,
+                "upload_time": "2008-03-30T19:46:45",
+                "url": "https://files.pythonhosted.org/packages/64/d8/c5375e0d035a028e9f02b604eded5056e8472c72bd05c50e5fb1e13124cd/py-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "built on Windows-XP",
+                "digests": {
+                    "md5": "4eac7f97b8efed2271cc0c63c8796f23",
+                    "sha256": "356728a6f0c61e0ef42b9448d1d92496087bb385cd057b88288cc094b895f389"
+                },
+                "downloads": -1,
+                "filename": "py-0.9.2-py2.4-win32.egg",
+                "has_sig": false,
+                "md5_digest": "4eac7f97b8efed2271cc0c63c8796f23",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 1315694,
+                "upload_time": "2008-08-22T10:57:44",
+                "url": "https://files.pythonhosted.org/packages/a0/e5/023437e029995689debf9569473c6fb0652afa6a1b730ce1f12aa0706f7e/py-0.9.2-py2.4-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "afc5e92b1e20475be0f2fe805479de6d",
+                    "sha256": "f5219cb34fcdef4030a73c525b20051eaa70a1409c0b699bf20ac33c99b8b880"
+                },
+                "downloads": -1,
+                "filename": "py-0.9.2-py2.5-win32.egg",
+                "has_sig": false,
+                "md5_digest": "afc5e92b1e20475be0f2fe805479de6d",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 1300942,
+                "upload_time": "2008-08-22T10:56:54",
+                "url": "https://files.pythonhosted.org/packages/be/60/1873c698c52917405270ead01e1c04e4d481dbbd3d7ed54461eab99400e5/py-0.9.2-py2.5-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c996d78867f6ad64dc5aabf1185aaf7",
+                    "sha256": "11da9ecdd3414674c5bed51d318fd4b2cec5f29e7dc3985c663c25dc60ef653a"
+                },
+                "downloads": -1,
+                "filename": "py-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2c996d78867f6ad64dc5aabf1185aaf7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 482770,
+                "upload_time": "2008-08-22T10:54:56",
+                "url": "https://files.pythonhosted.org/packages/18/0d/e73c7c110a716a4b96020a8d664f934b12a9fc8f1b61787a53c19f2e5773/py-0.9.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8447b2ba4c7b4062fcd08aab3377f040",
+                    "sha256": "b5a688f95a735edbe841e7e9aefbd5a59fae1d28d8fab8473db6ba892e6a1300"
+                },
+                "downloads": -1,
+                "filename": "py-0.9.2.zip",
+                "has_sig": false,
+                "md5_digest": "8447b2ba4c7b4062fcd08aab3377f040",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 605525,
+                "upload_time": "2008-08-22T10:55:09",
+                "url": "https://files.pythonhosted.org/packages/b8/35/0b486eb364d26fca21a0890b88e3840cae6e7e7aed1d2593b2df95947b2e/py-0.9.2.zip"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3223ff8fcaefd060be13262e367794ce",
+                    "sha256": "85c0fb1d8db15f18b23d51017aeba8531bf5598ac758f2e0d5202dae4157a05f"
+                },
+                "downloads": -1,
+                "filename": "py-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3223ff8fcaefd060be13262e367794ce",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 453939,
+                "upload_time": "2009-08-04T12:01:18",
+                "url": "https://files.pythonhosted.org/packages/21/8b/e5e089859387e3bb6edbdd9c7e0089891d4a52c0eb90030334755779b8d8/py-1.0.0.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d64444015bac78e0c73ac285f9423750",
+                    "sha256": "43be1aee5f9f4ad1c80651bf3c3f6d024f49eaea96bc274803ac6cac999072df"
+                },
+                "downloads": -1,
+                "filename": "py-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d64444015bac78e0c73ac285f9423750",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 367095,
+                "upload_time": "2009-08-19T18:20:37",
+                "url": "https://files.pythonhosted.org/packages/7f/02/e83ce9a461ee157462088dca5d343db31f760b82c59e5849b2dd7efcdee2/py-1.0.1.tar.gz"
+            }
+        ],
+        "1.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d2e9878b0113159fae2f3ed0cfc081d",
+                    "sha256": "0f20effdd80d016cbc821301753988d66182680d64f3b2f91a5a31698f127597"
+                },
+                "downloads": -1,
+                "filename": "py-1.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4d2e9878b0113159fae2f3ed0cfc081d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 530372,
+                "upload_time": "2009-08-27T11:46:54",
+                "url": "https://files.pythonhosted.org/packages/63/8b/79e7ab18dac856c0069e13c8afba46950050d6dea98f5f932c1ca0c9b338/py-1.0.2.tar.gz"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb5d1fcf3173d9c4dce70cfc8888e359",
+                    "sha256": "f37c61e88d1ad4f243fd98b72728a1d4b4bcf47704b71ecfcf5145de2a5d8db4"
+                },
+                "downloads": -1,
+                "filename": "py-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fb5d1fcf3173d9c4dce70cfc8888e359",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 296522,
+                "upload_time": "2009-11-05T17:49:34",
+                "url": "https://files.pythonhosted.org/packages/28/e2/852238966afe6711ef45b563a6d5baccbb2a112725abf8b3cc49d33d86fd/py-1.1.0.tar.gz"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d0b5eaf9af09b7682fb07d4c5a2fd45",
+                    "sha256": "e94260bd81c9d87047da6e7e90145da95f0f382b820aed832124ba4948b346ff"
+                },
+                "downloads": -1,
+                "filename": "py-1.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4d0b5eaf9af09b7682fb07d4c5a2fd45",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 383084,
+                "upload_time": "2009-11-24T18:05:16",
+                "url": "https://files.pythonhosted.org/packages/ec/62/cb9fbfe0af6b561150b98ce3e0379ca5f84e03066df3c30b7d4c296670c8/py-1.1.1.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c75a9d0a9211a7ecddc981dd8a0158db",
+                    "sha256": "1b7349b52aeee1fc69d2fb6e30e6c642179ae78f8a671041c4759fe0fcd1d287"
+                },
+                "downloads": -1,
+                "filename": "py-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c75a9d0a9211a7ecddc981dd8a0158db",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 373192,
+                "upload_time": "2010-01-18T17:24:27",
+                "url": "https://files.pythonhosted.org/packages/b7/56/93be3c5172d88656b572c1b4aea10ac6c320158ac74989010661eef04076/py-1.2.0.tar.gz"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b3f4c0da62131e6dd25f7f3fda013cc",
+                    "sha256": "d00f34e4828b1274dcbf0a3e3812d2464cc0d457160df682824e28c29d52ee7f"
+                },
+                "downloads": -1,
+                "filename": "py-1.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7b3f4c0da62131e6dd25f7f3fda013cc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 380065,
+                "upload_time": "2010-02-08T17:29:04",
+                "url": "https://files.pythonhosted.org/packages/fa/cb/f4af601f060dc63d905f18baf97661ae62b209a02fbc0a5af034cb64eddf/py-1.2.1.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "986f75a6303da690e384995633677739",
+                    "sha256": "9c0ecb5b9176c521aa50089418d944f63c80ec82550b5c12dcc6897215259a37"
+                },
+                "downloads": -1,
+                "filename": "py-1.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "986f75a6303da690e384995633677739",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 415136,
+                "upload_time": "2010-05-05T21:36:13",
+                "url": "https://files.pythonhosted.org/packages/d4/28/78bb5f4b6f764953b7a8882c34a32c923b1986b2fd26ce6015fae884941b/py-1.3.0.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0cf1fa3d0f281a2bb7ed38ad0b7169da",
+                    "sha256": "238094dffb39a1b3cdecac651170f5469329c9ecaf6d1e84381f62a9f6106028"
+                },
+                "downloads": -1,
+                "filename": "py-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0cf1fa3d0f281a2bb7ed38ad0b7169da",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 409863,
+                "upload_time": "2010-05-25T21:11:07",
+                "url": "https://files.pythonhosted.org/packages/d8/25/87160d586dfc4db2d7eb4d1ae825e31dd012c819d8d0afb47e3703080def/py-1.3.1.tar.gz"
+            }
+        ],
+        "1.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e3d99966385854fc07004e8a07cf9d4",
+                    "sha256": "6d446de2055e48cf95f708b7ac386549522c3463ffb1dfd031edfb798ced1cb3"
+                },
+                "downloads": -1,
+                "filename": "py-1.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e3d99966385854fc07004e8a07cf9d4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 450941,
+                "upload_time": "2010-07-08T17:18:58",
+                "url": "https://files.pythonhosted.org/packages/4c/c6/6d3222b278472e40a6c8fb317fec4829c49c3e72fee388757c582d021881/py-1.3.2.tar.gz"
+            }
+        ],
+        "1.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf0dbc3ce4c18ead263cb5679e5164b4",
+                    "sha256": "a34382aed817b3e0fca47255f388b79025095d415c6be326f1379078913f3845"
+                },
+                "downloads": -1,
+                "filename": "py-1.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bf0dbc3ce4c18ead263cb5679e5164b4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 334265,
+                "upload_time": "2010-07-31T01:37:40",
+                "url": "https://files.pythonhosted.org/packages/03/c2/065817032d142b62c0e8fe9aa6a8b7c12c6d7134f0ce01e6ff9fa3211d5c/py-1.3.3.tar.gz"
+            }
+        ],
+        "1.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b64d73a04121c1c4e27c7ec335ef87c8",
+                    "sha256": "ee7153605b7ca7de441e91f63d5686cfd993e4694ab19318280ac4c551555450"
+                },
+                "downloads": -1,
+                "filename": "py-1.3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b64d73a04121c1c4e27c7ec335ef87c8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 452938,
+                "upload_time": "2010-09-14T17:36:26",
+                "url": "https://files.pythonhosted.org/packages/2c/ca/34d7b7828e191cb8c8c18ab4f78afe54e50ed9bb8935ced46d854a4b0b85/py-1.3.4.tar.gz"
+            }
+        ],
+        "1.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1441a30f94a0f0cfc47d69a792606bff",
+                    "sha256": "df1d2e69e8ac1db1860604da6b5170b3f79c3e4731c8217b6f6771d4945090a6"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.0.zip",
+                "has_sig": false,
+                "md5_digest": "1441a30f94a0f0cfc47d69a792606bff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 222574,
+                "upload_time": "2010-11-25T20:58:41",
+                "url": "https://files.pythonhosted.org/packages/3c/9e/612d711561c695e9de25faf469dbf074727b9542355494d3ec6e931d4cd4/py-1.4.0.zip"
+            }
+        ],
+        "1.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e73fa13d01627761b50e614403e1180",
+                    "sha256": "4c9a11b7ff05f0febafa77cd8ef8205d3c47b3dbcfaca6fdce02f036e7c5190a"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.1.zip",
+                "has_sig": false,
+                "md5_digest": "0e73fa13d01627761b50e614403e1180",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 224864,
+                "upload_time": "2011-02-07T11:30:17",
+                "url": "https://files.pythonhosted.org/packages/91/0d/b2e872ec2bb37d21d7c543779a1def232c5a9a3de3157bc10561b5088f7c/py-1.4.1.zip"
+            }
+        ],
+        "1.4.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d166e940d8f1c54ba752e52f21528bf2",
+                    "sha256": "b4607de3fe00363067e4e3f1eb6940ce096a8e3f3f835ed777b06a70387cd162"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.10.zip",
+                "has_sig": false,
+                "md5_digest": "d166e940d8f1c54ba752e52f21528bf2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 225401,
+                "upload_time": "2012-10-19T09:00:49",
+                "url": "https://files.pythonhosted.org/packages/39/88/f91b541600fd078196ec23378a61707a99f4d93021a76eb739cf104a7358/py-1.4.10.zip"
+            }
+        ],
+        "1.4.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d03d4f78606f1c44018021b9a6f2878b",
+                    "sha256": "47cbcc8d8a29b319c561a32c514e2f83a364a04baa4345e78b3d6b8c7f781290"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.11.zip",
+                "has_sig": false,
+                "md5_digest": "d03d4f78606f1c44018021b9a6f2878b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 225526,
+                "upload_time": "2012-10-25T11:32:04",
+                "url": "https://files.pythonhosted.org/packages/1a/4f/dab08b49cd5a4ff8f9da05d59da60923400560ef87c109e26053110bd178/py-1.4.11.zip"
+            }
+        ],
+        "1.4.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8230f8241dea2517757fab50b4f84449",
+                    "sha256": "36767367ba7517375dc5c1cb066e4f8fe3e05b7eacf3600c011fb510cc45122f"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.12.zip",
+                "has_sig": false,
+                "md5_digest": "8230f8241dea2517757fab50b4f84449",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 227103,
+                "upload_time": "2012-11-06T13:59:53",
+                "url": "https://files.pythonhosted.org/packages/f2/eb/ae600335f8a6725b8efb2ecd437ffd91aa21b12d6724884bf115ad320ecd/py-1.4.12.zip"
+            }
+        ],
+        "1.4.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3857dc8309d5f284669b81184253c2bb",
+                    "sha256": "ec1dc7fe04066e7ab93e1ac457f04bc301778a48bf368bf1796e84f500fda6f1"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3857dc8309d5f284669b81184253c2bb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 189278,
+                "upload_time": "2013-03-01T09:41:13",
+                "url": "https://files.pythonhosted.org/packages/a9/44/132620a9f9f7d8bd4fe2299fbc2906ead29a2cbb49152fe89da8f23bbe8e/py-1.4.13.tar.gz"
+            }
+        ],
+        "1.4.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f441639a1d3f0bbbc955cd22d8127d5e",
+                    "sha256": "a1915fffc0590a104fd033466469c7f074a1b524d1a08c7fc501f406a0d8526f"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f441639a1d3f0bbbc955cd22d8127d5e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 188722,
+                "upload_time": "2013-05-07T08:47:52",
+                "url": "https://files.pythonhosted.org/packages/60/25/10939561aeaab98364bcd1b104b9b631a57a6c30f4b2be8fcb8e27d4d278/py-1.4.14.tar.gz"
+            }
+        ],
+        "1.4.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b5afc772d242d2dbcf7a2fcf3080a799",
+                    "sha256": "656634e1846d568ed22c872b5e158a4d5eef174dd5b245186e78b94a0258c042"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.15.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b5afc772d242d2dbcf7a2fcf3080a799",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 189237,
+                "upload_time": "2013-06-21T14:38:57",
+                "url": "https://files.pythonhosted.org/packages/8f/9c/7102fb8fc77b624a0fa4bfdea0f6ba6abab2cf1a7a2e731e27d1b40ef628/py-1.4.15.tar.gz"
+            }
+        ],
+        "1.4.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f4aa73ec2c74343ae30ffb1282b6597",
+                    "sha256": "d6f8d0debce6659577f842ac6845698ec3775894aed72206706b2c7262dd4f5b"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.16.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3f4aa73ec2c74343ae30ffb1282b6597",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 189986,
+                "upload_time": "2013-10-01T08:41:52",
+                "url": "https://files.pythonhosted.org/packages/b4/9e/dbadedb54fc9cc1984a85a5fab8faf1728bc067a23a543bbb5e16db87b5b/py-1.4.16.tar.gz"
+            }
+        ],
+        "1.4.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1dba4de9f1ac9b3e025895a0b6ad5a91",
+                    "sha256": "45d74855a614c73f97b0cbbe5615e5be34fa623ecf5ee6b7a4417f9a52665fb7"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.17.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1dba4de9f1ac9b3e025895a0b6ad5a91",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 190429,
+                "upload_time": "2013-10-04T11:55:33",
+                "url": "https://files.pythonhosted.org/packages/85/10/2da35967cb3280f505d1b8f22f7e2d3c3e00de27dcb097c39a3e26a08da4/py-1.4.17.tar.gz"
+            }
+        ],
+        "1.4.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1b04e9879fed8a420b9e52cbaf7d8b4f",
+                    "sha256": "2aa6e23a43fd8582e5ef35ce08e72d9184abea532a1e337397b0c15460f91ca2"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.18.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1b04e9879fed8a420b9e52cbaf7d8b4f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 190792,
+                "upload_time": "2013-10-30T05:46:36",
+                "url": "https://files.pythonhosted.org/packages/3d/06/b2f87e4dd090b5f61fa78591909ff875ed6e881f5d1fc2b34250fe2a5b35/py-1.4.18.tar.gz"
+            }
+        ],
+        "1.4.19": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2e24b4363d834bf9192247f143435bc",
+                    "sha256": "a1c4c1d2c218b1939fc466c46d4697026fbc09a3b17cdee298a08e62570eefa6"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.19.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d2e24b4363d834bf9192247f143435bc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 187665,
+                "upload_time": "2013-12-12T12:01:24",
+                "url": "https://files.pythonhosted.org/packages/e1/57/d85d0f91d0d429b2397887179478e43562904967931109fd62d3f0bd0897/py-1.4.19.tar.gz"
+            }
+        ],
+        "1.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd00ef0c7dbaaeb1b37259e571ba28a5",
+                    "sha256": "44576ecaf065edf8f081b67525de6aa9642eab257d1997128c55f74ea32c956c"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.2.zip",
+                "has_sig": false,
+                "md5_digest": "fd00ef0c7dbaaeb1b37259e571ba28a5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 225076,
+                "upload_time": "2011-03-09T13:54:11",
+                "url": "https://files.pythonhosted.org/packages/39/46/86f53682f1a01d8a0b41c7d42be4c4f9404ffcdf8aabc1f2d75712c1fe86/py-1.4.2.zip"
+            }
+        ],
+        "1.4.20": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f1708be5482f3ff6711dfd6cafd45e0",
+                    "sha256": "23c99d99ebb2a60eb7023b7577bfc988acb0092082257a57189f100ce84b72f1"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.20.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5f1708be5482f3ff6711dfd6cafd45e0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 185583,
+                "upload_time": "2014-01-29T13:06:32",
+                "url": "https://files.pythonhosted.org/packages/5a/23/b55385bcadffcea8c2b9bc51d44ec31a8e3f294a12fb5b3313b6b3618111/py-1.4.20.tar.gz"
+            }
+        ],
+        "1.4.21": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a90c08f3de327faadf5cc4d206afa934",
+                    "sha256": "9e701a3b155998db34e3c34c24df72bdddea14650064e14c73237fc27643e805"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.21.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a90c08f3de327faadf5cc4d206afa934",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 188295,
+                "upload_time": "2014-07-14T20:19:30",
+                "url": "https://files.pythonhosted.org/packages/64/25/88d307ed06cd49fcafa1f8e494ce5acf6ccabb8c18a373d84aab3ce86fba/py-1.4.21.tar.gz"
+            }
+        ],
+        "1.4.22": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1af93ed9a00bc38385142ae0eb7cf3ff",
+                    "sha256": "1ef0c4eb8f12f970dd831f32755f95a36af66a8ca9c35991100146428fd42474"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.22.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1af93ed9a00bc38385142ae0eb7cf3ff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 189283,
+                "upload_time": "2014-07-17T08:55:05",
+                "url": "https://files.pythonhosted.org/packages/46/a7/a8e030ef1163f0e28c49a098422e0d5307c4925b3a3e44df0a06f602258d/py-1.4.22.tar.gz"
+            }
+        ],
+        "1.4.23": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b40aea711eeb8adba0c44f0b750a3205",
+                    "sha256": "ba8f2a3894caf1121799a2b239d67873a56bd0dfa24e1673d92990a8ae7370ca"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.23.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b40aea711eeb8adba0c44f0b750a3205",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 189520,
+                "upload_time": "2014-08-04T11:32:23",
+                "url": "https://files.pythonhosted.org/packages/99/2d/0177b1bee5200f65d077641cc9f689f8c60522227a8410d7348b06ed3714/py-1.4.23.tar.gz"
+            }
+        ],
+        "1.4.24": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f32ee0cd1e01472a255fe1d28d81217",
+                    "sha256": "7e28cf1511e5fe6119212a44793ec4a1b6199ead4d23d6dd4093a9d45486b855"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.24.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f32ee0cd1e01472a255fe1d28d81217",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 190197,
+                "upload_time": "2014-09-05T10:57:29",
+                "url": "https://files.pythonhosted.org/packages/3d/cd/4f34e57b16c42a13c826dd4714eeb49d6c1d9f8cea81896f4e1410481829/py-1.4.24.tar.gz"
+            }
+        ],
+        "1.4.25": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1f0b84dab1681fc1bf07c0528e091efb",
+                    "sha256": "da6ea727748e00f79fef987adb6970e8b081f829de8ea39f5405718fa9e50c85"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.25.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1f0b84dab1681fc1bf07c0528e091efb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 190298,
+                "upload_time": "2014-09-24T11:45:16",
+                "url": "https://files.pythonhosted.org/packages/53/a5/1c50691baf0c5ceaae8ce4a4dd61b3332f01e959245f078fba552f5b665c/py-1.4.25.tar.gz"
+            }
+        ],
+        "1.4.26": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "30c3fd92a53f1a5ed6f3591c1fe75c0e",
+                    "sha256": "28dd0b90d29b386afb552efc4e355c889f4639ce93658a7872a2150ece28bb89"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.26.tar.gz",
+                "has_sig": false,
+                "md5_digest": "30c3fd92a53f1a5ed6f3591c1fe75c0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 190617,
+                "upload_time": "2014-10-24T13:10:14",
+                "url": "https://files.pythonhosted.org/packages/2f/f3/cdc7d90b0a01572d5494a88c08ae3e56e0c430e6ff31d71fea7b41d0aca9/py-1.4.26.tar.gz"
+            }
+        ],
+        "1.4.27": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5cd706680117b45761f511d405c292fa",
+                    "sha256": "0d912c3ac0d2c2b1d683ba8d7cd575996493941c7c14a23c4435677072a0b9e5"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.27-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5cd706680117b45761f511d405c292fa",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 81953,
+                "upload_time": "2015-05-07T09:40:26",
+                "url": "https://files.pythonhosted.org/packages/23/33/e150ac936d998caff090430b88681482baa076919f7f5454f03737060a32/py-1.4.27-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75f35e206343d5c90bd7132166cef5fb",
+                    "sha256": "55c648870ba47375c52001d05a1adeedaa930937749ad66eb3327e8dea28ac79"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.27.tar.gz",
+                "has_sig": false,
+                "md5_digest": "75f35e206343d5c90bd7132166cef5fb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 191447,
+                "upload_time": "2015-05-07T09:40:30",
+                "url": "https://files.pythonhosted.org/packages/68/1f/4b80e6ef9b4ab41e8921041974aaffea3735bd5615fe5e1ab91e192fde55/py-1.4.27.tar.gz"
+            }
+        ],
+        "1.4.28": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "155a102ba46605682d392ba5e24c680f",
+                    "sha256": "b41a766042ce79cbe618dfe5d0dab60170e8159a25f77c2c9032f96e6e67cd78"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.28-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "155a102ba46605682d392ba5e24c680f",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 81967,
+                "upload_time": "2015-05-27T13:20:49",
+                "url": "https://files.pythonhosted.org/packages/f9/b3/5e7c611879473a2ad04665584bad04458dd43a6913217ba47059f0b4a6bb/py-1.4.28-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "30b807e1fe1b886578c47337d424a083",
+                    "sha256": "664dbb9fd86c26d26e90aa93d15b8a19c859128bb66b3905bef954eba737eeb5"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.28.tar.gz",
+                "has_sig": false,
+                "md5_digest": "30b807e1fe1b886578c47337d424a083",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 191592,
+                "upload_time": "2015-05-27T13:20:45",
+                "url": "https://files.pythonhosted.org/packages/79/1f/aa18a97aada0e2b5f3bac9bc991c64a38e37f92428152126a39564de6626/py-1.4.28.tar.gz"
+            }
+        ],
+        "1.4.29": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b2991f40ae640ed193f18e4b1371dced",
+                    "sha256": "5ba4f7b0c5ca2606cd487611fa0d26aabe573f80082b86009c3c358f8df6aa3a"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.29-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b2991f40ae640ed193f18e4b1371dced",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 82115,
+                "upload_time": "2015-06-23T14:38:23",
+                "url": "https://files.pythonhosted.org/packages/23/0f/40dfda5ef6be6ccee6d7fc46b57a043dde0b8ff7ad1ce63d9c164b9807e3/py-1.4.29-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c28e0accba523a29b35a48bb703fb96c",
+                    "sha256": "279e117233f205de1e46ec36eb7ffa5999f1bc53ae6bcf06889477ff28e45d83"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.29.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c28e0accba523a29b35a48bb703fb96c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 192088,
+                "upload_time": "2015-06-23T14:38:27",
+                "url": "https://files.pythonhosted.org/packages/2a/bc/a1a4a332ac10069b8e5e25136a35e08a03f01fd6ab03d819889d79a1fd65/py-1.4.29.tar.gz"
+            }
+        ],
+        "1.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f20018fda42165f2edb4226c8eafcae4",
+                    "sha256": "5db1b4268a955e3f9fefe5fa18ed130ab68db10f4f99a752dba0650564b0d529"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.3.zip",
+                "has_sig": false,
+                "md5_digest": "f20018fda42165f2edb4226c8eafcae4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 225164,
+                "upload_time": "2011-04-17T23:07:32",
+                "url": "https://files.pythonhosted.org/packages/00/db/ebec2d573e5c6df968638a69edbc8bb23524ce1dc8349f007d8a5393f43d/py-1.4.3.zip"
+            }
+        ],
+        "1.4.30": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0faee5774a42313943d4ceaf61b930b",
+                    "sha256": "07e20ab90a550bd3c21891e0d887f0931b4098f148aec95e29b5188f161bb075"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.30-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d0faee5774a42313943d4ceaf61b930b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 81940,
+                "upload_time": "2015-06-26T10:44:24",
+                "url": "https://files.pythonhosted.org/packages/9c/ce/4f442f1e6d569fdacb6be412ac93f14246bd0c31e168f22226a9cbd4ad4c/py-1.4.30-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a904aabfe4765cb754f2db84ec7bb03a",
+                    "sha256": "b703e57685ed7c280b1a51c496a4984d83d89def2a930b5e9e5da5a6ca151514"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.30.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a904aabfe4765cb754f2db84ec7bb03a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 191796,
+                "upload_time": "2015-06-26T10:40:36",
+                "url": "https://files.pythonhosted.org/packages/35/24/f5918a3d91f67fb379d33eba111f6b517517d7d3ea156aec97f7724cebc3/py-1.4.30.tar.gz"
+            }
+        ],
+        "1.4.31": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa18874c9b4d1e5ab53e025008e43387",
+                    "sha256": "4a3e4f3000c123835ac39cab5ccc510642153bc47bc1f13e2bbb53039540ae69"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.31-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "aa18874c9b4d1e5ab53e025008e43387",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 81940,
+                "upload_time": "2015-11-27T21:13:32",
+                "url": "https://files.pythonhosted.org/packages/19/f2/4b71181a49a4673a12c8f5075b8744c5feb0ed9eba352dd22512d2c04d47/py-1.4.31-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d2c63c56dc3f2115ec35c066ecd582b",
+                    "sha256": "a6501963c725fc2554dabfece8ae9a8fb5e149c0ac0a42fd2b02c5c1c57fc114"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.31.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5d2c63c56dc3f2115ec35c066ecd582b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 192212,
+                "upload_time": "2015-11-27T21:13:39",
+                "url": "https://files.pythonhosted.org/packages/f4/9a/8dfda23f36600dd701c6722316ba8a3ab4b990261f83e7d3ffc6dfedf7ef/py-1.4.31.tar.gz"
+            }
+        ],
+        "1.4.32": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b032575d68c53dca60b8bdd8ffb8716b",
+                    "sha256": "2d4bba2e25fff58140e6bdce1e485e89bb59776adbe01d490baa6b1f37a3dd6b"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.32-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b032575d68c53dca60b8bdd8ffb8716b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 82482,
+                "upload_time": "2016-12-16T16:31:54",
+                "url": "https://files.pythonhosted.org/packages/02/79/ea0c2750dde4b19bf2e305d201e4dd488f6671b51f52d8cf87aba174a158/py-1.4.32-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "68ee0b5867282595d0b410a7f3c03ab3",
+                    "sha256": "c4b89fd1ff1162375115608d01f77c38cca1d0f28f37fd718005e19b28be41a7"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.32.tar.gz",
+                "has_sig": false,
+                "md5_digest": "68ee0b5867282595d0b410a7f3c03ab3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 598861,
+                "upload_time": "2016-12-16T16:31:56",
+                "url": "https://files.pythonhosted.org/packages/93/bd/8a90834a287e0c1682eab8e20ada672e4f4cf7d5b99f2833ddbf31ed1a6d/py-1.4.32.tar.gz"
+            }
+        ],
+        "1.4.32.dev1": [],
+        "1.4.33": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d425da089f41826c9a2986f024da1056",
+                    "sha256": "81b5e37db3cc1052de438375605fb5d3b3e97f950f415f9143f04697c684d7eb"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.33-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d425da089f41826c9a2986f024da1056",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 83967,
+                "upload_time": "2017-03-17T02:45:48",
+                "url": "https://files.pythonhosted.org/packages/92/8b/ac214296ed28a05efd36e8b55a7820eda62d7028ecf10e5a98afb1982e93/py-1.4.33-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15d7107cbb8b86593bf9afa16e56da65",
+                    "sha256": "1f9a981438f2acc20470b301a07a496375641f902320f70e31916fe3377385a9"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.33.tar.gz",
+                "has_sig": false,
+                "md5_digest": "15d7107cbb8b86593bf9afa16e56da65",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 193961,
+                "upload_time": "2017-03-17T02:45:49",
+                "url": "https://files.pythonhosted.org/packages/2a/a5/139ca93a9ffffd9fc1d3f14be375af3085f53cc490c508cf1c988b886baa/py-1.4.33.tar.gz"
+            }
+        ],
+        "1.4.34": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0cb02dbd9cf647f97b8963d4def97a7f",
+                    "sha256": "2ccb79b01769d99115aa600d7eed99f524bf752bba8f041dc1c184853514655a"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.34-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0cb02dbd9cf647f97b8963d4def97a7f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 84049,
+                "upload_time": "2017-06-04T15:48:32",
+                "url": "https://files.pythonhosted.org/packages/53/67/9620edf7803ab867b175e4fd23c7b8bd8eba11cb761514dcd2e726ef07da/py-1.4.34-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9c3d8f734b0819ff48e355d77bf1730",
+                    "sha256": "0f2d585d22050e90c7d293b6451c83db097df77871974d90efd5a30dc12fcde3"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.34.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d9c3d8f734b0819ff48e355d77bf1730",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 194450,
+                "upload_time": "2017-06-04T15:48:34",
+                "url": "https://files.pythonhosted.org/packages/68/35/58572278f1c097b403879c1e9369069633d1cbad5239b9057944bb764782/py-1.4.34.tar.gz"
+            }
+        ],
+        "1.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f94e19ce855df25d430265a19287db0",
+                    "sha256": "6e688e8d037d23a7fc2c79d321eae91ba3b5f2d797101f6e2c9a8189839d6a22"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.4.zip",
+                "has_sig": false,
+                "md5_digest": "5f94e19ce855df25d430265a19287db0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 225304,
+                "upload_time": "2011-07-09T11:57:30",
+                "url": "https://files.pythonhosted.org/packages/12/e9/ac1a086c8deb69db24a9871b323e05a0efbb97ef5ce34b667eade253fedc/py-1.4.4.zip"
+            }
+        ],
+        "1.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2a51f8c9eca43e2953cdec72989d6ec",
+                    "sha256": "8425c7140cfc5acf5b67cfb2f2af8d835ab2f6663ee2ca3d7206c1d81e1d35ea"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.5.zip",
+                "has_sig": false,
+                "md5_digest": "d2a51f8c9eca43e2953cdec72989d6ec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 225478,
+                "upload_time": "2011-08-20T18:10:55",
+                "url": "https://files.pythonhosted.org/packages/86/4f/9a727689fe572e21a90bd48e07a60cbf2b9eb578ff062eb95dd3e8b57b4a/py-1.4.5.zip"
+            }
+        ],
+        "1.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "18381334c69450a080ede4d04efb4b52",
+                    "sha256": "59304dd3102b4604da2b11e515f5f44093a8f627a8dc08bd5dcdd964f8960c78"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.6.zip",
+                "has_sig": false,
+                "md5_digest": "18381334c69450a080ede4d04efb4b52",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 226821,
+                "upload_time": "2011-12-16T12:40:21",
+                "url": "https://files.pythonhosted.org/packages/03/89/36292385915c48e5093c9c01f6a3353b7b85730b1d08d2cea41bf846c447/py-1.4.6.zip"
+            }
+        ],
+        "1.4.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb1b2608eb4f52f67405fb316dbab09f",
+                    "sha256": "b66ec2289357146be31a5a2050e1e298654da33c95a50b890bc09c764b905ff2"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.7.zip",
+                "has_sig": false,
+                "md5_digest": "fb1b2608eb4f52f67405fb316dbab09f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 227360,
+                "upload_time": "2012-02-06T13:46:27",
+                "url": "https://files.pythonhosted.org/packages/1b/36/703ac1bc369e514ad4b8d1cb36ddfd7bf2e3e9f458abfda9c47fec2d8869/py-1.4.7.zip"
+            }
+        ],
+        "1.4.7.dev3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e83ff50740ed06972157629c14433eb8",
+                    "sha256": "30fba90c9e56d29e91fbaf1bb8f2e15c671159feee9e140c9c660a5eb6fde0b2"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.7.dev3.zip",
+                "has_sig": false,
+                "md5_digest": "e83ff50740ed06972157629c14433eb8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 228489,
+                "upload_time": "2012-02-06T05:30:10",
+                "url": "https://files.pythonhosted.org/packages/1a/17/3efad47ffc6e2af272369c47efa49a4bebb09f53595b7f3a6c107619c23c/py-1.4.7.dev3.zip"
+            }
+        ],
+        "1.4.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4577e659435568d168c66b69a3cb968a",
+                    "sha256": "e29f881fc54919e0faecc2c44913d1c32ff6fbb7097889bc9b384ddadb4949a5"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.8.zip",
+                "has_sig": false,
+                "md5_digest": "4577e659435568d168c66b69a3cb968a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 228276,
+                "upload_time": "2012-05-22T18:13:11",
+                "url": "https://files.pythonhosted.org/packages/2c/0d/a0b7eceb89ca0562e95f1bc6953fe6d2dd6f65f4555c686fc90675a2349e/py-1.4.8.zip"
+            }
+        ],
+        "1.4.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "471a88edcdae2f9689c0193972a1a1f8",
+                    "sha256": "75ad266f591624b6d8c62a99819558e1266aa043bbaf0185bb649b36f1bdded0"
+                },
+                "downloads": -1,
+                "filename": "py-1.4.9.zip",
+                "has_sig": false,
+                "md5_digest": "471a88edcdae2f9689c0193972a1a1f8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 224945,
+                "upload_time": "2012-06-13T15:40:56",
+                "url": "https://files.pythonhosted.org/packages/0c/a1/255f40e3f34e263575ce8d66d0550ec8e1f42e468eea66eb52544abf50f8/py-1.4.9.zip"
+            }
+        ],
+        "1.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52d0c24e0aa0bb4cdd27cd03026267de",
+                    "sha256": "e6fda4487ef65a3dc89f95dc9a27141e7b0fb365a3e2c619f78288d959c7092d"
+                },
+                "downloads": -1,
+                "filename": "py-1.5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "52d0c24e0aa0bb4cdd27cd03026267de",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 88351,
+                "upload_time": "2017-11-15T14:41:47",
+                "url": "https://files.pythonhosted.org/packages/dc/c6/0ec4ab40928d292dd3da9cf91d10d54fb2a531fcc21be6a452b48687e410/py-1.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6243f9825e84c04ba4c6a2503eddf400",
+                    "sha256": "e85aaa3c2e837413c6387eb2a4efbe7ff93658813d13986da004984ffe84b3a3"
+                },
+                "downloads": -1,
+                "filename": "py-1.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6243f9825e84c04ba4c6a2503eddf400",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 189531,
+                "upload_time": "2017-11-15T14:41:49",
+                "url": "https://files.pythonhosted.org/packages/56/d7/a20e836f5489f5d9d9ac7a6326ca9a1c36762dd182be5507da03a09785a9/py-1.5.1.tar.gz"
+            }
+        ],
+        "1.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e220c5b453c0756b90570f95d64f35c",
+                    "sha256": "8cca5c229d225f8c1e3085be4fcf306090b00850fefad892f9d96c7b6e2f310f"
+                },
+                "downloads": -1,
+                "filename": "py-1.5.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8e220c5b453c0756b90570f95d64f35c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 88377,
+                "upload_time": "2017-11-15T23:46:26",
+                "url": "https://files.pythonhosted.org/packages/41/70/adacedf6cdc13700d40303f78b241f98c959e2745fdebbe56af74c08344d/py-1.5.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "279ca69c632069e1b71e11b14641ca28",
+                    "sha256": "ca18943e28235417756316bfada6cd96b23ce60dd532642690dcfdaba988a76d"
+                },
+                "downloads": -1,
+                "filename": "py-1.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "279ca69c632069e1b71e11b14641ca28",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 189542,
+                "upload_time": "2017-11-15T23:46:32",
+                "url": "https://files.pythonhosted.org/packages/90/e3/e075127d39d35f09a500ebb4a90afd10f9ef0a1d28a6d09abeec0e444fdd/py-1.5.2.tar.gz"
+            }
+        ],
+        "1.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3184fb17d224b073117a25336040d7c7",
+                    "sha256": "983f77f3331356039fdd792e9220b7b8ee1aa6bd2b25f567a963ff1de5a64f6a"
+                },
+                "downloads": -1,
+                "filename": "py-1.5.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3184fb17d224b073117a25336040d7c7",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 84903,
+                "upload_time": "2018-03-22T10:06:50",
+                "url": "https://files.pythonhosted.org/packages/67/a5/f77982214dd4c8fd104b066f249adea2c49e25e8703d284382eb5e9ab35a/py-1.5.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "667d37a148ad9fb81266492903f2d880",
+                    "sha256": "29c9fab495d7528e80ba1e343b958684f4ace687327e6f789a94bf3d1915f881"
+                },
+                "downloads": -1,
+                "filename": "py-1.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "667d37a148ad9fb81266492903f2d880",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 202335,
+                "upload_time": "2018-03-22T10:06:52",
+                "url": "https://files.pythonhosted.org/packages/f7/84/b4c6e84672c4ceb94f727f3da8344037b62cee960d80e999b1cd9b832d83/py-1.5.3.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "3184fb17d224b073117a25336040d7c7",
+                "sha256": "983f77f3331356039fdd792e9220b7b8ee1aa6bd2b25f567a963ff1de5a64f6a"
+            },
+            "downloads": -1,
+            "filename": "py-1.5.3-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "3184fb17d224b073117a25336040d7c7",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 84903,
+            "upload_time": "2018-03-22T10:06:50",
+            "url": "https://files.pythonhosted.org/packages/67/a5/f77982214dd4c8fd104b066f249adea2c49e25e8703d284382eb5e9ab35a/py-1.5.3-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "667d37a148ad9fb81266492903f2d880",
+                "sha256": "29c9fab495d7528e80ba1e343b958684f4ace687327e6f789a94bf3d1915f881"
+            },
+            "downloads": -1,
+            "filename": "py-1.5.3.tar.gz",
+            "has_sig": false,
+            "md5_digest": "667d37a148ad9fb81266492903f2d880",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 202335,
+            "upload_time": "2018-03-22T10:06:52",
+            "url": "https://files.pythonhosted.org/packages/f7/84/b4c6e84672c4ceb94f727f3da8344037b62cee960d80e999b1cd9b832d83/py-1.5.3.tar.gz"
+        }
+    ],
+    "package_name": "py"
+}

@@ -1,0 +1,682 @@
+{
+    "info": {
+        "author": "Leonard Richardson",
+        "author_email": "leonardr@segfault.org",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Text Processing :: Markup :: HTML",
+            "Topic :: Text Processing :: Markup :: SGML",
+            "Topic :: Text Processing :: Markup :: XML"
+        ],
+        "description": "Beautiful Soup sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "http://www.crummy.com/software/BeautifulSoup/bs4/download/",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://www.crummy.com/software/BeautifulSoup/bs4/",
+        "keywords": null,
+        "license": "MIT",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "beautifulsoup4",
+        "package_url": "https://pypi.org/project/beautifulsoup4/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/beautifulsoup4/",
+        "release_url": "https://pypi.org/project/beautifulsoup4/4.6.0/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Screen-scraping library",
+        "version": "4.6.0"
+    },
+    "last_serial": 2857110,
+    "releases": {
+        "4.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dff86f956bc6dfe62416fac7a2105d3e",
+                    "sha256": "dc6bc8e8851a1c590c8cc8f25915180fdcce116e268d1f37fa991d2686ea38de"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dff86f956bc6dfe62416fac7a2105d3e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 51024,
+                "upload_time": "2014-01-21T05:35:05",
+                "url": "https://files.pythonhosted.org/packages/6f/be/99dcf74d947cc1e7abef5d0c4572abcb479c33ef791d94453a8fd7987d8f/beautifulsoup4-4.0.1.tar.gz"
+            }
+        ],
+        "4.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "296aec323e1a052a66fafb11687e289e",
+                    "sha256": "353792f8246a9551b232949fb14dce21d9b6ced9207bf9f4a69a4c4eb46c8127"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "296aec323e1a052a66fafb11687e289e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 51240,
+                "upload_time": "2014-01-21T05:35:09",
+                "url": "https://files.pythonhosted.org/packages/a0/75/db36172ea767dd2f0c9817a99e24f7e9b79c2ce63eb2f8b867284cc60daf/beautifulsoup4-4.0.2.tar.gz"
+            }
+        ],
+        "4.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "237b2de85c7d3004775f74d64085630b",
+                    "sha256": "61cd1ee692442371767d5f44f20b1b05befe09269a6d64af5400d6384d635318"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "237b2de85c7d3004775f74d64085630b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 51254,
+                "upload_time": "2014-01-21T05:35:13",
+                "url": "https://files.pythonhosted.org/packages/da/09/1c69ea3c0ea7ea5618fadda3fddf6164a5c2ea7d06170776583e044b35a2/beautifulsoup4-4.0.3.tar.gz"
+            }
+        ],
+        "4.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0aac5d47fdd230c14aed287fb10aa5ca",
+                    "sha256": "81a497c14cb4c0deca6d4b4a04407f7025c74d9304dbb8cc893c42465e344c26"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0aac5d47fdd230c14aed287fb10aa5ca",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 52730,
+                "upload_time": "2014-01-21T05:35:17",
+                "url": "https://files.pythonhosted.org/packages/b3/7b/2769c8522f43cd5f19c57c81d801f95bfcb7aad1c566e43c504596d8d5e4/beautifulsoup4-4.0.4.tar.gz"
+            }
+        ],
+        "4.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "39fb84efc57618551de88f015f362721",
+                    "sha256": "cf9015003cf6012d5acc6ea374a9cd5390fcbf7d47ea822cd0140cc61a8b7b1f"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "39fb84efc57618551de88f015f362721",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54392,
+                "upload_time": "2014-01-21T05:35:21",
+                "url": "https://files.pythonhosted.org/packages/1a/7c/d7709ccd0657a6d203ff60a431f0470a6c4ec0b377eef64e8b4a23abb16d/beautifulsoup4-4.0.5.tar.gz"
+            }
+        ],
+        "4.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "771b7d2dd2b6874eb70fc23a6eaa0929",
+                    "sha256": "66e56367cf39c9d32fb2c047554bb1aeec161bc25c1252c316c1825d8b160705"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "771b7d2dd2b6874eb70fc23a6eaa0929",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57897,
+                "upload_time": "2014-01-21T05:35:25",
+                "url": "https://files.pythonhosted.org/packages/92/74/06975aeb61298c942bc4fea795f75e8ff572c37e7315701e995a59fc159f/beautifulsoup4-4.1.0.tar.gz"
+            }
+        ],
+        "4.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c442de1156cbc69447972df2b6a86497",
+                    "sha256": "e8a485d48ca028796164cfb1cdfb33f6601db96c17d27d9c1a22d82588aacce0"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c442de1156cbc69447972df2b6a86497",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 58374,
+                "upload_time": "2014-01-21T05:35:28",
+                "url": "https://files.pythonhosted.org/packages/cd/b3/57367f3314a27340596f6b189bf0b3f923413e5614e66d47bd4ff8561090/beautifulsoup4-4.1.1.tar.gz"
+            }
+        ],
+        "4.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ece5800467c66cf635c939c23a2a25a8",
+                    "sha256": "2cec30d79ef571d5ebcb922b173a443e93199cad682192f4622b29ba76995635"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ece5800467c66cf635c939c23a2a25a8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 58817,
+                "upload_time": "2014-01-21T05:35:32",
+                "url": "https://files.pythonhosted.org/packages/42/53/746967092a88fdcc9691dba02eb081a1932e7c5c390884244612e775b963/beautifulsoup4-4.1.2.tar.gz"
+            }
+        ],
+        "4.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f1481ed77336de77a2d8e5b061b6ad62",
+                    "sha256": "617e80836a50520e78af2f41bfdc54fef2f0f104aadbcf837ba9cf8510ad6c31"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f1481ed77336de77a2d8e5b061b6ad62",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 58995,
+                "upload_time": "2014-01-21T05:35:34",
+                "url": "https://files.pythonhosted.org/packages/8c/f3/e0e62c314c6f93f306415eec3fb1b665a710dc492879709c027db051db9d/beautifulsoup4-4.1.3.tar.gz"
+            }
+        ],
+        "4.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "478775496afea4e5e4aa5dff4ac90a9b",
+                    "sha256": "eba0447632a087c4cce47db1d735569beeec58129ae0b364f5cb252b3bc0968e"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "478775496afea4e5e4aa5dff4ac90a9b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 63567,
+                "upload_time": "2014-01-21T05:35:38",
+                "url": "https://files.pythonhosted.org/packages/b3/fe/6888f755c0b9f66d4cc1f9ee0077a613a09e211acca3242a7335ffe7ed06/beautifulsoup4-4.2.0.tar.gz"
+            }
+        ],
+        "4.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "612dec037aff94645888c6fd3e4d0b9a",
+                    "sha256": "44993888d5d05c99a3c7c212feab95ed92f4a4a1c8b70f8ef032a8ec32854e36"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "612dec037aff94645888c6fd3e4d0b9a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 64737,
+                "upload_time": "2014-01-21T05:35:41",
+                "url": "https://files.pythonhosted.org/packages/df/b8/30ea521e7a852202445b30660df5981b94acfeccda15d2bc5a03d97b500a/beautifulsoup4-4.2.1.tar.gz"
+            }
+        ],
+        "4.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8d5d2e6747bcc4e1ead17a30e71d9507",
+                    "sha256": "ab2c2d59fc8d01fdb046cae201a63b554d676832e2c1b0e301fd6f9acddb8333"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8d5d2e6747bcc4e1ead17a30e71d9507",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66150,
+                "upload_time": "2014-01-21T05:35:45",
+                "url": "https://files.pythonhosted.org/packages/63/a4/969a5ce4e2fd7679a532d27173d5ba2a4c25c3c074a3485dc295c1328338/beautifulsoup4-4.3.0.tar.gz"
+            }
+        ],
+        "4.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "77f7a789b171ce6d3e64a2199c711654",
+                    "sha256": "0e6942a04f099902c212be7149d972cdeb06beccbfe8790a3b46bc97374ef677"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "77f7a789b171ce6d3e64a2199c711654",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66987,
+                "upload_time": "2014-01-21T05:35:49",
+                "url": "https://files.pythonhosted.org/packages/e8/fa/8d4ed865c0d9d93d92635ae07ed14e00088ec183cbdf3164a1bb1dc02c2b/beautifulsoup4-4.3.1.tar.gz"
+            }
+        ],
+        "4.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b8d157a204d56512a4cc196e53e7d8ee",
+                    "sha256": "a2b29bd048ca2fe54a046b29770964738872a9747003a371344a93eedf7ad58e"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b8d157a204d56512a4cc196e53e7d8ee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 143356,
+                "upload_time": "2013-10-02T12:43:44",
+                "url": "https://files.pythonhosted.org/packages/30/bd/5405ba01391d06646de9ec90cadeb3893fa355a06438966afff44531219a/beautifulsoup4-4.3.2.tar.gz"
+            }
+        ],
+        "4.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c108fc02b9b31bc81f42bc90768edd66",
+                    "sha256": "b702721f8722c94fbd2fbdfb42183c4b5b3d8871186b92a8898e2dfe4869aadb"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.4.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c108fc02b9b31bc81f42bc90768edd66",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 81031,
+                "upload_time": "2015-07-03T15:23:08",
+                "url": "https://files.pythonhosted.org/packages/9d/c8/cd70aabb46af8f30ed83c15287c3d8b1455ba7ee923b03870ee0cdb6ec4f/beautifulsoup4-4.4.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e8dbfaa26dd7fc45115762853579f9fd",
+                    "sha256": "a43204aaee0ef590a6073470f094564ddef6aca5f68c143c99262f8b4923af8c"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.4.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e8dbfaa26dd7fc45115762853579f9fd",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 80961,
+                "upload_time": "2015-07-03T15:23:25",
+                "url": "https://files.pythonhosted.org/packages/63/05/e1b733dc34fce994954c06bd198486c1becc2839d64ac1747424d49e8a35/beautifulsoup4-4.4.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "63d1f33e6524f408cb6efbc5da1ae8a5",
+                    "sha256": "fad91da88f69438b9ba939ab1b2cabaa31b1d914f1cccb4bb157a993ed2917f6"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "63d1f33e6524f408cb6efbc5da1ae8a5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 151500,
+                "upload_time": "2015-07-03T15:23:04",
+                "url": "https://files.pythonhosted.org/packages/56/d8/351bf4dec2658cec9ee22589e4385e89e90eda04a79b6795625b63a7030d/beautifulsoup4-4.4.0.tar.gz"
+            }
+        ],
+        "4.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "219f711e7a0b2cce14d362843d095f56",
+                    "sha256": "82a253245aed9875f141dd98a7462572bca93d064cf3117bd33de4b61ee18e68"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.4.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "219f711e7a0b2cce14d362843d095f56",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 81446,
+                "upload_time": "2015-09-29T00:19:53",
+                "url": "https://files.pythonhosted.org/packages/33/62/f3e97eaa87fc4de0cb9b8c51d253cf0df621c6de6b25164dcbab203e5ff7/beautifulsoup4-4.4.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b5c64ab9baa6eedb9337cc2a6a463fb",
+                    "sha256": "2c264254f6cfce64c3bd9d48885208093a73b9095645f600de0a277ce01ea0e5"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.4.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2b5c64ab9baa6eedb9337cc2a6a463fb",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 81382,
+                "upload_time": "2015-09-29T00:20:03",
+                "url": "https://files.pythonhosted.org/packages/cf/69/9abfdab06490af5e0233bcebe3f617ec128486d94ea987ad4f77b9332eef/beautifulsoup4-4.4.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8fbd9a7cac0704645fa20d1419036815",
+                    "sha256": "87d4013d0625d4789a4f56b8d79a04d5ce6db1152bb65f1d39744f7709a366b4"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8fbd9a7cac0704645fa20d1419036815",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 152140,
+                "upload_time": "2015-09-29T00:19:49",
+                "url": "https://files.pythonhosted.org/packages/26/79/ef9a8bcbec5abc4c618a80737b44b56f1cb393b40238574078c5002b97ce/beautifulsoup4-4.4.1.tar.gz"
+            }
+        ],
+        "4.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "da8b52eda2ce36198426372f69eb1862",
+                    "sha256": "4e9910b4ad7541f17521d095a54e91de958d15d6d10058a1dea61828ddfcc003"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "da8b52eda2ce36198426372f69eb1862",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 83868,
+                "upload_time": "2016-07-20T10:38:09",
+                "url": "https://files.pythonhosted.org/packages/98/1c/a9aed2839e7181adc204e960c46b1c10ff6ef34f560c8987f0a0303eae73/beautifulsoup4-4.5.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "21db5f32e3efea52efd2802891c4ea5b",
+                    "sha256": "80b1507ecafe53108b4fe89fdd9c09f1128d863a8e85ad98e378bd12c51b7b07"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "21db5f32e3efea52efd2802891c4ea5b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 83792,
+                "upload_time": "2016-07-20T10:40:01",
+                "url": "https://files.pythonhosted.org/packages/42/10/466c8947b9b8bd99440662649addfc92e2ad5f4b548de0a6b36f535d0db0/beautifulsoup4-4.5.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b3805e0078a2033b269ecea2403acf1",
+                    "sha256": "8e084c88b7664692e43576f121adb902e749ce0354e2becfb0f5220dcc20c9e5"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b3805e0078a2033b269ecea2403acf1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 157803,
+                "upload_time": "2016-07-20T10:38:06",
+                "url": "https://files.pythonhosted.org/packages/28/fa/69128a30854bcae479a9a09737e489b6e6e6b7d2cf5898ddf7b2f49bf143/beautifulsoup4-4.5.0.tar.gz"
+            }
+        ],
+        "4.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0000d92f11b0578c111ae5bf3f86933e",
+                    "sha256": "bb3dba571c2f7ddcaf3e70ad8b67878a85ac41889dcba75a30b8f7b0b5960b6d"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.1-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0000d92f11b0578c111ae5bf3f86933e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 83972,
+                "upload_time": "2016-08-03T02:43:22",
+                "url": "https://files.pythonhosted.org/packages/dc/27/8919b7a505b00f410c1c113c6c93b3253784375797976272e4198f4e455a/beautifulsoup4-4.5.1-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e47bb70343d45a033a85aca3053f08db",
+                    "sha256": "35815098d9d0bf5d3a782346a3945b000592d0e93e2538a502d0d6807130d675"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.1-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e47bb70343d45a033a85aca3053f08db",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 83901,
+                "upload_time": "2016-08-03T02:43:52",
+                "url": "https://files.pythonhosted.org/packages/1f/da/4b0d439054fd6b22fa121e0ac672fd8f34f6cce4f375dfd13e955b89306d/beautifulsoup4-4.5.1-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "994abd90e691beaf7d42c00ffb2f3a67",
+                    "sha256": "3c9474036afda9136aac6463def733f81017bf9ef3510d25634f335b0c87f5e1"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "994abd90e691beaf7d42c00ffb2f3a67",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 158039,
+                "upload_time": "2016-08-03T02:43:19",
+                "url": "https://files.pythonhosted.org/packages/86/ea/8e9fbce5c8405b9614f1fd304f7109d9169a3516a493ce4f7f77c39435b7/beautifulsoup4-4.5.1.tar.gz"
+            }
+        ],
+        "4.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e79b5c645f9480410543814074a752c9",
+                    "sha256": "fd2f4cc0c660da29ef983b271c034ebdac36c07b44c178d3ca22caf656fa8a87"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.2-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e79b5c645f9480410543814074a752c9",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 85159,
+                "upload_time": "2017-01-02T14:57:03",
+                "url": "https://files.pythonhosted.org/packages/16/ba/d38db2fb8ad52dcab40b370c52bbeee54d8aaf7386dcb3593ed0c64fae64/beautifulsoup4-4.5.2-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ee9a1f25b541e6ca69d66ab6def8088",
+                    "sha256": "0382c2a1ea83f59844bfca51040d436aa40c30238367cd880431b190fb5fd1a2"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4ee9a1f25b541e6ca69d66ab6def8088",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 159139,
+                "upload_time": "2017-01-02T14:57:00",
+                "url": "https://files.pythonhosted.org/packages/c8/c6/d7028e89a972a04a30430c47fb16af3b4799ab1f07dcd620bbf493723541/beautifulsoup4-4.5.2.tar.gz"
+            }
+        ],
+        "4.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1751f0013475d8505714f22e873841b",
+                    "sha256": "50e031957fe5d72c7ff6c10575d07b83a6462d12d12af03666b0dd1d9aa81c43"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.3-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a1751f0013475d8505714f22e873841b",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 85159,
+                "upload_time": "2017-01-02T15:08:04",
+                "url": "https://files.pythonhosted.org/packages/cf/9b/8a6891f8c349431ee94669ce592fc375a19d4e3f4273a01a47207c7990b2/beautifulsoup4-4.5.3-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4bf9f7d3e6815a2b2f9c75b7136ec49a",
+                    "sha256": "0a91347d5a4ab2196407ff4d3d758f2e712cae9bdfa3fd1eb0f83edea95e0d8d"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.3-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "4bf9f7d3e6815a2b2f9c75b7136ec49a",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 85091,
+                "upload_time": "2017-01-02T15:08:21",
+                "url": "https://files.pythonhosted.org/packages/af/a3/9e803f838b3eeb313d45d916d4387cda8572c92e1aafeb53fd43ddb5da2c/beautifulsoup4-4.5.3-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "937e0df0d699a1237646f38fd567f0c6",
+                    "sha256": "b21ca09366fa596043578fd4188b052b46634d22059e68dd0077d9ee77e08a3e"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "937e0df0d699a1237646f38fd567f0c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 159185,
+                "upload_time": "2017-01-02T15:08:02",
+                "url": "https://files.pythonhosted.org/packages/9b/a5/c6fa2d08e6c671103f9508816588e0fb9cec40444e8e72993f3d4c325936/beautifulsoup4-4.5.3.tar.gz"
+            }
+        ],
+        "4.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0ce31c1425d97eebd287624fed91e2b1",
+                    "sha256": "7015e76bf32f1f574636c4288399a6de66ce08fb7b2457f628a8d70c0fbabb11"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.6.0-py2-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0ce31c1425d97eebd287624fed91e2b1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 86855,
+                "upload_time": "2017-05-07T13:52:35",
+                "url": "https://files.pythonhosted.org/packages/a6/29/bcbd41a916ad3faf517780a0af7d0254e8d6722ff6414723eedba4334531/beautifulsoup4-4.6.0-py2-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f6becf1889e5697734cc98798d2f0111",
+                    "sha256": "11a9a27b7d3bddc6d86f59fb76afb70e921a25ac2d6cc55b40d072bd68435a76"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.6.0-py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f6becf1889e5697734cc98798d2f0111",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 86786,
+                "upload_time": "2017-05-07T13:53:54",
+                "url": "https://files.pythonhosted.org/packages/9e/d4/10f46e5cfac773e22707237bfcd51bbffeaf0a576b0a847ec7ab15bd7ace/beautifulsoup4-4.6.0-py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c17714d0f91a23b708a592cb3c697728",
+                    "sha256": "808b6ac932dccb0a4126558f7dfdcf41710dd44a4ef497a0bb59a77f9f078e89"
+                },
+                "downloads": -1,
+                "filename": "beautifulsoup4-4.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c17714d0f91a23b708a592cb3c697728",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 160846,
+                "upload_time": "2017-05-07T13:52:33",
+                "url": "https://files.pythonhosted.org/packages/fa/8d/1d14391fdaed5abada4e0f63543fef49b8331a34ca60c88bd521bcf7f782/beautifulsoup4-4.6.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0ce31c1425d97eebd287624fed91e2b1",
+                "sha256": "7015e76bf32f1f574636c4288399a6de66ce08fb7b2457f628a8d70c0fbabb11"
+            },
+            "downloads": -1,
+            "filename": "beautifulsoup4-4.6.0-py2-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "0ce31c1425d97eebd287624fed91e2b1",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 86855,
+            "upload_time": "2017-05-07T13:52:35",
+            "url": "https://files.pythonhosted.org/packages/a6/29/bcbd41a916ad3faf517780a0af7d0254e8d6722ff6414723eedba4334531/beautifulsoup4-4.6.0-py2-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "f6becf1889e5697734cc98798d2f0111",
+                "sha256": "11a9a27b7d3bddc6d86f59fb76afb70e921a25ac2d6cc55b40d072bd68435a76"
+            },
+            "downloads": -1,
+            "filename": "beautifulsoup4-4.6.0-py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "f6becf1889e5697734cc98798d2f0111",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.5",
+            "size": 86786,
+            "upload_time": "2017-05-07T13:53:54",
+            "url": "https://files.pythonhosted.org/packages/9e/d4/10f46e5cfac773e22707237bfcd51bbffeaf0a576b0a847ec7ab15bd7ace/beautifulsoup4-4.6.0-py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "c17714d0f91a23b708a592cb3c697728",
+                "sha256": "808b6ac932dccb0a4126558f7dfdcf41710dd44a4ef497a0bb59a77f9f078e89"
+            },
+            "downloads": -1,
+            "filename": "beautifulsoup4-4.6.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "c17714d0f91a23b708a592cb3c697728",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 160846,
+            "upload_time": "2017-05-07T13:52:33",
+            "url": "https://files.pythonhosted.org/packages/fa/8d/1d14391fdaed5abada4e0f63543fef49b8331a34ca60c88bd521bcf7f782/beautifulsoup4-4.6.0.tar.gz"
+        }
+    ],
+    "package_name": "beautifulsoup4"
+}

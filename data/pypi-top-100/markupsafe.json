@@ -1,0 +1,388 @@
+{
+    "info": {
+        "author": "Armin Ronacher",
+        "author_email": "armin.ronacher@active-4.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Web Environment",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3",
+            "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Text Processing :: Markup :: HTML"
+        ],
+        "description": "MarkupSafe\n==========\n\nImplements a unicode subclass that supports HTML strings:\n\n.. code-block:: python\n\n    >>> from markupsafe import Markup, escape\n    >>> escape(\"<script>alert(document.cookie);</script>\")\n    Markup(u'&lt;script&gt;alert(document.cookie);&lt;/script&gt;')\n    >>> tmpl = Markup(\"<em>%s</em>\")\n    >>> tmpl % \"Peter > Lustig\"\n    Markup(u'<em>Peter &gt; Lustig</em>')\n\nIf you want to make an object unicode that is not yet unicode\nbut don't want to lose the taint information, you can use the\n``soft_unicode`` function.  (On Python 3 you can also use ``soft_str`` which\nis a different name for the same function).\n\n.. code-block:: python\n\n    >>> from markupsafe import soft_unicode\n    >>> soft_unicode(42)\n    u'42'\n    >>> soft_unicode(Markup('foo'))\n    Markup(u'foo')\n\nHTML Representations\n--------------------\n\nObjects can customize their HTML markup equivalent by overriding\nthe ``__html__`` function:\n\n.. code-block:: python\n\n    >>> class Foo(object):\n    ...  def __html__(self):\n    ...   return '<strong>Nice</strong>'\n    ...\n    >>> escape(Foo())\n    Markup(u'<strong>Nice</strong>')\n    >>> Markup(Foo())\n    Markup(u'<strong>Nice</strong>')\n\nSilent Escapes\n--------------\n\nSince MarkupSafe 0.10 there is now also a separate escape function\ncalled ``escape_silent`` that returns an empty string for ``None`` for\nconsistency with other systems that return empty strings for ``None``\nwhen escaping (for instance Pylons' webhelpers).\n\nIf you also want to use this for the escape method of the Markup\nobject, you can create your own subclass that does that:\n\n.. code-block:: python\n\n    from markupsafe import Markup, escape_silent as escape\n\n    class SilentMarkup(Markup):\n        __slots__ = ()\n\n        @classmethod\n        def escape(cls, s):\n            return cls(escape(s))\n\nNew-Style String Formatting\n---------------------------\n\nStarting with MarkupSafe 0.21 new style string formats from Python 2.6 and\n3.x are now fully supported.  Previously the escape behavior of those\nfunctions was spotty at best.  The new implementations operates under the\nfollowing algorithm:\n\n1.  if an object has an ``__html_format__`` method it is called as\n    replacement for ``__format__`` with the format specifier.  It either\n    has to return a string or markup object.\n2.  if an object has an ``__html__`` method it is called.\n3.  otherwise the default format system of Python kicks in and the result\n    is HTML escaped.\n\nHere is how you can implement your own formatting:\n\n.. code-block:: python\n\n    class User(object):\n\n        def __init__(self, id, username):\n            self.id = id\n            self.username = username\n\n        def __html_format__(self, format_spec):\n            if format_spec == 'link':\n                return Markup('<a href=\"/user/{0}\">{1}</a>').format(\n                    self.id,\n                    self.__html__(),\n                )\n            elif format_spec:\n                raise ValueError('Invalid format spec')\n            return self.__html__()\n\n        def __html__(self):\n            return Markup('<span class=user>{0}</span>').format(self.username)\n\nAnd to format that user:\n\n.. code-block:: python\n\n    >>> user = User(1, 'foo')\n    >>> Markup('<p>User: {0:link}').format(user)\n    Markup(u'<p>User: <a href=\"/user/1\"><span class=user>foo</span></a>')\n\nMarkupsafe supports Python 2.6, 2.7 and Python 3.3 and higher.",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://github.com/pallets/markupsafe",
+        "keywords": null,
+        "license": "BSD",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "MarkupSafe",
+        "package_url": "https://pypi.org/project/MarkupSafe/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/MarkupSafe/",
+        "release_url": "https://pypi.org/project/MarkupSafe/1.0/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Implements a XML/HTML/XHTML Markup safe string for Python",
+        "version": "1.0"
+    },
+    "last_serial": 2689066,
+    "releases": {
+        "0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "48d445941c16d6aa55caf8e148fc0911",
+                    "sha256": "f19442168c44db14b7093d1f93444233b05271dd76b4bb96ff8007ef83ac8855"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "48d445941c16d6aa55caf8e148fc0911",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10911,
+                "upload_time": "2010-09-07T17:47:12",
+                "url": "https://files.pythonhosted.org/packages/ee/51/df4a007a19f3de1b733adac77da11fa45f1ec5089549a7cc2d67195bb2c1/MarkupSafe-0.11.tar.gz"
+            }
+        ],
+        "0.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "edd4b6950f6d4ddc6e23fa322f8f0f53",
+                    "sha256": "2670f759d00b3df50625b493b7bd20f808024dab278eecc2c8b890b4e8083757"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "edd4b6950f6d4ddc6e23fa322f8f0f53",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10939,
+                "upload_time": "2011-02-17T23:15:13",
+                "url": "https://files.pythonhosted.org/packages/00/00/d268f88c561a92e35e1df96e68dbec2210926366c79fd426b1d9ee99b020/MarkupSafe-0.12.tar.gz"
+            }
+        ],
+        "0.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f44b8f4bba98b3e66884158f97585829",
+                    "sha256": "b3dc475d5b4ccb1f3d92c122685aa9b5476decbdc3db7bf90c5f892f21e0d94a"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f44b8f4bba98b3e66884158f97585829",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11174,
+                "upload_time": "2011-07-20T09:52:05",
+                "url": "https://files.pythonhosted.org/packages/61/9d/195c0e2e9efcba7b5f2cad9d01ea7311e20358a7d1c8a928fb481eecad09/MarkupSafe-0.13.tar.gz"
+            }
+        ],
+        "0.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "68c6ea6df002649218d24cf490a8ca82",
+                    "sha256": "e5162efaa77c1764651f01baec7cbf7f663575930f74007394798d1d796cebeb"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "68c6ea6df002649218d24cf490a8ca82",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11269,
+                "upload_time": "2011-07-20T10:35:20",
+                "url": "https://files.pythonhosted.org/packages/cf/72/6ad21b64f007dba3d211a973f37e3bf0bffae88c4efb868999fd2c94497a/MarkupSafe-0.14.tar.gz"
+            }
+        ],
+        "0.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4e7c4d965fe5e033fa2d7bb7746bb186",
+                    "sha256": "339ec04d20ad9cdccbfe9f38dce6182cc504ce789e5d0f9647eaa752f0f95300"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.15.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4e7c4d965fe5e033fa2d7bb7746bb186",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11265,
+                "upload_time": "2011-07-20T10:58:13",
+                "url": "https://files.pythonhosted.org/packages/00/52/33fd9769edf01ffab9e3fd321333fe4d9f7ac9cb0b17ce9524abcb64e089/MarkupSafe-0.15.tar.gz"
+            }
+        ],
+        "0.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fe88012f7fe75252efd26cd25a100851",
+                    "sha256": "abb017f327ffcf0bd012cf9fa98700aa9d079d4e192c81c9ae01f9d795748f8d"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.16.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fe88012f7fe75252efd26cd25a100851",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11530,
+                "upload_time": "2013-05-20T18:13:20",
+                "url": "https://files.pythonhosted.org/packages/44/ee/37bd0844418acd5fb9c588aae835f38b9b7c4cd0c9b95c78c8ebb74bb65a/MarkupSafe-0.16.tar.gz"
+            }
+        ],
+        "0.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61d5edc130e3242cfaff9fd9fdefde8f",
+                    "sha256": "bdda8df9395253d06af11ce33778aed4d5f297cb1d8cb380ab955c1a04bbb9d4"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.17.tar.gz",
+                "has_sig": false,
+                "md5_digest": "61d5edc130e3242cfaff9fd9fdefde8f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11696,
+                "upload_time": "2013-05-21T16:40:14",
+                "url": "https://files.pythonhosted.org/packages/04/d0/21c43bb0a9c9b31c8bfeb3676e12ec0aae2b71632497b6bd6505c980a38a/MarkupSafe-0.17.tar.gz"
+            }
+        ],
+        "0.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f8d252fd05371e51dec2fe9a36890687",
+                    "sha256": "b7d5d688bdd345bfa897777d297756688cf02e1b3742c56885e2e5c2b996ff82"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.18.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f8d252fd05371e51dec2fe9a36890687",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11748,
+                "upload_time": "2013-05-22T01:15:43",
+                "url": "https://files.pythonhosted.org/packages/98/cf/197c3b0f73224b84eb419a967f87565bcc0b0c1147012397e6bd2d45e253/MarkupSafe-0.18.tar.gz"
+            }
+        ],
+        "0.19": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ccb3f746c807c5500850987006854a6d",
+                    "sha256": "62fcc5d641df8b5ad271ebbd6b77a19cd92eceba1e1a990de4e96c867789f037"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.19.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ccb3f746c807c5500850987006854a6d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11807,
+                "upload_time": "2014-03-06T16:52:31",
+                "url": "https://files.pythonhosted.org/packages/8e/90/da092a12fb96e0c4cacc279d1f92819ae82bfa291e0a03afe8059518e91a/MarkupSafe-0.19.tar.gz"
+            }
+        ],
+        "0.20": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7da066d9cb191a70aa85d0a3d43565d1",
+                    "sha256": "f6cf3bd233f9ea6147b21c7c02cac24e5363570ce4fd6be11dab9f499ed6a7d8"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.20.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7da066d9cb191a70aa85d0a3d43565d1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11962,
+                "upload_time": "2014-04-17T09:06:04",
+                "url": "https://files.pythonhosted.org/packages/6f/c3/7adab2342dc7f14d32943505c9bd163d93a16fa117b8fee82e48f3529fb5/MarkupSafe-0.20.tar.gz"
+            }
+        ],
+        "0.21": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fde838d9337fa51744283f46a1db2e74",
+                    "sha256": "c6465cd6ed2b96509ef0100e7fff8718ed52c2affab1860ed5a9b67f604dd59a"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.21.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fde838d9337fa51744283f46a1db2e74",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13091,
+                "upload_time": "2014-04-17T09:50:55",
+                "url": "https://files.pythonhosted.org/packages/c6/33/963f57460372f8401e1f9aa32c8ed8f07a5cae0f11024f5ff1d4cb3576c8/MarkupSafe-0.21.tar.gz"
+            }
+        ],
+        "0.22": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb3ec29fd5361add24cfd0c6e2953b3e",
+                    "sha256": "7642852b6d1e55c9e12e00a552c0b8943880f2172e55141ccb41eb5f8675dfa5"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.22.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cb3ec29fd5361add24cfd0c6e2953b3e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13413,
+                "upload_time": "2014-05-08T14:57:37",
+                "url": "https://files.pythonhosted.org/packages/58/18/646cbd99909a0c86eb7b9c0277b88cb54f3e2619f6115f48199a4accde97/MarkupSafe-0.22.tar.gz"
+            }
+        ],
+        "0.23": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5ab3deee4c37cd6a922fb81e730da6e",
+                    "sha256": "a4ec1aff59b95a14b45eb2e23761a0179e98319da5a7eb76b56ea8cdc7b871c3"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.23.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f5ab3deee4c37cd6a922fb81e730da6e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13416,
+                "upload_time": "2014-05-08T14:58:53",
+                "url": "https://files.pythonhosted.org/packages/c0/41/bae1254e0396c0cc8cf1751cb7d9afc90a602353695af5952530482c963f/MarkupSafe-0.23.tar.gz"
+            }
+        ],
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "10a7c6bf81f91f280ba9e76e32e01c94",
+                    "sha256": "9d84526bcfb6435d30cdb3531e3c43170d77107531a6d695c12a9c126ac09766"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "10a7c6bf81f91f280ba9e76e32e01c94",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10381,
+                "upload_time": "2010-06-22T19:55:49",
+                "url": "https://files.pythonhosted.org/packages/be/30/7dfaf5f61e9648a9bb97ecd0099da2546ea78fe93cb9c777030c6d056c0d/MarkupSafe-0.9.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7f469f664b565b440f099997255e6d3c",
+                    "sha256": "bd4a2d122def99ed5cc300bc67249aef1d714f95ad748a0face6d0a89c42e028"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7f469f664b565b440f099997255e6d3c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10422,
+                "upload_time": "2010-06-22T20:12:52",
+                "url": "https://files.pythonhosted.org/packages/3b/45/dfad433343922655477760d506b058f96a783e8c0ada7b8d0602ff2beace/MarkupSafe-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "69b72d1afdd9e808f9c1ef65f819c7a6",
+                    "sha256": "d2a1980ea5bae80a999dad6aafe1ad2f0440522630caeecb84ffe061c8054342"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "69b72d1afdd9e808f9c1ef65f819c7a6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10461,
+                "upload_time": "2010-06-22T22:24:14",
+                "url": "https://files.pythonhosted.org/packages/36/83/400b5f58bfa88f96bc68ccd963990c80549a2825d0777bd838f03d8f0b42/MarkupSafe-0.9.2.tar.gz"
+            }
+        ],
+        "0.9.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "99dccbeb83302f6b593d382098b3b43a",
+                    "sha256": "6e24a888624403b67f4331050c58d1929ab5c2300f3f55260f39580e3a482bbf"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-0.9.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "99dccbeb83302f6b593d382098b3b43a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10506,
+                "upload_time": "2010-08-11T10:19:59",
+                "url": "https://files.pythonhosted.org/packages/f1/a7/39b74c3c7b46531842d2a9a55b7d6bf5b44851786d131d0fa76dbb4abf44/MarkupSafe-0.9.3.tar.gz"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2fcedc9284d50e577b5192e8e3578355",
+                    "sha256": "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"
+                },
+                "downloads": -1,
+                "filename": "MarkupSafe-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2fcedc9284d50e577b5192e8e3578355",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14356,
+                "upload_time": "2017-03-07T15:32:13",
+                "url": "https://files.pythonhosted.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "2fcedc9284d50e577b5192e8e3578355",
+                "sha256": "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"
+            },
+            "downloads": -1,
+            "filename": "MarkupSafe-1.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "2fcedc9284d50e577b5192e8e3578355",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 14356,
+            "upload_time": "2017-03-07T15:32:13",
+            "url": "https://files.pythonhosted.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz"
+        }
+    ],
+    "package_name": "markupsafe"
+}

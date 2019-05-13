@@ -1,0 +1,1644 @@
+{
+    "info": {
+        "author": "Google Inc.",
+        "author_email": "jonwayne+oauth2client@google.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 7 - Inactive",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Apache Software License",
+            "Operating System :: POSIX",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Topic :: Internet :: WWW/HTTP"
+        ],
+        "description": "oauth2client is a client library for OAuth 2.0.\n\nNote: oauth2client is now deprecated. No more features will be added to the\n    libraries and the core team is turning down support. We recommend you use\n    `google-auth <https://google-auth.readthedocs.io>`__ and\n    `oauthlib <http://oauthlib.readthedocs.io/>`__.\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://github.com/google/oauth2client/",
+        "keywords": "google oauth 2.0 http client",
+        "license": "Apache 2.0",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "oauth2client",
+        "package_url": "https://pypi.org/project/oauth2client/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/oauth2client/",
+        "release_url": "https://pypi.org/project/oauth2client/4.1.2/",
+        "requires_dist": [
+            "httplib2 (>=0.9.1)",
+            "pyasn1 (>=0.1.7)",
+            "pyasn1-modules (>=0.0.5)",
+            "rsa (>=3.1.4)",
+            "six (>=1.6.1)"
+        ],
+        "requires_python": "",
+        "summary": "OAuth 2.0 client library",
+        "version": "4.1.2"
+    },
+    "last_serial": 2988624,
+    "releases": {
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12cc539d64a197e7feb4a6ef7c6fd476",
+                    "sha256": "9122e21921eabe3d33da0ed096f49ce347457e9b293000a2859c850e9417bbba"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "12cc539d64a197e7feb4a6ef7c6fd476",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29963,
+                "upload_time": "2012-09-12T16:26:45",
+                "url": "https://files.pythonhosted.org/packages/da/24/0268587842ce33674719c59ccdf67e49b143a0600380210aa531a5d39ddc/oauth2client-1.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75889fcfa529a8efead933007f02deca",
+                    "sha256": "6db38cbb0f3d75b6a0c1d2db486d29f1aeb3c1d39b50d29e1d79fbcb283be0bb"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0.zip",
+                "has_sig": false,
+                "md5_digest": "75889fcfa529a8efead933007f02deca",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42684,
+                "upload_time": "2012-09-12T16:26:48",
+                "url": "https://files.pythonhosted.org/packages/9b/a6/4543c3c9ccc0af345a1535055c6aac20cdd635dbab87167eee92120094e2/oauth2client-1.0.zip"
+            }
+        ],
+        "1.0beta2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "53fa4e9ac2a78491c040ea61315dcd8d",
+                    "sha256": "a2826f2eaf414123f0a98373e0feda8cc587057326cf8de4ea1af3cb16785087"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "53fa4e9ac2a78491c040ea61315dcd8d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 386358,
+                "upload_time": "2011-06-29T17:14:11",
+                "url": "https://files.pythonhosted.org/packages/d7/1d/c9cca65be1c08d4273df0b94690224fa8bc71db16a30f292b19b2140cfda/oauth2client-1.0beta2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e0b20ed2059b7f9167aa4b0e39bc02d6",
+                    "sha256": "6dfaddc5b043c7e320addbbed889f456ce872b5ac7c20fa3145a101a3d68f469"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta2.zip",
+                "has_sig": false,
+                "md5_digest": "e0b20ed2059b7f9167aa4b0e39bc02d6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 495208,
+                "upload_time": "2011-06-29T17:14:12",
+                "url": "https://files.pythonhosted.org/packages/06/58/9ce4920bd36d1d24610972632abed100ae5bbad88d9b7335a2aedcf274db/oauth2client-1.0beta2.zip"
+            }
+        ],
+        "1.0beta3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "70f79ac92aea00b25a88306664be9c1a",
+                    "sha256": "e5e5ad9a891c2b95b2b20d2e367c19710c49c43fd7dba2144c5a9ad63b5c78bc"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "70f79ac92aea00b25a88306664be9c1a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 416972,
+                "upload_time": "2011-09-15T16:27:04",
+                "url": "https://files.pythonhosted.org/packages/45/d3/a44a6efdc12bd2341875d760137f710a853ffaa4f23f0af0090f8149f3cf/oauth2client-1.0beta3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c8a2db9caf6362cc1f74cbfdf8f847b4",
+                    "sha256": "6a5485815021ef5f20bd4d06ae2aec56c644529e5a412e6a4ce7a02c069ee3fb"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta3.zip",
+                "has_sig": false,
+                "md5_digest": "c8a2db9caf6362cc1f74cbfdf8f847b4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 533904,
+                "upload_time": "2011-09-15T16:27:05",
+                "url": "https://files.pythonhosted.org/packages/56/5e/1cad911ca5e3ac9e2486c05371976223f23030e775cae9f07bd91ee3316a/oauth2client-1.0beta3.zip"
+            }
+        ],
+        "1.0beta4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8c1f5d7349b984a3ddcb246f481016ba",
+                    "sha256": "225023092bf4a08c8278642362891d48aac55ca9d7a822c01a870289b442e497"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8c1f5d7349b984a3ddcb246f481016ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 417751,
+                "upload_time": "2011-09-16T00:20:06",
+                "url": "https://files.pythonhosted.org/packages/c1/1c/ff8163b6d949ec82d46440062d64f8a23f3e53968dc41d468e752c70090c/oauth2client-1.0beta4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e839ff8158c02169df87d2e900f8e473",
+                    "sha256": "8cd64560ff40a092a96deec4af65fd6691c2ef7d53c1db206e53e172a31953d1"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta4.zip",
+                "has_sig": false,
+                "md5_digest": "e839ff8158c02169df87d2e900f8e473",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 534618,
+                "upload_time": "2011-09-16T00:20:08",
+                "url": "https://files.pythonhosted.org/packages/66/f0/242c549927ea8da9746b5fb7b8617df84a47b817134e422993a27aea2286/oauth2client-1.0beta4.zip"
+            }
+        ],
+        "1.0beta5prerelease": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b57f241b2b0629efe7b9a438aff718c4",
+                    "sha256": "2878a0e47f92d13100113bc15ad78c016f7df2f0a5d4a397341cc08f6e1adba7"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta5prerelease.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b57f241b2b0629efe7b9a438aff718c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21191,
+                "upload_time": "2011-10-28T20:42:12",
+                "url": "https://files.pythonhosted.org/packages/e2/c1/b7bdd11c4390bc6476a8c70cc334c8e564f4f523150e47d1865de332d182/oauth2client-1.0beta5prerelease.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a1ee9ca990546559aebc3b5acb0f316",
+                    "sha256": "3b33ecad03201222f4113c6c607f509745b8354becc7e6a37f09c73c532f6927"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta5prerelease.zip",
+                "has_sig": false,
+                "md5_digest": "0a1ee9ca990546559aebc3b5acb0f316",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39308,
+                "upload_time": "2011-10-28T20:42:13",
+                "url": "https://files.pythonhosted.org/packages/a2/b4/cc6efd6639d386969966a7eb310dcaffaa5200b4e170925e1819393dc4c2/oauth2client-1.0beta5prerelease.zip"
+            }
+        ],
+        "1.0beta6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3658a17860787c7a1d6e628e56066261",
+                    "sha256": "0b491822aee2e4981efc28c8753ef8569db7b7ad7f7eb8b87b238c42163ab380"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3658a17860787c7a1d6e628e56066261",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21175,
+                "upload_time": "2011-10-28T20:42:41",
+                "url": "https://files.pythonhosted.org/packages/d3/0c/440cf52bf2cb48522fc4d64a2ba214b60fb87125628f8ffa4d28fef1f264/oauth2client-1.0beta6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b161d6bbec0b23393accb286c249b0a6",
+                    "sha256": "5d34253dd44dedab85ada1dc00145b2e4f2dee01aea27d019deb8f98299f0db8"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta6.zip",
+                "has_sig": false,
+                "md5_digest": "b161d6bbec0b23393accb286c249b0a6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 38568,
+                "upload_time": "2011-10-28T20:42:42",
+                "url": "https://files.pythonhosted.org/packages/52/57/68e28cabb8fd2d3ece87770863a3053ff074b1d6b99bd90531fe20fd2b34/oauth2client-1.0beta6.zip"
+            }
+        ],
+        "1.0beta7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f9c9337b78189155139ed024791290c0",
+                    "sha256": "1a97782a1e6bcf16c56837ecd2a0d054540de49c02f69f5f7691a46cb0394379"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f9c9337b78189155139ed024791290c0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 22988,
+                "upload_time": "2011-12-15T15:37:18",
+                "url": "https://files.pythonhosted.org/packages/38/d2/bede456eaa02261581bbcb35f78c45d811da82fc7f47922ff6e1749d4315/oauth2client-1.0beta7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f6fb8e82dc0adcfd72ca4efc7dfe79e",
+                    "sha256": "44d8b563ab27789b09adfb68d9f879babbfceffead19de09b4c91ed187bc9dae"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta7.zip",
+                "has_sig": false,
+                "md5_digest": "5f6fb8e82dc0adcfd72ca4efc7dfe79e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35733,
+                "upload_time": "2011-12-15T15:37:31",
+                "url": "https://files.pythonhosted.org/packages/e3/a5/1428b9624f288857b092bfd53e7e00ff560302a714dc581867aececb21b7/oauth2client-1.0beta7.zip"
+            }
+        ],
+        "1.0beta8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df056616b9ec2f08ed783794fc077294",
+                    "sha256": "a517f7902fb352070324c0ca755d4e73af376f10259d46c2a0c78fd9f3313c9d"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "df056616b9ec2f08ed783794fc077294",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23948,
+                "upload_time": "2012-03-02T22:42:47",
+                "url": "https://files.pythonhosted.org/packages/96/e2/be115252880767dda0b283b5507c1b35e11bfad3896360c3e1666d04c605/oauth2client-1.0beta8.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a4ce5e8201a81de4e5c359e39a47bdf7",
+                    "sha256": "552028612f1a37cf1fdc7aa4a6a023c8798ac3e8564d82c22d0d3eccfd644b47"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0beta8.zip",
+                "has_sig": false,
+                "md5_digest": "a4ce5e8201a81de4e5c359e39a47bdf7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36682,
+                "upload_time": "2012-03-02T22:42:47",
+                "url": "https://files.pythonhosted.org/packages/8d/7a/dfef8641d478ed7a156ffd525adcab5a5b2002c7fd610bd96365f0b7f03a/oauth2client-1.0beta8.zip"
+            }
+        ],
+        "1.0c1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "39b01621702870a9c9b59ce338e60261",
+                    "sha256": "9cf8fd1fbfd3636daa964c66ab58d812515f58843c5d61b5d9accb769c5c6255"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0c1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "39b01621702870a9c9b59ce338e60261",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26664,
+                "upload_time": "2012-06-15T22:22:18",
+                "url": "https://files.pythonhosted.org/packages/a1/9f/68ceea7435420472c26f46e8723935667b4c673b6ea74d3d820530d5fa1e/oauth2client-1.0c1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "db00b4c536ca1182dbe6b797c0099485",
+                    "sha256": "3916ce83d20ed58432daf9dc0de866c238d1d2e2f5fc8c91755b9908c3b07869"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0c1.zip",
+                "has_sig": false,
+                "md5_digest": "db00b4c536ca1182dbe6b797c0099485",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39215,
+                "upload_time": "2012-06-15T22:22:19",
+                "url": "https://files.pythonhosted.org/packages/4e/05/ecf070e9483341177f1edb9bce72c6b252e2ff338433e5a80dea2c9c5215/oauth2client-1.0c1.zip"
+            }
+        ],
+        "1.0c2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "faaaddfcdbc74bc83d3f406f7d1211ec",
+                    "sha256": "e54ebfce5bce743da80b37cc0fa33199650137a944d639f2a6189bd602f063ac"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0c2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "faaaddfcdbc74bc83d3f406f7d1211ec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24380,
+                "upload_time": "2012-06-22T21:35:37",
+                "url": "https://files.pythonhosted.org/packages/3e/74/64ccc2d036c12996b5cd5bb40ff42193270f90d3c4521576e791381dd0c7/oauth2client-1.0c2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "44606498da5a8dd80cb7b6e62a3cefc6",
+                    "sha256": "646f895c43b9dbc73bde33f9c6e0a9bbb2b1bb89a7a256ba497ceded5f205848"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0c2.zip",
+                "has_sig": false,
+                "md5_digest": "44606498da5a8dd80cb7b6e62a3cefc6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33443,
+                "upload_time": "2012-06-22T21:35:38",
+                "url": "https://files.pythonhosted.org/packages/70/6b/1bd13bf4668926ed20018bcbd3bd688c9f694cb18d6ac771808bef661931/oauth2client-1.0c2.zip"
+            }
+        ],
+        "1.0c3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0d92612b66adf6b99a67699acf6cd84",
+                    "sha256": "51a019677aeec33258de599231020fd1a9634c7fccacb8816d6728b1f2455ef6"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0c3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d0d92612b66adf6b99a67699acf6cd84",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29951,
+                "upload_time": "2012-08-29T16:58:18",
+                "url": "https://files.pythonhosted.org/packages/7d/d1/acbd2faacfb379c600bba373374a946680fde23731500caef26071777690/oauth2client-1.0c3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e9342530f8f0745328c1b25c6d9bfa4b",
+                    "sha256": "3b28a155b6383d522130295c1fb1bd3b882b59781f66dd3ce4c76266180e4f42"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.0c3.zip",
+                "has_sig": false,
+                "md5_digest": "e9342530f8f0745328c1b25c6d9bfa4b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42788,
+                "upload_time": "2012-08-29T16:58:20",
+                "url": "https://files.pythonhosted.org/packages/49/69/cec6cf4c0da5da70b4a798c33fb23a218b03d791ccaa868c596fdd0eb554/oauth2client-1.0c3.zip"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab4c78f425bd24fd58b0e2b7f6d27ca2",
+                    "sha256": "8505bfbe87f45a511ab256896da244eed560acf7d9372a6f7036cd494476c662"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ab4c78f425bd24fd58b0e2b7f6d27ca2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34671,
+                "upload_time": "2013-03-07T15:38:33",
+                "url": "https://files.pythonhosted.org/packages/07/39/3fdb18427271beeb6c00d2a9d7f9ef343afdc204841529b9de6041922b87/oauth2client-1.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e45ee0f0a5ff243c6048d15ac9efa419",
+                    "sha256": "c0c982a5293a1ab27265f841bfc148bcfbdd6c216c4c43b3852a9a9d2156ca05"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.1.zip",
+                "has_sig": false,
+                "md5_digest": "e45ee0f0a5ff243c6048d15ac9efa419",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47298,
+                "upload_time": "2013-03-07T15:38:38",
+                "url": "https://files.pythonhosted.org/packages/73/89/f7f23662f9cd5db9e7adda207c6bb1d8de614b5c23aa8e2c17ba92ff9239/oauth2client-1.1.zip"
+            }
+        ],
+        "1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b47d22dc4429cb90dcb22f2fc27dcb73",
+                    "sha256": "7ed84c327d61284bb32158ef1b3723106861efd64a8cc07e918a1db33d88fdbd"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b47d22dc4429cb90dcb22f2fc27dcb73",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 38097,
+                "upload_time": "2013-08-07T16:18:21",
+                "url": "https://files.pythonhosted.org/packages/8c/56/de348210c5244f89d7872294f82d4e1d7bfcec7ccc91df7704b3d6b14c1b/oauth2client-1.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf2b49ec6a6e9526b833a0f6959ce8dc",
+                    "sha256": "187664c64f312cf3e42b07d32f0ccce938c12563b5b91153d29cf0922a532ab0"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.2.zip",
+                "has_sig": false,
+                "md5_digest": "bf2b49ec6a6e9526b833a0f6959ce8dc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 52870,
+                "upload_time": "2013-08-07T16:18:23",
+                "url": "https://files.pythonhosted.org/packages/21/3f/ffd25df191e157e8da8892c179555dcb8ed66e57afe6c4f6d9a969fcea33/oauth2client-1.2.zip"
+            }
+        ],
+        "1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b841038fca54207762ca1bed990e0a57",
+                    "sha256": "b8f482e2c6994150b2e21eaffe48b5fa441c3fcc237adad7e8c71108181082f1"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "b841038fca54207762ca1bed990e0a57",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 128705,
+                "upload_time": "2014-10-02T21:47:02",
+                "url": "https://files.pythonhosted.org/packages/80/47/6d7e15b88f6c44e2856fc53fc13b03b718ce9b2248bfcdd28d37edc04063/oauth2client-1.3-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d0b6d10caa26123150b419664f8dcfb",
+                    "sha256": "668ffe5a9a6df1f5fca50a851da9ce97286dc10f190b05e84763a8cd9716141b"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7d0b6d10caa26123150b419664f8dcfb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43852,
+                "upload_time": "2014-10-02T21:46:57",
+                "url": "https://files.pythonhosted.org/packages/de/0b/eccc56a40967d06932b2861aa383aa003e3bf229b50f3c39f11309d4172a/oauth2client-1.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "31f8c3352c3b775bd2694abaddf6892b",
+                    "sha256": "565783ebe98384cca5be250652d97d8c92b6f6b80d67e388728191fa25cea4b0"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3.zip",
+                "has_sig": false,
+                "md5_digest": "31f8c3352c3b775bd2694abaddf6892b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 58593,
+                "upload_time": "2014-10-02T21:46:59",
+                "url": "https://files.pythonhosted.org/packages/33/b5/e4b9283b188664dcebe704f50f468dda42d6a893d275d6ba52078af2e8c9/oauth2client-1.3.zip"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc1227a7d514fb4ba3b8bd2b32c56914",
+                    "sha256": "bf8394579e7576b6cc8f8836ac26b02be5ae1c57f5b5266d691e04524e55e861"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3.1-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "cc1227a7d514fb4ba3b8bd2b32c56914",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 128790,
+                "upload_time": "2014-10-27T17:27:06",
+                "url": "https://files.pythonhosted.org/packages/7b/a1/71d074e8767c3b9e67735c0f75c2244ce4cdd9977e0e7f001d79e73faef2/oauth2client-1.3.1-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14939e8c6980372199c58460d3100a75",
+                    "sha256": "2b63493d2a1904400e004c7a33b74dcde945faed45022e1839f58f1c902310bc"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "14939e8c6980372199c58460d3100a75",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43903,
+                "upload_time": "2014-10-27T17:27:00",
+                "url": "https://files.pythonhosted.org/packages/0f/8a/0cd1784dc409304589b327f034c2d43ff330610871deb18a58291adedfb3/oauth2client-1.3.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f6b128f3f83a4e2250ead2f1f2116b3a",
+                    "sha256": "db2925aca5f0ae05f58c37239deb015093858b115bbd917a39ee53d881e371bf"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3.1.zip",
+                "has_sig": false,
+                "md5_digest": "f6b128f3f83a4e2250ead2f1f2116b3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 58696,
+                "upload_time": "2014-10-27T17:27:04",
+                "url": "https://files.pythonhosted.org/packages/55/9c/d9bc01bede04aeb7c6c3e115b6bdd3d0f00908e453240e62bc2a7e38e4b8/oauth2client-1.3.1.zip"
+            }
+        ],
+        "1.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5921e0e6d803bdcba5acc8aa9c85b101",
+                    "sha256": "cf04484d7847d1b9ec5160648c8feafd498c1b81a3a50feb2d719f0f0d32ee6d"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3.2-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "5921e0e6d803bdcba5acc8aa9c85b101",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 128806,
+                "upload_time": "2014-10-31T20:26:10",
+                "url": "https://files.pythonhosted.org/packages/56/b8/8f58eb3ed88cbb3c1ab1b4b7eb32bb6f694eb3fb4565df0fb37fbcf09fd8/oauth2client-1.3.2-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "542ff5c5fcb2b710cf12f8f9bf712cef",
+                    "sha256": "f4c8578be69d485fbffd78f9b93df49d24b184f0acbeff2a5b6c7a9ac4a77290"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "542ff5c5fcb2b710cf12f8f9bf712cef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43907,
+                "upload_time": "2014-10-31T20:26:01",
+                "url": "https://files.pythonhosted.org/packages/6b/1b/c52e619389ff5fba450aadf8af1c41110655844a2246c34427f70bf65624/oauth2client-1.3.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f613e45be4fbf35fb41758e043a72063",
+                    "sha256": "332868c611fbb20da29aa031002cf43a44c9169eb0fe187fcfc247f36fdaf132"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.3.2.zip",
+                "has_sig": false,
+                "md5_digest": "f613e45be4fbf35fb41758e043a72063",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 58704,
+                "upload_time": "2014-10-31T20:26:04",
+                "url": "https://files.pythonhosted.org/packages/7a/69/c18b2ab349b22e45b812fd5c80015f6b747bca595bdae79d523be9a19dc1/oauth2client-1.3.2.zip"
+            }
+        ],
+        "1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14abbeeb81182d11b2b6755e30ceb2a9",
+                    "sha256": "1f0b73a06317868e06dbe54860dfc1bb25bdd98ab4c2f0a4de168e208b851194"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "14abbeeb81182d11b2b6755e30ceb2a9",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 130418,
+                "upload_time": "2014-11-13T20:52:30",
+                "url": "https://files.pythonhosted.org/packages/f9/53/cec92c129522831ceb9d540cefc5345d99a5bb88f4bacb9103d2fec3f151/oauth2client-1.4-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "665ab47196cf80f7de5bc830bc2ab3c0",
+                    "sha256": "0622f4ee7dd6163423a907f074af1dee33ab3297324abc98acb2eb5f560bb779"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "665ab47196cf80f7de5bc830bc2ab3c0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44343,
+                "upload_time": "2014-11-13T20:52:24",
+                "url": "https://files.pythonhosted.org/packages/5e/0c/7589ec08550b59db4eac13fa32b16608bd0b8fe3b84fc9ee6f463091a44f/oauth2client-1.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "916f3381832beef54d84eeb3ae20df8b",
+                    "sha256": "0bb971d8188300148acc0ce7d004d316af46fc98ac3064b6fcc7d3219955ec63"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.zip",
+                "has_sig": false,
+                "md5_digest": "916f3381832beef54d84eeb3ae20df8b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 59117,
+                "upload_time": "2014-11-13T20:52:27",
+                "url": "https://files.pythonhosted.org/packages/bc/2e/5080ba4d8faa54f59249873d880120a4cce59c1a13d8c2ed3b4350500803/oauth2client-1.4.zip"
+            }
+        ],
+        "1.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f1e2e66878f375c8257f69f00e115ff9",
+                    "sha256": "f2838bcadfd5b78157cc78dfb486f3cb73a9ea6e6e5cdfa0a1bc46b3d4cdf697"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.1-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "f1e2e66878f375c8257f69f00e115ff9",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 130420,
+                "upload_time": "2014-11-13T22:08:29",
+                "url": "https://files.pythonhosted.org/packages/15/f7/51ba5eaa529f9b286bd4a8a9976dc4e140a19c6caedc632265ccc8e55bfe/oauth2client-1.4.1-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e099613a259afdab095e1b52941c0354",
+                    "sha256": "5e1f6122d400999db678e096b6a80eab812aee46fd1e987de3a29bc4d34eed47"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e099613a259afdab095e1b52941c0354",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44354,
+                "upload_time": "2014-11-13T22:08:22",
+                "url": "https://files.pythonhosted.org/packages/c0/b5/41afbc4c1fa50f66e745d32f99409986391e36574a2684915fcde3025b89/oauth2client-1.4.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ac8f816c9476be950310911b6a0b3134",
+                    "sha256": "ac694615e1283291211fd03d44b0c19fe54441ea6303c8ad925841b27758e16e"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.1.zip",
+                "has_sig": false,
+                "md5_digest": "ac8f816c9476be950310911b6a0b3134",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 59225,
+                "upload_time": "2014-11-13T22:08:26",
+                "url": "https://files.pythonhosted.org/packages/9c/ef/74bd77689f2eb7e5d1a7a1a2dc4be9ff2670b84eeaabba466c5a421f81c6/oauth2client-1.4.1.zip"
+            }
+        ],
+        "1.4.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f79949ac07229e0cb6c141c42447c150",
+                    "sha256": "4286cf4be9fc4b426695028e48cade3ad1001653a6c0563a500a47427c90f158"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.10-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "f79949ac07229e0cb6c141c42447c150",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 135255,
+                "upload_time": "2015-05-18T17:59:22",
+                "url": "https://files.pythonhosted.org/packages/70/88/2ab08b8ca43e5ad9b7a782bd061357cd6e40ad3210a80de6a453d645ac26/oauth2client-1.4.10-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6ab94bb627eee06b8a43306adad40693",
+                    "sha256": "d04cdf9500ae52199d4b06ef6d069166da653a456a571f21cec50f8a9eda8857"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6ab94bb627eee06b8a43306adad40693",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 48792,
+                "upload_time": "2015-05-18T17:59:11",
+                "url": "https://files.pythonhosted.org/packages/a0/f7/0a46d158dc0fb3448f430fcd5611b2adbaae3539b9abde6230918a2ab86d/oauth2client-1.4.10.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84c40ccafa1d5ea7ab0c9db86c0c25e2",
+                    "sha256": "7de2cb1df620c4bd5679f1bdd47b2d76d9afba29c19d021e78bc35c4028e3830"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.10.zip",
+                "has_sig": false,
+                "md5_digest": "84c40ccafa1d5ea7ab0c9db86c0c25e2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65506,
+                "upload_time": "2015-05-18T17:59:15",
+                "url": "https://files.pythonhosted.org/packages/c2/9f/f95a01f69ee158b9f1007028ee1bceb7216708881245e5c234ff61a64937/oauth2client-1.4.10.zip"
+            }
+        ],
+        "1.4.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52d99fc1bb3e1c8978ab93ed26390071",
+                    "sha256": "5d2d8bf185ad0c733bd2a008a4d8e4026cdf1b3c4b649e3f15ad771ca7b7a6f7"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.11-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "52d99fc1bb3e1c8978ab93ed26390071",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 136040,
+                "upload_time": "2015-05-19T21:56:20",
+                "url": "https://files.pythonhosted.org/packages/3b/ff/dc7b6d478dfb09243618cdf98356929327cd35f36ff1dcd5092d6d9d1744/oauth2client-1.4.11-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ace6b6e4c9cd17fd611d9984d6746c7b",
+                    "sha256": "dcc9bfaa544791206ca86a2f311872f0c4c1e81b068775c3da16abe72a506873"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ace6b6e4c9cd17fd611d9984d6746c7b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49136,
+                "upload_time": "2015-05-19T21:56:11",
+                "url": "https://files.pythonhosted.org/packages/b0/5c/f8a18e7a70556c6643d0b81b95052a60679a33332ab05565f00aef80af25/oauth2client-1.4.11.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "39bf888c3c858835a2cd2605b1924a45",
+                    "sha256": "89d37efb194becb633b3e5ad62222140f3e7ed57ddbd7f989d5aeb54160bd6d6"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.11.zip",
+                "has_sig": false,
+                "md5_digest": "39bf888c3c858835a2cd2605b1924a45",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65858,
+                "upload_time": "2015-05-19T21:56:15",
+                "url": "https://files.pythonhosted.org/packages/84/ac/2a3a9f10db814e878f064cc87a9729892b0cbd4e30b6f28e7ba9db19081d/oauth2client-1.4.11.zip"
+            }
+        ],
+        "1.4.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8265f6985905a5590c622741980a47e5",
+                    "sha256": "48d26abe9cfc7c23788a10afce0861ec518616ea2ea27aae1206d358d4cb78bf"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.12-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "8265f6985905a5590c622741980a47e5",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 136424,
+                "upload_time": "2015-07-08T20:04:18",
+                "url": "https://files.pythonhosted.org/packages/4a/de/9cc7e74bc217b9f428945b3c85ad83f5ab21ec77718408cfe8ab36118938/oauth2client-1.4.12-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "829a05a559b43215d67947aaff9c11b5",
+                    "sha256": "74aa6c3beb90a4a7b9b8d0bc3cd60db34d45c5ee6136187bb9eabe85b4990e5e"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "829a05a559b43215d67947aaff9c11b5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49321,
+                "upload_time": "2015-07-08T20:04:09",
+                "url": "https://files.pythonhosted.org/packages/8b/c9/cda58ea5c2f9bbc7c4ed8a15978871a5de51204ee884730739ea7491bce0/oauth2client-1.4.12.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c9504caed869c89b5c57d84397f82fde",
+                    "sha256": "3f26ec530118a3acb29d71011bdb9f2fe7e0cc3f13eccafa5a053bdc13473085"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.12.zip",
+                "has_sig": false,
+                "md5_digest": "c9504caed869c89b5c57d84397f82fde",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66044,
+                "upload_time": "2015-07-08T20:04:13",
+                "url": "https://files.pythonhosted.org/packages/a9/0d/75cf7104ab203d479876c6cf085e39d42b3f66c51db6ed745172eb832b84/oauth2client-1.4.12.zip"
+            }
+        ],
+        "1.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "749c02b1bf1637237195f802351a3812",
+                    "sha256": "083483fc62352eb1b32701e6f91dc23241bcda4b4ab0cfab02b2274b9eb52cb5"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.2-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "749c02b1bf1637237195f802351a3812",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 130428,
+                "upload_time": "2014-11-24T16:57:47",
+                "url": "https://files.pythonhosted.org/packages/d4/61/01c97e78ce095805e3e4dfedd1cb183a8657d3a10695a6913a0fcff1242b/oauth2client-1.4.2-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6d062fcb774d5c9b156a03d36c5b975",
+                    "sha256": "aa39b4597bdfd7c6585c4fe7ec3e3134dfc68bdc24d89b1459a261413da15465"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6d062fcb774d5c9b156a03d36c5b975",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44481,
+                "upload_time": "2014-11-24T16:57:41",
+                "url": "https://files.pythonhosted.org/packages/ea/df/7ca5d84d9c11ee255fc1bf918b44ffb4f3cfb0ed29efa90580e7fdd7b662/oauth2client-1.4.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8a5793acd18c04d6e00e107e88c04269",
+                    "sha256": "d501061834a01a264eb27b3029b8f73f5009a0f619ceecb032f54986857d7e9b"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.2.zip",
+                "has_sig": false,
+                "md5_digest": "8a5793acd18c04d6e00e107e88c04269",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 59337,
+                "upload_time": "2014-11-24T16:57:44",
+                "url": "https://files.pythonhosted.org/packages/45/bd/a528bf27720ec250786a3693e47e1098c68e1e6830a568ed7c29f6207977/oauth2client-1.4.2.zip"
+            }
+        ],
+        "1.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15f1b0184860f1a9204313e2098aad58",
+                    "sha256": "ecd29cc69732522012fa8010b20ff753604cd836dc255a57fd55024fe0182a9b"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.3-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "15f1b0184860f1a9204313e2098aad58",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 127677,
+                "upload_time": "2014-12-12T18:22:21",
+                "url": "https://files.pythonhosted.org/packages/e4/4d/e4cbc0af8aa3e8fe4a2aff8c9e322f2fcde70b43377d67e5fd2d8e96ec73/oauth2client-1.4.3-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fcffeeb0e0729a1870484159a835ef3a",
+                    "sha256": "f24e29257f987a959eac5eb8277fa3eb19a7e68ea56a71318611e899bf8efbeb"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fcffeeb0e0729a1870484159a835ef3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 45178,
+                "upload_time": "2014-12-12T18:22:14",
+                "url": "https://files.pythonhosted.org/packages/2a/b2/120e1548b4dc728f23157a2dad35baaf8cecf584fa93a1026561c75c6789/oauth2client-1.4.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "65c5d918014996cb667ae7bb4f457759",
+                    "sha256": "9b2aafdd0e7f073232809ca5fa61a41372d0d803439c2e74b79a927a2ac532b2"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.3.zip",
+                "has_sig": false,
+                "md5_digest": "65c5d918014996cb667ae7bb4f457759",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 60041,
+                "upload_time": "2014-12-12T18:22:18",
+                "url": "https://files.pythonhosted.org/packages/16/84/a903f695530430d760e54021cd134da8f8dc33e806570f4eab0f5d02d866/oauth2client-1.4.3.zip"
+            }
+        ],
+        "1.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bbf8f05b1e5fc58c38bcdbc445516f33",
+                    "sha256": "3b326f0301eac1fe9c9ecd713f2062e7688b4e339dc4c07f99571d33f70c4068"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.4-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "bbf8f05b1e5fc58c38bcdbc445516f33",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 127752,
+                "upload_time": "2014-12-15T15:58:20",
+                "url": "https://files.pythonhosted.org/packages/dd/d8/626b281e584226a315b2e14aabe38b9e9967dcc0f1b74ff09e0e80d714ab/oauth2client-1.4.4-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "05722d95906b9f1d5418488fe8a8d57d",
+                    "sha256": "9c647aee2d32eb4426795338a571fca4efc3752d97f922af6b78319c63c3d49c"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "05722d95906b9f1d5418488fe8a8d57d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 45259,
+                "upload_time": "2014-12-15T15:58:15",
+                "url": "https://files.pythonhosted.org/packages/2e/81/f8e6bdc5d81744df064575b53a44f982ffc4d4443997d98ff1da4ba5e00a/oauth2client-1.4.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa84b40dd8ff9bb68c110c72700490cf",
+                    "sha256": "9197d48fc5a63498c10d5468efc27468da46d7dad5a61b40ac7cc46bf830247b"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.4.zip",
+                "has_sig": false,
+                "md5_digest": "aa84b40dd8ff9bb68c110c72700490cf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 60117,
+                "upload_time": "2014-12-15T15:58:18",
+                "url": "https://files.pythonhosted.org/packages/28/66/b74d2e972d53ae290470c337f10fad04fab5adb221a61f82c2fa73b872f8/oauth2client-1.4.4.zip"
+            }
+        ],
+        "1.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "761230b2e1263d5f6dc8ffc76953ab72",
+                    "sha256": "07590207a635a5120763641c82fa8eed9cd9c5ea36e675e5e27d00d65cc170c4"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.5-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "761230b2e1263d5f6dc8ffc76953ab72",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 128258,
+                "upload_time": "2014-12-20T18:17:47",
+                "url": "https://files.pythonhosted.org/packages/8c/df/8cabac55d34e29490ccb01bf08d27a776a9b6f65f087f10ef2980fa4e3ba/oauth2client-1.4.5-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "efe572cc88edf0a1df1b5d53ed0fcf5c",
+                    "sha256": "f2f35153d13d72aa27be83f8335f3856de9543ba643f8d7355dddeabe93b9241"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "efe572cc88edf0a1df1b5d53ed0fcf5c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 45547,
+                "upload_time": "2014-12-20T18:17:38",
+                "url": "https://files.pythonhosted.org/packages/8c/63/07610785346664c332864afb6b50d8b74ba102a402ddc9cbe5079bbdabdd/oauth2client-1.4.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5e36e911603c92a071e4896e26cc8b26",
+                    "sha256": "c1a5495bfbf2019608ad23d4275b0a196f6803cfaee0c62c751832c69da14ef5"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.5.zip",
+                "has_sig": false,
+                "md5_digest": "5e36e911603c92a071e4896e26cc8b26",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 60415,
+                "upload_time": "2014-12-20T18:17:42",
+                "url": "https://files.pythonhosted.org/packages/89/13/d82624f3c14e9caf470402c01e5e243de04ffc997929484245976247c289/oauth2client-1.4.5.zip"
+            }
+        ],
+        "1.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f4064450b648bf34b1a251079032fb32",
+                    "sha256": "ed48135ae72525848976b36867a11a98f601374e2eeee2afbd43638a8693f637"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.6-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "f4064450b648bf34b1a251079032fb32",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 128448,
+                "upload_time": "2015-01-16T20:05:46",
+                "url": "https://files.pythonhosted.org/packages/e2/43/e1362efb3e25c1e472d712de6adcf61a7d637de24b8af9b3ab56440cb469/oauth2client-1.4.6-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bce90994cc917de8b1042465561ce3c6",
+                    "sha256": "1eb99279b1043bececa6a3f744f447dc1cfa1521d716fd1431360d81926166c0"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bce90994cc917de8b1042465561ce3c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47097,
+                "upload_time": "2015-01-16T20:05:42",
+                "url": "https://files.pythonhosted.org/packages/43/93/4a62f7cb0dfe2961a6126895860a1f2ce2097f561a79e51208377a6eeffc/oauth2client-1.4.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f367915d542e087d7741aa9b72223474",
+                    "sha256": "a3af42b630b5c2a8bd3f35a807484de634c2f822f17354f610ff761aabdfa7e4"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.6.zip",
+                "has_sig": false,
+                "md5_digest": "f367915d542e087d7741aa9b72223474",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 60626,
+                "upload_time": "2015-01-16T20:05:44",
+                "url": "https://files.pythonhosted.org/packages/1e/0b/b93e79e0ef5e0e52412b490342773455947a95b17b7b1ccd3eb6b4bcaf1d/oauth2client-1.4.6.zip"
+            }
+        ],
+        "1.4.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2f201bebef90fdc41b07242e73c4f25",
+                    "sha256": "50074ee692ea4dcae0a76edd783176112dfc5e59fe12a4944eed804aa0e282f1"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.7-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "d2f201bebef90fdc41b07242e73c4f25",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 133839,
+                "upload_time": "2015-03-17T23:06:44",
+                "url": "https://files.pythonhosted.org/packages/1c/ea/0c264dbf692b86c77b8e418489009c0775c325f3ad9ef5f8541ba829b010/oauth2client-1.4.7-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62747643d5af57e57b09e176eda1c1dd",
+                    "sha256": "b63550a242ea25ec027a261c2f5667d52de268f52c3f0c6ce60850ad45492031"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "62747643d5af57e57b09e176eda1c1dd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 48202,
+                "upload_time": "2015-03-17T23:06:17",
+                "url": "https://files.pythonhosted.org/packages/13/a4/fdad9b0f7e9b3d25e8fe518ff6ef836fd0f6e5cc4100193ea8a4502f60d8/oauth2client-1.4.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d17ff6e020f6b674137fb4f891f76829",
+                    "sha256": "ad6f609501ce0c3e6c0e1301fae3f102b753d7e5883e0b71f4c64eb2853805f7"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.7.zip",
+                "has_sig": false,
+                "md5_digest": "d17ff6e020f6b674137fb4f891f76829",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 64847,
+                "upload_time": "2015-03-17T23:06:41",
+                "url": "https://files.pythonhosted.org/packages/a9/92/29f7f9812d314fc72caa0e71923cc6b6414336ea485c031118af990741cc/oauth2client-1.4.7.zip"
+            }
+        ],
+        "1.4.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "07868af8bf7ba8dad7078150ea684947",
+                    "sha256": "c07c0e56e7b5a5e89923b04689ee0cb28df1b4368f29246036fb44303496a388"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.8-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "07868af8bf7ba8dad7078150ea684947",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 135336,
+                "upload_time": "2015-05-13T23:42:38",
+                "url": "https://files.pythonhosted.org/packages/14/07/1bbc1820ae67df760b09346396f02da1259fefdd1386514a7b36430285fe/oauth2client-1.4.8-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f88a214a19632a5282ab5b13d3d84fbd",
+                    "sha256": "f7cae36333d8969d8f60b334a6d666d444f6136dd6b23bbd0283c67b15cdde1a"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f88a214a19632a5282ab5b13d3d84fbd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 48828,
+                "upload_time": "2015-05-13T23:42:29",
+                "url": "https://files.pythonhosted.org/packages/2a/2a/a8d6c93f45c2f5faec8e7ab8465dbc57a236cc68b8fd8565ee133a174e0b/oauth2client-1.4.8.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce9cb769f398b843e24d7d408040729c",
+                    "sha256": "84b9878e5df0f4ace1b78eaa69ff0028177c848a3634f378741df3a8470a4b78"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.8.zip",
+                "has_sig": false,
+                "md5_digest": "ce9cb769f398b843e24d7d408040729c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65479,
+                "upload_time": "2015-05-13T23:42:33",
+                "url": "https://files.pythonhosted.org/packages/01/00/54f4f68ba7d0ddf84f2e6afe3b90fbe44b062bd2c0e42e7ccfcb8b4c6efd/oauth2client-1.4.8.zip"
+            }
+        ],
+        "1.4.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "22124ca72114fe578968d915864bd69e",
+                    "sha256": "b957e0d3823a25d98d9b1e48f2e0e672e2764426595219267db47d9808ca75d1"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.9-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "22124ca72114fe578968d915864bd69e",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 135381,
+                "upload_time": "2015-05-14T16:49:19",
+                "url": "https://files.pythonhosted.org/packages/6f/cc/5d5f4d0b16a64784663e70975854728e48b9f547564299f17c115e34db6b/oauth2client-1.4.9-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b266d01e281a473a18c45e5f3b2f84db",
+                    "sha256": "8fc990c3ddfdf811592dcacab3663f7c64d8c308a07bcec65e2133769f679334"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b266d01e281a473a18c45e5f3b2f84db",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 48842,
+                "upload_time": "2015-05-14T16:49:10",
+                "url": "https://files.pythonhosted.org/packages/ba/b4/d01299c24b2064ad7a5677bc608c9da865aca9faee12dc4d14307d8d21b9/oauth2client-1.4.9.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "72b8b18f9cff5e558b84f10022173291",
+                    "sha256": "8b9ac0198c384f00c8b9e6d5a033973d2703348dbd49fc12834444cdb2fea3f9"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.4.9.zip",
+                "has_sig": false,
+                "md5_digest": "72b8b18f9cff5e558b84f10022173291",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65496,
+                "upload_time": "2015-05-14T16:49:14",
+                "url": "https://files.pythonhosted.org/packages/a7/03/4703c4c7214d2b627d9e53727272a7fbb7b7fa63fa8dffaf89aabd4f1929/oauth2client-1.4.9.zip"
+            }
+        ],
+        "1.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd87ab0111fa16d76e0a8974182c432c",
+                    "sha256": "3889232ad5800606f23fb105bb346d2959827ae85e2b077ec4471ede99cf1841"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd87ab0111fa16d76e0a8974182c432c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 56085,
+                "upload_time": "2015-09-03T16:54:20",
+                "url": "https://files.pythonhosted.org/packages/fd/f9/9f5a122e2a949382b85ad56f638552026b6d3f0837e1040b930c8a53c319/oauth2client-1.5.0.tar.gz"
+            }
+        ],
+        "1.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cde21d8b711c91e7389d30fdccda6bcb",
+                    "sha256": "3fda797ddc4c125bce2ca644606be09cbf1f6de82d7d11e084dc0bc98db4fb3e"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cde21d8b711c91e7389d30fdccda6bcb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 56091,
+                "upload_time": "2015-09-16T15:27:42",
+                "url": "https://files.pythonhosted.org/packages/03/f3/49fffe849767457a98755de2f8002b77dcd2dd07b252121535382bc560dd/oauth2client-1.5.1.tar.gz"
+            }
+        ],
+        "1.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "842ab2fba8bce5b36d31f630ed80f17d",
+                    "sha256": "937dc5b1c9c7e9d41daf78b38a3f70e1be83bb31871afed2470a98544edfcf62"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-1.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "842ab2fba8bce5b36d31f630ed80f17d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 56506,
+                "upload_time": "2015-11-18T21:19:38",
+                "url": "https://files.pythonhosted.org/packages/fc/41/974970101bde842f23031075bea7f6d051ed82b5fd806b6ef9cc7e983c01/oauth2client-1.5.2.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9b9f8473ff1abbae359321dd222c7584",
+                    "sha256": "3ecaa187e30bca30cf26de8418cb6c7f8cdff27770dd84d7afeba0ee9eb990b8"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9b9f8473ff1abbae359321dd222c7584",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65861,
+                "upload_time": "2016-02-16T20:14:35",
+                "url": "https://files.pythonhosted.org/packages/e2/bb/0e2346733250ca696273ef2f43e681798efdf8a16d49d84051a35e4d3348/oauth2client-2.0.0.tar.gz"
+            }
+        ],
+        "2.0.0.post1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6309e12fe2bc0f038708e2c9ec4b1f69",
+                    "sha256": "eb14cfe72f0af2b3bbb7c1da3f0f781b61ed89b31e4282313220746798aa7bdd"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-2.0.0.post1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6309e12fe2bc0f038708e2c9ec4b1f69",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66752,
+                "upload_time": "2016-02-19T23:21:21",
+                "url": "https://files.pythonhosted.org/packages/ab/4b/46974337b3053ebd04c55f380c9ef8a63a2253dfe31612c8ed3136fb1719/oauth2client-2.0.0.post1.tar.gz"
+            }
+        ],
+        "2.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2fee5aa8d5b08a1aee7b4beea4ccbb9",
+                    "sha256": "351def3df312364f0c5e38a682c8d8a70a36d884cf40bd0084a67d7b8f7ed7ac"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-2.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f2fee5aa8d5b08a1aee7b4beea4ccbb9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 67586,
+                "upload_time": "2016-03-03T18:17:11",
+                "url": "https://files.pythonhosted.org/packages/1d/2a/ac18cd40654bf8c1b8b60bcdb2c959314c17956f5a0e1d0d02208c702d52/oauth2client-2.0.1.tar.gz"
+            }
+        ],
+        "2.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "de8d36e60e456df226720146efb1073d",
+                    "sha256": "c9f7bf68e9d0f9ec055f1f2f487e5ea53b97b7a2b82f01d48d9a9bb68239535a"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-2.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "de8d36e60e456df226720146efb1073d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68232,
+                "upload_time": "2016-04-15T20:10:52",
+                "url": "https://files.pythonhosted.org/packages/a7/70/95d5fb8b839c2c33e8ed76cc0cc060bd57d6506746790a753137df9ebd60/oauth2client-2.0.2.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a58a80b9034910d25209ca28b52108bc",
+                    "sha256": "d628c9c925815ce0aca159dd4c26f5bc013a8ef025574dd338314d98c1df4f72"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a58a80b9034910d25209ca28b52108bc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 69631,
+                "upload_time": "2016-05-20T21:48:44",
+                "url": "https://files.pythonhosted.org/packages/7d/3d/fbafca0c10e400c80711a18365502b46c949f18d4c40d410ce059895bf2a/oauth2client-2.1.0.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "540d6f9eda2895222f8334cb34cec06b",
+                    "sha256": "53d40b5a2d7fc5d36289f4848a0d763df479ac50ba5fac05424903b9e4caac26"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "540d6f9eda2895222f8334cb34cec06b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70064,
+                "upload_time": "2016-06-10T16:33:04",
+                "url": "https://files.pythonhosted.org/packages/5c/d6/42f18bd74bcc35b3579f08d8b7eb04ee8579b9b16a763b6505f8897c0d6e/oauth2client-2.2.0.tar.gz"
+            }
+        ],
+        "3.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e4097f013fb072ef02698306f048661d",
+                    "sha256": "5b5b056ec6f2304e7920b632885bd157fa71d1a7f3ddd00a43b1541a8d1a2460"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-3.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e4097f013fb072ef02698306f048661d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 77208,
+                "upload_time": "2016-07-28T19:33:08",
+                "url": "https://files.pythonhosted.org/packages/c0/7b/bc893e35d6ca46a72faa4b9eaac25c687ce60e1fbe978993fe2de1b0ff0d/oauth2client-3.0.0.tar.gz"
+            }
+        ],
+        "4.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c1665c2cc1e3c19010a68515d053680",
+                    "sha256": "f8ff4ad855b8917cdf213a33719e874d0fab1c26d44b2f08c9dfd7a5781889f5"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-4.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0c1665c2cc1e3c19010a68515d053680",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 184923,
+                "upload_time": "2016-10-14T17:55:15",
+                "url": "https://files.pythonhosted.org/packages/c4/c0/cb81aae37893383b1ebc9d8aac1f1cc657141762e7ee3e5deda67af04a3b/oauth2client-4.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7969836a49e6743ecd746997b2025926",
+                    "sha256": "80be5420889694634b8517b4acd3292ace881d9d1aa9d590d37ec52faec238c7"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-4.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7969836a49e6743ecd746997b2025926",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 72392,
+                "upload_time": "2016-10-14T17:55:18",
+                "url": "https://files.pythonhosted.org/packages/c2/ce/7aaf19d8b856191e2e1885201fe45f3dc57b97f5ec5bc98ef2cc15472918/oauth2client-4.0.0.tar.gz"
+            }
+        ],
+        "4.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a6d453c5153f4285aa8d45d49402a1eb",
+                    "sha256": "42868bb5b93172ab73413314c821926ba86f92be99051aa0f76d39346689dcdb"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-4.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a6d453c5153f4285aa8d45d49402a1eb",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 185754,
+                "upload_time": "2017-05-10T23:14:02",
+                "url": "https://files.pythonhosted.org/packages/2a/8f/8ad3507de44331c16af8328bd4c38992121226e2ad5947c41eb682ebbdb6/oauth2client-4.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b9fe832ddb4df2ec13a71f89c984882",
+                    "sha256": "cd0a259a5d354fc7fcea5f1dc3f037e80f06091bc0303251ae177f92bb949e7f"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-4.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0b9fe832ddb4df2ec13a71f89c984882",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76593,
+                "upload_time": "2017-05-10T23:14:03",
+                "url": "https://files.pythonhosted.org/packages/29/25/7880f9e3835494d1b7f31659a07d73f1c25454c0bd40cfd1962fef8c346c/oauth2client-4.1.0.tar.gz"
+            }
+        ],
+        "4.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fab62344180639ea612df99ef05e328f",
+                    "sha256": "ed0c670f09db32444f843d5d2f92df00733751dfec9a28b0fd3f00693ff36a04"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-4.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fab62344180639ea612df99ef05e328f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 185773,
+                "upload_time": "2017-06-06T16:07:00",
+                "url": "https://files.pythonhosted.org/packages/00/fe/533a3356d9885ed589428b84d24710c0d2fbb7d1f9d7c2d6ee633a4156e9/oauth2client-4.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "501021c52d8b4cd7fe9b6d80e28def2b",
+                    "sha256": "fd02b705092b76f443028328eaed366135f26c0d3e52bdbf66e649a944938ca1"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-4.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "501021c52d8b4cd7fe9b6d80e28def2b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76605,
+                "upload_time": "2017-06-06T16:07:02",
+                "url": "https://files.pythonhosted.org/packages/7f/60/d683b7933ae7f4d2f3cd53afda197025d7178ca1516aa340aba0020b1094/oauth2client-4.1.1.tar.gz"
+            }
+        ],
+        "4.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e0c18f718a9782dfa05b78b3ea2e4ab1",
+                    "sha256": "cf061f52f75e91d489bf5c276498f8af2655fe331b454f10022441513cf445a6"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-4.1.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e0c18f718a9782dfa05b78b3ea2e4ab1",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 99338,
+                "upload_time": "2017-06-29T22:06:33",
+                "url": "https://files.pythonhosted.org/packages/82/d8/3eab58811282ac7271a081ba5c0d4b875ce786ca68ce43e2a62ade32e9a8/oauth2client-4.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bc30976cd1e859cd6199264a50c5ba72",
+                    "sha256": "bd3062c06f8b10c6ef7a890b22c2740e5f87d61b6e1f4b1c90d069cdfc9dadb5"
+                },
+                "downloads": -1,
+                "filename": "oauth2client-4.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bc30976cd1e859cd6199264a50c5ba72",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 387596,
+                "upload_time": "2017-06-29T22:06:35",
+                "url": "https://files.pythonhosted.org/packages/50/30/f89a4fc014a03e180840d432e73ffb96da422f2a8094ff3539f0f0c46661/oauth2client-4.1.2.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "e0c18f718a9782dfa05b78b3ea2e4ab1",
+                "sha256": "cf061f52f75e91d489bf5c276498f8af2655fe331b454f10022441513cf445a6"
+            },
+            "downloads": -1,
+            "filename": "oauth2client-4.1.2-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "e0c18f718a9782dfa05b78b3ea2e4ab1",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 99338,
+            "upload_time": "2017-06-29T22:06:33",
+            "url": "https://files.pythonhosted.org/packages/82/d8/3eab58811282ac7271a081ba5c0d4b875ce786ca68ce43e2a62ade32e9a8/oauth2client-4.1.2-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "bc30976cd1e859cd6199264a50c5ba72",
+                "sha256": "bd3062c06f8b10c6ef7a890b22c2740e5f87d61b6e1f4b1c90d069cdfc9dadb5"
+            },
+            "downloads": -1,
+            "filename": "oauth2client-4.1.2.tar.gz",
+            "has_sig": false,
+            "md5_digest": "bc30976cd1e859cd6199264a50c5ba72",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 387596,
+            "upload_time": "2017-06-29T22:06:35",
+            "url": "https://files.pythonhosted.org/packages/50/30/f89a4fc014a03e180840d432e73ffb96da422f2a8094ff3539f0f0c46661/oauth2client-4.1.2.tar.gz"
+        }
+    ],
+    "package_name": "oauth2client"
+}

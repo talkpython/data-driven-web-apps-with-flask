@@ -1,0 +1,1194 @@
+{
+    "info": {
+        "author": "Honza Kr\u00e1l",
+        "author_email": "honza.kral@gmail.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Apache Software License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy"
+        ],
+        "description": "Python Elasticsearch Client\n===========================\n\nOfficial low-level client for Elasticsearch. Its goal is to provide common\nground for all Elasticsearch-related code in Python; because of this it tries\nto be opinion-free and very extendable.\n\nFor a more high level client library with more limited scope, have a look at\n`elasticsearch-dsl`_ - a more pythonic library sitting on top of\n``elasticsearch-py``.\n\nIt provides a more convenient and idiomatic way to write and manipulate\n`queries`_. It stays close to the Elasticsearch JSON DSL, mirroring its\nterminology and structure while exposing the whole range of the DSL from Python\neither directly using defined classes or a queryset-like expressions.\n\nIt also provides an optional `persistence layer`_ for working with documents as\nPython objects in an ORM-like fashion: defining mappings, retrieving and saving\ndocuments, wrapping the document data in user-defined classes.\n\n.. _elasticsearch-dsl: https://elasticsearch-dsl.readthedocs.io/\n.. _queries: https://elasticsearch-dsl.readthedocs.io/en/latest/search_dsl.html\n.. _persistence layer: https://elasticsearch-dsl.readthedocs.io/en/latest/persistence.html#doctype\n\nCompatibility\n-------------\n\nThe library is compatible with all Elasticsearch versions since ``0.90.x`` but you\n**have to use a matching major version**:\n\nFor **Elasticsearch 6.0** and later, use the major version 6 (``6.x.y``) of the\nlibrary.\n\nFor **Elasticsearch 5.0** and later, use the major version 5 (``5.x.y``) of the\nlibrary.\n\nFor **Elasticsearch 2.0** and later, use the major version 2 (``2.x.y``) of the\nlibrary, and so on.\n\nThe recommended way to set your requirements in your `setup.py` or\n`requirements.txt` is::\n\n    # Elasticsearch 6.x\n    elasticsearch>=6.0.0,<7.0.0\n\n    # Elasticsearch 5.x\n    elasticsearch>=5.0.0,<6.0.0\n\n    # Elasticsearch 2.x\n    elasticsearch>=2.0.0,<3.0.0\n\nIf you have a need to have multiple versions installed at the same time older\nversions are also released as ``elasticsearch2`` and ``elasticsearch5``.\n\nInstallation\n------------\n\nInstall the ``elasticsearch`` package with `pip\n<https://pypi.python.org/pypi/elasticsearch>`_::\n\n    pip install elasticsearch\n\n\nExample use\n-----------\n\nSimple use-case::\n\n    >>> from datetime import datetime\n    >>> from elasticsearch import Elasticsearch\n\n    # by default we connect to localhost:9200\n    >>> es = Elasticsearch()\n\n    # create an index in elasticsearch, ignore status code 400 (index already exists)\n    >>> es.indices.create(index='my-index', ignore=400)\n    {u'acknowledged': True}\n\n    # datetimes will be serialized\n    >>> es.index(index=\"my-index\", doc_type=\"test-type\", id=42, body={\"any\": \"data\", \"timestamp\": datetime.now()})\n    {u'_id': u'42', u'_index': u'my-index', u'_type': u'test-type', u'_version': 1, u'ok': True}\n\n    # but not deserialized\n    >>> es.get(index=\"my-index\", doc_type=\"test-type\", id=42)['_source']\n    {u'any': u'data', u'timestamp': u'2013-05-12T19:45:31.804229'}\n\n`Full documentation`_.\n\n.. _Full documentation: https://elasticsearch-py.readthedocs.io/\n\nElastic Cloud (and SSL) use-case::\n\n    >>> from elasticsearch import Elasticsearch\n    >>> es = Elasticsearch(\"https://elasticsearch.url:port\", http_auth=('elastic','yourpassword'))\n    >>> es.info()\n\nUsing SSL Context with a self-signed cert use-case::\n\n    >>> from elasticsearch import Elasticsearch\n    >>> from ssl import create_default_context\n\n    >>> context = create_default_context(cafile=\"path/to/cafile.pem\")\n    >>> es = Elasticsearch(\"https://elasticsearch.url:port\", ssl_context=context, http_auth=('elastic','yourpassword'))\n    >>> es.info()\n\n\n\nFeatures\n--------\n\nThe client's features include:\n\n * translating basic Python data types to and from json (datetimes are not\n   decoded for performance reasons)\n * configurable automatic discovery of cluster nodes\n * persistent connections\n * load balancing (with pluggable selection strategy) across all available nodes\n * failed connection penalization (time based - failed connections won't be\n   retried until a timeout is reached)\n * support for ssl and http authentication\n * thread safety\n * pluggable architecture\n\n\nLicense\n-------\n\nCopyright 2017 Elasticsearch\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n\nBuild status\n------------\n\n.. image:: https://secure.travis-ci.org/elastic/elasticsearch-py.png\n   :target: https://travis-ci.org/elastic/elasticsearch-py",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/elastic/elasticsearch-py",
+        "keywords": "",
+        "license": "Apache License, Version 2.0",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "elasticsearch",
+        "package_url": "https://pypi.org/project/elasticsearch/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/elasticsearch/",
+        "release_url": "https://pypi.org/project/elasticsearch/6.2.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Python client for Elasticsearch",
+        "version": "6.2.0"
+    },
+    "last_serial": 3688948,
+    "releases": {
+        "0.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8572bfb312338c72ba5e453854d6e259",
+                    "sha256": "fef9b5809ae0ae546ba03c761a962803d6ee3604323d135911969cead1b7d509"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-0.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8572bfb312338c72ba5e453854d6e259",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 37154,
+                "upload_time": "2013-09-24T16:41:07",
+                "url": "https://files.pythonhosted.org/packages/1a/77/4bd58652de5082ced97967fe8196cf022fc79776bde8d6c5811d21ba8852/elasticsearch-0.4.1.tar.gz"
+            }
+        ],
+        "0.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ee91820df0a763ec5343a6feac1ba64",
+                    "sha256": "1a4828981eec57d348fed4015996b4483601433b2ca6cbe1a7a60f4ecce9c96c"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-0.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7ee91820df0a763ec5343a6feac1ba64",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39744,
+                "upload_time": "2013-10-08T13:26:38",
+                "url": "https://files.pythonhosted.org/packages/b4/50/a612876c8392049af604118c011613f504417338318c6ff3ac65f7e1172f/elasticsearch-0.4.2.tar.gz"
+            }
+        ],
+        "0.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6ec207c268e4d71374d7427065a623c",
+                    "sha256": "0012a36e7224947eee75a92510a002d2e6e474a44440ff85b037bab7923dbf0b"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-0.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6ec207c268e4d71374d7427065a623c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40951,
+                "upload_time": "2013-10-22T19:51:45",
+                "url": "https://files.pythonhosted.org/packages/63/21/6f309221c0b5a731eeaff96d25265789aad1191e10047b1cbd3086f78971/elasticsearch-0.4.3.tar.gz"
+            }
+        ],
+        "0.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9744dd56975b3c87b11896e4e7e2e607",
+                    "sha256": "375d9280923e38aa8dc753d833beffabc78789aaf5fd0c0f5d272d4b2bd9d005"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-0.4.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9744dd56975b3c87b11896e4e7e2e607",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 41446,
+                "upload_time": "2013-12-23T15:40:37",
+                "url": "https://files.pythonhosted.org/packages/27/8d/0b2a2eb5e736a14498670b20c80843200e46cab22f88a4b4dabf5502c978/elasticsearch-0.4.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "938c7347e5200138780db458225cc291",
+                    "sha256": "355b7c98efb68c50b8838fcd7a9bf7ecb415fd10ae5e5e8f5519e281a24e9910"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-0.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "938c7347e5200138780db458225cc291",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44565,
+                "upload_time": "2013-12-23T15:40:35",
+                "url": "https://files.pythonhosted.org/packages/84/57/ead6d55b33c913452389b05514e22d381aa516f4a00cad303c0d8cf298fa/elasticsearch-0.4.4.tar.gz"
+            }
+        ],
+        "0.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f597e9b96762ba88b240dc10bf8958e",
+                    "sha256": "63fb8095db186a6c0bbacb20c9297be425dfa9de4c330b353460f6358207c6aa"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-0.4.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5f597e9b96762ba88b240dc10bf8958e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 42189,
+                "upload_time": "2014-02-11T19:05:03",
+                "url": "https://files.pythonhosted.org/packages/79/17/6f6547ffabe61d0da1301455c653fb49cb585c0ca0f0c00a924a297c65b3/elasticsearch-0.4.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61c288be480fadfb1a558c522dd16990",
+                    "sha256": "dfee415c8064ce36273f30d8f9e27b6c0e0ff2a43d52fd7ed4672eadbaf2e833"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-0.4.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "61c288be480fadfb1a558c522dd16990",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 45320,
+                "upload_time": "2014-02-11T19:05:00",
+                "url": "https://files.pythonhosted.org/packages/9d/5a/51faaabca806632ca4260753d467863ebb690b5854eb1cf7889e7d7cd737/elasticsearch-0.4.5.tar.gz"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e2fd718598b9f72aa6aa744fde7376b0",
+                    "sha256": "b74c8d66d3abd11d1b5df5d74f613b63c271dc055f30d102faf1999fb0cf2331"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e2fd718598b9f72aa6aa744fde7376b0",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 47841,
+                "upload_time": "2014-02-11T19:10:22",
+                "url": "https://files.pythonhosted.org/packages/7b/28/ae22ef861a1ba648bd7e01d8bb396a9318a9cede40337b43fefcbaa80206/elasticsearch-1.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ac087d3f7a704b2c45079e7e25b56b9f",
+                    "sha256": "2f19f62e9b56573f630b1145a90d5e473a64d24e2aa367ab85f17056400ebce9"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ac087d3f7a704b2c45079e7e25b56b9f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49237,
+                "upload_time": "2014-02-11T19:10:20",
+                "url": "https://files.pythonhosted.org/packages/fe/3e/cec73b1fa4478634a9c82b82e5421f9c426373771511cad6c0b41e4cb2bf/elasticsearch-1.0.0.tar.gz"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e0c541c4bfe3906326f7466b4bb85cb4",
+                    "sha256": "4b6d9822d206a181d3036fb4d771326f694da622e4c25a77e8ba4bd7d6c1555e"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e0c541c4bfe3906326f7466b4bb85cb4",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 51157,
+                "upload_time": "2014-07-02T16:08:46",
+                "url": "https://files.pythonhosted.org/packages/f5/df/2a600a063ebca97b47a4611e1531ef216e96134c2c77e9b8d3a0e148bbb9/elasticsearch-1.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "57f971d784dae407f0e584eae6eeb33a",
+                    "sha256": "5fdc515158ec477129acaf0b449f625a2cd56cccbd4ead6ca065e065fee0dc8b"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "57f971d784dae407f0e584eae6eeb33a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 52695,
+                "upload_time": "2014-07-02T16:08:44",
+                "url": "https://files.pythonhosted.org/packages/df/45/c78affd49eecd7a071ab3f966cfd672bc1ead2c2ab93528185a03fccf34d/elasticsearch-1.1.0.tar.gz"
+            }
+        ],
+        "1.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37d19cfce531d7a1bd39f938d82c95c4",
+                    "sha256": "93ab9d59dc38b4c9893aecf23a55ff88b237c3b876bce23b636a8a767f5729be"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "37d19cfce531d7a1bd39f938d82c95c4",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 51161,
+                "upload_time": "2014-07-04T14:54:28",
+                "url": "https://files.pythonhosted.org/packages/44/d3/ac331a7595d2b6ae44840dbe5d7d62797ffb93d6cf6ec380ec72a48ba2b6/elasticsearch-1.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d096a1fcacd98c6b97d5478f0633d20",
+                    "sha256": "6d86968b22f09a5e4f830ea3f3090c039ff5416146fa98b4a59a6b1dd5388759"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9d096a1fcacd98c6b97d5478f0633d20",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 52731,
+                "upload_time": "2014-07-04T14:54:25",
+                "url": "https://files.pythonhosted.org/packages/07/ef/437927cc0549ba8bce070a45323d016209f18b6eb8a7a9e1da9cdafedfe8/elasticsearch-1.1.1.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ca83e0d81a1813835fdb0be2a57e6557",
+                    "sha256": "53a822b01b0494df9658c04e87216180e5ecbe85b178673dd848b1f809d5c100"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ca83e0d81a1813835fdb0be2a57e6557",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 51627,
+                "upload_time": "2014-08-03T11:59:28",
+                "url": "https://files.pythonhosted.org/packages/ef/7a/423e66aaaddac747a3883775895f8de381a3d5f44c902c22ac834ba9774c/elasticsearch-1.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "56f240ec92b7241bf3b9f37a497c307c",
+                    "sha256": "bb93d85ca7e50d68e4197852bb6dba6098bb772500f82f5db2ff4a80711505c9"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "56f240ec92b7241bf3b9f37a497c307c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 55356,
+                "upload_time": "2014-08-03T11:59:25",
+                "url": "https://files.pythonhosted.org/packages/52/a2/19467638f7b766ad9c9cbad3b16e0ecb3dd8a82f59f64386b57cb42138fa/elasticsearch-1.2.0.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c6f19b1e0a273c723f7be7aa46280fd",
+                    "sha256": "6bbcd654d6197aaa249505a71d4372532cd302385118c9c986075485e8bef265"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3c6f19b1e0a273c723f7be7aa46280fd",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 55687,
+                "upload_time": "2014-12-31T16:05:35",
+                "url": "https://files.pythonhosted.org/packages/bf/04/5de8f003c2d2df755c90d97cce03aa724518d6ae25e7b458e22ba77ffa87/elasticsearch-1.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b078448754cb10951f3c4190e6841a4",
+                    "sha256": "cd6c6e01e0159714e0c1dbd8db263c3edbe6369587e3afe181584a1749428ff0"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7b078448754cb10951f3c4190e6841a4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 59671,
+                "upload_time": "2014-12-31T16:05:31",
+                "url": "https://files.pythonhosted.org/packages/d4/27/641cc4a97f31a85d5c788149ae01b76c0d6d1a97613f4f9d05f1b366db62/elasticsearch-1.3.0.tar.gz"
+            }
+        ],
+        "1.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6089ea8d23a797e644564cfed8f27cc3",
+                    "sha256": "ddc8e74685c310279cbb05abd28e8927bdb511bd2f91e6040f427decc271c50f"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6089ea8d23a797e644564cfed8f27cc3",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 56544,
+                "upload_time": "2015-02-11T21:23:53",
+                "url": "https://files.pythonhosted.org/packages/0f/71/9f963446e223d95f0a2b02792799f9998d90afad4880baf27a52a699cd61/elasticsearch-1.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "14a758debd2296d923cb6c958db98eba",
+                    "sha256": "491971ca9e7885e86b532d81b26293d9bc6dc5740517116e4d25fda81dc72ab9"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "14a758debd2296d923cb6c958db98eba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 60688,
+                "upload_time": "2015-02-11T21:23:51",
+                "url": "https://files.pythonhosted.org/packages/df/b8/8982f26dfec171a41a9b69e23c18230297ea4c514a25f30ff5b60069445e/elasticsearch-1.4.0.tar.gz"
+            }
+        ],
+        "1.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "672d20ad44758736c1e1f9d19fe702a6",
+                    "sha256": "c10fba0c4ce33b14a012e1e928ca80b8b4e59275b92d447875603ac6cc1a9f54"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "672d20ad44758736c1e1f9d19fe702a6",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 58177,
+                "upload_time": "2015-05-18T14:03:43",
+                "url": "https://files.pythonhosted.org/packages/fe/17/37804e8a56ac8bdc649be1a8f3726f60dfe4c8fdaadaf577441328b96405/elasticsearch-1.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c220d50d6f1bb024572bf275e6909be",
+                    "sha256": "6f0af1ab3cd61c39bafb0f22dae403b966cf13cdb7e9fd54477ca75be8637fda"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0c220d50d6f1bb024572bf275e6909be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 63137,
+                "upload_time": "2015-05-18T14:03:39",
+                "url": "https://files.pythonhosted.org/packages/d1/7b/64eedf97ae98907352eaf3ac98f11424146114f35fd3fa87152dfbb6543d/elasticsearch-1.5.0.tar.gz"
+            }
+        ],
+        "1.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "78e6506f4ec0729d4def90414680f7af",
+                    "sha256": "8661e41747b885c112d942b528fec3e96e1036b5c6713aa605f2fe24b61846c2"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "78e6506f4ec0729d4def90414680f7af",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 58311,
+                "upload_time": "2015-06-10T00:39:16",
+                "url": "https://files.pythonhosted.org/packages/b4/5e/6e163a168b1405e307642cd81d82863bbd7ba59fcc951443865e20254baa/elasticsearch-1.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15f518950131aa403bb95024a5456409",
+                    "sha256": "90c8596e964af79029652d2734420355990667146b8211f240f99c8b432b0bac"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "15f518950131aa403bb95024a5456409",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 63306,
+                "upload_time": "2015-06-10T00:39:12",
+                "url": "https://files.pythonhosted.org/packages/10/05/80527ecec67300f4f3ac91066172295928510a6a5a4590852669804b4076/elasticsearch-1.6.0.tar.gz"
+            }
+        ],
+        "1.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "957d51679380da472a8458d0f06ea4f1",
+                    "sha256": "2602e4bf21d501fd04dc062a71ff1950c96a57ea4dec97b8a4f625f53bb5ae12"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.7.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "957d51679380da472a8458d0f06ea4f1",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 58891,
+                "upload_time": "2015-09-21T18:10:21",
+                "url": "https://files.pythonhosted.org/packages/47/79/1b5574b0417de61392f04c0742aaed0977f6fd246be3cb377907b0d1e3ce/elasticsearch-1.7.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e6ca52b62ae597da37208cffd121c76",
+                    "sha256": "8488d6c0316ed7561ece88397302c37231c61a402227494cab31a91959851f12"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e6ca52b62ae597da37208cffd121c76",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 62054,
+                "upload_time": "2015-09-21T18:09:59",
+                "url": "https://files.pythonhosted.org/packages/d9/39/aa5d778610280eb28599711d076f997095ecb344f3bb20643651ee91ffeb/elasticsearch-1.7.0.tar.gz"
+            }
+        ],
+        "1.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d73f98468ed1005f9bb7d7cb0c35825e",
+                    "sha256": "f344333c38d2b1f5a7886be5a8b4b266ec3d8c2bd3779c2d48f79cad7e09f786"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.8.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d73f98468ed1005f9bb7d7cb0c35825e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 59623,
+                "upload_time": "2015-10-13T21:34:45",
+                "url": "https://files.pythonhosted.org/packages/91/f8/59da54df9eea3b1a118757a8891e4784f584280239be9ec619cef7deed7a/elasticsearch-1.8.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4a2f034c51bf582417faa61f89bb000f",
+                    "sha256": "89ee1a8892e7ad9cc84a2162814e26f3ab6905dd64274cf8042a36fa15ee5276"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4a2f034c51bf582417faa61f89bb000f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57568,
+                "upload_time": "2015-10-13T21:34:41",
+                "url": "https://files.pythonhosted.org/packages/b3/3a/16352898e76c184c6c036ef7332f4d13ae7e90c86c9d7f3242ba25b173c0/elasticsearch-1.8.0.tar.gz"
+            }
+        ],
+        "1.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "851c0fee5129de7d041d807beb087820",
+                    "sha256": "cbee23c29f9947b1b78be5c0f741c1f8b504d3c53163b1355ea08f69cbd0fc0c"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.9.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "851c0fee5129de7d041d807beb087820",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 59705,
+                "upload_time": "2015-10-19T14:32:48",
+                "url": "https://files.pythonhosted.org/packages/b8/ed/cc80a5c8a1f8931589f2f1070c929ea851ed66bad29746d3b0140e14cd96/elasticsearch-1.9.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3550390baea1639479f79758d66ab032",
+                    "sha256": "eb0d4b5b20a4ccf9e49bd20498b6215d5e960d8a63a0eae44cd4431e3f303a24"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-1.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3550390baea1639479f79758d66ab032",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57748,
+                "upload_time": "2015-10-19T14:32:42",
+                "url": "https://files.pythonhosted.org/packages/13/9b/540e311b31a10c2a904acfb08030c656047e5c7ba479d35df2799e5dccfe/elasticsearch-1.9.0.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "68642065a4ae060ac6649c490e79bdd0",
+                    "sha256": "ad1e03a482265a43f706cf7262e2b07719b9ac0981b4744467263f8e6a132f81"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "68642065a4ae060ac6649c490e79bdd0",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 58336,
+                "upload_time": "2015-10-13T22:23:38",
+                "url": "https://files.pythonhosted.org/packages/cf/18/1b7a51cbc1caf2b99a913449f354dba8179b0fe6dfddd08ab160ebe54e1f/elasticsearch-2.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "93280aba70991d3b511d46890ea7afa7",
+                    "sha256": "963021a67bb2801c21cbba11d4fd09f2e215998e7305b62b32df7afe2f1ba259"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "93280aba70991d3b511d46890ea7afa7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 56332,
+                "upload_time": "2015-10-13T22:23:27",
+                "url": "https://files.pythonhosted.org/packages/e5/80/6c2e257b3fa90b34693b9ade407252b4a4fd011440cd42c96aac656f7661/elasticsearch-2.0.0.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "968baefb3124eef082c64e90f72afab6",
+                    "sha256": "a8074e1d1eefa8359bf3f86a9fc0b86ce12eb51c14f9fa32ec6b2bf67d13239d"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "968baefb3124eef082c64e90f72afab6",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 58421,
+                "upload_time": "2015-10-19T14:33:31",
+                "url": "https://files.pythonhosted.org/packages/e6/c3/d3677c8a6e5ee3c2b8ce83ffa14b9fed23f2965fcd07e5b962afb3b7c1b0/elasticsearch-2.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f4c2385effc4334f2736fafed7567eaa",
+                    "sha256": "2a66f331795bfa12b258fa8ac7f0e3aacca6373116157021a4945c57ca334f76"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f4c2385effc4334f2736fafed7567eaa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 56504,
+                "upload_time": "2015-10-19T14:33:27",
+                "url": "https://files.pythonhosted.org/packages/f6/c5/1b4a3c0ca3bf1d66a01ec8e5d6e4fa49122a371e84d1457ec7606fb0ee25/elasticsearch-2.1.0.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "09c915df5d38d51e74eee3a8eab03e7b",
+                    "sha256": "1681b72bf05dcbebbf15aeeafeec59d0cf83ea0b9456fa677f6db3de4a3ee854"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "09c915df5d38d51e74eee3a8eab03e7b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 59596,
+                "upload_time": "2016-01-05T11:06:21",
+                "url": "https://files.pythonhosted.org/packages/95/0a/a4d6b812d21e8ea7c5f9fb25174a0847f24fcfd6b8099b025d434bcd5431/elasticsearch-2.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9c00f4128eea2fb20affbfbb970a58e7",
+                    "sha256": "06f216a8435c803e1f13e9f4289f27da27cf90f2879de054f4b1c42d30cd8118"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9c00f4128eea2fb20affbfbb970a58e7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 57986,
+                "upload_time": "2016-01-05T11:05:48",
+                "url": "https://files.pythonhosted.org/packages/78/38/02ce12dc4e696c997e55e7a1667c2433dc3a1e4300ab4eb1cefa56516bb2/elasticsearch-2.2.0.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e08002977f22851ec55535ceba416f6c",
+                    "sha256": "6f184507c151bf8b093b86c0b7cd576a1d730acee03e8213cae367f196ad4c5c"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e08002977f22851ec55535ceba416f6c",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 51650,
+                "upload_time": "2016-02-29T21:59:56",
+                "url": "https://files.pythonhosted.org/packages/c3/db/3869181ba938814d092a53ffbe2597be8597f0a4be62fc3989a82b0fa85a/elasticsearch-2.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2550f3b51629cf1ef9636608af92c340",
+                    "sha256": "be3080a2bf32dff0a9f9fcc1c087515a25a357645673a976d25ef77166134d81"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2550f3b51629cf1ef9636608af92c340",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 58840,
+                "upload_time": "2016-02-29T21:59:51",
+                "url": "https://files.pythonhosted.org/packages/10/35/5fd52c5f0b0ee405ed4b5195e8bce44c5e041787680dc7b94b8071cac600/elasticsearch-2.3.0.tar.gz"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "10631576a2f7890d0d0c56fa5b4993a1",
+                    "sha256": "ede15c3573f46ea72c4d53ea7f11fe648c60d167d75d739e27f72d78a6d7f692"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "10631576a2f7890d0d0c56fa5b4993a1",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 54268,
+                "upload_time": "2016-08-17T14:32:16",
+                "url": "https://files.pythonhosted.org/packages/3f/be/980d79da0fbb14acc29e3c9b724287cbc24be2cb1ede47f2c0eecba60809/elasticsearch-2.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d16f48551aab0cdd3b47338e3a344ad7",
+                    "sha256": "e71dd7058b940f409068d8d5df2354dc4367436947a28e0e03d35d5c0508c310"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d16f48551aab0cdd3b47338e3a344ad7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 61091,
+                "upload_time": "2016-08-17T14:32:14",
+                "url": "https://files.pythonhosted.org/packages/b0/14/7decd0d5cba7f9b5bf0b421a8c7cde6ade0b1941d524b5be78f61d29b8d6/elasticsearch-2.4.0.tar.gz"
+            }
+        ],
+        "2.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6f3a63a21743fa3fdcb410351e33c5f4",
+                    "sha256": "bb8f9a365ba6650d599428538c8aed42033264661d8f7d353da59d5892305f72"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.4.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6f3a63a21743fa3fdcb410351e33c5f4",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 55263,
+                "upload_time": "2017-01-03T14:42:40",
+                "url": "https://files.pythonhosted.org/packages/ec/ad/bce2f35a129b0ae1aa9ca888aca77111ddcf53a8590ca7c146d51a2d5685/elasticsearch-2.4.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2e7ab047b0b7474a106128db401e4190",
+                    "sha256": "fead47ebfcaabd1c53dbfc21403eb99ac207eef76de8002fe11a1c8ec9589ce2"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-2.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2e7ab047b0b7474a106128db401e4190",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 60805,
+                "upload_time": "2017-01-03T14:42:38",
+                "url": "https://files.pythonhosted.org/packages/43/cd/073ce8893636dcc14e5c9fba2fd4518fc389ea57ab47eacaf1723f919798/elasticsearch-2.4.1.tar.gz"
+            }
+        ],
+        "5.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01f77898e25673e09c652b1862f5793c",
+                    "sha256": "9abd04793132bccf0ca5c51aea6ad9d0d44aa98027444c42cab478fa1db11c2e"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "01f77898e25673e09c652b1862f5793c",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 57088,
+                "upload_time": "2016-10-19T14:28:09",
+                "url": "https://files.pythonhosted.org/packages/f3/4a/446018515cbaecaa63465e3af003a41ce6d3c4deb6cbe751b73e1aff1dad/elasticsearch-5.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d15abb688844b5176be6f3d4ad4c37b2",
+                    "sha256": "cec197b1556b74747eb0f74854c0ef2fab30467d0eb1fb5594cfc548e633ba1f"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d15abb688844b5176be6f3d4ad4c37b2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 62905,
+                "upload_time": "2016-10-19T14:28:07",
+                "url": "https://files.pythonhosted.org/packages/8b/27/80eda8f6da37fc44d67ee687d0ddcb8d44428624241c849c546c9e3b9b2d/elasticsearch-5.0.0.tar.gz"
+            }
+        ],
+        "5.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b68a4d7590f05be0327f0ba977217735",
+                    "sha256": "0454bb57323c10535570042c5cb2246fbdacd286ef4a537cf82e873982a36293"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b68a4d7590f05be0327f0ba977217735",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 57092,
+                "upload_time": "2016-11-02T18:51:26",
+                "url": "https://files.pythonhosted.org/packages/d4/a9/2b5711caf4a6ccf2b1dbbf4b4dc1bddb76af680516ebb0a663040dcdbf9f/elasticsearch-5.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "336e7f3fc79055294cea5fde901c77c3",
+                    "sha256": "bebb51b1bc312f2a305b49a2c0900bbfcbdfd9f23e93ff1fc05f4132f2a3d1ed"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "336e7f3fc79055294cea5fde901c77c3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 62913,
+                "upload_time": "2016-11-02T18:51:23",
+                "url": "https://files.pythonhosted.org/packages/37/f5/9612f792b972024b358708824599307ae8a35aeb41b0d53bf4685c7f6589/elasticsearch-5.0.1.tar.gz"
+            }
+        ],
+        "5.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6c4a159a4d52f48afa6936e3b930fe5e",
+                    "sha256": "ee95918958508fd34e533f78d0790e0e5ee03d0942b8988d34e6b6c4467edf66"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6c4a159a4d52f48afa6936e3b930fe5e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 57431,
+                "upload_time": "2017-01-11T14:46:19",
+                "url": "https://files.pythonhosted.org/packages/51/bf/e37a29a465ab5562a75e9c08cdb1b03ec45faa726e0b2db342a6c8912a67/elasticsearch-5.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "71d9f81630119aa00e75cbf940dafeee",
+                    "sha256": "a0bc4508764aa14c0cd15840a0ab38020b68e17d699274417986e3da0cee82fa"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "71d9f81630119aa00e75cbf940dafeee",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 63289,
+                "upload_time": "2017-01-11T14:46:17",
+                "url": "https://files.pythonhosted.org/packages/2a/0a/fca7faa8155a1b6fcd3ce86a351640a2593b1ac8ee461f908a190b06e284/elasticsearch-5.1.0.tar.gz"
+            }
+        ],
+        "5.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f1364ca47480968f9b854283de689a96",
+                    "sha256": "db1a1000308db56f1475e059d28238238fafc20aab8cbf0ec0c3011f1caecd65"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f1364ca47480968f9b854283de689a96",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 57618,
+                "upload_time": "2017-02-12T15:33:58",
+                "url": "https://files.pythonhosted.org/packages/44/e8/3529a15f3ccf9200fc2d8832b2aaa886a09b2086bb5232ffb9dd3209e4ff/elasticsearch-5.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "66692fd1b4189039206c2fde4a4d616a",
+                    "sha256": "45d9f8fbe0878a1b7493afeb20f4f6677a43982776ed1a77d9373e9c5b9de966"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "66692fd1b4189039206c2fde4a4d616a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 63593,
+                "upload_time": "2017-02-12T15:33:56",
+                "url": "https://files.pythonhosted.org/packages/e7/b5/a77098b1f248dbc6407a53d51bf1980ab91718cd93c662cdb1ed529a1278/elasticsearch-5.2.0.tar.gz"
+            }
+        ],
+        "5.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a35e15ea31fd3a025710ab8aa51945e",
+                    "sha256": "aea16d6d6ad03a509c9f591eee9ce4ce62918d8ba26bf6513097223929be0a09"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9a35e15ea31fd3a025710ab8aa51945e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 66169,
+                "upload_time": "2017-03-31T05:33:56",
+                "url": "https://files.pythonhosted.org/packages/37/88/692a8ece505675a62f542f06fb3c0b10f2271605576114c992b34a60492e/elasticsearch-5.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6363f1de0a06690e0f94438ce954062e",
+                    "sha256": "cb7f1346ebf7fb3fac1efcd8454d2d124d29cc55a009ed5683fe4c6ecad12925"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6363f1de0a06690e0f94438ce954062e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65528,
+                "upload_time": "2017-03-31T05:33:49",
+                "url": "https://files.pythonhosted.org/packages/80/cc/eaf4e949f47ba005f5e20fd4c0b5d8b31b8c58c3c54850f09b5570565d9c/elasticsearch-5.3.0.tar.gz"
+            }
+        ],
+        "5.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1aa2fb8ec6332682ebddfc5779cd649d",
+                    "sha256": "8f02d626cff98befd298ffb1d19d8e519643d86d3aa27f6d7388566ec4ba48ee"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1aa2fb8ec6332682ebddfc5779cd649d",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 58679,
+                "upload_time": "2017-05-18T17:12:07",
+                "url": "https://files.pythonhosted.org/packages/0e/f2/971f07f2c9bb3744103081619b8af14fa4b366cf8bc57b80504a2cd5d36e/elasticsearch-5.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "afd95c2631d1ce332b6a2c9ab8ae0b19",
+                    "sha256": "e754c688e20fe73160fb6f7f5b63f2a71c78788dc9e6908950681d3a39b56e85"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "afd95c2631d1ce332b6a2c9ab8ae0b19",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 64429,
+                "upload_time": "2017-05-18T17:12:06",
+                "url": "https://files.pythonhosted.org/packages/43/15/790c7b24cd3dcbbc7c09c7d595ee2ad2d9e430ff04921b540209bef1ea16/elasticsearch-5.4.0.tar.gz"
+            }
+        ],
+        "5.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ea7ea1a34c0b725fe08d2316e410242",
+                    "sha256": "a9d1dabc18c2b593b1be5c85b697af2bbfb094a7d9cca21c48ac323257e3e7a0"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5ea7ea1a34c0b725fe08d2316e410242",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 59753,
+                "upload_time": "2017-11-10T13:38:49",
+                "url": "https://files.pythonhosted.org/packages/0b/7a/09532ffbedb2fdd905ddd9bd9dce752ea882114062dd9ac7a22efcd3814d/elasticsearch-5.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb9e68edb2b5416cd038b495e14159e0",
+                    "sha256": "d03379ef519dde70b3b842deb0df576520a7a4735abe1d5ec3f32f8e66899be2"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fb9e68edb2b5416cd038b495e14159e0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 67808,
+                "upload_time": "2017-11-10T13:38:47",
+                "url": "https://files.pythonhosted.org/packages/86/24/cc48164f64126431f2cfd76c3b217be33885edf64800065093dde5a3e65c/elasticsearch-5.5.0.tar.gz"
+            }
+        ],
+        "5.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8524dd68cbc87a1fb6f0848433a3dde6",
+                    "sha256": "d9dac18462375e06a5425730d8aaccb874cc748658b060c0536afb4e296ba9fe"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8524dd68cbc87a1fb6f0848433a3dde6",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 112475,
+                "upload_time": "2017-11-10T20:49:14",
+                "url": "https://files.pythonhosted.org/packages/30/85/12a53ea2d34531de7154d82a93567d1c22fab756986ce49183057639a9d0/elasticsearch-5.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "91e0ddaf8952ef371005e9c6696b2f67",
+                    "sha256": "c4f1abf19e2e79ebc526e6f65838909123da07c2775e2c0660c69b01ebb2001a"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "91e0ddaf8952ef371005e9c6696b2f67",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 67854,
+                "upload_time": "2017-11-10T20:49:12",
+                "url": "https://files.pythonhosted.org/packages/78/76/502a8e76e60d1fb3bf8326d94001465db8b7a4dd4df6c70b6f8ab3d87e33/elasticsearch-5.5.1.tar.gz"
+            }
+        ],
+        "5.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2d8d596767c5e5b62780c133b2b52133",
+                    "sha256": "2e6dcdf9cb62377e0d6b82d2931ebc67b5a549081bbb531aa3be60ece33257b2"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.5.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2d8d596767c5e5b62780c133b2b52133",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 59822,
+                "upload_time": "2018-01-16T15:29:48",
+                "url": "https://files.pythonhosted.org/packages/7f/b0/c87bc0744c3193c7b7f07b0469bbeaaf7df363cb452d882783c283572345/elasticsearch-5.5.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "227cdf2085f48bbad15f1ff49ebc02fa",
+                    "sha256": "8539e30c33fa0ad09617893a458056a35a654c92226390c30a07a3776bb8a94f"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-5.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "227cdf2085f48bbad15f1ff49ebc02fa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70018,
+                "upload_time": "2018-01-16T15:29:24",
+                "url": "https://files.pythonhosted.org/packages/2a/05/bd5e0d4716f347a7400ac509e22e7f4c01a42cb716ea3f4c515919825ee9/elasticsearch-5.5.2.tar.gz"
+            }
+        ],
+        "6.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28406ea867dddf5daaa7b06278a81c41",
+                    "sha256": "f8b9910ac0e336422c3c488ff53f21ba4c39f46e76b9cf1f81257d02052667c9"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-6.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "28406ea867dddf5daaa7b06278a81c41",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 112226,
+                "upload_time": "2017-11-14T14:20:59",
+                "url": "https://files.pythonhosted.org/packages/7a/06/4138270b44512484b3ddda7ff4a38e150cfc17a63ef3b2fa7e8c0b18029d/elasticsearch-6.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01c16baf48f0b4d9cdd8da3870897154",
+                    "sha256": "9fd6fe01d5f992666674f6089ff2ec4917ec64ed7dcd7e109cdf95f406303809"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-6.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "01c16baf48f0b4d9cdd8da3870897154",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 67198,
+                "upload_time": "2017-11-14T14:20:56",
+                "url": "https://files.pythonhosted.org/packages/58/d8/de6d8a4658c94acffc9ff8b61942ac80b5b4b6d2b2b92ef8f4a503a09844/elasticsearch-6.0.0.tar.gz"
+            }
+        ],
+        "6.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fe6e559f25ae227a81185b24da58c983",
+                    "sha256": "307055861d0290b830bd1ec4b82d41ce0f19f6a4899635956bd16bc61e3e90b1"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-6.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fe6e559f25ae227a81185b24da58c983",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 59506,
+                "upload_time": "2018-01-06T02:51:46",
+                "url": "https://files.pythonhosted.org/packages/67/15/80db00582d1d6286c5c8f0e18e444481e0fc2bc1fa2391935f10358c5f2d/elasticsearch-6.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f6ed5d471fa0f6aa6f2eb028f2db3dcd",
+                    "sha256": "8d91a3fce12123a187b673f18c23bcffa6e7b49ba057555d59eeeded0ba15dce"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-6.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f6ed5d471fa0f6aa6f2eb028f2db3dcd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70027,
+                "upload_time": "2018-01-06T02:51:42",
+                "url": "https://files.pythonhosted.org/packages/3f/0b/3f057f5a21811f5b83a6541758595fbd48caa42116e88f162f049afc4296/elasticsearch-6.1.1.tar.gz"
+            }
+        ],
+        "6.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff89f73ac9ad56881925a4a9c45d1fb1",
+                    "sha256": "503c498234dd572896e563386181d7cb966ab3db68b0b132a26c5dabfd5dde24"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-6.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ff89f73ac9ad56881925a4a9c45d1fb1",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 69468,
+                "upload_time": "2018-03-20T18:41:43",
+                "url": "https://files.pythonhosted.org/packages/c3/e3/146b675e6d0138a49c4b817b4e68170eb9b75cee7e71fa3ec69624c4f467/elasticsearch-6.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c689794d89764ed4e07f3e202ba7c009",
+                    "sha256": "b106fa3e01750376a42f8a9882bd84d630fda58c7aba38b4fec797d11c0bd0a2"
+                },
+                "downloads": -1,
+                "filename": "elasticsearch-6.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c689794d89764ed4e07f3e202ba7c009",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76058,
+                "upload_time": "2018-03-20T18:41:41",
+                "url": "https://files.pythonhosted.org/packages/7b/32/645c407856c2e799d41c8a861e8d707070f82f00abf3089ccbf80b3c1e20/elasticsearch-6.2.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "ff89f73ac9ad56881925a4a9c45d1fb1",
+                "sha256": "503c498234dd572896e563386181d7cb966ab3db68b0b132a26c5dabfd5dde24"
+            },
+            "downloads": -1,
+            "filename": "elasticsearch-6.2.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "ff89f73ac9ad56881925a4a9c45d1fb1",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.6",
+            "size": 69468,
+            "upload_time": "2018-03-20T18:41:43",
+            "url": "https://files.pythonhosted.org/packages/c3/e3/146b675e6d0138a49c4b817b4e68170eb9b75cee7e71fa3ec69624c4f467/elasticsearch-6.2.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "c689794d89764ed4e07f3e202ba7c009",
+                "sha256": "b106fa3e01750376a42f8a9882bd84d630fda58c7aba38b4fec797d11c0bd0a2"
+            },
+            "downloads": -1,
+            "filename": "elasticsearch-6.2.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "c689794d89764ed4e07f3e202ba7c009",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 76058,
+            "upload_time": "2018-03-20T18:41:41",
+            "url": "https://files.pythonhosted.org/packages/7b/32/645c407856c2e799d41c8a861e8d707070f82f00abf3089ccbf80b3c1e20/elasticsearch-6.2.0.tar.gz"
+        }
+    ],
+    "package_name": "elasticsearch"
+}

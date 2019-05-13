@@ -1,0 +1,1646 @@
+{
+    "info": {
+        "author": "Ian Stapleton Cordasco",
+        "author_email": "graffatcolmingov@gmail.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Framework :: Flake8",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Software Development :: Quality Assurance"
+        ],
+        "description": "========\n Flake8\n========\n\nFlake8 is a wrapper around these tools:\n\n- PyFlakes\n- pycodestyle\n- Ned Batchelder's McCabe script\n\nFlake8 runs all the tools by launching the single ``flake8`` command.\nIt displays the warnings in a per-file, merged output.\n\nIt also adds a few features:\n\n- files that contain this line are skipped::\n\n    # flake8: noqa\n\n- lines that contain a ``# noqa`` comment at the end will not issue warnings.\n- you can ignore specific errors on a line with ``# noqa: <error>``, e.g.,\n  ``# noqa: E234``\n- Git and Mercurial hooks\n- extendable through ``flake8.extension`` and ``flake8.formatting`` entry\n  points\n\n\nQuickstart\n==========\n\nSee our `quickstart documentation\n<http://flake8.pycqa.org/en/latest/index.html#quickstart>`_ for how to install\nand get started with Flake8.\n\n\nFrequently Asked Questions\n==========================\n\nFlake8 maintains an `FAQ <http://flake8.pycqa.org/en/latest/faq.html>`_ in its\ndocumentation.\n\n\nQuestions or Feedback\n=====================\n\nIf you have questions you'd like to ask the developers, or feedback you'd like\nto provide, feel free to use the mailing list: code-quality@python.org\n\nWe would love to hear from you. Additionally, if you have a feature you'd like\nto suggest, the mailing list would be the best place for it.\n\n\nLinks\n=====\n\n* `Flake8 Documentation <http://flake8.pycqa.org/en/latest/>`_\n\n* `GitLab Project <https://gitlab.com/pycqa/flake8>`_\n\n* `All (Open and Closed) Issues\n  <https://gitlab.com/pycqa/flake8/issues?scope=all&sort=updated_desc&state=all>`_\n\n* `Code-Quality Archives\n  <https://mail.python.org/mailman/listinfo/code-quality>`_\n\n* `Code of Conduct\n  <http://flake8.pycqa.org/en/latest/internal/contributing.html#code-of-conduct>`_\n\n* `Getting Started Contributing\n  <http://flake8.pycqa.org/en/latest/internal/contributing.html>`_\n\n\nMaintenance\n===========\n\nFlake8 was created by Tarek Ziad\u00e9 and is currently maintained by `Ian Cordasco\n<https://coglib.com/~icordasc/>`_\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://gitlab.com/pycqa/flake8",
+        "keywords": "",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "flake8",
+        "package_url": "https://pypi.org/project/flake8/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/flake8/",
+        "release_url": "https://pypi.org/project/flake8/3.5.0/",
+        "requires_dist": [
+            "enum34; python_version<\"3.4\"",
+            "configparser; python_version<\"3.2\"",
+            "pyflakes >= 1.5.0, < 1.7.0",
+            "pycodestyle >= 2.0.0, < 2.4.0",
+            "mccabe >= 0.6.0, < 0.7.0"
+        ],
+        "requires_python": "",
+        "summary": "the modular source code checker: pep8, pyflakes and co",
+        "version": "3.5.0"
+    },
+    "last_serial": 3271796,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "05a4b951a128b58a7e7b3fd7087bcf3d",
+                    "sha256": "f6caa651a75b7ed3b530eeb18369cec80c1b654764dfdcebb8a127cd5adf7a35"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "05a4b951a128b58a7e7b3fd7087bcf3d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28594,
+                "upload_time": "2010-08-12T15:36:04",
+                "url": "https://files.pythonhosted.org/packages/0e/21/923a19950c0be0bf68cd4beef340fae25ec07f50759bb8728e2bd6af2d93/flake8-0.1.tar.gz"
+            }
+        ],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0c48f71beaaa1464e8e7dd395b70905f",
+                    "sha256": "e27fababa29d7ab994a806404a386ed5abbbd58a88271eb458fefda1aecdd2c1"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0c48f71beaaa1464e8e7dd395b70905f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29199,
+                "upload_time": "2011-01-26T12:00:15",
+                "url": "https://files.pythonhosted.org/packages/46/b8/63dbf6241992e2490b23d1bbf8d1af628210474431360a0e41456f8e1f36/flake8-0.2.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1738ad17fdb85544f7a514754a6c76a1",
+                    "sha256": "8cc3ae091860b16a6d70043e3361d657b81b83413786dec1870a3c3fdc720b3b"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1738ad17fdb85544f7a514754a6c76a1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29446,
+                "upload_time": "2011-02-08T11:48:48",
+                "url": "https://files.pythonhosted.org/packages/86/e7/4f8f95b8209f6b9569707fd9f0a3252f7c3abd2aeda80a5d0117b3d1b0fd/flake8-0.3.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cd407fb21a787c0a57ee02f8cef33b17",
+                    "sha256": "16830d6a81d6b9bd0e760dec948a2bf4ce58817b1bc6d74a0c0dfdcef7d00ace"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cd407fb21a787c0a57ee02f8cef33b17",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29450,
+                "upload_time": "2011-02-08T12:09:38",
+                "url": "https://files.pythonhosted.org/packages/b8/00/1d79544e14114fa112d45bd7d615a99b198a525e703590d3923c7977a47a/flake8-0.4.tar.gz"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f8b81255c95e2a09133eb39cd95fa9e7",
+                    "sha256": "c2cc3626882e97bad37ea5d3157d7fd72fc8df2db21a0a6b67671a150af325f1"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f8b81255c95e2a09133eb39cd95fa9e7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31536,
+                "upload_time": "2011-02-13T13:23:15",
+                "url": "https://files.pythonhosted.org/packages/c1/8d/2dcee405f6e5340dd40f144908867ff422d22e732208daadbd3ea1719737/flake8-0.5.tar.gz"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "382bfa9a39b972a3000c7fb3fbebaf23",
+                    "sha256": "ecd1a3ce3ea80130a933be73abc6146f657a48347bfdcd6ec8f93ccdb4bfadf5"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "382bfa9a39b972a3000c7fb3fbebaf23",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23414,
+                "upload_time": "2011-02-15T11:56:37",
+                "url": "https://files.pythonhosted.org/packages/f3/93/ff69c70fbb08a20c7dda613c7f3e70723bd1c36d458c1615621e10e4252f/flake8-0.6.tar.gz"
+            }
+        ],
+        "0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "04555d037d3e3a76ab9d77da515a89a4",
+                    "sha256": "3b1e767b9a11dda5913d20ecfd3b42cb5bc62500090f24257075c742d64dae8f"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "04555d037d3e3a76ab9d77da515a89a4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24425,
+                "upload_time": "2011-02-18T09:24:28",
+                "url": "https://files.pythonhosted.org/packages/04/88/627f30f478e5319cdfbba19eec5e2a672835504e145fe7bdfaaf8b944518/flake8-0.7.tar.gz"
+            }
+        ],
+        "0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "55f6ec22046ed6d49bfcadce517b3dbd",
+                    "sha256": "fe4c3e43adb48ee906159f9bc7587177b75288b1592fed1f07e128f75ea22266"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "55f6ec22046ed6d49bfcadce517b3dbd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24494,
+                "upload_time": "2011-02-27T17:32:56",
+                "url": "https://files.pythonhosted.org/packages/7c/16/f2067764f936231ace8b03ff064b262efc9b9bf95a28c5deb73590681e3e/flake8-0.8.tar.gz"
+            }
+        ],
+        "0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e607b3411bad71c04bc3c3355eec69e8",
+                    "sha256": "12347680f1b9afb2094ca1ffb3139217fdab3c0307bc0984af11199b1ea9852b"
+                },
+                "downloads": -1,
+                "filename": "flake8-0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e607b3411bad71c04bc3c3355eec69e8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26106,
+                "upload_time": "2011-11-09T14:49:54",
+                "url": "https://files.pythonhosted.org/packages/e6/ee/174942e953285d6a4da4495ad79385f39cef0141f4f4e8d099477fd51b83/flake8-0.9.tar.gz"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f8a92349b39910d8a9af10ef2961b284",
+                    "sha256": "31c0b9ee0f2239d6c2e903d35cd262631818f6486fb98924597de883a6b95b3b"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f8a92349b39910d8a9af10ef2961b284",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40673,
+                "upload_time": "2011-11-29T13:44:29",
+                "url": "https://files.pythonhosted.org/packages/a6/c4/44c41b868d499c4162f86e5312a690ff06ec45b7e1465fc305c6d3dd866d/flake8-1.0.tar.gz"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28f1a26ec043ba153b52a41c991b13fe",
+                    "sha256": "5eddc5bb24224e9fa7e0f225ff21162c4409c3f5fa3c5efce3d790e93582cabb"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "28f1a26ec043ba153b52a41c991b13fe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 27462,
+                "upload_time": "2012-02-14T13:27:41",
+                "url": "https://files.pythonhosted.org/packages/49/b0/8628dfb4584f7dfa319b9f27bdbb2f1be265117841ee34fbd67a90b5437f/flake8-1.1.tar.gz"
+            }
+        ],
+        "1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f17045f150ff3c4a2feae1dc59088370",
+                    "sha256": "8b2299337a13af61d2a031637dfa4c7a1229f3bc98a6ba5f2acbb53aae83e839"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f17045f150ff3c4a2feae1dc59088370",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30089,
+                "upload_time": "2012-03-10T16:37:51",
+                "url": "https://files.pythonhosted.org/packages/9e/91/7094b1fd241a018e91c7bdb2a8eb7c34f4ed0744a8839a3f0fb9988e7947/flake8-1.2.tar.gz"
+            }
+        ],
+        "1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5e4619c13bb4b0add8d67868876e3c44",
+                    "sha256": "f5d60ccd64ae9b50514013dc8abff4524aba8a4df5d9310cba846eb9fd5c5435"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5e4619c13bb4b0add8d67868876e3c44",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30201,
+                "upload_time": "2012-03-22T10:35:41",
+                "url": "https://files.pythonhosted.org/packages/8f/1c/2f9c92cb917b2f95674b3c8038f1b78d5cbe54fbb53453dadec696cc026d/flake8-1.3.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0dbe1b9e028a66f0c42cbab94a30715d",
+                    "sha256": "5c2a7e827aee3c8f6512deecadb07cc2b74413a54e030a02eccd17682cfd760d"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0dbe1b9e028a66f0c42cbab94a30715d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30206,
+                "upload_time": "2012-05-19T19:22:16",
+                "url": "https://files.pythonhosted.org/packages/b1/9e/674f7c2f87ed52e8b50d265ec52c3a3e36f4f0ee06dd626508a246b88086/flake8-1.3.1.tar.gz"
+            }
+        ],
+        "1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "64acc2c905178f6d6817d88574407fb5",
+                    "sha256": "4ed58d8aba65fb8250f82ba067ca556e54cf1d5719d8496b6396bdbb229f4735"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "64acc2c905178f6d6817d88574407fb5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33480,
+                "upload_time": "2012-07-10T16:32:37",
+                "url": "https://files.pythonhosted.org/packages/dd/2a/d24c0ec0863e420fbb0383e6b642aaa4c17421a49419a323e29ea0eb894e/flake8-1.4.tar.gz"
+            }
+        ],
+        "1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "525be5c7fcaf85f6819c77752cb2ee72",
+                    "sha256": "0c31c1ad60e82c12b0fd8de95dc276418fa02d6ad6698ab8d31dda55897acae4"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "525be5c7fcaf85f6819c77752cb2ee72",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 37668,
+                "upload_time": "2012-10-13T14:14:06",
+                "url": "https://files.pythonhosted.org/packages/fd/a1/63716a663c3a3a7d79ac43bd9b26939ff7955e4d607a04b3866b3f551ffd/flake8-1.5.tar.gz"
+            }
+        ],
+        "1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cac1731216fd14c3be34f30e85dde2c3",
+                    "sha256": "064e79165cee7ea0d4648029446a45405f3d9a0ae2984e8d7580ca2074dfca01"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cac1731216fd14c3be34f30e85dde2c3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 41430,
+                "upload_time": "2012-11-17T00:51:12",
+                "url": "https://files.pythonhosted.org/packages/88/0a/9fc5201014fdb68a53cc28d67559ba5edc38f9799f4543a637bdbbe49ae8/flake8-1.6.tar.gz"
+            }
+        ],
+        "1.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "daa3de7f1c413bb11f98601e18a0d872",
+                    "sha256": "ed995b3438f2dc1fe6ca5d3f3c868defb198f32778139262310c7b6e3ee57877"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "daa3de7f1c413bb11f98601e18a0d872",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 41681,
+                "upload_time": "2012-11-25T01:54:44",
+                "url": "https://files.pythonhosted.org/packages/a5/bf/5cfcb9ed884dc059068e3fc7dddcae823f049aa7c0222afd0b3e1e0bccd9/flake8-1.6.1.tar.gz"
+            }
+        ],
+        "1.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "abfdbb25d37c28e9da05f1b5c3596d1a",
+                    "sha256": "9518547222a708f4b26ea0691c8f01c772d6859a7103b78f702ac86d850d6098"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "abfdbb25d37c28e9da05f1b5c3596d1a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39626,
+                "upload_time": "2012-11-25T10:55:24",
+                "url": "https://files.pythonhosted.org/packages/60/a7/b805733b76cd194bf9d03bf207550daf7da2bea4119f53bc8297814da52e/flake8-1.6.2.tar.gz"
+            }
+        ],
+        "1.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a7830d1a6c23e889bc1fcaa4a87f53bd",
+                    "sha256": "3318f09503c202476082e9b915f258076be2bcd0d1acbbab49e001d5707eb723"
+                },
+                "downloads": -1,
+                "filename": "flake8-1.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a7830d1a6c23e889bc1fcaa4a87f53bd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 42352,
+                "upload_time": "2012-12-21T22:51:32",
+                "url": "https://files.pythonhosted.org/packages/70/49/8e2663e3da42ec06a800624cd683f625d139ff20a95f11e332260196426b/flake8-1.7.0.tar.gz"
+            }
+        ],
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "176c6b3613777122721db181560aa1e3",
+                    "sha256": "8dce4f7e64cc202cc6da93eab84b2ce660110ff684b6738bba64a0a431b3bc69"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "176c6b3613777122721db181560aa1e3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10511,
+                "upload_time": "2013-02-23T22:37:03",
+                "url": "https://files.pythonhosted.org/packages/49/ab/852db3039dc2b72d2697281873020bb6a8bef1af2565e01e9492a9447fcd/flake8-2.0.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cf326cfb88a1db6c5b29a3a6d9efb257",
+                    "sha256": "098ab7991067c08cfaa4716de20066d90f66dbc71502114ea8cad9a9fd5c9512"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cf326cfb88a1db6c5b29a3a6d9efb257",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25010,
+                "upload_time": "2013-10-26T20:26:00",
+                "url": "https://files.pythonhosted.org/packages/8c/a7/bce19129cb750a4f0720440801de328eafb18dd6bb94638d7bd350a8eead/flake8-2.1.0.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "286df52d6eafdb337b4633a8a03e2697",
+                    "sha256": "0b4a13d59adda9f5f7e57f2f1209ed7bbe18f3e7d8c7bca7d0342c92007b7418"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "286df52d6eafdb337b4633a8a03e2697",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 18872,
+                "upload_time": "2014-06-23T02:22:33",
+                "url": "https://files.pythonhosted.org/packages/da/d1/be537bd5d520befcc3bfd25b65dce8c4b03542bbb6191de4d379d949af69/flake8-2.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aea44c1389dd44e668a76a56909cbcec",
+                    "sha256": "7a91bb6a4c7492494a20bdf388b3fb61c6bbef9d4ed2f60342fea69bc14c924e"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "aea44c1389dd44e668a76a56909cbcec",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23303,
+                "upload_time": "2014-06-23T02:22:29",
+                "url": "https://files.pythonhosted.org/packages/2d/cc/5c6ec08856d38e3a5dcb6147806c383f2bdfcc4328e2ff2422e4c9b5d093/flake8-2.2.0.tar.gz"
+            }
+        ],
+        "2.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "79c014a12d727e007453d7af3e5b13ad",
+                    "sha256": "289959a38419a0e466b89a0b2aeb90cc36be8ac1b402db6bac18b1113e416124"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "79c014a12d727e007453d7af3e5b13ad",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 19052,
+                "upload_time": "2014-06-30T13:50:45",
+                "url": "https://files.pythonhosted.org/packages/11/e5/e9eb85c1c285c0fa39f3cfc4f5440ba82127bcdcdd16443236a73787f442/flake8-2.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "213ddab1d44d654cbae61aacad73ae18",
+                    "sha256": "b658b1bb414abc5a014c6030e4d8c7c4d05df15dc96194c3c7b28e831a046c36"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "213ddab1d44d654cbae61aacad73ae18",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23759,
+                "upload_time": "2014-06-30T13:50:48",
+                "url": "https://files.pythonhosted.org/packages/4d/28/434cfa0a0dfdf8df4e3ef07ff765ef98c4a4f5fa2ae24b7afefa49bbd836/flake8-2.2.1.tar.gz"
+            }
+        ],
+        "2.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "547b775460a41655806d167bd7ea661c",
+                    "sha256": "2a8e3e54aa0be2e0777333cf9733995b2659eee6334465adcff002c0b1fcd8e1"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "547b775460a41655806d167bd7ea661c",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 19386,
+                "upload_time": "2014-07-05T02:53:55",
+                "url": "https://files.pythonhosted.org/packages/6a/c8/5e9b2a98656cc6ccdcede16a5b4d3ef131911b1ce90c8913d1d1664a8d94/flake8-2.2.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5489f7dbec86de460839fa4290997040",
+                    "sha256": "e9737683d71c24ddff0cb7e76f33b03d0955a0fab772632ec311a469062e7278"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5489f7dbec86de460839fa4290997040",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23977,
+                "upload_time": "2014-07-05T02:53:59",
+                "url": "https://files.pythonhosted.org/packages/66/9e/4633bd1e37e4127242ddf8df18ab8dc9f2c3d79ce9c414f46cb39807e334/flake8-2.2.2.tar.gz"
+            }
+        ],
+        "2.2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "42f42973f990303e00c8bf73ea0be47a",
+                    "sha256": "ee306a7fe3de6c5e8d0272ef12e3a1a1b42504f18b8eed28ab14269217aea2cc"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "42f42973f990303e00c8bf73ea0be47a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 19436,
+                "upload_time": "2014-08-26T00:05:36",
+                "url": "https://files.pythonhosted.org/packages/25/0c/bc7510f3752eaab4551329fcd320e09e7e0cf6b4929e53a0651e60bbe03e/flake8-2.2.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc26f97ab25f659761aee131a25e98b6",
+                    "sha256": "455ac100727f183714473f477c9ab786579c533b7beb3327f6f79c8215057968"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dc26f97ab25f659761aee131a25e98b6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24035,
+                "upload_time": "2014-08-26T00:05:26",
+                "url": "https://files.pythonhosted.org/packages/1f/0d/2fbde2a11ea67323905d5240960bdcbd88c70b28479143db2675cdaf5479/flake8-2.2.3.tar.gz"
+            }
+        ],
+        "2.2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5f9be8c6184beb94a9bc189b67b38806",
+                    "sha256": "a8739982cfe8efbe42f5d7504b8d1f583cfdf7681d96c9728085a84d7cd63ce5"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5f9be8c6184beb94a9bc189b67b38806",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32378,
+                "upload_time": "2014-10-09T21:57:59",
+                "url": "https://files.pythonhosted.org/packages/0d/69/3e19395889eb6e9fd35a6900fc25db3d4aa32585e6b606924ab8af69da8b/flake8-2.2.4.tar.gz"
+            }
+        ],
+        "2.2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6dea927949b94c9d9495ab24bcdf9cf0",
+                    "sha256": "285e8bd730c0b6fdfbe23c32d2936bffba401f23cab132e8722c68be80d6f182"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.2.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6dea927949b94c9d9495ab24bcdf9cf0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28333,
+                "upload_time": "2014-10-20T02:27:40",
+                "url": "https://files.pythonhosted.org/packages/cb/31/c4fe7743e3bcec64aee3bda010b07189142d8204176068e26061c037f1e0/flake8-2.2.5.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b38e2ea40521b0647c25b8a3c181cdb",
+                    "sha256": "c99cc9716d6655d9c8bcb1e77632b8615bf0abd282d7abd9f5c2148cad7fc669"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0b38e2ea40521b0647c25b8a3c181cdb",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 23383,
+                "upload_time": "2015-01-04T20:50:25",
+                "url": "https://files.pythonhosted.org/packages/ca/e6/5e6ce67c8e7a06a55d2520422306ce6a8861e844f081b9eec29db76a0d25/flake8-2.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "488d6166f6b9ef9fe9d433b95e77dc07",
+                    "sha256": "5ee1a43ccd0716d6061521eec6937c983efa027793013e572712c4da55c7c83e"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "488d6166f6b9ef9fe9d433b95e77dc07",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32897,
+                "upload_time": "2015-01-04T20:50:28",
+                "url": "https://files.pythonhosted.org/packages/7a/5d/92e82c7a212d8139ed03cc68ed622cec17ed39d90fcfefe8a318561138c0/flake8-2.3.0.tar.gz"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9cfb34a91072701886063f8180d19003",
+                    "sha256": "c042537b05502f0ee440d950d5f38d5a3c113b03cca473c39ea90001bd9ac857"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9cfb34a91072701886063f8180d19003",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 28394,
+                "upload_time": "2015-03-08T02:44:29",
+                "url": "https://files.pythonhosted.org/packages/ac/1a/a9fa6e1672f5703d98ea4425c5941ec28db23f3dd169a505b8bdc2386987/flake8-2.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d413935bb21026c18aca82654114502f",
+                    "sha256": "d26a9d0252da9f831b8277b824961bb10b1f9d79f4752d32e4814b7bcd1e089b"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d413935bb21026c18aca82654114502f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 67257,
+                "upload_time": "2015-03-08T02:44:33",
+                "url": "https://files.pythonhosted.org/packages/21/ff/ae9f13caf5090733151987b4dc4c820fb9fa38263bab01107790a9531ab0/flake8-2.4.0.tar.gz"
+            }
+        ],
+        "2.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8767d6cdc4b1654a418f99555c505f84",
+                    "sha256": "8fc4e865a29f3c6ecae401a7dce18247f8abd046d24e390e16af9976cc9c7aa8"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.4.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8767d6cdc4b1654a418f99555c505f84",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 30917,
+                "upload_time": "2015-05-18T23:46:04",
+                "url": "https://files.pythonhosted.org/packages/b4/2a/1fec6e802ced26214a27913f5b82d904b29e1a15acba06f48443b7a6faae/flake8-2.4.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed45d3db81a3b7c88bd63c6e37ca1d65",
+                    "sha256": "2e7ebbe59d8c85e626e36d99f0db2f578394313d3f7ce9dc9f1da57ef6cd7537"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ed45d3db81a3b7c88bd63c6e37ca1d65",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 50324,
+                "upload_time": "2015-05-18T23:46:08",
+                "url": "https://files.pythonhosted.org/packages/8f/b5/9a73c66c7dba273bac8758398f060c008a25f3e84531063b42503b5d0a95/flake8-2.4.1.tar.gz"
+            }
+        ],
+        "2.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dfdca9dff574ee0d1d3af2b6c84487ae",
+                    "sha256": "b158f2fd1e62b7d25dbe3e0919fc97798719f72a6072bdb2f9b0e1d02fc2b03f"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "dfdca9dff574ee0d1d3af2b6c84487ae",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 37481,
+                "upload_time": "2015-10-26T14:15:28",
+                "url": "https://files.pythonhosted.org/packages/5a/42/b50f31413ab6474e6dcb8d69ef892818f051e1018e882eb51530b53b05d7/flake8-2.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f239d055144a17cce76b3a402f112dc6",
+                    "sha256": "8216c8c6ee092ae93d51f89bc91045648c88cd9be77d60cf47df7ca26ee4f88c"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f239d055144a17cce76b3a402f112dc6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82600,
+                "upload_time": "2015-10-26T14:15:40",
+                "url": "https://files.pythonhosted.org/packages/09/b9/080166931c0ab4ccbac7ac2a86d07b16ec7b3ffb31feb81f001d7c86ad08/flake8-2.5.0.tar.gz"
+            }
+        ],
+        "2.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "91b5aa039a42d5ab482ef3d682472365",
+                    "sha256": "34f13d083fb9e5b1728acc3dd10886b40fa254efe03b97ed01ced58926c38dbd"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "91b5aa039a42d5ab482ef3d682472365",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 37919,
+                "upload_time": "2015-12-08T04:57:03",
+                "url": "https://files.pythonhosted.org/packages/3d/2f/3c266cdf3c16efb39a9b6f9f98ab1bb73990ae06f2cfe4eccc5c5e8ced2c/flake8-2.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2704676fd2d39c7441a09ad69f3296b3",
+                    "sha256": "448aed48b0671fe6062f47b98c3081f3a4b36fbe99ddb8ac2a3be6e6cb135603"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2704676fd2d39c7441a09ad69f3296b3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 83692,
+                "upload_time": "2015-12-08T04:57:14",
+                "url": "https://files.pythonhosted.org/packages/de/94/b311b0e78fc260afb745c73418cf7169f4ccfd48fde51cbb89fadf4fd4a7/flake8-2.5.1.tar.gz"
+            }
+        ],
+        "2.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3658c1d2aca9df75792f44a63b94455d",
+                    "sha256": "07bbc7bfb6a35fbb973851a6465f8d94768f5e73f0c4fd4789f886834055c484"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3658c1d2aca9df75792f44a63b94455d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 38680,
+                "upload_time": "2016-01-30T14:50:20",
+                "url": "https://files.pythonhosted.org/packages/a4/24/fdd9e825c5bf50bcb8292661c3923b6c79a1702e0522160f6ef7bc885ff8/flake8-2.5.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "497dd932bc1ab84d3e20f48bb7f242f6",
+                    "sha256": "3dbee9045b68ed19e35fbe9da58f3407debcad16eca38b36f78dd695eca4ca6c"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "497dd932bc1ab84d3e20f48bb7f242f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 88504,
+                "upload_time": "2016-01-30T14:50:35",
+                "url": "https://files.pythonhosted.org/packages/61/27/ea62c7c4279acf6d3dc8884c26db6fb5bf27f706b7f2934c3c75b87c9c74/flake8-2.5.2.tar.gz"
+            }
+        ],
+        "2.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dc8999017958a772ce1d2e4eebc638e6",
+                    "sha256": "73ba527f3309fa9d3fd910182a2862d59f564dd179e86557c49869b706cc3089"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "dc8999017958a772ce1d2e4eebc638e6",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 37656,
+                "upload_time": "2016-02-11T17:21:45",
+                "url": "https://files.pythonhosted.org/packages/8a/6d/eed8c5af68c5481283219355b5699ff2f16cbaef241550c275934c8ce7ff/flake8-2.5.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1483aeb5b1c416a18532d48c5a46705",
+                    "sha256": "0a46658764134650983dd3b1fe52cb8187b471f9e0389ecce7e86d61a9be3250"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a1483aeb5b1c416a18532d48c5a46705",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81583,
+                "upload_time": "2016-02-11T17:21:54",
+                "url": "https://files.pythonhosted.org/packages/df/96/631d189e5ad8d2eedfcb0e586e94310e5cdf2d1fbd69d9778615373e0424/flake8-2.5.3.tar.gz"
+            }
+        ],
+        "2.5.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84774f041b4f5e50c54f5593ca3170f4",
+                    "sha256": "fb5a67af4024622287a76abf6b7fe4fb3cfacf765a790976ce64f52c44c88e4a"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "84774f041b4f5e50c54f5593ca3170f4",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 37715,
+                "upload_time": "2016-02-11T17:54:30",
+                "url": "https://files.pythonhosted.org/packages/e1/16/fba9e558dd7215b9a54abfc65a7032c5239c983cbb4f9eac9abf0e8f399b/flake8-2.5.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a4585b3569b95c3f66acb8294a7f06ef",
+                    "sha256": "cc1e58179f6cf10524c7bfdd378f5536d0a61497688517791639a5ecc867492f"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a4585b3569b95c3f66acb8294a7f06ef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81663,
+                "upload_time": "2016-02-11T17:54:41",
+                "url": "https://files.pythonhosted.org/packages/60/4a/7b0ac4920af5673380b7079ba2f7580a8645790c7718881082c0d918b8b4/flake8-2.5.4.tar.gz"
+            }
+        ],
+        "2.5.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c6a7649af2119fe5f63ddb11fb89237a",
+                    "sha256": "80a66cd9bd66b0679da030fc930c0a4d09237dd72f354d899427b5c6718223b9"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c6a7649af2119fe5f63ddb11fb89237a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 37915,
+                "upload_time": "2016-06-14T14:08:29",
+                "url": "https://files.pythonhosted.org/packages/01/f6/2b87406d83aacb6d1fa9acf2c7e3752f59020ebb1b1c9f8adc811d1ea6f0/flake8-2.5.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eb9ea3adf046f593bd21c93dfb527458",
+                    "sha256": "326a54ace7878a5ad1538110f2145bc6a134df43fff290475fd4e7ba38a6deea"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.5.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "eb9ea3adf046f593bd21c93dfb527458",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30159,
+                "upload_time": "2016-06-14T14:08:44",
+                "url": "https://files.pythonhosted.org/packages/f6/d6/31eb69e7a9a3c33708807d83e78af1b3de6d41f2c333369c57732d0dda8c/flake8-2.5.5.tar.gz"
+            }
+        ],
+        "2.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c895edfbd388b74f262a5dd5be0e50e9",
+                    "sha256": "d37bae8d6c836ea9f29a670f870b1652ff08d9b52b371fe1b7a53eb95e335f29"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c895edfbd388b74f262a5dd5be0e50e9",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 38327,
+                "upload_time": "2016-06-16T00:39:22",
+                "url": "https://files.pythonhosted.org/packages/aa/68/9882a69953b1f87a2661611660a4766e0c15c211c48981b371ed2a995494/flake8-2.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f00378a3e9b7ab398b05f70befa112cd",
+                    "sha256": "5ae018121a495edeb83097ba1bdd1a8481db24e1f0d54e8a78edb26ba0df82cf"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f00378a3e9b7ab398b05f70befa112cd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 81765,
+                "upload_time": "2016-06-16T00:39:25",
+                "url": "https://files.pythonhosted.org/packages/f4/c7/1c5bb63914354b2e4eb1d84634b96af8fad64278d84a30aa9bffbcf2e67d/flake8-2.6.0.tar.gz"
+            }
+        ],
+        "2.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fe4737043ef8c47f6bb7f5048b20972b",
+                    "sha256": "32722c10e925b6bf75543269f5a022169578e5489a399f578cd6b1509736934f"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.6.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fe4737043ef8c47f6bb7f5048b20972b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 87746,
+                "upload_time": "2016-06-25T16:39:30",
+                "url": "https://files.pythonhosted.org/packages/46/14/457b85bea74649f6d086c494c42d5e8dc8780ac98822e8030a6f261e9c9b/flake8-2.6.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f120afe0c2fea21fe406c9af8589056f",
+                    "sha256": "fb3426462c3a040f4da4c201ce3aef9f3aae1fb8ff94a752a21f7be7c2ce4561"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f120afe0c2fea21fe406c9af8589056f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30715,
+                "upload_time": "2016-06-25T16:39:33",
+                "url": "https://files.pythonhosted.org/packages/d8/eb/e1ec4596e59231bfb16bf19288a913316dc0e42aa2fd3e1b00b82ba48a8a/flake8-2.6.1.tar.gz"
+            }
+        ],
+        "2.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a2ba001bacebde53e5dbc3e443320b9a",
+                    "sha256": "7ac3bbaac27174d95bc4734ed23a07de567ffbcf4fc7e316854b4f3015d4fd15"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.6.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a2ba001bacebde53e5dbc3e443320b9a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 38540,
+                "upload_time": "2016-06-25T17:11:50",
+                "url": "https://files.pythonhosted.org/packages/70/a9/9b66f22d038de51e05f92d5e677fd89d8f9c980db0b8a130621baad052f5/flake8-2.6.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cf4f63730fd35e736a8a99583b9158fd",
+                    "sha256": "231cd86194aaec4bdfaa553ae1a1cd9b7b4558332fbc10136c044940d587a778"
+                },
+                "downloads": -1,
+                "filename": "flake8-2.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cf4f63730fd35e736a8a99583b9158fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30774,
+                "upload_time": "2016-06-25T17:11:53",
+                "url": "https://files.pythonhosted.org/packages/53/0a/b2c28a77dfc508ed9f7334252311e1aaf8f0ceaaeb1a8f15fa4ba3e2d847/flake8-2.6.2.tar.gz"
+            }
+        ],
+        "3.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0aa9e252b948b4f89e6053bd368e3979",
+                    "sha256": "2c8c9d686be3699704e281ecab03f4fe04734e1529c679aefb813e04043cd245"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0aa9e252b948b4f89e6053bd368e3979",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 62587,
+                "upload_time": "2016-07-25T11:12:57",
+                "url": "https://files.pythonhosted.org/packages/c4/94/425e275e112a136897b19d45d8d303fa8b06e1b1a920903b2077c8b01529/flake8-3.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b038df7e4a9db5917aa526e6cbf31e3a",
+                    "sha256": "96e72d4baa2d1a5ded4125223f28558dd7f0fa781bc88d17e693e5c9e03887df"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b038df7e4a9db5917aa526e6cbf31e3a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1369724,
+                "upload_time": "2016-07-25T11:14:20",
+                "url": "https://files.pythonhosted.org/packages/f9/96/ebbc6f5bbde8d6f6dc76fdb30213eac3dd08d9cddaabd5d0c1718e691536/flake8-3.0.0.tar.gz"
+            }
+        ],
+        "3.0.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6d219554b50d1a60cd47057df0675892",
+                    "sha256": "52650a7a0124ee0d988fab3e1c812c36f0843ead932afbf480514785903924c1"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.0b1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6d219554b50d1a60cd47057df0675892",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 79969,
+                "upload_time": "2016-06-25T17:02:30",
+                "url": "https://files.pythonhosted.org/packages/14/0f/2883d32c2606d5ae2da0ec94f4168841af186c04bacb1140c7e32ad1d7ca/flake8-3.0.0b1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7c3e21c456953ac8ee6f1db3fa8462b4",
+                    "sha256": "d25017510f2195c87d12d879c6498ef6091a2ca05035d3b7ad17b2f93d416453"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7c3e21c456953ac8ee6f1db3fa8462b4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1777281,
+                "upload_time": "2016-06-25T17:02:36",
+                "url": "https://files.pythonhosted.org/packages/0a/b9/758590c8e4dbefd4cfd34f1decef14baa89a4734b6c8e04f4740c2f0f726/flake8-3.0.0b1.tar.gz"
+            }
+        ],
+        "3.0.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d84621b08ae870ead6cead8ed838a66",
+                    "sha256": "fb7e109cc21d15832224f9de11877914fe941dfbd6b97fc94e43d9b056ab0462"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.0b2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7d84621b08ae870ead6cead8ed838a66",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 82804,
+                "upload_time": "2016-06-29T01:48:53",
+                "url": "https://files.pythonhosted.org/packages/1b/06/34c3a33e955e75cc7135d9931b86f23a4f029a7d0b1a4ad81e654e1e7897/flake8-3.0.0b2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f0a511d14e92ecf9fc854cdb0a41310",
+                    "sha256": "af7c5c6c07a45b467cd4f81eac9f7cf362154d1e872d3b16f7549032d899b9c7"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0f0a511d14e92ecf9fc854cdb0a41310",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1813070,
+                "upload_time": "2016-06-29T01:48:58",
+                "url": "https://files.pythonhosted.org/packages/d3/c8/b3110a9084b85b3ec4158da3bd07ba461e07347c33f13dde92cc0be340af/flake8-3.0.0b2.tar.gz"
+            }
+        ],
+        "3.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd0d4342decd3cfce317f1da3e2b63ee",
+                    "sha256": "8cda90ca2cba0f94565fbedb4144c533c3cca3746c164fe7ab7e760afc08c4e7"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "dd0d4342decd3cfce317f1da3e2b63ee",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63178,
+                "upload_time": "2016-07-26T00:44:47",
+                "url": "https://files.pythonhosted.org/packages/d2/a5/8fb6fefba3871dc4a4fb1e211098e4271051795bc35f2ec2231671b04608/flake8-3.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "38a6bf0a2f3e82f0fb780d45db2d81f9",
+                    "sha256": "bc1337503d3e38c332d4674661a83c9110d9e6d45c9cdbc8391a23f8d765eae0"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "38a6bf0a2f3e82f0fb780d45db2d81f9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1370511,
+                "upload_time": "2016-07-26T00:44:53",
+                "url": "https://files.pythonhosted.org/packages/05/db/30edf1fdbfb42038d3473516c2841e8340e543d8316aa36fed467b13dcc9/flake8-3.0.1.tar.gz"
+            }
+        ],
+        "3.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9cbebe76e315b932daf7f698af433e26",
+                    "sha256": "819c3154f0f7e1d0f82a090352d0632e20c0fcb11a563dd714ac97ffa70f2c3c"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9cbebe76e315b932daf7f698af433e26",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63345,
+                "upload_time": "2016-07-27T00:51:29",
+                "url": "https://files.pythonhosted.org/packages/a1/70/5d32e5eb434fc12d9b0c6e347a0951fd104aed090c12af7de9e319539c21/flake8-3.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3074789ea43c6e75e1c9f671d0376a4e",
+                    "sha256": "5bd58bc2f48f32b625480810972017c3337a653b5442d4f190ca652c27dc912d"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3074789ea43c6e75e1c9f671d0376a4e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1371001,
+                "upload_time": "2016-07-27T00:51:47",
+                "url": "https://files.pythonhosted.org/packages/78/02/11d818facb72952e07e50a87aa5fccb36884c0f350a6f9121e2ffbf1fa4a/flake8-3.0.2.tar.gz"
+            }
+        ],
+        "3.0.2.dev0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a60001a16b32b17598fe428c85b612b6",
+                    "sha256": "e7f10e6dfe83115774508056cfbff0cf72a35090c38a68181fd95ec3516d3d04"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.2.dev0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a60001a16b32b17598fe428c85b612b6",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63321,
+                "upload_time": "2016-07-27T00:51:32",
+                "url": "https://files.pythonhosted.org/packages/ab/57/15d85f9a837a569ee3ec73c61ac72e45be14e89ce315134f5d9f88e59dcd/flake8-3.0.2.dev0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fdfb54bfdc9ffc30ef9aebf30a7076ba",
+                    "sha256": "21ed5fda83e17472c910584a0e65238dc82a8f6650fb1430c840788bab7e5131"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.2.dev0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fdfb54bfdc9ffc30ef9aebf30a7076ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1370833,
+                "upload_time": "2016-07-27T00:51:41",
+                "url": "https://files.pythonhosted.org/packages/8e/18/3c0d53aa4caad14ae361b476ab761fd610105b9492c8c65e3dccaf202751/flake8-3.0.2.dev0.tar.gz"
+            }
+        ],
+        "3.0.2.dev1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1a2892db0d4c0dcdf9175b9b168973d0",
+                    "sha256": "132172aae5083fce189e64f217a459f38579c3eb64b47dbddee0d2964f58d09e"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.2.dev1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1a2892db0d4c0dcdf9175b9b168973d0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 63431,
+                "upload_time": "2016-07-27T00:51:36",
+                "url": "https://files.pythonhosted.org/packages/4e/82/738a413c0fa2d903d93fb2633a0d59b1157bd27a1d01041c2c526022e5c6/flake8-3.0.2.dev1-py2.py3-none-any.whl"
+            }
+        ],
+        "3.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e73390828881a42f85243859bc169ce0",
+                    "sha256": "ca5021e79ead6e5812f534c723f061349311cf252be78bb8f8e0615d9a975418"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e73390828881a42f85243859bc169ce0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 64121,
+                "upload_time": "2016-07-30T11:59:25",
+                "url": "https://files.pythonhosted.org/packages/b9/b4/ee99f13e897f0428cb9d1fdae5168989f492d8967b8dcd1a63ab5f36d910/flake8-3.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c99edfaf43d44ad6be88e246d73c2bd6",
+                    "sha256": "fa8ebbdc9a78991af150b86cd0e3377361586ce7d1fed0079f0077f2ada227ec"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c99edfaf43d44ad6be88e246d73c2bd6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1373604,
+                "upload_time": "2016-07-30T11:59:29",
+                "url": "https://files.pythonhosted.org/packages/e2/dd/cf299399dec65eed186509d625760195938e83d3bcf78f47d443d58aff7d/flake8-3.0.3.tar.gz"
+            }
+        ],
+        "3.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75cda5a9c8e2af21135140297e37a1ff",
+                    "sha256": "603a3ae7c8030219fee084728ca02a8bbd3a51829cacf97b445172a46cb04662"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "75cda5a9c8e2af21135140297e37a1ff",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 64130,
+                "upload_time": "2016-08-08T10:37:18",
+                "url": "https://files.pythonhosted.org/packages/70/fd/93266c6af1a23ea4d8b9a557b1fa02e6bdb43702b817c9151da5a3af3aa7/flake8-3.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b48e5ef1d21c687f10a66d44f1dda5c",
+                    "sha256": "b4c210c998f07d6ff24325dd91fbc011f2c37bcd6bf576b188de01d8656e970d"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.0.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "2b48e5ef1d21c687f10a66d44f1dda5c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1382588,
+                "upload_time": "2016-08-08T10:37:30",
+                "url": "https://files.pythonhosted.org/packages/b0/56/48727b2a6c92b7e632180cf2c1411a0de7cf4f636b4f844c6c46f7edc86b/flake8-3.0.4.tar.gz"
+            }
+        ],
+        "3.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c011fe1c502ee481dac1412b9d50075b",
+                    "sha256": "9000fe28daadc846783af9a7a1bf5ae5d57034b291cb87da6fece6fb61afc530"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c011fe1c502ee481dac1412b9d50075b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 69133,
+                "upload_time": "2016-11-14T12:56:02",
+                "url": "https://files.pythonhosted.org/packages/de/1f/1485624662cb775178d985aa7e3755e50f12b66eb96face78fba016047f2/flake8-3.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a3495219df4efeb62b00cc28e79def4",
+                    "sha256": "3f81167c9a11d89a4526a5ac08258f125838153204305c8f0d42eb367fa6dfbe"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3a3495219df4efeb62b00cc28e79def4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 131028,
+                "upload_time": "2016-11-14T12:56:05",
+                "url": "https://files.pythonhosted.org/packages/84/ce/50ee9d589366e367757c0b812f335130c77715b4fbbfbef5cc5c0247acb0/flake8-3.1.0.tar.gz"
+            }
+        ],
+        "3.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47f451582d7ae0998717450ff50aabbf",
+                    "sha256": "898dd353948860c25569cc2298942d20f021021d920dc553dc35f732ee647794"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "47f451582d7ae0998717450ff50aabbf",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 66239,
+                "upload_time": "2016-11-14T15:55:46",
+                "url": "https://files.pythonhosted.org/packages/ee/bc/1af02e0b83c0a5e8b5c69b32e408af0d6dbf190aae919cf8b481921b5387/flake8-3.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8548427f757c95c61e338ad19c674d17",
+                    "sha256": "941fa78f61f2524cb7aee4aa4fe9876f4b0dcf5aba9fabd3e780d24918f498b7"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8548427f757c95c61e338ad19c674d17",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 128585,
+                "upload_time": "2016-11-14T15:55:49",
+                "url": "https://files.pythonhosted.org/packages/df/82/298f8cd4db318b2eb4e3b4bd34e9b3f97b410fddd7db1d02d62d7351bfae/flake8-3.1.1.tar.gz"
+            }
+        ],
+        "3.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8335f3245063a2dc63e093c7ec0f5511",
+                    "sha256": "9341ad4e5f71298139ecb64f38f412f8fbc52b4237317e14f5356e5b0c2dcbf3"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8335f3245063a2dc63e093c7ec0f5511",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 66237,
+                "upload_time": "2016-11-14T22:39:13",
+                "url": "https://files.pythonhosted.org/packages/5e/8a/9f924e7e05819258984c9871c442ca068632b0eaa40b566956d8484baf18/flake8-3.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "057922e66fcfe11ae653a25c97f28efc",
+                    "sha256": "f4c3c0aeb8018319993b2c47a2491fb7ea8b3a51c7a86cba38301ae1561b364e"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "057922e66fcfe11ae653a25c97f28efc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 128662,
+                "upload_time": "2016-11-14T22:39:16",
+                "url": "https://files.pythonhosted.org/packages/ba/a5/992980fcaa280e74f80d8aa415cbe43a687b6b8a2d31280acbe2b27f1fdd/flake8-3.2.0.tar.gz"
+            }
+        ],
+        "3.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f9dc8bad20573276e2b6b05044830ca4",
+                    "sha256": "dc9eed7667489b73b56b1714aa51f580601db364b61e1833908e931c6de47a65"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.2.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f9dc8bad20573276e2b6b05044830ca4",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 66422,
+                "upload_time": "2016-11-21T21:55:03",
+                "url": "https://files.pythonhosted.org/packages/63/e5/019ec8c34692e1cdf846023cd4a96ee7458d04a2b8378e7958d3a219c434/flake8-3.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "06b388714877a1f758434379c3a94660",
+                    "sha256": "c7c460b5aff3a2063c798a77af18ec70af3941d35a22e2e76965e3c0e0b36055"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "06b388714877a1f758434379c3a94660",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 129458,
+                "upload_time": "2016-11-21T21:55:06",
+                "url": "https://files.pythonhosted.org/packages/51/70/af1b3130cd051f2f79854b14079b3bcbad84b8bac31a7dffc63ef57f8a7a/flake8-3.2.1.tar.gz"
+            }
+        ],
+        "3.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a0aae4ceefe7116062dfa9f6305f977",
+                    "sha256": "83905eadba99f73fbfe966598aaf1682b3eb6755d2263c5b33a4e8367d60b0d1"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0a0aae4ceefe7116062dfa9f6305f977",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 66438,
+                "upload_time": "2017-02-07T02:11:55",
+                "url": "https://files.pythonhosted.org/packages/cd/a6/1fe37679be3b224c96d8b64782d724d6a2c4212c8ddd914572fb8317a298/flake8-3.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3df622aac9bad27c04f34164609bbed8",
+                    "sha256": "b907a26dcf5580753d8f80f1be0ec1d5c45b719f7bac441120793d1a70b03f12"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3df622aac9bad27c04f34164609bbed8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 134345,
+                "upload_time": "2017-02-07T02:11:57",
+                "url": "https://files.pythonhosted.org/packages/47/64/382631de5fd8dab367bedeff6b5b55fd9a7c883daa44f4032636e2d203ca/flake8-3.3.0.tar.gz"
+            }
+        ],
+        "3.3.0.dev0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2c1258a32946dc39256fc6320b4d281",
+                    "sha256": "0ba72b8526ffaea831bc517ba38eb014342e422b3f2d1f06559fe00d6d0d1b84"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.3.0.dev0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d2c1258a32946dc39256fc6320b4d281",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 66412,
+                "upload_time": "2017-02-07T02:11:54",
+                "url": "https://files.pythonhosted.org/packages/46/cf/73418ca2d73f2bb5b0d58224eb64b597ba3f90672237811096125905ef37/flake8-3.3.0.dev0-py2.py3-none-any.whl"
+            }
+        ],
+        "3.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "78683dcc28b78a0cc2e553d57489c70b",
+                    "sha256": "55a5e78a57ead9b593a8a24179113100586897d563152085402bd835d50b2933"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "78683dcc28b78a0cc2e553d57489c70b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 67990,
+                "upload_time": "2017-07-27T23:58:00",
+                "url": "https://files.pythonhosted.org/packages/a5/17/61c96d3c57b5a2f062d4a6befa63017d351835157e3a171303c00db3ace1/flake8-3.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b2ee42f6512a7aeaeab6b4d242912cd",
+                    "sha256": "c2f7aba3de58e1728d7107e7a45eae9bf5501ea7f3abbd6286ba5d96694a6c6e"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6b2ee42f6512a7aeaeab6b4d242912cd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 136947,
+                "upload_time": "2017-07-27T23:58:03",
+                "url": "https://files.pythonhosted.org/packages/ab/0d/420e9a26712f65e772fc9f6bea826aef8145438546106a9da1272f4b74df/flake8-3.4.0.tar.gz"
+            }
+        ],
+        "3.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2d960f02707b9c14e58ecf0c8b291c4",
+                    "sha256": "f1a9d8886a9cbefb52485f4f4c770832c7fb569c084a9a314fb1eaa37c0c2c86"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.4.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f2d960f02707b9c14e58ecf0c8b291c4",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 68009,
+                "upload_time": "2017-07-28T11:22:39",
+                "url": "https://files.pythonhosted.org/packages/b2/d3/e80ea2616e3871ae22459c415c63d64b9bd744c92267482670fcdbcea72d/flake8-3.4.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e084dfb3347b5cec88d4dedaf7552c6",
+                    "sha256": "c20044779ff848f67f89c56a0e4624c04298cd476e25253ac0c36f910a1a11d8"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e084dfb3347b5cec88d4dedaf7552c6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 137066,
+                "upload_time": "2017-07-28T11:22:42",
+                "url": "https://files.pythonhosted.org/packages/c8/82/13c6502074a8da93938de43b7386b60073afa528b07004643890ba02de9a/flake8-3.4.1.tar.gz"
+            }
+        ],
+        "3.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b4b48444f1f8cc5c3d526bdaedac4c0",
+                    "sha256": "c7841163e2b576d435799169b78703ad6ac1bbb0f199994fc05f700b2a90ea37"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3b4b48444f1f8cc5c3d526bdaedac4c0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 69938,
+                "upload_time": "2017-10-23T11:16:10",
+                "url": "https://files.pythonhosted.org/packages/b9/dc/14e9d94c770b8c4ef584e906c7583e74864786a58d47de101f2767d50c0b/flake8-3.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e5fe39d578a2c2d0962b61b35b8c3fc",
+                    "sha256": "7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0"
+                },
+                "downloads": -1,
+                "filename": "flake8-3.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7e5fe39d578a2c2d0962b61b35b8c3fc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 140608,
+                "upload_time": "2017-10-23T11:16:12",
+                "url": "https://files.pythonhosted.org/packages/1e/ab/7730f6d6cdf73a3b7f98a2fe3b2cdf68e9e760a4a133e083607497d4c3a6/flake8-3.5.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "3b4b48444f1f8cc5c3d526bdaedac4c0",
+                "sha256": "c7841163e2b576d435799169b78703ad6ac1bbb0f199994fc05f700b2a90ea37"
+            },
+            "downloads": -1,
+            "filename": "flake8-3.5.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "3b4b48444f1f8cc5c3d526bdaedac4c0",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 69938,
+            "upload_time": "2017-10-23T11:16:10",
+            "url": "https://files.pythonhosted.org/packages/b9/dc/14e9d94c770b8c4ef584e906c7583e74864786a58d47de101f2767d50c0b/flake8-3.5.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "7e5fe39d578a2c2d0962b61b35b8c3fc",
+                "sha256": "7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0"
+            },
+            "downloads": -1,
+            "filename": "flake8-3.5.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "7e5fe39d578a2c2d0962b61b35b8c3fc",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 140608,
+            "upload_time": "2017-10-23T11:16:12",
+            "url": "https://files.pythonhosted.org/packages/1e/ab/7730f6d6cdf73a3b7f98a2fe3b2cdf68e9e760a4a133e083607497d4c3a6/flake8-3.5.0.tar.gz"
+        }
+    ],
+    "package_name": "flake8"
+}

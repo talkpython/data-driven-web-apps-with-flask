@@ -1,0 +1,1939 @@
+{
+    "info": {
+        "author": "The pip developers",
+        "author_email": "python-virtualenv@groups.google.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Software Development :: Build Tools"
+        ],
+        "description": "pip\n===\n\nThe `PyPA recommended`_ tool for installing Python packages.\n\n.. image:: https://img.shields.io/pypi/v/pip.svg\n   :target: https://pypi.org/project/pip/\n\n.. image:: https://img.shields.io/travis/pypa/pip/master.svg\n   :target: http://travis-ci.org/pypa/pip\n\n.. image:: https://img.shields.io/appveyor/ci/pypa/pip.svg\n   :target: https://ci.appveyor.com/project/pypa/pip/history\n\n.. image:: https://readthedocs.org/projects/pip/badge/?version=latest\n   :target: https://pip.pypa.io/en/latest\n\n* `Installation`_\n* `Documentation`_\n* `Changelog`_\n* `GitHub Page`_\n* `Issue Tracking`_\n* `User mailing list`_\n* `Dev mailing list`_\n* User IRC: #pypa on Freenode.\n* Dev IRC: #pypa-dev on Freenode.\n\nCode of Conduct\n---------------\n\nEveryone interacting in the pip project's codebases, issue trackers, chat\nrooms and mailing lists is expected to follow the `PyPA Code of Conduct`_.\n\n.. _PyPA recommended: https://packaging.python.org/en/latest/current/\n.. _Installation: https://pip.pypa.io/en/stable/installing.html\n.. _Documentation: https://pip.pypa.io/en/stable/\n.. _Changelog: https://pip.pypa.io/en/stable/news.html\n.. _GitHub Page: https://github.com/pypa/pip\n.. _Issue Tracking: https://github.com/pypa/pip/issues\n.. _User mailing list: http://groups.google.com/group/python-virtualenv\n.. _Dev mailing list: http://groups.google.com/group/pypa-dev\n.. _PyPA Code of Conduct: https://www.pypa.io/en/latest/code-of-conduct/\n\n\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://pip.pypa.io/",
+        "keywords": "easy_install distutils setuptools egg virtualenv",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "pip",
+        "package_url": "https://pypi.org/project/pip/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/pip/",
+        "release_url": "https://pypi.org/project/pip/10.0.1/",
+        "requires_dist": [
+            "freezegun; extra == 'testing'",
+            "virtualenv (>=1.10); extra == 'testing'",
+            "scripttest (>=1.3); extra == 'testing'",
+            "pretend; extra == 'testing'",
+            "mock; extra == 'testing'",
+            "pytest; extra == 'testing'"
+        ],
+        "requires_python": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*",
+        "summary": "The PyPA recommended tool for installing Python packages.",
+        "version": "10.0.1"
+    },
+    "last_serial": 3781691,
+    "releases": {
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9eda07c8be7105aa774c7eb51c023294",
+                    "sha256": "88bb8d029e1bf4acd0e04d300104b7440086f94cc1ce1c5c3c31e3293aee1f81"
+                },
+                "downloads": -1,
+                "filename": "pip-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9eda07c8be7105aa774c7eb51c023294",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 38734,
+                "upload_time": "2008-10-28T17:22:10",
+                "url": "https://files.pythonhosted.org/packages/3d/9d/1e313763bdfb6a48977b65829c6ce2a43eaae29ea2f907c8bbef024a7219/pip-0.2.tar.gz"
+            }
+        ],
+        "0.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2af655c1a87e03799442d045c1d6743",
+                    "sha256": "83522005c1266cc2de97e65072ff7554ac0f30ad369c3b02ff3a764b962048da"
+                },
+                "downloads": -1,
+                "filename": "pip-0.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d2af655c1a87e03799442d045c1d6743",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39802,
+                "upload_time": "2008-11-17T18:17:56",
+                "url": "https://files.pythonhosted.org/packages/18/ad/c0fe6cdfe1643a19ef027c7168572dac6283b80a384ddf21b75b921877da/pip-0.2.1.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8fccb5b49c6377cbfb1949ccd7be43b3",
+                    "sha256": "183c72455cb7f8860ac1376f8c4f14d7f545aeab8ee7c22cd4caf79f35a2ed47"
+                },
+                "downloads": -1,
+                "filename": "pip-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8fccb5b49c6377cbfb1949ccd7be43b3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47710,
+                "upload_time": "2009-01-21T04:46:30",
+                "url": "https://files.pythonhosted.org/packages/17/05/f66144ef69b436d07f8eeeb28b7f77137f80de4bf60349ec6f0f9509e801/pip-0.3.tar.gz"
+            }
+        ],
+        "0.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "78102ddbb040a183dd361b5d432cdf88",
+                    "sha256": "34ce534f17065c78f980702928e988a6b6b2d8a9851aae5f1571a1feb9bb58d8"
+                },
+                "downloads": -1,
+                "filename": "pip-0.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "78102ddbb040a183dd361b5d432cdf88",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 48486,
+                "upload_time": "2009-01-29T18:19:54",
+                "url": "https://files.pythonhosted.org/packages/0a/bb/d087c9a1415f8726e683791c0b2943c53f2b76e69f527f2e2b2e9f9e7b5c/pip-0.3.1.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b45714d04f8fd38fe8e3d4c7600b91a2",
+                    "sha256": "28fc67558874f71fddda7168f73595f1650523dce3bc5bf189713ecdfc1e456e"
+                },
+                "downloads": -1,
+                "filename": "pip-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b45714d04f8fd38fe8e3d4c7600b91a2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 50238,
+                "upload_time": "2009-05-27T19:46:54",
+                "url": "https://files.pythonhosted.org/packages/cf/c3/153571aaac6cf999f4bb09c019b1ff379b7b599ea833813a41c784eec995/pip-0.4.tar.gz"
+            }
+        ],
+        "0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "63eed8673e40628534cc0aa9c98e8f3d",
+                    "sha256": "328d8412782f22568508a0d0c78a49c9920a82e44c8dfca49954fe525c152b2a"
+                },
+                "downloads": -1,
+                "filename": "pip-0.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "63eed8673e40628534cc0aa9c98e8f3d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 53939,
+                "upload_time": "2009-10-07T22:26:01",
+                "url": "https://files.pythonhosted.org/packages/8d/c7/f05c87812fa5d9562ecbc5f4f1fc1570444f53c81c834a7f662af406e3c1/pip-0.5.tar.gz"
+            }
+        ],
+        "0.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d4bdaa5f5f5bf8c6263ace75a0882232",
+                    "sha256": "e27650538c41fe1007a41abd4cfd0f905b822622cbe1f8e7e09d1215af207694"
+                },
+                "downloads": -1,
+                "filename": "pip-0.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d4bdaa5f5f5bf8c6263ace75a0882232",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54633,
+                "upload_time": "2009-10-08T23:14:32",
+                "url": "https://files.pythonhosted.org/packages/9a/aa/f536b6d14fe03343367da2ff44eee28f340ae650cd017ca088b6be13084a/pip-0.5.1.tar.gz"
+            }
+        ],
+        "0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "083ff408ca5314cf0561ff79a048cd9a",
+                    "sha256": "4cf47db6815b2f435d1f44e1f35ff04823043f6161f7df9aec71a123b0c47f0d"
+                },
+                "downloads": -1,
+                "filename": "pip-0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "083ff408ca5314cf0561ff79a048cd9a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 64109,
+                "upload_time": "2009-11-10T16:25:40",
+                "url": "https://files.pythonhosted.org/packages/db/e6/fdf7be8a17b032c533d3f91e91e2c63dd81d3627cbe4113248a00c2d39d8/pip-0.6.tar.gz"
+            }
+        ],
+        "0.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7560e3055c66afb99ac4a7892389a237",
+                    "sha256": "efe47e84ffeb0ea4804f9858b8a94bebd07f5452f907ebed36d03aed06a9f9ec"
+                },
+                "downloads": -1,
+                "filename": "pip-0.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7560e3055c66afb99ac4a7892389a237",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 55299,
+                "upload_time": "2009-11-20T17:31:31",
+                "url": "https://files.pythonhosted.org/packages/91/cd/105f4d3c75d0ae18e12623acc96f42168aaba408dd6e43c4505aa21f8e37/pip-0.6.1.tar.gz"
+            }
+        ],
+        "0.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a43e0a2ce8833069f41c347932bdb25",
+                    "sha256": "1c1a504d7e70d2c24246f95bd16e3d5fcec740fd144df69a407bf65a2ee67586"
+                },
+                "downloads": -1,
+                "filename": "pip-0.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9a43e0a2ce8833069f41c347932bdb25",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70677,
+                "upload_time": "2010-01-18T21:41:29",
+                "url": "https://files.pythonhosted.org/packages/1c/c7/c0e1a9413c37828faf290f29a85a4d6034c145cc04bf1622ba8beb662ad8/pip-0.6.2.tar.gz"
+            }
+        ],
+        "0.6.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0602fa9179cfaa98e41565d4a581d98c",
+                    "sha256": "1a6df71eb29b98cba11bde6d6a0d8c6dd8b0518e74ceb71fb31ea4fbb42fd313"
+                },
+                "downloads": -1,
+                "filename": "pip-0.6.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0602fa9179cfaa98e41565d4a581d98c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 71146,
+                "upload_time": "2010-01-21T19:26:46",
+                "url": "https://files.pythonhosted.org/packages/3f/af/c4b9d49fb0f286996b28dbc0955c3ad359794697eb98e0e69863908070b0/pip-0.6.3.tar.gz"
+            }
+        ],
+        "0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8d4b4f7266fe0808569182e6832d74ac",
+                    "sha256": "ceaea0b9e494d893c8a191895301b79c1db33e41f14d3ad93e3d28a8b4e9bf27"
+                },
+                "downloads": -1,
+                "filename": "pip-0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8d4b4f7266fe0808569182e6832d74ac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68510,
+                "upload_time": "2010-04-16T22:13:49",
+                "url": "https://files.pythonhosted.org/packages/ec/7a/6fe91ff0079ad0437830957c459d52f3923e516f5b453218f2a93d09a427/pip-0.7.tar.gz"
+            }
+        ],
+        "0.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "420c83ad67bdcb542f772eb64392cce6",
+                    "sha256": "f54f05aa17edd0036de433c44892c8fedb1fd2871c97829838feb995818d24c3"
+                },
+                "downloads": -1,
+                "filename": "pip-0.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "420c83ad67bdcb542f772eb64392cce6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82468,
+                "upload_time": "2010-04-22T09:58:13",
+                "url": "https://files.pythonhosted.org/packages/a5/63/11303863c2f5e9d9a15d89fcf7513a4b60987007d418862e0fb65c09fff7/pip-0.7.1.tar.gz"
+            }
+        ],
+        "0.7.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cfe73090aaa0d3b0c104179a627859d1",
+                    "sha256": "98df2eb779358412bbbae75980171ae85deebc846d87e244d086520b1212da09"
+                },
+                "downloads": -1,
+                "filename": "pip-0.7.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cfe73090aaa0d3b0c104179a627859d1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68698,
+                "upload_time": "2010-05-27T23:57:27",
+                "url": "https://files.pythonhosted.org/packages/cd/a9/1debaa96bbc1005c1c8ad3b79fec58c198d35121546ea2e858ce0894268a/pip-0.7.2.tar.gz"
+            }
+        ],
+        "0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "468d9adc309f33ad51cee38f0d455429",
+                    "sha256": "9017e4484a212dd4e1a43dd9f039dd7fc8338d4eea1c339d5ae1c80726de5b0f"
+                },
+                "downloads": -1,
+                "filename": "pip-0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "468d9adc309f33ad51cee38f0d455429",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 98347,
+                "upload_time": "2010-08-03T20:03:43",
+                "url": "https://files.pythonhosted.org/packages/74/54/f785c327fb3d163560a879b36edae5c78ee07806be282c9d4807f6be7dd1/pip-0.8.tar.gz"
+            }
+        ],
+        "0.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d40614774781b118dd3f10c0d038cbc",
+                    "sha256": "7176a87f35675f6468341212f3b959bb51d23ea66eb1c3692bf746c45c716fa2"
+                },
+                "downloads": -1,
+                "filename": "pip-0.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5d40614774781b118dd3f10c0d038cbc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 105248,
+                "upload_time": "2010-09-14T18:40:51",
+                "url": "https://files.pythonhosted.org/packages/5c/79/5e8381cc3078bae92166f2ba96de8355e8c181926505ba8882f7b099a500/pip-0.8.1.tar.gz"
+            }
+        ],
+        "0.8.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df1eca0abe7643d92b5222240bed15f6",
+                    "sha256": "f80a3549c048bc3bbcb47844826e9c7c6fcd87e77b92bef0d9e66d1b397c4962"
+                },
+                "downloads": -1,
+                "filename": "pip-0.8.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "df1eca0abe7643d92b5222240bed15f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 106126,
+                "upload_time": "2010-11-29T19:24:08",
+                "url": "https://files.pythonhosted.org/packages/17/3e/0a98ab032991518741e7e712a719633e6ae160f51b3d3e855194530fd308/pip-0.8.2.tar.gz"
+            }
+        ],
+        "0.8.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0603337a81f83df2b1d2f1151565efac",
+                    "sha256": "1be2e18edd38aa75b5e4ef38a99ec33ba9247177cfcb4a6d2d2b3e73430e3001"
+                },
+                "downloads": -1,
+                "filename": "pip-0.8.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "0603337a81f83df2b1d2f1151565efac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 107684,
+                "upload_time": "2011-03-12T21:17:26",
+                "url": "https://files.pythonhosted.org/packages/f7/9a/943fc6d879ed7220bac2e7e53096bfe78abec88d77f2f516400e0129679e/pip-0.8.3.tar.gz"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "327fc4a03df189506966e15021730550",
+                    "sha256": "34ba07e2d14ba86d5088ba896ac80bed845a9b276ab8acb279b8d99bc77fec8e"
+                },
+                "downloads": -1,
+                "filename": "pip-1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "327fc4a03df189506966e15021730550",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 100102,
+                "upload_time": "2011-04-04T19:45:15",
+                "url": "https://files.pythonhosted.org/packages/24/33/6eb675fb6db7b71d69d6928b33dea61b8bf5cfe1e5649be70ec84ce2fc09/pip-1.0.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28dcc70225e5bf925532abc5b087a94b",
+                    "sha256": "37d2f18213d3845d2038dd3686bc71fc12bb41ad66c945a8b0dfec2879f3497b"
+                },
+                "downloads": -1,
+                "filename": "pip-1.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "28dcc70225e5bf925532abc5b087a94b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 104767,
+                "upload_time": "2011-04-30T23:20:23",
+                "url": "https://files.pythonhosted.org/packages/10/d9/f584e6107ef98ad7eaaaa5d0f756bfee12561fa6a4712ffdb7209e0e1fd4/pip-1.0.1.tar.gz"
+            }
+        ],
+        "1.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "47ec6ff3f6d962696fe08d4c8264ad49",
+                    "sha256": "a6ed9b36aac2f121c01a2c9e0307a9e4d9438d100a407db701ac65479a3335d2"
+                },
+                "downloads": -1,
+                "filename": "pip-1.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "47ec6ff3f6d962696fe08d4c8264ad49",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 105820,
+                "upload_time": "2011-07-16T16:52:11",
+                "url": "https://files.pythonhosted.org/packages/16/90/5e6f80364d8a656f60681dfb7330298edef292d43e1499bcb3a4c71ff0b9/pip-1.0.2.tar.gz"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62a9f08dd5dc69d76734568a6c040508",
+                    "sha256": "993804bb947d18508acee02141281c77d27677f8c14eaa64d6287a1c53ef01c8"
+                },
+                "downloads": -1,
+                "filename": "pip-1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "62a9f08dd5dc69d76734568a6c040508",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 95197,
+                "upload_time": "2012-02-16T21:08:04",
+                "url": "https://files.pythonhosted.org/packages/25/57/0d42cf5307d79913a082c5c4397d46f3793bc35e1138a694136d6e31be99/pip-1.1.tar.gz"
+            }
+        ],
+        "1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "99e44d1d7f88b182459e7c19c45aee9f",
+                    "sha256": "2b168f1987403f1dc6996a1f22a6f6637b751b7ab6ff27e78380b8d6e70aa314"
+                },
+                "downloads": -1,
+                "filename": "pip-1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "99e44d1d7f88b182459e7c19c45aee9f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 94455,
+                "upload_time": "2012-09-01T20:00:19",
+                "url": "https://files.pythonhosted.org/packages/ba/c3/4e1f892f41aaa217fe0d1f827fa05928783349c69f3cc06fdd68e112678a/pip-1.2.tar.gz"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "db8a6d8a4564d3dc7f337ebed67b1a85",
+                    "sha256": "12a9302acfca62cdc7bc5d83386cac3e0581db61ac39acdb3a4e766a16b88eb1"
+                },
+                "downloads": -1,
+                "filename": "pip-1.2.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "db8a6d8a4564d3dc7f337ebed67b1a85",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 102413,
+                "upload_time": "2012-09-06T08:30:42",
+                "url": "https://files.pythonhosted.org/packages/c3/a2/a63244da32afd9ce9a8ca1bd86e71610039adea8b8314046ebe5047527a6/pip-1.2.1.tar.gz"
+            }
+        ],
+        "1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "918559b784e2aca9559d498050bb86e7",
+                    "sha256": "d6a13c5be316cb21a0243047c7f163f47e88973ebccff8d32e63ca1bf4d9321c"
+                },
+                "downloads": -1,
+                "filename": "pip-1.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "918559b784e2aca9559d498050bb86e7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 247401,
+                "upload_time": "2013-03-07T21:38:47",
+                "url": "https://files.pythonhosted.org/packages/00/45/69d4f2602b80550bfb26cfd2f62c2f05b3b5c7352705d3766cd1e5b27648/pip-1.3.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cbb27a191cebc58997c4da8513863153",
+                    "sha256": "145eaa5d1ea1b062663da1f3a97780d7edea4c63c68a37c463b1deedf7bb4957"
+                },
+                "downloads": -1,
+                "filename": "pip-1.3.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "cbb27a191cebc58997c4da8513863153",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 247594,
+                "upload_time": "2013-03-07T23:15:15",
+                "url": "https://files.pythonhosted.org/packages/5b/ce/f5b98104f1c10d868936c25f7c597f492d4371aa9ad5fb61a94954ee7208/pip-1.3.1.tar.gz"
+            }
+        ],
+        "1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ca790be30004937987767eac42cfa44a",
+                    "sha256": "1fd43cbf07d95ddcecbb795c97a1674b3ddb711bb4a67661284a5aa765aa1b97"
+                },
+                "downloads": -1,
+                "filename": "pip-1.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "ca790be30004937987767eac42cfa44a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 443790,
+                "upload_time": "2013-07-23T20:59:34",
+                "url": "https://files.pythonhosted.org/packages/5f/d0/3b3958f6a58783bae44158b2c4c7827ae89abaecdd4bed12cff402620b9a/pip-1.4.tar.gz"
+            }
+        ],
+        "1.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6afbb46aeb48abac658d4df742bff714",
+                    "sha256": "4e7a06554711a624c35d0c646f63674b7f6bfc7f80221bf1eb1f631bd890d04e"
+                },
+                "downloads": -1,
+                "filename": "pip-1.4.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6afbb46aeb48abac658d4df742bff714",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 445199,
+                "upload_time": "2013-08-08T01:12:00",
+                "url": "https://files.pythonhosted.org/packages/3f/f8/da390e0df72fb61d176b25a4b95262e3dcc14bda0ad25ac64d56db38b667/pip-1.4.1.tar.gz"
+            }
+        ],
+        "1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6969b8a8adc4c7f7c5eb1707118f0686",
+                    "sha256": "25f81d1a0e55d3b1709818dd57fdfb954b028f229f09bd69cb0bc80a8e03e048"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6969b8a8adc4c7f7c5eb1707118f0686",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 898803,
+                "upload_time": "2014-01-02T13:54:21",
+                "url": "https://files.pythonhosted.org/packages/4f/7d/e53bc80667378125a9e07d4929a61b0bd7128a1129dbe6f07bb3228652a3/pip-1.5.tar.gz"
+            }
+        ],
+        "1.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "237164a09943d823b954bb9e1b2a8f67",
+                    "sha256": "00960db3b0b8724dd37fe37cfb9c72ecb8f59fab9db7d17c5c1e89a1adab49ce"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "237164a09943d823b954bb9e1b2a8f67",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1166177,
+                "upload_time": "2014-01-21T03:45:41",
+                "url": "https://files.pythonhosted.org/packages/44/5d/1dca53b5de6d287e7eb99bd174bb022eb6cb0d6ca6e19ca6b16655dde8c2/pip-1.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4678c2ae5cce4e9234c3923d7dcb32f0",
+                    "sha256": "e60e936fbc101d56668c6134c1f2b5b40fcbec8b4fc4ca7fc34842b6b4c5c130"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4678c2ae5cce4e9234c3923d7dcb32f0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1078467,
+                "upload_time": "2014-01-21T03:45:43",
+                "url": "https://files.pythonhosted.org/packages/21/3f/d86a600c9b2f41a75caacf768a24130f343def97652de2345da15ef7911f/pip-1.5.1.tar.gz"
+            }
+        ],
+        "1.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "445a893564065937c0f31ac2cc8e2f35",
+                    "sha256": "6903909ccdcdbc3297b74118590e71344d6d262827acd1f5c0e2fcfce9807499"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "445a893564065937c0f31ac2cc8e2f35",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1167543,
+                "upload_time": "2014-01-26T05:13:15",
+                "url": "https://files.pythonhosted.org/packages/3d/1f/227d77d5e9ed2df5162de4ba3616799a351eccb1ecd668ae824dd26153a1/pip-1.5.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5da30919f732d68b1c666e484e7676f5",
+                    "sha256": "2a8a3e08e652d3a40edbb39264bf01f8ff3c32520a79113357cca1f30533f738"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5da30919f732d68b1c666e484e7676f5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1079904,
+                "upload_time": "2014-01-26T05:13:19",
+                "url": "https://files.pythonhosted.org/packages/ed/94/391a003107f6ec997c314199d03bff1c105af758ee490e3255353574487b/pip-1.5.2.tar.gz"
+            }
+        ],
+        "1.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "78126f6352f3d5f29d077be0aa7f9efa",
+                    "sha256": "f0037aed3ce6cf96b9e9117d42e967a74bea9ebe19088a2fdea5de93d5762fee"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "78126f6352f3d5f29d077be0aa7f9efa",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1169264,
+                "upload_time": "2014-02-21T01:12:43",
+                "url": "https://files.pythonhosted.org/packages/df/e9/bdb53d44fad1465b43edaf6bc7dd3027ed5af81405cc97603fdff0721ebb/pip-1.5.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "78871c5f84ea5fca61900347ce7864ad",
+                    "sha256": "dc53b4d28b88556a37cd73052b6d1d08cc644c6724e37c4d38a2e3c03c5440b2"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "78871c5f84ea5fca61900347ce7864ad",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1081890,
+                "upload_time": "2014-02-21T01:12:46",
+                "url": "https://files.pythonhosted.org/packages/55/de/671a48ad313c808623041fc475f7c8f7610401d9f573f06b40eeb84e74e3/pip-1.5.3.tar.gz"
+            }
+        ],
+        "1.5.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f20bc8f31e322375ce06b26d73ce7b4f",
+                    "sha256": "fb7282556a42e84464f2e963a859ac4012d8134ba6218b70c1d82d145fcfa82f"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "f20bc8f31e322375ce06b26d73ce7b4f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1169272,
+                "upload_time": "2014-02-21T12:19:16",
+                "url": "https://files.pythonhosted.org/packages/a9/9a/9aa19fe00de4c025562e5fb3796ff8520165a7dd1a5662c6ec9816e1ae99/pip-1.5.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "834b2904f92d46aaa333267fb1c922bb",
+                    "sha256": "70208a250bb4afdbbdd74c3ac35d4ab9ba1eb6852d02567a6a87f2f5104e30b9"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "834b2904f92d46aaa333267fb1c922bb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1081874,
+                "upload_time": "2014-02-21T12:19:19",
+                "url": "https://files.pythonhosted.org/packages/78/d8/6e58a7130d457edadb753a0ea5708e411c100c7e94e72ad4802feeef735c/pip-1.5.4.tar.gz"
+            }
+        ],
+        "1.5.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "03a932d6f82a3887d8de1cdb837c87ed",
+                    "sha256": "fe7a5808190067b2598d85def9b83db46e5d64a00848ad843e107c36e1db4ae6"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.5-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "03a932d6f82a3887d8de1cdb837c87ed",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1173434,
+                "upload_time": "2014-05-03T06:26:46",
+                "url": "https://files.pythonhosted.org/packages/ce/c2/10d996b9c51b126a9f0bb9e14a9edcdd5c88888323c0685bb9b392b6c47c/pip-1.5.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7520581ba0687dec1ce85bd15496537b",
+                    "sha256": "4b7f5124364ae9b5ba833dcd8813a84c1c06fba1d7c8543323c7af4b33188eca"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "7520581ba0687dec1ce85bd15496537b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1084356,
+                "upload_time": "2014-05-03T06:26:49",
+                "url": "https://files.pythonhosted.org/packages/88/01/a442fde40bd9aaf837612536f16ab751fac628807fd718690795b8ade77d/pip-1.5.5.tar.gz"
+            }
+        ],
+        "1.5.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d4fb4b69df6731c7aeaadd6300bc1f2",
+                    "sha256": "fbc1351ffedf09ca7560428758845a88d648b9730b63ce9e5df53a7c89f039a4"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.6-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "4d4fb4b69df6731c7aeaadd6300bc1f2",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1002021,
+                "upload_time": "2014-05-17T02:43:12",
+                "url": "https://files.pythonhosted.org/packages/3f/08/7347ca4021e7fe0f1ab8f93cbc7d2a7a7350012300ad0e0227d55625e2b8/pip-1.5.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01026f87978932060cc86c1dc527903e",
+                    "sha256": "b1a4ae66baf21b7eb05a5e4f37c50c2706fa28ea1f8780ce8efe14dcd9f1726c"
+                },
+                "downloads": -1,
+                "filename": "pip-1.5.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "01026f87978932060cc86c1dc527903e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 938120,
+                "upload_time": "2014-05-17T02:43:15",
+                "url": "https://files.pythonhosted.org/packages/45/db/4fb9a456b4ec4d3b701456ef562b9d72d76b6358e0c1463d17db18c5b772/pip-1.5.6.tar.gz"
+            }
+        ],
+        "10.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "be3e30acf78a44cd750bf2db0912c701",
+                    "sha256": "86a60a96d85e329962a9e6f6af612cbc11106293dbc83f119802b5bee9874cf3"
+                },
+                "downloads": -1,
+                "filename": "pip-10.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "be3e30acf78a44cd750bf2db0912c701",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1306819,
+                "upload_time": "2018-04-14T11:38:05",
+                "url": "https://files.pythonhosted.org/packages/62/a1/0d452b6901b0157a0134fd27ba89bf95a857fbda64ba52e1ca2cf61d8412/pip-10.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "db30b70bd091004e88e752e8f16b5e74",
+                    "sha256": "f05a3eeea64bce94e85cc6671d679473d66288a4d37c3fcf983584954096b34f"
+                },
+                "downloads": -1,
+                "filename": "pip-10.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "db30b70bd091004e88e752e8f16b5e74",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1245078,
+                "upload_time": "2018-04-14T11:38:09",
+                "url": "https://files.pythonhosted.org/packages/e0/69/983a8e47d3dfb51e1463c1e962b2ccd1d74ec4e236e232625e353d830ed2/pip-10.0.0.tar.gz"
+            }
+        ],
+        "10.0.0b1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "34dd54590477e79bc681d9ff96b9fd39",
+                    "sha256": "dbd5d24cd461be23429625085a36cc8732cbcac4d2aaf673031f80f6ac07d844"
+                },
+                "downloads": -1,
+                "filename": "pip-10.0.0b1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "34dd54590477e79bc681d9ff96b9fd39",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1310836,
+                "upload_time": "2018-03-31T10:46:11",
+                "url": "https://files.pythonhosted.org/packages/4b/5a/8544ae02a5bd28464e03af045e8aabde20a7b02db1911a9159328e1eb25a/pip-10.0.0b1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "29f13df96ba340c6f7a6577eb89963e5",
+                    "sha256": "8d6e63d8b99752e4b53f272b66f9cd7b59e2b288e9a863a61c48d167203a2656"
+                },
+                "downloads": -1,
+                "filename": "pip-10.0.0b1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "29f13df96ba340c6f7a6577eb89963e5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1246649,
+                "upload_time": "2018-03-31T10:46:15",
+                "url": "https://files.pythonhosted.org/packages/aa/6d/ffbb86abf18b750fb26f27eda7c7732df2aacaa669c420d2eb2ad6df3458/pip-10.0.0b1.tar.gz"
+            }
+        ],
+        "10.0.0b2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2671150c78981971c1dfbd175a42139c",
+                    "sha256": "79f55588912f1b2b4f86f96f11e329bb01b25a484e2204f245128b927b1038a7"
+                },
+                "downloads": -1,
+                "filename": "pip-10.0.0b2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2671150c78981971c1dfbd175a42139c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1308393,
+                "upload_time": "2018-04-02T13:05:06",
+                "url": "https://files.pythonhosted.org/packages/97/72/1d514201e7d7fc7fff5aac3de9c7b892cd72fb4bf23fd983630df96f7412/pip-10.0.0b2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cbfc1208d00bb72aba19431a7bb4afd5",
+                    "sha256": "ad6adec2150ce4aed8f6134d9b77d928fc848dbcb887fb1a455988cf99da5cae"
+                },
+                "downloads": -1,
+                "filename": "pip-10.0.0b2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cbfc1208d00bb72aba19431a7bb4afd5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1244190,
+                "upload_time": "2018-04-02T13:05:09",
+                "url": "https://files.pythonhosted.org/packages/32/67/572f642e6e42c580d3154964cfbab7d9322c23b0f417c6c01fdd206a2777/pip-10.0.0b2.tar.gz"
+            }
+        ],
+        "10.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eb92c86bfda9cde5e082a1fd76f1e627",
+                    "sha256": "717cdffb2833be8409433a93746744b59505f42146e8d37de6c62b430e25d6d7"
+                },
+                "downloads": -1,
+                "filename": "pip-10.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "eb92c86bfda9cde5e082a1fd76f1e627",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1307639,
+                "upload_time": "2018-04-19T18:56:05",
+                "url": "https://files.pythonhosted.org/packages/0f/74/ecd13431bcc456ed390b44c8a6e917c1820365cbebcb6a8974d1cd045ab4/pip-10.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83a177756e2c801d0b3a6f7b0d4f3f7e",
+                    "sha256": "f2bd08e0cd1b06e10218feaf6fef299f473ba706582eb3bd9d52203fdbd7ee68"
+                },
+                "downloads": -1,
+                "filename": "pip-10.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "83a177756e2c801d0b3a6f7b0d4f3f7e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1246072,
+                "upload_time": "2018-04-19T18:56:09",
+                "url": "https://files.pythonhosted.org/packages/ae/e8/2340d46ecadb1692a1e455f13f75e596d4eab3d11a57446f08259dee8f02/pip-10.0.1.tar.gz"
+            }
+        ],
+        "6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc846e237fb69f98883550663da1dbc3",
+                    "sha256": "5ec6732505bd8be49fe1f8ad557b88253ffb085736396df4d6bea753fc2a8f2c"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "cc846e237fb69f98883550663da1dbc3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1258033,
+                "upload_time": "2014-12-22T16:16:26",
+                "url": "https://files.pythonhosted.org/packages/dc/7c/21191b5944b917b66e4e4e06d74f668d814b6e8a3ff7acd874479b6f6b3d/pip-6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fec85e88648bd2763668a419f7e2afef",
+                    "sha256": "6103897f1bb68d3f933edd60f3e3830c4ea6b8abf7a4b500db148921b11f6c9b"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "fec85e88648bd2763668a419f7e2afef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1190952,
+                "upload_time": "2014-12-22T16:16:52",
+                "url": "https://files.pythonhosted.org/packages/38/fd/065c66a88398f240e344fdf496b9707f92d75f88eedc3d10ff847b28a657/pip-6.0.tar.gz"
+            }
+        ],
+        "6.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c673ccf89f50b0f2f1adf625b3199dba",
+                    "sha256": "322aea7d1f7b9ee68ad87ac4704cad5df97f77e70668c0bd18f964c5daa78173"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c673ccf89f50b0f2f1adf625b3199dba",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1258374,
+                "upload_time": "2014-12-22T22:53:44",
+                "url": "https://files.pythonhosted.org/packages/e9/7a/cdbc1a12ed52410d557e48d4646f4543e9e991ff32d2374dc6db849aa617/pip-6.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dcee4aafd8a8538640926354c5cda025",
+                    "sha256": "fa2f7c68da4a405d673aa38542f9df009d60026db4f532429ac9cbfbda1f959d"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "dcee4aafd8a8538640926354c5cda025",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1191382,
+                "upload_time": "2014-12-22T22:53:56",
+                "url": "https://files.pythonhosted.org/packages/4d/c3/8675b90cd89b9b222062f4f6c7e9d48b0387f5b35cbf747a74403a883e56/pip-6.0.1.tar.gz"
+            }
+        ],
+        "6.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26404d27a64a40d4c358a2405b16d043",
+                    "sha256": "7d17b0f267f7c9cd17cd2924bbbe2b4a3d407322c0e09084ca3f1295c1fed50d"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "26404d27a64a40d4c358a2405b16d043",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1258464,
+                "upload_time": "2014-12-23T13:15:08",
+                "url": "https://files.pythonhosted.org/packages/71/3c/b5a521e5e99cfff091e282231591f21193fd80de079ec5fb8ed9c6614044/pip-6.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd396e135b8abdd0097401cb8b66ea30",
+                    "sha256": "6fa90667706a679e3dc75b27a51fddafa64401c45e96f8ae6c20978183290077"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "dd396e135b8abdd0097401cb8b66ea30",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1191608,
+                "upload_time": "2014-12-23T13:15:23",
+                "url": "https://files.pythonhosted.org/packages/4c/5a/f9e8e3de0153282c7cb54a9b991af225536ac914bac858ca664cf883bb3e/pip-6.0.2.tar.gz"
+            }
+        ],
+        "6.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ac546485f75a8cf257a8f1a40aa51f5",
+                    "sha256": "b72655b6ac6aef1c86dd07f51e8ace8d7aabd6a1c4ff88db87155276fa32a073"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "1ac546485f75a8cf257a8f1a40aa51f5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1258585,
+                "upload_time": "2014-12-24T01:16:05",
+                "url": "https://files.pythonhosted.org/packages/73/cb/3eebf42003791df29219a3dfa1874572aa16114b44c9b1b0ac66bf96e8c0/pip-6.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ca6788e57a176abbdf6d99d69f54ae0",
+                    "sha256": "b091a35f5fa0faffac0b27b97e1e1e93ffe63b463c2ea8dbde0c1fb987933614"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1ca6788e57a176abbdf6d99d69f54ae0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1191776,
+                "upload_time": "2014-12-24T01:16:16",
+                "url": "https://files.pythonhosted.org/packages/ce/63/8d99ae60d11ae1a65f5d4fc39a529a598bd3b8e067132210cb0c4d9e9f74/pip-6.0.3.tar.gz"
+            }
+        ],
+        "6.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0f654b22b335d01d15fdeb5f3291ecb5",
+                    "sha256": "8dfd95de29a7a3bb1e7d368cc83d566938eb210b04d553ebfe5e3a422f4aec65"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.4-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "0f654b22b335d01d15fdeb5f3291ecb5",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1260725,
+                "upload_time": "2015-01-03T06:49:44",
+                "url": "https://files.pythonhosted.org/packages/c5/0e/c974206726542bc495fc7443dd97834a6d14c2f0cba183fcfcd01075225a/pip-6.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "787ceae3419c8938f4c068814deff4d5",
+                    "sha256": "1dbbff9c369e510c7468ab68ba52c003f68f83c99c2f8259acd51099e8799f1e"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "787ceae3419c8938f4c068814deff4d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1193816,
+                "upload_time": "2015-01-03T06:49:58",
+                "url": "https://files.pythonhosted.org/packages/02/a1/c90f19910ee153d7a0efca7216758121118d7e93084276541383fe9ca82e/pip-6.0.4.tar.gz"
+            }
+        ],
+        "6.0.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1bd4c8c9d8d9a9a4434825a1e0b4bae6",
+                    "sha256": "b2c20e3a2a43b2bbb1d19ad98be27eccc7b0f0ece016da602ccaa757a862b0e2"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.5-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "1bd4c8c9d8d9a9a4434825a1e0b4bae6",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1260813,
+                "upload_time": "2015-01-03T08:08:06",
+                "url": "https://files.pythonhosted.org/packages/e9/1b/c6a375a337fb576784cdea3700f6c3eaf1420f0a01458e6e034cc178a84a/pip-6.0.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b9c4607b294338870acca9ac45d528c4",
+                    "sha256": "3bf42d28be9085ab2e9aecfd69a6da2d31563fe833304bf71a620a30c38ab8a2"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b9c4607b294338870acca9ac45d528c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1193928,
+                "upload_time": "2015-01-03T08:08:16",
+                "url": "https://files.pythonhosted.org/packages/19/f2/58628768f618c8c9fea878e0fb97730c0b8a838d3ab3f325768bf12dac94/pip-6.0.5.tar.gz"
+            }
+        ],
+        "6.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0472d9dc76a0df6cc6ab545e40aef832",
+                    "sha256": "fb04f8afe1ba57626783f0c8e2f3d46bbaebaa446fcf124f434e968a2fee595e"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.6-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "0472d9dc76a0df6cc6ab545e40aef832",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1260783,
+                "upload_time": "2015-01-03T09:32:41",
+                "url": "https://files.pythonhosted.org/packages/64/fc/4a49ccb18f55a0ceeb76e8d554bd4563217117492997825d194ed0017cc1/pip-6.0.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bbb17814bdf82187f46aaf9cec6b6caa",
+                    "sha256": "3a14091299dcdb9bab9e9004ae67ac401f2b1b14a7c98de074ca74fdddf4bfa0"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "bbb17814bdf82187f46aaf9cec6b6caa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1193930,
+                "upload_time": "2015-01-03T09:32:52",
+                "url": "https://files.pythonhosted.org/packages/f6/ce/d9e4e178b66c766c117f62ddf4fece019ef9d50127a8926d2f60300d615e/pip-6.0.6.tar.gz"
+            }
+        ],
+        "6.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a7ea5d89062613887b75e01e5d82c36",
+                    "sha256": "93a326304c7db749896bcef822bbbac1ab29dad5651c6d732e245975239890e6"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.7-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "9a7ea5d89062613887b75e01e5d82c36",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1263429,
+                "upload_time": "2015-01-28T21:42:09",
+                "url": "https://files.pythonhosted.org/packages/7a/8e/2bbd4fcf3ee06ee90ded5f39ec12f53165dfdb9ef25a981717ad38a16670/pip-6.0.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "26fa8f4c0f9a78c6c96ccfbcf34f5c31",
+                    "sha256": "35a5a43ac6b7af83ed47ea5731a365f43d350a3a7267e039e5f06b61d42ab3c2"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.7.tar.gz",
+                "has_sig": true,
+                "md5_digest": "26fa8f4c0f9a78c6c96ccfbcf34f5c31",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1196938,
+                "upload_time": "2015-01-28T21:42:18",
+                "url": "https://files.pythonhosted.org/packages/52/85/b160ebdaa84378df6bb0176d4eed9f57edca662446174eead7a9e2e566d6/pip-6.0.7.tar.gz"
+            }
+        ],
+        "6.0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "41e73fae2c86ba2270ff51c1d86f7e09",
+                    "sha256": "3c22b0a8ff92727bd737a82f72700790591f177541df08c07bc1f90d6b72ac19"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.8-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "41e73fae2c86ba2270ff51c1d86f7e09",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1266491,
+                "upload_time": "2015-02-05T02:28:50",
+                "url": "https://files.pythonhosted.org/packages/63/65/55b71647adec1ad595bf0e5d76d028506dfc002df30c256f022ff7a660a5/pip-6.0.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2332e6f97e75ded3bddde0ced01dbda3",
+                    "sha256": "0d58487a1b7f5be2e5e965c11afbea1dc44ecec8069de03491a4d0d6c85f4551"
+                },
+                "downloads": -1,
+                "filename": "pip-6.0.8.tar.gz",
+                "has_sig": true,
+                "md5_digest": "2332e6f97e75ded3bddde0ced01dbda3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1200024,
+                "upload_time": "2015-02-05T02:29:00",
+                "url": "https://files.pythonhosted.org/packages/ef/8a/e3a980bc0a7f791d72c1302f65763ed300f2e14c907ac033e01b44c79e5e/pip-6.0.8.tar.gz"
+            }
+        ],
+        "6.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "94faa2660c3a2ebe7d015d62c8726259",
+                    "sha256": "435a018f6d29e34d4f901bf4e6860d8a5fa1816b68d62008c18ca062a306db31"
+                },
+                "downloads": -1,
+                "filename": "pip-6.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "94faa2660c3a2ebe7d015d62c8726259",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1117902,
+                "upload_time": "2015-04-07T04:48:48",
+                "url": "https://files.pythonhosted.org/packages/24/fb/8a56a46243514681e569bbafd8146fa383476c4b7c725c8598c452366f31/pip-6.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0c349765bbc23743cec42b37bd8a281",
+                    "sha256": "89f120e2ab3d25ab70c36eb28ad4f280fc9ba71736e74d3055f609c1f9173768"
+                },
+                "downloads": -1,
+                "filename": "pip-6.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d0c349765bbc23743cec42b37bd8a281",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1051117,
+                "upload_time": "2015-04-07T04:48:58",
+                "url": "https://files.pythonhosted.org/packages/6c/84/432eb60bbcb414b9cdfcb135d5f4925e253c74e7d6916ada79990d6cc1a0/pip-6.1.0.tar.gz"
+            }
+        ],
+        "6.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "172eb5abab25a5e0f7a7b63c7a49378d",
+                    "sha256": "a67e54aa0f26b6d62ccec5cc6735eff205dd0fed075f56ac3d3111e91e4467fc"
+                },
+                "downloads": -1,
+                "filename": "pip-6.1.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "172eb5abab25a5e0f7a7b63c7a49378d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1117916,
+                "upload_time": "2015-04-07T10:43:14",
+                "url": "https://files.pythonhosted.org/packages/67/f0/ba0fb41dbdbfc4aa3e0c16b40269aca6b9e3d59cacdb646218aa2e9b1d2c/pip-6.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b19e0a934d982a5a4b798e957cb6d45",
+                    "sha256": "89f3b626d225e08e7f20d85044afa40f612eb3284484169813dc2d0631f2a556"
+                },
+                "downloads": -1,
+                "filename": "pip-6.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6b19e0a934d982a5a4b798e957cb6d45",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1051205,
+                "upload_time": "2015-04-07T10:43:26",
+                "url": "https://files.pythonhosted.org/packages/bf/85/871c126b50b8ee0b9819e8a63b614aedd264577e73478caedcd447e8f28c/pip-6.1.1.tar.gz"
+            }
+        ],
+        "7.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3d66bbb6a230538ac984a411567a322",
+                    "sha256": "309c48399c7d68501a10ef206abd6e5c541fedbf84b95435d9063bd454b39df7"
+                },
+                "downloads": -1,
+                "filename": "pip-7.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c3d66bbb6a230538ac984a411567a322",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1118091,
+                "upload_time": "2015-05-22T02:59:59",
+                "url": "https://files.pythonhosted.org/packages/5a/9b/56d3c18d0784d5f2bbd446ea2dc7ffa7476c35e3dc223741d20cfee3b185/pip-7.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "22d829cc0fab1d829f9374d67ad10c2a",
+                    "sha256": "7b46bfc1b95494731de306a688e2a7bc056d7fa7ad27e026908fb2ae67fed23d"
+                },
+                "downloads": -1,
+                "filename": "pip-7.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "22d829cc0fab1d829f9374d67ad10c2a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1053302,
+                "upload_time": "2015-05-22T03:00:11",
+                "url": "https://files.pythonhosted.org/packages/c6/16/6475b142927ca5d03e3b7968efa5b0edd103e4684ecfde181a25f6fa2505/pip-7.0.0.tar.gz"
+            }
+        ],
+        "7.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9b403ba9b82d4a1e5fda5b6cc8952b57",
+                    "sha256": "d26b8573ba1ac1ec99a9bdbdffee2ff2b06c7790815211d0eb4dc1462a089705"
+                },
+                "downloads": -1,
+                "filename": "pip-7.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "9b403ba9b82d4a1e5fda5b6cc8952b57",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1118215,
+                "upload_time": "2015-05-23T00:18:07",
+                "url": "https://files.pythonhosted.org/packages/5a/10/bb7a32c335bceba636aa673a4c977effa1e73a79f88856459486d8d670cf/pip-7.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5627bb807cf3d898a2eba276685537aa",
+                    "sha256": "cfec177552fdd0b2d12b72651c8e874f955b4c62c1c2c9f2588cbdc1c0d0d416"
+                },
+                "downloads": -1,
+                "filename": "pip-7.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5627bb807cf3d898a2eba276685537aa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1053513,
+                "upload_time": "2015-05-23T00:18:19",
+                "url": "https://files.pythonhosted.org/packages/4a/83/9ae4362a80739657e0c8bb628ea3fa0214a9aba7c8590dacc301ea293f73/pip-7.0.1.tar.gz"
+            }
+        ],
+        "7.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b0a1ae13afdc4db03d8b9afd91cd21f8",
+                    "sha256": "83c869c5ab7113866e2d69641ec470d47f0faae68ca4550a289a4d3db515ad65"
+                },
+                "downloads": -1,
+                "filename": "pip-7.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b0a1ae13afdc4db03d8b9afd91cd21f8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1118531,
+                "upload_time": "2015-06-01T23:38:59",
+                "url": "https://files.pythonhosted.org/packages/64/7f/7107800ae0919a80afbf1ecba21b90890431c3ee79d700adac3c79cb6497/pip-7.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f01ba398ebf3aad2d0a4e05194dfdfbf",
+                    "sha256": "ba28fa60b573a9444e7b78ccb3b0f261d1f66f46d20403f9dce37b18a6aed405"
+                },
+                "downloads": -1,
+                "filename": "pip-7.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "f01ba398ebf3aad2d0a4e05194dfdfbf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1054071,
+                "upload_time": "2015-06-01T23:39:13",
+                "url": "https://files.pythonhosted.org/packages/75/b1/66532c273bca0133e42c3b4540a1609289f16e3046f1830f18c60794d661/pip-7.0.2.tar.gz"
+            }
+        ],
+        "7.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6950e1d775fea7ea50af690f72589dbd",
+                    "sha256": "7b1cb03e827d58d2d05e68ea96a9e27487ed4b0afcd951ac6e40847ce94f0738"
+                },
+                "downloads": -1,
+                "filename": "pip-7.0.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "6950e1d775fea7ea50af690f72589dbd",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1118548,
+                "upload_time": "2015-06-02T01:30:16",
+                "url": "https://files.pythonhosted.org/packages/96/76/33a598ae42dd0554207d83c7acc60e3b166dbde723cbf282f1f73b7a127c/pip-7.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54cbf5ae000fb3af3367345f5d299d1c",
+                    "sha256": "b4c598825a6f6dc2cac65968feb28e6be6c1f7f1408493c60a07eaa731a0affd"
+                },
+                "downloads": -1,
+                "filename": "pip-7.0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "54cbf5ae000fb3af3367345f5d299d1c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1054215,
+                "upload_time": "2015-06-02T01:30:30",
+                "url": "https://files.pythonhosted.org/packages/35/59/5b23115758ba0f2fc465c459611865173ef006202ba83f662d1f58ed2fb8/pip-7.0.3.tar.gz"
+            }
+        ],
+        "7.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b108384a762825ec20345bb9b5b7209f",
+                    "sha256": "80c29f899d3a00a448d65f8158544d22935baec7159af8da1a4fa1490ced481d"
+                },
+                "downloads": -1,
+                "filename": "pip-7.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b108384a762825ec20345bb9b5b7209f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1111835,
+                "upload_time": "2015-06-30T23:12:13",
+                "url": "https://files.pythonhosted.org/packages/f7/c0/9f8dac88326609b4b12b304e8382f64f7d5af7735a00d2fac36cf135fc30/pip-7.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d935ee9146074b1d3f26c5f0acfd120e",
+                    "sha256": "d5275ba3221182a5dd1b6bcfbfc5ec277fb399dd23226d6fa018048f7e0f10f2"
+                },
+                "downloads": -1,
+                "filename": "pip-7.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d935ee9146074b1d3f26c5f0acfd120e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1049267,
+                "upload_time": "2015-06-30T23:12:17",
+                "url": "https://files.pythonhosted.org/packages/7e/71/3c6ece07a9a885650aa6607b0ebfdf6fc9a3ef8691c44b5e724e4eee7bf2/pip-7.1.0.tar.gz"
+            }
+        ],
+        "7.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f7e937193b5a119d42736a0585293769",
+                    "sha256": "ce13000878d34c1178af76cb8cf269e232c00508c78ed46c165dd5b0881615f4"
+                },
+                "downloads": -1,
+                "filename": "pip-7.1.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "f7e937193b5a119d42736a0585293769",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1111330,
+                "upload_time": "2015-08-20T21:26:04",
+                "url": "https://files.pythonhosted.org/packages/1c/56/094d563c508917081bccff365e4f621ba33073c1c13aca9267a43cfcaf13/pip-7.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9c30c61ca871f72465d882728ca24d93",
+                    "sha256": "b22fe3c93a13fc7c04f145a42fd2ad50a9e3e1b8a7eed2e2b1c66e540a0951da"
+                },
+                "downloads": -1,
+                "filename": "pip-7.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "9c30c61ca871f72465d882728ca24d93",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1049099,
+                "upload_time": "2015-08-20T21:26:12",
+                "url": "https://files.pythonhosted.org/packages/3b/bb/b3f2a95494fd3f01d3b3ae530e7c0e910dc25e88e30787b0a5e10cbc0640/pip-7.1.1.tar.gz"
+            }
+        ],
+        "7.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ff9fec0be479e4e36df467556deed4d",
+                    "sha256": "b9d3983b5cce04f842175e30169d2f869ef12c3546fd274083a65eada4e9708c"
+                },
+                "downloads": -1,
+                "filename": "pip-7.1.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "5ff9fec0be479e4e36df467556deed4d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1111358,
+                "upload_time": "2015-08-22T22:48:12",
+                "url": "https://files.pythonhosted.org/packages/b2/d0/cd115fe345dd6f07ec1c780020a7dfe74966fceeb171e0f20d1d4905b0b7/pip-7.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3823d2343d9f3aaab21cf9c917710196",
+                    "sha256": "ca047986f0528cfa975a14fb9f7f106271d4e0c3fe1ddced6c1db2e7ae57a477"
+                },
+                "downloads": -1,
+                "filename": "pip-7.1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3823d2343d9f3aaab21cf9c917710196",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1049170,
+                "upload_time": "2015-08-22T22:48:23",
+                "url": "https://files.pythonhosted.org/packages/d0/92/1e8406c15d9372084a5bf79d96da3a0acc4e7fcf0b80020a4820897d2a5c/pip-7.1.2.tar.gz"
+            }
+        ],
+        "8.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b1da5eba510e1631791dcf300657916",
+                    "sha256": "262ed1823eb7fbe3f18a9bedb4800e59c4ab9a6682aff8c37b5ee83ea840910b"
+                },
+                "downloads": -1,
+                "filename": "pip-8.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "7b1da5eba510e1631791dcf300657916",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1188709,
+                "upload_time": "2016-01-20T00:41:09",
+                "url": "https://files.pythonhosted.org/packages/00/ae/bddef02881ee09c6a01a0d6541aa6c75a226a4e68b041be93142befa0cd6/pip-8.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5601c4323464add1482291634142894d",
+                    "sha256": "90112b296152f270cb8dddcd19b7b87488d9e002e8cf622e14c4da9c2f6319b1"
+                },
+                "downloads": -1,
+                "filename": "pip-8.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "5601c4323464add1482291634142894d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1129857,
+                "upload_time": "2016-01-20T00:43:08",
+                "url": "https://files.pythonhosted.org/packages/e3/2d/03c014d11e66628abf2fda5ca00f779cbe7b5292c5cd13d42a95b94aa9b8/pip-8.0.0.tar.gz"
+            }
+        ],
+        "8.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "114a650ae146ba04d9c8e1ae691e4e44",
+                    "sha256": "dedaac846bc74e38a3253671f51a056331ffca1da70e3f48d8128f2aa0635bba"
+                },
+                "downloads": -1,
+                "filename": "pip-8.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "114a650ae146ba04d9c8e1ae691e4e44",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1189821,
+                "upload_time": "2016-01-21T19:35:44",
+                "url": "https://files.pythonhosted.org/packages/45/9c/6f9a24917c860873e2ce7bd95b8f79897524353df51d5d920cd6b6c1ec33/pip-8.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "21db6796276402d0f48f0ccfee2abdac",
+                    "sha256": "477c50b3e538a7ac0fa611fb8b877b04b33fb70d325b12a81b9dbf3eb1158a4d"
+                },
+                "downloads": -1,
+                "filename": "pip-8.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "21db6796276402d0f48f0ccfee2abdac",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1131239,
+                "upload_time": "2016-01-21T19:35:51",
+                "url": "https://files.pythonhosted.org/packages/ea/66/a3d6187bd307159fedf8575c0d9ee2294d13b1cdd11673ca812e6a2dda8f/pip-8.0.1.tar.gz"
+            }
+        ],
+        "8.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2056f553d5b593d3a970296f229c1b79",
+                    "sha256": "249a6f3194be8c2e8cb4d4be3f6fd16a9f1e3336218caffa8e7419e3816f9988"
+                },
+                "downloads": -1,
+                "filename": "pip-8.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "2056f553d5b593d3a970296f229c1b79",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1188805,
+                "upload_time": "2016-01-21T23:49:36",
+                "url": "https://files.pythonhosted.org/packages/e7/a0/bd35f5f978a5e925953ce02fa0f078a232f0f10fcbe543d8cfc043f74fda/pip-8.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a73c4188f8dbad6a1e6f6d44d117eeb",
+                    "sha256": "46f4bd0d8dfd51125a554568d646fe4200a3c2c6c36b9f2d06d2212148439521"
+                },
+                "downloads": -1,
+                "filename": "pip-8.0.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "3a73c4188f8dbad6a1e6f6d44d117eeb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1130183,
+                "upload_time": "2016-01-21T23:49:42",
+                "url": "https://files.pythonhosted.org/packages/ce/15/ee1f9a84365423e9ef03d0f9ed0eba2fb00ac1fffdd33e7b52aea914d0f8/pip-8.0.2.tar.gz"
+            }
+        ],
+        "8.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b234250205337ff67967dff300001e3d",
+                    "sha256": "b0335bc837f9edb5aad03bd43d0973b084a1cbe616f8188dc23ba13234dbd552"
+                },
+                "downloads": -1,
+                "filename": "pip-8.0.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "b234250205337ff67967dff300001e3d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1190016,
+                "upload_time": "2016-02-25T17:19:05",
+                "url": "https://files.pythonhosted.org/packages/ae/d4/2b127310f5364610b74c28e2e6a40bc19e2d3c9a9a4e012d3e333e767c99/pip-8.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f000fc101e47f4f199fa29df1e0b0df",
+                    "sha256": "30f98b66f3fe1069c529a491597d34a1c224a68640c82caf2ade5f88aa1405e8"
+                },
+                "downloads": -1,
+                "filename": "pip-8.0.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "8f000fc101e47f4f199fa29df1e0b0df",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1131758,
+                "upload_time": "2016-02-25T17:19:21",
+                "url": "https://files.pythonhosted.org/packages/22/f3/14bc87a4f6b5ec70b682765978a6f3105bf05b6781fa97e04d30138bd264/pip-8.0.3.tar.gz"
+            }
+        ],
+        "8.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c6eca6736b2b8f7280fb25e44be7c51b",
+                    "sha256": "a542b99e08002ead83200198e19a3983270357e1cb4fe704247990b5b35471dc"
+                },
+                "downloads": -1,
+                "filename": "pip-8.1.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "c6eca6736b2b8f7280fb25e44be7c51b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1197452,
+                "upload_time": "2016-03-05T16:57:24",
+                "url": "https://files.pythonhosted.org/packages/1e/c7/78440b3fb882ed001e6e12d8770bd45e73d6eced4e57f7c072b829ce8a3d/pip-8.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e9c3844db343f47d16040b32ad9072be",
+                    "sha256": "d8faa75dd7d0737b16d50cd0a56dc91a631c79ecfd8d38b80f6ee929ec82043e"
+                },
+                "downloads": -1,
+                "filename": "pip-8.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "e9c3844db343f47d16040b32ad9072be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1138794,
+                "upload_time": "2016-03-05T16:57:31",
+                "url": "https://files.pythonhosted.org/packages/3c/72/6981d5adf880adecb066a1a1a4c312a17f8d787a3b85446967964ac66d55/pip-8.1.0.tar.gz"
+            }
+        ],
+        "8.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "22db7b6a517a09c29d54a76650f170eb",
+                    "sha256": "44b9c342782ab905c042c207d995aa069edc02621ddbdc2b9f25954a0fdac25c"
+                },
+                "downloads": -1,
+                "filename": "pip-8.1.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "22db7b6a517a09c29d54a76650f170eb",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1197664,
+                "upload_time": "2016-03-17T13:53:43",
+                "url": "https://files.pythonhosted.org/packages/31/6a/0f19a7edef6c8e5065f4346137cc2a08e22e141942d66af2e1e72d851462/pip-8.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b86f11841e89c8241d689956ba99ed7",
+                    "sha256": "3e78d3066aaeb633d185a57afdccf700aa2e660436b4af618bcb6ff0fa511798"
+                },
+                "downloads": -1,
+                "filename": "pip-8.1.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6b86f11841e89c8241d689956ba99ed7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1139175,
+                "upload_time": "2016-03-17T13:53:50",
+                "url": "https://files.pythonhosted.org/packages/41/27/9a8d24e1b55bd8c85e4d022da2922cb206f183e2d18fee4e320c9547e751/pip-8.1.1.tar.gz"
+            }
+        ],
+        "8.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0570520434c5b600d89ec95393b2650b",
+                    "sha256": "6464dd9809fb34fc8df2bf49553bb11dac4c13d2ffa7a4f8038ad86a4ccb92a1"
+                },
+                "downloads": -1,
+                "filename": "pip-8.1.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "0570520434c5b600d89ec95393b2650b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1198961,
+                "upload_time": "2016-05-11T00:40:59",
+                "url": "https://files.pythonhosted.org/packages/9c/32/004ce0852e0a127f07f358b715015763273799bd798956fa930814b60f39/pip-8.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "87083c0b9867963b29f7aba3613e8f4a",
+                    "sha256": "4d24b03ffa67638a3fa931c09fd9e0273ffa904e95ebebe7d4b1a54c93d7b732"
+                },
+                "downloads": -1,
+                "filename": "pip-8.1.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "87083c0b9867963b29f7aba3613e8f4a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1140573,
+                "upload_time": "2016-05-11T00:41:13",
+                "url": "https://files.pythonhosted.org/packages/e7/a8/7556133689add8d1a54c0b14aeff0acb03c64707ce100ecd53934da1aa13/pip-8.1.2.tar.gz"
+            }
+        ],
+        "9.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "55f554c8be55cba2a766e40fdb1bb25d",
+                    "sha256": "c856ac18ca01e7127456f831926dc67cc7d3ab663f4c13b1ec156e36db4de574"
+                },
+                "downloads": -1,
+                "filename": "pip-9.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "55f554c8be55cba2a766e40fdb1bb25d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1254648,
+                "upload_time": "2016-11-02T18:24:13",
+                "url": "https://files.pythonhosted.org/packages/3f/ef/935d9296acc4f48d1791ee56a73781271dce9712b059b475d3f5fa78487b/pip-9.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "def0a8e3db26f896c128d063591bd008",
+                    "sha256": "f62fb70e7e000e46fce12aaeca752e5281a5446977fe5a75ab4189a43b3f8793"
+                },
+                "downloads": -1,
+                "filename": "pip-9.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "def0a8e3db26f896c128d063591bd008",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1197043,
+                "upload_time": "2016-11-02T18:24:19",
+                "url": "https://files.pythonhosted.org/packages/5e/53/eaef47e5e2f75677c9de0737acc84b659b78a71c4086f424f55346a341b5/pip-9.0.0.tar.gz"
+            }
+        ],
+        "9.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "297dbd16ef53bcef0447d245815f5144",
+                    "sha256": "690b762c0a8460c303c089d5d0be034fb15a5ea2b75bdf565f40421f542fefb0"
+                },
+                "downloads": -1,
+                "filename": "pip-9.0.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "297dbd16ef53bcef0447d245815f5144",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1254803,
+                "upload_time": "2016-11-06T18:51:46",
+                "url": "https://files.pythonhosted.org/packages/b6/ac/7015eb97dc749283ffdec1c3a88ddb8ae03b8fad0f0e611408f196358da3/pip-9.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "35f01da33009719497f01a4ba69d63c9",
+                    "sha256": "09f243e1a7b461f654c26a725fa373211bb7ff17a9300058b205c61658ca940d"
+                },
+                "downloads": -1,
+                "filename": "pip-9.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "35f01da33009719497f01a4ba69d63c9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1197370,
+                "upload_time": "2016-11-06T18:51:51",
+                "url": "https://files.pythonhosted.org/packages/11/b6/abcb525026a4be042b486df43905d6893fb04f05aac21c32c638e939e447/pip-9.0.1.tar.gz"
+            }
+        ],
+        "9.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "815c59ab81d53843067e5cc7c4e8151b",
+                    "sha256": "b135491ddb061f39719b8472d8abb59c613816a2b86069c332db74d1cd208ab2"
+                },
+                "downloads": -1,
+                "filename": "pip-9.0.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "815c59ab81d53843067e5cc7c4e8151b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1400942,
+                "upload_time": "2018-03-17T03:40:44",
+                "url": "https://files.pythonhosted.org/packages/e7/f9/e801dcea22886cd513f6bd2e8f7e581bd6f67bb8e8f1cd8e7b92d8539280/pip-9.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2fddd680422326b9d1fbf56112cf341d",
+                    "sha256": "88110a224e9d30e5d76592a0b2130ef10e7e67a6426e8617bb918fffbfe91fe5"
+                },
+                "downloads": -1,
+                "filename": "pip-9.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2fddd680422326b9d1fbf56112cf341d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1343063,
+                "upload_time": "2018-03-17T03:41:51",
+                "url": "https://files.pythonhosted.org/packages/e5/8f/3fc66461992dc9e9fcf5e005687d5f676729172dda640df2fd8b597a6da7/pip-9.0.2.tar.gz"
+            }
+        ],
+        "9.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d512ceb964f38ba31addb8142bc657cb",
+                    "sha256": "c3ede34530e0e0b2381e7363aded78e0c33291654937e7373032fda04e8803e5"
+                },
+                "downloads": -1,
+                "filename": "pip-9.0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d512ceb964f38ba31addb8142bc657cb",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 1400985,
+                "upload_time": "2018-03-22T01:09:39",
+                "url": "https://files.pythonhosted.org/packages/ac/95/a05b56bb975efa78d3557efa36acaf9cf5d2fd0ee0062060493687432e03/pip-9.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b15b33f9aad61f88d0f8c866d16c55d8",
+                    "sha256": "7bf48f9a693be1d58f49f7af7e0ae9fe29fd671cde8a55e6edca3581c4ef5796"
+                },
+                "downloads": -1,
+                "filename": "pip-9.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b15b33f9aad61f88d0f8c866d16c55d8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1343076,
+                "upload_time": "2018-03-22T01:09:43",
+                "url": "https://files.pythonhosted.org/packages/c4/44/e6b8056b6c8f2bfd1445cc9990f478930d8e3459e9dbf5b8e2d2922d64d3/pip-9.0.3.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "eb92c86bfda9cde5e082a1fd76f1e627",
+                "sha256": "717cdffb2833be8409433a93746744b59505f42146e8d37de6c62b430e25d6d7"
+            },
+            "downloads": -1,
+            "filename": "pip-10.0.1-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "eb92c86bfda9cde5e082a1fd76f1e627",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 1307639,
+            "upload_time": "2018-04-19T18:56:05",
+            "url": "https://files.pythonhosted.org/packages/0f/74/ecd13431bcc456ed390b44c8a6e917c1820365cbebcb6a8974d1cd045ab4/pip-10.0.1-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "83a177756e2c801d0b3a6f7b0d4f3f7e",
+                "sha256": "f2bd08e0cd1b06e10218feaf6fef299f473ba706582eb3bd9d52203fdbd7ee68"
+            },
+            "downloads": -1,
+            "filename": "pip-10.0.1.tar.gz",
+            "has_sig": false,
+            "md5_digest": "83a177756e2c801d0b3a6f7b0d4f3f7e",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 1246072,
+            "upload_time": "2018-04-19T18:56:09",
+            "url": "https://files.pythonhosted.org/packages/ae/e8/2340d46ecadb1692a1e455f13f75e596d4eab3d11a57446f08259dee8f02/pip-10.0.1.tar.gz"
+        }
+    ],
+    "package_name": "pip"
+}

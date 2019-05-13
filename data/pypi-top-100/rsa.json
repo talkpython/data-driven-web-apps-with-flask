@@ -1,0 +1,976 @@
+{
+    "info": {
+        "author": "Sybren A. Stuvel",
+        "author_email": "sybren@stuvel.eu",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Intended Audience :: Education",
+            "Intended Audience :: Information Technology",
+            "License :: OSI Approved :: Apache Software License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Topic :: Security :: Cryptography"
+        ],
+        "description": "Pure Python RSA implementation\n==============================\n\n[![PyPI](https://img.shields.io/pypi/v/rsa.svg)](https://pypi.python.org/pypi/rsa)\n[![Build Status](https://travis-ci.org/sybrenstuvel/python-rsa.svg?branch=master)]\n    (https://travis-ci.org/sybrenstuvel/python-rsa)\n[![Coverage Status](https://coveralls.io/repos/github/sybrenstuvel/python-rsa/badge.svg?branch=master)]\n    (https://coveralls.io/github/sybrenstuvel/python-rsa?branch=master)\n[![Code Climate](https://img.shields.io/codeclimate/github/sybrenstuvel/python-rsa.svg)]\n    (https://codeclimate.com/github/sybrenstuvel/python-rsa)\n\n[Python-RSA](https://stuvel.eu/rsa) is a pure-Python RSA implementation. It supports\nencryption and decryption, signing and verifying signatures, and key\ngeneration according to PKCS#1 version 1.5. It can be used as a Python\nlibrary as well as on the commandline. The code was mostly written by\nSybren A.  St\u00fcvel.\n\nDocumentation can be found at the [Python-RSA homepage](https://stuvel.eu/rsa).\n\nDownload and install using:\n\n    pip install rsa\n\nor download it from the [Python Package Index](https://pypi.python.org/pypi/rsa).\n\nThe source code is maintained at [Github](https://github.com/sybrenstuvel/python-rsa/) and is\nlicensed under the [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n\n\nPlans for the future\n--------------------\n\nVersion 3.4 is the last version in the 3.x range. Version 4.0 will drop the following modules,\nas they are insecure:\n\n- `rsa._version133`\n- `rsa._version200`\n- `rsa.bigfile`\n- `rsa.varblock`\n\nThose modules are marked as deprecated in version 3.4.\n\nFurthermore, in 4.0 the I/O functions will be streamlined to always work with bytes on all\nsupported versions of Python.\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://stuvel.eu/rsa",
+        "keywords": null,
+        "license": "ASL 2",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "rsa",
+        "package_url": "https://pypi.org/project/rsa/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/rsa/",
+        "release_url": "https://pypi.org/project/rsa/3.4.2/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Pure-Python RSA implementation",
+        "version": "3.4.2"
+    },
+    "last_serial": 2033829,
+    "releases": {
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f239863bade3928239b67658bf95fc2c",
+                    "sha256": "5558bd3b3c6c41ba33c7cb76ba1cfbb4feb94cb2d967f44ab94a59ae9b924e83"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.1-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "f239863bade3928239b67658bf95fc2c",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 10330,
+                "upload_time": "2008-04-23T11:27:28",
+                "url": "https://files.pythonhosted.org/packages/e1/dd/2ca729d31a9a51b331b709b1482b132b5e22a2ff65970d418c11350a2e9f/rsa-1.1-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "afc699c42f756356c0542aa230ff0f57",
+                    "sha256": "9541b57648d03a04e4ace836456a52db9d650760481fde066ef668faa0a13fb9"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "afc699c42f756356c0542aa230ff0f57",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4836,
+                "upload_time": "2008-04-23T11:27:28",
+                "url": "https://files.pythonhosted.org/packages/8f/38/8faf75db9289912276d8703bf2c8a38ead6a96fe5cc546425e5afdd5979e/rsa-1.1.tar.gz"
+            }
+        ],
+        "1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "279f021b053ef33722ca88726d079dce",
+                    "sha256": "abae974c39aec8116494a4b8d1844d096aac27d1fa437c19060edd06441f4da0"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.2-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "279f021b053ef33722ca88726d079dce",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 10356,
+                "upload_time": "2008-06-06T14:05:55",
+                "url": "https://files.pythonhosted.org/packages/7b/13/f94d2ea86f390ff6693b4836bbf27ca58a33f654298d62594306350c29ec/rsa-1.2-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "793bd8e45cf6ee4e6e7083df2ace255e",
+                    "sha256": "21fdcc2a77cc3dcac528791dc240c4b51ad55604d2f95d273073f7cc6499175f"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "793bd8e45cf6ee4e6e7083df2ace255e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4878,
+                "upload_time": "2008-06-06T14:05:49",
+                "url": "https://files.pythonhosted.org/packages/1b/86/34cf42d91f1b57f9f2f0722b626aafd5953171e70f5ef98be41fc95380c5/rsa-1.2.tar.gz"
+            }
+        ],
+        "1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "889fb419043f3d2109130674ffe0e34b",
+                    "sha256": "0e11254b08a2adeac068c20cfee2e97bdf85a45fd83b43487b99fd5108da96b3"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "889fb419043f3d2109130674ffe0e34b",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 10212,
+                "upload_time": "2009-01-22T15:09:26",
+                "url": "https://files.pythonhosted.org/packages/11/9f/4216a88b0c4edc1b62385437fd58a5ecf2916dd9264d29d3e961549cb560/rsa-1.3-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1ab4fd9af345cbd6ecd6836c37cd3ebf",
+                    "sha256": "6ef8635e432eb80bb5f756b023b59d2b726a3676582015e4aea4f80150af17b9"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "1ab4fd9af345cbd6ecd6836c37cd3ebf",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 9943,
+                "upload_time": "2009-01-22T15:05:31",
+                "url": "https://files.pythonhosted.org/packages/8e/3c/c8e5eff7bb26e43f9ba7b4098aa089e6da7d117e4b933a3b8ce596bbc92c/rsa-1.3-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "69db5e483826b31d64974920c5fb0384",
+                    "sha256": "03f52553a712eb859ef2eea20f03af57cf89fb2330cee66929d0df08d78cb82e"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "69db5e483826b31d64974920c5fb0384",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4681,
+                "upload_time": "2009-01-22T15:06:27",
+                "url": "https://files.pythonhosted.org/packages/65/bf/c755b130b957e8b43c1a23603379c2f2deb240336f78f003aaceaa1fe4fb/rsa-1.3.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4a300c4f28405606f3586d34b02d3f96",
+                    "sha256": "a59cf2e84d092d216d33f4e615f792799fa7eb09ac88c5438db11fc2a902f734"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.1-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "4a300c4f28405606f3586d34b02d3f96",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 10167,
+                "upload_time": "2009-01-23T15:11:56",
+                "url": "https://files.pythonhosted.org/packages/68/e8/8106186e215c508a333618405195dcc042ffa1602eeb4fc9815f0f55649a/rsa-1.3.1-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "363e0f4d0dc001d23276d8824cff8d60",
+                    "sha256": "32ba16d835a12943861bca31686142f519b710a86cf235e5a56cb55f2c53037d"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.1-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "363e0f4d0dc001d23276d8824cff8d60",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 9901,
+                "upload_time": "2009-01-23T15:11:50",
+                "url": "https://files.pythonhosted.org/packages/87/2b/70d94e813af27131b96e5f39e43b60e6a9e1c59efeeadc9a56cef6ae0921/rsa-1.3.1-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ffbf43f47be28e2dfb6de5fb549a1be",
+                    "sha256": "13b4248258bb558e5007b11f212743efde1a53c25e758a822f15d5f69fb2331d"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2ffbf43f47be28e2dfb6de5fb549a1be",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4673,
+                "upload_time": "2009-01-23T15:12:01",
+                "url": "https://files.pythonhosted.org/packages/1c/ef/70685441fd06770c85e635a3ffd16af212d61018256bc19a01c1e3826bca/rsa-1.3.1.tar.gz"
+            }
+        ],
+        "1.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "92d2d4d92a43d9172b409f539109b575",
+                    "sha256": "29b4747fa619ad9b53930e6306a2ed6466f4e990e75bdd27980905db478f6b41"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.2-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "92d2d4d92a43d9172b409f539109b575",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 10018,
+                "upload_time": "2010-02-05T09:57:37",
+                "url": "https://files.pythonhosted.org/packages/e9/aa/c48b9ca46df34e45076baecd0ea6aaa1e2fb6fdbfa179db06bdc9609d0d4/rsa-1.3.2-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54daac4ebba943f802d308d1db6ce942",
+                    "sha256": "8f19fbda1e3c5eefa69fbe956af53ccd56869ca02a20ae3b7259034fcb5c1854"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.2-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "54daac4ebba943f802d308d1db6ce942",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 9995,
+                "upload_time": "2010-02-05T09:57:28",
+                "url": "https://files.pythonhosted.org/packages/2a/7f/3a04bac4148d64cb2389ea9a0b8492a056e8e011d59f42d550695c40ac18/rsa-1.3.2-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "89714e8e102b443f3339173461c665e4",
+                    "sha256": "3bfa16d5bc17f25d592842aba0cbb360dd78d5081c54d913ffd7cad0055206ce"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "89714e8e102b443f3339173461c665e4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4738,
+                "upload_time": "2010-02-05T09:58:11",
+                "url": "https://files.pythonhosted.org/packages/15/f3/8ec674dc77ff6aa9904e9a261e0485b90b18ba366a7f02eb2dff935f388e/rsa-1.3.2.tar.gz"
+            }
+        ],
+        "1.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "00ef08a73708c71546cd935eeddc9fb0",
+                    "sha256": "c0c103c0b0c172a8f24535b7e6d02f06d0d6087c731e4649ab10dd1978c96f08"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.3-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "00ef08a73708c71546cd935eeddc9fb0",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 10352,
+                "upload_time": "2010-02-05T10:38:09",
+                "url": "https://files.pythonhosted.org/packages/c1/f8/7173484bb1208d9fb3cee6259963ad66b19e621f6917322ce7a0219f26d8/rsa-1.3.3-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4028b663daa89cd2c57a25a623e39bd7",
+                    "sha256": "93fc46b9c7568044068a9de0bd6ab271a4b2f2e8df2ded3916da0b2d5832f5f7"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.3-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "4028b663daa89cd2c57a25a623e39bd7",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 10329,
+                "upload_time": "2010-02-05T10:38:04",
+                "url": "https://files.pythonhosted.org/packages/09/85/68c73d89f83a1f35e984f9a9126587a0be985fac217e514c8560d06b0919/rsa-1.3.3-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e3fe098250a28e14aed75d66ed4b4aab",
+                    "sha256": "1d6d54b6dbdcfc0bc543680b155a913c5c53d8e53dcb610d4335c8ea8921412b"
+                },
+                "downloads": -1,
+                "filename": "rsa-1.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e3fe098250a28e14aed75d66ed4b4aab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4871,
+                "upload_time": "2010-02-05T10:38:14",
+                "url": "https://files.pythonhosted.org/packages/07/44/0f55aba3524fa363e5b0c102950f78575d776db102693d376e55625f0507/rsa-1.3.3.tar.gz"
+            }
+        ],
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "beb9f89f94813c771f7319567841a240",
+                    "sha256": "4db0688658d7be582d7008263bd1725e26e681432040b96e1b53684dda3757ac"
+                },
+                "downloads": -1,
+                "filename": "rsa-2.0-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "beb9f89f94813c771f7319567841a240",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 32371,
+                "upload_time": "2011-01-09T17:22:23",
+                "url": "https://files.pythonhosted.org/packages/c4/79/a9371fd9cd943c4ae21b82a9e9897054f98f0519864c5e79125b5344da7b/rsa-2.0-py2.6.egg"
+            }
+        ],
+        "3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "633c5df7541663f29034731be1f0c94e",
+                    "sha256": "3f022ae5ceebf0a2fabac0d65412e76710e26f821630c7976cefb7d99d8025a1"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.0-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "633c5df7541663f29034731be1f0c94e",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 74398,
+                "upload_time": "2011-08-05T10:41:01",
+                "url": "https://files.pythonhosted.org/packages/10/b2/a410ba5dab042a056351377a30d4d4b6caf14c333d3a6b29d65eb661814b/rsa-3.0-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4cef47a4c910f33e318a6f16647c557f",
+                    "sha256": "20f47c3b2d269bf32ec359b6955a3ab480067d6076408a50d5731bb33a9a0cb2"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.0-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "4cef47a4c910f33e318a6f16647c557f",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 74134,
+                "upload_time": "2011-08-05T10:39:27",
+                "url": "https://files.pythonhosted.org/packages/da/b5/6f840aeab3404eb5ef3c9242fd90e44e60a9c6ca99ce54b584ebe7b44261/rsa-3.0-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6ad482995ebeec42e513a6f3dfbc69fd",
+                    "sha256": "da3fdf552f7725d77278c581c1d13ce2818fd1ff2ade531e2360dce961060c37"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6ad482995ebeec42e513a6f3dfbc69fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30868,
+                "upload_time": "2011-08-05T10:39:26",
+                "url": "https://files.pythonhosted.org/packages/46/62/e526ae9cc0af714d35c1a90a524f413f0bbf257584a7034c899fb9e50c3f/rsa-3.0.tar.gz"
+            }
+        ],
+        "3.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "def0f652c2565ed7d6d20250eaaf8a2b",
+                    "sha256": "2bbe8bf53750c93c0bbcde3bf628246e0438eb5192c5587d344197b6497991c6"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.0.1-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "def0f652c2565ed7d6d20250eaaf8a2b",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 74057,
+                "upload_time": "2011-08-07T16:21:54",
+                "url": "https://files.pythonhosted.org/packages/11/2f/5bba680921218a69361441a78564392142d3ae6299542c209ab0a2b2ba91/rsa-3.0.1-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "605b0346d7b7bf33a8d231ab4d07da45",
+                    "sha256": "2c36df5690f476154c32537b6a0a0bce85c26b4b4a365e23b6e5ac6773355668"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.0.1.zip",
+                "has_sig": false,
+                "md5_digest": "605b0346d7b7bf33a8d231ab4d07da45",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49380,
+                "upload_time": "2011-08-07T16:22:02",
+                "url": "https://files.pythonhosted.org/packages/94/28/336ef5dd321d63b0da4d87d20e47260823abd53cbe7b7c8da0c0373215e8/rsa-3.0.1.zip"
+            }
+        ],
+        "3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5fb6eb76873d6872778b4db69ef81ea3",
+                    "sha256": "0c462125685575575b243e963d01e9851a7fa7e139cb4e177ca90ac81a7daa16"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "5fb6eb76873d6872778b4db69ef81ea3",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 86096,
+                "upload_time": "2012-06-17T12:05:21",
+                "url": "https://files.pythonhosted.org/packages/a1/4a/34446d387ca0235c67c5c238ab875d7de30712fb076adb23acf2117c7fb7/rsa-3.1-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62da4a1290d1204f5975ee3c60b67313",
+                    "sha256": "480720f29d6794fa0bd9b5a31dba61793f88cd40c70fe5b8c24aaa8b4f4fd2d6"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "62da4a1290d1204f5975ee3c60b67313",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 85760,
+                "upload_time": "2012-06-17T12:05:15",
+                "url": "https://files.pythonhosted.org/packages/aa/91/5ea9920bb0b709e10e7929438b811c3819b5e8fab7ab6f78a3c540c979d7/rsa-3.1-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "27882b568be7c6177c0c28e6eaf89a70",
+                    "sha256": "93728c699d8bb55c4edd224ef0302e1e71ab86bd46b484acc9a0927c04af0fd2"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "27882b568be7c6177c0c28e6eaf89a70",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 37580,
+                "upload_time": "2012-06-17T12:05:05",
+                "url": "https://files.pythonhosted.org/packages/00/90/c1b5902521435bb0df09f75b46dc004e10ceb000a4b6b6cc810d452db855/rsa-3.1.tar.gz"
+            }
+        ],
+        "3.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a3bfec89346c16a1ecc65196c8e34b92",
+                    "sha256": "ba2e1b13cd94a4e87c8f533b4707126399403d4be939447422bdd8dfd0768726"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.1-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "a3bfec89346c16a1ecc65196c8e34b92",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 86237,
+                "upload_time": "2012-06-18T17:16:48",
+                "url": "https://files.pythonhosted.org/packages/e2/e9/e1cbbdf503e07c31b7a4c08bb8a65885f0ea24545d1ef23a71dcd3dcd994/rsa-3.1.1-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "69c902e57d657ab653a0d8f41b26844e",
+                    "sha256": "617dc0c2b888b2712f5cd4e6af3a46e5317d075100bc9c4bc69585a232a421b5"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.1-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "69c902e57d657ab653a0d8f41b26844e",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 85895,
+                "upload_time": "2012-06-18T17:16:58",
+                "url": "https://files.pythonhosted.org/packages/9a/c9/8b300ce4c193ba81fb39b49721942f0b4382f5f97308a88b05fd04224226/rsa-3.1.1-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d0badd06ba4487ae3e15a128c9245358",
+                    "sha256": "f1de76288e434778016060cae302cf8cc1ee724393f12f88d9769ac59822899a"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.1-py3.2.egg",
+                "has_sig": false,
+                "md5_digest": "d0badd06ba4487ae3e15a128c9245358",
+                "packagetype": "bdist_egg",
+                "python_version": "3.2",
+                "size": 85626,
+                "upload_time": "2012-06-18T17:17:16",
+                "url": "https://files.pythonhosted.org/packages/29/a8/0d0a30a2917f93801acf731d7e794a9950379145d9a89614e17fd3bc81ca/rsa-3.1.1-py3.2.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01e6b88c078e8f74718a455e0a05623d",
+                    "sha256": "ed83fe80602077bcbf91d14e41558c751d76527c7b88d44394e1e2900fddb7ba"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "01e6b88c078e8f74718a455e0a05623d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 37584,
+                "upload_time": "2012-06-18T17:17:04",
+                "url": "https://files.pythonhosted.org/packages/04/0c/358ac0f70cd2cf7f6f45fb4b41f0d70dfbe7c9df710e6e9e12f72a64bc1d/rsa-3.1.1.tar.gz"
+            }
+        ],
+        "3.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e66ee02e67ade5d4aeebd2e46e1befdd",
+                    "sha256": "f5710af7d8b258d58e78f688986c64a2e5702ce05e964d54a06cd4373f2b6fea"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.2-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "e66ee02e67ade5d4aeebd2e46e1befdd",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 88530,
+                "upload_time": "2013-09-15T11:03:35",
+                "url": "https://files.pythonhosted.org/packages/91/75/a45cdfad70a287e6bbb506c2784bb314afa33058317c8270d52f3fc92d51/rsa-3.1.2-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f472ac14e7c210ba8129d92d4eabf6a5",
+                    "sha256": "a1d41639bd550140bf588744e882cc625e38d178946a3be13560bc253d5d205a"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.2-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "f472ac14e7c210ba8129d92d4eabf6a5",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 88177,
+                "upload_time": "2013-09-15T11:03:57",
+                "url": "https://files.pythonhosted.org/packages/13/7e/febc0cf70ff9d64bdb83c3801482ee0819f0de91e023cf98b61017eb19f1/rsa-3.1.2-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "549cb517e333b7aa9d746bff211e8e0e",
+                    "sha256": "c7a9a0d42b004eaed86b63be93b3d28e7bd860d68315c5a549c759d47c65a798"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.2-py3.2.egg",
+                "has_sig": false,
+                "md5_digest": "549cb517e333b7aa9d746bff211e8e0e",
+                "packagetype": "bdist_egg",
+                "python_version": "3.2",
+                "size": 88792,
+                "upload_time": "2013-09-15T11:04:04",
+                "url": "https://files.pythonhosted.org/packages/5e/7e/c346d2286da3be647e9cbc0896fc2dfb6e1480c5bb63d004f10973db4b8c/rsa-3.1.2-py3.2.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "778f5266c535e4b86fab638f929b3cfb",
+                    "sha256": "dc40b32c8eb778d7fc60ef8e9de6857b0d21e431a5a53d93a01ec549c36c9e03"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.2-py3.3.egg",
+                "has_sig": false,
+                "md5_digest": "778f5266c535e4b86fab638f929b3cfb",
+                "packagetype": "bdist_egg",
+                "python_version": "3.3",
+                "size": 89790,
+                "upload_time": "2013-09-15T11:04:16",
+                "url": "https://files.pythonhosted.org/packages/0f/6c/532dea33479add65d32bf0148267af1bd3680afba40c0d514a5033a1d208/rsa-3.1.2-py3.3.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ff4791f05911a93cf90ee1f24220158f",
+                    "sha256": "66eb8752a1de9b92d7679ea0e1556cf2e4a155161d0024e97e06999041e35f58"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ff4791f05911a93cf90ee1f24220158f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35237,
+                "upload_time": "2013-09-15T11:04:27",
+                "url": "https://files.pythonhosted.org/packages/7c/f4/9e4173adb790e5e27cd4c86ce8be38570bbd735271acf35800c9d06ecd6f/rsa-3.1.2.tar.gz"
+            }
+        ],
+        "3.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6da242141a1b435550997d1016c568dd",
+                    "sha256": "371fa0430ebe34e73fef5179835ddee6383a73a9808c228c01ab2e75f7f55fe5"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.3-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "6da242141a1b435550997d1016c568dd",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 88519,
+                "upload_time": "2014-02-02T11:09:06",
+                "url": "https://files.pythonhosted.org/packages/df/19/3ee42bc97524ff93374a933d5cf6ceac3a842cda67323ccd5a2b06a2a205/rsa-3.1.3-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a175e76fbc9293413cf3d774d9c3ed65",
+                    "sha256": "77577ca92424fc209665d2cd9912add88fc12e9490a3f812313635424571183f"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.3-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "a175e76fbc9293413cf3d774d9c3ed65",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 88166,
+                "upload_time": "2014-02-02T11:09:17",
+                "url": "https://files.pythonhosted.org/packages/83/9f/51bbd7970ecd4c0351e563e017b1423e6e4009f46a135cdca32732fc78b3/rsa-3.1.3-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "58755e32be7f24589d6d81d4da57448d",
+                    "sha256": "4ece73a3c0bbc99c1d6a9296d06f4d7d857de67ddfd9ab570c1bc83ff830e5e6"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.3-py3.2.egg",
+                "has_sig": false,
+                "md5_digest": "58755e32be7f24589d6d81d4da57448d",
+                "packagetype": "bdist_egg",
+                "python_version": "3.2",
+                "size": 88773,
+                "upload_time": "2014-02-02T11:09:39",
+                "url": "https://files.pythonhosted.org/packages/ba/09/bc82331a48cf33af782130ae8608582ead13631d5f1d71a87a9ccbaad571/rsa-3.1.3-py3.2.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "35d959c0e78ecd502ef7217d664186ba",
+                    "sha256": "3aad27b7c14b594fc6bb3391dfa41edc34aafd692cfee782f1579f4555ecc10d"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.3-py3.3.egg",
+                "has_sig": false,
+                "md5_digest": "35d959c0e78ecd502ef7217d664186ba",
+                "packagetype": "bdist_egg",
+                "python_version": "3.3",
+                "size": 89784,
+                "upload_time": "2014-02-02T11:09:58",
+                "url": "https://files.pythonhosted.org/packages/23/0d/c832dda40b91293fffcfc8fac36c9d6b6469b200f74077a7d2fcc804e0af/rsa-3.1.3-py3.3.egg"
+            }
+        ],
+        "3.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6b1c80e1931d4eba8538fd5d4de1355",
+                    "sha256": "e2b0b05936c276b1edd2e1525553233b666df9e29b5c3ba223eed738277c82a0"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b6b1c80e1931d4eba8538fd5d4de1355",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36181,
+                "upload_time": "2014-02-22T10:26:36",
+                "url": "https://files.pythonhosted.org/packages/db/65/01448b2f3e222a846cbe7a62ea61950c5659b1f9489171eb68242415f92c/rsa-3.1.4.tar.gz"
+            }
+        ],
+        "3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "237ab98bbebdf03f6fccee2b12da55ec",
+                    "sha256": "f549414c75e0e4698b03751871314f1421c025794a8772f945f7f4613c7c8a4e"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "237ab98bbebdf03f6fccee2b12da55ec",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 43768,
+                "upload_time": "2015-08-31T19:51:21",
+                "url": "https://files.pythonhosted.org/packages/9c/cc/1f9d32891d6d3e1f55767c337b093bdda6992640c199a4d578b02ec15b95/rsa-3.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d2385469e2c76f33124709d09e559615",
+                    "sha256": "30f371fbb060747aa53e02c2d53067d8a4f776a7f8ba0e9f0e6bd3f392489777"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d2385469e2c76f33124709d09e559615",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33686,
+                "upload_time": "2015-07-29T07:36:39",
+                "url": "https://files.pythonhosted.org/packages/2f/c1/3a86ed232f20101c824d25175db4150fc013173b282a6c14d57b43b2c7ef/rsa-3.2.tar.gz"
+            }
+        ],
+        "3.2.1": [],
+        "3.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3541fb07c12f355c34e83c9388d669ae",
+                    "sha256": "15d9ba1a0cbddaba30020b99af953b5fdbfdf9951eca5892032eca58888d1d81"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.2.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3541fb07c12f355c34e83c9388d669ae",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 44818,
+                "upload_time": "2015-11-05T15:35:48",
+                "url": "https://files.pythonhosted.org/packages/0e/4c/4392fa10d4aa0bdf57adb0b8b26796f262f0ba852f12f070e3972af56162/rsa-3.2.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fceb29193045868d2910d2b9b13ecee4",
+                    "sha256": "3df46015101421aa08eb71003eeaf455c7872c2dffeeb343fe53cc87b08d69f9"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fceb29193045868d2910d2b9b13ecee4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33548,
+                "upload_time": "2015-11-05T15:37:01",
+                "url": "https://files.pythonhosted.org/packages/af/2f/b6d2f021509d93f81e404f3425b88cc0b15c186674a9ba491f337ab5018a/rsa-3.2.2.tar.gz"
+            }
+        ],
+        "3.2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a7dbcd46621b25aec652d9ce221df4cc",
+                    "sha256": "9ce237e6ad085fa33caa398a9c5520d12fdb3a8dce179ffe7aa3dec8914be757"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.2.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a7dbcd46621b25aec652d9ce221df4cc",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 44862,
+                "upload_time": "2015-11-05T20:35:26",
+                "url": "https://files.pythonhosted.org/packages/df/40/7e146be0b15022a84992a485a8503ddb20bebd18a68340f3af5abde534f4/rsa-3.2.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e93ca942184650116d84452d4b90253",
+                    "sha256": "14db288cc40d6339dedf60d7a47053ab004b4a8976a5c59402a211d8fc5bf21f"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0e93ca942184650116d84452d4b90253",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35628,
+                "upload_time": "2015-11-05T20:35:40",
+                "url": "https://files.pythonhosted.org/packages/0b/20/cd584a9d0b699362e949182b869570be4874c941d49257764df6c04a3a9d/rsa-3.2.3.tar.gz"
+            }
+        ],
+        "3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "756050e43c6a09167ec651dc0bed9bb0",
+                    "sha256": "928fdb62edfff5c9860f932f76aea7c94bfbcd3f0e7acf6dd64ccd19a597e9c7"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "756050e43c6a09167ec651dc0bed9bb0",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 44723,
+                "upload_time": "2016-01-13T09:18:03",
+                "url": "https://files.pythonhosted.org/packages/46/76/99fb7e564308199e10463c63af7ded33d8d9f0bf1166718fa83fa9be6132/rsa-3.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "513ed05c3b2038e8bc6d0686772455ab",
+                    "sha256": "03f3d9bebad06681771016b8752a40b12f615ff32363c7aa19b3798e73ccd615"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "513ed05c3b2038e8bc6d0686772455ab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33449,
+                "upload_time": "2016-01-13T09:16:38",
+                "url": "https://files.pythonhosted.org/packages/52/8d/e85f0f95fb67ff6447d4ddcc3ff522cb2b8f3dd0180c218dc4a0617e7b95/rsa-3.3.tar.gz"
+            }
+        ],
+        "3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17c97195521532cceb31a4761c539852",
+                    "sha256": "0c7fde631f84f89e89ec671a9c58feb01ea25fab177dca08ba08650c548d48d5"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "17c97195521532cceb31a4761c539852",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 46884,
+                "upload_time": "2016-03-17T12:51:43",
+                "url": "https://files.pythonhosted.org/packages/8b/f9/a2c046fa71af812e8ca870aa2d3171d34f8475984116b6c919d601c4cf08/rsa-3.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e78250000664a0be51966951d06cc17",
+                    "sha256": "9f1b6d4015cdf788273ff329d43004a7abf43971e9b06160765bad5227e4d70a"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e78250000664a0be51966951d06cc17",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36186,
+                "upload_time": "2016-03-17T12:52:17",
+                "url": "https://files.pythonhosted.org/packages/dd/af/56b629a1711dd9a2ec69b4ff8d4746d5f3ed60858e66ac575c937d01ad5c/rsa-3.4.tar.gz"
+            }
+        ],
+        "3.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9f41b8ea55a9dada4bdc8a228500b46a",
+                    "sha256": "51bfb64925761c065dba9be807c16aa5cd0573bb8831c7ba7e8c0fbd3e1ea7d3"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.4.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9f41b8ea55a9dada4bdc8a228500b46a",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 46919,
+                "upload_time": "2016-03-26T12:40:37",
+                "url": "https://files.pythonhosted.org/packages/84/b2/719400f0904c4e1246bc0c0a02a2140927f0e910c714a1a6e1f4d541cf1f/rsa-3.4.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "35c1b927ca882fcaf182c9e28b65c8f5",
+                    "sha256": "6fb74d7d7d6ecbadd37dbad329b31d848fba5fe8b40ad6d12cf7e2e5aa15e464"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "35c1b927ca882fcaf182c9e28b65c8f5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40938,
+                "upload_time": "2016-03-26T12:40:48",
+                "url": "https://files.pythonhosted.org/packages/01/40/5239e10ec23dbae3d5eeb9655ec8744421704adb36035f62da1c60dcf27b/rsa-3.4.1.tar.gz"
+            }
+        ],
+        "3.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f55e04cf9651c8b0f591841c7bcb109f",
+                    "sha256": "43f682fea81c452c98d09fc316aae12de6d30c4b5c84226642cf8f8fd1c93abd"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.4.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f55e04cf9651c8b0f591841c7bcb109f",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 46918,
+                "upload_time": "2016-03-29T13:16:23",
+                "url": "https://files.pythonhosted.org/packages/e1/ae/baedc9cb175552e95f3395c43055a6a5e125ae4d48a1d7a924baca83e92e/rsa-3.4.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b315f47882c24030ee6b5aad628cccdb",
+                    "sha256": "25df4e10c263fb88b5ace923dd84bf9aa7f5019687b5e55382ffcdb8bede9db5"
+                },
+                "downloads": -1,
+                "filename": "rsa-3.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b315f47882c24030ee6b5aad628cccdb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40956,
+                "upload_time": "2016-03-29T13:16:48",
+                "url": "https://files.pythonhosted.org/packages/14/89/adf8b72371e37f3ca69c6cb8ab6319d009c4a24b04a31399e5bd77d9bb57/rsa-3.4.2.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "f55e04cf9651c8b0f591841c7bcb109f",
+                "sha256": "43f682fea81c452c98d09fc316aae12de6d30c4b5c84226642cf8f8fd1c93abd"
+            },
+            "downloads": -1,
+            "filename": "rsa-3.4.2-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "f55e04cf9651c8b0f591841c7bcb109f",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.5",
+            "size": 46918,
+            "upload_time": "2016-03-29T13:16:23",
+            "url": "https://files.pythonhosted.org/packages/e1/ae/baedc9cb175552e95f3395c43055a6a5e125ae4d48a1d7a924baca83e92e/rsa-3.4.2-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "b315f47882c24030ee6b5aad628cccdb",
+                "sha256": "25df4e10c263fb88b5ace923dd84bf9aa7f5019687b5e55382ffcdb8bede9db5"
+            },
+            "downloads": -1,
+            "filename": "rsa-3.4.2.tar.gz",
+            "has_sig": false,
+            "md5_digest": "b315f47882c24030ee6b5aad628cccdb",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 40956,
+            "upload_time": "2016-03-29T13:16:48",
+            "url": "https://files.pythonhosted.org/packages/14/89/adf8b72371e37f3ca69c6cb8ab6319d009c4a24b04a31399e5bd77d9bb57/rsa-3.4.2.tar.gz"
+        }
+    ],
+    "package_name": "rsa"
+}

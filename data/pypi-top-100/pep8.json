@@ -1,0 +1,921 @@
+{
+    "info": {
+        "author": "Ian Lee",
+        "author_email": "IanLee1521@gmail.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 3",
+            "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "description": "pep8 - Python style guide checker\n=================================\n\npep8 is a tool to check your Python code against some of the style\nconventions in `PEP 8`_.\n\n.. _PEP 8: http://www.python.org/dev/peps/pep-0008/\n\n\nFeatures\n--------\n\n* Plugin architecture: Adding new checks is easy.\n\n* Parseable output: Jump to error location in your editor.\n\n* Small: Just one Python file, requires only stdlib. You can use just\n  the pep8.py file for this purpose.\n\n* Comes with a comprehensive test suite.\n\nInstallation\n------------\n\nYou can install, upgrade, uninstall pep8.py with these commands::\n\n  $ pip install pep8\n  $ pip install --upgrade pep8\n  $ pip uninstall pep8\n\nThere's also a package for Debian/Ubuntu, but it's not always the\nlatest version.\n\nExample usage and output\n------------------------\n\n::\n\n  $ pep8 --first optparse.py\n  optparse.py:69:11: E401 multiple imports on one line\n  optparse.py:77:1: E302 expected 2 blank lines, found 1\n  optparse.py:88:5: E301 expected 1 blank line, found 0\n  optparse.py:222:34: W602 deprecated form of raising exception\n  optparse.py:347:31: E211 whitespace before '('\n  optparse.py:357:17: E201 whitespace after '{'\n  optparse.py:472:29: E221 multiple spaces before operator\n  optparse.py:544:21: W601 .has_key() is deprecated, use 'in'\n\nYou can also make pep8.py show the source code for each error, and\neven the relevant text from PEP 8::\n\n  $ pep8 --show-source --show-pep8 testsuite/E40.py\n  testsuite/E40.py:2:10: E401 multiple imports on one line\n  import os, sys\n           ^\n      Imports should usually be on separate lines.\n\n      Okay: import os\\nimport sys\n      E401: import sys, os\n\n\nOr you can display how often each error was found::\n\n  $ pep8 --statistics -qq Python-2.5/Lib\n  232     E201 whitespace after '['\n  599     E202 whitespace before ')'\n  631     E203 whitespace before ','\n  842     E211 whitespace before '('\n  2531    E221 multiple spaces before operator\n  4473    E301 expected 1 blank line, found 0\n  4006    E302 expected 2 blank lines, found 1\n  165     E303 too many blank lines (4)\n  325     E401 multiple imports on one line\n  3615    E501 line too long (82 characters)\n  612     W601 .has_key() is deprecated, use 'in'\n  1188    W602 deprecated form of raising exception\n\nLinks\n-----\n\n.. image:: https://api.travis-ci.org/PyCQA/pep8.png?branch=master\n   :target: https://travis-ci.org/PyCQA/pep8\n   :alt: Build status\n\n.. image:: https://pypip.in/wheel/pep8/badge.png?branch=master\n   :target: https://pypi.python.org/pypi/pep8\n   :alt: Wheel Status\n\n* `Read the documentation <http://pep8.readthedocs.org/>`_\n\n* `Fork me on GitHub <http://github.com/PyCQA/pep8>`_\n\n\nChangelog\n=========\n\n1.7.1 (2017-10-22)\n------------------\n\nChanges:\n\n* Prominently note via warning message that the tool is no longer released as\n  ``pep8`` and will only be fixed in the ``pycodestyle`` package\n\n1.7.0 (2016-01-12)\n------------------\n\nAnnouncements:\n\n* Repository moved to PyCQA Organization on GitHub:\n  https://github.com/pycqa/pep8\n\nChanges:\n\n* Reverted the fix in #368, \"options passed on command line are only ones\n  accepted\" feature. This has many unintended consequences in pep8 and flake8\n  and needs to be reworked when I have more time.\n* Added support for Python 3.5. (Issue #420 & #459)\n* Added support for multi-line config_file option parsing. (Issue #429)\n* Improved parameter parsing. (Issues #420 & #456)\n\nBugs:\n\n* Fixed BytesWarning on Python 3. (Issue #459)\n\n1.6.2 (2015-02-15)\n------------------\n\nChanges:\n\n* Added check for breaking around a binary operator. (Issue #197, Pull #305)\n\nBugs:\n\n* Restored config_file parameter in process_options(). (Issue #380)\n\n\n1.6.1 (2015-02-08)\n------------------\n\nChanges:\n\n* Assign variables before referenced. (Issue #287)\n\nBugs:\n\n* Exception thrown due to unassigned ``local_dir`` variable. (Issue #377)\n\n\n1.6.0 (2015-02-06)\n------------------\n\nNews:\n\n* Ian Lee <ianlee1521@gmail.com> joined the project as a maintainer.\n\nChanges:\n\n* Report E731 for lambda assignment. (Issue #277)\n\n* Report E704 for one-liner def instead of E701.\n  Do not report this error in the default configuration. (Issue #277)\n\n* Replace codes E111, E112 and E113 with codes E114, E115 and E116\n  for bad indentation of comments. (Issue #274)\n\n* Report E266 instead of E265 when the block comment starts with\n  multiple ``#``. (Issue #270)\n\n* Report E402 for import statements not at the top of the file. (Issue #264)\n\n* Do not enforce whitespaces around ``**`` operator. (Issue #292)\n\n* Strip whitespace from around paths during normalization. (Issue #339 / #343)\n\n* Update ``--format`` documentation. (Issue #198 / Pull Request #310)\n\n* Add ``.tox/`` to default excludes. (Issue #335)\n\n* Do not report E121 or E126 in the default configuration. (Issues #256 / #316)\n\n* Allow spaces around the equals sign in an annotated function. (Issue #357)\n\n* Allow trailing backslash if in an inline comment. (Issue #374)\n\n* If ``--config`` is used, only that configuration is processed. Otherwise,\n  merge the user and local configurations are merged. (Issue #368 / #369)\n\nBug fixes:\n\n* Don't crash if Checker.build_tokens_line() returns None. (Issue #306)\n\n* Don't crash if os.path.expanduser() throws an ImportError. (Issue #297)\n\n* Missing space around keyword parameter equal not always reported, E251.\n  (Issue #323)\n\n* Fix false positive E711/E712/E713. (Issues #330 and #336)\n\n* Do not skip physical checks if the newline is escaped. (Issue #319)\n\n* Flush sys.stdout to avoid race conditions with printing. See flake8 bug:\n  https://gitlab.com/pycqa/flake8/issues/17 for more details. (Issue #363)\n\n\n1.5.7 (2014-05-29)\n------------------\n\nBug fixes:\n\n* Skip the traceback on \"Broken pipe\" signal. (Issue #275)\n\n* Do not exit when an option in ``setup.cfg`` or ``tox.ini``\n  is not recognized.\n\n* Check the last line even if it does not end with a newline. (Issue #286)\n\n* Always open files in universal newlines mode in Python 2. (Issue #288)\n\n\n1.5.6 (2014-04-14)\n------------------\n\nBug fixes:\n\n* Check the last line even if it has no end-of-line. (Issue #273)\n\n\n1.5.5 (2014-04-10)\n------------------\n\nBug fixes:\n\n* Fix regression with E22 checks and inline comments. (Issue #271)\n\n\n1.5.4 (2014-04-07)\n------------------\n\nBug fixes:\n\n* Fix negative offset with E303 before a multi-line docstring.\n  (Issue #269)\n\n\n1.5.3 (2014-04-04)\n------------------\n\nBug fixes:\n\n* Fix wrong offset computation when error is on the last char\n  of a physical line. (Issue #268)\n\n\n1.5.2 (2014-04-04)\n------------------\n\nChanges:\n\n* Distribute a universal wheel file.\n\nBug fixes:\n\n* Report correct line number for E303 with comments. (Issue #60)\n\n* Do not allow newline after parameter equal. (Issue #252)\n\n* Fix line number reported for multi-line strings. (Issue #220)\n\n* Fix false positive E121/E126 with multi-line strings. (Issue #265)\n\n* Fix E501 not detected in comments with Python 2.5.\n\n* Fix caret position with ``--show-source`` when line contains tabs.\n\n\n1.5.1 (2014-03-27)\n------------------\n\nBug fixes:\n\n* Fix a crash with E125 on multi-line strings. (Issue #263)\n\n\n1.5 (2014-03-26)\n----------------\n\nChanges:\n\n* Report E129 instead of E125 for visually indented line with same\n  indent as next logical line.  (Issue #126)\n\n* Report E265 for space before block comment. (Issue #190)\n\n* Report E713 and E714 when operators ``not in`` and ``is not`` are\n  recommended. (Issue #236)\n\n* Allow long lines in multiline strings and comments if they cannot\n  be wrapped. (Issue #224).\n\n* Optionally disable physical line checks inside multiline strings,\n  using ``# noqa``. (Issue #242)\n\n* Change text for E121 to report \"continuation line under-indented\n  for hanging indent\" instead of indentation not being a\n  multiple of 4.\n\n* Report E131 instead of E121 / E126 if the hanging indent is not\n  consistent within the same continuation block.  It helps when\n  error E121 or E126 is in the ``ignore`` list.\n\n* Report E126 instead of E121 when the continuation line is hanging\n  with extra indentation, even if indentation is not a multiple of 4.\n\nBug fixes:\n\n* Allow the checkers to report errors on empty files. (Issue #240)\n\n* Fix ignoring too many checks when ``--select`` is used with codes\n  declared in a flake8 extension. (Issue #216)\n\n* Fix regression with multiple brackets. (Issue #214)\n\n* Fix ``StyleGuide`` to parse the local configuration if the\n  keyword argument ``paths`` is specified. (Issue #246)\n\n* Fix a false positive E124 for hanging indent. (Issue #254)\n\n* Fix a false positive E126 with embedded colon. (Issue #144)\n\n* Fix a false positive E126 when indenting with tabs. (Issue #204)\n\n* Fix behaviour when ``exclude`` is in the configuration file and\n  the current directory is not the project directory. (Issue #247)\n\n* The logical checks can return ``None`` instead of an empty iterator.\n  (Issue #250)\n\n* Do not report multiple E101 if only the first indentation starts\n  with a tab. (Issue #237)\n\n* Fix a rare false positive W602. (Issue #34)\n\n\n1.4.6 (2013-07-02)\n------------------\n\nChanges:\n\n* Honor ``# noqa`` for errors E711 and E712. (Issue #180)\n\n* When both a ``tox.ini`` and a ``setup.cfg`` are present in the project\n  directory, merge their contents.  The ``tox.ini`` file takes\n  precedence (same as before). (Issue #182)\n\n* Give priority to ``--select`` over ``--ignore``. (Issue #188)\n\n* Compare full path when excluding a file. (Issue #186)\n\n* New option ``--hang-closing`` to switch to the alternative style of\n  closing bracket indentation for hanging indent.  Add error E133 for\n  closing bracket which is missing indentation. (Issue #103)\n\n* Accept both styles of closing bracket indentation for hanging indent.\n  Do not report error E123 in the default configuration. (Issue #103)\n\nBug fixes:\n\n* Do not crash when running AST checks and the document contains null bytes.\n  (Issue #184)\n\n* Correctly report other E12 errors when E123 is ignored. (Issue #103)\n\n* Fix false positive E261/E262 when the file contains a BOM. (Issue #193)\n\n* Fix E701, E702 and E703 not detected sometimes. (Issue #196)\n\n* Fix E122 not detected in some cases. (Issue #201 and #208)\n\n* Fix false positive E121 with multiple brackets. (Issue #203)\n\n\n1.4.5 (2013-03-06)\n------------------\n\n* When no path is specified, do not try to read from stdin.  The feature\n  was added in 1.4.3, but it is not supported on Windows.  Use ``-``\n  filename argument to read from stdin.  This usage is supported\n  since 1.3.4. (Issue #170)\n\n* Do not require ``setuptools`` in setup.py.  It works around an issue\n  with ``pip`` and Python 3. (Issue #172)\n\n* Add ``__pycache__`` to the ignore list.\n\n* Change misleading message for E251. (Issue #171)\n\n* Do not report false E302 when the source file has a coding cookie or a\n  comment on the first line. (Issue #174)\n\n* Reorganize the tests and add tests for the API and for the command line\n  usage and options. (Issues #161 and #162)\n\n* Ignore all checks which are not explicitly selected when ``select`` is\n  passed to the ``StyleGuide`` constructor.\n\n\n1.4.4 (2013-02-24)\n------------------\n\n* Report E227 or E228 instead of E225 for whitespace around bitwise, shift\n  or modulo operators. (Issue #166)\n\n* Change the message for E226 to make clear that it is about arithmetic\n  operators.\n\n* Fix a false positive E128 for continuation line indentation with tabs.\n\n* Fix regression with the ``--diff`` option. (Issue #169)\n\n* Fix the ``TestReport`` class to print the unexpected warnings and\n  errors.\n\n\n1.4.3 (2013-02-22)\n------------------\n\n* Hide the ``--doctest`` and ``--testsuite`` options when installed.\n\n* Fix crash with AST checkers when the syntax is invalid. (Issue #160)\n\n* Read from standard input if no path is specified.\n\n* Initiate a graceful shutdown on ``Control+C``.\n\n* Allow to change the ``checker_class`` for the ``StyleGuide``.\n\n\n1.4.2 (2013-02-10)\n------------------\n\n* Support AST checkers provided by third-party applications.\n\n* Register new checkers with ``register_check(func_or_cls, codes)``.\n\n* Allow to construct a ``StyleGuide`` with a custom parser.\n\n* Accept visual indentation without parenthesis after the ``if``\n  statement. (Issue #151)\n\n* Fix UnboundLocalError when using ``# noqa`` with continued lines.\n  (Issue #158)\n\n* Re-order the lines for the ``StandardReport``.\n\n* Expand tabs when checking E12 continuation lines. (Issue #155)\n\n* Refactor the testing class ``TestReport`` and the specific test\n  functions into a separate test module.\n\n\n1.4.1 (2013-01-18)\n------------------\n\n* Allow sphinx.ext.autodoc syntax for comments. (Issue #110)\n\n* Report E703 instead of E702 for the trailing semicolon. (Issue #117)\n\n* Honor ``# noqa`` in addition to ``# nopep8``. (Issue #149)\n\n* Expose the ``OptionParser`` factory for better extensibility.\n\n\n1.4 (2012-12-22)\n----------------\n\n* Report E226 instead of E225 for optional whitespace around common\n  operators (``*``, ``**``, ``/``, ``+`` and ``-``).  This new error\n  code is ignored in the default configuration because PEP 8 recommends\n  to \"use your own judgement\". (Issue #96)\n\n* Lines with a ``# nopep8`` at the end will not issue errors on line\n  length E501 or continuation line indentation E12*. (Issue #27)\n\n* Fix AssertionError when the source file contains an invalid line\n  ending ``\"\\r\\r\\n\"``. (Issue #119)\n\n* Read the ``[pep8]`` section of ``tox.ini`` or ``setup.cfg`` if present.\n  (Issue #93 and #141)\n\n* Add the Sphinx-based documentation, and publish it\n  on http://pep8.readthedocs.org/. (Issue #105)\n\n\n1.3.4 (2012-12-18)\n------------------\n\n* Fix false positive E124 and E128 with comments. (Issue #100)\n\n* Fix error on stdin when running with bpython. (Issue #101)\n\n* Fix false positive E401. (Issue #104)\n\n* Report E231 for nested dictionary in list. (Issue #142)\n\n* Catch E271 at the beginning of the line. (Issue #133)\n\n* Fix false positive E126 for multi-line comments. (Issue #138)\n\n* Fix false positive E221 when operator is preceded by a comma. (Issue #135)\n\n* Fix ``--diff`` failing on one-line hunk. (Issue #137)\n\n* Fix the ``--exclude`` switch for directory paths. (Issue #111)\n\n* Use ``-`` filename to read from standard input. (Issue #128)\n\n\n1.3.3 (2012-06-27)\n------------------\n\n* Fix regression with continuation line checker. (Issue #98)\n\n\n1.3.2 (2012-06-26)\n------------------\n\n* Revert to the previous behaviour for ``--show-pep8``:\n  do not imply ``--first``. (Issue #89)\n\n* Add E902 for IO errors. (Issue #87)\n\n* Fix false positive for E121, and missed E124. (Issue #92)\n\n* Set a sensible default path for config file on Windows. (Issue #95)\n\n* Allow ``verbose`` in the configuration file. (Issue #91)\n\n* Show the enforced ``max-line-length`` in the error message. (Issue #86)\n\n\n1.3.1 (2012-06-18)\n------------------\n\n* Explain which configuration options are expected.  Accept and recommend\n  the options names with hyphen instead of underscore. (Issue #82)\n\n* Do not read the user configuration when used as a module\n  (except if ``config_file=True`` is passed to the ``StyleGuide`` constructor).\n\n* Fix wrong or missing cases for the E12 series.\n\n* Fix cases where E122 was missed. (Issue #81)\n\n\n1.3 (2012-06-15)\n----------------\n\n.. warning::\n   The internal API is backwards incompatible.\n\n* Remove global configuration and refactor the library around\n  a ``StyleGuide`` class; add the ability to configure various\n  reporters. (Issue #35 and #66)\n\n* Read user configuration from ``~/.config/pep8``\n  and local configuration from ``./.pep8``. (Issue #22)\n\n* Fix E502 for backslash embedded in multi-line string. (Issue #68)\n\n* Fix E225 for Python 3 iterable unpacking (PEP 3132). (Issue #72)\n\n* Enable the new checkers from the E12 series in the default\n  configuration.\n\n* Suggest less error-prone alternatives for E712 errors.\n\n* Rewrite checkers to run faster (E22, E251, E27).\n\n* Fixed a crash when parsed code is invalid (too many\n  closing brackets).\n\n* Fix E127 and E128 for continuation line indentation. (Issue #74)\n\n* New option ``--format`` to customize the error format. (Issue #23)\n\n* New option ``--diff`` to check only modified code.  The unified\n  diff is read from STDIN.  Example: ``hg diff | pep8 --diff``\n  (Issue #39)\n\n* Correctly report the count of failures and set the exit code to 1\n  when the ``--doctest`` or the ``--testsuite`` fails.\n\n* Correctly detect the encoding in Python 3. (Issue #69)\n\n* Drop support for Python 2.3, 2.4 and 3.0. (Issue #78)\n\n\n1.2 (2012-06-01)\n----------------\n\n* Add E121 through E128 for continuation line indentation.  These\n  checks are disabled by default.  If you want to force all checks,\n  use switch ``--select=E,W``.  Patch by Sam Vilain. (Issue #64)\n\n* Add E721 for direct type comparisons. (Issue #47)\n\n* Add E711 and E712 for comparisons to singletons. (Issue #46)\n\n* Fix spurious E225 and E701 for function annotations. (Issue #29)\n\n* Add E502 for explicit line join between brackets.\n\n* Fix E901 when printing source with ``--show-source``.\n\n* Report all errors for each checker, instead of reporting only the\n  first occurrence for each line.\n\n* Option ``--show-pep8`` implies ``--first``.\n\n\n1.1 (2012-05-24)\n----------------\n\n* Add E901 for syntax errors. (Issues #63 and #30)\n\n* Add E271, E272, E273 and E274 for extraneous whitespace around\n  keywords. (Issue #57)\n\n* Add ``tox.ini`` configuration file for tests. (Issue #61)\n\n* Add ``.travis.yml`` configuration file for continuous integration.\n  (Issue #62)\n\n\n1.0.1 (2012-04-06)\n------------------\n\n* Fix inconsistent version numbers.\n\n\n1.0 (2012-04-04)\n----------------\n\n* Fix W602 ``raise`` to handle multi-char names. (Issue #53)\n\n\n0.7.0 (2012-03-26)\n------------------\n\n* Now ``--first`` prints only the first occurrence of each error.\n  The ``--repeat`` flag becomes obsolete because it is the default\n  behaviour. (Issue #6)\n\n* Allow to specify ``--max-line-length``. (Issue #36)\n\n* Make the shebang more flexible. (Issue #26)\n\n* Add testsuite to the bundle. (Issue #25)\n\n* Fixes for Jython. (Issue #49)\n\n* Add PyPI classifiers. (Issue #43)\n\n* Fix the ``--exclude`` option. (Issue #48)\n\n* Fix W602, accept ``raise`` with 3 arguments. (Issue #34)\n\n* Correctly select all tests if ``DEFAULT_IGNORE == ''``.\n\n\n0.6.1 (2010-10-03)\n------------------\n\n* Fix inconsistent version numbers. (Issue #21)\n\n\n0.6.0 (2010-09-19)\n------------------\n\n* Test suite reorganized and enhanced in order to check more failures\n  with fewer test files.  Read the ``run_tests`` docstring for details\n  about the syntax.\n\n* Fix E225: accept ``print >>sys.stderr, \"...\"`` syntax.\n\n* Fix E501 for lines containing multibyte encoded characters. (Issue #7)\n\n* Fix E221, E222, E223, E224 not detected in some cases. (Issue #16)\n\n* Fix E211 to reject ``v = dic['a'] ['b']``. (Issue #17)\n\n* Exit code is always 1 if any error or warning is found. (Issue #10)\n\n* ``--ignore`` checks are now really ignored, especially in\n  conjunction with ``--count``. (Issue #8)\n\n* Blank lines with spaces yield W293 instead of W291: some developers\n  want to ignore this warning and indent the blank lines to paste their\n  code easily in the Python interpreter.\n\n* Fix E301: do not require a blank line before an indented block. (Issue #14)\n\n* Fix E203 to accept NumPy slice notation ``a[0, :]``. (Issue #13)\n\n* Performance improvements.\n\n* Fix decoding and checking non-UTF8 files in Python 3.\n\n* Fix E225: reject ``True+False`` when running on Python 3.\n\n* Fix an exception when the line starts with an operator.\n\n* Allow a new line before closing ``)``, ``}`` or ``]``. (Issue #5)\n\n\n0.5.0 (2010-02-17)\n------------------\n\n* Changed the ``--count`` switch to print to sys.stderr and set\n  exit code to 1 if any error or warning is found.\n\n* E241 and E242 are removed from the standard checks. If you want to\n  include these checks, use switch ``--select=E,W``. (Issue #4)\n\n* Blank line is not mandatory before the first class method or nested\n  function definition, even if there's a docstring. (Issue #1)\n\n* Add the switch ``--version``.\n\n* Fix decoding errors with Python 3. (Issue #13 [1]_)\n\n* Add ``--select`` option which is mirror of ``--ignore``.\n\n* Add checks E261 and E262 for spaces before inline comments.\n\n* New check W604 warns about deprecated usage of backticks.\n\n* New check W603 warns about the deprecated operator ``<>``.\n\n* Performance improvement, due to rewriting of E225.\n\n* E225 now accepts:\n\n  - no whitespace after unary operator or similar. (Issue #9 [1]_)\n\n  - lambda function with argument unpacking or keyword defaults.\n\n* Reserve \"2 blank lines\" for module-level logical blocks. (E303)\n\n* Allow multi-line comments. (E302, issue #10 [1]_)\n\n\n0.4.2 (2009-10-22)\n------------------\n\n* Decorators on classes and class methods are OK now.\n\n\n0.4 (2009-10-20)\n----------------\n\n* Support for all versions of Python from 2.3 to 3.1.\n\n* New and greatly expanded self tests.\n\n* Added ``--count`` option to print the total number of errors and warnings.\n\n* Further improvements to the handling of comments and blank lines.\n  (Issue #1 [1]_ and others changes.)\n\n* Check all py files in directory when passed a directory (Issue\n  #2 [1]_). This also prevents an exception when traversing directories\n  with non ``*.py`` files.\n\n* E231 should allow commas to be followed by ``)``. (Issue #3 [1]_)\n\n* Spaces are no longer required around the equals sign for keyword\n  arguments or default parameter values.\n\n\n.. [1] These issues refer to the `previous issue tracker`__.\n.. __:  http://github.com/cburroughs/pep8.py/issues\n\n\n0.3.1 (2009-09-14)\n------------------\n\n* Fixes for comments: do not count them when checking for blank lines between\n  items.\n\n* Added setup.py for pypi upload and easy_installability.\n\n\n0.2 (2007-10-16)\n----------------\n\n* Loads of fixes and improvements.\n\n\n0.1 (2006-10-01)\n----------------\n\n* First release.\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://pep8.readthedocs.org/",
+        "keywords": "pep8",
+        "license": "Expat license",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "pep8",
+        "package_url": "https://pypi.org/project/pep8/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/pep8/",
+        "release_url": "https://pypi.org/project/pep8/1.7.1/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Python style guide checker",
+        "version": "1.7.1"
+    },
+    "last_serial": 3275286,
+    "releases": {
+        "0.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4bc81d8de009ca1e8bc5f976448ab7b3",
+                    "sha256": "6e35805e7e2ae887d173ec601b80061aeb0b7ec1da1721afa264305e1aaf1765"
+                },
+                "downloads": -1,
+                "filename": "pep8-0.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4bc81d8de009ca1e8bc5f976448ab7b3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13180,
+                "upload_time": "2009-09-14T11:14:10",
+                "url": "https://files.pythonhosted.org/packages/fd/74/ace166a01751241a07a8fdd8d3c1d475f794fdd8f5a8f8df8ae07b21e80f/pep8-0.3.1.tar.gz"
+            }
+        ],
+        "0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "58426b5d7f9e4615e128278c9c5732d4",
+                    "sha256": "6fce72699b4b716dd22026fe2e2d9f3861caad76f2cb40e9ca1bb9051b611438"
+                },
+                "downloads": -1,
+                "filename": "pep8-0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "58426b5d7f9e4615e128278c9c5732d4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16491,
+                "upload_time": "2009-10-20T09:46:11",
+                "url": "https://files.pythonhosted.org/packages/04/77/c04dfc736036c0f22771bda461d4533938353d1340b62d331f6fc828764a/pep8-0.4.tar.gz"
+            }
+        ],
+        "0.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7aea2c03759f7a292f1b6e62a62aaf41",
+                    "sha256": "7ad603352e4b3d1f3583a69fe1cb52d7a9653ea9a9489ddf3e586eb28a41d1ee"
+                },
+                "downloads": -1,
+                "filename": "pep8-0.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7aea2c03759f7a292f1b6e62a62aaf41",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16507,
+                "upload_time": "2009-10-22T11:23:29",
+                "url": "https://files.pythonhosted.org/packages/ab/f6/db86be798ea62c42747c6527f2fbd9364f8d1ffddf7579ba286a82ef67e7/pep8-0.4.1.tar.gz"
+            }
+        ],
+        "0.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "da8562ef0b18ae9ced210cff742a2d1b",
+                    "sha256": "3d98e5444ced7ccfa562e5963b4a80cfbbfbcaf5f15d66e8bd6a37c5c4ce28ca"
+                },
+                "downloads": -1,
+                "filename": "pep8-0.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "da8562ef0b18ae9ced210cff742a2d1b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16561,
+                "upload_time": "2009-10-22T13:16:13",
+                "url": "https://files.pythonhosted.org/packages/37/d3/e877ec2bff90030e09bf1bc0869b3d8cd82e0b3b6b5ead0bbf0de0aaed8d/pep8-0.4.2.tar.gz"
+            }
+        ],
+        "0.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "512a818af9979290cd619cce8e9c2e2b",
+                    "sha256": "0a4672e37e18b1af74b3aef210dc2608c766337b1cf33b824ceb857a8e7c5ab1"
+                },
+                "downloads": -1,
+                "filename": "pep8-0.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "512a818af9979290cd619cce8e9c2e2b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18443,
+                "upload_time": "2010-02-18T03:00:59",
+                "url": "https://files.pythonhosted.org/packages/fa/06/07c5110fffa1105612c9f876b745969747f63612a8d512769b32e3d7d4ad/pep8-0.5.0.tar.gz"
+            }
+        ],
+        "0.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7e9e9294e08f80477c0132d3bc495410",
+                    "sha256": "6b431202573b9ded9a329694283a68648ef47758e8be2c619fd04902ff58398f"
+                },
+                "downloads": -1,
+                "filename": "pep8-0.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7e9e9294e08f80477c0132d3bc495410",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21425,
+                "upload_time": "2010-09-20T03:30:34",
+                "url": "https://files.pythonhosted.org/packages/63/17/a9805b9e94053860aec9cf2e7d59e0552f6981a98b8279cf0e121c33506d/pep8-0.6.0.tar.gz"
+            }
+        ],
+        "0.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "49380cdf6ba2e222e8630cb0afe29d66",
+                    "sha256": "c0654b683bd0c20987e3e767bb0241daf014d854cb89ec84fbed623e349faeec"
+                },
+                "downloads": -1,
+                "filename": "pep8-0.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "49380cdf6ba2e222e8630cb0afe29d66",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21499,
+                "upload_time": "2010-10-03T19:02:25",
+                "url": "https://files.pythonhosted.org/packages/08/96/4245af89ed6b796e8aaa5f9ab5142b2dd9c1962f57a66e7c102dc5ccd6bd/pep8-0.6.1.tar.gz"
+            }
+        ],
+        "0.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c5345484faf867cdf0878871a30cd94b",
+                    "sha256": "88faa98cd336c9ad0279f326251d4d562d47bca41705aef4670876089c530a47"
+                },
+                "downloads": -1,
+                "filename": "pep8-0.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c5345484faf867cdf0878871a30cd94b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25951,
+                "upload_time": "2012-03-26T08:58:09",
+                "url": "https://files.pythonhosted.org/packages/1b/6e/47b5064e29c3d8f1e7c73cd69df8cca4b2c9bb67410fc5be2785481d6d9c/pep8-0.7.0.tar.gz"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b28eeac34ec9e694986effdc8796e78",
+                    "sha256": "54a1158760330a708b62766064d92dd49d5ca9ff299c64d7e05848e6814177e1"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3b28eeac34ec9e694986effdc8796e78",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25754,
+                "upload_time": "2012-04-04T00:02:23",
+                "url": "https://files.pythonhosted.org/packages/95/9c/f17b50aa182fec649a0d3b593f72fc2568800049e6fc24193c4ee4318fe8/pep8-1.0.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f9d7cfbc91fc1c5c31bba5f60f0f4137",
+                    "sha256": "67ce5e323d3366cd76b41e794ccc5fa580ed83267332f8c06c36ffe6ad20185d"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f9d7cfbc91fc1c5c31bba5f60f0f4137",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25832,
+                "upload_time": "2012-04-06T17:41:24",
+                "url": "https://files.pythonhosted.org/packages/5a/35/98f0324eb55f3438becf3359d942a418f00e89b56bf344751c93fd143328/pep8-1.0.1.tar.gz"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f2aff82a27467c19b27edb1b271eace5",
+                    "sha256": "07f169888922f33e8787a5e0b5fcb220962dd21bbc26e556514f2cccf9216c6f"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f2aff82a27467c19b27edb1b271eace5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26578,
+                "upload_time": "2012-05-24T10:04:58",
+                "url": "https://files.pythonhosted.org/packages/82/50/4b60e79dbfc16c2428a4259621f4ea7a79d20761e3346f5503dda84bf78d/pep8-1.1.tar.gz"
+            }
+        ],
+        "1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "057cf01c3099d795da5f9a193410ab2f",
+                    "sha256": "ada252261555b0b91cc939c0b603c75d3d4af53678792a7890ed30d97e03569f"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "057cf01c3099d795da5f9a193410ab2f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33916,
+                "upload_time": "2012-06-01T15:53:48",
+                "url": "https://files.pythonhosted.org/packages/97/44/a4eb6f61e77a310e13cff3d3dd43b87d46b87aeacb17fd290ee1680701b1/pep8-1.2.tar.gz"
+            }
+        ],
+        "1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "31e24f6e447646500d0c704c33824f68",
+                    "sha256": "c9b08dc922c7db8dc029530505a566623b800f78ebd8927bc9386ac44ff64890"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "31e24f6e447646500d0c704c33824f68",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 40651,
+                "upload_time": "2012-06-15T14:55:27",
+                "url": "https://files.pythonhosted.org/packages/ae/25/b2628af7b1d8eb60f155c24194c76a74f08ec22c8512b54c5cd45b6b9e5f/pep8-1.3.tar.gz"
+            }
+        ],
+        "1.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "85586d1bdc4e9632b7a87a1d9b4da42b",
+                    "sha256": "f8dd64416808c85f96f6efef4aad62ef83d4890744e3e192eba91a6e746f4e46"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "85586d1bdc4e9632b7a87a1d9b4da42b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39115,
+                "upload_time": "2012-06-19T00:24:06",
+                "url": "https://files.pythonhosted.org/packages/b1/da/fe16546eac93fd96e88d2378267d7818ccbff166a812d07c34c1e1689499/pep8-1.3.1.tar.gz"
+            }
+        ],
+        "1.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d8190162a6bd1ec071b5a77d064a677d",
+                    "sha256": "54ccf79f31bec7832539696b4c442306b295144ee2c524520258bb043948d3b4"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d8190162a6bd1ec071b5a77d064a677d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39833,
+                "upload_time": "2012-06-26T21:57:02",
+                "url": "https://files.pythonhosted.org/packages/89/54/6a661460cbdab882cac0d5f1c9fd1f8d41601e244c5be7a9a9b910ba74c6/pep8-1.3.2.tar.gz"
+            }
+        ],
+        "1.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "093a99ced0cc3b58c01549d7350f5a73",
+                    "sha256": "2033a40515a52068dd719857b38ecca651ce84dc9837b99fe500f314cadab634"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "093a99ced0cc3b58c01549d7350f5a73",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39967,
+                "upload_time": "2012-06-27T08:36:57",
+                "url": "https://files.pythonhosted.org/packages/e4/f5/2bcd180813fe2d5f5c5097af0efbc7475d62bf563478e532ac1bf4414499/pep8-1.3.3.tar.gz"
+            }
+        ],
+        "1.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2491a3c316d564d87b21c686ec77e9f6",
+                    "sha256": "9c4a53f03df131cf101eb2cd8108160314c8ac1af5c9a4147ab18c1d170f39c5"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2491a3c316d564d87b21c686ec77e9f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44706,
+                "upload_time": "2012-12-18T22:17:12",
+                "url": "https://files.pythonhosted.org/packages/2a/df/431a70e9c0b9641fdc6bc9490f9026e4078ffa3c7c87507a39e3f1956b86/pep8-1.3.4.tar.gz"
+            }
+        ],
+        "1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a97e808adecf2b4adb345c88e68336fd",
+                    "sha256": "3fbaedba1f61b40760366325825dc36a8fb60a86690f4bec2e1da2e807cbb187"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a97e808adecf2b4adb345c88e68336fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54417,
+                "upload_time": "2012-12-22T21:51:16",
+                "url": "https://files.pythonhosted.org/packages/f2/33/55a79369eb1d94e2eb528696b9d71ae9cd073c8c5b0dfdd09f269d3492bb/pep8-1.4.tar.gz"
+            }
+        ],
+        "1.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8be92becea6c6deb8f5d1271f695af5e",
+                    "sha256": "071dbe7109114f0dc3fb5f779f64bb3d08ff51b00a7ebb8dc8aee19f1a95b7f3"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8be92becea6c6deb8f5d1271f695af5e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 54945,
+                "upload_time": "2013-01-18T22:40:23",
+                "url": "https://files.pythonhosted.org/packages/c8/9b/5f4744c655bf125d2aee479906e3bfb89ade836980fa1b61cb5bb229545b/pep8-1.4.1.tar.gz"
+            }
+        ],
+        "1.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "af2777047025c7302fc1cad073e4617d",
+                    "sha256": "30b373fe9859c39fd1ea3afb67e1894934a73b7b3ed8cb7505e4f5903b88bc8c"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "af2777047025c7302fc1cad073e4617d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 59715,
+                "upload_time": "2013-02-09T23:57:28",
+                "url": "https://files.pythonhosted.org/packages/1d/ab/f2735e3aa8b59d250489ab12a045ed7a696f42df31eff93ce04bf37951b4/pep8-1.4.2.tar.gz"
+            }
+        ],
+        "1.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6dc6ffbebda6cadbad4c789933dd0d23",
+                    "sha256": "b1d9886f87e382384780f86e84f9299dd5077df1592c78e1f5ce5462c2958751"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6dc6ffbebda6cadbad4c789933dd0d23",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 60248,
+                "upload_time": "2013-02-22T07:22:17",
+                "url": "https://files.pythonhosted.org/packages/2a/cd/4f5a3c0ff7afff389bee4faea0904cbd6eda0acdfee3af8faf5471137508/pep8-1.4.3.tar.gz"
+            }
+        ],
+        "1.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c48dc736e09f4f76362572c4e8b55be3",
+                    "sha256": "a39adf83fdeab6072117087dd5b7daa8b6a5ec254730e1c4756f1d5687145258"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c48dc736e09f4f76362572c4e8b55be3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 58578,
+                "upload_time": "2013-02-24T15:29:51",
+                "url": "https://files.pythonhosted.org/packages/2b/d1/19fc760ee766b1787c2f302bea294635446c4985af52662416eeb3c742b5/pep8-1.4.4.tar.gz"
+            }
+        ],
+        "1.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "055dbd22ac5669232fdba752612e9686",
+                    "sha256": "dd908e7df835ebb1b82ba0675e1b7e173ea9c55d7ae62808ecad2e6db2a6ee0e"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.4.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "055dbd22ac5669232fdba752612e9686",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 63021,
+                "upload_time": "2013-03-06T18:54:22",
+                "url": "https://files.pythonhosted.org/packages/ec/a9/059a0bab891fe064acd698ec4853638b34ab7e1885634171e4d49491f522/pep8-1.4.5.tar.gz"
+            }
+        ],
+        "1.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a03bb494859e87b42601b61b1b043a0c",
+                    "sha256": "603a46e5c358ce20ac4807a0eeafac7505d1125a4c1bd8378757ada06f61bed8"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.4.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a03bb494859e87b42601b61b1b043a0c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65392,
+                "upload_time": "2013-07-02T14:08:19",
+                "url": "https://files.pythonhosted.org/packages/fa/46/3e82153575bd163bdf2e599652cb331b67cdecc3dbc69bb23d354c02354b/pep8-1.4.6.tar.gz"
+            }
+        ],
+        "1.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb6f5790a07cded8e6a4d1db8536f670",
+                    "sha256": "d3b18ca2e25827a480145e481e511a52cd067ee9b98be57575a82bc073340c23"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fb6f5790a07cded8e6a4d1db8536f670",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65598,
+                "upload_time": "2014-03-26T11:00:54",
+                "url": "https://files.pythonhosted.org/packages/4d/67/8ce50d74c31b068f668c438af147b3fb7d1aa5f9b905d4da0c0efbb3326e/pep8-1.5.0.tar.gz"
+            }
+        ],
+        "1.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc676d057449bf2a4fcd347a51d36444",
+                    "sha256": "818ac9c3b31b2ab63265fb421727025e48f3b6447260632acee43270f172b450"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cc676d057449bf2a4fcd347a51d36444",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 65657,
+                "upload_time": "2014-03-27T17:33:16",
+                "url": "https://files.pythonhosted.org/packages/b7/93/f763e9fa4c4899b2b868998f5449fca3abf570f8908adbc7b339c51138b4/pep8-1.5.1.tar.gz"
+            }
+        ],
+        "1.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a0caba277a2f491b1634246a338a1235",
+                    "sha256": "d524c9fe1061af8d3663802a2a73c9b176e6413dce46199031c7352aba9fdbd0"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a0caba277a2f491b1634246a338a1235",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 36891,
+                "upload_time": "2014-04-04T06:57:35",
+                "url": "https://files.pythonhosted.org/packages/9e/fd/e1dbf819ab64fc327b442640807ad814f9dc6690ab6b2e295deb49d2debb/pep8-1.5.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "076c22d07abe0bd52ca5735f5db35738",
+                    "sha256": "4e0e74c0e3f06ad301fb66a9a24c2d07b5dc324c96a9a139d924a5e102177cf7"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "076c22d07abe0bd52ca5735f5db35738",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66425,
+                "upload_time": "2014-04-04T06:57:31",
+                "url": "https://files.pythonhosted.org/packages/b8/6a/38abb1b19ac1b73f568f533a371cfd783e50c8f8297aec5454d9b7a3c0f6/pep8-1.5.2.tar.gz"
+            }
+        ],
+        "1.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0654904760aa9a24062bf367f39e873e",
+                    "sha256": "0c717d86ac2e4289732ac625b73aa3a1a35cd36bd861013c43c30d1e66f81d87"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0654904760aa9a24062bf367f39e873e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 37007,
+                "upload_time": "2014-04-04T19:48:46",
+                "url": "https://files.pythonhosted.org/packages/68/f8/371f06dc299a6fc2804f7c853ae1ad3e97d1387f3d9c41c827bc637b3560/pep8-1.5.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce9b1ce848e3fe79b8f94d8776d1a343",
+                    "sha256": "c017a78bcc7301fd1f489a7ac1dcd9eb0eae85fbe2f4e898ae2a2370d120c06d"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ce9b1ce848e3fe79b8f94d8776d1a343",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66578,
+                "upload_time": "2014-04-04T19:48:44",
+                "url": "https://files.pythonhosted.org/packages/2d/ee/21d876606a93d86e598b078c7b27f2cf41a2a6864fc02b1f423a98c47185/pep8-1.5.3.tar.gz"
+            }
+        ],
+        "1.5.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8df25701c8ef554ae41745254f086e1b",
+                    "sha256": "0ed2d563dbfe2bf59cfff44e1aadc92ff9a7958da2ace2ee3dc3359e0e4e418c"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8df25701c8ef554ae41745254f086e1b",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 37014,
+                "upload_time": "2014-04-07T05:56:55",
+                "url": "https://files.pythonhosted.org/packages/1f/88/432b609e0c14fda392d9a1b012222681e4f627372c0543100e640c3e25d3/pep8-1.5.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a451ad5694187d36af046b4724920e1",
+                    "sha256": "2370f567f4caff49d2e44a6aeaddc657186bed6612f4f5b3a704f3aa92d3de37"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5a451ad5694187d36af046b4724920e1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66624,
+                "upload_time": "2014-04-07T05:56:49",
+                "url": "https://files.pythonhosted.org/packages/70/e9/827e1599c3055d01f1dbef49f15b6c317b9787c29ef279ebc03b1fdb4c70/pep8-1.5.4.tar.gz"
+            }
+        ],
+        "1.5.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c72f1cbb5df0c06182083bcf3fa2042f",
+                    "sha256": "0da37485c1b2b678f19e56426e92dd5c91aa42fc07722aaf461267aba68ce998"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c72f1cbb5df0c06182083bcf3fa2042f",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 37032,
+                "upload_time": "2014-04-10T08:55:27",
+                "url": "https://files.pythonhosted.org/packages/31/30/b9ad1b8484b5e53fb508929ce9aec3f3c7372beaba93600e3f0abf7e1e8d/pep8-1.5.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8b7ad1ebdbd22a753b466994ed4f84ad",
+                    "sha256": "2f1cff33ce775f4ecfe3c6cc44fff829a35ca0aa3d0c5cc0e5bcefd162599472"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8b7ad1ebdbd22a753b466994ed4f84ad",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66690,
+                "upload_time": "2014-04-10T08:55:24",
+                "url": "https://files.pythonhosted.org/packages/1e/a8/58000ffbdd82b61c12c0d70d162f7aa3ffcf566b818f453c25d253c82d48/pep8-1.5.5.tar.gz"
+            }
+        ],
+        "1.5.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c7da9fb6a4316b53b6a873de076441e2",
+                    "sha256": "19dacb6c143eb9bfbeda447e98a48f27d16a69b5c8c1026a9001486e4c399ba2"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c7da9fb6a4316b53b6a873de076441e2",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 37178,
+                "upload_time": "2014-04-14T17:05:33",
+                "url": "https://files.pythonhosted.org/packages/c5/de/5bfd80ea3b7e3fdf76ba12c832be60b886a2651cb9badd11848ebd9d0d11/pep8-1.5.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "86a0f1834208e5ac11323fdd6ccd17cd",
+                    "sha256": "1a8be992f8daac6144af0f3972f40159f46d81cb36dde4adeea01576e4bf041a"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "86a0f1834208e5ac11323fdd6ccd17cd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66944,
+                "upload_time": "2014-04-14T17:05:30",
+                "url": "https://files.pythonhosted.org/packages/15/5d/1a6a614ae43dbc93b646142a11a59eb8f7d3528beb41ff42aa18b741816e/pep8-1.5.6.tar.gz"
+            }
+        ],
+        "1.5.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e64cf25ebf3ee49b1ab18ee7fb225d41",
+                    "sha256": "62e87fd54535fb932b4a4d94868db523257a1031c8bc6bd358c2015433e646db"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e64cf25ebf3ee49b1ab18ee7fb225d41",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 37490,
+                "upload_time": "2014-05-29T16:57:56",
+                "url": "https://files.pythonhosted.org/packages/e2/3a/fb53887b208e7e444c13b59244fcac4ef923678e6ae33e7fc71391f37b62/pep8-1.5.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f6adbdd69365ecca20513c709f9b7c93",
+                    "sha256": "15b42131b25f376165d195fe4e17b0a28311182aaf9330d5eb575bbeda5a6989"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.5.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f6adbdd69365ecca20513c709f9b7c93",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 67302,
+                "upload_time": "2014-05-29T16:57:53",
+                "url": "https://files.pythonhosted.org/packages/8b/de/259f5e735897ada1683489dd514b2a1c91aaa74e5e6b68f80acf128a6368/pep8-1.5.7.tar.gz"
+            }
+        ],
+        "1.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b1be16bc2ea703054873a14e4447a95f",
+                    "sha256": "e5843bb35b65b0e683f76faa8df0d26eafbf408e150daac4e45c4853871c9c23"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b1be16bc2ea703054873a14e4447a95f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 39825,
+                "upload_time": "2015-02-07T03:20:06",
+                "url": "https://files.pythonhosted.org/packages/02/1a/fb362c89f45ea42c8682f31b78381224fec989659a8f93d1262e0a2ee787/pep8-1.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9da8da26d955922a633e9f6ceee63c29",
+                    "sha256": "84ec51bb37f59076a353b54df1eb6e19e8c035200e4b849856d3c0257e8b874f"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9da8da26d955922a633e9f6ceee63c29",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 73741,
+                "upload_time": "2015-02-07T03:20:10",
+                "url": "https://files.pythonhosted.org/packages/a2/c5/10f274aaaacd6d925b844107f51f8128e1af14b1f14d6904984b284c808a/pep8-1.6.0.tar.gz"
+            }
+        ],
+        "1.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f7ac726e7aa33829e14bbb92b30e14c0",
+                    "sha256": "e6951a33e632d02473110972aaf1cee38f567f7dfe7e72259625276e61eb6173"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.6.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f7ac726e7aa33829e14bbb92b30e14c0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 39953,
+                "upload_time": "2015-02-08T21:37:52",
+                "url": "https://files.pythonhosted.org/packages/b5/46/487b129aaaa9bdc52077b89153a9945ab6951dcee8c53da162035be16f08/pep8-1.6.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "76cf60b245f8549cb458ffcd85710738",
+                    "sha256": "573677cb85ff089244b0f99af955f76c2e37456632610b6deda6167139ce155a"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "76cf60b245f8549cb458ffcd85710738",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 73103,
+                "upload_time": "2015-02-08T21:37:55",
+                "url": "https://files.pythonhosted.org/packages/dd/32/16720c00dee98cc809b1c75659dbd34eaa73942e12f8f7545af90a7d3ac8/pep8-1.6.1.tar.gz"
+            }
+        ],
+        "1.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d1c1f046a98f165628f60106faaee35a",
+                    "sha256": "4aa129df8d9007b192bf82013f415533994652d7caa930d002687eb42a6c2a41"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.6.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d1c1f046a98f165628f60106faaee35a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 40526,
+                "upload_time": "2015-02-15T22:08:22",
+                "url": "https://files.pythonhosted.org/packages/00/7f/96c5a5d0c1207b724236df22c5222577e645109e1c2989acda056c67cc06/pep8-1.6.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c7a3f57d832484a6295164661fbb1335",
+                    "sha256": "b8b7e35630b5539e26a197dfc6005be9e1e9a135496b377723a8ebc01b9bcbff"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c7a3f57d832484a6295164661fbb1335",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 74534,
+                "upload_time": "2015-02-15T22:08:24",
+                "url": "https://files.pythonhosted.org/packages/e1/51/aaa33923c89b2fc6962e1429af8bdbf55c445b0f0e8b3191fe31ef805e27/pep8-1.6.2.tar.gz"
+            }
+        ],
+        "1.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6cfe097210e2efb1d9ee4ee62fb24a7e",
+                    "sha256": "4fc2e478addcf17016657dff30b2d8d611e8341fac19ccf2768802f6635d7b8a"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.7.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6cfe097210e2efb1d9ee4ee62fb24a7e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 41163,
+                "upload_time": "2016-01-12T18:44:36",
+                "url": "https://files.pythonhosted.org/packages/8a/cb/7d0fdca7e03f997945fb1bd60a8ddfea5c51229b865c470b4f7a64619d20/pep8-1.7.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b03109b0618afe3b04b3e63b334ac9d",
+                    "sha256": "a113d5f5ad7a7abacef9df5ec3f2af23a20a28005921577b15dd584d099d5900"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b03109b0618afe3b04b3e63b334ac9d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 79704,
+                "upload_time": "2016-01-12T18:44:41",
+                "url": "https://files.pythonhosted.org/packages/3e/b5/1f717b85fbf5d43d81e3c603a7a2f64c9f1dabc69a1e7745bd394cc06404/pep8-1.7.0.tar.gz"
+            }
+        ],
+        "1.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc720c80ac140fdbe92564066bed209c",
+                    "sha256": "b22cfae5db09833bb9bd7c8463b53e1a9c9b39f12e304a8d0bba729c501827ee"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.7.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fc720c80ac140fdbe92564066bed209c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 41487,
+                "upload_time": "2017-10-24T14:39:11",
+                "url": "https://files.pythonhosted.org/packages/42/3f/669429ce58de2c22d8d2c542752e137ec4b9885fff398d3eceb1a7f5acb4/pep8-1.7.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "603821d06db945c71d811b5a8d78423c",
+                    "sha256": "fe249b52e20498e59e0b5c5256aa52ee99fc295b26ec9eaa85776ffdb9fe6374"
+                },
+                "downloads": -1,
+                "filename": "pep8-1.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "603821d06db945c71d811b5a8d78423c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 80334,
+                "upload_time": "2017-10-24T14:39:13",
+                "url": "https://files.pythonhosted.org/packages/01/a0/64ba19519db49e4094d82599412a9660dee8c26a7addbbb1bf17927ceefe/pep8-1.7.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "fc720c80ac140fdbe92564066bed209c",
+                "sha256": "b22cfae5db09833bb9bd7c8463b53e1a9c9b39f12e304a8d0bba729c501827ee"
+            },
+            "downloads": -1,
+            "filename": "pep8-1.7.1-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "fc720c80ac140fdbe92564066bed209c",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 41487,
+            "upload_time": "2017-10-24T14:39:11",
+            "url": "https://files.pythonhosted.org/packages/42/3f/669429ce58de2c22d8d2c542752e137ec4b9885fff398d3eceb1a7f5acb4/pep8-1.7.1-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "603821d06db945c71d811b5a8d78423c",
+                "sha256": "fe249b52e20498e59e0b5c5256aa52ee99fc295b26ec9eaa85776ffdb9fe6374"
+            },
+            "downloads": -1,
+            "filename": "pep8-1.7.1.tar.gz",
+            "has_sig": false,
+            "md5_digest": "603821d06db945c71d811b5a8d78423c",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 80334,
+            "upload_time": "2017-10-24T14:39:13",
+            "url": "https://files.pythonhosted.org/packages/01/a0/64ba19519db49e4094d82599412a9660dee8c26a7addbbb1bf17927ceefe/pep8-1.7.1.tar.gz"
+        }
+    ],
+    "package_name": "pep8"
+}

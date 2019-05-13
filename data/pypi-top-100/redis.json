@@ -1,0 +1,854 @@
+{
+    "info": {
+        "author": "Andy McCurdy",
+        "author_email": "sedrik@gmail.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6"
+        ],
+        "description": "redis-py\n========\n\nThe Python interface to the Redis key-value store.\n\n.. image:: https://secure.travis-ci.org/andymccurdy/redis-py.png?branch=master\n        :target: http://travis-ci.org/andymccurdy/redis-py\n\nInstallation\n------------\n\nredis-py requires a running Redis server. See `Redis's quickstart\n<http://redis.io/topics/quickstart>`_ for installation instructions.\n\nTo install redis-py, simply:\n\n.. code-block:: bash\n\n    $ sudo pip install redis\n\nor alternatively (you really should be using pip though):\n\n.. code-block:: bash\n\n    $ sudo easy_install redis\n\nor from source:\n\n.. code-block:: bash\n\n    $ sudo python setup.py install\n\n\nGetting Started\n---------------\n\n.. code-block:: pycon\n\n    >>> import redis\n    >>> r = redis.StrictRedis(host='localhost', port=6379, db=0)\n    >>> r.set('foo', 'bar')\n    True\n    >>> r.get('foo')\n    'bar'\n\nAPI Reference\n-------------\n\nThe `official Redis command documentation <http://redis.io/commands>`_ does a\ngreat job of explaining each command in detail. redis-py exposes two client\nclasses that implement these commands. The StrictRedis class attempts to adhere\nto the official command syntax. There are a few exceptions:\n\n* **SELECT**: Not implemented. See the explanation in the Thread Safety section\n  below.\n* **DEL**: 'del' is a reserved keyword in the Python syntax. Therefore redis-py\n  uses 'delete' instead.\n* **CONFIG GET|SET**: These are implemented separately as config_get or config_set.\n* **MULTI/EXEC**: These are implemented as part of the Pipeline class. The\n  pipeline is wrapped with the MULTI and EXEC statements by default when it\n  is executed, which can be disabled by specifying transaction=False.\n  See more about Pipelines below.\n* **SUBSCRIBE/LISTEN**: Similar to pipelines, PubSub is implemented as a separate\n  class as it places the underlying connection in a state where it can't\n  execute non-pubsub commands. Calling the pubsub method from the Redis client\n  will return a PubSub instance where you can subscribe to channels and listen\n  for messages. You can only call PUBLISH from the Redis client (see\n  `this comment on issue #151\n  <https://github.com/andymccurdy/redis-py/issues/151#issuecomment-1545015>`_\n  for details).\n* **SCAN/SSCAN/HSCAN/ZSCAN**: The \\*SCAN commands are implemented as they\n  exist in the Redis documentation. In addition, each command has an equivilant\n  iterator method. These are purely for convenience so the user doesn't have\n  to keep track of the cursor while iterating. Use the\n  scan_iter/sscan_iter/hscan_iter/zscan_iter methods for this behavior.\n\nIn addition to the changes above, the Redis class, a subclass of StrictRedis,\noverrides several other commands to provide backwards compatibility with older\nversions of redis-py:\n\n* **LREM**: Order of 'num' and 'value' arguments reversed such that 'num' can\n  provide a default value of zero.\n* **ZADD**: Redis specifies the 'score' argument before 'value'. These were swapped\n  accidentally when being implemented and not discovered until after people\n  were already using it. The Redis class expects \\*args in the form of:\n  `name1, score1, name2, score2, ...`\n* **SETEX**: Order of 'time' and 'value' arguments reversed.\n\n\nMore Detail\n-----------\n\nConnection Pools\n^^^^^^^^^^^^^^^^\n\nBehind the scenes, redis-py uses a connection pool to manage connections to\na Redis server. By default, each Redis instance you create will in turn create\nits own connection pool. You can override this behavior and use an existing\nconnection pool by passing an already created connection pool instance to the\nconnection_pool argument of the Redis class. You may choose to do this in order\nto implement client side sharding or have finer grain control of how\nconnections are managed.\n\n.. code-block:: pycon\n\n    >>> pool = redis.ConnectionPool(host='localhost', port=6379, db=0)\n    >>> r = redis.Redis(connection_pool=pool)\n\nConnections\n^^^^^^^^^^^\n\nConnectionPools manage a set of Connection instances. redis-py ships with two\ntypes of Connections. The default, Connection, is a normal TCP socket based\nconnection. The UnixDomainSocketConnection allows for clients running on the\nsame device as the server to connect via a unix domain socket. To use a\nUnixDomainSocketConnection connection, simply pass the unix_socket_path\nargument, which is a string to the unix domain socket file. Additionally, make\nsure the unixsocket parameter is defined in your redis.conf file. It's\ncommented out by default.\n\n.. code-block:: pycon\n\n    >>> r = redis.Redis(unix_socket_path='/tmp/redis.sock')\n\nYou can create your own Connection subclasses as well. This may be useful if\nyou want to control the socket behavior within an async framework. To\ninstantiate a client class using your own connection, you need to create\na connection pool, passing your class to the connection_class argument.\nOther keyword parameters you pass to the pool will be passed to the class\nspecified during initialization.\n\n.. code-block:: pycon\n\n    >>> pool = redis.ConnectionPool(connection_class=YourConnectionClass,\n                                    your_arg='...', ...)\n\nParsers\n^^^^^^^\n\nParser classes provide a way to control how responses from the Redis server\nare parsed. redis-py ships with two parser classes, the PythonParser and the\nHiredisParser. By default, redis-py will attempt to use the HiredisParser if\nyou have the hiredis module installed and will fallback to the PythonParser\notherwise.\n\nHiredis is a C library maintained by the core Redis team. Pieter Noordhuis was\nkind enough to create Python bindings. Using Hiredis can provide up to a\n10x speed improvement in parsing responses from the Redis server. The\nperformance increase is most noticeable when retrieving many pieces of data,\nsuch as from LRANGE or SMEMBERS operations.\n\nHiredis is available on PyPI, and can be installed via pip or easy_install\njust like redis-py.\n\n.. code-block:: bash\n\n    $ pip install hiredis\n\nor\n\n.. code-block:: bash\n\n    $ easy_install hiredis\n\nResponse Callbacks\n^^^^^^^^^^^^^^^^^^\n\nThe client class uses a set of callbacks to cast Redis responses to the\nappropriate Python type. There are a number of these callbacks defined on\nthe Redis client class in a dictionary called RESPONSE_CALLBACKS.\n\nCustom callbacks can be added on a per-instance basis using the\nset_response_callback method. This method accepts two arguments: a command\nname and the callback. Callbacks added in this manner are only valid on the\ninstance the callback is added to. If you want to define or override a callback\nglobally, you should make a subclass of the Redis client and add your callback\nto its RESPONSE_CALLBACKS class dictionary.\n\nResponse callbacks take at least one parameter: the response from the Redis\nserver. Keyword arguments may also be accepted in order to further control\nhow to interpret the response. These keyword arguments are specified during the\ncommand's call to execute_command. The ZRANGE implementation demonstrates the\nuse of response callback keyword arguments with its \"withscores\" argument.\n\nThread Safety\n^^^^^^^^^^^^^\n\nRedis client instances can safely be shared between threads. Internally,\nconnection instances are only retrieved from the connection pool during\ncommand execution, and returned to the pool directly after. Command execution\nnever modifies state on the client instance.\n\nHowever, there is one caveat: the Redis SELECT command. The SELECT command\nallows you to switch the database currently in use by the connection. That\ndatabase remains selected until another is selected or until the connection is\nclosed. This creates an issue in that connections could be returned to the pool\nthat are connected to a different database.\n\nAs a result, redis-py does not implement the SELECT command on client\ninstances. If you use multiple Redis databases within the same application, you\nshould create a separate client instance (and possibly a separate connection\npool) for each database.\n\nIt is not safe to pass PubSub or Pipeline objects between threads.\n\nPipelines\n^^^^^^^^^\n\nPipelines are a subclass of the base Redis class that provide support for\nbuffering multiple commands to the server in a single request. They can be used\nto dramatically increase the performance of groups of commands by reducing the\nnumber of back-and-forth TCP packets between the client and server.\n\nPipelines are quite simple to use:\n\n.. code-block:: pycon\n\n    >>> r = redis.Redis(...)\n    >>> r.set('bing', 'baz')\n    >>> # Use the pipeline() method to create a pipeline instance\n    >>> pipe = r.pipeline()\n    >>> # The following SET commands are buffered\n    >>> pipe.set('foo', 'bar')\n    >>> pipe.get('bing')\n    >>> # the EXECUTE call sends all buffered commands to the server, returning\n    >>> # a list of responses, one for each command.\n    >>> pipe.execute()\n    [True, 'baz']\n\nFor ease of use, all commands being buffered into the pipeline return the\npipeline object itself. Therefore calls can be chained like:\n\n.. code-block:: pycon\n\n    >>> pipe.set('foo', 'bar').sadd('faz', 'baz').incr('auto_number').execute()\n    [True, True, 6]\n\nIn addition, pipelines can also ensure the buffered commands are executed\natomically as a group. This happens by default. If you want to disable the\natomic nature of a pipeline but still want to buffer commands, you can turn\noff transactions.\n\n.. code-block:: pycon\n\n    >>> pipe = r.pipeline(transaction=False)\n\nA common issue occurs when requiring atomic transactions but needing to\nretrieve values in Redis prior for use within the transaction. For instance,\nlet's assume that the INCR command didn't exist and we need to build an atomic\nversion of INCR in Python.\n\nThe completely naive implementation could GET the value, increment it in\nPython, and SET the new value back. However, this is not atomic because\nmultiple clients could be doing this at the same time, each getting the same\nvalue from GET.\n\nEnter the WATCH command. WATCH provides the ability to monitor one or more keys\nprior to starting a transaction. If any of those keys change prior the\nexecution of that transaction, the entire transaction will be canceled and a\nWatchError will be raised. To implement our own client-side INCR command, we\ncould do something like this:\n\n.. code-block:: pycon\n\n    >>> with r.pipeline() as pipe:\n    ...     while 1:\n    ...         try:\n    ...             # put a WATCH on the key that holds our sequence value\n    ...             pipe.watch('OUR-SEQUENCE-KEY')\n    ...             # after WATCHing, the pipeline is put into immediate execution\n    ...             # mode until we tell it to start buffering commands again.\n    ...             # this allows us to get the current value of our sequence\n    ...             current_value = pipe.get('OUR-SEQUENCE-KEY')\n    ...             next_value = int(current_value) + 1\n    ...             # now we can put the pipeline back into buffered mode with MULTI\n    ...             pipe.multi()\n    ...             pipe.set('OUR-SEQUENCE-KEY', next_value)\n    ...             # and finally, execute the pipeline (the set command)\n    ...             pipe.execute()\n    ...             # if a WatchError wasn't raised during execution, everything\n    ...             # we just did happened atomically.\n    ...             break\n    ...        except WatchError:\n    ...             # another client must have changed 'OUR-SEQUENCE-KEY' between\n    ...             # the time we started WATCHing it and the pipeline's execution.\n    ...             # our best bet is to just retry.\n    ...             continue\n\nNote that, because the Pipeline must bind to a single connection for the\nduration of a WATCH, care must be taken to ensure that the connection is\nreturned to the connection pool by calling the reset() method. If the\nPipeline is used as a context manager (as in the example above) reset()\nwill be called automatically. Of course you can do this the manual way by\nexplicitly calling reset():\n\n.. code-block:: pycon\n\n    >>> pipe = r.pipeline()\n    >>> while 1:\n    ...     try:\n    ...         pipe.watch('OUR-SEQUENCE-KEY')\n    ...         ...\n    ...         pipe.execute()\n    ...         break\n    ...     except WatchError:\n    ...         continue\n    ...     finally:\n    ...         pipe.reset()\n\nA convenience method named \"transaction\" exists for handling all the\nboilerplate of handling and retrying watch errors. It takes a callable that\nshould expect a single parameter, a pipeline object, and any number of keys to\nbe WATCHed. Our client-side INCR command above can be written like this,\nwhich is much easier to read:\n\n.. code-block:: pycon\n\n    >>> def client_side_incr(pipe):\n    ...     current_value = pipe.get('OUR-SEQUENCE-KEY')\n    ...     next_value = int(current_value) + 1\n    ...     pipe.multi()\n    ...     pipe.set('OUR-SEQUENCE-KEY', next_value)\n    >>>\n    >>> r.transaction(client_side_incr, 'OUR-SEQUENCE-KEY')\n    [True]\n\nPublish / Subscribe\n^^^^^^^^^^^^^^^^^^^\n\nredis-py includes a `PubSub` object that subscribes to channels and listens\nfor new messages. Creating a `PubSub` object is easy.\n\n.. code-block:: pycon\n\n    >>> r = redis.StrictRedis(...)\n    >>> p = r.pubsub()\n\nOnce a `PubSub` instance is created, channels and patterns can be subscribed\nto.\n\n.. code-block:: pycon\n\n    >>> p.subscribe('my-first-channel', 'my-second-channel', ...)\n    >>> p.psubscribe('my-*', ...)\n\nThe `PubSub` instance is now subscribed to those channels/patterns. The\nsubscription confirmations can be seen by reading messages from the `PubSub`\ninstance.\n\n.. code-block:: pycon\n\n    >>> p.get_message()\n    {'pattern': None, 'type': 'subscribe', 'channel': 'my-second-channel', 'data': 1L}\n    >>> p.get_message()\n    {'pattern': None, 'type': 'subscribe', 'channel': 'my-first-channel', 'data': 2L}\n    >>> p.get_message()\n    {'pattern': None, 'type': 'psubscribe', 'channel': 'my-*', 'data': 3L}\n\nEvery message read from a `PubSub` instance will be a dictionary with the\nfollowing keys.\n\n* **type**: One of the following: 'subscribe', 'unsubscribe', 'psubscribe',\n  'punsubscribe', 'message', 'pmessage'\n* **channel**: The channel [un]subscribed to or the channel a message was\n  published to\n* **pattern**: The pattern that matched a published message's channel. Will be\n  `None` in all cases except for 'pmessage' types.\n* **data**: The message data. With [un]subscribe messages, this value will be\n  the number of channels and patterns the connection is currently subscribed\n  to. With [p]message messages, this value will be the actual published\n  message.\n\nLet's send a message now.\n\n.. code-block:: pycon\n\n    # the publish method returns the number matching channel and pattern\n    # subscriptions. 'my-first-channel' matches both the 'my-first-channel'\n    # subscription and the 'my-*' pattern subscription, so this message will\n    # be delivered to 2 channels/patterns\n    >>> r.publish('my-first-channel', 'some data')\n    2\n    >>> p.get_message()\n    {'channel': 'my-first-channel', 'data': 'some data', 'pattern': None, 'type': 'message'}\n    >>> p.get_message()\n    {'channel': 'my-first-channel', 'data': 'some data', 'pattern': 'my-*', 'type': 'pmessage'}\n\nUnsubscribing works just like subscribing. If no arguments are passed to\n[p]unsubscribe, all channels or patterns will be unsubscribed from.\n\n.. code-block:: pycon\n\n    >>> p.unsubscribe()\n    >>> p.punsubscribe('my-*')\n    >>> p.get_message()\n    {'channel': 'my-second-channel', 'data': 2L, 'pattern': None, 'type': 'unsubscribe'}\n    >>> p.get_message()\n    {'channel': 'my-first-channel', 'data': 1L, 'pattern': None, 'type': 'unsubscribe'}\n    >>> p.get_message()\n    {'channel': 'my-*', 'data': 0L, 'pattern': None, 'type': 'punsubscribe'}\n\nredis-py also allows you to register callback functions to handle published\nmessages. Message handlers take a single argument, the message, which is a\ndictionary just like the examples above. To subscribe to a channel or pattern\nwith a message handler, pass the channel or pattern name as a keyword argument\nwith its value being the callback function.\n\nWhen a message is read on a channel or pattern with a message handler, the\nmessage dictionary is created and passed to the message handler. In this case,\na `None` value is returned from get_message() since the message was already\nhandled.\n\n.. code-block:: pycon\n\n    >>> def my_handler(message):\n    ...     print 'MY HANDLER: ', message['data']\n    >>> p.subscribe(**{'my-channel': my_handler})\n    # read the subscribe confirmation message\n    >>> p.get_message()\n    {'pattern': None, 'type': 'subscribe', 'channel': 'my-channel', 'data': 1L}\n    >>> r.publish('my-channel', 'awesome data')\n    1\n    # for the message handler to work, we need tell the instance to read data.\n    # this can be done in several ways (read more below). we'll just use\n    # the familiar get_message() function for now\n    >>> message = p.get_message()\n    MY HANDLER:  awesome data\n    # note here that the my_handler callback printed the string above.\n    # `message` is None because the message was handled by our handler.\n    >>> print message\n    None\n\nIf your application is not interested in the (sometimes noisy)\nsubscribe/unsubscribe confirmation messages, you can ignore them by passing\n`ignore_subscribe_messages=True` to `r.pubsub()`. This will cause all\nsubscribe/unsubscribe messages to be read, but they won't bubble up to your\napplication.\n\n.. code-block:: pycon\n\n    >>> p = r.pubsub(ignore_subscribe_messages=True)\n    >>> p.subscribe('my-channel')\n    >>> p.get_message()  # hides the subscribe message and returns None\n    >>> r.publish('my-channel')\n    1\n    >>> p.get_message()\n    {'channel': 'my-channel', 'data': 'my data', 'pattern': None, 'type': 'message'}\n\nThere are three different strategies for reading messages.\n\nThe examples above have been using `pubsub.get_message()`. Behind the scenes,\n`get_message()` uses the system's 'select' module to quickly poll the\nconnection's socket. If there's data available to be read, `get_message()` will\nread it, format the message and return it or pass it to a message handler. If\nthere's no data to be read, `get_message()` will immediately return None. This\nmakes it trivial to integrate into an existing event loop inside your\napplication.\n\n.. code-block:: pycon\n\n    >>> while True:\n    >>>     message = p.get_message()\n    >>>     if message:\n    >>>         # do something with the message\n    >>>     time.sleep(0.001)  # be nice to the system :)\n\nOlder versions of redis-py only read messages with `pubsub.listen()`. listen()\nis a generator that blocks until a message is available. If your application\ndoesn't need to do anything else but receive and act on messages received from\nredis, listen() is an easy way to get up an running.\n\n.. code-block:: pycon\n\n    >>> for message in p.listen():\n    ...     # do something with the message\n\nThe third option runs an event loop in a separate thread.\n`pubsub.run_in_thread()` creates a new thread and starts the event loop. The\nthread object is returned to the caller of `run_in_thread()`. The caller can\nuse the `thread.stop()` method to shut down the event loop and thread. Behind\nthe scenes, this is simply a wrapper around `get_message()` that runs in a\nseparate thread, essentially creating a tiny non-blocking event loop for you.\n`run_in_thread()` takes an optional `sleep_time` argument. If specified, the\nevent loop will call `time.sleep()` with the value in each iteration of the\nloop.\n\nNote: Since we're running in a separate thread, there's no way to handle\nmessages that aren't automatically handled with registered message handlers.\nTherefore, redis-py prevents you from calling `run_in_thread()` if you're\nsubscribed to patterns or channels that don't have message handlers attached.\n\n.. code-block:: pycon\n\n    >>> p.subscribe(**{'my-channel': my_handler})\n    >>> thread = p.run_in_thread(sleep_time=0.001)\n    # the event loop is now running in the background processing messages\n    # when it's time to shut it down...\n    >>> thread.stop()\n\nA PubSub object adheres to the same encoding semantics as the client instance\nit was created from. Any channel or pattern that's unicode will be encoded\nusing the `charset` specified on the client before being sent to Redis. If the\nclient's `decode_responses` flag is set the False (the default), the\n'channel', 'pattern' and 'data' values in message dictionaries will be byte\nstrings (str on Python 2, bytes on Python 3). If the client's\n`decode_responses` is True, then the 'channel', 'pattern' and 'data' values\nwill be automatically decoded to unicode strings using the client's `charset`.\n\nPubSub objects remember what channels and patterns they are subscribed to. In\nthe event of a disconnection such as a network error or timeout, the\nPubSub object will re-subscribe to all prior channels and patterns when\nreconnecting. Messages that were published while the client was disconnected\ncannot be delivered. When you're finished with a PubSub object, call its\n`.close()` method to shutdown the connection.\n\n.. code-block:: pycon\n\n    >>> p = r.pubsub()\n    >>> ...\n    >>> p.close()\n\n\nThe PUBSUB set of subcommands CHANNELS, NUMSUB and NUMPAT are also\nsupported:\n\n.. code-block:: pycon\n\n    >>> r.pubsub_channels()\n    ['foo', 'bar']\n    >>> r.pubsub_numsub('foo', 'bar')\n    [('foo', 9001), ('bar', 42)]\n    >>> r.pubsub_numsub('baz')\n    [('baz', 0)]\n    >>> r.pubsub_numpat()\n    1204\n\n\nLUA Scripting\n^^^^^^^^^^^^^\n\nredis-py supports the EVAL, EVALSHA, and SCRIPT commands. However, there are\na number of edge cases that make these commands tedious to use in real world\nscenarios. Therefore, redis-py exposes a Script object that makes scripting\nmuch easier to use.\n\nTo create a Script instance, use the `register_script` function on a client\ninstance passing the LUA code as the first argument. `register_script` returns\na Script instance that you can use throughout your code.\n\nThe following trivial LUA script accepts two parameters: the name of a key and\na multiplier value. The script fetches the value stored in the key, multiplies\nit with the multiplier value and returns the result.\n\n.. code-block:: pycon\n\n    >>> r = redis.StrictRedis()\n    >>> lua = \"\"\"\n    ... local value = redis.call('GET', KEYS[1])\n    ... value = tonumber(value)\n    ... return value * ARGV[1]\"\"\"\n    >>> multiply = r.register_script(lua)\n\n`multiply` is now a Script instance that is invoked by calling it like a\nfunction. Script instances accept the following optional arguments:\n\n* **keys**: A list of key names that the script will access. This becomes the\n  KEYS list in LUA.\n* **args**: A list of argument values. This becomes the ARGV list in LUA.\n* **client**: A redis-py Client or Pipeline instance that will invoke the\n  script. If client isn't specified, the client that intiially\n  created the Script instance (the one that `register_script` was\n  invoked from) will be used.\n\nContinuing the example from above:\n\n.. code-block:: pycon\n\n    >>> r.set('foo', 2)\n    >>> multiply(keys=['foo'], args=[5])\n    10\n\nThe value of key 'foo' is set to 2. When multiply is invoked, the 'foo' key is\npassed to the script along with the multiplier value of 5. LUA executes the\nscript and returns the result, 10.\n\nScript instances can be executed using a different client instance, even one\nthat points to a completely different Redis server.\n\n.. code-block:: pycon\n\n    >>> r2 = redis.StrictRedis('redis2.example.com')\n    >>> r2.set('foo', 3)\n    >>> multiply(keys=['foo'], args=[5], client=r2)\n    15\n\nThe Script object ensures that the LUA script is loaded into Redis's script\ncache. In the event of a NOSCRIPT error, it will load the script and retry\nexecuting it.\n\nScript objects can also be used in pipelines. The pipeline instance should be\npassed as the client argument when calling the script. Care is taken to ensure\nthat the script is registered in Redis's script cache just prior to pipeline\nexecution.\n\n.. code-block:: pycon\n\n    >>> pipe = r.pipeline()\n    >>> pipe.set('foo', 5)\n    >>> multiply(keys=['foo'], args=[5], client=pipe)\n    >>> pipe.execute()\n    [True, 25]\n\nSentinel support\n^^^^^^^^^^^^^^^^\n\nredis-py can be used together with `Redis Sentinel <http://redis.io/topics/sentinel>`_\nto discover Redis nodes. You need to have at least one Sentinel daemon running\nin order to use redis-py's Sentinel support.\n\nConnecting redis-py to the Sentinel instance(s) is easy. You can use a\nSentinel connection to discover the master and slaves network addresses:\n\n.. code-block:: pycon\n\n    >>> from redis.sentinel import Sentinel\n    >>> sentinel = Sentinel([('localhost', 26379)], socket_timeout=0.1)\n    >>> sentinel.discover_master('mymaster')\n    ('127.0.0.1', 6379)\n    >>> sentinel.discover_slaves('mymaster')\n    [('127.0.0.1', 6380)]\n\nYou can also create Redis client connections from a Sentinel instance. You can\nconnect to either the master (for write operations) or a slave (for read-only\noperations).\n\n.. code-block:: pycon\n\n    >>> master = sentinel.master_for('mymaster', socket_timeout=0.1)\n    >>> slave = sentinel.slave_for('mymaster', socket_timeout=0.1)\n    >>> master.set('foo', 'bar')\n    >>> slave.get('foo')\n    'bar'\n\nThe master and slave objects are normal StrictRedis instances with their\nconnection pool bound to the Sentinel instance. When a Sentinel backed client\nattempts to establish a connection, it first queries the Sentinel servers to\ndetermine an appropriate host to connect to. If no server is found,\na MasterNotFoundError or SlaveNotFoundError is raised. Both exceptions are\nsubclasses of ConnectionError.\n\nWhen trying to connect to a slave client, the Sentinel connection pool will\niterate over the list of slaves until it finds one that can be connected to.\nIf no slaves can be connected to, a connection will be established with the\nmaster.\n\nSee `Guidelines for Redis clients with support for Redis Sentinel\n<http://redis.io/topics/sentinel-clients>`_ to learn more about Redis Sentinel.\n\nScan Iterators\n^^^^^^^^^^^^^^\n\nThe \\*SCAN commands introduced in Redis 2.8 can be cumbersome to use. While\nthese commands are fully supported, redis-py also exposes the following methods\nthat return Python iterators for convenience: `scan_iter`, `hscan_iter`,\n`sscan_iter` and `zscan_iter`.\n\n.. code-block:: pycon\n\n    >>> for key, value in (('A', '1'), ('B', '2'), ('C', '3')):\n    ...     r.set(key, value)\n    >>> for key in r.scan_iter():\n    ...     print key, r.get(key)\n    A 1\n    B 2\n    C 3\n\nAuthor\n^^^^^^\n\nredis-py is developed and maintained by Andy McCurdy (sedrik@gmail.com).\nIt can be found here: http://github.com/andymccurdy/redis-py\n\nSpecial thanks to:\n\n* Ludovico Magnocavallo, author of the original Python Redis client, from\n  which some of the socket code is still used.\n* Alexander Solovyov for ideas on the generic response callback system.\n* Paul Hubbard for initial packaging support.\n\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://github.com/andymccurdy/redis-py",
+        "keywords": "Redis,key-value store",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "redis",
+        "package_url": "https://pypi.org/project/redis/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/redis/",
+        "release_url": "https://pypi.org/project/redis/2.10.6/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Python client for Redis key-value store",
+        "version": "2.10.6"
+    },
+    "last_serial": 3102119,
+    "releases": {
+        "0.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "980bf80161d651a498d3c9285dcff683",
+                    "sha256": "fd78a8c3953c1f368ac75355001b8558c1037b1cf0baf9e95bcfa3ffff9826f7"
+                },
+                "downloads": -1,
+                "filename": "redis-0.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "980bf80161d651a498d3c9285dcff683",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7578,
+                "upload_time": "2013-06-25T02:13:47",
+                "url": "https://files.pythonhosted.org/packages/41/57/c6891ac2904a1984853f26781fe70d58ee3903be71455681906797d27fdd/redis-0.6.0.tar.gz"
+            }
+        ],
+        "0.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ba1250b291f3da897bfb4f5e1f376aff",
+                    "sha256": "71a8fbce7b42593d364fe2c4ffb6b3203753a48186c18996a42e3c86cd3c05cf"
+                },
+                "downloads": -1,
+                "filename": "redis-0.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ba1250b291f3da897bfb4f5e1f376aff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8373,
+                "upload_time": "2013-06-25T02:15:41",
+                "url": "https://files.pythonhosted.org/packages/12/a4/bec4b1e2c6a435d0c785acefd9bc7a30b63021279faaa335cd839d3287a8/redis-0.6.1.tar.gz"
+            }
+        ],
+        "1.34": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d76223cf43a84521d62de29df3e70b99",
+                    "sha256": "472f982cf540475130fd72212583b1bb26f5d3d511be9da560479d44cd4b319e"
+                },
+                "downloads": -1,
+                "filename": "redis-1.34.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d76223cf43a84521d62de29df3e70b99",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11864,
+                "upload_time": "2013-06-25T02:16:02",
+                "url": "https://files.pythonhosted.org/packages/a8/3e/8817de4983d8b2c64cd92f816800b6329841e2b198b46568c4120ea33154/redis-1.34.tar.gz"
+            }
+        ],
+        "1.34.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1310816a2bbf862249c8e6a47f698bab",
+                    "sha256": "5bc45eb55d1f62e7104604cad001c24231876dcf14be84eaa246ba4dd3855280"
+                },
+                "downloads": -1,
+                "filename": "redis-1.34.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1310816a2bbf862249c8e6a47f698bab",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11880,
+                "upload_time": "2013-06-25T02:16:27",
+                "url": "https://files.pythonhosted.org/packages/5f/09/ab7a27749ce97b3dcbbc4198fac1096bc782afa50d180ef7326505d0ca90/redis-1.34.1.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a77497d026885ed9c467a28e2d00388d",
+                    "sha256": "81647560cc8d4ffff8c17db207c1410a036a1bc8e9d7cf753b76bc2ac41d0306"
+                },
+                "downloads": -1,
+                "filename": "redis-2.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a77497d026885ed9c467a28e2d00388d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16208,
+                "upload_time": "2013-06-25T02:16:47",
+                "url": "https://files.pythonhosted.org/packages/5b/55/3b3e4cf7d61d32cb0b505aa352b3fd4d5895ced3146c50b3faa1dc757207/redis-2.0.0.tar.gz"
+            }
+        ],
+        "2.10.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3942fec7d0e7b081c0828f4495be497",
+                    "sha256": "573a02d457d3eab51d6d849dead1a0fe220cfb129b3bb1579f28c46a6544beb5"
+                },
+                "downloads": -1,
+                "filename": "redis-2.10.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c3942fec7d0e7b081c0828f4495be497",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 84109,
+                "upload_time": "2014-06-02T04:39:23",
+                "url": "https://files.pythonhosted.org/packages/85/84/080ce20bd95010987f25a42ac357fed747be949ca392a604f3efec5956d4/redis-2.10.0.tar.gz"
+            }
+        ],
+        "2.10.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6ffdea9c476b4815ddfee9a7362819ea",
+                    "sha256": "644aaf429e666d2254143a6a02f3b1cca2806d0cd52bb130c8f879d3c8259d62"
+                },
+                "downloads": -1,
+                "filename": "redis-2.10.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6ffdea9c476b4815ddfee9a7362819ea",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 84143,
+                "upload_time": "2014-06-02T20:39:41",
+                "url": "https://files.pythonhosted.org/packages/1d/f5/408d16f977e7e8b27353923a5f119fe0eea4b20d2909c2ae4e556988d8ed/redis-2.10.1.tar.gz"
+            }
+        ],
+        "2.10.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "03c749a5809fed0bab0a41cb8c1d3793",
+                    "sha256": "4af2f22e511b80cde3b9ff27d6afa6f138a37df7b05cc522953c30473b15c951"
+                },
+                "downloads": -1,
+                "filename": "redis-2.10.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "03c749a5809fed0bab0a41cb8c1d3793",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 86518,
+                "upload_time": "2014-08-11T16:52:06",
+                "url": "https://files.pythonhosted.org/packages/3d/9b/49a944d4d3c350f7cffc86bcc8ec429249fb7f413a2cb28e31bc79cfc813/redis-2.10.2.tar.gz"
+            }
+        ],
+        "2.10.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7619221ad0cbd124a5687458ea3f5289",
+                    "sha256": "a4fb37b02860f6b1617f6469487471fd086dd2d38bbce640c2055862b9c4019c"
+                },
+                "downloads": -1,
+                "filename": "redis-2.10.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7619221ad0cbd124a5687458ea3f5289",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 86532,
+                "upload_time": "2014-08-14T17:19:19",
+                "url": "https://files.pythonhosted.org/packages/37/a8/42e2f2785339cd0a4b4f42316b767ccbf68acf05eb1ba20d737599cccecd/redis-2.10.3.tar.gz"
+            }
+        ],
+        "2.10.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e46074942bca6fb63c3125d6dcf0cee8",
+                    "sha256": "97156b37d7cda4e7d8658be1148c983984e1a975090ba458cc7e244025191dbd"
+                },
+                "downloads": -1,
+                "filename": "redis-2.10.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e46074942bca6fb63c3125d6dcf0cee8",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 60555,
+                "upload_time": "2015-11-03T00:21:14",
+                "url": "https://files.pythonhosted.org/packages/08/c1/457428f7507e27ba7144758a7b716ea35766e6d602f4a0c16e443ab3d381/redis-2.10.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b26c2b9703b4b56b30a1ad508e31083",
+                    "sha256": "5dfbae6acfc54edf0a7a415b99e0b21c0a3c27a7f787b292eea727b1facc5533"
+                },
+                "downloads": -1,
+                "filename": "redis-2.10.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3b26c2b9703b4b56b30a1ad508e31083",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 88610,
+                "upload_time": "2015-11-03T00:21:09",
+                "url": "https://files.pythonhosted.org/packages/68/44/5efe9e98ad83ef5b742ce62a15bea609ed5a0d1caf35b79257ddb324031a/redis-2.10.5.tar.gz"
+            }
+        ],
+        "2.10.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d626abf2468ad326eafead648e8f4e7",
+                    "sha256": "8a1900a9f2a0a44ecf6e8b5eb3e967a9909dfed219ad66df094f27f7d6f330fb"
+                },
+                "downloads": -1,
+                "filename": "redis-2.10.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7d626abf2468ad326eafead648e8f4e7",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 64960,
+                "upload_time": "2017-08-16T23:37:33",
+                "url": "https://files.pythonhosted.org/packages/3b/f6/7a76333cf0b9251ecf49efff635015171843d9b977e4ffcf59f9c4428052/redis-2.10.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "048348d8cfe0b5d0bba2f4d835005c3b",
+                    "sha256": "a22ca993cea2962dbb588f9f30d0015ac4afcc45bee27d3978c0dbe9e97c6c0f"
+                },
+                "downloads": -1,
+                "filename": "redis-2.10.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "048348d8cfe0b5d0bba2f4d835005c3b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 97299,
+                "upload_time": "2017-08-16T23:37:35",
+                "url": "https://files.pythonhosted.org/packages/09/8d/6d34b75326bf96d4139a2ddd8e74b80840f800a0a79f9294399e212cb9a7/redis-2.10.6.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ab83f2b7a262debed145b648e15ee96b",
+                    "sha256": "618825c669fa6952d865029d8a3d34697fc8c6330bae032bd6d02118251598a0"
+                },
+                "downloads": -1,
+                "filename": "redis-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ab83f2b7a262debed145b648e15ee96b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 19317,
+                "upload_time": "2013-06-25T02:17:11",
+                "url": "https://files.pythonhosted.org/packages/97/ae/356be48f4be0c05a0dcac2d90a95a8a4333e7f2b8ed02f1842a0a5ccd2da/redis-2.2.0.tar.gz"
+            }
+        ],
+        "2.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a75812535913260681411790e6ca98f6",
+                    "sha256": "369b487ea1e80790a85d8e6f5b73dd697d26aa2157fde411b1020bf48ea4a770"
+                },
+                "downloads": -1,
+                "filename": "redis-2.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a75812535913260681411790e6ca98f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 19563,
+                "upload_time": "2013-06-25T02:18:21",
+                "url": "https://files.pythonhosted.org/packages/0e/dc/b4e51464fa71a451f6533a3aa2d1c868e8ad1cd029a134a079dfdb84909e/redis-2.2.2.tar.gz"
+            }
+        ],
+        "2.2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3fc28c3a37b91dfa7c65730f6cf782e0",
+                    "sha256": "2a3e021e861732ad74ca80160276ac6605dd6b196c4198bc40fc0b9847a61cca"
+                },
+                "downloads": -1,
+                "filename": "redis-2.2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3fc28c3a37b91dfa7c65730f6cf782e0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 20822,
+                "upload_time": "2013-06-25T02:18:41",
+                "url": "https://files.pythonhosted.org/packages/56/3e/36f920832f0448ac5d2e3fbf05deadb81e8d3aaab8f1ae2d651ae1c71967/redis-2.2.4.tar.gz"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a194cca58be999e8dba665154b61eff8",
+                    "sha256": "bea01b7a58397f648ecad514599b434e617aedcb8ecd29cd937f3f4819002a05"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a194cca58be999e8dba665154b61eff8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21717,
+                "upload_time": "2013-06-25T02:19:02",
+                "url": "https://files.pythonhosted.org/packages/29/6b/4caf2b0857ecd4eccf11fb44ebc824ae07bbdc9565a7ed120ba2b14b37ce/redis-2.4.0.tar.gz"
+            }
+        ],
+        "2.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d1435e3091707f6d07848b1cd32d5c4",
+                    "sha256": "56ab08d7c8914f0452606e4dc232634e13d15b4a2b71365bedddccc5582fdd5e"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4d1435e3091707f6d07848b1cd32d5c4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21738,
+                "upload_time": "2013-06-25T02:19:29",
+                "url": "https://files.pythonhosted.org/packages/1c/7a/28efae0a79c87cd148632ea010b7cf327bba5ce9bf1610e2215b15ac4111/redis-2.4.1.tar.gz"
+            }
+        ],
+        "2.4.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3fac7ed77662e7709a70186725ef26d2",
+                    "sha256": "efdd7e0ea8430d82d6223a20f4ac28860f3bfefd0722037c84ad8085025629a2"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3fac7ed77662e7709a70186725ef26d2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28632,
+                "upload_time": "2013-06-25T02:22:08",
+                "url": "https://files.pythonhosted.org/packages/8a/61/36979d97ea05607defb660576f9a83ea3dfae77afa73c1f14b0cb10b6cdd/redis-2.4.10.tar.gz"
+            }
+        ],
+        "2.4.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5cf00fc79934ac29f4e1a4c42157d14f",
+                    "sha256": "8e000a10464e5cbd4814987c130b897fd2a34ff2cef40b2584ea7f8d73473d1c"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5cf00fc79934ac29f4e1a4c42157d14f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28824,
+                "upload_time": "2013-06-25T02:22:26",
+                "url": "https://files.pythonhosted.org/packages/52/4d/a89e994c95aece19c8492d2e6ff90fe127408acdfb8376bc3eeebd3ead4d/redis-2.4.11.tar.gz"
+            }
+        ],
+        "2.4.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "05bab5b1e8e28592f15529c4a8bc1088",
+                    "sha256": "98cadb4481671a54b7de867280dc11f11ba16ce007d1e078746ba768d2655486"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "05bab5b1e8e28592f15529c4a8bc1088",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28944,
+                "upload_time": "2013-06-25T02:22:40",
+                "url": "https://files.pythonhosted.org/packages/21/83/3a687ea0f9eca54f49a49ec8c19d06f339f61de26b70debf2527f86d5f9c/redis-2.4.12.tar.gz"
+            }
+        ],
+        "2.4.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "996d2a38f1ac6a6c7e752fb87f3265ed",
+                    "sha256": "365285e161395344edc629a2e108f6bb0983e96d9b5012dab1f76cec2379a09a"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "996d2a38f1ac6a6c7e752fb87f3265ed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29329,
+                "upload_time": "2013-06-25T02:22:55",
+                "url": "https://files.pythonhosted.org/packages/5e/38/6fa4b282a8033e14ff866cff2ab42dd869fc9d688184c76130898a7ca481/redis-2.4.13.tar.gz"
+            }
+        ],
+        "2.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "43ed05c40d63ce18d49dbf60c345c119",
+                    "sha256": "5b1b8e4c87872254c4697a6490f5ec3b1a6269b0cfdbc14af9b59b5ceb64b13a"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "43ed05c40d63ce18d49dbf60c345c119",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21832,
+                "upload_time": "2013-06-25T02:19:48",
+                "url": "https://files.pythonhosted.org/packages/7c/12/e824222ee6212bd2500110f84148368c8975d4c10726c4be5227bae688b9/redis-2.4.2.tar.gz"
+            }
+        ],
+        "2.4.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "93f14a9553e820815f53a08e764de780",
+                    "sha256": "4f389ad6bc0a6c5dd892809216c04e7dd6a2e672796950914ea46c120f33aaeb"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "93f14a9553e820815f53a08e764de780",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21939,
+                "upload_time": "2013-06-25T02:20:09",
+                "url": "https://files.pythonhosted.org/packages/7d/b7/f79d85a735f8a7847371fa59ee23c7ff62da517c8517ffb5616fe00b7a9a/redis-2.4.3.tar.gz"
+            }
+        ],
+        "2.4.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0dba9d8b90b3e4b9ebdd7f6bb29109f9",
+                    "sha256": "a006facb5e5d4c50e290624263497bd1480b27541fb1b40d849b4f87ff692682"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0dba9d8b90b3e4b9ebdd7f6bb29109f9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21950,
+                "upload_time": "2013-06-25T02:20:26",
+                "url": "https://files.pythonhosted.org/packages/c9/43/723a5817aecee9f4822b0b2a5c985b9d252091ac3b7f124386e82c9aad45/redis-2.4.4.tar.gz"
+            }
+        ],
+        "2.4.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "452355fedd490b6e6a658597a2070a61",
+                    "sha256": "0086de1e3033322e5b64480ad67caa6ffc6f7fad488153345815b8b502ca626e"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "452355fedd490b6e6a658597a2070a61",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 22017,
+                "upload_time": "2013-06-25T02:20:42",
+                "url": "https://files.pythonhosted.org/packages/b4/ce/c803bf0a9a37f5abc37eb57caaff12d5a75e1b3b0549ead8ae8359171b23/redis-2.4.5.tar.gz"
+            }
+        ],
+        "2.4.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0609ecb2e09b20d34d96663151d22f8b",
+                    "sha256": "b018b7454175b683473f1dfed6f3f3d9d530aa8011374bfd59e07311bc2f49d0"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0609ecb2e09b20d34d96663151d22f8b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24362,
+                "upload_time": "2013-06-25T02:21:00",
+                "url": "https://files.pythonhosted.org/packages/63/80/2c3fbbe471fd53ad56e597422ae1ae9c09e282c407b84bbbd15c9831fa40/redis-2.4.6.tar.gz"
+            }
+        ],
+        "2.4.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9684e59379671c4f2393a1d4fc06e1a3",
+                    "sha256": "58916976d8dcfa3603d49da0c984207e04197c1d60e28c59d40c3192f00b3cfe"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9684e59379671c4f2393a1d4fc06e1a3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26281,
+                "upload_time": "2013-06-25T02:21:16",
+                "url": "https://files.pythonhosted.org/packages/4e/d3/dcdb32e9103fe0e0bd7c24de26cdebb70b69a3b5236493225051fcd45017/redis-2.4.7.tar.gz"
+            }
+        ],
+        "2.4.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3c7d26a62b29244d5f607f71430c88fb",
+                    "sha256": "56a788f3d1102ac1ca1f704af4e1e3f5118da7a7a95cc3b1fc9e9ca0dffa6f7e"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3c7d26a62b29244d5f607f71430c88fb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26334,
+                "upload_time": "2013-06-25T02:21:32",
+                "url": "https://files.pythonhosted.org/packages/b5/d8/582d3343e4e87958a8532a883fbae449db8bc4a0e825747f6be11b4fec93/redis-2.4.8.tar.gz"
+            }
+        ],
+        "2.4.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b512ff37d06c6813f04a57f6448a1e55",
+                    "sha256": "f4ea85767e037d1aa471272840db2af512fe86043324621f883de7c9ccebfaf1"
+                },
+                "downloads": -1,
+                "filename": "redis-2.4.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b512ff37d06c6813f04a57f6448a1e55",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26373,
+                "upload_time": "2013-06-25T02:21:50",
+                "url": "https://files.pythonhosted.org/packages/c4/83/9929c762974a6692528c944522ab6ac9a12b5dfda92a3bdefce9ef3167ec/redis-2.4.9.tar.gz"
+            }
+        ],
+        "2.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c98371887e7fabf5ed57c3bca1114abb",
+                    "sha256": "95f285c3b326bb26f9d1d35b32bf19f0635a4cb8b0d7ea883a9ff33decc4e867"
+                },
+                "downloads": -1,
+                "filename": "redis-2.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c98371887e7fabf5ed57c3bca1114abb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33704,
+                "upload_time": "2013-06-25T02:23:13",
+                "url": "https://files.pythonhosted.org/packages/9b/e3/3b356e21f1e6e3ed5cdfbb9d01baeed0894d6acc057dc43ec6dafea95bd9/redis-2.6.0.tar.gz"
+            }
+        ],
+        "2.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a200d4afd509cfee0bf3c29c4f29490",
+                    "sha256": "c9e0e74e92fad8b277ed18af1eeb0129224d7156bad53d2dcd84c6ddb81da8ec"
+                },
+                "downloads": -1,
+                "filename": "redis-2.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2a200d4afd509cfee0bf3c29c4f29490",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34682,
+                "upload_time": "2013-06-25T02:23:29",
+                "url": "https://files.pythonhosted.org/packages/b0/f8/1904ffda87b945ae4d276aea6ce5f17ea27dfc10f3ceef04173b56601c38/redis-2.6.1.tar.gz"
+            }
+        ],
+        "2.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a1f54559c1c16ec8168df0a598a3972d",
+                    "sha256": "2196ff8a6b0ce505d3972a58c49d842f031260af66f2e3960e0ce068ab7598e5"
+                },
+                "downloads": -1,
+                "filename": "redis-2.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a1f54559c1c16ec8168df0a598a3972d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34942,
+                "upload_time": "2013-06-25T02:23:56",
+                "url": "https://files.pythonhosted.org/packages/47/b4/f42ca3ef6bd981b7b1a572d36b24e5546310a5f19fe6f9f8ad3550309a8d/redis-2.6.2.tar.gz"
+            }
+        ],
+        "2.7.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0a531b2b777623cf9e709849b167bfe3",
+                    "sha256": "0a6d3ff3d83ade3fb3f2f7392414e43237af61d92ce783cae05b9d1ac40f0e91"
+                },
+                "downloads": -1,
+                "filename": "redis-2.7.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0a531b2b777623cf9e709849b167bfe3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 39229,
+                "upload_time": "2012-10-08T06:40:56",
+                "url": "https://files.pythonhosted.org/packages/5a/54/5d71d9e12366066680d7da83387c4f83594d1fc8ede00ffac87ff7369d71/redis-2.7.0.tar.gz"
+            }
+        ],
+        "2.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2e962c42bea1533ea8772b52ad6b4c6e",
+                    "sha256": "e59c0258d3a831299915ba47640f388107943f3e510a0e89d5ca51e56d2d0474"
+                },
+                "downloads": -1,
+                "filename": "redis-2.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2e962c42bea1533ea8772b52ad6b4c6e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 50723,
+                "upload_time": "2012-10-08T15:23:24",
+                "url": "https://files.pythonhosted.org/packages/bb/6d/3fd5b6a9cd378b643afbf08f80c30ad55efec8c7efeaa2914ba796260d49/redis-2.7.1.tar.gz"
+            }
+        ],
+        "2.7.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "17ac60dcf13eb33f82cc25974ab17157",
+                    "sha256": "c22e7129f21b8bd1690c2cefc07b2caf1088c66a9dd159aed0621dcbaf2dfb09"
+                },
+                "downloads": -1,
+                "filename": "redis-2.7.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "17ac60dcf13eb33f82cc25974ab17157",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 50888,
+                "upload_time": "2012-11-16T19:37:07",
+                "url": "https://files.pythonhosted.org/packages/cd/d0/9b96b359e5c7ff74954f5e55716986d51505f8a6f8a1d4be45138118e820/redis-2.7.2.tar.gz"
+            }
+        ],
+        "2.7.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "213c66f6d68bfed4d812bbbec6cc740d",
+                    "sha256": "3cf41f108f9b0ebd0ae01adc85cf54bafc6825d47b8eda9461235ad68b6fad6f"
+                },
+                "downloads": -1,
+                "filename": "redis-2.7.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "213c66f6d68bfed4d812bbbec6cc740d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 78480,
+                "upload_time": "2013-04-23T05:31:30",
+                "url": "https://files.pythonhosted.org/packages/eb/de/b49b23b4d846893fc2739215cabe01502e47d0827aa50823c8c4e0024234/redis-2.7.3.tar.gz"
+            }
+        ],
+        "2.7.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "27bb7db7af423621dc5ab67c8e716542",
+                    "sha256": "623c8d437401314f8ec92f03848638c79c757098b316f0ed40ec2deaad57e082"
+                },
+                "downloads": -1,
+                "filename": "redis-2.7.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "27bb7db7af423621dc5ab67c8e716542",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 79715,
+                "upload_time": "2013-04-28T17:27:48",
+                "url": "https://files.pythonhosted.org/packages/e6/b3/dbccca3a0448355b1dac1f60dbaa8cea9ca8a861e5b373b1d8b67a1a18da/redis-2.7.4.tar.gz"
+            }
+        ],
+        "2.7.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd6682fb21827c4dca5a89d1114a6d5d",
+                    "sha256": "6c25b05411014ad11feb4869a8c5e5facc900640c597a288bcd3de6a2ab8948a"
+                },
+                "downloads": -1,
+                "filename": "redis-2.7.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fd6682fb21827c4dca5a89d1114a6d5d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 79973,
+                "upload_time": "2013-05-14T07:36:25",
+                "url": "https://files.pythonhosted.org/packages/a8/5c/5aa66491fee70ca39d9ba9616a6fe21d786694bcedbbf82e2dd754933c9c/redis-2.7.5.tar.gz"
+            }
+        ],
+        "2.7.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e975ea446c40046ef6dc41c98e41a4f8",
+                    "sha256": "7e8645a5e1a5e36fb6f93d3113eb078e2763db15aafa3dfa5ba2ceace26a01c4"
+                },
+                "downloads": -1,
+                "filename": "redis-2.7.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e975ea446c40046ef6dc41c98e41a4f8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 76041,
+                "upload_time": "2013-06-14T16:55:28",
+                "url": "https://files.pythonhosted.org/packages/e7/6f/446e6d3cbb6f43d5f73de1be12cd8d033a6f4456ddd8a9dc4cdbd53b389f/redis-2.7.6.tar.gz"
+            }
+        ],
+        "2.8.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a5b1b96d70852a2581a0b28f6122902",
+                    "sha256": "5a34f92937cacb4082f5834d2ce8b710b791342d17d1769b998327e6479e2b24"
+                },
+                "downloads": -1,
+                "filename": "redis-2.8.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3a5b1b96d70852a2581a0b28f6122902",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 286033,
+                "upload_time": "2013-08-23T22:39:47",
+                "url": "https://files.pythonhosted.org/packages/88/5c/c824aa98a1af813332a5e213dbc49cc71c06cef5b5beb8cb237658daf77b/redis-2.8.0.tar.gz"
+            }
+        ],
+        "2.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d432ea7f87db481320e867efe43f419",
+                    "sha256": "074660926e3069607abac6da7f39e7511eda2662a0f792140ffff76b2220d7f9"
+                },
+                "downloads": -1,
+                "filename": "redis-2.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9d432ea7f87db481320e867efe43f419",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 314713,
+                "upload_time": "2014-01-02T20:24:55",
+                "url": "https://files.pythonhosted.org/packages/94/e5/c6ad0e5b49b40f8e42adbcdfff0f7d3fc16ea7735d225db4f3c60bf542b9/redis-2.9.0.tar.gz"
+            }
+        ],
+        "2.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1da8ff78be75d7acf5d4684e77fc3606",
+                    "sha256": "af9747ec2727425b1b09252975e21502ee5a3d8d235c7f49869eb13e09ccf4e4"
+                },
+                "downloads": -1,
+                "filename": "redis-2.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1da8ff78be75d7acf5d4684e77fc3606",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 62204,
+                "upload_time": "2014-01-23T17:06:19",
+                "url": "https://files.pythonhosted.org/packages/64/6b/75e4176d3b0a427baeaccc958ddfe34308889823cb360cdd8a8b9723d7d6/redis-2.9.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "7d626abf2468ad326eafead648e8f4e7",
+                "sha256": "8a1900a9f2a0a44ecf6e8b5eb3e967a9909dfed219ad66df094f27f7d6f330fb"
+            },
+            "downloads": -1,
+            "filename": "redis-2.10.6-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "7d626abf2468ad326eafead648e8f4e7",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 64960,
+            "upload_time": "2017-08-16T23:37:33",
+            "url": "https://files.pythonhosted.org/packages/3b/f6/7a76333cf0b9251ecf49efff635015171843d9b977e4ffcf59f9c4428052/redis-2.10.6-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "048348d8cfe0b5d0bba2f4d835005c3b",
+                "sha256": "a22ca993cea2962dbb588f9f30d0015ac4afcc45bee27d3978c0dbe9e97c6c0f"
+            },
+            "downloads": -1,
+            "filename": "redis-2.10.6.tar.gz",
+            "has_sig": false,
+            "md5_digest": "048348d8cfe0b5d0bba2f4d835005c3b",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 97299,
+            "upload_time": "2017-08-16T23:37:35",
+            "url": "https://files.pythonhosted.org/packages/09/8d/6d34b75326bf96d4139a2ddd8e74b80840f800a0a79f9294399e212cb9a7/redis-2.10.6.tar.gz"
+        }
+    ],
+    "package_name": "redis"
+}

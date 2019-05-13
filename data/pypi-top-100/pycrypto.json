@@ -1,0 +1,229 @@
+{
+    "info": {
+        "author": "Dwayne C. Litzenberger",
+        "author_email": "dlitz@dlitz.net",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: Public Domain",
+            "Operating System :: MacOS :: MacOS X",
+            "Operating System :: Microsoft :: Windows",
+            "Operating System :: Unix",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 3",
+            "Topic :: Security :: Cryptography"
+        ],
+        "description": "Python Cryptography Toolkit (pycrypto)\r\n======================================\r\n\r\nThis is a collection of both secure hash functions (such as SHA256 and\r\nRIPEMD160), and various encryption algorithms (AES, DES, RSA, ElGamal,\r\netc.).  The package is structured to make adding new modules easy.\r\nThis section is essentially complete, and the software interface will\r\nalmost certainly not change in an incompatible way in the future; all\r\nthat remains to be done is to fix any bugs that show up.  If you\r\nencounter a bug, please report it in the Launchpad bug tracker at\r\n\r\n       https://launchpad.net/products/pycrypto/+bugs\r\n\r\nAn example usage of the SHA256 module is:\r\n\r\n>>> from Crypto.Hash import SHA256\r\n>>> hash = SHA256.new()\r\n>>> hash.update('message')\r\n>>> hash.digest()\r\n'\\xabS\\n\\x13\\xe4Y\\x14\\x98+y\\xf9\\xb7\\xe3\\xfb\\xa9\\x94\\xcf\\xd1\\xf3\\xfb\"\\xf7\\x1c\\xea\\x1a\\xfb\\xf0+F\\x0cm\\x1d'\r\n\r\nAn example usage of an encryption algorithm (AES, in this case) is:\r\n\r\n>>> from Crypto.Cipher import AES\r\n>>> obj = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV456')\r\n>>> message = \"The answer is no\"\r\n>>> ciphertext = obj.encrypt(message)\r\n>>> ciphertext\r\n'\\xd6\\x83\\x8dd!VT\\x92\\xaa`A\\x05\\xe0\\x9b\\x8b\\xf1'\r\n>>> obj2 = AES.new('This is a key123', AES.MODE_CBC, 'This is an IV456')\r\n>>> obj2.decrypt(ciphertext)\r\n'The answer is no'\r\n\r\nOne possible application of the modules is writing secure\r\nadministration tools.  Another application is in writing daemons and\r\nservers.  Clients and servers can encrypt the data being exchanged and\r\nmutually authenticate themselves; daemons can encrypt private data for\r\nadded security.  Python also provides a pleasant framework for\r\nprototyping and experimentation with cryptographic algorithms; thanks\r\nto its arbitrary-length integers, public key algorithms are easily\r\nimplemented.\r\n\r\nAs of PyCrypto 2.1.0, PyCrypto provides an easy-to-use random number\r\ngenerator:\r\n\r\n>>> from Crypto import Random\r\n>>> rndfile = Random.new()\r\n>>> rndfile.read(16)\r\n'\\xf7.\\x838{\\x85\\xa0\\xd3>#}\\xc6\\xc2jJU'\r\n\r\nA stronger version of Python's standard \"random\" module is also\r\nprovided:\r\n\r\n>>> from Crypto.Random import random\r\n>>> random.choice(['dogs', 'cats', 'bears'])\r\n'bears'\r\n\r\nCaveat: For the random number generator to work correctly, you must\r\ncall Random.atfork() in both the parent and child processes after\r\nusing os.fork()\r\n\r\n\r\nInstallation\r\n============\r\n\r\nPyCrypto is written and tested using Python version 2.1 through 3.3.  Python\r\n1.5.2 is not supported.\r\n\r\nThe modules are packaged using the Distutils, so you can simply run\r\n\"python setup.py build\" to build the package, and \"python setup.py\r\ninstall\" to install it.\r\n\r\nIf the setup.py script crashes with a DistutilsPlatformError\r\ncomplaining that the file /usr/lib/python2.2/config/Makefile doesn't\r\nexist, this means that the files needed for compiling new Python\r\nmodules aren't installed on your system.  Red Hat users often run into\r\nthis because they don't have the python2-devel RPM installed.  The fix\r\nis to simply install the requisite RPM.  On Debian/Ubuntu, you need the\r\npython-dev package.\r\n\r\nTo verify that everything is in order, run \"python setup.py test\".  It\r\nwill test all the cryptographic modules, skipping ones that aren't\r\navailable.  If the test script reports an error on your machine,\r\nplease report the bug using the bug tracker (URL given above).  If\r\npossible, track down the bug and include a patch that fixes it,\r\nprovided that you are able to meet the eligibility requirements at\r\nhttp://www.pycrypto.org/submission-requirements/.\r\n\r\nIt is possible to test a single sub-package or a single module only, for instance\r\nwhen you investigate why certain tests fail and don't want to run the whole\r\nsuite each time. Use \"python setup.py test --module=name\", where 'name'\r\nis either a sub-package (Cipher, PublicKey, etc) or a module (Cipher.DES,\r\nPublicKey.RSA, etc).\r\nTo further cut test coverage, pass also the option \"--skip-slow-tests\".\r\n\r\nTo install the package under the site-packages directory of\r\nyour Python installation, run \"python setup.py install\".\r\n\r\nIf you have any comments, corrections, or improvements for this\r\npackage, please report them to our mailing list, accessible via the\r\nPyCrypto website:\r\n\r\n    http://www.pycrypto.org/\r\n    https://www.dlitz.net/software/pycrypto/",
+        "description_content_type": null,
+        "docs_url": "https://pythonhosted.org/pycrypto/",
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://www.pycrypto.org/",
+        "keywords": "",
+        "license": "Public domain",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "pycrypto",
+        "package_url": "https://pypi.org/project/pycrypto/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/pycrypto/",
+        "release_url": "https://pypi.org/project/pycrypto/2.6.1/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Cryptographic modules for Python.",
+        "version": "2.6.1"
+    },
+    "last_serial": 1131459,
+    "releases": {
+        "1.9a2": [],
+        "1.9a5": [],
+        "1.9a6": [],
+        "2.0": [],
+        "2.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d5674f3898a573691ffb335e8d749cd",
+                    "sha256": "b08d4ed54c9403c77778a3803e53a4f33f359b42d94f6f3e14abb1bf4941e6ea"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.0.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4d5674f3898a573691ffb335e8d749cd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 154292,
+                "upload_time": "2013-08-11T11:19:28",
+                "url": "https://files.pythonhosted.org/packages/53/fb/ea21d858d71d76aabbe511580f359ca0bf9b65a0cf37cab59e3978fb47d9/pycrypto-2.0.1.tar.gz"
+            }
+        ],
+        "2.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1d3eb04f06e6f09a080bc37fb019f9bf",
+                    "sha256": "253e1c22ea0249f0429df4f7e2eb973b119c83b146c0f421298f5e8e6822d8a2"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.1.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "1d3eb04f06e6f09a080bc37fb019f9bf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 265388,
+                "upload_time": "2013-08-11T11:20:08",
+                "url": "https://files.pythonhosted.org/packages/59/bc/013defa180f173dd6fa0d7de680bfd004415d618c402613905573bfc6409/pycrypto-2.1.0.tar.gz"
+            }
+        ],
+        "2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4f0ed728b14b98f09120cb2ec461ec98",
+                    "sha256": "9219449bc85ab4f4ff61fc83b0cbe0ec23d46943caab3d5413c6ba52da6f922c"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "4f0ed728b14b98f09120cb2ec461ec98",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 331270,
+                "upload_time": "2013-08-11T11:20:32",
+                "url": "https://files.pythonhosted.org/packages/a7/d5/8248c09974b0eb28718c2ed6531294a70da8a0a53eba2ec21e626d810e61/pycrypto-2.2.tar.gz"
+            }
+        ],
+        "2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b811cfbfc342d83ee614097effb8101",
+                    "sha256": "4f11e85fbcf13960373650fc2dae8f088f9b001f07fb6d3efb2fcb5334987182"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "2b811cfbfc342d83ee614097effb8101",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 331476,
+                "upload_time": "2010-12-17T03:18:31",
+                "url": "https://files.pythonhosted.org/packages/45/2f/ac98e6b42570d4f04e5b347cbecde0664c8b672aabf626485f215182ddd7/pycrypto-2.3.tar.gz"
+            }
+        ],
+        "2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "274fa44c30a320d56460a93fdd95e702",
+                    "sha256": "f49d8aea2d7d65db9906c7d3b8b3a07fcae8387cf5cb06a7510383e211902d39"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.4.tar.gz",
+                "has_sig": true,
+                "md5_digest": "274fa44c30a320d56460a93fdd95e702",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 382924,
+                "upload_time": "2011-10-22T22:01:31",
+                "url": "https://files.pythonhosted.org/packages/45/2f/e203759a099d002ef3b96f1e497d6d1b8ab56df695af8808f88bb7eff18b/pycrypto-2.4.tar.gz"
+            }
+        ],
+        "2.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c2a1404a848797fb0806f3e11c29ef15",
+                    "sha256": "4ff5f7008869c8509d16a31f285b9f6340c4a9ff703c85298832a2869210b154"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.4.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "c2a1404a848797fb0806f3e11c29ef15",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 383032,
+                "upload_time": "2011-11-04T20:31:00",
+                "url": "https://files.pythonhosted.org/packages/51/94/f62c78fd7f695ecf3e7b510e07daaf35504c9fcbe33d87e9df0fd84e1562/pycrypto-2.4.1.tar.gz"
+            }
+        ],
+        "2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "783e45d4a1a309e03ab378b00f97b291",
+                    "sha256": "e950a78184e2a7defccf5d45e0c29c1e9edeb29984433f0d110a21e9631e38de"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.5.tar.gz",
+                "has_sig": true,
+                "md5_digest": "783e45d4a1a309e03ab378b00f97b291",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 426802,
+                "upload_time": "2012-01-13T18:31:25",
+                "url": "https://files.pythonhosted.org/packages/eb/0d/80b7706fa181128f55b34b2ed49bca24e1fecf25101c0364b602cfdd3f6c/pycrypto-2.5.tar.gz"
+            }
+        ],
+        "2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "88dad0a270d1fe83a39e0467a66a22bb",
+                    "sha256": "7293c9d7e8af2e44a82f86eb9c3b058880f4bcc884bf3ad6c8a34b64986edde8"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.6.tar.gz",
+                "has_sig": true,
+                "md5_digest": "88dad0a270d1fe83a39e0467a66a22bb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 443445,
+                "upload_time": "2012-05-24T15:09:51",
+                "url": "https://files.pythonhosted.org/packages/6a/cb/fbb479abc170d5f262247237d64657ad3d34ceab5db315c623cec125baa2/pycrypto-2.6.tar.gz"
+            }
+        ],
+        "2.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "55a61a054aa66812daf5161a0d5d7eda",
+                    "sha256": "f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c"
+                },
+                "downloads": -1,
+                "filename": "pycrypto-2.6.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "55a61a054aa66812daf5161a0d5d7eda",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 446240,
+                "upload_time": "2014-06-20T08:10:20",
+                "url": "https://files.pythonhosted.org/packages/60/db/645aa9af249f059cc3a368b118de33889219e0362141e75d4eaf6f80f163/pycrypto-2.6.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "55a61a054aa66812daf5161a0d5d7eda",
+                "sha256": "f2ce1e989b272cfcb677616763e0a2e7ec659effa67a88aa92b3a65528f60a3c"
+            },
+            "downloads": -1,
+            "filename": "pycrypto-2.6.1.tar.gz",
+            "has_sig": true,
+            "md5_digest": "55a61a054aa66812daf5161a0d5d7eda",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 446240,
+            "upload_time": "2014-06-20T08:10:20",
+            "url": "https://files.pythonhosted.org/packages/60/db/645aa9af249f059cc3a368b118de33889219e0362141e75d4eaf6f80f163/pycrypto-2.6.1.tar.gz"
+        }
+    ],
+    "package_name": "pycrypto"
+}

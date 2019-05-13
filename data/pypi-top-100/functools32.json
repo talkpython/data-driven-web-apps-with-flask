@@ -1,0 +1,138 @@
+{
+    "info": {
+        "author": "ENDOH takanao",
+        "author_email": "djmchl@gmail.com",
+        "bugtrack_url": null,
+        "classifiers": [],
+        "description": "This is a backport of the functools standard library module from\nPython 3.2.3 for use on Python 2.7 and PyPy. It includes\nnew features `lru_cache` (Least-recently-used cache decorator).",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/MiCHiLU/python-functools32",
+        "keywords": null,
+        "license": "PSF license",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "functools32",
+        "package_url": "https://pypi.org/project/functools32/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/functools32/",
+        "release_url": "https://pypi.org/project/functools32/3.2.3-2/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Backport of the functools module from Python 3.2.3 for use on 2.7 and PyPy.",
+        "version": "3.2.3-2"
+    },
+    "last_serial": 1628629,
+    "releases": {
+        "3.2.3": [],
+        "3.2.3-1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6c226dfc1ca56ba3ee200d603b780cbc",
+                    "sha256": "6a3b7420432b0817ef192aef341cd766e199801a90ca7fe319f9d5fca40edda2"
+                },
+                "downloads": -1,
+                "filename": "functools32-3.2.3-1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6c226dfc1ca56ba3ee200d603b780cbc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31145,
+                "upload_time": "2012-09-19T04:48:12",
+                "url": "https://files.pythonhosted.org/packages/e9/07/09abd35aaaef501a669f1b0bc39004e512dce3abaa1846450a952a09f9eb/functools32-3.2.3-1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b678cafedac34ff19e8962e965f773bb",
+                    "sha256": "3c0752c677a8b5169ac7afb194847db53d4ece88681951c6ca6e9fdd1c12ed62"
+                },
+                "downloads": -1,
+                "filename": "functools32-3.2.3-1.zip",
+                "has_sig": false,
+                "md5_digest": "b678cafedac34ff19e8962e965f773bb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34000,
+                "upload_time": "2012-09-19T04:48:13",
+                "url": "https://files.pythonhosted.org/packages/bb/02/8d75ecdec125bed75e414bd9c52160c42c7fdbbc11b01435e46d8859651b/functools32-3.2.3-1.zip"
+            }
+        ],
+        "3.2.3-2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "09f24ffd9af9f6cd0f63cb9f4e23d4b2",
+                    "sha256": "f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d"
+                },
+                "downloads": -1,
+                "filename": "functools32-3.2.3-2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "09f24ffd9af9f6cd0f63cb9f4e23d4b2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31171,
+                "upload_time": "2015-07-11T02:46:58",
+                "url": "https://files.pythonhosted.org/packages/c5/60/6ac26ad05857c601308d8fb9e87fa36d0ebf889423f47c3502ef034365db/functools32-3.2.3-2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d55232eb132ec779e6893c902a0bc5ad",
+                    "sha256": "89d824aa6c358c421a234d7f9ee0bd75933a67c29588ce50aaa3acdf4d403fa0"
+                },
+                "downloads": -1,
+                "filename": "functools32-3.2.3-2.zip",
+                "has_sig": false,
+                "md5_digest": "d55232eb132ec779e6893c902a0bc5ad",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34081,
+                "upload_time": "2015-07-11T02:47:05",
+                "url": "https://files.pythonhosted.org/packages/5e/1a/0aa2c8195a204a9f51284018562dea77e25511f02fe924fac202fc012172/functools32-3.2.3-2.zip"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "09f24ffd9af9f6cd0f63cb9f4e23d4b2",
+                "sha256": "f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d"
+            },
+            "downloads": -1,
+            "filename": "functools32-3.2.3-2.tar.gz",
+            "has_sig": false,
+            "md5_digest": "09f24ffd9af9f6cd0f63cb9f4e23d4b2",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 31171,
+            "upload_time": "2015-07-11T02:46:58",
+            "url": "https://files.pythonhosted.org/packages/c5/60/6ac26ad05857c601308d8fb9e87fa36d0ebf889423f47c3502ef034365db/functools32-3.2.3-2.tar.gz"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "d55232eb132ec779e6893c902a0bc5ad",
+                "sha256": "89d824aa6c358c421a234d7f9ee0bd75933a67c29588ce50aaa3acdf4d403fa0"
+            },
+            "downloads": -1,
+            "filename": "functools32-3.2.3-2.zip",
+            "has_sig": false,
+            "md5_digest": "d55232eb132ec779e6893c902a0bc5ad",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 34081,
+            "upload_time": "2015-07-11T02:47:05",
+            "url": "https://files.pythonhosted.org/packages/5e/1a/0aa2c8195a204a9f51284018562dea77e25511f02fe924fac202fc012172/functools32-3.2.3-2.zip"
+        }
+    ],
+    "package_name": "functools32"
+}

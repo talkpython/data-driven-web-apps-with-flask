@@ -1,0 +1,428 @@
+{
+    "info": {
+        "author": "Ian Cordasco",
+        "author_email": "graffatcolmingov@gmail.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Software Development :: Quality Assurance"
+        ],
+        "description": "McCabe complexity checker\n=========================\n\nNed's script to check McCabe complexity.\n\nThis module provides a plugin for ``flake8``, the Python code checker.\n\n\nInstallation\n------------\n\nYou can install, upgrade, uninstall ``mccabe`` with these commands::\n\n  $ pip install mccabe\n  $ pip install --upgrade mccabe\n  $ pip uninstall mccabe\n\n\nStandalone script\n-----------------\n\nThe complexity checker can be used directly::\n\n  $ python -m mccabe --min 5 mccabe.py\n  (\"185:1: 'PathGraphingAstVisitor.visitIf'\", 5)\n  (\"71:1: 'PathGraph.to_dot'\", 5)\n  (\"245:1: 'McCabeChecker.run'\", 5)\n  (\"283:1: 'main'\", 7)\n  (\"203:1: 'PathGraphingAstVisitor.visitTryExcept'\", 5)\n  (\"257:1: 'get_code_complexity'\", 5)\n\n\nPlugin for Flake8\n-----------------\n\nWhen both ``flake8 2.0`` and ``mccabe`` are installed, the plugin is\navailable in ``flake8``::\n\n  $ flake8 --version\n  2.0 (pep8: 1.4.2, pyflakes: 0.6.1, mccabe: 0.2)\n\nBy default the plugin is disabled.  Use the ``--max-complexity`` switch to\nenable it.  It will emit a warning if the McCabe complexity of a function is\nhigher that the value::\n\n    $ flake8 --max-complexity 10 coolproject\n    ...\n    coolproject/mod.py:1204:1: C901 'CoolFactory.prepare' is too complex (14)\n\nThis feature is quite useful to detect over-complex code.  According to McCabe,\nanything that goes beyond 10 is too complex.\n\n\nLinks\n-----\n\n* Feedback and ideas: http://mail.python.org/mailman/listinfo/code-quality\n\n* Cyclomatic complexity: http://en.wikipedia.org/wiki/Cyclomatic_complexity.\n\n* Ned Batchelder's script:\n  http://nedbatchelder.com/blog/200803/python_code_complexity_microtool.html\n\n\nChanges\n-------\n\n0.6.1 - 2017-01-26\n``````````````````\n\n* Fix signature for ``PathGraphingAstVisitor.default`` to match the signature\n  for ``ASTVisitor``\n\n0.6.0 - 2017-01-23\n``````````````````\n\n* Add support for Python 3.6\n\n* Fix handling for missing statement types\n\n0.5.3 - 2016-12-14\n``````````````````\n\n* Report actual column number of violation instead of the start of the line\n\n0.5.2 - 2016-07-31\n``````````````````\n\n* When opening files ourselves, make sure we always name the file variable\n\n0.5.1 - 2016-07-28\n``````````````````\n\n* Set default maximum complexity to -1 on the class itself\n\n0.5.0 - 2016-05-30\n``````````````````\n\n* PyCon 2016 PDX release\n\n* Add support for Flake8 3.0\n\n0.4.0 - 2016-01-27\n``````````````````\n\n* Stop testing on Python 3.2\n\n* Add support for async/await keywords on Python 3.5 from PEP 0492\n\n0.3.1 - 2015-06-14\n``````````````````\n\n* Include ``test_mccabe.py`` in releases.\n\n* Always coerce the ``max_complexity`` value from Flake8's entry-point to an\n  integer.\n\n0.3 - 2014-12-17\n````````````````\n\n* Computation was wrong: the mccabe complexity starts at 1, not 2.\n\n* The ``max-complexity`` value is now inclusive.  E.g.: if the\n  value is 10 and the reported complexity is 10, then it passes.\n\n* Add tests.\n\n\n0.2.1 - 2013-04-03\n``````````````````\n\n* Do not require ``setuptools`` in setup.py.  It works around an issue\n  with ``pip`` and Python 3.\n\n\n0.2 - 2013-02-22\n````````````````\n\n* Rename project to ``mccabe``.\n\n* Provide ``flake8.extension`` setuptools entry point.\n\n* Read ``max-complexity`` from the configuration file.\n\n* Rename argument ``min_complexity`` to ``threshold``.\n\n\n0.1 - 2013-02-11\n````````````````\n* First release\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/pycqa/mccabe",
+        "keywords": "flake8 mccabe",
+        "license": "Expat license",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "mccabe",
+        "package_url": "https://pypi.org/project/mccabe/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/mccabe/",
+        "release_url": "https://pypi.org/project/mccabe/0.6.1/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "McCabe checker, plugin for flake8",
+        "version": "0.6.1"
+    },
+    "last_serial": 2600671,
+    "releases": {
+        "0.0.0": [],
+        "0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c1012c7c24081471f45aab864d4e3805",
+                    "sha256": "e0210235022d05d11b3c4c86e2cb65d5b307ab46ac88882d20ff998fd2ef0ad4"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c1012c7c24081471f45aab864d4e3805",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4948,
+                "upload_time": "2013-02-22T07:07:44",
+                "url": "https://files.pythonhosted.org/packages/e5/7e/560bce4f5c06e8a30e9f5475d8e285eb3494a3591a04849c3cc822215493/mccabe-0.2.tar.gz"
+            }
+        ],
+        "0.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5a3f3fa6a4bad126c88aaaa7dab682f5",
+                    "sha256": "5a2a170e47de5593a6abfae1e9542bd2c3924ac62bbe4e6ed96c953c0352243a"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5a3f3fa6a4bad126c88aaaa7dab682f5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5031,
+                "upload_time": "2013-04-03T12:52:36",
+                "url": "https://files.pythonhosted.org/packages/ec/b1/79c08edbb2a652f2f697c2b71dc08ede14e615bf6aa325237a32e0ed36f0/mccabe-0.2.1.tar.gz"
+            }
+        ],
+        "0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fb444e9597f475743eb63920e83aa7b5",
+                    "sha256": "89cf6bf4ff644ff8b912e2fa7e2abb68d57a8e7e918e393c72840d30d2ebcf0b"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "fb444e9597f475743eb63920e83aa7b5",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 7382,
+                "upload_time": "2014-12-17T01:23:32",
+                "url": "https://files.pythonhosted.org/packages/22/b9/0f8c3a3f734bc66f3f278a658285f4a5347a52b0c38ce8c11863930ad77f/mccabe-0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "81640948ff226f8c12b3277059489157",
+                    "sha256": "3d8ca9bf65c5014f469180544d1dd5bb5b9df709aad6304f9c2e4370ae0a7b7c"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "81640948ff226f8c12b3277059489157",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6127,
+                "upload_time": "2014-12-17T01:23:30",
+                "url": "https://files.pythonhosted.org/packages/c9/2e/75231479e11a906b64ac43bad9d0bb534d00080b18bdca8db9da46e1faf7/mccabe-0.3.tar.gz"
+            }
+        ],
+        "0.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bea6b1fdd1cffb8afb4d7cac046f104f",
+                    "sha256": "bd6c080fb372aebcb0ce19e35ddac744f2abf5a7befa207db2d1097d48efe63a"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.3.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "bea6b1fdd1cffb8afb4d7cac046f104f",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 7575,
+                "upload_time": "2015-06-14T18:58:08",
+                "url": "https://files.pythonhosted.org/packages/84/75/d7966b7280635e96a243d27ca39e5954e9af632a36a4e8eee44660e53540/mccabe-0.3.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9a1570c470ff5db678cc0c03d5c0c237",
+                    "sha256": "5f7ea6fb3aa9afe146d07fd6d5cedf788747d8b0c29e44732453c2b2db1e3d16"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9a1570c470ff5db678cc0c03d5c0c237",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7586,
+                "upload_time": "2015-06-14T18:58:12",
+                "url": "https://files.pythonhosted.org/packages/bb/c9/a7d3a53fdaee1fdff753e8333ccf8affe944ac1d4dc4894dbcaa3db5954b/mccabe-0.3.1.tar.gz"
+            }
+        ],
+        "0.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "eed948bb360ba1f8a7d64a457cf157ee",
+                    "sha256": "cbc2938f6c01061bc6d21d0c838c2489664755cb18676f0734d7617f4577d09e"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "eed948bb360ba1f8a7d64a457cf157ee",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 7791,
+                "upload_time": "2016-01-27T16:41:19",
+                "url": "https://files.pythonhosted.org/packages/ba/99/352f7ff08af01c11a8e38260796b9096e662334b454f934f06210eabbb46/mccabe-0.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8c425db05f310adcd4bb174b991f26f5",
+                    "sha256": "9a2b12ebd876e77c72e41ebf401cc2e7c5b566649d50105ca49822688642207b"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8c425db05f310adcd4bb174b991f26f5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7916,
+                "upload_time": "2016-01-27T16:41:25",
+                "url": "https://files.pythonhosted.org/packages/f6/e7/54461a958bb8b16f8db5f849d5d08b7d74153e064ac385fb68ff09f0bd27/mccabe-0.4.0.tar.gz"
+            }
+        ],
+        "0.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "89c36f1d550ee2bdffea6034f86bef32",
+                    "sha256": "6c1c06d7bb6bc24a85b11eabc8944c0f6a72e6f35f208d4796dcbb27dae75ee8"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "89c36f1d550ee2bdffea6034f86bef32",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 7962,
+                "upload_time": "2016-05-30T21:01:15",
+                "url": "https://files.pythonhosted.org/packages/59/a2/1382f6a41af561a12914bb3e79edef744872520db42f99347bcdc3af6bbc/mccabe-0.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8304dc8dc2c7e0b15912e2638ee21c0a",
+                    "sha256": "379358498f58f69157b53f59f46aefda0e9a3eb81365238f69fbedf7014e21ab"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8304dc8dc2c7e0b15912e2638ee21c0a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8069,
+                "upload_time": "2016-05-30T21:01:22",
+                "url": "https://files.pythonhosted.org/packages/57/fa/4a0cda4cf9877d2bd12ab031ae4ecfdc5c1bbb6e68f3fe80da4f29947c2a/mccabe-0.5.0.tar.gz"
+            }
+        ],
+        "0.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "76d90b138aa44a57af3cf03887fe0b89",
+                    "sha256": "77490ba525a523f72e6913cae37c3ae18a901d49c8f7fa824a9be35a4f071c8b"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "76d90b138aa44a57af3cf03887fe0b89",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8241,
+                "upload_time": "2016-07-28T10:56:42",
+                "url": "https://files.pythonhosted.org/packages/be/5e/fdae307772168a9b5cdb352c5f125e3c097cf610f481fb73b652274bde89/mccabe-0.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "40d1d6380fc210e761b59f0d4929541f",
+                    "sha256": "8a30b9cb533b2bde819e7143bd56efc8b52e2fb9ed5ab0983cfd52ca596f88b2"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "40d1d6380fc210e761b59f0d4929541f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8312,
+                "upload_time": "2016-07-28T10:56:44",
+                "url": "https://files.pythonhosted.org/packages/fd/7c/9cbdc4515bc26e8527d164fc5983308d721c685620ee1aa025a72c7f056f/mccabe-0.5.1.tar.gz"
+            }
+        ],
+        "0.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a8d6b93fd1a93478f39076cb0fc4d65c",
+                    "sha256": "91cc38b2c7636aaf1903e06d96ee960fb3dff9ca3afc595627c9a638f8e86d2b"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.5.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a8d6b93fd1a93478f39076cb0fc4d65c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8339,
+                "upload_time": "2016-07-31T19:05:58",
+                "url": "https://files.pythonhosted.org/packages/17/9c/66792b5f917a09f7e433dfd6e20ac12964006e1d794f799c2333afc10be1/mccabe-0.5.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01fe4ba7270322aabc0fdf3f2189c5cd",
+                    "sha256": "3473f06c8b757bbb5cdf295099bf64032e5f7d6fe0ec2f97ee9b23cb0a435aff"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "01fe4ba7270322aabc0fdf3f2189c5cd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8366,
+                "upload_time": "2016-07-31T19:06:00",
+                "url": "https://files.pythonhosted.org/packages/f1/b7/ff36d1a163079688633a776e1717b5459caccbb68973afab2aa8345ac40f/mccabe-0.5.2.tar.gz"
+            }
+        ],
+        "0.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a2b3c3a1bf3f0e1aaebd689a14a015fa",
+                    "sha256": "f9b58bf366c1506dcd6117b33e5c4874746f0de859c9c7cab8b516cb6be1d22e"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.5.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a2b3c3a1bf3f0e1aaebd689a14a015fa",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8452,
+                "upload_time": "2016-12-14T13:09:33",
+                "url": "https://files.pythonhosted.org/packages/69/be/9c322ed286263a93e5ee0ff575662d0709fc73ee906522e7cfa72b08b946/mccabe-0.5.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "74b632a536d99015351044737cd3b242",
+                    "sha256": "16293af41e7242031afd73896fef6458f4cad38201d21e28f344fff50ae1c25e"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "74b632a536d99015351044737cd3b242",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8460,
+                "upload_time": "2016-12-14T13:09:36",
+                "url": "https://files.pythonhosted.org/packages/c9/0b/b66016d49fc1b24864743e388bc4fa7dcbb83c29553b867404fad5b5855d/mccabe-0.5.3.tar.gz"
+            }
+        ],
+        "0.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5d66549fd1aa9b6df6aa50a2f08338ba",
+                    "sha256": "c6f88ac33667c89d6588e5189334d051f186f4dd3ae5139586af54677c36b5a8"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5d66549fd1aa9b6df6aa50a2f08338ba",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8470,
+                "upload_time": "2017-01-23T12:42:24",
+                "url": "https://files.pythonhosted.org/packages/68/21/b80d285b35061757a6fccd867d40757d21fda8337537de288c463b06ecfd/mccabe-0.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e4c44759d274152c07dcdacfaf0a4f6",
+                    "sha256": "de9bbfe5b771e4c11b1521f3e338fe265a12296b59302f43a3bbf3e02d4b98b1"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e4c44759d274152c07dcdacfaf0a4f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8542,
+                "upload_time": "2017-01-23T12:42:25",
+                "url": "https://files.pythonhosted.org/packages/3c/e1/619bae96ab3712279061952585369d64dcf22b9fd1ad29c83c6468df1825/mccabe-0.6.0.tar.gz"
+            }
+        ],
+        "0.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6afffd590703262843327af8c4051928",
+                    "sha256": "ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.6.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6afffd590703262843327af8c4051928",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8556,
+                "upload_time": "2017-01-26T22:13:14",
+                "url": "https://files.pythonhosted.org/packages/87/89/479dc97e18549e21354893e4ee4ef36db1d237534982482c3681ee6e7b57/mccabe-0.6.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "723df2f7b1737b8887475bac4c763e1e",
+                    "sha256": "dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
+                },
+                "downloads": -1,
+                "filename": "mccabe-0.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "723df2f7b1737b8887475bac4c763e1e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8612,
+                "upload_time": "2017-01-26T22:13:15",
+                "url": "https://files.pythonhosted.org/packages/06/18/fa675aa501e11d6d6ca0ae73a101b2f3571a565e0f7d38e062eec18a91ee/mccabe-0.6.1.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "6afffd590703262843327af8c4051928",
+                "sha256": "ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"
+            },
+            "downloads": -1,
+            "filename": "mccabe-0.6.1-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "6afffd590703262843327af8c4051928",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 8556,
+            "upload_time": "2017-01-26T22:13:14",
+            "url": "https://files.pythonhosted.org/packages/87/89/479dc97e18549e21354893e4ee4ef36db1d237534982482c3681ee6e7b57/mccabe-0.6.1-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "723df2f7b1737b8887475bac4c763e1e",
+                "sha256": "dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
+            },
+            "downloads": -1,
+            "filename": "mccabe-0.6.1.tar.gz",
+            "has_sig": false,
+            "md5_digest": "723df2f7b1737b8887475bac4c763e1e",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 8612,
+            "upload_time": "2017-01-26T22:13:15",
+            "url": "https://files.pythonhosted.org/packages/06/18/fa675aa501e11d6d6ca0ae73a101b2f3571a565e0f7d38e062eec18a91ee/mccabe-0.6.1.tar.gz"
+        }
+    ],
+    "package_name": "mccabe"
+}

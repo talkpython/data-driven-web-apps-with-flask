@@ -1,0 +1,690 @@
+{
+    "info": {
+        "author": "Michele Simionato",
+        "author_email": "michele.simionato@gmail.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Natural Language :: English",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Topic :: Software Development :: Libraries",
+            "Topic :: Utilities"
+        ],
+        "description": "Decorator module\n=================\n\n:Author: Michele Simionato\n:E-mail: michele.simionato@gmail.com\n:Requires: Python from 2.6 to 3.6\n:Download page: http://pypi.python.org/pypi/decorator\n:Installation: ``pip install decorator``\n:License: BSD license\n\nInstallation\n-------------\n\nIf you are lazy, just perform\n\n `$ pip install decorator`\n\nwhich will install just the module on your system.\n\nIf you prefer to install the full distribution from source, including\nthe documentation, clone the `GitHub repo`_ or download the tarball_, unpack it and run\n\n `$ pip install .`\n\nin the main directory, possibly as superuser.\n\n.. _tarball: http://pypi.python.org/pypi/decorator\n.. _GitHub repo: https://github.com/micheles/decorator\n\nTesting\n--------\n\nIf you have the source code installation you can run the tests with\n\n `$ python src/tests/test.py -v`\n\nor (if you have setuptools installed)\n\n `$ python setup.py test`\n\nNotice that you may run into trouble if in your system there\nis an older version of the decorator module; in such a case remove the\nold version. It is safe even to copy the module `decorator.py` over\nan existing one, since we kept backward-compatibility for a long time.\n\nRepository\n---------------\n\nThe project is hosted on GitHub. You can look at the source here:\n\n https://github.com/micheles/decorator\n\nDocumentation\n---------------\n\nThe documentation has been moved to http://decorator.readthedocs.io/en/latest/\nYou can download a PDF version of it from http://media.readthedocs.org/pdf/decorator/latest/decorator.pdf\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/micheles/decorator",
+        "keywords": "decorators generic utility",
+        "license": "new BSD License",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "decorator",
+        "package_url": "https://pypi.org/project/decorator/",
+        "platform": "All",
+        "project_url": "https://pypi.org/project/decorator/",
+        "release_url": "https://pypi.org/project/decorator/4.3.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Better living through Python with decorators",
+        "version": "4.3.0"
+    },
+    "last_serial": 3766330,
+    "releases": {
+        "3.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a8fc62acd705f487a71bc406e19e0cc6",
+                    "sha256": "2cf1b977a3728cfaf69ce976f3f41c93a01c148c4dd692e6917197ae1211bc1c"
+                },
+                "downloads": -1,
+                "filename": "decorator-3.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a8fc62acd705f487a71bc406e19e0cc6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28421,
+                "upload_time": "2011-04-22T14:36:49",
+                "url": "https://files.pythonhosted.org/packages/48/22/58f948f7bc5de0b1aa1aaddb0d294b9333495009dda1fb08443dec5381a9/decorator-3.3.1.tar.gz"
+            }
+        ],
+        "3.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "446f5165af67eb0fcd8fd28abd259e86",
+                    "sha256": "c878e3c9a4015893fddcc7a145017bd54bd51cda0eb234cab6a20fa02540cb1f"
+                },
+                "downloads": -1,
+                "filename": "decorator-3.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "446f5165af67eb0fcd8fd28abd259e86",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28506,
+                "upload_time": "2011-09-01T12:02:49",
+                "url": "https://files.pythonhosted.org/packages/f5/52/a4f3efffddfdfa602b9bb9d77ee984e2ee7c6c62a87de3016e51f5a83a75/decorator-3.3.2.tar.gz"
+            }
+        ],
+        "3.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f5a0227cb1c34a0e7d5b7f9cd2ae3135",
+                    "sha256": "1c14b2257e860958bc0e95a48d1946d90d5dfbed3e3353d7e1c65aa4cb2a0da2"
+                },
+                "downloads": -1,
+                "filename": "decorator-3.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f5a0227cb1c34a0e7d5b7f9cd2ae3135",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 28542,
+                "upload_time": "2012-04-23T16:52:06",
+                "url": "https://files.pythonhosted.org/packages/4e/bf/d7a2984e5c09312c93338c2ee0223bb46ca1ee00bad9cff33779eb21526b/decorator-3.3.3.tar.gz"
+            }
+        ],
+        "3.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1e8756f719d746e2fc0dd28b41251356",
+                    "sha256": "c20b404cbb7ee5cebd506688e0114e3cd76f5ce233805a51f36e1a7988d9d783"
+                },
+                "downloads": -1,
+                "filename": "decorator-3.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1e8756f719d746e2fc0dd28b41251356",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30333,
+                "upload_time": "2012-10-18T08:53:18",
+                "url": "https://files.pythonhosted.org/packages/f3/26/876d492f2394f29401eb652ddfa53dec2bc8721861c7fe0dce1b5d0d2b6a/decorator-3.4.0.tar.gz"
+            }
+        ],
+        "3.4.1": [],
+        "3.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e0536870d2b83ae27d58dbf22582f4d",
+                    "sha256": "7320002ce61dea6aa24adc945d9d7831b3669553158905cdd12f5d0027b54b44"
+                },
+                "downloads": -1,
+                "filename": "decorator-3.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e0536870d2b83ae27d58dbf22582f4d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6115,
+                "upload_time": "2015-03-22T13:14:34",
+                "url": "https://files.pythonhosted.org/packages/35/3a/42566eb7a2cbac774399871af04e11d7ae3fc2579e7dae85213b8d1d1c57/decorator-3.4.2.tar.gz"
+            }
+        ],
+        "4.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8e1f3e1d39cc5ca7bd9f651ee92ae7c1",
+                    "sha256": "8a4197daa7c41211406cf17bb34d07096ab1b574c25f088f9b022f6e0aba0c1d"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8e1f3e1d39cc5ca7bd9f651ee92ae7c1",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 8588,
+                "upload_time": "2015-07-24T10:03:27",
+                "url": "https://files.pythonhosted.org/packages/62/ad/ecdc6b1d0241bf4bf3d7f65b1576c4d8ff1d057bea786e080ae843c991b0/decorator-4.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f417f7ad86de03eb37ecc20c3125f649",
+                    "sha256": "c32004e17a1eddc3daee4a4941e04321fdd9fe4622642a01c70b5d530ea74534"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f417f7ad86de03eb37ecc20c3125f649",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 80262,
+                "upload_time": "2015-07-24T10:03:23",
+                "url": "https://files.pythonhosted.org/packages/57/07/f22e2c41d23d71d482b1c4e45fa3e51af4d521da17c5cca0ffd7b30f6789/decorator-4.0.0.tar.gz"
+            }
+        ],
+        "4.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1fba6846ec2e2623d449f3e47252917e",
+                    "sha256": "11390161332cfa3894c368fc496865b41526271373873333de2a8d682faa238c"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "1fba6846ec2e2623d449f3e47252917e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 8530,
+                "upload_time": "2015-07-28T03:44:41",
+                "url": "https://files.pythonhosted.org/packages/ea/40/0c221a2d74f91c6966f77615b6d978bd32b34922827cbf80a3654f396011/decorator-4.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2613740b6d2c56c9dd3a20fd5f9bd2a7",
+                    "sha256": "671fe2ca0c80eecd7ae3807492875fb2e0eb376d314cf15a535b17adbbe507b2"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2613740b6d2c56c9dd3a20fd5f9bd2a7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66085,
+                "upload_time": "2015-07-28T03:44:37",
+                "url": "https://files.pythonhosted.org/packages/34/2b/ab9649b98c1ac3e3f0a070ff76896eeaa1144cbe8bab02b4711738478526/decorator-4.0.1.tar.gz"
+            }
+        ],
+        "4.0.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ae79c6013101cdfee49146bacbc3fb10",
+                    "sha256": "5aff536ed9a65c99e8465c774d5859e56e52300aea0a5012c7a1c4a781fbdddb"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.10-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ae79c6013101cdfee49146bacbc3fb10",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 9241,
+                "upload_time": "2016-06-07T02:26:49",
+                "url": "https://files.pythonhosted.org/packages/53/24/cc53f9f216dd5ef269e0af7c7651cbda162554a5b088621a205961c07a6f/decorator-4.0.10-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "434b57fdc3230c500716c5aff8896100",
+                    "sha256": "9c6e98edcb33499881b86ede07d9968c81ab7c769e28e9af24075f0a5379f070"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "434b57fdc3230c500716c5aff8896100",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68560,
+                "upload_time": "2016-06-07T02:26:44",
+                "url": "https://files.pythonhosted.org/packages/13/8a/4eed41e338e8dcc13ca41c94b142d4d20c0de684ee5065523fee406ce76f/decorator-4.0.10.tar.gz"
+            }
+        ],
+        "4.0.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0b3b4cad44b9ea580a7458c8f3e5e506",
+                    "sha256": "73cbaadb8bc4e3c65fe1100773d56331a2d756cc0f5c7b9d8d5d5223fe04f600"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.11-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0b3b4cad44b9ea580a7458c8f3e5e506",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.5",
+                "size": 8854,
+                "upload_time": "2017-01-15T09:47:36",
+                "url": "https://files.pythonhosted.org/packages/00/cc/dd79ea98a0ff5a01d714c37eddd99cd0a71557113f1511921d1ef9a083b8/decorator-4.0.11-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "73644c8f0bd4983d1b6a34b49adec0ae",
+                    "sha256": "953d6bf082b100f43229cf547f4f97f97e970f5ad645ee7601d55ff87afdfe76"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "73644c8f0bd4983d1b6a34b49adec0ae",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 70616,
+                "upload_time": "2017-01-15T09:47:34",
+                "url": "https://files.pythonhosted.org/packages/cc/ac/5a16f1fc0506ff72fcc8fd4e858e3a1c231f224ab79bb7c4c9b2094cc570/decorator-4.0.11.tar.gz"
+            }
+        ],
+        "4.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6e6b46b2ed8ed0ebd45938c8e748a0a3",
+                    "sha256": "7f4a9599355fe2e3d10353340ee79d65f1b48e424db09fb9349171ecdb0cfb1c"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6e6b46b2ed8ed0ebd45938c8e748a0a3",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 8535,
+                "upload_time": "2015-07-28T07:31:31",
+                "url": "https://files.pythonhosted.org/packages/a3/8e/530a76d6608260902970ecd8cf68a199593d7a76162d6d4d09ccc17c0888/decorator-4.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "033c9563af492c4ce2680ee6ca481fa7",
+                    "sha256": "1a089279d5de2471c47624d4463f2e5b3fc6a2cf65045c39bf714fc461a25206"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "033c9563af492c4ce2680ee6ca481fa7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 64850,
+                "upload_time": "2015-07-28T07:31:28",
+                "url": "https://files.pythonhosted.org/packages/c5/dd/2981cc27073de0df432d95f194cf9be333f7e373fcea7962488d5755c1a4/decorator-4.0.2.tar.gz"
+            }
+        ],
+        "4.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d9e8e8f4a3b2865b21e119bc9b1ab5ed",
+                    "sha256": "4d8c48dfe8b0420a9d6830c6694be91f2b7ecee9b5733355044bb653f9b6e161"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d9e8e8f4a3b2865b21e119bc9b1ab5ed",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 8539,
+                "upload_time": "2015-09-25T02:19:15",
+                "url": "https://files.pythonhosted.org/packages/86/12/f0d5879474424dd9379ec330975a85891fe06dbf4861acbe4988c1c3047b/decorator-4.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "deb7b7fce8c7cba87a758b1c816a99a1",
+                    "sha256": "6809b30f29ff372c47cfccf71db9a31b185abfbb70a0954eba2544aabcdd2615"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "deb7b7fce8c7cba87a758b1c816a99a1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 66835,
+                "upload_time": "2015-09-25T02:19:03",
+                "url": "https://files.pythonhosted.org/packages/2f/77/c2710fc6e73a612bc154e24ca34252c11a3682a997039ad7c0a0bf56f9bb/decorator-4.0.3.tar.gz"
+            }
+        ],
+        "4.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "18e6961dc58bd0e9cc5f8db265f7d5e4",
+                    "sha256": "01b7922a5c46e7c2b05edf992a17d81090d9e0e49caeedca490bb1dcb67ec255"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "18e6961dc58bd0e9cc5f8db265f7d5e4",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 8704,
+                "upload_time": "2015-09-25T02:37:16",
+                "url": "https://files.pythonhosted.org/packages/d0/4c/7664e6264b58fbc8a89b88f275cfc518b5c42cf71a55e6b716188ccc64e2/decorator-4.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd3a0669e1e6f09699eefa2c7fbd9756",
+                    "sha256": "5ad0c10fad31648cffa15ee0640eee04bbb1b843a02de26ad3700740768cc3e1"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dd3a0669e1e6f09699eefa2c7fbd9756",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 67150,
+                "upload_time": "2015-09-25T02:37:13",
+                "url": "https://files.pythonhosted.org/packages/7a/ee/c8a9600cd5b5e09d08828371f9010926bf9cc67522be03d131529f7237a3/decorator-4.0.4.tar.gz"
+            }
+        ],
+        "4.0.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c83705ce9746668d89806d9cce7fdd72",
+                    "sha256": "cc3dcda7835a7eafa887fad9d6a69b2d5fd77c0b1c2a1608f52b48e345e37206"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c83705ce9746668d89806d9cce7fdd72",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 21851,
+                "upload_time": "2015-12-11T04:15:18",
+                "url": "https://files.pythonhosted.org/packages/33/de/f87b10da4cebbea3f33386cc73e495a2a4a2ddfafaae8d58ac80b4d9494b/decorator-4.0.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b17bfa17c294d33022a89de0f61d38fe",
+                    "sha256": "1c6254597777fd003da2e8fb503c3dbf3d9e8f8d55f054709c0e65be3467209c"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b17bfa17c294d33022a89de0f61d38fe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68855,
+                "upload_time": "2015-12-11T04:15:14",
+                "url": "https://files.pythonhosted.org/packages/f7/34/204c9d36ce74607ecf399682121d6c7f05dc8c491fc1f644d86d0808d44a/decorator-4.0.6.tar.gz"
+            }
+        ],
+        "4.0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3bf05818357035898005c7809d7e47e9",
+                    "sha256": "267b0d56f2c44857f0803cefe5ee1b5d661fd17ef78be3b447d295f70d4a9a5d"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.8-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3bf05818357035898005c7809d7e47e9",
+                "packagetype": "bdist_wheel",
+                "python_version": "any",
+                "size": 22562,
+                "upload_time": "2016-02-07T15:30:26",
+                "url": "https://files.pythonhosted.org/packages/ed/69/24345e0d49c700557f135d01f5de03345368303fdee81b54eae28bf6143d/decorator-4.0.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "58a3c5069a6ca1b5a265ece1ba7de8f1",
+                    "sha256": "91ac16405c588b122b7abdcab5a1ab58420e6f823575b29a70d10f56f5c935d5"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "58a3c5069a6ca1b5a265ece1ba7de8f1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68706,
+                "upload_time": "2016-02-08T03:53:00",
+                "url": "https://files.pythonhosted.org/packages/f6/5d/515561750323dd09539a645b5ea43ec418a5d91a3933ecea0605b3c6caac/decorator-4.0.8.tar.gz"
+            }
+        ],
+        "4.0.8": [],
+        "4.0.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8bb72dc6e496c3f748d7aeabe4bfe4ff",
+                    "sha256": "f4718552326c99544a6ec602d96b7d03ef61180cf4a492c515ecb2438dd14ccc"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.9-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "8bb72dc6e496c3f748d7aeabe4bfe4ff",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.4",
+                "size": 22562,
+                "upload_time": "2016-02-08T10:18:46",
+                "url": "https://files.pythonhosted.org/packages/7d/ca/493b2377bf42d57bdd985c31975be3d2b500ad9079199cecb7633e8e2cde/decorator-4.0.9-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f12c5651ccd707e12a0abaa4f76cd69a",
+                    "sha256": "90022e83316363788a55352fe39cfbed357aa3a71d90e5f2803a35471de4bba8"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.0.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f12c5651ccd707e12a0abaa4f76cd69a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 68746,
+                "upload_time": "2016-02-08T10:18:35",
+                "url": "https://files.pythonhosted.org/packages/68/04/621a0f896544814ce6c6a0e6bc01d19fc41d245d4515a2e4cf9e07a45a12/decorator-4.0.9.tar.gz"
+            }
+        ],
+        "4.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0e730118662530c236b6cdeb38c61c1d",
+                    "sha256": "2d9de875c80754bedd2536fc7145de5d2a0690deda870c0b30042a07712052b0"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0e730118662530c236b6cdeb38c61c1d",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 8953,
+                "upload_time": "2017-07-15T07:29:52",
+                "url": "https://files.pythonhosted.org/packages/c3/bc/3a76f2d58894583970132914ccf819d396dc168e555792cc8147519e4a7e/decorator-4.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c1aada8dd540710490a97e6ec243e75b",
+                    "sha256": "53d6e5864a8f11e38eddf2206ad6de3eb4738114e54c9fb6bbe47a7ddbec523b"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c1aada8dd540710490a97e6ec243e75b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 73807,
+                "upload_time": "2017-07-15T07:29:51",
+                "url": "https://files.pythonhosted.org/packages/0c/6f/e81f4ef13afe85a89bb2e447b7d6635b5687f701f7d64b0a487330972993/decorator-4.1.0.tar.gz"
+            }
+        ],
+        "4.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3814f2468971f6bf10b2069cb15c41ff",
+                    "sha256": "f0a8292e752ab00515a76a2443da259d7915dc44ed75fbbafc3dc34b0f75a7a4"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3814f2468971f6bf10b2069cb15c41ff",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 8978,
+                "upload_time": "2017-07-15T12:46:39",
+                "url": "https://files.pythonhosted.org/packages/99/b6/c61aa88527801323afd3b6aa599f98eb191d2026fce53a195be22dd79745/decorator-4.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dbae97f4c5228c0c8616ac0252f57874",
+                    "sha256": "d48a0a1107a1e72ebd603ae3f9b06e4b9109f7fa92e28152a710adc4d37bf6e9"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dbae97f4c5228c0c8616ac0252f57874",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31979,
+                "upload_time": "2017-07-15T12:46:37",
+                "url": "https://files.pythonhosted.org/packages/a8/26/93428c6d2885c8b5f2f0c569f8cb9c40bb4ab85c270e52bfb481c7bb1529/decorator-4.1.1.tar.gz"
+            }
+        ],
+        "4.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0bec41a29a46fde7a205ba8aabaabf91",
+                    "sha256": "95a26b17806e284452bfd97fa20aa1e8cb4ee23542bda4dbac5e4562aa1642cd"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.1.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0bec41a29a46fde7a205ba8aabaabf91",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 9052,
+                "upload_time": "2017-07-23T15:25:25",
+                "url": "https://files.pythonhosted.org/packages/a1/4e/c42167ba5c3192bed633726d39d7896cc55d4fa3ec4a1fb60cd3a53fc4c7/decorator-4.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a0f7f4fe00ae2dde93494d90c192cf8c",
+                    "sha256": "7cb64d38cb8002971710c8899fbdfb859a23a364b7c99dab19d1f719c2ba16b5"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a0f7f4fe00ae2dde93494d90c192cf8c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32325,
+                "upload_time": "2017-07-23T15:25:22",
+                "url": "https://files.pythonhosted.org/packages/bb/e0/f6e41e9091e130bf16d4437dabbac3993908e4d6485ecbc985ef1352db94/decorator-4.1.2.tar.gz"
+            }
+        ],
+        "4.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee1340f665cc86f7ee03fea0030fa2d4",
+                    "sha256": "94d1d8905f5010d74bbbd86c30471255661a14187c45f8d7f3e5aa8540fdb2e5"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.2.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ee1340f665cc86f7ee03fea0030fa2d4",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 9310,
+                "upload_time": "2018-01-14T10:12:19",
+                "url": "https://files.pythonhosted.org/packages/e1/5a/53db15bf367d2028bdc6700dbdf1bdfab46b9f208b7516952817c0808118/decorator-4.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e886337e9f70e70d45d67266b8e66044",
+                    "sha256": "7d46dd9f3ea1cf5f06ee0e4e1277ae618cf48dfb10ada7c8427cd46c42702a0e"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e886337e9f70e70d45d67266b8e66044",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33376,
+                "upload_time": "2018-01-14T10:12:17",
+                "url": "https://files.pythonhosted.org/packages/70/f1/cb9373195639db13063f55eb06116310ad691e1fd125e6af057734dc44ea/decorator-4.2.1.tar.gz"
+            }
+        ],
+        "4.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0197f61c533d763d03bb4fb766e09687",
+                    "sha256": "2c51dff8ef3c447388fe5e4453d24a2bf128d3a4c32af3fabef1f01c6851ab82"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0197f61c533d763d03bb4fb766e09687",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.6",
+                "size": 9247,
+                "upload_time": "2018-04-15T12:50:31",
+                "url": "https://files.pythonhosted.org/packages/bc/bb/a24838832ba35baf52f32ab1a49b906b5f82fb7c76b2f6a7e35e140bac30/decorator-4.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "249e7299b9b4bced0c382343f84eb1c0",
+                    "sha256": "c39efa13fbdeb4506c476c9b3babf6a718da943dab7811c206005a4a956c080c"
+                },
+                "downloads": -1,
+                "filename": "decorator-4.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "249e7299b9b4bced0c382343f84eb1c0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 33758,
+                "upload_time": "2018-04-15T12:50:29",
+                "url": "https://files.pythonhosted.org/packages/6f/24/15a229626c775aae5806312f6bf1e2a73785be3402c0acdec5dbddd8c11e/decorator-4.3.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0197f61c533d763d03bb4fb766e09687",
+                "sha256": "2c51dff8ef3c447388fe5e4453d24a2bf128d3a4c32af3fabef1f01c6851ab82"
+            },
+            "downloads": -1,
+            "filename": "decorator-4.3.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "0197f61c533d763d03bb4fb766e09687",
+            "packagetype": "bdist_wheel",
+            "python_version": "3.6",
+            "size": 9247,
+            "upload_time": "2018-04-15T12:50:31",
+            "url": "https://files.pythonhosted.org/packages/bc/bb/a24838832ba35baf52f32ab1a49b906b5f82fb7c76b2f6a7e35e140bac30/decorator-4.3.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "249e7299b9b4bced0c382343f84eb1c0",
+                "sha256": "c39efa13fbdeb4506c476c9b3babf6a718da943dab7811c206005a4a956c080c"
+            },
+            "downloads": -1,
+            "filename": "decorator-4.3.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "249e7299b9b4bced0c382343f84eb1c0",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 33758,
+            "upload_time": "2018-04-15T12:50:29",
+            "url": "https://files.pythonhosted.org/packages/6f/24/15a229626c775aae5806312f6bf1e2a73785be3402c0acdec5dbddd8c11e/decorator-4.3.0.tar.gz"
+        }
+    ],
+    "package_name": "decorator"
+}

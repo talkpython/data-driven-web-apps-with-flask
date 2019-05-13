@@ -1,0 +1,757 @@
+{
+    "info": {
+        "author": "Armin Ronacher",
+        "author_email": "armin.ronacher@active-4.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Web Environment",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Software Development :: Libraries :: Python Modules"
+        ],
+        "description": "A collection of tools for internationalizing Python applications.\n\n\n",
+        "description_content_type": "",
+        "docs_url": "https://pythonhosted.org/Babel/",
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://babel.pocoo.org/",
+        "keywords": "",
+        "license": "BSD",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "Babel",
+        "package_url": "https://pypi.org/project/Babel/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/Babel/",
+        "release_url": "https://pypi.org/project/Babel/2.6.0/",
+        "requires_dist": [
+            "pytz (>=0a)"
+        ],
+        "requires_python": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
+        "summary": "Internationalization utilities",
+        "version": "2.6.0"
+    },
+    "last_serial": 3905922,
+    "releases": {
+        "0.8": [],
+        "0.8.1": [],
+        "0.9": [],
+        "0.9.1": [],
+        "0.9.2": [],
+        "0.9.3": [],
+        "0.9.4": [],
+        "0.9.5": [],
+        "0.9.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b4cd4fc5cbb87a5d90796f3f6a45fb92",
+                    "sha256": "b29dd100dbcfbe2ad83ed8faf1076cedbae4912ef3189e8aa092fed205ad40c4"
+                },
+                "downloads": -1,
+                "filename": "Babel-0.9.6-py2.3.egg",
+                "has_sig": false,
+                "md5_digest": "b4cd4fc5cbb87a5d90796f3f6a45fb92",
+                "packagetype": "bdist_egg",
+                "python_version": "2.3",
+                "size": 4384501,
+                "upload_time": "2011-03-18T07:38:04",
+                "url": "https://files.pythonhosted.org/packages/e6/16/6d54f756bcbb658cb61d35d860eb280df9466a6cd71171aae341a9512f3a/Babel-0.9.6-py2.3.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "be5a6c59b62c2c75a97c6cdeb281ef08",
+                    "sha256": "89c43eabe1eb606455c1921a595241b2c0c98dbb1b0aaaf35ddcf2e7428c9882"
+                },
+                "downloads": -1,
+                "filename": "Babel-0.9.6-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "be5a6c59b62c2c75a97c6cdeb281ef08",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 1861659,
+                "upload_time": "2011-03-18T07:41:28",
+                "url": "https://files.pythonhosted.org/packages/6d/56/503a8e4d4987d598d258a163308a03115a9e0f9ef69d6100ede3f81ea367/Babel-0.9.6-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "827da7be4d083373753b55198953f202",
+                    "sha256": "c0d3424b3e8a41e53d536a448be85f1969d186daf571f277c3d2c1b258241c67"
+                },
+                "downloads": -1,
+                "filename": "Babel-0.9.6-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "827da7be4d083373753b55198953f202",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 1860073,
+                "upload_time": "2011-03-18T07:42:32",
+                "url": "https://files.pythonhosted.org/packages/2d/d1/fbcc2008c6581ad30d3bae9394671eea729dfd211fa5214e480310ba3ed7/Babel-0.9.6-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e66698fb97c8dc0a7c6b7b86c91d62be",
+                    "sha256": "b99a0e43027d2ad5f1e8f55a96eea5f25d06f8a35d9af30cc29ff1aa196c088b"
+                },
+                "downloads": -1,
+                "filename": "Babel-0.9.6-py2.6.egg",
+                "has_sig": false,
+                "md5_digest": "e66698fb97c8dc0a7c6b7b86c91d62be",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 1859723,
+                "upload_time": "2011-03-18T07:43:10",
+                "url": "https://files.pythonhosted.org/packages/5a/9d/2ed1579c088a6c5953bf31b9929cb0b2421252bd0f7fceed6e9e8f21b007/Babel-0.9.6-py2.6.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "144b6a12aafe1ba15b3766d9f8b0be81",
+                    "sha256": "65e7f3df394cbd163345247345a2956451a9f102497ebf12b32ba3f229f3ecc8"
+                },
+                "downloads": -1,
+                "filename": "Babel-0.9.6-py2.7.egg",
+                "has_sig": false,
+                "md5_digest": "144b6a12aafe1ba15b3766d9f8b0be81",
+                "packagetype": "bdist_egg",
+                "python_version": "2.7",
+                "size": 1859520,
+                "upload_time": "2011-03-18T07:43:41",
+                "url": "https://files.pythonhosted.org/packages/6b/00/ce976c63f004a440efb77a3a58315fbc08139171998787a64be836e7686e/Babel-0.9.6-py2.7.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f0edcad03dfdb5505f337ef1a7690325",
+                    "sha256": "4a3a085ecf1fcd2736573538ffa114f1f4331b3bbbdd69381e6e172c49c9750f"
+                },
+                "downloads": -1,
+                "filename": "Babel-0.9.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f0edcad03dfdb5505f337ef1a7690325",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1820835,
+                "upload_time": "2011-03-18T07:38:46",
+                "url": "https://files.pythonhosted.org/packages/47/d8/84943abdffcc0f910327a08651e857e682efcda80e6650b1aa93679d5f60/Babel-0.9.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "135aa335148202caa5b23ff871b6afd9",
+                    "sha256": "eac5a36fd394954abdca25f680882ff2df01056dc5fe579f939f22e4e4114df4"
+                },
+                "downloads": -1,
+                "filename": "Babel-0.9.6.win32.exe",
+                "has_sig": false,
+                "md5_digest": "135aa335148202caa5b23ff871b6afd9",
+                "packagetype": "bdist_wininst",
+                "python_version": "any",
+                "size": 1983205,
+                "upload_time": "2011-03-18T07:40:56",
+                "url": "https://files.pythonhosted.org/packages/e2/c9/abfa44679392183909e74739442a9025345c0d6d3bdf3281ad59bb1981b6/Babel-0.9.6.win32.exe"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b4fcf32415e7de49c1b6d89461b626f2",
+                    "sha256": "149859d2b43da82ef61370a00c277578caf6048625d1456db8cbf22e49938dd6"
+                },
+                "downloads": -1,
+                "filename": "Babel-0.9.6.zip",
+                "has_sig": false,
+                "md5_digest": "b4fcf32415e7de49c1b6d89461b626f2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1925497,
+                "upload_time": "2011-03-18T07:39:42",
+                "url": "https://files.pythonhosted.org/packages/8b/bf/cf6408434941548c26626c4b2f515e100eff78a7fce1c1248c7af94ab893/Babel-0.9.6.zip"
+            }
+        ],
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b61c0038fa212b15294fa1b3abfd0153",
+                    "sha256": "abf1965b3ea34bfec77d4b806b66d7fa9a6c684f34be0829408f288035cdfc83"
+                },
+                "downloads": -1,
+                "filename": "Babel-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b61c0038fa212b15294fa1b3abfd0153",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3270907,
+                "upload_time": "2013-07-26T16:13:50",
+                "url": "https://files.pythonhosted.org/packages/7c/03/4314d98f0c1cdbd7f0c9b295e62a9a84650bf653581719e6fa89108b00fa/Babel-1.0.tar.gz"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dfabd75f34e02ebfe8937943e00f919e",
+                    "sha256": "52a9174f0914b17034907ae4a20b62e21e2341e88aeec892675b24db2b9f3a0e"
+                },
+                "downloads": -1,
+                "filename": "Babel-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "dfabd75f34e02ebfe8937943e00f919e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3281656,
+                "upload_time": "2013-07-27T09:38:44",
+                "url": "https://files.pythonhosted.org/packages/14/2b/07da6390513486f2ca9284f8d17d692593b180ab426a788b466ab00dda7d/Babel-1.1.tar.gz"
+            }
+        ],
+        "1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f27a2bd004f9cc6040f2f8c2b893724b",
+                    "sha256": "f33115628e1507924d7c929ba8752658ace1a98c47ee0aa6e28bfc02bda5abfc"
+                },
+                "downloads": -1,
+                "filename": "Babel-1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f27a2bd004f9cc6040f2f8c2b893724b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3400957,
+                "upload_time": "2013-07-27T10:59:33",
+                "url": "https://files.pythonhosted.org/packages/ad/82/18617389832560ce449c229704373e2b09a6ce39a8e35cc31507a965805d/Babel-1.2.tar.gz"
+            }
+        ],
+        "1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5264ceb02717843cbc9ffce8e6e06bdb",
+                    "sha256": "9f02d0357184de1f093c10012b52e7454a1008be6a5c185ab7a3307aceb1d12e"
+                },
+                "downloads": -1,
+                "filename": "Babel-1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5264ceb02717843cbc9ffce8e6e06bdb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3401237,
+                "upload_time": "2013-07-29T11:33:38",
+                "url": "https://files.pythonhosted.org/packages/33/27/e3978243a03a76398c384c83f7ca879bc6e8f1511233a621fcada135606e/Babel-1.3.tar.gz"
+            }
+        ],
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "62917719897a81e22dcaa3b17eeb11d8",
+                    "sha256": "44988df191123065af9857eca68e9151526a931c12659ca29904e4f11de7ec1b"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "62917719897a81e22dcaa3b17eeb11d8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3415906,
+                "upload_time": "2015-07-27T11:28:04",
+                "url": "https://files.pythonhosted.org/packages/e9/ad/dbe9dcca7cbd76bfac175ee52626582531ec3496a2668a1fe7dc5d505e96/Babel-2.0.tar.gz"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c3b3ef576cae3137be4a7b2498779d73",
+                    "sha256": "324978553daa4fae54c0bb7a360ba886d1bfbe3ac6299915857fff55f133feb7"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c3b3ef576cae3137be4a7b2498779d73",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 3576481,
+                "upload_time": "2015-09-25T12:28:59",
+                "url": "https://files.pythonhosted.org/packages/1d/6f/95f416917bbd85afd3b44417ab0d521920fbb5e65898abf21cbe788dbef8/Babel-2.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cab63d158ceed3a809703711cfb8cbd5",
+                    "sha256": "7fb6d50effe88a087feb2036cb972fd7a893bf338361516f1a55a820bf7b5248"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cab63d158ceed3a809703711cfb8cbd5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 3437647,
+                "upload_time": "2015-09-25T12:29:26",
+                "url": "https://files.pythonhosted.org/packages/b8/4c/f76e5d422bd92f0caa6cce05d93f5b2eca62bdd30532316fdf31e00ae8f1/Babel-2.1.1.tar.gz"
+            }
+        ],
+        "2.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6ade77c75100cc5226d44290d507b73",
+                    "sha256": "fed07cbcdcb3de79b53a8220eebed21c93f8dbb3dbce1d9c6b1c4b09e8aecf2b"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.2.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b6ade77c75100cc5226d44290d507b73",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 6478375,
+                "upload_time": "2016-01-02T19:25:27",
+                "url": "https://files.pythonhosted.org/packages/33/0e/7428041cddc3ff6e9a0f11cd2464b8bf6caed1b3879fcb9cf064f1ac7675/Babel-2.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1b69e4b2ab3795119266ccaa36b36f15",
+                    "sha256": "d8cb4c0e78148aee89560f9fe21587aa57739c975bb89ff66b1e842cc697428f"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1b69e4b2ab3795119266ccaa36b36f15",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6334150,
+                "upload_time": "2016-01-02T19:26:35",
+                "url": "https://files.pythonhosted.org/packages/08/00/278d52a7ba3c5f9709d50bd123d0cc4f66497a9bab1b6b2bc18d3fcced09/Babel-2.2.0.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "de39450840c7430f47762e19529972ef",
+                    "sha256": "140365dd23d9965418070510877ee3d51e9e13979e0412d28b050a5754696038"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "de39450840c7430f47762e19529972ef",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 97714,
+                "upload_time": "2016-04-07T20:45:28",
+                "url": "https://files.pythonhosted.org/packages/f2/cb/1ddd0dce0c865fa0e17c0c04c792bb72ac45f78a6395aa3c000be31763d7/Babel-2.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ac1d663480a11ff7902d5690e52031fd",
+                    "sha256": "880ce4d80c7aac0bf9dd8dc7e806c059c89cc2f03166c482d3a55ad56c6b2030"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ac1d663480a11ff7902d5690e52031fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 238887,
+                "upload_time": "2016-04-07T20:45:48",
+                "url": "https://files.pythonhosted.org/packages/e0/2c/0646c563576282f0cc8983b5363afda2bbc1df78a6da68efaac8507bc43b/Babel-2.3.0.tar.gz"
+            }
+        ],
+        "2.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ef9fd60c59d0b56788538b3abed3feaf",
+                    "sha256": "0a7a22124e2bf674d4cb1120e3fc69a0f51888ac731d86dbe747e3d484c17f45"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ef9fd60c59d0b56788538b3abed3feaf",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 7166343,
+                "upload_time": "2016-04-07T20:52:09",
+                "url": "https://files.pythonhosted.org/packages/b1/a4/7fbb785a70491262aa9fad6833f0373c6bf9417a63c65951b79000e1dd8c/Babel-2.3.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9510cf04e88ceb535b7ed17ba3671125",
+                    "sha256": "ee54fe8db330611c0d43df98482cd3b2856f35e9eb94e58fa7703081bf8aa911"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9510cf04e88ceb535b7ed17ba3671125",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7018496,
+                "upload_time": "2016-04-07T20:52:46",
+                "url": "https://files.pythonhosted.org/packages/98/04/d8fb91dd535e468b075565154502b5d4f158ed2789f92c5db6806d599b9f/Babel-2.3.1.tar.gz"
+            }
+        ],
+        "2.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "03002f94cf49cc5f3a7086a7af821b7e",
+                    "sha256": "318a374096429471d43c1385e3d0408f26ce3d8308929f159ab248df6095da82"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "03002f94cf49cc5f3a7086a7af821b7e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 7081749,
+                "upload_time": "2016-04-08T08:38:37",
+                "url": "https://files.pythonhosted.org/packages/a8/90/ea6299b7dc9a63c79f19722e2aabe0b9a749bf669175a7775fbb407ddadf/Babel-2.3.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "95ad5c32d28defb0ca543756ca335031",
+                    "sha256": "9c0e011d2b5fd67e154be01ebec5eebf472e1277a34ec0856e97b77041bc834c"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "95ad5c32d28defb0ca543756ca335031",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6909749,
+                "upload_time": "2016-04-08T08:39:17",
+                "url": "https://files.pythonhosted.org/packages/e0/66/c609a958a86846a690f5cad1cd035cdefeb18e6def1d2616da50c97a9841/Babel-2.3.2.tar.gz"
+            }
+        ],
+        "2.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d3327185fa0ad36a23399ec3b7aaf946",
+                    "sha256": "33fe6090337ecc785bfa3c452a97e378676a19593f795258721090eb3de94e43"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d3327185fa0ad36a23399ec3b7aaf946",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 7103155,
+                "upload_time": "2016-04-12T09:55:33",
+                "url": "https://files.pythonhosted.org/packages/96/28/d8b07b9e2fa99cda9b7bd2a319a8ffbc15f704a2059584a490b06db58b49/Babel-2.3.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7385ea5b37005f4b2015f971044431f6",
+                    "sha256": "12dff9afa9c6cd6e2a39960d3cd4b46b2b98768cdc6646833c66b20799c1c58e"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7385ea5b37005f4b2015f971044431f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6917535,
+                "upload_time": "2016-04-12T09:55:43",
+                "url": "https://files.pythonhosted.org/packages/8c/77/e39a94131df796b130981eef8355169680f6060572a730c3e9457353f299/Babel-2.3.3.tar.gz"
+            }
+        ],
+        "2.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9bdf9ce4df64492c4d3cced201dc8032",
+                    "sha256": "3318ed2960240d61cbc6558858ee00c10eed77a6508c4d1ed8e6f7f48399c975"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9bdf9ce4df64492c4d3cced201dc8032",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 7083486,
+                "upload_time": "2016-04-22T11:54:36",
+                "url": "https://files.pythonhosted.org/packages/b4/ec/acd307eac2e23f9cab1c8bdbe29b3b1d43215e31c32f8aa91b3a97925b5b/Babel-2.3.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "afa20bc55b0e991833030129ad498f35",
+                    "sha256": "c535c4403802f6eb38173cd4863e419e2274921a01a8aad8a5b497c131c62875"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "afa20bc55b0e991833030129ad498f35",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6866920,
+                "upload_time": "2016-04-22T11:54:57",
+                "url": "https://files.pythonhosted.org/packages/6e/96/ba2a2462ed25ca0e651fb7b66e7080f5315f91425a07ea5b34d7c870c114/Babel-2.3.4.tar.gz"
+            }
+        ],
+        "2.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83f9f414cf1701247691ee962a7b5fe1",
+                    "sha256": "e86ca5a3a6bb64b9bbb62b9dac37225ec0ab5dfaae3c2492ebd648266468042f"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.4.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "83f9f414cf1701247691ee962a7b5fe1",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 6770598,
+                "upload_time": "2017-03-24T15:06:35",
+                "url": "https://files.pythonhosted.org/packages/5f/cf/17935db603f7044d188ce3e3a6545c4b4500dbaa8835d50da2934b738111/Babel-2.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "90e7a0add19b2036a9b415630a0d9388",
+                    "sha256": "8c98f5e5f8f5f088571f2c6bd88d530e331cbbcb95a7311a0db69d3dca7ec563"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "90e7a0add19b2036a9b415630a0d9388",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6607513,
+                "upload_time": "2017-03-24T15:06:52",
+                "url": "https://files.pythonhosted.org/packages/92/22/643f3b75f75e0220c5ef9f5b72b619ccffe9266170143a4821d4885198de/Babel-2.4.0.tar.gz"
+            }
+        ],
+        "2.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf29f5ecf187ce1265aee114915c6449",
+                    "sha256": "e0d07af61ff43729f61dc838f2af283c315e671454e7cf9d744ac9c56cccfca6"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.5.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "bf29f5ecf187ce1265aee114915c6449",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 6774243,
+                "upload_time": "2017-08-18T09:06:43",
+                "url": "https://files.pythonhosted.org/packages/88/69/bee7f293436ed3c653b34d9c89ff1324428639981dd6d2e7bc1b7adf2b95/Babel-2.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "03da8249c2684abcbd208a8d0f979939",
+                    "sha256": "754177ee7481b6fac1bf84edeeb6338ab51640984e97e4083657d384b1c8830d"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "03da8249c2684abcbd208a8d0f979939",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6612353,
+                "upload_time": "2017-08-18T09:06:49",
+                "url": "https://files.pythonhosted.org/packages/3a/cb/46b76381ebda237c1b08d1c94394659679a4f1bd6475fe3703b303830ee0/Babel-2.5.0.tar.gz"
+            }
+        ],
+        "2.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e075ef09710cce29f06f27ce84058fb2",
+                    "sha256": "f20b2acd44f587988ff185d8949c3e208b4b3d5d20fcab7d91fe481ffa435528"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.5.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e075ef09710cce29f06f27ce84058fb2",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 6774506,
+                "upload_time": "2017-09-14T10:11:05",
+                "url": "https://files.pythonhosted.org/packages/36/80/99c5e2b07a4c85683f9884e993660bbb02051f77c4e63293348801aaa594/Babel-2.5.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "60228b3ce93a203357158b909afe8ae1",
+                    "sha256": "6007daf714d0cd5524bbe436e2d42b3c20e68da66289559341e48d2cd6d25811"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "60228b3ce93a203357158b909afe8ae1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6612869,
+                "upload_time": "2017-09-14T10:11:10",
+                "url": "https://files.pythonhosted.org/packages/5a/22/63f1dbb8514bb7e0d0c8a85cc9b14506599a075e231985f98afd70430e1f/Babel-2.5.1.tar.gz"
+            }
+        ],
+        "2.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "46beac3dd4bc3790f7a7f734cd400a23",
+                    "sha256": "3dc5399f1d0672c200e69759612ed751cb9edc46fc2df1c5faf42a88f54b18cb"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.5.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "46beac3dd4bc3790f7a7f734cd400a23",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 6776643,
+                "upload_time": "2018-01-15T12:07:11",
+                "url": "https://files.pythonhosted.org/packages/6d/f0/32a4c2389e5a3c6507884cd4d7501b35d2bb8b2c0938e1d44ccfc6f238df/Babel-2.5.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4556f987617b0ecbc8a36e6c75dcd071",
+                    "sha256": "f9ecc03310233ffa9f2575bda3ebccf9ee3ece18ace7239aa83ca56a368844f9"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4556f987617b0ecbc8a36e6c75dcd071",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6648317,
+                "upload_time": "2018-01-15T12:07:16",
+                "url": "https://files.pythonhosted.org/packages/ab/0d/03da6e363ef2aa2c0d84e373d49553fa2e90ef73a89d0994106acbea5220/Babel-2.5.2.tar.gz"
+            }
+        ],
+        "2.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5b9542d0511bea97af2416b094ae2587",
+                    "sha256": "ad209a68d7162c4cff4b29cdebe3dec4cef75492df501b0049a9433c96ce6f80"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.5.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "5b9542d0511bea97af2416b094ae2587",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 6774418,
+                "upload_time": "2018-01-15T17:13:05",
+                "url": "https://files.pythonhosted.org/packages/94/03/14e68ad12e771a79cf96792f7158d68a7b3d8c7b2badf39e9ef1f65b57d6/Babel-2.5.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "152a6b17fe4110b95675aceb9af9fab2",
+                    "sha256": "8ce4cb6fdd4393edd323227cba3a077bceb2a6ce5201c902c65e730046f41f14"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "152a6b17fe4110b95675aceb9af9fab2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6611941,
+                "upload_time": "2018-01-15T17:13:13",
+                "url": "https://files.pythonhosted.org/packages/0e/d5/9b1d6a79c975d0e9a32bd337a1465518c2519b14b214682ca9892752417e/Babel-2.5.3.tar.gz"
+            }
+        ],
+        "2.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9989ee4e3e12def96e4aa26d97f147ca",
+                    "sha256": "6778d85147d5d85345c14a26aada5e478ab04e39b078b0745ee6870c2b5cf669"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.6.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9989ee4e3e12def96e4aa26d97f147ca",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 8098645,
+                "upload_time": "2018-05-28T14:37:43",
+                "url": "https://files.pythonhosted.org/packages/b8/ad/c6f60602d3ee3d92fbed87675b6fb6a6f9a38c223343ababdb44ba201f10/Babel-2.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c384ac03026e8fe6f9b90f55201f1bff",
+                    "sha256": "8cba50f48c529ca3fa18cf81fa9403be176d374ac4d60738b839122dfaaa3d23"
+                },
+                "downloads": -1,
+                "filename": "Babel-2.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c384ac03026e8fe6f9b90f55201f1bff",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7960433,
+                "upload_time": "2018-05-28T14:37:47",
+                "url": "https://files.pythonhosted.org/packages/be/cc/9c981b249a455fa0c76338966325fc70b7265521bad641bf2932f77712f4/Babel-2.6.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "9989ee4e3e12def96e4aa26d97f147ca",
+                "sha256": "6778d85147d5d85345c14a26aada5e478ab04e39b078b0745ee6870c2b5cf669"
+            },
+            "downloads": -1,
+            "filename": "Babel-2.6.0-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "9989ee4e3e12def96e4aa26d97f147ca",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 8098645,
+            "upload_time": "2018-05-28T14:37:43",
+            "url": "https://files.pythonhosted.org/packages/b8/ad/c6f60602d3ee3d92fbed87675b6fb6a6f9a38c223343ababdb44ba201f10/Babel-2.6.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "c384ac03026e8fe6f9b90f55201f1bff",
+                "sha256": "8cba50f48c529ca3fa18cf81fa9403be176d374ac4d60738b839122dfaaa3d23"
+            },
+            "downloads": -1,
+            "filename": "Babel-2.6.0.tar.gz",
+            "has_sig": false,
+            "md5_digest": "c384ac03026e8fe6f9b90f55201f1bff",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 7960433,
+            "upload_time": "2018-05-28T14:37:47",
+            "url": "https://files.pythonhosted.org/packages/be/cc/9c981b249a455fa0c76338966325fc70b7265521bad641bf2932f77712f4/Babel-2.6.0.tar.gz"
+        }
+    ],
+    "package_name": "babel"
+}

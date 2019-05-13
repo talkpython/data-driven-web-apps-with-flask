@@ -1,0 +1,778 @@
+{
+    "info": {
+        "author": "A lot of people",
+        "author_email": "code-quality@python.org",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 6 - Mature",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Programming Language :: Python :: 3.7",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy",
+            "Topic :: Software Development",
+            "Topic :: Utilities"
+        ],
+        "description": "========\nPyflakes\n========\n\nA simple program which checks Python source files for errors.\n\nPyflakes analyzes programs and detects various errors.  It works by\nparsing the source file, not importing it, so it is safe to use on\nmodules with side effects.  It's also much faster.\n\nIt is `available on PyPI <https://pypi.python.org/pypi/pyflakes>`_\nand it supports all active versions of Python: 2.7 and 3.4 to 3.7.\n\n\n\nInstallation\n------------\n\nIt can be installed with::\n\n  $ pip install --upgrade pyflakes\n\n\nUseful tips:\n\n* Be sure to install it for a version of Python which is compatible\n  with your codebase: for Python 2, ``pip2 install pyflakes`` and for\n  Python3, ``pip3 install pyflakes``.\n\n* You can also invoke Pyflakes with ``python3 -m pyflakes .`` or\n  ``python2 -m pyflakes .`` if you have it installed for both versions.\n\n* If you require more options and more flexibility, you could give a\n  look to Flake8_ too.\n\n\nDesign Principles\n-----------------\nPyflakes makes a simple promise: it will never complain about style,\nand it will try very, very hard to never emit false positives.\n\nPyflakes is also faster than Pylint_\nor Pychecker_. This is\nlargely because Pyflakes only examines the syntax tree of each file\nindividually. As a consequence, Pyflakes is more limited in the\ntypes of things it can check.\n\nIf you like Pyflakes but also want stylistic checks, you want\nflake8_, which combines\nPyflakes with style checks against\n`PEP 8`_ and adds\nper-project configuration ability.\n\n\nMailing-list\n------------\n\nShare your feedback and ideas: `subscribe to the mailing-list\n<https://mail.python.org/mailman/listinfo/code-quality>`_\n\nContributing\n------------\n\nIssues are tracked on `GitHub <https://github.com/PyCQA/pyflakes/issues>`_.\n\nPatches may be submitted via a `GitHub pull request`_ or via the mailing list\nif you prefer. If you are comfortable doing so, please `rebase your changes`_\nso they may be applied to master with a fast-forward merge, and each commit is\na coherent unit of work with a well-written log message.  If you are not\ncomfortable with this rebase workflow, the project maintainers will be happy to\nrebase your commits for you.\n\nAll changes should include tests and pass flake8_.\n\n.. image:: https://api.travis-ci.org/PyCQA/pyflakes.svg?branch=master\n   :target: https://travis-ci.org/PyCQA/pyflakes\n   :alt: Build status\n\n.. _Pylint: http://www.pylint.org/\n.. _flake8: https://pypi.python.org/pypi/flake8\n.. _`PEP 8`: http://legacy.python.org/dev/peps/pep-0008/\n.. _Pychecker: http://pychecker.sourceforge.net/\n.. _`rebase your changes`: https://git-scm.com/book/en/v2/Git-Branching-Rebasing\n.. _`GitHub pull request`: https://github.com/PyCQA/pyflakes/pulls\n\nChangelog\n---------\n\nPlease see `NEWS.txt <NEWS.txt>`_.\n",
+        "description_content_type": "",
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/PyCQA/pyflakes",
+        "keywords": "",
+        "license": "MIT",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "pyflakes",
+        "package_url": "https://pypi.org/project/pyflakes/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/pyflakes/",
+        "release_url": "https://pypi.org/project/pyflakes/2.0.0/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "passive checker of Python programs",
+        "version": "2.0.0"
+    },
+    "last_serial": 3881233,
+    "releases": {
+        "0.2.0": [],
+        "0.2.1": [],
+        "0.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec7eee3444214bda18e57b82175e1da7",
+                    "sha256": "019b6d4b549306d013974678872aaf2453af3f02760175504dbe8a9f89db0a2c"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ec7eee3444214bda18e57b82175e1da7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10691,
+                "upload_time": "2009-01-30T16:27:09",
+                "url": "https://files.pythonhosted.org/packages/87/f8/8432ce436c89fcc1405ef85df6ca6583fb5fd379a22b4127cf2119f51cdb/pyflakes-0.3.0.tar.gz"
+            }
+        ],
+        "0.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "630a72510aae8758f48cf60e4fa17176",
+                    "sha256": "f12d98ebabae0e8da3e069d9c70621d154f688bd06e076681b3599ed79fb26c4"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "630a72510aae8758f48cf60e4fa17176",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14794,
+                "upload_time": "2009-11-29T19:53:50",
+                "url": "https://files.pythonhosted.org/packages/f3/65/b983911959a559b5a549bab0e283f863557f02e917a240704896c5d8cb1d/pyflakes-0.4.0.tar.gz"
+            }
+        ],
+        "0.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "568dab27c42e5822787aa8a603898672",
+                    "sha256": "53f9794aa13b99cca04259b4a1fe4bd207dc3b2d7dd85ba715814fdeae2ef8cd"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "568dab27c42e5822787aa8a603898672",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 17635,
+                "upload_time": "2011-09-03T19:09:24",
+                "url": "https://files.pythonhosted.org/packages/56/8e/3b133d0cd2bbdc87d64d99b1d7d45405ec1e4d69e6949ce0cd4322ba8f66/pyflakes-0.5.0.tar.gz"
+            }
+        ],
+        "0.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6cb41388f325b34422db2912d520dd02",
+                    "sha256": "89e171db81eae5f1abbe1cd63cbfe5533ff5bd2573d03fa9842abe0a45eb4f0d"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6cb41388f325b34422db2912d520dd02",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25977,
+                "upload_time": "2013-01-29T11:32:10",
+                "url": "https://files.pythonhosted.org/packages/38/31/0be5568c0d8063778c79a0e6bbd917173416654cab5b87d44b1733b4fd93/pyflakes-0.6.0.tar.gz"
+            }
+        ],
+        "0.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "00debd2280b962e915dfee552a675915",
+                    "sha256": "8dd31411ded531cca5ed27fdee96f5176db367d5cc91e39e87c1bae47d54dec6"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "00debd2280b962e915dfee552a675915",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 26081,
+                "upload_time": "2013-01-29T15:40:37",
+                "url": "https://files.pythonhosted.org/packages/30/99/a7d442d31bbe87de8c2e49544d5ad4cd4ca57465242c909b204ba597a943/pyflakes-0.6.1.tar.gz"
+            }
+        ],
+        "0.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4cbe17be937684654eb29d9efab67b80",
+                    "sha256": "2a5abf2e0a04068153b2b9e1f9c6f113b5c6260bf9918de5dded437887bfecd4"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4cbe17be937684654eb29d9efab67b80",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29387,
+                "upload_time": "2013-04-17T09:13:23",
+                "url": "https://files.pythonhosted.org/packages/46/41/6b4d70b05db0768db3c42beb63acf5571ae47b38b124e3b0c9fe1654e547/pyflakes-0.7.tar.gz"
+            }
+        ],
+        "0.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fca336e21e4244e61e396cb4888c55e7",
+                    "sha256": "2b647cf09a06bd022297053bcadc9d491e47b7fddeba0e6271e78acccaae8ebd"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fca336e21e4244e61e396cb4888c55e7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 29662,
+                "upload_time": "2013-04-23T07:20:36",
+                "url": "https://files.pythonhosted.org/packages/1d/a5/b4c9a21540f14cf1bcb442a83cb8c6f2db511a4b2b0f36e3526302c4202a/pyflakes-0.7.1.tar.gz"
+            }
+        ],
+        "0.7.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2b27790c2fd6020ed045674c03092a8c",
+                    "sha256": "e971804569e26a120ded70ca94882cbbf360390538fc3b5861f8ccecaf291178"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.7.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2b27790c2fd6020ed045674c03092a8c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30107,
+                "upload_time": "2013-04-24T12:40:52",
+                "url": "https://files.pythonhosted.org/packages/b2/6c/d59c4f06f479df92422bfdb876357f215bfdfe652d6c7c8d5f198d27361d/pyflakes-0.7.2.tar.gz"
+            }
+        ],
+        "0.7.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ec94ac11cb110e6e72cca23c104b66b1",
+                    "sha256": "dbd2c940a1030a4f811afc1a04017a44011c0cb54f8f384b66aa624097d9b5e3"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.7.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ec94ac11cb110e6e72cca23c104b66b1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 30551,
+                "upload_time": "2013-07-02T16:04:31",
+                "url": "https://files.pythonhosted.org/packages/fb/e0/7f25ff400803340626499d5fa8555f49f014768c7221664578b85ba3b229/pyflakes-0.7.3.tar.gz"
+            }
+        ],
+        "0.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "64bbf98be68f2d781bfe2aaa97aa77d0",
+                    "sha256": "ed692ef6844dfa6322753a8b3237cabab63d31a7bb965499e4c007986ecd6d3a"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "64bbf98be68f2d781bfe2aaa97aa77d0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32041,
+                "upload_time": "2014-03-22T18:42:22",
+                "url": "https://files.pythonhosted.org/packages/f1/2e/bc67b40cea44d2bce8b0a2fdfa24a85cb960689f56454a9be480c3c3ef2c/pyflakes-0.8.tar.gz"
+            }
+        ],
+        "0.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a9810b19e048e77ba1ce5364a77aa32e",
+                    "sha256": "ac4571695c10ce1536bcdba1a294b9f2d3e6cc9d0ea171b67d50a0864ce3e042"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.8.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a9810b19e048e77ba1ce5364a77aa32e",
+                "packagetype": "bdist_wheel",
+                "python_version": "3.3",
+                "size": 35580,
+                "upload_time": "2014-03-30T18:53:15",
+                "url": "https://files.pythonhosted.org/packages/49/94/592dfa051cb674d022c8ae6306d114dc752b3b5d3e08b896acaa4b3277f8/pyflakes-0.8.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "905fe91ad14b912807e8fdc2ac2e2c23",
+                    "sha256": "3fa80a10b36d51686bf7744f5dc99622cd5c98ce8ed64022e629868aafc17769"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "905fe91ad14b912807e8fdc2ac2e2c23",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32981,
+                "upload_time": "2014-03-30T18:53:12",
+                "url": "https://files.pythonhosted.org/packages/75/22/a90ec0252f4f87f3ffb6336504de71fe16a49d69c4538dae2f12b9360a38/pyflakes-0.8.1.tar.gz"
+            }
+        ],
+        "0.9.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a88087d4383c403f7a61dbfac211601d",
+                    "sha256": "763e6dc73539e90badfdb6f476d71fc68abc8ef572b3ef2022ddc9cc6baec4c3"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.9.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a88087d4383c403f7a61dbfac211601d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 38209,
+                "upload_time": "2015-05-31T15:24:18",
+                "url": "https://files.pythonhosted.org/packages/aa/72/c2cc75d9eb4da5edb6ad23955df0b52048cdada68eb569d4177955f7c6e0/pyflakes-0.9.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83472433d0187146708fc52767575eef",
+                    "sha256": "4c4d73085ce5de9d8147011c060d129659baa1111d1a5a3035f2bd03f2976538"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.9.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "83472433d0187146708fc52767575eef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34523,
+                "upload_time": "2015-05-31T15:24:21",
+                "url": "https://files.pythonhosted.org/packages/97/ca/572dbb044cd44713b29749a6f0decfd4d1e156f86d8d9013f6738610e05d/pyflakes-0.9.0.tar.gz"
+            }
+        ],
+        "0.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a6347baddf0e538309282fbe3389832d",
+                    "sha256": "0aaa2e555db3fc5084a1e6143cb54b787e8d5dbfb436d616ba3cb2d634f02923"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.9.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a6347baddf0e538309282fbe3389832d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 38211,
+                "upload_time": "2015-06-10T01:54:42",
+                "url": "https://files.pythonhosted.org/packages/f2/56/7ddb2c7ba7c6c6583784043d9408a8f165b9fd0a319400ceae0043dea892/pyflakes-0.9.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "296cd14a30b433badc8215474240cd6f",
+                    "sha256": "baad29ac1e884c7077eb32ed1d9ee5cf30bf4b888329e1fcb51b9aa5298cb3b9"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "296cd14a30b433badc8215474240cd6f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34696,
+                "upload_time": "2015-06-10T01:54:46",
+                "url": "https://files.pythonhosted.org/packages/3f/07/16b483f9428a2075272e791360950bf6baa99d05816854e731e14265452e/pyflakes-0.9.1.tar.gz"
+            }
+        ],
+        "0.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "16629ae263c812658036594778b5ad29",
+                    "sha256": "05df584a29eeea9a2a2110dd362e53d04e0c4bb1754b4d71234f651917f3c2f0"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.9.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "16629ae263c812658036594778b5ad29",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 38291,
+                "upload_time": "2015-06-17T10:23:39",
+                "url": "https://files.pythonhosted.org/packages/59/70/6fbc74a5554fd6f0230f6cc298c9e74847cc727bdbf07c9f9d01ad8c0dc3/pyflakes-0.9.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f7032897353e68f6dc6210dfab39f414",
+                    "sha256": "02691c23ce699f252874b7c27f14cf26e3d4e82b58e5d584f000b7ab5be36a5f"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-0.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f7032897353e68f6dc6210dfab39f414",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 34785,
+                "upload_time": "2015-06-17T10:23:42",
+                "url": "https://files.pythonhosted.org/packages/79/57/9e63bb732b0e055e824dd617b489c5917df6eeb06545ad0bd36df3bb69c0/pyflakes-0.9.2.tar.gz"
+            }
+        ],
+        "1.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b06f8034c94c72bcdc4da29a4753b8b7",
+                    "sha256": "071d121e9e7b33058aa1ba5de7bce9b97bfa3149cfe1acbb6587c21fc1c8eda1"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b06f8034c94c72bcdc4da29a4753b8b7",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 152605,
+                "upload_time": "2015-09-20T16:00:01",
+                "url": "https://files.pythonhosted.org/packages/6d/65/3272c6bb4dba7974175981d8b8e64b6a1d7022a7f9412417684563650e3a/pyflakes-1.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "914621d4c9546248419b435dd358eb6a",
+                    "sha256": "f39e33a4c03beead8774f005bd3ecf0c3f2f264fa0201de965fce0aff1d34263"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "914621d4c9546248419b435dd358eb6a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 35365,
+                "upload_time": "2015-09-20T16:00:23",
+                "url": "https://files.pythonhosted.org/packages/45/24/6bc038f3422bab08c24173c1990a56e9eb0c4582a9b202858a33f8aefeb8/pyflakes-1.0.0.tar.gz"
+            }
+        ],
+        "1.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bfcc488e3bbf29ba30492f1d2886796a",
+                    "sha256": "c2ec174a7cff6486176b1f53e7d15d34380c3688410f88d86b323608cc0906fb"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "bfcc488e3bbf29ba30492f1d2886796a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 191207,
+                "upload_time": "2016-03-01T15:33:28",
+                "url": "https://files.pythonhosted.org/packages/05/00/2867f51e4c2526fd8524176520aecfcd1562033cc5f7110673012294fcc7/pyflakes-1.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e0bf854cd5abd4527e149692925b82eb",
+                    "sha256": "e5f959931987e2be178781554b485d52342ec9f1b43f891d2dad07a691c7a89a"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e0bf854cd5abd4527e149692925b82eb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 41472,
+                "upload_time": "2016-03-01T15:32:23",
+                "url": "https://files.pythonhosted.org/packages/3b/c0/babde99e111ebbbe8864c452db9132069a51c63f60e1cdfa49f00a229fca/pyflakes-1.1.0.tar.gz"
+            }
+        ],
+        "1.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9d7d10b21c1c2b43bcec94978191eabc",
+                    "sha256": "a2e2a2f68e8321822cb68ccf687a4d8c1668e850135267659ce8152d86adf0d8"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.2.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "9d7d10b21c1c2b43bcec94978191eabc",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 203930,
+                "upload_time": "2016-05-04T01:32:10",
+                "url": "https://files.pythonhosted.org/packages/e2/ac/5497dd04fa6ab3dcc9e154b5687459577efef5fcd83097bb65aa35954940/pyflakes-1.2.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b12cacc073189433fabe5d59f1b14b82",
+                    "sha256": "3633e000ffdc307ff1a7d7450e895ff8813e20b084ef263b5669eef9bc4c7a52"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.2.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b12cacc073189433fabe5d59f1b14b82",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 43900,
+                "upload_time": "2016-05-04T01:32:26",
+                "url": "https://files.pythonhosted.org/packages/34/20/c1c6eb3977d4f4d8ac136c5969bf642273e44c6ac93a22b6a26e8bed32bd/pyflakes-1.2.0.tar.gz"
+            }
+        ],
+        "1.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fc2a253aaa9c61458b48f430bdc00c69",
+                    "sha256": "79951a4d3c1a139191e6aade392936565ec5e1987d04c0495ab32d32149c19e3"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.2.1-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "fc2a253aaa9c61458b48f430bdc00c69",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 204739,
+                "upload_time": "2016-05-05T22:43:43",
+                "url": "https://files.pythonhosted.org/packages/bf/1d/00af5299878b6b68009b63692e4f7e7a39d920588d5ff1ab0d2b3db79e43/pyflakes-1.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6e44c443f9d6573b221005e91f0c2e99",
+                    "sha256": "7e5e3a5e7ce8d1afb9cbcff2bb10cffaf83e1d94ab7c78eb86a715a88c32e22f"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.2.1.tar.gz",
+                "has_sig": true,
+                "md5_digest": "6e44c443f9d6573b221005e91f0c2e99",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44106,
+                "upload_time": "2016-05-05T22:43:50",
+                "url": "https://files.pythonhosted.org/packages/c8/9c/8db4fc4986466ab7df13835a0653e358305622c96f90807964f73161f7f6/pyflakes-1.2.1.tar.gz"
+            }
+        ],
+        "1.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "717b67cbca08d7bf97e7ac91e27ce01e",
+                    "sha256": "3ffa8db8eb8873971ba1a7328ac5fdbc167212f2824c23789d5d158cc902fd66"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.2.2-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "717b67cbca08d7bf97e7ac91e27ce01e",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 481116,
+                "upload_time": "2016-05-06T16:43:22",
+                "url": "https://files.pythonhosted.org/packages/48/f7/f5864b0c2b640039cabf17bea109d6f230e3ab1d073ecb32f7f367558394/pyflakes-1.2.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd33b46e16db7d926e71d5a056680137",
+                    "sha256": "58741f9d3bffeba8f88452c1eddcf1b3eee464560e4589e4b81de8b3c9e42e4d"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.2.2.tar.gz",
+                "has_sig": true,
+                "md5_digest": "fd33b46e16db7d926e71d5a056680137",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44199,
+                "upload_time": "2016-05-06T16:43:29",
+                "url": "https://files.pythonhosted.org/packages/af/6e/6f8cb1d6dfb08b08c2f4c11fdb478b8d63f51f03d1d1bd61d4e154922cc2/pyflakes-1.2.2.tar.gz"
+            }
+        ],
+        "1.2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c93c60fe773ac1356aaac6aea6b19a6",
+                    "sha256": "e87bac26c62ea5b45067cc89e4a12f56e1483f1f2cda17e7c9b375b9fd2f40da"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.2.3-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "2c93c60fe773ac1356aaac6aea6b19a6",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 209609,
+                "upload_time": "2016-05-12T18:31:31",
+                "url": "https://files.pythonhosted.org/packages/74/55/98f59358be6d7240ba546b8a74813cc21841a9145a0c1a3a7998f50acbe7/pyflakes-1.2.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "995747589e97c75055cf5b4e1e031e0b",
+                    "sha256": "2e4a1b636d8809d8f0a69f341acf15b2e401a3221ede11be439911d23ce2139e"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.2.3.tar.gz",
+                "has_sig": true,
+                "md5_digest": "995747589e97c75055cf5b4e1e031e0b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 44776,
+                "upload_time": "2016-05-12T18:38:31",
+                "url": "https://files.pythonhosted.org/packages/54/80/6a641f832eb6c6a8f7e151e7087aff7a7c04dd8b4aa6134817942cdda1b6/pyflakes-1.2.3.tar.gz"
+            }
+        ],
+        "1.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "dd5a2b1d462dc0a59d0bcd4b6624bb98",
+                    "sha256": "ad89dafee8ca32282116209a0ca4dff050bdc343af958721d5517d242c1215d5"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.3.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "dd5a2b1d462dc0a59d0bcd4b6624bb98",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 222799,
+                "upload_time": "2016-09-01T20:03:48",
+                "url": "https://files.pythonhosted.org/packages/6a/10/4ca0cd9b71739dc4aef92434747743a63acbdb5cb5938242db6e2cf5e5b8/pyflakes-1.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d66478aaff1d003ddc7fc1759a74e1e2",
+                    "sha256": "a4f93317c97a9d9ed71d6ecfe08b68e3de9fea3f4d94dcd1d9d83ccbf929bc31"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.3.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "d66478aaff1d003ddc7fc1759a74e1e2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47081,
+                "upload_time": "2016-09-01T20:03:44",
+                "url": "https://files.pythonhosted.org/packages/9f/48/927b1bf3e15d3dadfcfafb505177a62cdabcb78cf7eac4f31f180d5b1e26/pyflakes-1.3.0.tar.gz"
+            }
+        ],
+        "1.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8c2f69bb0ad9d8ac71188b1c3fd14d88",
+                    "sha256": "a3ecf40567dc470c006c19abbac9c8b4a77a8a5a01e975bb6452b8814818ad3f"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.4.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "8c2f69bb0ad9d8ac71188b1c3fd14d88",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 222976,
+                "upload_time": "2016-12-30T15:17:42",
+                "url": "https://files.pythonhosted.org/packages/d7/ed/665746776f005f4bb51747e70e89d8d687584f0241cb44220c598391fed8/pyflakes-1.4.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bc97904de633868a1a43c36a3c538a44",
+                    "sha256": "05c8a1702088e9b54acb422f78210afc6074b3472afa7a0a77f0b8aa3f5db605"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.4.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "bc97904de633868a1a43c36a3c538a44",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47189,
+                "upload_time": "2016-12-30T15:17:39",
+                "url": "https://files.pythonhosted.org/packages/74/b6/80853b2c3cec3cf1c85b4205ed0685b9ea6c25607554dbd5cb1b214af536/pyflakes-1.4.0.tar.gz"
+            }
+        ],
+        "1.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "063e406bb1b2f0d351a18847ed27ce67",
+                    "sha256": "cc5eadfb38041f8366128786b4ca12700ed05bbf1403d808e89d57d67a3875a7"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.5.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "063e406bb1b2f0d351a18847ed27ce67",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 225202,
+                "upload_time": "2017-01-10T01:01:26",
+                "url": "https://files.pythonhosted.org/packages/27/49/924098b3b85c286696f37e014475d79471ffc44509613af420645a3c12cb/pyflakes-1.5.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84a99f05e5409f8196325dda3f5a1b9a",
+                    "sha256": "aa0d4dff45c0cc2214ba158d29280f8fa1129f3e87858ef825930845146337f4"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.5.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "84a99f05e5409f8196325dda3f5a1b9a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 47526,
+                "upload_time": "2017-01-10T01:01:23",
+                "url": "https://files.pythonhosted.org/packages/5b/b7/dcd6ebc826065ca4ccd2406aac4378e1df6eb91124625d45d520219932a1/pyflakes-1.5.0.tar.gz"
+            }
+        ],
+        "1.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aceccaed060a527a78365a7653e4e99d",
+                    "sha256": "08bd6a50edf8cffa9fa09a463063c425ecaaf10d1eb0335a7e8b1401aef89e6f"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.6.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "aceccaed060a527a78365a7653e4e99d",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 227402,
+                "upload_time": "2017-08-03T14:54:17",
+                "url": "https://files.pythonhosted.org/packages/d7/40/733bcc64da3161ae4122c11e88269f276358ca29335468005cb0ee538665/pyflakes-1.6.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b385b0e4cd40a522553e97cd2d83573e",
+                    "sha256": "8d616a382f243dbf19b54743f280b80198be0bca3a5396f1d2e1fca6223e8805"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-1.6.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "b385b0e4cd40a522553e97cd2d83573e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 48184,
+                "upload_time": "2017-08-03T14:54:14",
+                "url": "https://files.pythonhosted.org/packages/26/85/f6a315cd3c1aa597fb3a04cc7d7dbea5b3cc66ea6bd13dfa0478bf4876e6/pyflakes-1.6.0.tar.gz"
+            }
+        ],
+        "2.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6226d89d1a781022c1dcca556828dd93",
+                    "sha256": "f661252913bc1dbe7fcfcbf0af0db3f42ab65aabd1a6ca68fe5d466bace94dae"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-2.0.0-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "6226d89d1a781022c1dcca556828dd93",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 53379,
+                "upload_time": "2018-05-20T17:13:31",
+                "url": "https://files.pythonhosted.org/packages/44/98/af7a72c9a543b1487d92813c648cb9b9adfbc96faef5455d60f4439aa99b/pyflakes-2.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "06310b7c7a288c6c8e8f955da5f985ca",
+                    "sha256": "9a7662ec724d0120012f6e29d6248ae3727d821bba522a0e6b356eff19126a49"
+                },
+                "downloads": -1,
+                "filename": "pyflakes-2.0.0.tar.gz",
+                "has_sig": true,
+                "md5_digest": "06310b7c7a288c6c8e8f955da5f985ca",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 49002,
+                "upload_time": "2018-05-20T17:13:29",
+                "url": "https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "6226d89d1a781022c1dcca556828dd93",
+                "sha256": "f661252913bc1dbe7fcfcbf0af0db3f42ab65aabd1a6ca68fe5d466bace94dae"
+            },
+            "downloads": -1,
+            "filename": "pyflakes-2.0.0-py2.py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "6226d89d1a781022c1dcca556828dd93",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 53379,
+            "upload_time": "2018-05-20T17:13:31",
+            "url": "https://files.pythonhosted.org/packages/44/98/af7a72c9a543b1487d92813c648cb9b9adfbc96faef5455d60f4439aa99b/pyflakes-2.0.0-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "06310b7c7a288c6c8e8f955da5f985ca",
+                "sha256": "9a7662ec724d0120012f6e29d6248ae3727d821bba522a0e6b356eff19126a49"
+            },
+            "downloads": -1,
+            "filename": "pyflakes-2.0.0.tar.gz",
+            "has_sig": true,
+            "md5_digest": "06310b7c7a288c6c8e8f955da5f985ca",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 49002,
+            "upload_time": "2018-05-20T17:13:29",
+            "url": "https://files.pythonhosted.org/packages/92/9e/386c0d9deef14996eb90d9deebbcb9d3ceb70296840b09615cb61b2ae231/pyflakes-2.0.0.tar.gz"
+        }
+    ],
+    "package_name": "pyflakes"
+}

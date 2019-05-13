@@ -1,0 +1,1344 @@
+{
+    "info": {
+        "author": "Arnon Yaari",
+        "author_email": "tartley@tartley.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.5",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.1",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Topic :: Terminals"
+        ],
+        "description": ".. image:: https://img.shields.io/pypi/v/colorama.svg\n    :target: https://pypi.python.org/pypi/colorama/\n    :alt: Latest Version\n\n.. image:: https://travis-ci.org/tartley/colorama.svg?branch=master\n    :target: https://travis-ci.org/tartley/colorama\n    :alt: Build Status\n\nDownload and docs:\n    http://pypi.python.org/pypi/colorama\nSource code & Development:\n    https://github.com/tartley/colorama\n\nDescription\n===========\n\nMakes ANSI escape character sequences (for producing colored terminal text and\ncursor positioning) work under MS Windows.\n\nANSI escape character sequences have long been used to produce colored terminal\ntext and cursor positioning on Unix and Macs. Colorama makes this work on\nWindows, too, by wrapping ``stdout``, stripping ANSI sequences it finds (which\nwould appear as gobbledygook in the output), and converting them into the\nappropriate win32 calls to modify the state of the terminal. On other platforms,\nColorama does nothing.\n\nColorama also provides some shortcuts to help generate ANSI sequences\nbut works fine in conjunction with any other ANSI sequence generation library,\nsuch as the venerable Termcolor (http://pypi.python.org/pypi/termcolor)\nor the fabulous Blessings (https://pypi.python.org/pypi/blessings).\n\nThis has the upshot of providing a simple cross-platform API for printing\ncolored terminal text from Python, and has the happy side-effect that existing\napplications or libraries which use ANSI sequences to produce colored output on\nLinux or Macs can now also work on Windows, simply by calling\n``colorama.init()``.\n\nAn alternative approach is to install ``ansi.sys`` on Windows machines, which\nprovides the same behaviour for all applications running in terminals. Colorama\nis intended for situations where that isn't easy (e.g., maybe your app doesn't\nhave an installer.)\n\nDemo scripts in the source code repository print some colored text using\nANSI sequences. Compare their output under Gnome-terminal's built in ANSI\nhandling, versus on Windows Command-Prompt using Colorama:\n\n.. image:: https://github.com/tartley/colorama/raw/master/screenshots/ubuntu-demo.png\n    :width: 661\n    :height: 357\n    :alt: ANSI sequences on Ubuntu under gnome-terminal.\n\n.. image:: https://github.com/tartley/colorama/raw/master/screenshots/windows-demo.png\n    :width: 668\n    :height: 325\n    :alt: Same ANSI sequences on Windows, using Colorama.\n\nThese screengrabs show that, on Windows, Colorama does not support ANSI 'dim\ntext'; it looks the same as 'normal text'.\n\n\nLicense\n=======\n\nCopyright Jonathan Hartley 2013. BSD 3-Clause license; see LICENSE file.\n\n\nDependencies\n============\n\nNone, other than Python. Tested on Python 2.5.5, 2.6.5, 2.7, 3.1.2, 3.2, 3.3,\n3.4 and 3.5.\n\nUsage\n=====\n\nInitialisation\n--------------\n\nApplications should initialise Colorama using:\n\n.. code-block:: python\n\n    from colorama import init\n    init()\n\nOn Windows, calling ``init()`` will filter ANSI escape sequences out of any\ntext sent to ``stdout`` or ``stderr``, and replace them with equivalent Win32\ncalls.\n\nOn other platforms, calling ``init()`` has no effect (unless you request other\noptional functionality; see \"Init Keyword Args\", below). By design, this permits\napplications to call ``init()`` unconditionally on all platforms, after which\nANSI output should just work.\n\nTo stop using colorama before your program exits, simply call ``deinit()``.\nThis will restore ``stdout`` and ``stderr`` to their original values, so that\nColorama is disabled. To resume using Colorama again, call ``reinit()``; it is\ncheaper to calling ``init()`` again (but does the same thing).\n\n\nColored Output\n--------------\n\nCross-platform printing of colored text can then be done using Colorama's\nconstant shorthand for ANSI escape sequences:\n\n.. code-block:: python\n\n    from colorama import Fore, Back, Style\n    print(Fore.RED + 'some red text')\n    print(Back.GREEN + 'and with a green background')\n    print(Style.DIM + 'and in dim text')\n    print(Style.RESET_ALL)\n    print('back to normal now')\n\n...or simply by manually printing ANSI sequences from your own code:\n\n.. code-block:: python\n\n    print('\\033[31m' + 'some red text')\n    print('\\033[30m') # and reset to default color\n\n...or, Colorama can be used happily in conjunction with existing ANSI libraries\nsuch as Termcolor:\n\n.. code-block:: python\n\n    from colorama import init\n    from termcolor import colored\n\n    # use Colorama to make Termcolor work on Windows too\n    init()\n\n    # then use Termcolor for all colored text output\n    print(colored('Hello, World!', 'green', 'on_red'))\n\nAvailable formatting constants are::\n\n    Fore: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.\n    Back: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.\n    Style: DIM, NORMAL, BRIGHT, RESET_ALL\n\n``Style.RESET_ALL`` resets foreground, background, and brightness. Colorama will\nperform this reset automatically on program exit.\n\n\nCursor Positioning\n------------------\n\nANSI codes to reposition the cursor are supported. See ``demos/demo06.py`` for\nan example of how to generate them.\n\n\nInit Keyword Args\n-----------------\n\n``init()`` accepts some ``**kwargs`` to override default behaviour.\n\ninit(autoreset=False):\n    If you find yourself repeatedly sending reset sequences to turn off color\n    changes at the end of every print, then ``init(autoreset=True)`` will\n    automate that:\n\n    .. code-block:: python\n\n        from colorama import init\n        init(autoreset=True)\n        print(Fore.RED + 'some red text')\n        print('automatically back to default color again')\n\ninit(strip=None):\n    Pass ``True`` or ``False`` to override whether ansi codes should be\n    stripped from the output. The default behaviour is to strip if on Windows\n    or if output is redirected (not a tty).\n\ninit(convert=None):\n    Pass ``True`` or ``False`` to override whether to convert ANSI codes in the\n    output into win32 calls. The default behaviour is to convert if on Windows\n    and output is to a tty (terminal).\n\ninit(wrap=True):\n    On Windows, colorama works by replacing ``sys.stdout`` and ``sys.stderr``\n    with proxy objects, which override the ``.write()`` method to do their work.\n    If this wrapping causes you problems, then this can be disabled by passing\n    ``init(wrap=False)``. The default behaviour is to wrap if ``autoreset`` or\n    ``strip`` or ``convert`` are True.\n\n    When wrapping is disabled, colored printing on non-Windows platforms will\n    continue to work as normal. To do cross-platform colored output, you can\n    use Colorama's ``AnsiToWin32`` proxy directly:\n\n    .. code-block:: python\n\n        import sys\n        from colorama import init, AnsiToWin32\n        init(wrap=False)\n        stream = AnsiToWin32(sys.stderr).stream\n\n        # Python 2\n        print >>stream, Fore.BLUE + 'blue text on stderr'\n\n        # Python 3\n        print(Fore.BLUE + 'blue text on stderr', file=stream)\n\n\nStatus & Known Problems\n=======================\n\nI've personally only tested it on Windows XP (CMD, Console2), Ubuntu\n(gnome-terminal, xterm), and OS X.\n\nSome presumably valid ANSI sequences aren't recognised (see details below),\nbut to my knowledge nobody has yet complained about this. Puzzling.\n\nSee outstanding issues and wishlist:\nhttps://github.com/tartley/colorama/issues\n\nIf anything doesn't work for you, or doesn't do what you expected or hoped for,\nI'd love to hear about it on that issues list, would be delighted by patches,\nand would be happy to grant commit access to anyone who submits a working patch\nor two.\n\n\nRecognised ANSI Sequences\n=========================\n\nANSI sequences generally take the form:\n\n    ESC [ <param> ; <param> ... <command>\n\nWhere ``<param>`` is an integer, and ``<command>`` is a single letter. Zero or\nmore params are passed to a ``<command>``. If no params are passed, it is\ngenerally synonymous with passing a single zero. No spaces exist in the\nsequence; they have been inserted here simply to read more easily.\n\nThe only ANSI sequences that colorama converts into win32 calls are::\n\n    ESC [ 0 m       # reset all (colors and brightness)\n    ESC [ 1 m       # bright\n    ESC [ 2 m       # dim (looks same as normal brightness)\n    ESC [ 22 m      # normal brightness\n\n    # FOREGROUND:\n    ESC [ 30 m      # black\n    ESC [ 31 m      # red\n    ESC [ 32 m      # green\n    ESC [ 33 m      # yellow\n    ESC [ 34 m      # blue\n    ESC [ 35 m      # magenta\n    ESC [ 36 m      # cyan\n    ESC [ 37 m      # white\n    ESC [ 39 m      # reset\n\n    # BACKGROUND\n    ESC [ 40 m      # black\n    ESC [ 41 m      # red\n    ESC [ 42 m      # green\n    ESC [ 43 m      # yellow\n    ESC [ 44 m      # blue\n    ESC [ 45 m      # magenta\n    ESC [ 46 m      # cyan\n    ESC [ 47 m      # white\n    ESC [ 49 m      # reset\n\n    # cursor positioning\n    ESC [ y;x H     # position cursor at x across, y down\n    ESC [ y;x f     # position cursor at x across, y down\n    ESC [ n A       # move cursor n lines up\n    ESC [ n B       # move cursor n lines down\n    ESC [ n C       # move cursor n characters forward\n    ESC [ n D       # move cursor n characters backward\n\n    # clear the screen\n    ESC [ mode J    # clear the screen\n\n    # clear the line\n    ESC [ mode K    # clear the line\n\nMultiple numeric params to the ``'m'`` command can be combined into a single\nsequence::\n\n    ESC [ 36 ; 45 ; 1 m     # bright cyan text on magenta background\n\nAll other ANSI sequences of the form ``ESC [ <param> ; <param> ... <command>``\nare silently stripped from the output on Windows.\n\nAny other form of ANSI sequence, such as single-character codes or alternative\ninitial characters, are not recognised or stripped. It would be cool to add\nthem though. Let me know if it would be useful for you, via the Issues on\nGitHub.\n\n\nDevelopment\n===========\n\nHelp and fixes welcome!\n\nRunning tests requires:\n\n- Michael Foord's ``mock`` module to be installed.\n- Tests are written using 2010-era updates to ``unittest``, and require\n  Python 2.7 or greater, OR to have Michael Foord's ``unittest2`` module\n  installed.\n\nTo run tests::\n\n   python -m unittest discover -p *_test.py\n\nThis, like a few other handy commands, is captured in a ``Makefile``.\n\nIf you use nose to run the tests, you must pass the ``-s`` flag; otherwise,\n``nosetests`` applies its own proxy to ``stdout``, which confuses the unit\ntests.\n\n\nThanks\n======\n* Marc Schlaich (schlamar) for a ``setup.py`` fix for Python2.5.\n* Marc Abramowitz, reported & fixed a crash on exit with closed ``stdout``,\n  providing a solution to issue #7's setuptools/distutils debate,\n  and other fixes.\n* User 'eryksun', for guidance on correctly instantiating ``ctypes.windll``.\n* Matthew McCormick for politely pointing out a longstanding crash on non-Win.\n* Ben Hoyt, for a magnificent fix under 64-bit Windows.\n* Jesse at Empty Square for submitting a fix for examples in the README.\n* User 'jamessp', an observant documentation fix for cursor positioning.\n* User 'vaal1239', Dave Mckee & Lackner Kristof for a tiny but much-needed Win7\n  fix.\n* Julien Stuyck, for wisely suggesting Python3 compatible updates to README.\n* Daniel Griffith for multiple fabulous patches.\n* Oscar Lesta for a valuable fix to stop ANSI chars being sent to non-tty\n  output.\n* Roger Binns, for many suggestions, valuable feedback, & bug reports.\n* Tim Golden for thought and much appreciated feedback on the initial idea.\n* User 'Zearin' for updates to the README file.\n* John Szakmeister for adding support for light colors\n* Charles Merriam for adding documentation to demos\n* Jurko for a fix on 64-bit Windows CPython2.5 w/o ctypes\n* Florian Bruhin for a fix when stdout or stderr are None\n* Thomas Weininger for fixing ValueError on Windows\n* Remi Rampin for better Github integration and fixes to the README file\n* Simeon Visser for closing a file handle using 'with' and updating classifiers\n  to include Python 3.3 and 3.4\n* Andy Neff for fixing RESET of LIGHT_EX colors.\n* Jonathan Hartley for the initial idea and implementation.",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/tartley/colorama",
+        "keywords": "color colour terminal text ansi windows crossplatform xplatform",
+        "license": "BSD",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "colorama",
+        "package_url": "https://pypi.org/project/colorama/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/colorama/",
+        "release_url": "https://pypi.org/project/colorama/0.3.9/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Cross-platform colored terminal text.",
+        "version": "0.3.9"
+    },
+    "last_serial": 2833818,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b491ce7b06cc1d1b2a483a656d5c11fc",
+                    "sha256": "dde5204ace2a469f2065d86e1c998e34bf0db8fa390eea7db91e17dd74f1ca9e"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.zip",
+                "has_sig": false,
+                "md5_digest": "b491ce7b06cc1d1b2a483a656d5c11fc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15389,
+                "upload_time": "2010-04-20T02:02:19",
+                "url": "https://files.pythonhosted.org/packages/c4/5f/bd491ccfba0060c785e019ffdeb885fb31c9075573b8414c927b22c7d0f7/colorama-0.1.zip"
+            }
+        ],
+        "0.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ad4f921afe2d0fa1539d9d2bf62c55e",
+                    "sha256": "4b53b07a72a276642ef0f6aed4a7083480bff6d5dcc44a5972352369c1694309"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2ad4f921afe2d0fa1539d9d2bf62c55e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7674,
+                "upload_time": "2010-04-20T02:20:38",
+                "url": "https://files.pythonhosted.org/packages/9f/30/5166407fe8e1fb932cf377b0d1c5ec72ec07e372452302875ef1263fec6c/colorama-0.1.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d6f22b93bb69f44dd61befead45e7816",
+                    "sha256": "83f483e4a2efba46c212e054407a6b8ea3b582a7e332b8de927350029271c7c1"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.1.zip",
+                "has_sig": false,
+                "md5_digest": "d6f22b93bb69f44dd61befead45e7816",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15530,
+                "upload_time": "2010-04-20T02:20:37",
+                "url": "https://files.pythonhosted.org/packages/99/e6/ef52457b44a915e866ee6439d653cbc76f94163e41fa164056356f011729/colorama-0.1.1.zip"
+            }
+        ],
+        "0.1.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "84fe632e2890a0e20bd0a139e91b7af4",
+                    "sha256": "d8d0b40c5b66768292576318753270c3cddd2d794986b8f69f32c5f5c8bf02b3"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "84fe632e2890a0e20bd0a139e91b7af4",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7844,
+                "upload_time": "2010-05-17T12:33:53",
+                "url": "https://files.pythonhosted.org/packages/36/f8/1704d2ccb644c06be7fdca73653d6896e37159e58ffc428cbf919c5d5680/colorama-0.1.10.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5ef5d3424db6e8d242ab0cf03eefc999",
+                    "sha256": "ecaf291510745cdc5b4fb15831cee410364d74d105ae0c561856c4c953880ada"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.10.zip",
+                "has_sig": false,
+                "md5_digest": "5ef5d3424db6e8d242ab0cf03eefc999",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11982,
+                "upload_time": "2010-05-17T12:33:53",
+                "url": "https://files.pythonhosted.org/packages/f8/64/ac1e1ec98b83640d50a7605bfb14740b81ea4f06eeab3119c9da203ed687/colorama-0.1.10.zip"
+            }
+        ],
+        "0.1.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "504e40668de50606de8c8c3405ed0e10",
+                    "sha256": "b9449a73936867129ad58ea9ccc24cf5bd5429abcd4c8ab3b5570b515e7d01bf"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "504e40668de50606de8c8c3405ed0e10",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 8728,
+                "upload_time": "2010-05-18T00:20:35",
+                "url": "https://files.pythonhosted.org/packages/38/85/8aff6c5de5a8ea71b5b8dceb2ead64cb4ee0432a3367914e90eba7505c35/colorama-0.1.11.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "16dc0795403bde205d92cfba6449030b",
+                    "sha256": "9e7c464abd71a23e203477ca4efc0c784b9f43806d9badbf3758957212dfd39b"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.11.zip",
+                "has_sig": false,
+                "md5_digest": "16dc0795403bde205d92cfba6449030b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13333,
+                "upload_time": "2010-05-18T00:20:31",
+                "url": "https://files.pythonhosted.org/packages/5b/5e/80a93da9ff4b770c414f32563726040997924b83cd679a94cab738e7f8ff/colorama-0.1.11.zip"
+            }
+        ],
+        "0.1.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fd2c5b857857743918d1df1e0d8b6ff8",
+                    "sha256": "d7bdce9befb286704494ee3c2c7fa06bd79112ae1019171955025a936722a2fa"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fd2c5b857857743918d1df1e0d8b6ff8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4095,
+                "upload_time": "2010-05-18T01:00:00",
+                "url": "https://files.pythonhosted.org/packages/2d/0f/ad6109bf90b762004538c44038ec65d2e3e430b62c12ec114fc97afd047b/colorama-0.1.12.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a01f571af04d88970f5d9e6a4b4e63ba",
+                    "sha256": "e7b519541c95cee3d3268237e9bfd3dac015025fee38075fd50447904750dbcc"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.12.zip",
+                "has_sig": false,
+                "md5_digest": "a01f571af04d88970f5d9e6a4b4e63ba",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4052,
+                "upload_time": "2010-05-18T00:59:59",
+                "url": "https://files.pythonhosted.org/packages/e7/61/ae5a917ed3534a855132a3ef2b429993ff052fc1b9a594d25c906c9c1a1a/colorama-0.1.12.zip"
+            }
+        ],
+        "0.1.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8f699f916b2c0ca1025d6ac9b322716e",
+                    "sha256": "3e1b29490315443351992610fc8ccc92e033e355a9e7771c94fd28ce03657845"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8f699f916b2c0ca1025d6ac9b322716e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9071,
+                "upload_time": "2010-05-18T14:27:19",
+                "url": "https://files.pythonhosted.org/packages/40/97/77857f7520dc329736f1569c3b109c5369c7cdbd54fbcc59e317e9707bdf/colorama-0.1.13.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28db8c010217f7e0158719a0e863f9fd",
+                    "sha256": "fc9e2899eb4ae1d0f21dbf970240bbf00ead390a815adec05389c5f439da5771"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.13.zip",
+                "has_sig": false,
+                "md5_digest": "28db8c010217f7e0158719a0e863f9fd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13836,
+                "upload_time": "2010-05-18T14:27:18",
+                "url": "https://files.pythonhosted.org/packages/53/d3/0a08085428522d4a21470321fdda8f2c845a863d115e2e97ce47580bb7a5/colorama-0.1.13.zip"
+            }
+        ],
+        "0.1.14": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "55aaef93e914a39034e7273872a4277b",
+                    "sha256": "3b8f9c54347138f5d4af332c33dfd7ef3a12cb24a399b4e5de660211ba38cd98"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.14.tar.gz",
+                "has_sig": false,
+                "md5_digest": "55aaef93e914a39034e7273872a4277b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9215,
+                "upload_time": "2010-05-18T14:47:00",
+                "url": "https://files.pythonhosted.org/packages/48/46/4efa86a33c27f42ca35f6d835e660e0a198f321ccf4e7c6271a2a7438454/colorama-0.1.14.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8c1b6ea1e4149b1344f985be25adcca3",
+                    "sha256": "a0e2cb4b7217caa24d52b50cbdeefeb69a76b55e5bd65316f41e898bf44a90fe"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.14.zip",
+                "has_sig": false,
+                "md5_digest": "8c1b6ea1e4149b1344f985be25adcca3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14033,
+                "upload_time": "2010-05-18T14:46:59",
+                "url": "https://files.pythonhosted.org/packages/2d/b3/4a20718f2514eaf0cf40ddc04d795ee5fa247b1e0043c18b0963443ee30b/colorama-0.1.14.zip"
+            }
+        ],
+        "0.1.15": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "52f6a37c91f62fd4aa2dd4a8c2b11a39",
+                    "sha256": "4f57e533873032df40cb19c380d666fed1ea1efc182e5cf6544b460ab1eb0cbd"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.15.tar.gz",
+                "has_sig": false,
+                "md5_digest": "52f6a37c91f62fd4aa2dd4a8c2b11a39",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4617,
+                "upload_time": "2010-06-23T20:36:05",
+                "url": "https://files.pythonhosted.org/packages/59/3c/09d1a085a0886b75c1ef1f73501b8c89dd53f4c6d4c99b677ae7b2858b7c/colorama-0.1.15.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6d63f6827c3331b197c2d36011f8a9aa",
+                    "sha256": "fb55091e0dd982edcfa99f039f8ae85f7acd538626c15de71fed39a6b7faa3fd"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.15.zip",
+                "has_sig": false,
+                "md5_digest": "6d63f6827c3331b197c2d36011f8a9aa",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4583,
+                "upload_time": "2010-06-23T20:36:05",
+                "url": "https://files.pythonhosted.org/packages/ca/c2/6910ba3f0de55091bf88e96b94475bf72056d08aa0ce2e45f6a7c5d4e725/colorama-0.1.15.zip"
+            }
+        ],
+        "0.1.16": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a47b77b2837cd13bf8eab6491b211a28",
+                    "sha256": "218648251fa88ddd34fe38e4539c4306d0633bf55dd1fd47b085d92376d3964b"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.16.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a47b77b2837cd13bf8eab6491b211a28",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11290,
+                "upload_time": "2010-06-23T23:14:42",
+                "url": "https://files.pythonhosted.org/packages/33/07/70a1618f6558fca1be02dba86633e352bf3e1c15a935172b3574e0aad571/colorama-0.1.16.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a0c129c6ad23f9ad2674cc56676c3462",
+                    "sha256": "38843763a2377d72307cc26bc4fc53e7abf207a9f988bd4f7c2f466d017c78c8"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.16.zip",
+                "has_sig": false,
+                "md5_digest": "a0c129c6ad23f9ad2674cc56676c3462",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14710,
+                "upload_time": "2010-06-23T23:14:41",
+                "url": "https://files.pythonhosted.org/packages/7e/6f/4e74dbe88220aa10d2da2226cb6b863c12f24df94ffab2584a30214a2c7b/colorama-0.1.16.zip"
+            }
+        ],
+        "0.1.17": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "da372ada8f53d19475916d1cd3350adc",
+                    "sha256": "8ee8e83f771f31cc208e2603f8a3bf9302324958709e4bd002254ed2013d0d7c"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.17.tar.gz",
+                "has_sig": false,
+                "md5_digest": "da372ada8f53d19475916d1cd3350adc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9790,
+                "upload_time": "2010-07-06T22:41:51",
+                "url": "https://files.pythonhosted.org/packages/93/8e/0e74bf3f62e1c0a0bcd00862610bab6573be89a5adadb566ff710364db4c/colorama-0.1.17.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2112761789a43d70df6b9f1559a5ba0b",
+                    "sha256": "dad0db5a7f26ec8500b19c2c8ff50841d774eb299da2c2bba89f4b2df0cb9cec"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.17.zip",
+                "has_sig": false,
+                "md5_digest": "2112761789a43d70df6b9f1559a5ba0b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15004,
+                "upload_time": "2010-07-06T22:41:49",
+                "url": "https://files.pythonhosted.org/packages/82/42/2e51ae62f1b6d44a67b5f5387cdcbf08a8890186b2bc63cf5f6057b72add/colorama-0.1.17.zip"
+            }
+        ],
+        "0.1.18": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "13b56902d3284a0d9568f6294024179d",
+                    "sha256": "faf09b8eb3253080ed9951af08a7e9d8560ddda46567cc1a88b57e90da63f103"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.18.tar.gz",
+                "has_sig": false,
+                "md5_digest": "13b56902d3284a0d9568f6294024179d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9791,
+                "upload_time": "2010-07-16T12:46:40",
+                "url": "https://files.pythonhosted.org/packages/8a/22/b4e99c35db683631ea352a91d3ba84a712e00f4d910f35f13eda7dfa5591/colorama-0.1.18.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6dbdb3be452d66cd2bff6804a3124ff3",
+                    "sha256": "b9bd0566714e86ea4c4977e2f6f90a1e530a8bc5a7560e1b6bb2ee2e489433f5"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.18.zip",
+                "has_sig": false,
+                "md5_digest": "6dbdb3be452d66cd2bff6804a3124ff3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14986,
+                "upload_time": "2010-07-16T12:46:39",
+                "url": "https://files.pythonhosted.org/packages/00/78/61090f52616bdcfa5cd26a29ea5d4b3bf44e00112a59e2516ae5f1db144b/colorama-0.1.18.zip"
+            }
+        ],
+        "0.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "37660e76426ba38f9afc32da47e69a71",
+                    "sha256": "e54911d64d83a05489290232849b4c17b3f1a5b54246cd40ab94fdd9e5b0fcf3"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "37660e76426ba38f9afc32da47e69a71",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7745,
+                "upload_time": "2010-04-20T11:16:35",
+                "url": "https://files.pythonhosted.org/packages/57/cc/50b228f4a10b72e1b535832ccee3f1829e8bf49d9b72db8bf7060fc9e8c4/colorama-0.1.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25ceefa49f41111928a17e436cb5ae86",
+                    "sha256": "10e40ce2298c412a6b6a96c2a0d87dc652f7d481e830659daf400cbd2946d2d1"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.2.zip",
+                "has_sig": false,
+                "md5_digest": "25ceefa49f41111928a17e436cb5ae86",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15588,
+                "upload_time": "2010-04-20T11:16:34",
+                "url": "https://files.pythonhosted.org/packages/be/2c/4e6eb6434f5d3974c125e8cb40262bf289518e6aa9d7e4d1b6bd4ce224a8/colorama-0.1.2.zip"
+            }
+        ],
+        "0.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bbec7f94ad701c2230e0c77316494739",
+                    "sha256": "30908bb85f9e5f413b83571f735e3e26ad8d05dcc295a0515dbfb27a01d2efbc"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bbec7f94ad701c2230e0c77316494739",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7986,
+                "upload_time": "2010-04-20T15:46:26",
+                "url": "https://files.pythonhosted.org/packages/c8/45/422514a0974c0ce307ca92055135ff99825cd7b50e71f496574c965857ab/colorama-0.1.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "01c421a513077fa56e41934d6a69de7c",
+                    "sha256": "236badb2f664da9d0ffc9fbd8b09f4f6e138d16ded4d3bd819a1b3bcb696cd75"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.3.zip",
+                "has_sig": false,
+                "md5_digest": "01c421a513077fa56e41934d6a69de7c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15971,
+                "upload_time": "2010-04-20T15:46:24",
+                "url": "https://files.pythonhosted.org/packages/be/d7/76a32e17a58dfcec0b33e206c83752b737ce576928b6a17fd997b72ceb78/colorama-0.1.3.zip"
+            }
+        ],
+        "0.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "24970c89b810a6d3ff35a67550305aea",
+                    "sha256": "8ab93dffae95ff1f8406a4d8fc9a86f496f6faf4ebb1c639d0cbbce988065888"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "24970c89b810a6d3ff35a67550305aea",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7669,
+                "upload_time": "2010-04-20T18:12:03",
+                "url": "https://files.pythonhosted.org/packages/fc/ed/606c819f1ac338651d21e314be7537986735142eb58bf6b84780fae536a4/colorama-0.1.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf39232c48983de08a440327245d2793",
+                    "sha256": "68d15a25a534b08df195d5b47913c5108e5dead87346fd51939fa8c99b6f4638"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.4.zip",
+                "has_sig": false,
+                "md5_digest": "bf39232c48983de08a440327245d2793",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15281,
+                "upload_time": "2010-04-20T18:12:02",
+                "url": "https://files.pythonhosted.org/packages/65/67/8bb9d5fc7e14fecd6d7ee7b6cbb31c8c5e1209d545bbf1cc5d693b252615/colorama-0.1.4.zip"
+            }
+        ],
+        "0.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ffd5525370cfd646606ad20c9c5c2048",
+                    "sha256": "97c429e4b2fa1938d98a8fbb33280fbc7276ffae6ffd49dfff494c703550730e"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ffd5525370cfd646606ad20c9c5c2048",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9742,
+                "upload_time": "2010-04-20T21:13:48",
+                "url": "https://files.pythonhosted.org/packages/24/10/1a9a1dfbba2e024af127111665636d4e8fddd97518302f69edeea2aa8a88/colorama-0.1.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa3f8c087da17c0150ff09c2e3ce8aed",
+                    "sha256": "c106b14284bf462d945284bb94ded573a6769075166b935589b0582bf4812b9f"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.5.zip",
+                "has_sig": false,
+                "md5_digest": "aa3f8c087da17c0150ff09c2e3ce8aed",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15926,
+                "upload_time": "2010-04-20T21:13:48",
+                "url": "https://files.pythonhosted.org/packages/50/36/4139cebc5102600ee566923f03a01f706ae2ee89e21974721fa0b71e7687/colorama-0.1.5.zip"
+            }
+        ],
+        "0.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ae3a3b7025328baedbc47cded97de2d5",
+                    "sha256": "61dda1731c73662c151624f093f1d0569de205bf2d11ed85fd68e396f0c189b0"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ae3a3b7025328baedbc47cded97de2d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9078,
+                "upload_time": "2010-04-27T13:06:22",
+                "url": "https://files.pythonhosted.org/packages/ea/18/17d71f153a29763f3a481435d62cd698fc72933b2a053b03922a0187d061/colorama-0.1.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6a790d2bb741d56a9b207cd27b84c832",
+                    "sha256": "de076ba03273ce1f8f0f3670ecd4e0edb17f584e899005c7edef52b93ebfd822"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.6.zip",
+                "has_sig": false,
+                "md5_digest": "6a790d2bb741d56a9b207cd27b84c832",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18431,
+                "upload_time": "2010-04-27T13:06:22",
+                "url": "https://files.pythonhosted.org/packages/7f/5c/0ac1be1cb2cf6c1e508d446f29093768f411cb8dfed109ea5ee282c540bd/colorama-0.1.6.zip"
+            }
+        ],
+        "0.1.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4243a235d19df14e0742308c5317f054",
+                    "sha256": "37f9b319303f298aa5231bce4573190c591c731517b9aeefb1b03375df68a51b"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4243a235d19df14e0742308c5317f054",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10041,
+                "upload_time": "2010-04-29T02:14:52",
+                "url": "https://files.pythonhosted.org/packages/fa/1b/620985cb9351b612bb8b849d426c5729be11751955b20a73d51ca07653dc/colorama-0.1.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "808ff054e27b54f9171af30625cfb7e2",
+                    "sha256": "8c688cbaa2d71e8176dcd676f36861132824b8113675c953b31275f42d0a959f"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.7.zip",
+                "has_sig": false,
+                "md5_digest": "808ff054e27b54f9171af30625cfb7e2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 19847,
+                "upload_time": "2010-04-29T02:14:49",
+                "url": "https://files.pythonhosted.org/packages/4c/2c/24f754ba3d01e48ce2be48b5420b7c4fa58b2dcc2bd9932fe5a18c9d78c2/colorama-0.1.7.zip"
+            }
+        ],
+        "0.1.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5c8be79b6e8301b388702bbeb817a82a",
+                    "sha256": "cfaf7cdd26033a2e8d500ffefc65d2b9f66040187e9180a2c0d0fb40aa407a3c"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5c8be79b6e8301b388702bbeb817a82a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11373,
+                "upload_time": "2010-05-03T23:17:36",
+                "url": "https://files.pythonhosted.org/packages/71/35/6917ec507f13a81f3b3111609dce6bf4ba3bca3ef6b3661071f54fa7a494/colorama-0.1.8.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ee0816a42d4b9ed9c8225dcf2790a53c",
+                    "sha256": "e1b36afff9365e4fa264b7f984546e5ce67af886dd510a2fdad928c64eb26529"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.8.zip",
+                "has_sig": false,
+                "md5_digest": "ee0816a42d4b9ed9c8225dcf2790a53c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21867,
+                "upload_time": "2010-05-03T23:17:35",
+                "url": "https://files.pythonhosted.org/packages/d1/7f/45996d90b613e5041c6927422648638c5df30d840156da567ecc3c5c44c9/colorama-0.1.8.zip"
+            }
+        ],
+        "0.1.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "5dc4321ef79ac101a02a84d6e74d0095",
+                    "sha256": "70f4b61fdbff0784988c554071c55b9adf79a6ffbb3b6960e00d8c330ff0db17"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "5dc4321ef79ac101a02a84d6e74d0095",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 7711,
+                "upload_time": "2010-05-17T01:19:04",
+                "url": "https://files.pythonhosted.org/packages/54/96/e9d16dfcc427d837553a94d504b819874b4f4d440d745bc9e10d5057847b/colorama-0.1.9.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "77dac73b2a3fd030d889750f54d199d3",
+                    "sha256": "ae45945b28f677b249ec30b524a70010a61416368c9ae289b26ef93d697f077d"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.1.9.zip",
+                "has_sig": false,
+                "md5_digest": "77dac73b2a3fd030d889750f54d199d3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 11779,
+                "upload_time": "2010-05-17T01:19:03",
+                "url": "https://files.pythonhosted.org/packages/a4/e7/59dc94cad7b61aaff92b3cdba993e320328a8e9e3a88905576db4d239c08/colorama-0.1.9.zip"
+            }
+        ],
+        "0.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "57637670322774e55da16d9606342287",
+                    "sha256": "e5a10477364714c8e3e11d7cdcfcc011188c936a79f4291c18cff5503dd50c72"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "57637670322774e55da16d9606342287",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 10887,
+                "upload_time": "2011-06-19T20:43:13",
+                "url": "https://files.pythonhosted.org/packages/fe/8e/a8d0ea40a0b5ada3b1d26b65fef3bd08970d6444da239503d06cf97f2ba1/colorama-0.2.0.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3b22a5dc70ca9bafb4a87d71b766fecb",
+                    "sha256": "3be96de7a7f8b34a7fdcca25af1421ade28a5f0d0c3be6af807d6cb8110f493d"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.0.zip",
+                "has_sig": false,
+                "md5_digest": "3b22a5dc70ca9bafb4a87d71b766fecb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 16250,
+                "upload_time": "2011-06-19T20:43:12",
+                "url": "https://files.pythonhosted.org/packages/db/3d/a32e3cf2aa1816ec77fdb3354dfc372ef0cc8a4846052442a5752a634da1/colorama-0.2.0.zip"
+            }
+        ],
+        "0.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3478fd6dd519a67a4c3287b747cd92ef",
+                    "sha256": "f048371a45908c3f77df6f7b9956553faf540ac744326ee1c99890310d5e642f"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3478fd6dd519a67a4c3287b747cd92ef",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14700,
+                "upload_time": "2011-06-19T22:19:59",
+                "url": "https://files.pythonhosted.org/packages/fd/bb/b84178418e5da32af96dfe017798455523c8fc87206f63ebe645e3d1a77d/colorama-0.2.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6364b334553bbb1836b993a60ce71e6d",
+                    "sha256": "c337ac440a2461d54251b25688c351c907acf44210985505aa37da03b66037db"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.1.zip",
+                "has_sig": false,
+                "md5_digest": "6364b334553bbb1836b993a60ce71e6d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23703,
+                "upload_time": "2011-06-19T22:19:58",
+                "url": "https://files.pythonhosted.org/packages/ef/be/7c5926ccffcadf3217968e7ad700b26bd258b3e501ce9d36a63843de8890/colorama-0.2.1.zip"
+            }
+        ],
+        "0.2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7cbcd625eb471190eda2c5820e610adc",
+                    "sha256": "cb68365f4347c621febc8c81762437da9115dce4a63878f0e9c7aa05cad5fff3"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7cbcd625eb471190eda2c5820e610adc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14639,
+                "upload_time": "2011-06-20T13:33:38",
+                "url": "https://files.pythonhosted.org/packages/e9/12/d39f82f77e35217dea68b935fb904d3e7dca2a95bd1d60779c808e74b2dd/colorama-0.2.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1f6dd55e521f57fc1bc7b00c036fb7e1",
+                    "sha256": "a30cd228db907b189707990394225fde00669d37b1daa405d3f1718ac4ae71bf"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.2.zip",
+                "has_sig": false,
+                "md5_digest": "1f6dd55e521f57fc1bc7b00c036fb7e1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23710,
+                "upload_time": "2011-06-20T13:33:36",
+                "url": "https://files.pythonhosted.org/packages/3c/e5/554aaca7cbe67953c785409adb3205c666497306f4607f73eadf9a483c0a/colorama-0.2.2.zip"
+            }
+        ],
+        "0.2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c65736aa56e5e8962db0c66c92a60c32",
+                    "sha256": "04050b9badf460c4e61f9371f5bc8cd880d8ef3a3ea3e6d495a0ee9adc89c21c"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c65736aa56e5e8962db0c66c92a60c32",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 14667,
+                "upload_time": "2011-06-20T13:49:19",
+                "url": "https://files.pythonhosted.org/packages/55/61/ce7a6c859873c27a68cb3b2ac2822f25de4112df42964f9136fa6dab920c/colorama-0.2.3.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "28832d1444861ee6e0d3d8f09eba07b1",
+                    "sha256": "d74c464df1bf3ec5d244c7f81eac6caacfb0d5727a19b2d8349a2a3f6afd047d"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.3.zip",
+                "has_sig": false,
+                "md5_digest": "28832d1444861ee6e0d3d8f09eba07b1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23035,
+                "upload_time": "2011-06-20T13:49:17",
+                "url": "https://files.pythonhosted.org/packages/19/64/6c4047791014470d75f8ee5018b6fa41eb9d756c8a6ada3e0ae85e456d67/colorama-0.2.3.zip"
+            }
+        ],
+        "0.2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2a4ad72f0deec24497e3bb2e79621914",
+                    "sha256": "ab2a1f39493a7cfe61b919ec3c6c204f593db2bf3818a70f6f0aa6b8b0a52e55"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2a4ad72f0deec24497e3bb2e79621914",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 13070,
+                "upload_time": "2011-06-25T12:18:21",
+                "url": "https://files.pythonhosted.org/packages/51/ff/9c6ca40190fa279c3d577689c9252956efd28b0e5a1fd4f447c93926f342/colorama-0.2.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f1cf0b0bc675e0b9e22df28747ea1694",
+                    "sha256": "bb206dc8d19a84c81e07187adf9f7fd53ca62bd924954bc0c9c5dcef767ec6fb"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.4.zip",
+                "has_sig": false,
+                "md5_digest": "f1cf0b0bc675e0b9e22df28747ea1694",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21069,
+                "upload_time": "2011-06-25T12:18:20",
+                "url": "https://files.pythonhosted.org/packages/4f/0f/2fb41f6b8ba83f8d85ce5a8fcb7feca40f76f11f6075ee2c3be746316112/colorama-0.2.4.zip"
+            }
+        ],
+        "0.2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c76f67ead9dc7c83700c57695ebb741e",
+                    "sha256": "06257ff3be96a91cbc6e7121db35935297c1ec444536b361bc9fa4f2ca28a396"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c76f67ead9dc7c83700c57695ebb741e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15132,
+                "upload_time": "2013-06-15T11:15:01",
+                "url": "https://files.pythonhosted.org/packages/fc/87/17f7dfcc3632b01972aa64cf97db20498f96ae206c8caa066ca47f304d44/colorama-0.2.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "db7356055c2ed4f5fe9f386490943f20",
+                    "sha256": "521921faa4f979ba6597e1b10383427403339f8c00a619ce0c563d870b9d8cba"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.5.zip",
+                "has_sig": false,
+                "md5_digest": "db7356055c2ed4f5fe9f386490943f20",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 23734,
+                "upload_time": "2013-06-15T11:14:59",
+                "url": "https://files.pythonhosted.org/packages/2a/4e/bc9dea2d8fb419a4d097d5bc6e5f3558592942bfe863b91e27430beb1cbe/colorama-0.2.5.zip"
+            }
+        ],
+        "0.2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a7568fda4ac84dc946c3824b1bc70965",
+                    "sha256": "cf063242f4d5abfcca19c2639ec89855bd9b3914394f9db2f9c6c7007968249f"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a7568fda4ac84dc946c3824b1bc70965",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 15472,
+                "upload_time": "2013-09-21T10:13:06",
+                "url": "https://files.pythonhosted.org/packages/a8/bc/c8fef4eb4f9dc5928270bc2e46109255f051b34e15b61f0f2594c80ce009/colorama-0.2.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "021fa66347565794cfa8902bb73432bd",
+                    "sha256": "4139316b1dda8f8ea5ae00ce8e8a8503775c089f2115ff91039a6bbdeb6794c0"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.6.zip",
+                "has_sig": false,
+                "md5_digest": "021fa66347565794cfa8902bb73432bd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25244,
+                "upload_time": "2013-09-21T10:13:02",
+                "url": "https://files.pythonhosted.org/packages/8f/ce/6387e33fe3a2c0a0579e72ebff098357bb475c9d5459a22176a65a7e54b8/colorama-0.2.6.zip"
+            }
+        ],
+        "0.2.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c30fa1472c7dfa7ff5cf931fd9e4988",
+                    "sha256": "37dc4e718795a6c5d172de35dab1a278625f78c49883519e337834ff40dddde5"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2c30fa1472c7dfa7ff5cf931fd9e4988",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18513,
+                "upload_time": "2013-09-26T10:05:19",
+                "url": "https://files.pythonhosted.org/packages/dc/e8/ffa47bd75f026d716d2297e9b8e93a4d537530318514cdb8b60d50080d54/colorama-0.2.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8cfcd1edf120d957f75e49bfdc6e22dd",
+                    "sha256": "337d9bd3adef4899017cdfffb96f8030bdb27fcd8ede14c1d3f8c7768a8668d0"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.2.7.zip",
+                "has_sig": false,
+                "md5_digest": "8cfcd1edf120d957f75e49bfdc6e22dd",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24669,
+                "upload_time": "2013-09-26T10:05:15",
+                "url": "https://files.pythonhosted.org/packages/33/cc/3fb8058c58ea5b2d578b7f2a2e5845ae03efe0921fb316c1d570130ddd3e/colorama-0.2.7.zip"
+            }
+        ],
+        "0.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "21bf97cd821ecfc5bf6fa56f77388161",
+                    "sha256": "ada2463942c960ed18349fe2ac296e724d9f3f3146882af350c8ae2fe26f4169"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.0.zip",
+                "has_sig": false,
+                "md5_digest": "21bf97cd821ecfc5bf6fa56f77388161",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24950,
+                "upload_time": "2014-04-17T22:21:55",
+                "url": "https://files.pythonhosted.org/packages/53/ef/7be639f6dda67af0a558222c739c5eba4bb54c97e9f57d4241bf1e366fa7/colorama-0.3.0.zip"
+            }
+        ],
+        "0.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "95ce8bf32f5c25adea14b809db3509cb",
+                    "sha256": "012261ba542a5b18076cac0eaa3892ebe6098e170591e08a8fc0fbf8ab3d5c90"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "95ce8bf32f5c25adea14b809db3509cb",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 21107,
+                "upload_time": "2014-04-19T23:08:18",
+                "url": "https://files.pythonhosted.org/packages/a4/1e/73f7cbfb0516942102e9dafdc1dc93c59c110c5927ea7c7440f6039cad54/colorama-0.3.1.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "54038459dba206a8af3db085be907d08",
+                    "sha256": "0df6c181af416afafa552f8cc2111a88e5f2c8ffc90e10f1a50cdc908d085b0c"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.1.zip",
+                "has_sig": false,
+                "md5_digest": "54038459dba206a8af3db085be907d08",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 31754,
+                "upload_time": "2014-04-19T23:08:16",
+                "url": "https://files.pythonhosted.org/packages/34/4a/ae411cb1195c6bb1d86b59d941247999a6cee0164dec91a120b6f77168d2/colorama-0.3.1.zip"
+            }
+        ],
+        "0.3.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2949d760dfe510a74f5bf4287d474f33",
+                    "sha256": "218862857d74ff781c2caf44629a7d72b88bbb8a2b0aa0f4f1eb8666f8305c11"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2949d760dfe510a74f5bf4287d474f33",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 18343,
+                "upload_time": "2014-09-03T22:12:17",
+                "url": "https://files.pythonhosted.org/packages/29/dc/191dae95b02cb82088b29027ac88d48a3e43f7f12c0543d00c565b3d2f40/colorama-0.3.2.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "179cc70c4a61901ffd052576b598f11e",
+                    "sha256": "f1ae1669bb4009aeed392a8df008d6926b434ee811b663a30ae673c09263c25b"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.2.zip",
+                "has_sig": false,
+                "md5_digest": "179cc70c4a61901ffd052576b598f11e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 32192,
+                "upload_time": "2014-09-03T22:12:13",
+                "url": "https://files.pythonhosted.org/packages/13/b4/ccc34a878c59993a36b3f6d967d34eafbcdf07657e54ef1d051570e0c0e9/colorama-0.3.2.zip"
+            }
+        ],
+        "0.3.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a56b8dc55158a41ab3c89c4c8feb8824",
+                    "sha256": "eb21f2ba718fbf357afdfdf6f641ab393901c7ca8d9f37edd0bee4806ffa269c"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a56b8dc55158a41ab3c89c4c8feb8824",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 22765,
+                "upload_time": "2015-01-06T10:43:29",
+                "url": "https://files.pythonhosted.org/packages/24/84/29ce4167d1f5c4a320aaad91e1178e5a1baf9cfe1c63f9077c5dade0e3cc/colorama-0.3.3.tar.gz"
+            }
+        ],
+        "0.3.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e4d4524dbd1e67a8d201dc5575c3ba81",
+                    "sha256": "ff5c8687f9eea33e6c9586f8bacc43761ac4b7650dd151db8dc7893a0b01e493"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e4d4524dbd1e67a8d201dc5575c3ba81",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24492,
+                "upload_time": "2015-12-12T21:27:35",
+                "url": "https://files.pythonhosted.org/packages/81/79/051335e05573f79cb13cd9ad5b311a54bf31546294969d6b30fb36afebc6/colorama-0.3.4.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "56e65415b3a5ce13d75536373f37380b",
+                    "sha256": "81378cbcd8d2fafa019036146c3c5da279a873adf7ecafa63dfb12898a49492e"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.4.zip",
+                "has_sig": false,
+                "md5_digest": "56e65415b3a5ce13d75536373f37380b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36751,
+                "upload_time": "2015-12-12T21:27:30",
+                "url": "https://files.pythonhosted.org/packages/98/ec/9b7db70c01f557681e124e4dc84ba3837a9799352e86452217d46a07a41c/colorama-0.3.4.zip"
+            }
+        ],
+        "0.3.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ea46a0d677a2e2db11f7accd1cc07b86",
+                    "sha256": "ac378abbd3b335c414a4de4f95905e1050f724cb21fa7c02f95bc2751bfea847"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ea46a0d677a2e2db11f7accd1cc07b86",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 20056,
+                "upload_time": "2015-12-12T21:42:39",
+                "url": "https://files.pythonhosted.org/packages/60/02/5790fb0c1c6ffb803deba163e5d524748bf21316862f18acba8cd4cb2c26/colorama-0.3.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6b5c8f6a4f0d7604e0d3a40db98653d1",
+                    "sha256": "0880a751afcb111881b437a846a93e540c7e1346030ba7bd7fda03434371fbc3"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6b5c8f6a4f0d7604e0d3a40db98653d1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24520,
+                "upload_time": "2015-12-12T21:42:02",
+                "url": "https://files.pythonhosted.org/packages/4b/bf/383aad870435aaaae1cbecb3bcccf029e8b33ae99885c6007ada22b0f6cf/colorama-0.3.5.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a41d5dfe06e375ed35f00df540de38f6",
+                    "sha256": "e2a92673e323e1d35050fb597bacbeee9abb0d85ed35c8d91d542a84d9c79a21"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.5.zip",
+                "has_sig": false,
+                "md5_digest": "a41d5dfe06e375ed35f00df540de38f6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36778,
+                "upload_time": "2015-12-12T21:41:48",
+                "url": "https://files.pythonhosted.org/packages/2e/b2/3fa01e0f0e88d453b1b406a559c875abd809f1087f23a6818edbef5e5d28/colorama-0.3.5.zip"
+            }
+        ],
+        "0.3.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9b78f7e542e7fb3605b30370100c9423",
+                    "sha256": "63906b8855da6eb1a1c1f167080b85cc7a13eab6170dbb658650a8b72fac0593"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9b78f7e542e7fb3605b30370100c9423",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 19853,
+                "upload_time": "2016-01-09T19:07:01",
+                "url": "https://files.pythonhosted.org/packages/4c/1b/7ea581dff0339aab5cdd3e0c275885a7cfc951984c960a7a1da554032b25/colorama-0.3.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "88dc534278e3e3a7b7988cb3fae76c4a",
+                    "sha256": "ec9efcccb086a1d727876384f94ee6358d2f3f096688c1ba18b0f318f2b453b5"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "88dc534278e3e3a7b7988cb3fae76c4a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24505,
+                "upload_time": "2016-01-09T19:06:41",
+                "url": "https://files.pythonhosted.org/packages/93/70/68fcfa68d1dfb484a0fcc25b984e22e029051845604f1a3eb8a7c23b0b40/colorama-0.3.6.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "16fbf7d8c74dd953aa8820deabe04c80",
+                    "sha256": "c5580586331aeb5b06da34743b1fb9046bec892467947b8c252881393b87880c"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.6.zip",
+                "has_sig": false,
+                "md5_digest": "16fbf7d8c74dd953aa8820deabe04c80",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36650,
+                "upload_time": "2016-01-09T19:06:28",
+                "url": "https://files.pythonhosted.org/packages/14/0e/488fd32efe8cf4b2f0b3717b524f375b2391348b47d894f47da775e6f79d/colorama-0.3.6.zip"
+            }
+        ],
+        "0.3.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7d474974709d63d1f249ec61f8e62663",
+                    "sha256": "a4c0f5bc358a62849653471e309dcc991223cf86abafbec17cd8f41327279e89"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7d474974709d63d1f249ec61f8e62663",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 19912,
+                "upload_time": "2016-03-08T09:19:23",
+                "url": "https://files.pythonhosted.org/packages/b7/8e/ddb32ddaabd431813e180ca224e844bab8ad42fbb47ee07553f0ec44cd86/colorama-0.3.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "349d2b02618d3d39e5c6aede36fe3c1a",
+                    "sha256": "e043c8d32527607223652021ff648fbb394d5e19cba9f1a698670b338c9d782b"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "349d2b02618d3d39e5c6aede36fe3c1a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 24602,
+                "upload_time": "2016-03-08T09:18:49",
+                "url": "https://files.pythonhosted.org/packages/f0/d0/21c6449df0ca9da74859edc40208b3a57df9aca7323118c913e58d442030/colorama-0.3.7.tar.gz"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ff79e6cbff3a30dfbed936d98d60f1e",
+                    "sha256": "f4945bf52ae49da0728fe730a33c18744803752fc948f154f29dc0c4f9f2f9cc"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.7.zip",
+                "has_sig": false,
+                "md5_digest": "2ff79e6cbff3a30dfbed936d98d60f1e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 36767,
+                "upload_time": "2016-03-08T09:18:25",
+                "url": "https://files.pythonhosted.org/packages/cd/ac/228603eb4c2aa4c77e767f3d7165b3c9b3196367fa8e3a9131a87a41de5c/colorama-0.3.7.zip"
+            }
+        ],
+        "0.3.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75b3635b10ba2235e0af949c068450e1",
+                    "sha256": "37fed83335fc371eebe48f6f297081962e162c10fc54d47253c6354734eb9625"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.8-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "75b3635b10ba2235e0af949c068450e1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 20200,
+                "upload_time": "2017-04-23T09:32:48",
+                "url": "https://files.pythonhosted.org/packages/4f/95/b41f846cfae3dc38b2dafa318a7c7143f7dff2ab31ba5e3da956ee8b4ccb/colorama-0.3.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d476a6cf3474a1fa55f021f606b1c71b",
+                    "sha256": "66c0470b1aab193890761e959103a1d99d609a2158f14ab27fb1afedc99aacc9"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d476a6cf3474a1fa55f021f606b1c71b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25043,
+                "upload_time": "2017-04-23T09:40:20",
+                "url": "https://files.pythonhosted.org/packages/9d/86/006d621542b6ab44c1b5df6dbd9be12d7e3b7cb87d5405ea5c68a3cb78e9/colorama-0.3.8.tar.gz"
+            }
+        ],
+        "0.3.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cc0c01c7b3b34d0354d813e9ab26aca3",
+                    "sha256": "463f8483208e921368c9f306094eb6f725c6ca42b0f97e313cb5d5512459feda"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.9-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "cc0c01c7b3b34d0354d813e9ab26aca3",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 20181,
+                "upload_time": "2017-04-27T07:12:36",
+                "url": "https://files.pythonhosted.org/packages/db/c8/7dcf9dbcb22429512708fe3a547f8b6101c0d02137acbd892505aee57adf/colorama-0.3.9-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a0e415259690f4dd7455c2683ee5850",
+                    "sha256": "48eb22f4f8461b1df5734a074b57042430fb06e1d61bd1e11b078c0fe6d7a1f1"
+                },
+                "downloads": -1,
+                "filename": "colorama-0.3.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3a0e415259690f4dd7455c2683ee5850",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25053,
+                "upload_time": "2017-04-27T07:12:12",
+                "url": "https://files.pythonhosted.org/packages/e6/76/257b53926889e2835355d74fec73d82662100135293e17d382e2b74d1669/colorama-0.3.9.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "cc0c01c7b3b34d0354d813e9ab26aca3",
+                "sha256": "463f8483208e921368c9f306094eb6f725c6ca42b0f97e313cb5d5512459feda"
+            },
+            "downloads": -1,
+            "filename": "colorama-0.3.9-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "cc0c01c7b3b34d0354d813e9ab26aca3",
+            "packagetype": "bdist_wheel",
+            "python_version": "2.7",
+            "size": 20181,
+            "upload_time": "2017-04-27T07:12:36",
+            "url": "https://files.pythonhosted.org/packages/db/c8/7dcf9dbcb22429512708fe3a547f8b6101c0d02137acbd892505aee57adf/colorama-0.3.9-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "3a0e415259690f4dd7455c2683ee5850",
+                "sha256": "48eb22f4f8461b1df5734a074b57042430fb06e1d61bd1e11b078c0fe6d7a1f1"
+            },
+            "downloads": -1,
+            "filename": "colorama-0.3.9.tar.gz",
+            "has_sig": false,
+            "md5_digest": "3a0e415259690f4dd7455c2683ee5850",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 25053,
+            "upload_time": "2017-04-27T07:12:12",
+            "url": "https://files.pythonhosted.org/packages/e6/76/257b53926889e2835355d74fec73d82662100135293e17d382e2b74d1669/colorama-0.3.9.tar.gz"
+        }
+    ],
+    "package_name": "colorama"
+}

@@ -1,0 +1,1032 @@
+{
+    "info": {
+        "author": "Armin Ronacher",
+        "author_email": "armin.ronacher@active-4.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Web Environment",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: BSD License",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Text Processing :: Markup :: HTML"
+        ],
+        "description": "\nJinja2\n~~~~~~\n\nJinja2 is a template engine written in pure Python.  It provides a\n`Django`_ inspired non-XML syntax but supports inline expressions and\nan optional `sandboxed`_ environment.\n\nNutshell\n--------\n\nHere a small example of a Jinja template::\n\n    {% extends 'base.html' %}\n    {% block title %}Memberlist{% endblock %}\n    {% block content %}\n      <ul>\n      {% for user in users %}\n        <li><a href=\"{{ user.url }}\">{{ user.username }}</a></li>\n      {% endfor %}\n      </ul>\n    {% endblock %}\n\nPhilosophy\n----------\n\nApplication logic is for the controller but don't try to make the life\nfor the template designer too hard by giving him too few functionality.\n\nFor more informations visit the new `Jinja2 webpage`_ and `documentation`_.\n\n.. _sandboxed: https://en.wikipedia.org/wiki/Sandbox_(computer_security)\n.. _Django: https://www.djangoproject.com/\n.. _Jinja2 webpage: http://jinja.pocoo.org/\n.. _documentation: http://jinja.pocoo.org/2/documentation/\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://jinja.pocoo.org/",
+        "keywords": "",
+        "license": "BSD",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "Jinja2",
+        "package_url": "https://pypi.org/project/Jinja2/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/Jinja2/",
+        "release_url": "https://pypi.org/project/Jinja2/2.10/",
+        "requires_dist": [
+            "MarkupSafe (>=0.23)",
+            "Babel (>=0.8); extra == 'i18n'"
+        ],
+        "requires_python": "",
+        "summary": "A small but fast and easy to use stand-alone template engine written in pure python.",
+        "version": "2.10"
+    },
+    "last_serial": 3317320,
+    "releases": {
+        "2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "19fe3ee10ee94a6003c53374112f2403",
+                    "sha256": "15b17b02d6042bbec2511b655b17561633c8cf5dad68c42356f3f82ec24e4c57"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "19fe3ee10ee94a6003c53374112f2403",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 523360,
+                "upload_time": "2008-07-17T21:33:36",
+                "url": "https://files.pythonhosted.org/packages/01/82/b2ed16b1cbea5ddbf1462fb65cf67ce7cd780dc1b6a6f0244f1387fa007d/Jinja2-2.0.tar.gz"
+            }
+        ],
+        "2.0rc1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e4286023eed2f6d8cc5f5075106db1f4",
+                    "sha256": "e59a42234017114d3df9db61d3cc48384e825170dbb95b008c22d78b7ce9ac71"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1-py2.4-linux-i686.egg",
+                "has_sig": false,
+                "md5_digest": "e4286023eed2f6d8cc5f5075106db1f4",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 198515,
+                "upload_time": "2008-06-09T21:03:09",
+                "url": "https://files.pythonhosted.org/packages/2d/c4/93c21617ae4b0bdfd46ed5ac1d8694712d8cf7b5d1e868ca1d712593d2f8/Jinja2-2.0rc1-py2.4-linux-i686.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3f0499f5f0caa7943d4ba3cb20740f5e",
+                    "sha256": "7f715cf867db9fd49b281604dc56762292a7f0a8dff7b71f1924c39acf49a504"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1-py2.4-linux-x86_64.egg",
+                "has_sig": false,
+                "md5_digest": "3f0499f5f0caa7943d4ba3cb20740f5e",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 197675,
+                "upload_time": "2008-06-09T20:23:09",
+                "url": "https://files.pythonhosted.org/packages/bd/0e/643b5e074755af3e9e3b83c1c60efde6765cd44071ac12d89385f1cc4aab/Jinja2-2.0rc1-py2.4-linux-x86_64.egg"
+            },
+            {
+                "comment_text": "built on Darwin-8.11.1",
+                "digests": {
+                    "md5": "3b5901001e84aa62c8bc4c6f0a638b18",
+                    "sha256": "f7fce759b5cce2d764c2d00756a636086fbc748878c959c10ce2393b1a910792"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1-py2.4-macosx-10.3-i386.egg",
+                "has_sig": false,
+                "md5_digest": "3b5901001e84aa62c8bc4c6f0a638b18",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 288048,
+                "upload_time": "2008-06-09T16:55:06",
+                "url": "https://files.pythonhosted.org/packages/16/a8/953ae04316fc5f916982ad29a24247cdf3a10c903e487256b9309112a95b/Jinja2-2.0rc1-py2.4-macosx-10.3-i386.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6f17c620d4bc9272f3061b70ab7af11b",
+                    "sha256": "be3fac9ca65d8b7ae2b242f10819f4391a14feeb2dbaad9b9ddec96e04adeac6"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1-py2.4-win32.egg",
+                "has_sig": false,
+                "md5_digest": "6f17c620d4bc9272f3061b70ab7af11b",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 192232,
+                "upload_time": "2008-06-09T20:26:53",
+                "url": "https://files.pythonhosted.org/packages/33/ac/03043414ec22e6db67bcd915d298ca49ae81a1d01795bfc1cc9d8c04282c/Jinja2-2.0rc1-py2.4-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a2be0c13c6036d59e81f9b3db82bdfa",
+                    "sha256": "e6637b5a94b45d90892e822037b4077eb20a766f9a08c2d2f0a7a512e99b5f96"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1-py2.5-linux-i686.egg",
+                "has_sig": false,
+                "md5_digest": "3a2be0c13c6036d59e81f9b3db82bdfa",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 195906,
+                "upload_time": "2008-06-09T21:00:36",
+                "url": "https://files.pythonhosted.org/packages/2a/68/316c1bfc6f34cdf07552a0350927224ea8c844c7651a98d64fa240718284/Jinja2-2.0rc1-py2.5-linux-i686.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3ccf95d2d6245b5407cdda0577b24f64",
+                    "sha256": "726bda3062c14dd4c7c808c90adb1a7c54680b3edfbd42b62417af7c1cef9ff9"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1-py2.5-linux-x86_64.egg",
+                "has_sig": false,
+                "md5_digest": "3ccf95d2d6245b5407cdda0577b24f64",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 196531,
+                "upload_time": "2008-06-09T20:23:39",
+                "url": "https://files.pythonhosted.org/packages/7f/c0/25d775813d628bd8c173b906e20cf9fc7dfa7a816529216176199c8f58ec/Jinja2-2.0rc1-py2.5-linux-x86_64.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bc82f2a2e9b55ca1472bc7b89fedca06",
+                    "sha256": "78f6c467e64fb8045bcf4ccb0f2cb0a62f028375b268288dfb7a7929bcb11938"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1-py2.5-macosx-10.3-i386.egg",
+                "has_sig": false,
+                "md5_digest": "bc82f2a2e9b55ca1472bc7b89fedca06",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 293771,
+                "upload_time": "2008-06-09T16:50:19",
+                "url": "https://files.pythonhosted.org/packages/ea/fc/64cf36076950f861b29862a88fee91dd38b1459b9a3ca7cd9e806c43c865/Jinja2-2.0rc1-py2.5-macosx-10.3-i386.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "40af7fdc93abd3892b6ea2f208a6033b",
+                    "sha256": "d073aee8c7f7b32af90b6817117b369871888fdbd61c8fa1b193162c44ee1ddf"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1-py2.5-win32.egg",
+                "has_sig": false,
+                "md5_digest": "40af7fdc93abd3892b6ea2f208a6033b",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 189725,
+                "upload_time": "2008-06-09T19:12:23",
+                "url": "https://files.pythonhosted.org/packages/f6/10/c9391f5561e69dff71e95b91bf4440c0a40f68e494358dcc082945c3aab1/Jinja2-2.0rc1-py2.5-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7751e097f23fec244634e601d86e1d60",
+                    "sha256": "f9468e841a39bd5a8d786db646b4f8d472c73c06eb4f8dfd2b11ebc9235a7bac"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.0rc1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7751e097f23fec244634e601d86e1d60",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 515656,
+                "upload_time": "2008-06-09T16:50:43",
+                "url": "https://files.pythonhosted.org/packages/7e/c9/7ade5e3a768b7f099e326690294609962bc83d0c5c392dcb97a6eb39aa13/Jinja2-2.0rc1.tar.gz"
+            }
+        ],
+        "2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d8eb08f4ef61b05a00039a48f620deeb",
+                    "sha256": "857bfc9ddd22f2ea04e217598dd698af49fe57f136bee05cff63d27d4080f5ee"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.1-py2.4-win32.egg",
+                "has_sig": false,
+                "md5_digest": "d8eb08f4ef61b05a00039a48f620deeb",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 217282,
+                "upload_time": "2008-11-23T13:33:37",
+                "url": "https://files.pythonhosted.org/packages/3d/6a/1999db9da05cfc3f799bb3184997cb1dc34063b4a34519d8618c44c5cf69/Jinja2-2.1-py2.4-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "135dad62ce5de34a54d568a2b3cd05f0",
+                    "sha256": "b0e31b2b137437ea2ec37bebcdd8532c26575b999f5d67003625ff14652af88c"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.1-py2.5-win32.egg",
+                "has_sig": false,
+                "md5_digest": "135dad62ce5de34a54d568a2b3cd05f0",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 214459,
+                "upload_time": "2008-11-23T13:33:50",
+                "url": "https://files.pythonhosted.org/packages/dc/96/f9a47d6f13d4f66fe9376716c94453114d1409c3ee0a6120153c1c335cc0/Jinja2-2.1-py2.5-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8319235be842d5a61c552be8d206f65a",
+                    "sha256": "3c51815d28ebf078449b398390ca27ea4b57481c8f552408d59f6a5a2af15f27"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.1-py2.6-win32.egg",
+                "has_sig": false,
+                "md5_digest": "8319235be842d5a61c552be8d206f65a",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 216126,
+                "upload_time": "2008-11-23T14:13:44",
+                "url": "https://files.pythonhosted.org/packages/ba/55/15ed056fb8c85e0c27fbb3d542250628e4df04dbd0f85c7d83274ee377cd/Jinja2-2.1-py2.6-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c7a31931c95a7ae5e1baf21074fdd576",
+                    "sha256": "a9abe1cd68aa2f7bf4502456ebc00500570fdd878cfb19fd908f837f61b811ff"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c7a31931c95a7ae5e1baf21074fdd576",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 653267,
+                "upload_time": "2008-11-23T12:27:10",
+                "url": "https://files.pythonhosted.org/packages/f6/71/f7b1b6bb97d635e57e196ac2d70a0b001d37a94b0c37f5ec02d0ffce31f6/Jinja2-2.1.tar.gz"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ce0a82883624cd31c8b513b7bc961148",
+                    "sha256": "d5d7354809bd9e55b765f5d0e4c88e511bede552411bc83491f98a85dcc51c50"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.1.1-py2.4-win32.egg",
+                "has_sig": false,
+                "md5_digest": "ce0a82883624cd31c8b513b7bc961148",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 322858,
+                "upload_time": "2009-01-06T11:06:20",
+                "url": "https://files.pythonhosted.org/packages/a1/12/98c441c87b1463391f723f9e185c9c3f4462018bd51966e35d7de85f2cf2/Jinja2-2.1.1-py2.4-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a6cd9757966640a7bb7e887c24dd9ff3",
+                    "sha256": "52a16668d0ddcd53c00a6f9993f7da5f46a89ed7b02506308211dbdf6c0f085f"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.1.1-py2.5-win32.egg",
+                "has_sig": false,
+                "md5_digest": "a6cd9757966640a7bb7e887c24dd9ff3",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 319968,
+                "upload_time": "2009-01-06T11:06:40",
+                "url": "https://files.pythonhosted.org/packages/53/f8/3c76c38c68f022ad6a81f29b95cf73f5127a232842c4916306525b39eccd/Jinja2-2.1.1-py2.5-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8540a2bf5bfd263842d3a7c6df13977b",
+                    "sha256": "78e6af9be17cd3bc588da5b9e3b2fc266152520774448a1e7b8e1448c2fbdfe4"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.1.1-py2.6-win32.egg",
+                "has_sig": false,
+                "md5_digest": "8540a2bf5bfd263842d3a7c6df13977b",
+                "packagetype": "bdist_egg",
+                "python_version": "2.6",
+                "size": 319747,
+                "upload_time": "2009-01-06T11:06:59",
+                "url": "https://files.pythonhosted.org/packages/c4/3a/bc1d47228268d74c497bc82016180cbdf87be638e63b88136b7e007fc6f3/Jinja2-2.1.1-py2.6-win32.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b37fc262e4f613eec57c3defe6aea97c",
+                    "sha256": "4ccb4abe88756b79768ca9d8c80da8cf2459ad876c70c9813ebfdcab4350f013"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b37fc262e4f613eec57c3defe6aea97c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 516303,
+                "upload_time": "2008-12-25T17:41:32",
+                "url": "https://files.pythonhosted.org/packages/d9/60/9211025af939cddd0d3c4759837c017839a23edc7c6c08813569e6e655d4/Jinja2-2.1.1.tar.gz"
+            }
+        ],
+        "2.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cb679acd14423aef56dfff61d6a988f8",
+                    "sha256": "74c935a1b8bb9a3947c50a54766a969d4846290e1e788ea44c1392163723c3bd"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.10-py2.py3-none-any.whl",
+                "has_sig": true,
+                "md5_digest": "cb679acd14423aef56dfff61d6a988f8",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 126381,
+                "upload_time": "2017-11-08T20:13:42",
+                "url": "https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61ef1117f945486472850819b8d1eb3d",
+                    "sha256": "f84be1bb0040caca4cea721fcbbbbd61f9be9464ca236387158b0feea01914a4"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.10.tar.gz",
+                "has_sig": true,
+                "md5_digest": "61ef1117f945486472850819b8d1eb3d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 261631,
+                "upload_time": "2017-11-08T20:13:44",
+                "url": "https://files.pythonhosted.org/packages/56/e6/332789f295cf22308386cf5bbd1f4e00ed11484299c5d7383378cf48ba47/Jinja2-2.10.tar.gz"
+            }
+        ],
+        "2.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7ea7821801eee5def026c216d80e5103",
+                    "sha256": "1b30dcb50918f845826c33416e1285e566c6cef30354ae90527577184e12f2ee"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7ea7821801eee5def026c216d80e5103",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 687073,
+                "upload_time": "2009-09-13T09:30:53",
+                "url": "https://files.pythonhosted.org/packages/51/03/8da0ec1d8380991174e96df3171745f1ebd3ec3987935afaf766940c2052/Jinja2-2.2.tar.gz"
+            }
+        ],
+        "2.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fea849d68891218eb0b21c170f1c32d5",
+                    "sha256": "b90e99f12c035f67bcf9f865c46bb7048d62fbcadd892f5ae7633a4e53e01df3"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fea849d68891218eb0b21c170f1c32d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 771552,
+                "upload_time": "2009-09-14T23:58:41",
+                "url": "https://files.pythonhosted.org/packages/cd/a7/393d52afb5b1fd11470d12a38f316717f3645ad95d9541f69dced68aff79/Jinja2-2.2.1.tar.gz"
+            }
+        ],
+        "2.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7fc34b115f157474d988db8caab6895c",
+                    "sha256": "58a257e26a53919058a27eb9aa3d74e29d5983dba82290fc1c1898f4ea249535"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7fc34b115f157474d988db8caab6895c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 675996,
+                "upload_time": "2010-02-10T02:19:35",
+                "url": "https://files.pythonhosted.org/packages/08/b9/cefc15a27d9315b5d83a8010c1b19d4dcad1c68c99e0c38d704ce37f9e9d/Jinja2-2.3.tar.gz"
+            }
+        ],
+        "2.3.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "391c7dd06c62dfe7e30ebaad7af0a401",
+                    "sha256": "012dad09654e76ccb2e1bddbddb8073009b42cd4a92021b6206db69e616bd66c"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.3.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "391c7dd06c62dfe7e30ebaad7af0a401",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 428770,
+                "upload_time": "2010-02-19T13:38:51",
+                "url": "https://files.pythonhosted.org/packages/68/fd/348686b7eaae0ce5b7383cf89085b1b7b20441aa1b00352b6450ade28b61/Jinja2-2.3.1.tar.gz"
+            }
+        ],
+        "2.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "635746009a6560e20db97e94db28867d",
+                    "sha256": "767418380bf7ec1701414f9f361ca6c261f705dbb576f52366f7d5ebc1b25f1d"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "635746009a6560e20db97e94db28867d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 688892,
+                "upload_time": "2010-04-13T00:56:07",
+                "url": "https://files.pythonhosted.org/packages/6d/00/80746e9f3133c90686768f450cede835798c4c7e4a3b61a7621aa310f909/Jinja2-2.4.tar.gz"
+            }
+        ],
+        "2.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e0cf5af057fac63ac9689b86c8b31ce6",
+                    "sha256": "a90b3f18ccbb50c0a0fb3eaff23d60b7664e3e447c676a2cd21459a257574b38"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "e0cf5af057fac63ac9689b86c8b31ce6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 689032,
+                "upload_time": "2010-04-20T13:53:45",
+                "url": "https://files.pythonhosted.org/packages/85/b1/633bbedbd8dfead320329a4c6bd8ee0abd9079567f21084c6862b7085dba/Jinja2-2.4.1.tar.gz"
+            }
+        ],
+        "2.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d02f82e33afe918cef8a9abcd23ccd78",
+                    "sha256": "3d51c7a98feb1ae3cd4083f2ca5c9a35d2804707601ae18cdc707f3a0e63ef2b"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d02f82e33afe918cef8a9abcd23ccd78",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 690695,
+                "upload_time": "2010-05-29T22:54:42",
+                "url": "https://files.pythonhosted.org/packages/c2/f2/7bd3f76fd073798f7dadfb66133be6cc7d587a592c8110f2ede991a9bcb3/Jinja2-2.5.tar.gz"
+            }
+        ],
+        "2.5.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "12be091a5d2edae961b65adfc99da826",
+                    "sha256": "8d1c5be4a9c653f0dea0caab41d7af749f0600c96809926c9ea42721153320ee"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.5.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "12be091a5d2edae961b65adfc99da826",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 693882,
+                "upload_time": "2010-08-17T12:39:04",
+                "url": "https://files.pythonhosted.org/packages/8b/b5/2670eb888424cefca96cc14475e20edfd2ce8b8f704753513a158832668f/Jinja2-2.5.1.tar.gz"
+            }
+        ],
+        "2.5.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3829be2926a067ee024e6d3e5327dbf7",
+                    "sha256": "19040f01b3a9d8c63e4d57936f78710908199b69370ab44a0f7407dd891f019b"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.5.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "3829be2926a067ee024e6d3e5327dbf7",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 697422,
+                "upload_time": "2010-08-18T11:15:20",
+                "url": "https://files.pythonhosted.org/packages/1d/77/b5b98d2201259ac6962d299e6b445e8040d07c33ac3ff50509d7cd5ba00d/Jinja2-2.5.2.tar.gz"
+            }
+        ],
+        "2.5.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "cae31ce405ec5e4f167913b25ee4f65a",
+                    "sha256": "b26f494f869170d966ccdc027537d2f0c58ccef45b453c05ad4ae1b764f77275"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.5.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "cae31ce405ec5e4f167913b25ee4f65a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 438450,
+                "upload_time": "2010-10-17T15:55:03",
+                "url": "https://files.pythonhosted.org/packages/48/89/918559653d27c792906ac3958a8336a7cef4f517ec49a2f3c6be4d20ada4/Jinja2-2.5.3.tar.gz"
+            }
+        ],
+        "2.5.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4553d5aef15d550bfebbc1903014067e",
+                    "sha256": "62dfe7583c489f68d8af6afffdf3b594eb4d0f954c9e4a833ca12be0a4b7ee18"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.5.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4553d5aef15d550bfebbc1903014067e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1774331,
+                "upload_time": "2010-10-17T16:48:42",
+                "url": "https://files.pythonhosted.org/packages/58/cc/b600b1d2fb6218bd0cb20c88f2dd4f748e163bea2e9b6ada22b7d9fc4571/Jinja2-2.5.4.tar.gz"
+            }
+        ],
+        "2.5.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "83b20c1eeb31f49d8e6392efae91b7d5",
+                    "sha256": "22f9675e42dc640c4469d4f7d210baecb5e695823af954c813d51c930235675d"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.5.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "83b20c1eeb31f49d8e6392efae91b7d5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 438586,
+                "upload_time": "2010-10-18T14:37:40",
+                "url": "https://files.pythonhosted.org/packages/de/0b/a9f8af13e178654a0a5fc8518773df649c503b7c1d0e7c77027ca705fdfc/Jinja2-2.5.5.tar.gz"
+            }
+        ],
+        "2.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1c49a8825c993bfdcf55bb36897d28a2",
+                    "sha256": "a85e185375db75c109f99ecde3d55415f035e7068a82252cf4f16c667ac38f49"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1c49a8825c993bfdcf55bb36897d28a2",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 389741,
+                "upload_time": "2011-07-24T21:48:51",
+                "url": "https://files.pythonhosted.org/packages/25/c8/212b1c2fd6df9eaf536384b6c6619c4e70a3afd2dffdd00e5296ffbae940/Jinja2-2.6.tar.gz"
+            }
+        ],
+        "2.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c2fb12cbbb523c57d3d15bfe4dc0e8fe",
+                    "sha256": "474f1518d189ae7e318b139fecc1d30b943f124448cfa0f09582ca23e069fa4d"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "c2fb12cbbb523c57d3d15bfe4dc0e8fe",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 377603,
+                "upload_time": "2013-05-20T13:03:02",
+                "url": "https://files.pythonhosted.org/packages/33/db/9931c645626f9bf7867cc3c4225e7a8abf7aff37ecddb7e7d5df90a3b6c4/Jinja2-2.7.tar.gz"
+            }
+        ],
+        "2.7.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "282aed153e69f970d6e76f78ed9d027a",
+                    "sha256": "5cc0a087a81dca1c08368482fb7a92fe2bdd8cfbb22bc0fccfe6c85affb04c8b"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.7.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "282aed153e69f970d6e76f78ed9d027a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 377813,
+                "upload_time": "2013-08-07T13:27:38",
+                "url": "https://files.pythonhosted.org/packages/47/83/679b5592feb54e948d6599edf5dac61d2991778c3ecbef6b8041663f4740/Jinja2-2.7.1.tar.gz"
+            }
+        ],
+        "2.7.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "df1581455564e97010e38bc792012aa5",
+                    "sha256": "310a35fbccac3af13ebf927297f871ac656b9da1d248b1fe6765affa71b53235"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.7.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "df1581455564e97010e38bc792012aa5",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 378300,
+                "upload_time": "2014-01-10T10:42:40",
+                "url": "https://files.pythonhosted.org/packages/23/94/ca42176bf7a252ce1f5d165953013573dffdbe4b5dac07f57146146ea432/Jinja2-2.7.2.tar.gz"
+            }
+        ],
+        "2.7.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b9dffd2f3b43d673802fe857c8445b1a",
+                    "sha256": "2e24ac5d004db5714976a04ac0e80c6df6e47e98c354cb2c0d82f8879d4f8fdb"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.7.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b9dffd2f3b43d673802fe857c8445b1a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 378470,
+                "upload_time": "2014-06-06T16:49:17",
+                "url": "https://files.pythonhosted.org/packages/b0/73/eab0bca302d6d6a0b5c402f47ad1760dc9cb2dd14bbc1873ad48db258e4d/Jinja2-2.7.3.tar.gz"
+            }
+        ],
+        "2.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "75acb6f1abfc46ed75f4fd392f321ac2",
+                    "sha256": "1cc03ef32b64be19e0a5b54578dd790906a34943fe9102cfdae0d4495bd536b4"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.8-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "75acb6f1abfc46ed75f4fd392f321ac2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 263888,
+                "upload_time": "2015-07-26T17:52:06",
+                "url": "https://files.pythonhosted.org/packages/96/a1/c56bc4d99dc2663514a8481511e80eba8994133ae75eebdadfc91a5597d9/Jinja2-2.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "edb51693fe22c53cee5403775c71a99e",
+                    "sha256": "bc1ff2ff88dbfacefde4ddde471d1417d3b304e8df103a7a9437d47269201bf4"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "edb51693fe22c53cee5403775c71a99e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 357055,
+                "upload_time": "2015-07-26T17:49:47",
+                "url": "https://files.pythonhosted.org/packages/f2/2f/0b98b06a345a761bec91a079ccae392d282690c2d8272e708f4d10829e22/Jinja2-2.8.tar.gz"
+            }
+        ],
+        "2.8.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7472b9df828747c2d44eb539558bbf7a",
+                    "sha256": "3997cf273f1424207c60d5895264f74483fce72702f15a7cd51a8551d43663ca"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.8.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "7472b9df828747c2d44eb539558bbf7a",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 264916,
+                "upload_time": "2016-12-29T13:16:24",
+                "url": "https://files.pythonhosted.org/packages/67/ea/92b1d9d8f2dc43302df7f5271b9500bbfc237386782343561a5f62beb306/Jinja2-2.8.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "150a8f1c180272753cf46dd3cdd6decf",
+                    "sha256": "35341f3a97b46327b3ef1eb624aadea87a535b8f50863036e085e7c426ac5891"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.8.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "150a8f1c180272753cf46dd3cdd6decf",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 358129,
+                "upload_time": "2016-12-29T13:16:20",
+                "url": "https://files.pythonhosted.org/packages/5f/bd/5815d4d925a2b8cbbb4b4960f018441b0c65f24ba29f3bdcfb3c8218a307/Jinja2-2.8.1.tar.gz"
+            }
+        ],
+        "2.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "49b11a7357735679ffdc6d22e506d6bf",
+                    "sha256": "f485882fa2dc4dd27ca49605adcf7968d679ccc6ae220a09ca79622e151a40de"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "49b11a7357735679ffdc6d22e506d6bf",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 273661,
+                "upload_time": "2017-01-07T15:35:50",
+                "url": "https://files.pythonhosted.org/packages/1d/7a/3dec2b8717e34fba5aae98fc2a42d75c27b2eff3650a2dbd975a664d2a11/Jinja2-2.9-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6befb7d870fab7f385b3eb4f2f805272",
+                    "sha256": "bc5ce80fba5561ed94807f91e42e608b04b92861e22f8f79cef3af0444046f5d"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6befb7d870fab7f385b3eb4f2f805272",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 367416,
+                "upload_time": "2017-01-07T15:35:46",
+                "url": "https://files.pythonhosted.org/packages/44/af/6d8f605d188a50b11ec17fcd93e612c77197f2cd816facd5fea8aef7802e/Jinja2-2.9.tar.gz"
+            }
+        ],
+        "2.9.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c984a7b6ab1751309b4149c06d44d490",
+                    "sha256": "5308c0017872a9a1bcb39766b56240e8f28222b62d7e5f2f8c821085ce608468"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c984a7b6ab1751309b4149c06d44d490",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 273702,
+                "upload_time": "2017-01-07T15:56:27",
+                "url": "https://files.pythonhosted.org/packages/39/10/4e29a4822d736c878ee5be74912bba174e5ab0e5b1cecfa56da7b1341108/Jinja2-2.9.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4b2270f003aed1d3f934b4cd87d7f005",
+                    "sha256": "d1e67761036f25bea59acf53d9bb137119d6a56c05166c412742499acb790815"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4b2270f003aed1d3f934b4cd87d7f005",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 367528,
+                "upload_time": "2017-01-07T15:56:23",
+                "url": "https://files.pythonhosted.org/packages/a7/4e/6c4a13fa6bacee33d5b2ff8653593f32853e020c4289b24935305f202baf/Jinja2-2.9.1.tar.gz"
+            }
+        ],
+        "2.9.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "647ee3f7e2092d4ba36345a7aa305f23",
+                    "sha256": "2f2834e395694d3a1b68e7854e729b1bac036c1b6f998689719006ae384ad0d0"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "647ee3f7e2092d4ba36345a7aa305f23",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 274179,
+                "upload_time": "2017-01-08T01:50:48",
+                "url": "https://files.pythonhosted.org/packages/7b/f4/acb2ebd5e40245668c800078d7637b43137d52542d1052d075375fad9f55/Jinja2-2.9.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "38b0447a9e4ff22e2df1c121c1548579",
+                    "sha256": "2333eae399fb538f934d661f7debab8a9736002c343c8e95c56f1e413076c0ce"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "38b0447a9e4ff22e2df1c121c1548579",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 368290,
+                "upload_time": "2017-01-08T01:50:44",
+                "url": "https://files.pythonhosted.org/packages/de/24/bad6dc9f0d7a0f835d940c5f5076f29824fce45ccd673cc843abf30b9117/Jinja2-2.9.2.tar.gz"
+            }
+        ],
+        "2.9.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15ece86934541f08e16a6f4b1f6e9459",
+                    "sha256": "9951f5045ee63d93c25ff168648d3e2f5e0dc1ec3465a83d0bc436c129e14340"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "15ece86934541f08e16a6f4b1f6e9459",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 274552,
+                "upload_time": "2017-01-08T21:24:00",
+                "url": "https://files.pythonhosted.org/packages/e4/20/00afebb3a730abdb8152845b3df0bce381daf39ce999ee0ac0ee3aee8845/Jinja2-2.9.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4d7c7e4f598800500ea63b5afaa8ec0c",
+                    "sha256": "ad82db536885b24aef5d2cb9d4d8da48a4202533fc1b7e60c068867426396488"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4d7c7e4f598800500ea63b5afaa8ec0c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 369090,
+                "upload_time": "2017-01-08T21:23:57",
+                "url": "https://files.pythonhosted.org/packages/7e/ea/f515b991b63346ad62efeae073d613c12216c551f9f9c2fa74c916e731c0/Jinja2-2.9.3.tar.gz"
+            }
+        ],
+        "2.9.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a01160d11bd84452ab7840b0f8c1d079",
+                    "sha256": "93b97a811b575998899b293fdb2144c536aeb7d6ee13464b0cf8e86ae64eb56b"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a01160d11bd84452ab7840b0f8c1d079",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 274633,
+                "upload_time": "2017-01-10T08:24:17",
+                "url": "https://files.pythonhosted.org/packages/4b/d0/c967cd61324702887b00b1e8e78db94db734a9018443051a0854c16a8fe1/Jinja2-2.9.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b151bfab6fb728fb7a06da4299161c74",
+                    "sha256": "aab8d8ca9f45624f1e77f2844bf3c144d180e97da8824c2a6d7552ad039b5442"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b151bfab6fb728fb7a06da4299161c74",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 369566,
+                "upload_time": "2017-01-10T08:24:12",
+                "url": "https://files.pythonhosted.org/packages/f4/3f/28387a5bbc6883082c16784c6135440b94f9d5938fb156ff579798e18eda/Jinja2-2.9.4.tar.gz"
+            }
+        ],
+        "2.9.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "3a518754a21f18b26eb36f3e73defab5",
+                    "sha256": "a7b7438120dbe76a8e735ef7eba6048eaf4e0b7dbc530e100812f8ec462a4d50"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "3a518754a21f18b26eb36f3e73defab5",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 340662,
+                "upload_time": "2017-01-28T14:42:38",
+                "url": "https://files.pythonhosted.org/packages/3c/d1/49d69bc23d0e0c7612248dd8f5391bd043648865132309616c280ca1c837/Jinja2-2.9.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e55f0db6620dd99a1b366183a94270d",
+                    "sha256": "702a24d992f856fa8d5a7a36db6128198d0c21e1da34448ca236c42e92384825"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e55f0db6620dd99a1b366183a94270d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 437631,
+                "upload_time": "2017-01-28T14:42:34",
+                "url": "https://files.pythonhosted.org/packages/71/59/d7423bd5e7ddaf3a1ce299ab4490e9044e8dfd195420fc83a24de9e60726/Jinja2-2.9.5.tar.gz"
+            }
+        ],
+        "2.9.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "61a215bcdb0f7939c70582bc00b293f1",
+                    "sha256": "2231bace0dfd8d2bf1e5d7e41239c06c9e0ded46e70cc1094a0aa64b0afeb054"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "61a215bcdb0f7939c70582bc00b293f1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 340680,
+                "upload_time": "2017-04-03T13:11:27",
+                "url": "https://files.pythonhosted.org/packages/5e/73/10c45b82a88ed6b7751bd40da31eeefd7b362e07b56a99aa6e56655a0794/Jinja2-2.9.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6411537324b4dba0956aaa8109f3c77b",
+                    "sha256": "ddaa01a212cd6d641401cb01b605f4a4d9f37bfc93043d7f760ec70fb99ff9ff"
+                },
+                "downloads": -1,
+                "filename": "Jinja2-2.9.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "6411537324b4dba0956aaa8109f3c77b",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 437659,
+                "upload_time": "2017-04-03T13:11:24",
+                "url": "https://files.pythonhosted.org/packages/90/61/f820ff0076a2599dd39406dcb858ecb239438c02ce706c8e91131ab9c7f1/Jinja2-2.9.6.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "cb679acd14423aef56dfff61d6a988f8",
+                "sha256": "74c935a1b8bb9a3947c50a54766a969d4846290e1e788ea44c1392163723c3bd"
+            },
+            "downloads": -1,
+            "filename": "Jinja2-2.10-py2.py3-none-any.whl",
+            "has_sig": true,
+            "md5_digest": "cb679acd14423aef56dfff61d6a988f8",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 126381,
+            "upload_time": "2017-11-08T20:13:42",
+            "url": "https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "61ef1117f945486472850819b8d1eb3d",
+                "sha256": "f84be1bb0040caca4cea721fcbbbbd61f9be9464ca236387158b0feea01914a4"
+            },
+            "downloads": -1,
+            "filename": "Jinja2-2.10.tar.gz",
+            "has_sig": true,
+            "md5_digest": "61ef1117f945486472850819b8d1eb3d",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 261631,
+            "upload_time": "2017-11-08T20:13:44",
+            "url": "https://files.pythonhosted.org/packages/56/e6/332789f295cf22308386cf5bbd1f4e00ed11484299c5d7383378cf48ba47/Jinja2-2.10.tar.gz"
+        }
+    ],
+    "package_name": "jinja2"
+}

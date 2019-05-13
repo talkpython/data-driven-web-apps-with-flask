@@ -1,0 +1,592 @@
+{
+    "info": {
+        "author": "Amazon Web Services",
+        "author_email": "kyknapp1@gmail.com",
+        "bugtrack_url": null,
+        "classifiers": [
+            "Development Status :: 3 - Alpha",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: Apache Software License",
+            "Natural Language :: English",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6"
+        ],
+        "description": "=====================================================\ns3transfer - An Amazon S3 Transfer Manager for Python\n=====================================================\n\nS3transfer is a Python library for managing Amazon S3 transfers.\n\n.. note::\n\n  This project is not currently GA. If you are planning to use this code in\n  production, make sure to lock to a minor version as interfaces may break\n  from minor version to minor version. For a basic, stable interface of\n  s3transfer, try the interfaces exposed in `boto3 <https://boto3.readthedocs.io/en/latest/guide/s3.html#using-the-transfer-manager>`__",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/boto/s3transfer",
+        "keywords": "",
+        "license": "Apache License 2.0",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "s3transfer",
+        "package_url": "https://pypi.org/project/s3transfer/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/s3transfer/",
+        "release_url": "https://pypi.org/project/s3transfer/0.1.13/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "An Amazon S3 Transfer Manager",
+        "version": "0.1.13"
+    },
+    "last_serial": 3582943,
+    "releases": {
+        "0.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "572b3688013b7b9ec6cea0372e049d06",
+                    "sha256": "4291b51d316566753134ca14cdd0f94486c3446bd96d4ff19f77d175bb7e1b04"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "572b3688013b7b9ec6cea0372e049d06",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 18538,
+                "upload_time": "2016-01-18T22:41:28",
+                "url": "https://files.pythonhosted.org/packages/ab/a2/6534b1346846167f9212c7ff306ab47096fdef1ae6d397e2e5be927a0558/s3transfer-0.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f368eded48995f7957e9a0f5ac722c5d",
+                    "sha256": "2bb9ed8db58af94dfa78f75f554d646dfe4b4741fc87f63a20c2bfb3f70f4355"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f368eded48995f7957e9a0f5ac722c5d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 9465,
+                "upload_time": "2016-01-18T22:39:36",
+                "url": "https://files.pythonhosted.org/packages/6e/12/5d0ea478e6d261857a461af921b78f3bc6f92c479ffe57076f4fc9a362ab/s3transfer-0.0.1.tar.gz"
+            }
+        ],
+        "0.1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6137dea2c1633b8336543514095f833a",
+                    "sha256": "d3b17fb365dfd0102f70656503e414052858d708bbfd3aa319e0b7c17c5186af"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6137dea2c1633b8336543514095f833a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 48759,
+                "upload_time": "2016-07-28T22:24:04",
+                "url": "https://files.pythonhosted.org/packages/46/cb/1cdcebbf6284c64bfa2ccd06c520748586bdc712ad407604b1937c6e28a1/s3transfer-0.1.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ceaeed0f530ad652941dc8f87f3efb11",
+                    "sha256": "2afbc74c70a71bbb871fa6802f269f2df63a6fd0666c680a0a7bd65943ade452"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "ceaeed0f530ad652941dc8f87f3efb11",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82116,
+                "upload_time": "2016-07-28T22:24:00",
+                "url": "https://files.pythonhosted.org/packages/c8/33/e6dfa8ad8e40e6c12de21091ca2cfc8bc53eaaea20a522c389f4daaeba95/s3transfer-0.1.0.tar.gz"
+            }
+        ],
+        "0.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "35412aae6ef1e4dbc1890cb7519365c4",
+                    "sha256": "929a994cd396350c116a86b2451b6133a93576d4bbf841fa401076c2a868758a"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "35412aae6ef1e4dbc1890cb7519365c4",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 49031,
+                "upload_time": "2016-08-03T01:22:28",
+                "url": "https://files.pythonhosted.org/packages/68/61/6b67af0dbe368e4bb63f029c1f3019ce920139474c4d6de6a774152de6ce/s3transfer-0.1.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e29f828d0686bd5f091e88d30a770da",
+                    "sha256": "6b9131b704819b0e559a97eec373ff6cc8a9b258e4c8f58ad339650b5019f00f"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "9e29f828d0686bd5f091e88d30a770da",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82198,
+                "upload_time": "2016-08-03T01:22:25",
+                "url": "https://files.pythonhosted.org/packages/27/58/c3c67734ac87ef83fdffb6e1167531d584111232ad5e13b5514831a5de35/s3transfer-0.1.1.tar.gz"
+            }
+        ],
+        "0.1.10": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "34e7c77f70086aa5fe946341b4aac469",
+                    "sha256": "bc52f38637f37572ae180c08a2dd87a4825b46713797633aab6e1a42d6b2b8ff"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.10-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "34e7c77f70086aa5fe946341b4aac469",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 54822,
+                "upload_time": "2016-12-16T01:19:26",
+                "url": "https://files.pythonhosted.org/packages/c0/b5/f759ba12ebcbe2f9e2f70b0803a1619e51fc343e9aeabc7c883dabd95405/s3transfer-0.1.10-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "976734d3ec36b8fc2c1b505a907c3259",
+                    "sha256": "ba1a9104939b7c0331dc4dd234d79afeed8b66edce77bbeeecd4f56de74a0fc1"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.10.tar.gz",
+                "has_sig": false,
+                "md5_digest": "976734d3ec36b8fc2c1b505a907c3259",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 95508,
+                "upload_time": "2016-12-16T01:19:24",
+                "url": "https://files.pythonhosted.org/packages/8b/13/517e8ec7c13f0bb002be33fbf53c4e3198c55bb03148827d72064426fe6e/s3transfer-0.1.10.tar.gz"
+            }
+        ],
+        "0.1.11": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "faa19e11812551aa5946c93eddad4b2d",
+                    "sha256": "c7b16f4cca5acd2bd57ac9623bfba3fece047247392893506d0d2e6f25620eb3"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.11-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "faa19e11812551aa5946c93eddad4b2d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 54839,
+                "upload_time": "2017-09-01T00:13:35",
+                "url": "https://files.pythonhosted.org/packages/53/a8/dbee2c13508a4f1060ec44a0889d6766508912905a16edb593f628e92db1/s3transfer-0.1.11-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2c54c4b88bfbc48052fdbd1cb4de6151",
+                    "sha256": "76f1f58f4a47e2c8afa135e2c76958806a3abbc42b721d87fd9d11409c75d979"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.11.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2c54c4b88bfbc48052fdbd1cb4de6151",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 95555,
+                "upload_time": "2017-09-01T00:13:33",
+                "url": "https://files.pythonhosted.org/packages/a8/58/d264e95e1b19a811fc52ff41c95dafd9c70cc7457b658bc04d87dfad31de/s3transfer-0.1.11.tar.gz"
+            }
+        ],
+        "0.1.12": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a821451291b27743a94c392748f0777e",
+                    "sha256": "23c156ca4d64b022476c92c44bf938bef71af9ce0dcd8fd6585e7bce52f66e47"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.12-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "a821451291b27743a94c392748f0777e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 59384,
+                "upload_time": "2017-11-29T21:33:49",
+                "url": "https://files.pythonhosted.org/packages/b8/b6/5516d70495314a5d7a5c4e892f825c9baffe2c071ca3d874248245852e03/s3transfer-0.1.12-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "adacef9424da247a4d5af1b592ded648",
+                    "sha256": "10891b246296e0049071d56c32953af05cea614dca425a601e4c0be35990121e"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.12.tar.gz",
+                "has_sig": false,
+                "md5_digest": "adacef9424da247a4d5af1b592ded648",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 102902,
+                "upload_time": "2017-11-29T21:33:47",
+                "url": "https://files.pythonhosted.org/packages/b1/a6/24d960ee5f21eb2f9e2e938be44b9929bf9f85a570b9582c50c14e7c7ec7/s3transfer-0.1.12.tar.gz"
+            }
+        ],
+        "0.1.13": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "6491de724c0a457411613af1673ea4d0",
+                    "sha256": "c7a9ec356982d5e9ab2d4b46391a7d6a950e2b04c472419f5fdec70cc0ada72f"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.13-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "6491de724c0a457411613af1673ea4d0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 59642,
+                "upload_time": "2018-02-15T00:25:05",
+                "url": "https://files.pythonhosted.org/packages/d7/14/2a0004d487464d120c9fb85313a75cd3d71a7506955be458eebfe19a6b1d/s3transfer-0.1.13-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b7437bbbd3195e916f9e992b78721067",
+                    "sha256": "90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.13.tar.gz",
+                "has_sig": false,
+                "md5_digest": "b7437bbbd3195e916f9e992b78721067",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 103335,
+                "upload_time": "2018-02-15T00:25:02",
+                "url": "https://files.pythonhosted.org/packages/9a/66/c6a5ae4dbbaf253bd662921b805e4972451a6d214d0dc9fb3300cb642320/s3transfer-0.1.13.tar.gz"
+            }
+        ],
+        "0.1.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "79fa2ea5e15782f51b737cbba28484be",
+                    "sha256": "b12e53bb27007eefde2295c682531e5fde7218667cd8b6685dcec23d62296e4f"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "79fa2ea5e15782f51b737cbba28484be",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 49137,
+                "upload_time": "2016-08-16T23:57:57",
+                "url": "https://files.pythonhosted.org/packages/f2/9f/8ebdc7754a4d8ecc92ebdfadc334415a97706f33f245a11f8203659bc311/s3transfer-0.1.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "72a0c408d7e402c4e1dcfd6e15377f84",
+                    "sha256": "779d0cd9aa30fa65c6e8da8dc203d165ef7aa6cab0b7faa502b850e6cb9236dc"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "72a0c408d7e402c4e1dcfd6e15377f84",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 82681,
+                "upload_time": "2016-08-16T23:57:53",
+                "url": "https://files.pythonhosted.org/packages/b1/04/27bfb9ceda7dad27c32cc6c260371d56d97b733fb4ad6fd5b01c1b75900a/s3transfer-0.1.2.tar.gz"
+            }
+        ],
+        "0.1.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "b6771454162ef1c5a08958260e7098d9",
+                    "sha256": "e8b940efddf60b60354a708dc1dbdc08f2717a62c94451cc401b714e38c56465"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "b6771454162ef1c5a08958260e7098d9",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 50471,
+                "upload_time": "2016-08-30T23:37:32",
+                "url": "https://files.pythonhosted.org/packages/73/d7/3113f4be615c4801362019801b953068c3f5bee414e1ff96ebd1090c919d/s3transfer-0.1.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "8001ab82015f085facd42e948d5d569d",
+                    "sha256": "af2e541ac584a1e88d3bca9529ae784d2b25e5d448685e0ee64f4c0e1e017ed2"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "8001ab82015f085facd42e948d5d569d",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 83873,
+                "upload_time": "2016-08-30T23:37:28",
+                "url": "https://files.pythonhosted.org/packages/d4/6e/1e9014fa7d3e8cd1f0c717321cea628606f61d24991c8945eb464ae4b325/s3transfer-0.1.3.tar.gz"
+            }
+        ],
+        "0.1.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9e684ef96d7482023c856be68927d6b0",
+                    "sha256": "3eec53f0e9fc3f10b1e08a77673240d5651b7e383a3acb8a981d23ee6d277b2c"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9e684ef96d7482023c856be68927d6b0",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 52141,
+                "upload_time": "2016-09-14T00:31:44",
+                "url": "https://files.pythonhosted.org/packages/48/4e/898f813524e59abef0b45df76fe3d936c2dc937af3c69103ab62d11da9b1/s3transfer-0.1.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4ddecf1ad55accd86fd4491926d6a17a",
+                    "sha256": "c41d039ab9204e9eea72a6098ca5092ed001f2820274b80be622dbe582ab2d41"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4ddecf1ad55accd86fd4491926d6a17a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 87620,
+                "upload_time": "2016-09-14T00:31:41",
+                "url": "https://files.pythonhosted.org/packages/a3/e9/24937eaf1ffccb5f7861b24b45cd3ef13c09e21f6932466cc2862021ab70/s3transfer-0.1.4.tar.gz"
+            }
+        ],
+        "0.1.5": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "e8f56e03b76d6060c004577980db367a",
+                    "sha256": "26763c912e646be7184c7e349c3778037d70044509e39897322555db28fe6db6"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.5-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "e8f56e03b76d6060c004577980db367a",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 53520,
+                "upload_time": "2016-09-30T18:57:13",
+                "url": "https://files.pythonhosted.org/packages/a8/51/ec2736bf16520846c0b936575f5c88a4ef74d27d0a50ea8b1a341aeb47b9/s3transfer-0.1.5-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "af54e16bf8d167f04c0ebd91b79f9bc3",
+                    "sha256": "c500b27b5a8693507e4768730c4c423d4717477c8676139fc764ac4e8e88708e"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.5.tar.gz",
+                "has_sig": false,
+                "md5_digest": "af54e16bf8d167f04c0ebd91b79f9bc3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 92081,
+                "upload_time": "2016-09-30T18:57:09",
+                "url": "https://files.pythonhosted.org/packages/04/92/7976f89bc162d62a6e3014497694ad2caed0f6f920bdc1b679fefedb9440/s3transfer-0.1.5.tar.gz"
+            }
+        ],
+        "0.1.6": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "872453e75be11f2320f2b52750514f18",
+                    "sha256": "de80a69c71b2993a6188423c37ae418b855870a06282d4b0ee56a9a6e8afc34f"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.6-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "872453e75be11f2320f2b52750514f18",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 53773,
+                "upload_time": "2016-10-04T23:54:06",
+                "url": "https://files.pythonhosted.org/packages/4d/cf/cfd5d1ad72b00e3a6b3a96084b1a6f52d78f7582b217613046d6a77b2978/s3transfer-0.1.6-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "a3d9c6f412f9c031f70370be7858ad69",
+                    "sha256": "7bff7d99c96cb7573781b3dfcc5148cab5196f46c5c43f045e3c4f29a10a212a"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.6.tar.gz",
+                "has_sig": false,
+                "md5_digest": "a3d9c6f412f9c031f70370be7858ad69",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 92501,
+                "upload_time": "2016-10-04T23:54:01",
+                "url": "https://files.pythonhosted.org/packages/a8/70/ccce0e3852d1efbc083ad3caeca77e87b98eacc9d5d055a1f085a513e003/s3transfer-0.1.6.tar.gz"
+            }
+        ],
+        "0.1.7": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d45d19052ba4294c23f2965ed6ebbddb",
+                    "sha256": "47f6b5b9e657da23ebe656095daa45a6f5d2aad9ec33100a85c1ff690ec5b63a"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.7-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "d45d19052ba4294c23f2965ed6ebbddb",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 53649,
+                "upload_time": "2016-10-06T23:54:14",
+                "url": "https://files.pythonhosted.org/packages/af/94/1e904840fea51d300f35475565e010c348b6387bb52eb3066755dde18e9b/s3transfer-0.1.7-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0d60e4ad635cad260d2145832adc5098",
+                    "sha256": "433d067bafb099a7d1653ae09ba39a7e479c90fcef06d396c8e6823f2a3cfd86"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.7.tar.gz",
+                "has_sig": false,
+                "md5_digest": "0d60e4ad635cad260d2145832adc5098",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 92659,
+                "upload_time": "2016-10-06T23:54:11",
+                "url": "https://files.pythonhosted.org/packages/e9/a5/c69e87e716c5ec1fb2c44db87dab969f86a9f122cfc8f986995a4d59c191/s3transfer-0.1.7.tar.gz"
+            }
+        ],
+        "0.1.8": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "983a1f5c46a9573ab9ebe56a30bc252b",
+                    "sha256": "2607489b0babc041e26a62b431b90fda7eb818af8aa99dbbbbba9cf087f9572b"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.8-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "983a1f5c46a9573ab9ebe56a30bc252b",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 53722,
+                "upload_time": "2016-10-12T23:23:46",
+                "url": "https://files.pythonhosted.org/packages/84/d1/362b0bb0f1b58bd3f7e95be4a811b36b86446f43efad1c9d7a0fcc9e1daf/s3transfer-0.1.8-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2885f648ad8d05f6a790a9bb22c973f1",
+                    "sha256": "1e8eed63e0d1af4c966ef4b4ff3728b04ead251238ba92ff4b2ee23eee943bca"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.8.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2885f648ad8d05f6a790a9bb22c973f1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 93076,
+                "upload_time": "2016-10-12T23:23:43",
+                "url": "https://files.pythonhosted.org/packages/bf/5c/690a1bb9c3e3cf0f204863a3930dba0c63262f713a7d54d95eeca53f292c/s3transfer-0.1.8.tar.gz"
+            }
+        ],
+        "0.1.9": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "c873ad7595f5e605898f2a646604c35c",
+                    "sha256": "17114f393101a6c4a49318429b9facede6183ec52fd14ca54e09aa496da56fbc"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.9-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "c873ad7595f5e605898f2a646604c35c",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 53863,
+                "upload_time": "2016-10-21T03:13:50",
+                "url": "https://files.pythonhosted.org/packages/4b/4c/42ea1dba46deea23fbcb7a51c794f9a02f87b8df7a28a9a8dc5ef57baa21/s3transfer-0.1.9-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "036d467e77e0d4dfa65448d63a9208bc",
+                    "sha256": "17ad7d672115f93a72ed7917209cb0bb02fc87f96f11886408ed8a6b1bb4c754"
+                },
+                "downloads": -1,
+                "filename": "s3transfer-0.1.9.tar.gz",
+                "has_sig": false,
+                "md5_digest": "036d467e77e0d4dfa65448d63a9208bc",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 93414,
+                "upload_time": "2016-10-21T03:13:47",
+                "url": "https://files.pythonhosted.org/packages/e6/e0/61bf352050b0d687755cd1a41ead378e6b1b48f8754076c413e816fcc1ee/s3transfer-0.1.9.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "6491de724c0a457411613af1673ea4d0",
+                "sha256": "c7a9ec356982d5e9ab2d4b46391a7d6a950e2b04c472419f5fdec70cc0ada72f"
+            },
+            "downloads": -1,
+            "filename": "s3transfer-0.1.13-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "6491de724c0a457411613af1673ea4d0",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 59642,
+            "upload_time": "2018-02-15T00:25:05",
+            "url": "https://files.pythonhosted.org/packages/d7/14/2a0004d487464d120c9fb85313a75cd3d71a7506955be458eebfe19a6b1d/s3transfer-0.1.13-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "b7437bbbd3195e916f9e992b78721067",
+                "sha256": "90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1"
+            },
+            "downloads": -1,
+            "filename": "s3transfer-0.1.13.tar.gz",
+            "has_sig": false,
+            "md5_digest": "b7437bbbd3195e916f9e992b78721067",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 103335,
+            "upload_time": "2018-02-15T00:25:02",
+            "url": "https://files.pythonhosted.org/packages/9a/66/c6a5ae4dbbaf253bd662921b805e4972451a6d214d0dc9fb3300cb642320/s3transfer-0.1.13.tar.gz"
+        }
+    ],
+    "package_name": "s3transfer"
+}

@@ -1,0 +1,260 @@
+{
+    "info": {
+        "author": "Vladimir Keleshev",
+        "author_email": "vladimir@keleshev.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 3 - Alpha",
+            "License :: OSI Approved :: MIT License",
+            "Programming Language :: Python :: 2.5",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3.2",
+            "Programming Language :: Python :: 3.3",
+            "Topic :: Utilities"
+        ],
+        "description": "``docopt`` creates *beautiful* command-line interfaces\n======================================================================\n\nVideo introduction to **docopt**: `PyCon UK 2012: Create *beautiful*\ncommand-line interfaces with Python <http://youtu.be/pXhcPJK5cMc>`_\n\n    New in version 0.6.1:\n\n    - Fix issue `#85 <https://github.com/docopt/docopt/issues/85>`_\n      which caused improper handling of ``[options]`` shortcut\n      if it was present several times.\n\n    New in version 0.6.0:\n\n    - New argument ``options_first``, disallows interspersing options\n      and arguments.  If you supply ``options_first=True`` to\n      ``docopt``, it will interpret all arguments as positional\n      arguments after first positional argument.\n\n    - If option with argument could be repeated, its default value\n      will be interpreted as space-separated list. E.g. with\n      ``[default: ./here ./there]`` will be interpreted as\n      ``['./here', './there']``.\n\n    Breaking changes:\n\n    - Meaning of ``[options]`` shortcut slightly changed. Previously\n      it ment *\"any known option\"*. Now it means *\"any option not in\n      usage-pattern\"*.  This avoids the situation when an option is\n      allowed to be repeated unintentionaly.\n\n    - ``argv`` is ``None`` by default, not ``sys.argv[1:]``.\n      This allows ``docopt`` to always use the *latest* ``sys.argv``,\n      not ``sys.argv`` during import time.\n\nIsn't it awesome how ``optparse`` and ``argparse`` generate help\nmessages based on your code?!\n\n*Hell no!*  You know what's awesome?  It's when the option parser *is*\ngenerated based on the beautiful help message that you write yourself!\nThis way you don't need to write this stupid repeatable parser-code,\nand instead can write only the help message--*the way you want it*.\n\n**docopt** helps you create most beautiful command-line interfaces\n*easily*:\n\n.. code:: python\n\n    \"\"\"Naval Fate.\n\n    Usage:\n      naval_fate.py ship new <name>...\n      naval_fate.py ship <name> move <x> <y> [--speed=<kn>]\n      naval_fate.py ship shoot <x> <y>\n      naval_fate.py mine (set|remove) <x> <y> [--moored | --drifting]\n      naval_fate.py (-h | --help)\n      naval_fate.py --version\n\n    Options:\n      -h --help     Show this screen.\n      --version     Show version.\n      --speed=<kn>  Speed in knots [default: 10].\n      --moored      Moored (anchored) mine.\n      --drifting    Drifting mine.\n\n    \"\"\"\n    from docopt import docopt\n\n\n    if __name__ == '__main__':\n        arguments = docopt(__doc__, version='Naval Fate 2.0')\n        print(arguments)\n\nBeat that! The option parser is generated based on the docstring above\nthat is passed to ``docopt`` function.  ``docopt`` parses the usage\npattern (``\"Usage: ...\"``) and option descriptions (lines starting\nwith dash \"``-``\") and ensures that the program invocation matches the\nusage pattern; it parses options, arguments and commands based on\nthat. The basic idea is that *a good help message has all necessary\ninformation in it to make a parser*.\n\nAlso, `PEP 257 <http://www.python.org/dev/peps/pep-0257/>`_ recommends\nputting help message in the module docstrings.\n\nInstallation\n======================================================================\n\nUse `pip <http://pip-installer.org>`_ or easy_install::\n\n    pip install docopt==0.6.2\n\nAlternatively, you can just drop ``docopt.py`` file into your\nproject--it is self-contained.\n\n**docopt** is tested with Python 2.5, 2.6, 2.7, 3.2, 3.3 and PyPy.\n\nAPI\n======================================================================\n\n.. code:: python\n\n    from docopt import docopt\n\n.. code:: python\n\n    docopt(doc, argv=None, help=True, version=None, options_first=False)\n\n``docopt`` takes 1 required and 4 optional arguments:\n\n- ``doc`` could be a module docstring (``__doc__``) or some other\n  string that contains a **help message** that will be parsed to\n  create the option parser.  The simple rules of how to write such a\n  help message are given in next sections.  Here is a quick example of\n  such a string:\n\n.. code:: python\n\n    \"\"\"Usage: my_program.py [-hso FILE] [--quiet | --verbose] [INPUT ...]\n\n    -h --help    show this\n    -s --sorted  sorted output\n    -o FILE      specify output file [default: ./test.txt]\n    --quiet      print less text\n    --verbose    print more text\n\n    \"\"\"\n\n- ``argv`` is an optional argument vector; by default ``docopt`` uses\n  the argument vector passed to your program (``sys.argv[1:]``).\n  Alternatively you can supply a list of strings like ``['--verbose',\n  '-o', 'hai.txt']``.\n\n- ``help``, by default ``True``, specifies whether the parser should\n  automatically print the help message (supplied as ``doc``) and\n  terminate, in case ``-h`` or ``--help`` option is encountered\n  (options should exist in usage pattern, more on that below). If you\n  want to handle ``-h`` or ``--help`` options manually (as other\n  options), set ``help=False``.\n\n- ``version``, by default ``None``, is an optional argument that\n  specifies the version of your program. If supplied, then, (assuming\n  ``--version`` option is mentioned in usage pattern) when parser\n  encounters the ``--version`` option, it will print the supplied\n  version and terminate.  ``version`` could be any printable object,\n  but most likely a string, e.g. ``\"2.1.0rc1\"``.\n\n    Note, when ``docopt`` is set to automatically handle ``-h``,\n    ``--help`` and ``--version`` options, you still need to mention\n    them in usage pattern for this to work. Also, for your users to\n    know about them.\n\n- ``options_first``, by default ``False``.  If set to ``True`` will\n  disallow mixing options and positional argument.  I.e. after first\n  positional argument, all arguments will be interpreted as positional\n  even if the look like options.  This can be used for strict\n  compatibility with POSIX, or if you want to dispatch your arguments\n  to other programs.\n\nThe **return** value is a simple dictionary with options, arguments\nand commands as keys, spelled exactly like in your help message.  Long\nversions of options are given priority. For example, if you invoke the\ntop example as::\n\n    naval_fate.py ship Guardian move 100 150 --speed=15\n\nthe return dictionary will be:\n\n.. code:: python\n\n    {'--drifting': False,    'mine': False,\n     '--help': False,        'move': True,\n     '--moored': False,      'new': False,\n     '--speed': '15',        'remove': False,\n     '--version': False,     'set': False,\n     '<name>': ['Guardian'], 'ship': True,\n     '<x>': '100',           'shoot': False,\n     '<y>': '150'}\n\nHelp message format\n======================================================================\n\nHelp message consists of 2 parts:\n\n- Usage pattern, e.g.::\n\n    Usage: my_program.py [-hso FILE] [--quiet | --verbose] [INPUT ...]\n\n- Option descriptions, e.g.::\n\n    -h --help    show this\n    -s --sorted  sorted output\n    -o FILE      specify output file [default: ./test.txt]\n    --quiet      print less text\n    --verbose    print more text\n\nTheir format is described below; other text is ignored.\n\nUsage pattern format\n----------------------------------------------------------------------\n\n**Usage pattern** is a substring of ``doc`` that starts with\n``usage:`` (case *insensitive*) and ends with a *visibly* empty line.\nMinimum example:\n\n.. code:: python\n\n    \"\"\"Usage: my_program.py\n\n    \"\"\"\n\nThe first word after ``usage:`` is interpreted as your program's name.\nYou can specify your program's name several times to signify several\nexclusive patterns:\n\n.. code:: python\n\n    \"\"\"Usage: my_program.py FILE\n              my_program.py COUNT FILE\n\n    \"\"\"\n\nEach pattern can consist of the following elements:\n\n- **<arguments>**, **ARGUMENTS**. Arguments are specified as either\n  upper-case words, e.g. ``my_program.py CONTENT-PATH`` or words\n  surrounded by angular brackets: ``my_program.py <content-path>``.\n- **--options**.  Options are words started with dash (``-``), e.g.\n  ``--output``, ``-o``.  You can \"stack\" several of one-letter\n  options, e.g. ``-oiv`` which will be the same as ``-o -i -v``. The\n  options can have arguments, e.g.  ``--input=FILE`` or ``-i FILE`` or\n  even ``-iFILE``. However it is important that you specify option\n  descriptions if you want for option to have an argument, a default\n  value, or specify synonymous short/long versions of option (see next\n  section on option descriptions).\n- **commands** are words that do *not* follow the described above\n  conventions of ``--options`` or ``<arguments>`` or ``ARGUMENTS``,\n  plus two special commands: dash \"``-``\" and double dash \"``--``\"\n  (see below).\n\nUse the following constructs to specify patterns:\n\n- **[ ]** (brackets) **optional** elements.  e.g.: ``my_program.py\n  [-hvqo FILE]``\n- **( )** (parens) **required** elements.  All elements that are *not*\n  put in **[ ]** are also required, e.g.: ``my_program.py\n  --path=<path> <file>...`` is the same as ``my_program.py\n  (--path=<path> <file>...)``.  (Note, \"required options\" might be not\n  a good idea for your users).\n- **|** (pipe) **mutualy exclusive** elements. Group them using **(\n  )** if one of the mutually exclusive elements is required:\n  ``my_program.py (--clockwise | --counter-clockwise) TIME``. Group\n  them using **[ ]** if none of the mutually-exclusive elements are\n  required: ``my_program.py [--left | --right]``.\n- **...** (ellipsis) **one or more** elements. To specify that\n  arbitrary number of repeating elements could be accepted, use\n  ellipsis (``...``), e.g.  ``my_program.py FILE ...`` means one or\n  more ``FILE``-s are accepted.  If you want to accept zero or more\n  elements, use brackets, e.g.: ``my_program.py [FILE ...]``. Ellipsis\n  works as a unary operator on the expression to the left.\n- **[options]** (case sensitive) shortcut for any options.  You can\n  use it if you want to specify that the usage pattern could be\n  provided with any options defined below in the option-descriptions\n  and do not want to enumerate them all in usage-pattern.  -\n  \"``[--]``\". Double dash \"``--``\" is used by convention to separate\n  positional arguments that can be mistaken for options. In order to\n  support this convention add \"``[--]``\" to you usage patterns.  -\n  \"``[-]``\". Single dash \"``-``\" is used by convention to signify that\n  ``stdin`` is used instead of a file. To support this add \"``[-]``\"\n  to you usage patterns. \"``-``\" act as a normal command.\n\nIf your pattern allows to match argument-less option (a flag) several\ntimes::\n\n    Usage: my_program.py [-v | -vv | -vvv]\n\nthen number of occurences of the option will be counted. I.e.\n``args['-v']`` will be ``2`` if program was invoked as ``my_program\n-vv``. Same works for commands.\n\nIf your usage patterns allows to match same-named option with argument\nor positional argument several times, the matched arguments will be\ncollected into a list::\n\n    Usage: my_program.py <file> <file> --path=<path>...\n\nI.e. invoked with ``my_program.py file1 file2 --path=./here\n--path=./there`` the returned dict will contain ``args['<file>'] ==\n['file1', 'file2']`` and ``args['--path'] == ['./here', './there']``.\n\n\nOption descriptions format\n----------------------------------------------------------------------\n\n**Option descriptions** consist of a list of options that you put\nbelow your usage patterns.\n\nIt is necessary to list option descriptions in order to specify:\n\n- synonymous short and long options,\n- if an option has an argument,\n- if option's argument has a default value.\n\nThe rules are as follows:\n\n- Every line in ``doc`` that starts with ``-`` or ``--`` (not counting\n  spaces) is treated as an option description, e.g.::\n\n    Options:\n      --verbose   # GOOD\n      -o FILE     # GOOD\n    Other: --bad  # BAD, line does not start with dash \"-\"\n\n- To specify that option has an argument, put a word describing that\n  argument after space (or equals \"``=``\" sign) as shown below. Follow\n  either <angular-brackets> or UPPER-CASE convention for options'\n  arguments.  You can use comma if you want to separate options. In\n  the example below, both lines are valid, however you are recommended\n  to stick to a single style.::\n\n    -o FILE --output=FILE       # without comma, with \"=\" sign\n    -i <file>, --input <file>   # with comma, wihtout \"=\" sing\n\n- Use two spaces to separate options with their informal description::\n\n    --verbose More text.   # BAD, will be treated as if verbose option had\n                           # an argument \"More\", so use 2 spaces instead\n    -q        Quit.        # GOOD\n    -o FILE   Output file. # GOOD\n    --stdout  Use stdout.  # GOOD, 2 spaces\n\n- If you want to set a default value for an option with an argument,\n  put it into the option-description, in form ``[default:\n  <my-default-value>]``::\n\n    --coefficient=K  The K coefficient [default: 2.95]\n    --output=FILE    Output file [default: test.txt]\n    --directory=DIR  Some directory [default: ./]\n\n- If the option is not repeatable, the value inside ``[default: ...]``\n  will be interpeted as string.  If it *is* repeatable, it will be\n  splited into a list on whitespace::\n\n    Usage: my_program.py [--repeatable=<arg> --repeatable=<arg>]\n                         [--another-repeatable=<arg>]...\n                         [--not-repeatable=<arg>]\n\n    # will be ['./here', './there']\n    --repeatable=<arg>          [default: ./here ./there]\n\n    # will be ['./here']\n    --another-repeatable=<arg>  [default: ./here]\n\n    # will be './here ./there', because it is not repeatable\n    --not-repeatable=<arg>      [default: ./here ./there]\n\nExamples\n----------------------------------------------------------------------\n\nWe have an extensive list of `examples\n<https://github.com/docopt/docopt/tree/master/examples>`_ which cover\nevery aspect of functionality of **docopt**.  Try them out, read the\nsource if in doubt.\n\nSubparsers, multi-level help and *huge* applications (like git)\n----------------------------------------------------------------------\n\nIf you want to split your usage-pattern into several, implement\nmulti-level help (whith separate help-screen for each subcommand),\nwant to interface with existing scripts that don't use **docopt**, or\nyou're building the next \"git\", you will need the new ``options_first``\nparameter (described in API section above). To get you started quickly\nwe implemented a subset of git command-line interface as an example:\n`examples/git\n<https://github.com/docopt/docopt/tree/master/examples/git>`_\n\n\nData validation\n----------------------------------------------------------------------\n\n**docopt** does one thing and does it well: it implements your\ncommand-line interface.  However it does not validate the input data.\nOn the other hand there are libraries like `python schema\n<https://github.com/halst/schema>`_ which make validating data a\nbreeze.  Take a look at `validation_example.py\n<https://github.com/docopt/docopt/tree/master/examples/validation_example.py>`_\nwhich uses **schema** to validate data and report an error to the\nuser.\n\nDevelopment\n======================================================================\n\nWe would *love* to hear what you think about **docopt** on our `issues\npage <http://github.com/docopt/docopt/issues>`_\n\nMake pull requrests, report bugs, suggest ideas and discuss\n**docopt**. You can also drop a line directly to\n<vladimir@keleshev.com>.\n\nPorting ``docopt`` to other languages\n======================================================================\n\nWe think **docopt** is so good, we want to share it beyond the Python\ncommunity!\n\nThe follosing ports are available:\n\n- `Ruby port <http://github.com/docopt/docopt.rb>`_\n- `CoffeeScript port <http://github.com/docopt/docopt.coffee>`_\n- `Lua port <http://github.com/docopt/docopt.lua>`_\n- `PHP port <http://github.com/docopt/docopt.php>`_\n\nBut you can always create a port for your favorite language!  You are\nencouraged to use the Python version as a reference implementation.  A\nLanguage-agnostic test suite is bundled with `Python implementation\n<http://github.com/docopt/docopt>`_.\n\nPorting discussion is on `issues page\n<http://github.com/docopt/docopt/issues>`_.\n\nChangelog\n======================================================================\n\n**docopt** follows `semantic versioning <http://semver.org>`_.  The\nfirst release with stable API will be 1.0.0 (soon).  Until then, you\nare encouraged to specify explicitly the version in your dependency\ntools, e.g.::\n\n    pip install docopt==0.6.2\n\n- 0.6.2 `Wheel <http://pythonwheels.com/>`_ support.\n- 0.6.1 Bugfix release.\n- 0.6.0 ``options_first`` parameter.\n  **Breaking changes**: Corrected ``[options]`` meaning.\n  ``argv`` defaults to ``None``.\n- 0.5.0 Repeated options/commands are counted or accumulated into a\n  list.\n- 0.4.2 Bugfix release.\n- 0.4.0 Option descriptions become optional,\n  support for \"``--``\" and \"``-``\" commands.\n- 0.3.0 Support for (sub)commands like `git remote add`.\n  Introduce ``[options]`` shortcut for any options.\n  **Breaking changes**: ``docopt`` returns dictionary.\n- 0.2.0 Usage pattern matching. Positional arguments parsing based on\n  usage patterns.\n  **Breaking changes**: ``docopt`` returns namespace (for arguments),\n  not list. Usage pattern is formalized.\n- 0.1.0 Initial release. Options-parsing only (based on options\n  description).",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "UNKNOWN",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "http://docopt.org",
+        "keywords": "option arguments parsing optparse argparse getopt",
+        "license": "MIT",
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "docopt",
+        "package_url": "https://pypi.org/project/docopt/",
+        "platform": "UNKNOWN",
+        "project_url": "https://pypi.org/project/docopt/",
+        "release_url": "https://pypi.org/project/docopt/0.6.2/",
+        "requires_dist": null,
+        "requires_python": null,
+        "summary": "Pythonic argument parser, that will make you smile",
+        "version": "0.6.2"
+    },
+    "last_serial": 1126265,
+    "releases": {
+        "0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2068ff93c8cb37d02830c4a8de873b7a",
+                    "sha256": "60a732450cfb2fda2d783c90b5224d2a887b443c904c02dd42b417af903390a4"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2068ff93c8cb37d02830c4a8de873b7a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 6069,
+                "upload_time": "2012-04-10T18:58:59",
+                "url": "https://files.pythonhosted.org/packages/32/7b/9ac67bd76139198894636a998294ae0c9467b1ad0127732917e3e299e2ff/docopt-0.1.tar.gz"
+            }
+        ],
+        "0.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2e7a46db5ba3f0d1c1d3163c1d66e26a",
+                    "sha256": "176ae29498aececa32b6ce049cd6e0f0273d4b1e43b45f02f03e656ecd8ab623"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "2e7a46db5ba3f0d1c1d3163c1d66e26a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1939,
+                "upload_time": "2012-04-13T17:07:20",
+                "url": "https://files.pythonhosted.org/packages/65/ca/0b5f0d1d4d98d874f2f556872a7fe7fdef70cfcda3439f7edad3074e31c3/docopt-0.1.1.tar.gz"
+            }
+        ],
+        "0.2.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1bd862e71d328b73d3e585ce8aa507ae",
+                    "sha256": "f8dade65d41afe139e97f3bad95e4149f9bb059100a5d68554bd84346683c779"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.2.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1bd862e71d328b73d3e585ce8aa507ae",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 5021,
+                "upload_time": "2012-05-26T20:10:16",
+                "url": "https://files.pythonhosted.org/packages/71/79/61a2d6bd33854df574c5f043da6678881034fd5fa6add150afe1cc333da5/docopt-0.2.0.tar.gz"
+            }
+        ],
+        "0.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "95455a903bb7ebae4ea1869f5a213254",
+                    "sha256": "9e8cd69dc7f40d1ab6a5ab43a1b9f8184f29812f03e22b1e6f18ef68016da978"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "95455a903bb7ebae4ea1869f5a213254",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4748,
+                "upload_time": "2012-06-04T21:21:43",
+                "url": "https://files.pythonhosted.org/packages/1f/c4/ff112fd928f7e30ff964a178285b9d466a538c8ab92d3db84cf228495a85/docopt-0.3.0.tar.gz"
+            }
+        ],
+        "0.4.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fba2ea9904b64d4d90fbb20c979723d6",
+                    "sha256": "b752582228e280b7be3677c5a758a352e352ad0bde3a849fd51f79239e88e475"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.4.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fba2ea9904b64d4d90fbb20c979723d6",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4881,
+                "upload_time": "2012-06-14T18:13:13",
+                "url": "https://files.pythonhosted.org/packages/40/24/3b4941b5cdfe4d09c522bf4849fd28ddee4abfa4b48223bc3611c325a216/docopt-0.4.0.tar.gz"
+            }
+        ],
+        "0.4.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4bb42eaf2aeed048136afa7ce9bbbd2f",
+                    "sha256": "a3d558f66ae22ca771a6cdef48598541e352db6ee3258b286e40f39ff0f5dcb1"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.4.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4bb42eaf2aeed048136afa7ce9bbbd2f",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4846,
+                "upload_time": "2012-06-20T22:06:47",
+                "url": "https://files.pythonhosted.org/packages/0a/f3/1d63ec29a490b9fea9a938a77111e8387f2298827a38d9a78e6299fe4a71/docopt-0.4.1.tar.gz"
+            }
+        ],
+        "0.4.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7b6743a9b5b2956ef8e5faede29c8cc3",
+                    "sha256": "2dff0296fca87cf3a61ab44a630a6aebb63f473fe8b3ed03c34f12d5510ba090"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.4.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7b6743a9b5b2956ef8e5faede29c8cc3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4910,
+                "upload_time": "2012-07-29T16:51:35",
+                "url": "https://files.pythonhosted.org/packages/66/52/c7cfab7d8e5fb3abaa055581047103b08e9ae88c5b0f0d789d8e89a34984/docopt-0.4.2.tar.gz"
+            }
+        ],
+        "0.5.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "989daa2e653346a98617309ef92c2947",
+                    "sha256": "44f99bf2de23c7b3079bf6efdcffefcd9adf95499edd23f876fa2728879af01e"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.5.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "989daa2e653346a98617309ef92c2947",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 4852,
+                "upload_time": "2012-08-13T19:58:56",
+                "url": "https://files.pythonhosted.org/packages/55/75/e1a1f6262df3941caf1194f8c8a9574d89d95df4c9eac8b0ab419f68c6d6/docopt-0.5.0.tar.gz"
+            }
+        ],
+        "0.6.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25557262a7441185987c65c39dac4ca9",
+                    "sha256": "c8aaabcc27dc3c2e73c963298784d8629a18b7b4ba851f4ef5b2c845f53c4fc8"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.6.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "25557262a7441185987c65c39dac4ca9",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25636,
+                "upload_time": "2013-01-23T19:59:12",
+                "url": "https://files.pythonhosted.org/packages/7e/64/7e51c5774833af6f9cdebfc0e221a8180deed45426d22df8f165fd8366b9/docopt-0.6.0.tar.gz"
+            }
+        ],
+        "0.6.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "fe36e9b7a1708a0b02a115f2a78cf623",
+                    "sha256": "71ad940a773fbc23be6093e9476ad57b2ecec446946a28d30127501f3b29aa35"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.6.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "fe36e9b7a1708a0b02a115f2a78cf623",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25815,
+                "upload_time": "2013-02-01T20:14:54",
+                "url": "https://files.pythonhosted.org/packages/ec/6d/8ef19316f3b06c15ac648c857d18f171a65b50319f0a6c782392ad62d942/docopt-0.6.1.tar.gz"
+            }
+        ],
+        "0.6.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4bc74561b37fad5d3e7d037f82a4c3b1",
+                    "sha256": "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
+                },
+                "downloads": -1,
+                "filename": "docopt-0.6.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4bc74561b37fad5d3e7d037f82a4c3b1",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 25901,
+                "upload_time": "2014-06-16T11:18:57",
+                "url": "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "4bc74561b37fad5d3e7d037f82a4c3b1",
+                "sha256": "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
+            },
+            "downloads": -1,
+            "filename": "docopt-0.6.2.tar.gz",
+            "has_sig": false,
+            "md5_digest": "4bc74561b37fad5d3e7d037f82a4c3b1",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 25901,
+            "upload_time": "2014-06-16T11:18:57",
+            "url": "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz"
+        }
+    ],
+    "package_name": "docopt"
+}

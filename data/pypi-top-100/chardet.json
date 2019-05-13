@@ -1,0 +1,427 @@
+{
+    "info": {
+        "author": "Daniel Blanchard",
+        "author_email": "dan.blanchard@gmail.com",
+        "bugtrack_url": "",
+        "classifiers": [
+            "Development Status :: 4 - Beta",
+            "Intended Audience :: Developers",
+            "License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 2",
+            "Programming Language :: Python :: 2.6",
+            "Programming Language :: Python :: 2.7",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.3",
+            "Programming Language :: Python :: 3.4",
+            "Programming Language :: Python :: 3.5",
+            "Programming Language :: Python :: 3.6",
+            "Topic :: Software Development :: Libraries :: Python Modules",
+            "Topic :: Text Processing :: Linguistic"
+        ],
+        "description": "Chardet: The Universal Character Encoding Detector\n--------------------------------------------------\n\n.. image:: https://img.shields.io/travis/chardet/chardet/stable.svg\n   :alt: Build status\n   :target: https://travis-ci.org/chardet/chardet\n\n.. image:: https://img.shields.io/coveralls/chardet/chardet/stable.svg\n   :target: https://coveralls.io/r/chardet/chardet\n\n.. image:: https://img.shields.io/pypi/v/chardet.svg\n   :target: https://warehouse.python.org/project/chardet/\n   :alt: Latest version on PyPI\n\n.. image:: https://img.shields.io/pypi/l/chardet.svg\n   :alt: License\n\n\nDetects\n - ASCII, UTF-8, UTF-16 (2 variants), UTF-32 (4 variants)\n - Big5, GB2312, EUC-TW, HZ-GB-2312, ISO-2022-CN (Traditional and Simplified Chinese)\n - EUC-JP, SHIFT_JIS, CP932, ISO-2022-JP (Japanese)\n - EUC-KR, ISO-2022-KR (Korean)\n - KOI8-R, MacCyrillic, IBM855, IBM866, ISO-8859-5, windows-1251 (Cyrillic)\n - ISO-8859-5, windows-1251 (Bulgarian)\n - ISO-8859-1, windows-1252 (Western European languages)\n - ISO-8859-7, windows-1253 (Greek)\n - ISO-8859-8, windows-1255 (Visual and Logical Hebrew)\n - TIS-620 (Thai)\n\n.. note::\n   Our ISO-8859-2 and windows-1250 (Hungarian) probers have been temporarily\n   disabled until we can retrain the models.\n\nRequires Python 2.6, 2.7, or 3.3+.\n\nInstallation\n------------\n\nInstall from `PyPI <https://pypi.python.org/pypi/chardet>`_::\n\n    pip install chardet\n\nDocumentation\n-------------\n\nFor users, docs are now available at https://chardet.readthedocs.io/.\n\nCommand-line Tool\n-----------------\n\nchardet comes with a command-line script which reports on the encodings of one\nor more files::\n\n    % chardetect somefile someotherfile\n    somefile: windows-1252 with confidence 0.5\n    someotherfile: ascii with confidence 1.0\n\nAbout\n-----\n\nThis is a continuation of Mark Pilgrim's excellent chardet. Previously, two\nversions needed to be maintained: one that supported python 2.x and one that\nsupported python 3.x.  We've recently merged with `Ian Cordasco <https://github.com/sigmavirus24>`_'s\n`charade <https://github.com/sigmavirus24/charade>`_ fork, so now we have one\ncoherent version that works for Python 2.6+.\n\n:maintainer: Dan Blanchard\n\n\n",
+        "description_content_type": null,
+        "docs_url": null,
+        "download_url": "",
+        "downloads": {
+            "last_day": -1,
+            "last_month": -1,
+            "last_week": -1
+        },
+        "home_page": "https://github.com/chardet/chardet",
+        "keywords": "encoding,i18n,xml",
+        "license": "LGPL",
+        "maintainer": "",
+        "maintainer_email": "",
+        "name": "chardet",
+        "package_url": "https://pypi.org/project/chardet/",
+        "platform": "",
+        "project_url": "https://pypi.org/project/chardet/",
+        "release_url": "https://pypi.org/project/chardet/3.0.4/",
+        "requires_dist": null,
+        "requires_python": "",
+        "summary": "Universal encoding detector for Python 2 and 3",
+        "version": "3.0.4"
+    },
+    "last_serial": 2935541,
+    "releases": {
+        "1.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "1381eac6e12d79a90fd426a7bd748f0e",
+                    "sha256": "f3a80cfd53a9a9e8311e996062bb7ed0c0551367545548460d5a2c3b4717c797"
+                },
+                "downloads": -1,
+                "filename": "chardet-1.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "1381eac6e12d79a90fd426a7bd748f0e",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 153118,
+                "upload_time": "2006-12-23T17:39:10",
+                "url": "https://files.pythonhosted.org/packages/13/29/9336841b1a5d9de9de808e1797ab04057bc17982bbab87dd14fc06aa4160/chardet-1.0.tar.gz"
+            }
+        ],
+        "1.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "44e5cb181436c8b86f1a6fb492f9e409",
+                    "sha256": "58ba4a382c9c7e1f6619ed4f3a273fb4044de4352342f473539d20ca4346113a"
+                },
+                "downloads": -1,
+                "filename": "chardet-1.0.1-py2.4.egg",
+                "has_sig": false,
+                "md5_digest": "44e5cb181436c8b86f1a6fb492f9e409",
+                "packagetype": "bdist_egg",
+                "python_version": "2.4",
+                "size": 391741,
+                "upload_time": "2008-04-19T11:33:45",
+                "url": "https://files.pythonhosted.org/packages/ec/32/19eab081980cc61aa8d49c44930cf897c1dbce6888579743aed12140810a/chardet-1.0.1-py2.4.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "aa49cb7ef2793fc83e5b08abcf2dff79",
+                    "sha256": "5c303c3549070d5cd5101649d569ea00ccf5f763245f64f61015834c4acdbe61"
+                },
+                "downloads": -1,
+                "filename": "chardet-1.0.1-py2.5.egg",
+                "has_sig": false,
+                "md5_digest": "aa49cb7ef2793fc83e5b08abcf2dff79",
+                "packagetype": "bdist_egg",
+                "python_version": "2.5",
+                "size": 390297,
+                "upload_time": "2008-04-20T07:36:30",
+                "url": "https://files.pythonhosted.org/packages/d4/bc/c1b877d19bc02610873a21cc3978260008c2839acac36772dd29c1f78316/chardet-1.0.1-py2.5.egg"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7c28b02bca7847c13bebedaf4df6c5a3",
+                    "sha256": "4573d91ec9e6d88c6be1dfe004ea337d47754ed3924b4c181f777c613465578b"
+                },
+                "downloads": -1,
+                "filename": "chardet-1.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7c28b02bca7847c13bebedaf4df6c5a3",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 156407,
+                "upload_time": "2008-04-19T11:33:39",
+                "url": "https://files.pythonhosted.org/packages/94/f1/f3237e3045c422c83968d3a2dfdefc7d4d687d84957e12810564b16ac5d5/chardet-1.0.1.tar.gz"
+            }
+        ],
+        "1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "15838de570d0703baf191dcf831cf0de",
+                    "sha256": "2a9cc3bcba09a9e795efcf63ff1714980beb8dea1660f0931f675f52f4264e5c"
+                },
+                "downloads": -1,
+                "filename": "chardet-1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "15838de570d0703baf191dcf831cf0de",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 153913,
+                "upload_time": "2012-07-27T06:33:19",
+                "url": "https://files.pythonhosted.org/packages/11/da/101ef38e05881445c1dec36dbd0573f9561e357a2da9e2409656e4677ffa/chardet-1.1.tar.gz"
+            }
+        ],
+        "2.1.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "295367fd210d20f3febda615a88e1ef0",
+                    "sha256": "b0d4149078ec777b448f43960c1d0d9648e03b366c60e396c50990c55eab6ed0"
+                },
+                "downloads": -1,
+                "filename": "chardet-2.1.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "295367fd210d20f3febda615a88e1ef0",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 178947,
+                "upload_time": "2012-10-01T20:02:44",
+                "url": "https://files.pythonhosted.org/packages/f2/f1/2b5ab854299fe1ea312a9c10dda58421ea24af98a128ad1bff6b87c0c927/chardet-2.1.1.tar.gz"
+            }
+        ],
+        "2.2.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "556de73cc5d2d14233b3512798423da1",
+                    "sha256": "c72cce700513dbf2269f9695fa79402ef4b0860d2925a5cc4666b21647debb6a"
+                },
+                "downloads": -1,
+                "filename": "chardet-2.2.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "556de73cc5d2d14233b3512798423da1",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 180514,
+                "upload_time": "2013-12-18T18:40:23",
+                "url": "https://files.pythonhosted.org/packages/63/b7/de3834dc5c84dec3b839690bd663a07613b166b0b7217e46687a1f7eced2/chardet-2.2.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "4a758402eaefd0331bdedc7ecb6f452c",
+                    "sha256": "f1964f73f5ee9b7e0309098b9512d587fbba6dd5d1f3797b1c95529e5241bf09"
+                },
+                "downloads": -1,
+                "filename": "chardet-2.2.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "4a758402eaefd0331bdedc7ecb6f452c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 180319,
+                "upload_time": "2013-12-18T18:40:07",
+                "url": "https://files.pythonhosted.org/packages/86/e5/e5f97d77cda0622e875d83edfdbb2f81ba38165e7197f9d185ba2c799f77/chardet-2.2.1.tar.gz"
+            }
+        ],
+        "2.3.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "ed72df7ce6a2956ac3483e029d951fa2",
+                    "sha256": "aaf514bde38020b4f1e42c6a6e141f2827a8a58ccfc3b22b6ff5a1a4b50be56e"
+                },
+                "downloads": -1,
+                "filename": "chardet-2.3.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "ed72df7ce6a2956ac3483e029d951fa2",
+                "packagetype": "bdist_wheel",
+                "python_version": "2.7",
+                "size": 180893,
+                "upload_time": "2017-02-14T20:11:15",
+                "url": "https://files.pythonhosted.org/packages/7e/5c/605ca2daa5cf21c87690d8fe6ab05a6f2278c451f4ede6456dd26453f4bd/chardet-2.3.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "25274d664ccb5130adae08047416e1a8",
+                    "sha256": "e53e38b3a4afe6d1132de62b7400a4ac363452dc5dfcf8d88e8e0cce663c68aa"
+                },
+                "downloads": -1,
+                "filename": "chardet-2.3.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "25274d664ccb5130adae08047416e1a8",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 164346,
+                "upload_time": "2014-10-07T15:05:48",
+                "url": "https://files.pythonhosted.org/packages/7d/87/4e3a3f38b2f5c578ce44f8dc2aa053217de9f0b6d737739b0ddac38ed237/chardet-2.3.0.tar.gz"
+            }
+        ],
+        "3.0.0": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9dc57a0e5c79d0cc9f45d865c7d72f0d",
+                    "sha256": "bedd581d3daea4180b3cb555940dcbc89916e7922b070d2a9a37e660791e90a2"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.0-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9dc57a0e5c79d0cc9f45d865c7d72f0d",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 133225,
+                "upload_time": "2017-04-11T17:53:20",
+                "url": "https://files.pythonhosted.org/packages/63/8b/44ea61e33bd7d38c1416b625c87a98aeb4ee9abdad3bff630c69b6b5ffc8/chardet-3.0.0-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f99fb635c61fe37e14570becaa281c76",
+                    "sha256": "171dfc754d56c16b82cf77ac3eee1d42db9bc2f26c2c61c6573426d2a108d9e3"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.0.tar.gz",
+                "has_sig": false,
+                "md5_digest": "f99fb635c61fe37e14570becaa281c76",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1866747,
+                "upload_time": "2017-04-11T17:53:22",
+                "url": "https://files.pythonhosted.org/packages/33/d9/43cd46d6b8cf2e393aeb60f338cfe0154cee7dd3de13a1752d3e4814aee2/chardet-3.0.0.tar.gz"
+            }
+        ],
+        "3.0.1": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "2ecd2aac7eebe48484afb917d2bdcce3",
+                    "sha256": "f986f11a01ab75cbf3b364deb41f2bb0943053adc1c5c257245e8f484d59cbba"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.1-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "2ecd2aac7eebe48484afb917d2bdcce3",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 133231,
+                "upload_time": "2017-04-11T20:48:36",
+                "url": "https://files.pythonhosted.org/packages/de/e5/3226e65c6f4291bc3f7ec0a9329ed9949bf074d8663a037c58c78d275745/chardet-3.0.1-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "bf3ea9df23c79d134aea8ef65745da06",
+                    "sha256": "0d9688b015b3493f2f486214a2181b8f29fbe21c4034711bd9140a1d3467808d"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.1.tar.gz",
+                "has_sig": false,
+                "md5_digest": "bf3ea9df23c79d134aea8ef65745da06",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1866702,
+                "upload_time": "2017-04-11T20:48:39",
+                "url": "https://files.pythonhosted.org/packages/42/d1/c7e0023643df3c53ff72513f53f28bc1e948cb18a56f8a20aee289537ee9/chardet-3.0.1.tar.gz"
+            }
+        ],
+        "3.0.2": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "f18688841820b46ecc430aabdc274cde",
+                    "sha256": "6ebf56457934fdce01fb5ada5582762a84eed94cad43ed877964aebbdd8174c0"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.2-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "f18688841820b46ecc430aabdc274cde",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 133345,
+                "upload_time": "2017-04-12T19:22:06",
+                "url": "https://files.pythonhosted.org/packages/b8/74/54fdc2fcfdd46b6c486964b64c5bb7db9a3664033ab25cf11aab06dd2a5d/chardet-3.0.2-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "96e364abdbde20b5f6dbbe2ad9d54d04",
+                    "sha256": "4f7832e7c583348a9eddd927ee8514b3bf717c061f57b21dbe7697211454d9bb"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.2.tar.gz",
+                "has_sig": false,
+                "md5_digest": "96e364abdbde20b5f6dbbe2ad9d54d04",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1866978,
+                "upload_time": "2017-04-12T19:22:10",
+                "url": "https://files.pythonhosted.org/packages/91/05/28f23094cdf1410fb03533f0d71e6b4aad3c504100e83b8cea6fc899552c/chardet-3.0.2.tar.gz"
+            }
+        ],
+        "3.0.3": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "9f33113c118ab9754ef4316aad359d6e",
+                    "sha256": "8da3f329e2c5779247f4cff7081512c531731ef6a9c6ef78084e8ed8d18226c7"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.3-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "9f33113c118ab9754ef4316aad359d6e",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 133398,
+                "upload_time": "2017-05-16T18:41:02",
+                "url": "https://files.pythonhosted.org/packages/8c/27/99f781a11e4daa5acadf97add6e5883ec5f8f9abbf279e790fd0ff371db7/chardet-3.0.3-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "d92908d1b0b61dbbd63fb18d33c6493a",
+                    "sha256": "77df6d712a6037ed6f247ad1dd67faca506f64bc1295d43533e9212a101f28cb"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.3.tar.gz",
+                "has_sig": false,
+                "md5_digest": "d92908d1b0b61dbbd63fb18d33c6493a",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1867007,
+                "upload_time": "2017-05-16T18:41:05",
+                "url": "https://files.pythonhosted.org/packages/fc/f9/3963ae8e196ceb4a09e0d7906f511fdf62a631f05d9288dc4905a93a1f52/chardet-3.0.3.tar.gz"
+            }
+        ],
+        "3.0.4": [
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "0004b00caff7bb543a1d0d0bd0185a03",
+                    "sha256": "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.4-py2.py3-none-any.whl",
+                "has_sig": false,
+                "md5_digest": "0004b00caff7bb543a1d0d0bd0185a03",
+                "packagetype": "bdist_wheel",
+                "python_version": "py2.py3",
+                "size": 133356,
+                "upload_time": "2017-06-08T14:34:33",
+                "url": "https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "comment_text": "",
+                "digests": {
+                    "md5": "7dd1ba7f9c77e32351b0a0cfacf4055c",
+                    "sha256": "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
+                },
+                "downloads": -1,
+                "filename": "chardet-3.0.4.tar.gz",
+                "has_sig": false,
+                "md5_digest": "7dd1ba7f9c77e32351b0a0cfacf4055c",
+                "packagetype": "sdist",
+                "python_version": "source",
+                "size": 1868453,
+                "upload_time": "2017-06-08T14:34:35",
+                "url": "https://files.pythonhosted.org/packages/fc/bb/a5768c230f9ddb03acc9ef3f0d4a3cf93462473795d18e9535498c8f929d/chardet-3.0.4.tar.gz"
+            }
+        ]
+    },
+    "urls": [
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "0004b00caff7bb543a1d0d0bd0185a03",
+                "sha256": "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
+            },
+            "downloads": -1,
+            "filename": "chardet-3.0.4-py2.py3-none-any.whl",
+            "has_sig": false,
+            "md5_digest": "0004b00caff7bb543a1d0d0bd0185a03",
+            "packagetype": "bdist_wheel",
+            "python_version": "py2.py3",
+            "size": 133356,
+            "upload_time": "2017-06-08T14:34:33",
+            "url": "https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl"
+        },
+        {
+            "comment_text": "",
+            "digests": {
+                "md5": "7dd1ba7f9c77e32351b0a0cfacf4055c",
+                "sha256": "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
+            },
+            "downloads": -1,
+            "filename": "chardet-3.0.4.tar.gz",
+            "has_sig": false,
+            "md5_digest": "7dd1ba7f9c77e32351b0a0cfacf4055c",
+            "packagetype": "sdist",
+            "python_version": "source",
+            "size": 1868453,
+            "upload_time": "2017-06-08T14:34:35",
+            "url": "https://files.pythonhosted.org/packages/fc/bb/a5768c230f9ddb03acc9ef3f0d4a3cf93462473795d18e9535498c8f929d/chardet-3.0.4.tar.gz"
+        }
+    ],
+    "package_name": "chardet"
+}

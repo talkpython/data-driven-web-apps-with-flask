@@ -30,7 +30,7 @@
                 {% for r in releases %}
                     <div class="project">
                         <div class="title">
-                            <a href="#">{{ r.package.id }} {{ r.version_text }}</a>
+                            <a href="/project/{{ r.package.id }}">{{ r.package.id }} {{ r.version_text }}</a>
                             <div class="desc">{{ r.package.summary }}</div>
                         </div>
                     </div>

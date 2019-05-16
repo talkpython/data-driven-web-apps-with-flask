@@ -133,3 +133,5 @@ app/ch09_sqlalchemy/starter/.idea/modules.xml
 pypi.sqlite
 app/ch10_using_sqlachemy/final/.idea/dataSources.local.xml
 app/ch10_using_sqlachemy/final/.idea/dataSources/cfaa71de-14c4-40a6-abf7-fc59c06c9b0b.xml
+app/ch11_migrations/final/.idea/dataSources.local.xml
+app/ch11_migrations/final/.idea/dataSources/bb882f32-bdb3-45cb-adce-c46711dd125e.xml

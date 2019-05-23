@@ -112,3 +112,7 @@ footer a {
 .error-msg {
     color: #b30000;
 }
+
+.page-core {
+    padding: 20px;
+}

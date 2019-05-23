@@ -35,8 +35,15 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
-            <li class="nav-item"><a class="nav-link" href="/account/login">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="/account/register" id="last_nav_link">Register</a></li>
+
+            {% if user_id %}
+                <li class="nav-item"><a class="nav-link" href="/account">Account</a></li>
+                <li class="nav-item"><a class="nav-link" href="/account/logout" id="last_nav_link">Logout</a></li>
+            {% else %}
+                <li class="nav-item"><a class="nav-link" href="/account/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/account/register" id="last_nav_link">Register</a></li>
+            {% endif %}
+
         </ul>
     </div>
 </nav>

@@ -1,5 +1,6 @@
 import flask
 
+from pypi_org.infrastructure import cookie_auth
 from pypi_org.infrastructure.view_modifiers import response
 import pypi_org.services.package_service as package_service
 
@@ -30,6 +31,7 @@ def package_details(package_name: str):
         'latest_release': latest_release,
         'release_version': latest_release,
         'is_latest': is_latest,
+        'user_id': cookie_auth.get_user_id_via_auth_cookie(flask.request),
     }
 
 

@@ -2,13 +2,19 @@
 {% block title %}About PyPI Demo{% endblock %}
 
 {% block main_content %}
-    <h1>Register at PyPI</h1>
+    <div class="form-container">
+        <form action="" method="POST" class="account-form">
+            <h1>Register at PyPI</h1>
 
-    <div action="" method="POST">
-        This will be our form.
+            <input type="text" placeholder=" Your name" class="form-control">
+            <input type="text" placeholder=" Your email address" class="form-control">
+            <input type="password" placeholder=" Password" class="form-control">
+            <button type="submit" class="btn btn-danger">Register</button>
+            <div style="clear: both;"></div>
+        </form>
     </div>
 {% endblock %}
 
 {% block additional_css %}
-<!-- this would be css from about.html -->
+    <link rel="stylesheet" href="/static/css/account.css">
 {% endblock %}

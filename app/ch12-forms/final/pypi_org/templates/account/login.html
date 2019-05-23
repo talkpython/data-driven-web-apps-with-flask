@@ -2,13 +2,22 @@
 {% block title %}About PyPI Demo{% endblock %}
 
 {% block main_content %}
-    <h1>About Python Package Index</h1>
+    <div class="form-container">
+        <form action="" method="POST" class="account-form">
+            <h1>Login to PyPI</h1>
 
-    <div>
-        This is our demo app for our Flask course.
+            <input name="email" type="text" placeholder=" Your email address" class="form-control" value="{{ email }}">
+            <input name="password" type="password" placeholder=" Password" class="form-control" value="{{ password }}">
+            <button type="submit" class="btn btn-danger">Register</button>
+            <div style="clear: both;"></div>
+
+            {% if error %}
+                <div class="error-msg">{{ error }}</div>
+            {% endif %}
+        </form>
     </div>
 {% endblock %}
 
 {% block additional_css %}
-<!-- this would be css from about.html -->
+    <link rel="stylesheet" href="/static/css/account.css">
 {% endblock %}

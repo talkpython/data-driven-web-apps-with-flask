@@ -1,6 +1,7 @@
 from functools import wraps
 
 import flask
+import werkzeug.wrappers.response
 
 
 def response(*, mimetype: str = None, template_file: str = None):
@@ -11,6 +12,8 @@ def response(*, mimetype: str = None, template_file: str = None):
         def view_method(*args, **kwargs):
             response_val = f(*args, **kwargs)
             if isinstance(response_val, flask.Response):
+                return response_val
+            if isinstance(response_val, werkzeug.wrappers.response.Response):
                 return response_val
 
             if isinstance(response_val, dict):

@@ -108,3 +108,7 @@ footer {
 footer a {
     color: #2495f2;
 }
+
+.error-msg {
+    color: #b30000;
+}

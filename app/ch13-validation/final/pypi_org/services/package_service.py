@@ -8,26 +8,34 @@ from pypi_org.data.releases import Release
 
 def get_latest_releases(limit=10) -> List[Release]:
     session = db_session.create_session()
+    try:
 
-    releases = session.query(Release). \
-        options(sqlalchemy.orm.joinedload(Release.package)). \
-        order_by(Release.created_date.desc()). \
-        limit(limit). \
-        all()
+        releases = session.query(Release). \
+            options(sqlalchemy.orm.joinedload(Release.package)). \
+            order_by(Release.created_date.desc()). \
+            limit(limit). \
+            all()
 
-    session.close()
+    finally:
+        session.close()
 
     return releases
 
 
 def get_package_count() -> int:
     session = db_session.create_session()
-    return session.query(Package).count()
+    try:
+        return session.query(Package).count()
+    finally:
+        session.close()
 
 
 def get_release_count() -> int:
     session = db_session.create_session()
-    return session.query(Release).count()
+    try:
+        return session.query(Release).count()
+    finally:
+        session.close()
 
 
 def get_package_by_id(package_id: str) -> Optional[Package]:
@@ -37,12 +45,14 @@ def get_package_by_id(package_id: str) -> Optional[Package]:
     package_id = package_id.strip().lower()
 
     session = db_session.create_session()
+    try:
 
-    package = session.query(Package) \
-        .options(sqlalchemy.orm.joinedload(Package.releases)) \
-        .filter(Package.id == package_id) \
-        .first()
+        package = session.query(Package) \
+            .options(sqlalchemy.orm.joinedload(Package.releases)) \
+            .filter(Package.id == package_id) \
+            .first()
 
-    session.close()
+    finally:
+        session.close()
 
     return package

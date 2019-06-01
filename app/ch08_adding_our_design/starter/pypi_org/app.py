@@ -1,4 +1,8 @@
+import os
+import sys
 import flask
+folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, folder)
 
 app = flask.Flask(__name__)
 

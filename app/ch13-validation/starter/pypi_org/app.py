@@ -1,6 +1,9 @@
 import os
-
+import sys
 import flask
+folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, folder)
+
 import pypi_org.data.db_session as db_session
 
 app = flask.Flask(__name__)
@@ -9,7 +12,7 @@ app = flask.Flask(__name__)
 def main():
     register_blueprints()
     setup_db()
-    app.run(debug=True)
+    app.run(debug=True, port=5006)
 
 
 def setup_db():

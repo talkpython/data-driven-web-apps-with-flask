@@ -30,4 +30,9 @@ def global_init(db_file: str):
 
 def create_session() -> Session:
     global __factory
-    return __factory()
+
+    session: Session = __factory()
+
+    session.expire_on_commit = False
+
+    return session

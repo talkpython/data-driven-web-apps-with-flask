@@ -12,6 +12,7 @@
     <option name="TEMPLATE_FOLDERS">
       <list>
         <option value="$MODULE_DIR$/venv/lib/python3.7/site-packages/alembic/templates" />
+        <option value="$MODULE_DIR$/pypi_org/templates" />
       </list>
     </option>
   </component>

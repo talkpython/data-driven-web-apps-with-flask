@@ -8,6 +8,7 @@ class RegisterViewModel(ViewModelBase):
         self.name = self.request_dict.name
         self.email = self.request_dict.email.lower().strip()
         self.password = self.request_dict.password.strip()
+        self.age = self.request_dict.age.strip()
 
     def validate(self):
         if not self.name or not self.name.strip():

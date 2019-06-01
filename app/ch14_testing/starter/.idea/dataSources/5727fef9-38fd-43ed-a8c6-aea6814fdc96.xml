@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="pypi">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.15">
+    <root id="1">
+      <ServerVersion>3.25.1</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="alembic_version"/>
+    <table id="7" parent="2" name="auditing"/>
+    <table id="8" parent="2" name="downloads"/>
+    <table id="9" parent="2" name="languages"/>
+    <table id="10" parent="2" name="licenses"/>
+    <table id="11" parent="2" name="maintainers"/>
+    <table id="12" parent="2" name="packages"/>
+    <table id="13" parent="2" name="releases"/>
+    <table id="14" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="15" parent="2" name="users"/>
+    <column id="16" parent="6" name="version_num">
+      <Position>1</Position>
+      <DataType>VARCHAR(32)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="17" parent="6" name="sqlite_autoindex_alembic_version_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>version_num</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="18" parent="6" name="alembic_version_pkc">
+      <ColNames>version_num</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_alembic_version_1</UnderlyingIndexName>
+    </key>
+    <column id="19" parent="7" name="id">
+      <Position>1</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="7" name="created_date">
+      <Position>2</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <column id="21" parent="7" name="description">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <index id="22" parent="7" name="sqlite_autoindex_auditing_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="23" parent="7" name="ix_auditing_created_date">
+      <ColNames>created_date</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="24" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_auditing_1</UnderlyingIndexName>
+    </key>
+    <column id="25" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>BIGINT|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="8" name="created_date">
+      <Position>2</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <column id="27" parent="8" name="package_id">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="28" parent="8" name="release_id">
+      <Position>4</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="29" parent="8" name="ip_address">
+      <Position>5</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="30" parent="8" name="user_agent">
+      <Position>6</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <index id="31" parent="8" name="sqlite_autoindex_downloads_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="32" parent="8" name="ix_downloads_created_date">
+      <ColNames>created_date</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="33" parent="8" name="ix_downloads_package_id">
+      <ColNames>package_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="34" parent="8" name="ix_downloads_release_id">
+      <ColNames>release_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="35" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_downloads_1</UnderlyingIndexName>
+    </key>
+    <column id="36" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="9" name="created_date">
+      <Position>2</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <column id="38" parent="9" name="description">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <index id="39" parent="9" name="sqlite_autoindex_languages_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="40" parent="9" name="ix_languages_created_date">
+      <ColNames>created_date</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="41" parent="9">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_languages_1</UnderlyingIndexName>
+    </key>
+    <column id="42" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="10" name="created_date">
+      <Position>2</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <column id="44" parent="10" name="description">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <index id="45" parent="10" name="sqlite_autoindex_licenses_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="46" parent="10" name="ix_licenses_created_date">
+      <ColNames>created_date</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="47" parent="10">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_licenses_1</UnderlyingIndexName>
+    </key>
+    <column id="48" parent="11" name="user_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="11" name="package_id">
+      <Position>2</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="50" parent="11" name="sqlite_autoindex_maintainers_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>user_id
+package_id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="11">
+      <ColNames>user_id
+package_id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_maintainers_1</UnderlyingIndexName>
+    </key>
+    <column id="52" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="12" name="created_date">
+      <Position>2</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <column id="54" parent="12" name="summary">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="12" name="description">
+      <Position>4</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="56" parent="12" name="home_page">
+      <Position>5</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="57" parent="12" name="docs_url">
+      <Position>6</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="58" parent="12" name="package_url">
+      <Position>7</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="59" parent="12" name="author_name">
+      <Position>8</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="60" parent="12" name="author_email">
+      <Position>9</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="61" parent="12" name="license">
+      <Position>10</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="62" parent="12" name="last_updated">
+      <Position>11</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <index id="63" parent="12" name="sqlite_autoindex_packages_1">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="64" parent="12" name="ix_packages_created_date">
+      <ColNames>created_date</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="65" parent="12" name="ix_packages_author_email">
+      <ColNames>author_email</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="66" parent="12" name="ix_packages_license">
+      <ColNames>license</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="67" parent="12" name="ix_packages_last_updated">
+      <ColNames>last_updated</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="68" parent="12">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>sqlite_autoindex_packages_1</UnderlyingIndexName>
+    </key>
+    <column id="69" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="13" name="major_ver">
+      <Position>2</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="71" parent="13" name="minor_ver">
+      <Position>3</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="72" parent="13" name="build_ver">
+      <Position>4</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="73" parent="13" name="created_date">
+      <Position>5</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <column id="74" parent="13" name="comment">
+      <Position>6</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="75" parent="13" name="url">
+      <Position>7</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="76" parent="13" name="size">
+      <Position>8</Position>
+      <DataType>BIGINT|0s</DataType>
+    </column>
+    <column id="77" parent="13" name="package_id">
+      <Position>9</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <index id="78" parent="13" name="ix_releases_major_ver">
+      <ColNames>major_ver</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="79" parent="13" name="ix_releases_minor_ver">
+      <ColNames>minor_ver</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="80" parent="13" name="ix_releases_build_ver">
+      <ColNames>build_ver</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="81" parent="13" name="ix_releases_created_date">
+      <ColNames>created_date</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="82" parent="13">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="83" parent="13">
+      <ColNames>package_id</ColNames>
+      <RefTableName>packages</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="84" parent="14" name="type">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="85" parent="14" name="name">
+      <Position>2</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="86" parent="14" name="tbl_name">
+      <Position>3</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="87" parent="14" name="rootpage">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="88" parent="14" name="sql">
+      <Position>5</Position>
+      <DataType>text|0s</DataType>
+    </column>
+    <column id="89" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>INTEGER|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="15" name="name">
+      <Position>2</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="91" parent="15" name="email">
+      <Position>3</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="92" parent="15" name="hashed_password">
+      <Position>4</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="93" parent="15" name="created_date">
+      <Position>5</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <column id="94" parent="15" name="profile_image_url">
+      <Position>6</Position>
+      <DataType>VARCHAR|0s</DataType>
+    </column>
+    <column id="95" parent="15" name="last_login">
+      <Position>7</Position>
+      <DataType>DATETIME|0s</DataType>
+    </column>
+    <index id="96" parent="15" name="ix_users_email">
+      <ColNames>email</ColNames>
+      <ColumnCollations></ColumnCollations>
+      <Unique>1</Unique>
+    </index>
+    <index id="97" parent="15" name="ix_users_hashed_password">
+      <ColNames>hashed_password</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="98" parent="15" name="ix_users_created_date">
+      <ColNames>created_date</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <index id="99" parent="15" name="ix_users_last_login">
+      <ColNames>last_login</ColNames>
+      <ColumnCollations></ColumnCollations>
+    </index>
+    <key id="100" parent="15">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

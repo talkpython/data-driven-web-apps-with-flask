@@ -2,4 +2,7 @@
 
 alembic
 
-
+pytest
+pytest-cov
+webtest
+pytest-clarity

@@ -3,7 +3,7 @@ import xml.etree.ElementTree
 from flask import Response
 
 
-def test_site_mapped_urls(client):
+def test_int_site_mapped_urls(client):
     text = get_sitemap_text(client)
     x = xml.etree.ElementTree.fromstring(text)
     urls = [

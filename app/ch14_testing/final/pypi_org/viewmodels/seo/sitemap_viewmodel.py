@@ -8,5 +8,5 @@ class SiteMapViewModel(ViewModelBase):
     def __init__(self, limit: int):
         super().__init__()
         self.packages = package_service.all_packages(limit)
-        self.last_updated_text = "2018-07-15"
+        self.last_updated_text = "2019-07-15"
         self.site = "{}://{}".format(flask.request.scheme, flask.request.host)

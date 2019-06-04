@@ -9,20 +9,22 @@ container_folder = os.path.abspath(os.path.join(
 ))
 sys.path.insert(0, container_folder)
 
+import pypi_org.app
 from pypi_org.app import app as flask_app
 
 
 @pytest.fixture
 def client():
-    flask_app.app.config['TESTING'] = True
-    client = flask_app.app.test_client()
+    flask_app.config['TESTING'] = True
+    client = flask_app.test_client()
 
     try:
-        flask_app.register_blueprints()
-    except:
+        pypi_org.app.register_blueprints()
+    except Exception as x:
+        print(x)
         pass
 
-    flask_app.init_db()
-    # client.post()
+    pypi_org.app.setup_db()
+    client.post()
 
     yield client

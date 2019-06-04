@@ -11,7 +11,7 @@ def test_example():
     assert 1 + 2 == 3
 
 
-def test_register_validation_when_valid():
+def test_vm_register_validation_when_valid():
     # 3 A's of test: Arrange, Act, then Assert
 
     # Arrange
@@ -33,7 +33,7 @@ def test_register_validation_when_valid():
     assert vm.error is None
 
 
-def test_register_validation_for_existing_user():
+def test_vm_register_validation_for_existing_user():
     # 3 A's of test: Arrange, Act, then Assert
 
     # Arrange
@@ -57,7 +57,7 @@ def test_register_validation_for_existing_user():
     assert 'already exists' in vm.error
 
 
-def test_register_view_new_user():
+def test_v_register_view_new_user():
     # 3 A's of test: Arrange, Act, then Assert
 
     # Arrange

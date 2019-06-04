@@ -1,5 +1,6 @@
 from typing import List, Optional
 import sqlalchemy.orm
+from sqlalchemy.orm import Session
 
 import pypi_org.data.db_session as db_session
 from pypi_org.data.package import Package
@@ -56,3 +57,11 @@ def get_package_by_id(package_id: str) -> Optional[Package]:
         session.close()
 
     return package
+
+
+def all_packages(limit: int) -> List[Package]:
+    session: Session = db_session.create_session()
+    try:
+        return list(session.query(Package).limit(limit))
+    finally:
+        session.close()

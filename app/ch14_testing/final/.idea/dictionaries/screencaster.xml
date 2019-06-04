@@ -4,6 +4,7 @@
       <w>mimetype</w>
       <w>pypi</w>
       <w>pytest</w>
+      <w>sqlalchemy</w>
       <w>webtest</w>
     </words>
   </dictionary>

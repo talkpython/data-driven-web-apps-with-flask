@@ -80,3 +80,22 @@ def test_v_register_view_new_user():
 
     # Assert
     assert resp.location == '/account'
+
+
+def test_int_account_home_no_login(client):
+    target = 'pypi_org.services.user_service.find_user_by_id'
+    with unittest.mock.patch(target, return_value=None):
+        resp: Response = client.get('/account')
+
+    assert resp.status_code == 302
+    assert resp.location == 'http://localhost/account/login'
+
+
+def test_int_account_home_with_login(client):
+    target = 'pypi_org.services.user_service.find_user_by_id'
+    test_user = User(name='Michael', email='michael@talkpython.fm')
+    with unittest.mock.patch(target, return_value=test_user):
+        resp: Response = client.get('/account')
+
+    assert resp.status_code == 200
+    assert b'Michael' in resp.data

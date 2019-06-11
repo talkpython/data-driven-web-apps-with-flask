@@ -28,10 +28,11 @@
                 </div>
 
                 {% for r in releases %}
+                    {% set package = package_lookup.get(r.package_id) %}
                     <div class="project">
                         <div class="title">
-                            <a href="/project/{{ r.package.id }}">{{ r.package.id }} {{ r.version_text }}</a>
-                            <div class="desc">{{ r.package.summary }}</div>
+                            <a href="/project/{{ package.id }}">{{ package.id }} {{ r.version_text }}</a>
+                            <div class="desc">{{ package.summary }}</div>
                         </div>
                     </div>
                 {% endfor %}

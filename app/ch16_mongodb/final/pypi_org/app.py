@@ -4,6 +4,7 @@ import sys
 import flask
 
 from pypi_org.nosql import mongo_setup
+from pypi_org.nosql.users import User
 
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)

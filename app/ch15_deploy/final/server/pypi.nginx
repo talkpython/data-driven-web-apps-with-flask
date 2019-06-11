@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name fake_pypi.com;
+    server_name fake_pypi.com fakepypi.talkpython.com;
     server_tokens off;
     charset utf-8;
     client_max_body_size 150M;

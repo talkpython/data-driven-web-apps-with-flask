@@ -1,12 +1,12 @@
 # Data-driven web apps with 
 
-Course demo code and other hand-out materials for our data driven web apps in  course. Visit the full course page at **[training.talkpython.fm](https://training.talkpython.fm/courses/explore_/building-data-driven-web-applications-in-python-with--sqlalchemy-and-bootstrap)**
+Course demo code and other hand-out materials for our data driven web apps in Flask course. Visit the full course page at **[training.talkpython.fm](https://training.talkpython.fm/courses/explore_flask/building-data-driven-web-applications-in-python-with-flask-sqlalchemy-and-bootstrap)**
 
-[![](https://raw.githubusercontent.com/talkpython/data-driven-web-apps-with-flask/master/readme_materials/flask-data-web-apps.jpg?token=AAPQ62M7D6PI5ZIZHPQB2M25D73XA)](https://training.talkpython.fm/courses/explore_/building-data-driven-web-applications-in-python-with--sqlalchemy-and-bootstrap)
+[![](readme_materials/flask-data-web-apps.jpg)](https://training.talkpython.fm/courses/explore_flask/building-data-driven-web-applications-in-python-with-flask-sqlalchemy-and-bootstrap)
 
 ## Course Summary
 
-One of the areas Python really shines is in building clean and powerful web applications. Once you know the language basics, this course will teach you everything you need to build data-driven, modern web applications in Python with the  web framework.
+One of the areas Python really shines is in building clean and powerful web applications. Once you know the language basics, this course will teach you everything you need to build data-driven, modern web applications in Python with the Flask web framework.
 
 ## What's this course about and how is it different?
 
@@ -17,7 +17,7 @@ We have taken great care to build a course that is **just real enough to give yo
 While building our replica PyPI, you will learn:
 
 * Learn about the different major Python web frameworks
-* Create a -based website from scratch using the CLI and PyCharm
+* Create a Flask-based website from scratch using the CLI and PyCharm
 * Work with dynamic HTML templates
 * Map URLs to view methods using routing
 * Make advanced use of routing to build a full custom CMS in 8 minutes
@@ -44,4 +44,4 @@ This course is **based upon Python 3**. With Python 2 going unsupported in 2020,
 
 This **data-driven web apps with Python and Flask** course is just what you need to build that fast, custom web application that can help you create your next great idea or just solve a business problem by deploying it behind your firewall.
 
-Take the course over at **[training.talkpython.fm](https://training.talkpython.fm/courses/explore_/building-data-driven-web-applications-in-python-with--sqlalchemy-and-bootstrap)**.
+Take the course over at **[training.talkpython.fm](https://training.talkpython.fm/courses/explore_flask/building-data-driven-web-applications-in-python-with-flask-sqlalchemy-and-bootstrap)**.

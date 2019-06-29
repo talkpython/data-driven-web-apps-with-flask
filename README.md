@@ -2,7 +2,7 @@
 
 Course demo code and other hand-out materials for our data driven web apps in  course. Visit the full course page at **[training.talkpython.fm](https://training.talkpython.fm/courses/explore_/building-data-driven-web-applications-in-python-with--sqlalchemy-and-bootstrap)**
 
-[![](readme_materials/-data-web-apps.jpg)](https://training.talkpython.fm/courses/explore_/building-data-driven-web-applications-in-python-with--sqlalchemy-and-bootstrap)
+[![](https://raw.githubusercontent.com/talkpython/data-driven-web-apps-with-flask/master/readme_materials/flask-data-web-apps.jpg?token=AAPQ62M7D6PI5ZIZHPQB2M25D73XA)](https://training.talkpython.fm/courses/explore_/building-data-driven-web-applications-in-python-with--sqlalchemy-and-bootstrap)
 
 ## Course Summary
 

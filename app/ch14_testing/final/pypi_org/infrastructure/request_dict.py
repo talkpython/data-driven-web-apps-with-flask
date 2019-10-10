@@ -1,4 +1,5 @@
 import flask
+from werkzeug.datastructures import MultiDict
 
 
 class RequestDictionary(dict):
@@ -13,10 +14,21 @@ class RequestDictionary(dict):
 def create(default_val=None, **route_args) -> RequestDictionary:
     request = flask.request
 
+    # Adding this retro actively. Some folks are experiencing issues where they
+    # are getting a list rather than plain dict. I think it's from multiple
+    # entries in the multidict. This should fix it.
+    args = request.args
+    if isinstance(request.args, MultiDict):
+        args = request.args.to_dict()
+
+    form = request.form
+    if isinstance(request.args, MultiDict):
+        form = request.form.to_dict()
+
     data = {
-        **request.args,  # The key/value pairs in the URL query string
+        **args,  # The key/value pairs in the URL query string
         **request.headers,  # Header values
-        **request.form,  # The key/value pairs in the body, from a HTML post form
+        **form,  # The key/value pairs in the body, from a HTML post form
         **route_args  # And additional arguments the method access, if they want them merged.
     }
 

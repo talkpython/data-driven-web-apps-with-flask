@@ -1,8 +1,7 @@
-werkzeug
 flask
+werkzeug
 sqlalchemy
 
 progressbar2
 python-dateutil
 passlib
-

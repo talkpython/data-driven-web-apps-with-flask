@@ -5,7 +5,7 @@ from typing import Optional
 from flask import Request
 from flask import Response
 
-from pypi_org.bin.load_data import try_int
+from pypi_org.infrastructure.num_convert import try_int
 
 auth_cookie_name = 'pypi_demo_user'
 

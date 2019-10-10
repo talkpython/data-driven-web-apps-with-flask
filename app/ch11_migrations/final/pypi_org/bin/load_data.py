@@ -10,6 +10,7 @@ from dateutil.parser import parse
 sys.path.insert(0, os.path.abspath(os.path.join(
     os.path.dirname(__file__), "..", "..")))
 
+from pypi_org.bin.load_data import try_int
 import pypi_org.data.db_session as db_session
 from pypi_org.data.languages import ProgrammingLanguage
 from pypi_org.data.licenses import License
@@ -337,13 +338,6 @@ def make_version_num(version_text):
             build = try_int(parts[2])
 
         return major, minor, build
-
-
-def try_int(text) -> int:
-    try:
-        return int(text)
-    except:
-        return 0
 
 
 def init_db():

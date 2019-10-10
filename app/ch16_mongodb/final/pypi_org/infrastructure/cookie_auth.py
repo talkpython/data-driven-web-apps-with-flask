@@ -2,11 +2,10 @@ import hashlib
 from datetime import timedelta
 from typing import Optional
 
-import bson
 from flask import Request
 from flask import Response
 
-from pypi_org.bin.load_data import try_int
+from pypi_org.infrastructure.num_convert import try_int
 
 auth_cookie_name = 'pypi_demo_user'
 
@@ -26,7 +25,7 @@ def __add_cookie_callback(_, response: Response, name: str, value: str):
     response.set_cookie(name, value, max_age=timedelta(days=30))
 
 
-def get_user_id_via_auth_cookie(request: Request) -> Optional[bson.ObjectId]:
+def get_user_id_via_auth_cookie(request: Request) -> Optional[int]:
     if auth_cookie_name not in request.cookies:
         return None
 
@@ -42,10 +41,7 @@ def get_user_id_via_auth_cookie(request: Request) -> Optional[bson.ObjectId]:
         print("Warning: Hash mismatch, invalid cookie value")
         return None
 
-    try:
-        return bson.ObjectId(user_id)
-    except:
-        return None
+    return try_int(user_id)
 
 
 def logout(response: Response):

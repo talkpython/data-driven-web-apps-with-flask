@@ -13,7 +13,7 @@ auth_cookie_name = 'pypi_demo_user'
 def set_auth(response: Response, user_id: int):
     hash_val = __hash_text(str(user_id))
     val = "{}:{}".format(user_id, hash_val)
-    response.set_cookie(auth_cookie_name, val)
+    response.set_cookie(auth_cookie_name, val, secure=True, httponly=True, samesite='Lax')
 
 
 def __hash_text(text: str) -> str:
@@ -22,7 +22,7 @@ def __hash_text(text: str) -> str:
 
 
 def __add_cookie_callback(_, response: Response, name: str, value: str):
-    response.set_cookie(name, value, max_age=timedelta(days=30))
+    response.set_cookie(name, value, max_age=timedelta(days=30), secure=True, httponly=True, samesite='Lax')
 
 
 def get_user_id_via_auth_cookie(request: Request) -> Optional[int]:

@@ -22,7 +22,7 @@ def __hash_text(text: str) -> str:
 
 
 def __add_cookie_callback(_, response: Response, name: str, value: str):
-    response.set_cookie(name, value, max_age=timedelta(days=30), secure=True, httponly=True, samesite='Lax')
+    response.set_cookie(name, value, max_age=timedelta(days=30), secure=False, httponly=True, samesite='Lax')
 
 
 def get_user_id_via_auth_cookie(request: Request) -> Optional[int]:

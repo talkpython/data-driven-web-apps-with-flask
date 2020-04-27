@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/using_sqlachemy.iml" filepath="$PROJECT_DIR$/.idea/using_sqlachemy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/flask ch10_using_sqlachemy - final.iml" filepath="$PROJECT_DIR$/.idea/flask ch10_using_sqlachemy - final.iml" />
     </modules>
   </component>
 </project>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/flask-html-forms.iml" filepath="$PROJECT_DIR$/.idea/flask-html-forms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/flask ch12-forms - final.iml" filepath="$PROJECT_DIR$/.idea/flask ch12-forms - final.iml" />
     </modules>
   </component>
 </project>

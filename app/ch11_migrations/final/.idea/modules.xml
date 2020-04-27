@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/migrations.iml" filepath="$PROJECT_DIR$/.idea/migrations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/flask ch11_migrations - final.iml" filepath="$PROJECT_DIR$/.idea/flask ch11_migrations - final.iml" />
     </modules>
   </component>
 </project>

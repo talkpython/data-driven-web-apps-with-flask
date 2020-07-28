@@ -4,9 +4,12 @@ import sys
 import time
 from typing import List, Optional, Dict
 
+# This is listed as progressbar2:
+# noinspection PyPackageRequirements,PyPackageRequirements
 import progressbar
 from dateutil.parser import parse
 
+# Make sure we can import pypi_org.*
 sys.path.insert(0, os.path.abspath(os.path.join(
     os.path.dirname(__file__), "..", "..")))
 

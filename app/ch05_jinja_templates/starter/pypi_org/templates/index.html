@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Python Package Index (demo)</title>
+{% extends "_layout.html" %}
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+{% block title %}Homepage
+{% endblock %}
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/static/css/site.css">
-</head>
-<body>
-
-<nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-</nav>
-
+{% block main_content %}
 <div class="main_content">
     <h1>Python Package index</h1>
 
@@ -35,6 +22,10 @@
     </div>
     {% endfor %}
 </div>
+{% endblock %}
 
-</body>
-</html>
+{% block additional_css %}<!-- some about stuff -->
+{% endblock %}
+
+{% block additional_js %}
+{% endblock %}

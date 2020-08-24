@@ -1,5 +1,6 @@
 import flask
 
+from pypi_org.infrastructure.view_modifiers import response
 app = flask.Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
@@ -11,15 +12,18 @@ def get_latest_packages():
         {'name': 'passlib', 'version': '3.0.0'},
     ]
 
-@app.route("/")
+@app.route('/')
+@response(template_file='home/index.html')
 def index():
     test_packages = get_latest_packages()
-    return flask.render_template('home/index.html', packages=test_packages)
+    return {'packages': test_packages}
 
 @app.route("/about")
+@response(template_file='home/about.html')
 def about():
-    return flask.render_template('home/about.html')
-
+    return {}
+    # return flask.render_template('home/about.html')
+    # ^^ replaced with the view modifiers and @response
 
 
 if __name__ == '__main__':

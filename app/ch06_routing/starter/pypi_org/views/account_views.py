@@ -30,3 +30,10 @@ def register_get():
 @response(template_file='account/login.html')
 def login_get():
     return {}
+
+
+# ######## Logout ########
+
+@blueprint.route('/account/logout')
+def logout():
+    return {}

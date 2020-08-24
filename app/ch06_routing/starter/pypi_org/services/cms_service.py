@@ -9,3 +9,12 @@ fake_db = {
     },
 }
 
+def get_page(url: str) -> dict:
+    if not url:
+        return {}
+
+    url = url.strip().lower()
+
+    page = fake_db.get(url, {})
+    return page
+

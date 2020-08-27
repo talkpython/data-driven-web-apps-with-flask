@@ -15,4 +15,11 @@ class Package:
     docs_url = sa.Column(sa.String)
     package_url = sa.Column(sa.String)
 
+    author_name = sa.Column(sa.String)
+    author_email = sa.Column(sa.String)
 
+    license = sa.Column(sa.String)
+
+    # these we add later as they have relations
+    # maintainers
+    # releases

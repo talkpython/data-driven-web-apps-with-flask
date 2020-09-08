@@ -1,13 +1,13 @@
 import os
 import sys
 
-import pypi_org.data.db_session as db_session
-from pypi_org.data.package import Package
-from pypi_org.data.releases import Release
-
 # Make it run more easily outside of PyCharm
 sys.path.insert(0, os.path.abspath(os.path.join(
     os.path.dirname(__file__), "..", "..")))
+
+import pypi_org.data.db_session as db_session
+from pypi_org.data.package import Package
+from pypi_org.data.releases import Release
 
 
 def main():

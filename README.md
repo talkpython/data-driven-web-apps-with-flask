@@ -1,4 +1,4 @@
-# Data-driven web apps with 
+# Welcome to Data-driven web apps 
 
 Course demo code and other hand-out materials for our data driven web apps in Flask course. Visit the full course page at **[training.talkpython.fm](https://training.talkpython.fm/courses/explore_flask/building-data-driven-web-applications-in-python-with-flask-sqlalchemy-and-bootstrap)**
 
@@ -34,7 +34,7 @@ While building our replica PyPI, you will learn:
 
 This course is for **anyone who wants to create Python-based web applications using the Flask web framework**. In fact, you'll learn a lot of web skills that will translate across frameworks as well.
 
-We do assume that you have basic Python language skills and can read HTML and CSS. But most advanced uses of the language or CSS are explained in the course.
+We do assume that you have basic Python language skills and can read HTML and CSS. But most advanced uses of the language and CSS are explained in the course.
 
 ## Is this course based on Python 3 or Python 2?
 

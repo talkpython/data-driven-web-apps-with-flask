@@ -5,7 +5,7 @@ from flask import session
 
 import pypi_org.infrastructure.cookie_auth as cookie_auth
 from pypi_org.configs import app_config
-from pypi_org.infrastructure import session_cache
+from pypi_org.infrastructure import session_cache, msal_builder
 from pypi_org.infrastructure.view_modifiers import response
 from pypi_org.services import user_service
 from pypi_org.viewmodels.account.index_viewmodel import IndexViewModel
@@ -21,7 +21,6 @@ blueprint = flask.Blueprint('account', __name__, template_folder='templates')
 
 @blueprint.route('/account/auth')
 def auth():
-    vm = ViewModelBase()
     args = flask.request.args
 
     if flask.request.args.get('state') != session.get("state"):
@@ -31,7 +30,7 @@ def auth():
         return f"There was an error logging in: Error: {args.get('error')}, details: {args.get('error_description')}."
     if flask.request.args.get('code'):
         cache = session_cache.load_cache()
-        result = vm.build_msal_app(cache=cache).acquire_token_by_authorization_code(
+        result = msal_builder.build_msal_app(cache=cache).acquire_token_by_authorization_code(
             flask.request.args['code'],
             scopes=app_config.SCOPE,  # Misspelled scope would cause an HTTP 400 error here
             redirect_uri='http://localhost:5006/account/auth')
@@ -59,11 +58,10 @@ def auth():
 
 @blueprint.route('/account/begin_auth')
 def begin_auth():
-    vm = ViewModelBase()
     state = str(uuid.uuid4())
     session["state"] = state
 
-    return flask.redirect(vm.build_auth_url(state=state))
+    return flask.redirect(msal_builder.build_auth_url(state=state))
 
 
 # ################### INDEX #################################

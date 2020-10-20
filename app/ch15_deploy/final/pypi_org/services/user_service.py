@@ -41,7 +41,7 @@ def create_user(name: str, email: str, password: str) -> Optional[User]:
 
 
 def hash_text(text: str) -> str:
-    hashed_text = crypto.encrypt(text, rounds=171204)
+    hashed_text = crypto.encrypt(text, rounds=171_204)
     return hashed_text
 
 

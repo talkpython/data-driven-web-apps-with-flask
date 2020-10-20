@@ -1,13 +1,69 @@
-import flask
+import uuid
 
+import flask
+from flask import session
+
+import pypi_org.infrastructure.cookie_auth as cookie_auth
+from pypi_org.configs import app_config
+from pypi_org.infrastructure import session_cache
 from pypi_org.infrastructure.view_modifiers import response
 from pypi_org.services import user_service
-import pypi_org.infrastructure.cookie_auth as cookie_auth
 from pypi_org.viewmodels.account.index_viewmodel import IndexViewModel
 from pypi_org.viewmodels.account.login_viewmodel import LoginViewModel
 from pypi_org.viewmodels.account.register_viewmodel import RegisterViewModel
+from pypi_org.viewmodels.shared.viewmodelbase import ViewModelBase
 
 blueprint = flask.Blueprint('account', __name__, template_folder='templates')
+
+
+# ################### AZURE AUTH ############################
+
+
+@blueprint.route('/account/auth')
+def auth():
+    vm = ViewModelBase()
+    args = flask.request.args
+
+    if flask.request.args.get('state') != session.get("state"):
+        return flask.redirect('/')  # No-OP. Goes back to Index page
+    if "error" in flask.request.args:  # Authentication/Authorization failure
+
+        return f"There was an error logging in: Error: {args.get('error')}, details: {args.get('error_description')}."
+    if flask.request.args.get('code'):
+        cache = session_cache.load_cache()
+        result = vm.build_msal_app(cache=cache).acquire_token_by_authorization_code(
+            flask.request.args['code'],
+            scopes=app_config.SCOPE,  # Misspelled scope would cause an HTTP 400 error here
+            redirect_uri='http://localhost:5006/account/auth')
+        if "error" in result:
+            return f"There was an error logging in: Error: {args.get('error')}, details: {args.get('error_description')}."
+
+        session_cache.save_cache(cache)
+        # 'oid': '257af28c-d791-4287-bf95-b67578dae57e',
+        claims = result['id_token_claims']
+
+        email = claims.get('emails', ['NONE'])[0].strip().lower()
+        first_name = claims.get('given_name')
+        last_name = claims.get('family_name')
+
+        user = user_service.find_user_by_email(email)
+        if not user:
+            user = user_service.create_user(f'{first_name} {last_name}', email, str(uuid.uuid4()))
+
+        resp = flask.redirect('/account')
+        cookie_auth.set_auth(resp, user.id)
+        return resp
+
+    return flask.redirect('/')
+
+
+@blueprint.route('/account/begin_auth')
+def begin_auth():
+    vm = ViewModelBase()
+    state = str(uuid.uuid4())
+    session["state"] = state
+
+    return flask.redirect(vm.build_auth_url(state=state))
 
 
 # ################### INDEX #################################
@@ -85,7 +141,9 @@ def login_post():
 
 @blueprint.route('/account/logout')
 def logout():
-    resp = flask.redirect('/')
+    resp = flask.redirect(  # Also logout from your tenant's web session
+        app_config.AUTHORITY + "/oauth2/v2.0/logout" +
+        "?post_logout_redirect_uri=http://localhost:5006/")
     cookie_auth.logout(resp)
-
+    session.clear()  # Wipe out user and its token cache from session
     return resp

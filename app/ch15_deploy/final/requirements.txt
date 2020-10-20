@@ -1,6 +1,8 @@
 flask
+flask-session
 werkzeug
 sqlalchemy
+msal
 
 progressbar2
 python-dateutil

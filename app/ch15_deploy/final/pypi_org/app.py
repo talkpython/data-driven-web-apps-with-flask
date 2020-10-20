@@ -2,17 +2,21 @@ import os
 import sys
 
 import flask
+from flask_session import Session
+
+from pypi_org.configs import app_config
 
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)
 import pypi_org.data.db_session as db_session
 
 app = flask.Flask(__name__)
+app.config.from_object(app_config)
 
 
 def main():
     configure()
-    app.run(debug=True, port=5006)
+    app.run(debug=True, port=5006, host='localhost')
 
 
 def configure():
@@ -23,7 +27,13 @@ def configure():
 
     setup_db()
     print("DB setup completed.")
+
+    setup_session_server()
     print("", flush=True)
+
+
+def setup_session_server():
+    Session(app)
 
 
 def setup_db():

@@ -175,3 +175,6 @@ app/ch13-validation/starter/.idea/inspectionProfiles/Project_Default.xml
 app/ch14_testing/final/.idea/inspectionProfiles/Project_Default.xml
 app/ch14_testing/starter/.idea/inspectionProfiles/Project_Default.xml
 app/ch15_deploy/final/.idea/inspectionProfiles/Project_Default.xml
+app/ch15_deploy/final/pypi_org/flask_session
+d43be29f-e2f2-41e5-8dde-ed049a1776b6.xml
+dataSources.local.xml

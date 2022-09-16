@@ -1,5 +1,4 @@
 import hashlib
-from datetime import timedelta
 from typing import Optional
 
 from flask import Request
@@ -19,10 +18,6 @@ def set_auth(response: Response, user_id: int):
 def __hash_text(text: str) -> str:
     text = 'salty__' + text + '__text'
     return hashlib.sha512(text.encode('utf-8')).hexdigest()
-
-
-def __add_cookie_callback(_, response: Response, name: str, value: str):
-    response.set_cookie(name, value, max_age=timedelta(days=30), secure=False, httponly=True, samesite='Lax')
 
 
 def get_user_id_via_auth_cookie(request: Request) -> Optional[int]:

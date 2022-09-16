@@ -339,11 +339,11 @@ def make_version_num(version_text):
         return major, minor, build
 
 
-def try_int(text) -> int:
+def try_int(text) -> Optional[int]:
     try:
         return int(text)
     except:
-        return 0
+        return None
 
 
 def init_db():

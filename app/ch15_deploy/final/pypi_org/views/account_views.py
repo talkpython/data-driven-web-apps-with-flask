@@ -1,8 +1,8 @@
 import flask
 
+import pypi_org.infrastructure.cookie_auth as cookie_auth
 from pypi_org.infrastructure.view_modifiers import response
 from pypi_org.services import user_service
-import pypi_org.infrastructure.cookie_auth as cookie_auth
 from pypi_org.viewmodels.account.index_viewmodel import IndexViewModel
 from pypi_org.viewmodels.account.login_viewmodel import LoginViewModel
 from pypi_org.viewmodels.account.register_viewmodel import RegisterViewModel
@@ -58,6 +58,11 @@ def register_post():
 @response(template_file='account/login.html')
 def login_get():
     vm = LoginViewModel()
+
+    # Added after recording, see https://github.com/talkpython/data-driven-web-apps-with-flask/issues/24
+    if vm.user_id:
+        return flask.redirect('/account')
+
     return vm.to_dict()
 
 

@@ -58,6 +58,11 @@ def register_post():
 @response(template_file='account/login.html')
 def login_get():
     vm = LoginViewModel()
+
+    # Added after recording, see https://github.com/talkpython/data-driven-web-apps-with-flask/issues/24
+    if vm.user_id:
+        return flask.redirect('/account')
+
     return vm.to_dict()
 
 

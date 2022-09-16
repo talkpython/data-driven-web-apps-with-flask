@@ -1,5 +1,6 @@
 from typing import Optional
 
+import bson
 from passlib.handlers.sha2_crypt import sha512_crypt as crypto
 from pypi_org.nosql.users import User
 
@@ -46,6 +47,6 @@ def login_user(email: str, password: str) -> Optional[User]:
     return user
 
 
-def find_user_by_id(user_id: int) -> Optional[User]:
+def find_user_by_id(user_id: bson.ObjectId) -> Optional[User]:
     user = User.objects().filter(id=user_id).first()
     return user

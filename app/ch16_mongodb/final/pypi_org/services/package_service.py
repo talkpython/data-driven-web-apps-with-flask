@@ -5,10 +5,7 @@ from pypi_org.nosql.releases import Release
 
 
 def get_latest_releases(limit=10) -> List[Release]:
-    releases = Release.objects(). \
-        order_by("-created_date"). \
-        limit(limit). \
-        all()
+    releases = Release.objects().order_by('-created_date').limit(limit).all()
     return releases
 
 
@@ -26,9 +23,7 @@ def get_package_by_id(package_id: str) -> Optional[Package]:
 
     package_id = package_id.strip().lower()
 
-    package = Package.objects() \
-        .filter(id=package_id) \
-        .first()
+    package = Package.objects().filter(id=package_id).first()
 
     return package
 

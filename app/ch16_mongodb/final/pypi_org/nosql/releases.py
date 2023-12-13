@@ -26,7 +26,7 @@ class Release(mongoengine.Document):
             'build_ver',
             {'fields': ['major_ver', 'minor_ver', 'build_ver']},
             {'fields': ['-major_ver', '-minor_ver', '-build_ver']},
-        ]
+        ],
     }
 
     @property

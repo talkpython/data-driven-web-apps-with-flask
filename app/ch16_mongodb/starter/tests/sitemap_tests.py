@@ -10,10 +10,7 @@ def test_int_site_mapped_urls(client):
         href.text.strip().replace('http://127.0.0.1:5000', '').replace('http://localhost', '')
         for href in list(x.findall('url/loc'))
     ]
-    urls = [
-        u if u else '/'
-        for u in urls
-    ]
+    urls = [u if u else '/' for u in urls]
     print('Testing {} urls from sitemap...'.format(len(urls)), flush=True)
 
     has_tested_projects = False
@@ -40,7 +37,7 @@ def get_sitemap_text(client):
     #     <url>
     #         ...
     #     </url>
-    res: Response = client.get("/sitemap.xml")
-    text = res.data.decode("utf-8")
+    res: Response = client.get('/sitemap.xml')
+    text = res.data.decode('utf-8')
     text = text.replace('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', '')
     return text

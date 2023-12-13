@@ -15,5 +15,5 @@ class User(mongoengine.Document):
             'email',
             'hashed_password',
             'created_date',
-        ]
+        ],
     }

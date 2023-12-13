@@ -18,5 +18,5 @@ class Download(mongoengine.Document):
             'created_date',
             'package_id',
             'release_id',
-        ]
+        ],
     }

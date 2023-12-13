@@ -16,7 +16,7 @@ def package_details(package_name: str):
     if not package:
         return flask.abort(status=404)
 
-    latest_version = "0.0.0"
+    latest_version = '0.0.0'
     latest_release = None
     is_latest = True
 
@@ -36,4 +36,4 @@ def package_details(package_name: str):
 @blueprint.route('/<int:rank>')
 def popular(rank: int):
     print(type(rank), rank)
-    return "The details for the {}th most popular package".format(rank)
+    return 'The details for the {}th most popular package'.format(rank)

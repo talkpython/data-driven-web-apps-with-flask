@@ -12,5 +12,5 @@ class License(mongoengine.Document):
         'collection': 'licenses',
         'indexes': [
             'created_date',
-        ]
+        ],
     }

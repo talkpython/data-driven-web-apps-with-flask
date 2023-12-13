@@ -26,7 +26,7 @@ class Package(mongoengine.Document):
             'created_date',
             'author_email',
             'license',
-        ]
+        ],
     }
 
     def __repr__(self):

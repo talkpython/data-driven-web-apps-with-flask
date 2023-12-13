@@ -19,4 +19,4 @@ def package_details(package_name: str):
 @blueprint.route('/<int:rank>')
 def popular(rank: int):
     print(type(rank), rank)
-    return "The details for the {}th most popular package".format(rank)
+    return 'The details for the {}th most popular package'.format(rank)

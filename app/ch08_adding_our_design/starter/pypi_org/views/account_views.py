@@ -16,6 +16,7 @@ def index():
 
 # ################### REGISTER #################################
 
+
 @blueprint.route('/account/register', methods=['GET'])
 @response(template_file='account/register.html')
 def register_get():
@@ -30,6 +31,7 @@ def register_post():
 
 # ################### LOGIN #################################
 
+
 @blueprint.route('/account/login', methods=['GET'])
 @response(template_file='account/login.html')
 def login_get():
@@ -43,6 +45,7 @@ def login_post():
 
 
 # ################### LOGOUT #################################
+
 
 @blueprint.route('/account/logout')
 def logout():

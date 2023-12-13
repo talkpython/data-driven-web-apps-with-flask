@@ -11,7 +11,7 @@ class PackageDetailsViewModel(ViewModelBase):
             self.package_name = package_name.strip().lower()
             self.package = package_service.get_package_by_id(self.package_name)
 
-        self.latest_version = "0.0.0"
+        self.latest_version = '0.0.0'
         self.latest_release = None
         self.is_latest = True
 

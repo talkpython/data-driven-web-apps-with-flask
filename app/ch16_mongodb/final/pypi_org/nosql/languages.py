@@ -3,7 +3,6 @@ import mongoengine
 
 
 class ProgrammingLanguage(mongoengine.Document):
-
     id = mongoengine.StringField(primary_key=True)
     created_date = mongoengine.DateTimeField(default=datetime.datetime.now)
     description = mongoengine.StringField()
@@ -13,5 +12,5 @@ class ProgrammingLanguage(mongoengine.Document):
         'collection': 'languages',
         'indexes': [
             'created_date',
-        ]
+        ],
     }

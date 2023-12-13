@@ -19,14 +19,14 @@ def main():
 
 
 def configure():
-    print("Configuring Flask app:")
+    print('Configuring Flask app:')
 
     register_blueprints()
-    print("Registered blueprints")
+    print('Registered blueprints')
 
     setup_db()
-    print("DB setup completed.")
-    print("", flush=True)
+    print('DB setup completed.')
+    print('', flush=True)
 
 
 def setup_db():

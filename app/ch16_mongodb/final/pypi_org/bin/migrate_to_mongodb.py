@@ -84,13 +84,7 @@ def migrate_releases():
 
 
 def init_dbs():
-    db_file = os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__),
-            '..',
-            'db',
-            'pypi.sqlite'
-        ))
+    db_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'db', 'pypi.sqlite'))
     db_session.global_init(db_file)
 
     mongo_setup.global_init()

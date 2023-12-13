@@ -11,7 +11,7 @@ auth_cookie_name = 'pypi_demo_user'
 
 def set_auth(response: Response, user_id: int):
     hash_val = __hash_text(str(user_id))
-    val = "{}:{}".format(user_id, hash_val)
+    val = '{}:{}'.format(user_id, hash_val)
     response.set_cookie(auth_cookie_name, val, secure=True, httponly=True, samesite='Lax')
 
 
@@ -33,7 +33,7 @@ def get_user_id_via_auth_cookie(request: Request) -> Optional[int]:
     hash_val = parts[1]
     hash_val_check = __hash_text(user_id)
     if hash_val != hash_val_check:
-        print("Warning: Hash mismatch, invalid cookie value")
+        print('Warning: Hash mismatch, invalid cookie value')
         return None
 
     return try_int(user_id)

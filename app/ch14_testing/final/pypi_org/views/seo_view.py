@@ -18,6 +18,7 @@ def sitemap():
 
 # ################### Robots #################################
 
+
 @blueprint.route('/robots.txt')
 @response(mimetype='text/plain', template_file='seo/robots.txt')
 def robots():

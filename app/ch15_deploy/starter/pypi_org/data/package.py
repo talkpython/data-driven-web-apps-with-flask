@@ -26,11 +26,15 @@ class Package(SqlAlchemyBase):
     license: str = sa.Column(sa.String, index=True)
 
     # releases relationship
-    releases: List[Release] = orm.relation("Release", order_by=[
-        Release.major_ver.desc(),
-        Release.minor_ver.desc(),
-        Release.build_ver.desc(),
-    ], back_populates='package')
+    releases: List[Release] = orm.relation(
+        'Release',
+        order_by=[
+            Release.major_ver.desc(),
+            Release.minor_ver.desc(),
+            Release.build_ver.desc(),
+        ],
+        back_populates='package',
+    )
 
     def __repr__(self):
         return '<Package {}>'.format(self.id)

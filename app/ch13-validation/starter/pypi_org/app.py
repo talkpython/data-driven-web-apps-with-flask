@@ -1,6 +1,7 @@
 import os
 import sys
 import flask
+
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)
 
@@ -16,10 +17,7 @@ def main():
 
 
 def setup_db():
-    db_file = os.path.join(
-        os.path.dirname(__file__),
-        'db',
-        'pypi.sqlite')
+    db_file = os.path.join(os.path.dirname(__file__), 'db', 'pypi.sqlite')
 
     db_session.global_init(db_file)
 

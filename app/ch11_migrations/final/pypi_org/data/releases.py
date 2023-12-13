@@ -13,15 +13,13 @@ class Release(SqlAlchemyBase):
     minor_ver: int = sqlalchemy.Column(sqlalchemy.BigInteger, index=True)
     build_ver: int = sqlalchemy.Column(sqlalchemy.BigInteger, index=True)
 
-    created_date: datetime.datetime = sqlalchemy.Column(sqlalchemy.DateTime,
-                                                        default=datetime.datetime.now,
-                                                        index=True)
+    created_date: datetime.datetime = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now, index=True)
     comment: str = sqlalchemy.Column(sqlalchemy.String)
     url: str = sqlalchemy.Column(sqlalchemy.String)
     size: int = sqlalchemy.Column(sqlalchemy.BigInteger)
 
     # Package relationship
-    package_id: str = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("packages.id"))
+    package_id: str = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey('packages.id'))
     package = orm.relation('Package')
 
     @property

@@ -7,7 +7,7 @@ import unittest.mock
 
 
 def test_example():
-    print("Test example...")
+    print('Test example...')
     assert 1 + 2 == 3
 
 
@@ -15,11 +15,7 @@ def test_vm_register_validation_when_valid():
     # 3 A's of test: Arrange, Act, then Assert
 
     # Arrange
-    form_data = {
-        'name': 'Michael',
-        'email': 'michael@talkpython.fm',
-        'password': 'a' * 6
-    }
+    form_data = {'name': 'Michael', 'email': 'michael@talkpython.fm', 'password': 'a' * 6}
 
     with flask_app.test_request_context(path='/account/register', data=form_data):
         vm = RegisterViewModel()
@@ -37,11 +33,7 @@ def test_vm_register_validation_for_existing_user():
     # 3 A's of test: Arrange, Act, then Assert
 
     # Arrange
-    form_data = {
-        'name': 'Michael',
-        'email': 'michael@talkpython.fm',
-        'password': 'a' * 6
-    }
+    form_data = {'name': 'Michael', 'email': 'michael@talkpython.fm', 'password': 'a' * 6}
 
     with flask_app.test_request_context(path='/account/register', data=form_data):
         vm = RegisterViewModel()
@@ -62,11 +54,8 @@ def test_v_register_view_new_user():
 
     # Arrange
     from pypi_org.views.account_views import register_post
-    form_data = {
-        'name': 'Michael',
-        'email': 'michael@talkpython.fm',
-        'password': 'a' * 6
-    }
+
+    form_data = {'name': 'Michael', 'email': 'michael@talkpython.fm', 'password': 'a' * 6}
 
     target = 'pypi_org.services.user_service.find_user_by_email'
     find_user = unittest.mock.patch(target, return_value=None)

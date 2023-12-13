@@ -19,11 +19,9 @@ class Release(SqlAlchemyBase):
     size = sqlalchemy.Column(sqlalchemy.BigInteger)
 
     # Package relationship
-    package_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("packages.id"))
+    package_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey('packages.id'))
     package = orm.relation('Package')
 
     @property
     def version_text(self):
         return '{}.{}.{}'.format(self.major_ver, self.minor_ver, self.build_ver)
-
-

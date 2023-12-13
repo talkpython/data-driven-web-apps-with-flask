@@ -30,6 +30,7 @@ def index():
 
 # ################### REGISTER #################################
 
+
 @blueprint.route('/account/register', methods=['GET'])
 @response(template_file='account/register.html')
 def register_get():
@@ -52,7 +53,7 @@ def register_post():
             'name': name,
             'email': email,
             'password': password,
-            'error': "Some required fields are missing.",
+            'error': 'Some required fields are missing.',
             'user_id': cookie_auth.get_user_id_via_auth_cookie(flask.request),
         }
 
@@ -62,7 +63,7 @@ def register_post():
             'name': name,
             'email': email,
             'password': password,
-            'error': "A user with that email already exists.",
+            'error': 'A user with that email already exists.',
             'user_id': cookie_auth.get_user_id_via_auth_cookie(flask.request),
         }
 
@@ -73,6 +74,7 @@ def register_post():
 
 
 # ################### LOGIN #################################
+
 
 @blueprint.route('/account/login', methods=['GET'])
 @response(template_file='account/login.html')
@@ -92,7 +94,7 @@ def login_post():
         return {
             'email': email,
             'password': password,
-            'error': "Some required fields are missing.",
+            'error': 'Some required fields are missing.',
             'user_id': cookie_auth.get_user_id_via_auth_cookie(flask.request),
         }
 
@@ -101,7 +103,7 @@ def login_post():
         return {
             'email': email,
             'password': password,
-            'error': "The account does not exist or the password is wrong.",
+            'error': 'The account does not exist or the password is wrong.',
             'user_id': cookie_auth.get_user_id_via_auth_cookie(flask.request),
         }
 
@@ -112,6 +114,7 @@ def login_post():
 
 
 # ################### LOGOUT #################################
+
 
 @blueprint.route('/account/logout')
 def logout():

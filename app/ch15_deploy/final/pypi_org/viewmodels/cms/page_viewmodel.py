@@ -7,4 +7,3 @@ class PageViewModel(ViewModelBase):
         super().__init__()
 
         self.page = cms_service.get_page(full_url)
-

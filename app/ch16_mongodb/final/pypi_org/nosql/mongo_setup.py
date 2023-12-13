@@ -3,7 +3,7 @@ import ssl
 import mongoengine
 
 
-def global_init(user=None, password=None, port=27017, server='localhost', use_ssl=True, db_name='pypi'):
+def global_init(user=None, password=None, port=27017, server='localhost', use_ssl=True, db_name='pypi-flask-data-driven'):
     if user or password:
         # noinspection PyUnresolvedReferences
         data = dict(

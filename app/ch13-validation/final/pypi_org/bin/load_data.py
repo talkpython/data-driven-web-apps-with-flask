@@ -9,7 +9,7 @@ from dateutil.parser import parse
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
-from pypi_org.bin.load_data import try_int
+from pypi_org.infrastructure.num_convert import try_int
 import pypi_org.data.db_session as db_session
 from pypi_org.data.languages import ProgrammingLanguage
 from pypi_org.data.licenses import License

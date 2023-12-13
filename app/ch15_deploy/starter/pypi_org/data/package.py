@@ -3,6 +3,8 @@ from typing import List
 
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
+from sqlalchemy.orm import Mapped
+
 from pypi_org.data.modelbase import SqlAlchemyBase
 from pypi_org.data.releases import Release
 
@@ -12,7 +14,6 @@ class Package(SqlAlchemyBase):
 
     id: str = sa.Column(sa.String, primary_key=True)
     created_date: datetime.datetime = sa.Column(sa.DateTime, default=datetime.datetime.now, index=True)
-    last_updated: datetime.datetime = sa.Column(sa.DateTime, default=datetime.datetime.now, index=True)
     summary: str = sa.Column(sa.String, nullable=False)
     description: str = sa.Column(sa.String, nullable=True)
 
@@ -26,7 +27,7 @@ class Package(SqlAlchemyBase):
     license: str = sa.Column(sa.String, index=True)
 
     # releases relationship
-    releases: List[Release] = orm.relation(
+    releases: Mapped[Release] = orm.relationship(
         'Release',
         order_by=[
             Release.major_ver.desc(),

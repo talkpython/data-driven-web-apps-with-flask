@@ -3,6 +3,8 @@ from typing import List
 
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
+from sqlalchemy.orm import Mapped
+
 from pypi_org.data.modelbase import SqlAlchemyBase
 from pypi_org.data.releases import Release
 
@@ -10,22 +12,22 @@ from pypi_org.data.releases import Release
 class Package(SqlAlchemyBase):
     __tablename__ = 'packages'
 
-    id = sa.Column(sa.String, primary_key=True)
-    created_date = sa.Column(sa.DateTime, default=datetime.datetime.now, index=True)
-    summary = sa.Column(sa.String, nullable=False)
-    description = sa.Column(sa.String, nullable=True)
+    id: str = sa.Column(sa.String, primary_key=True)
+    created_date: datetime.datetime = sa.Column(sa.DateTime, default=datetime.datetime.now, index=True)
+    summary: str = sa.Column(sa.String, nullable=False)
+    description: str = sa.Column(sa.String, nullable=True)
 
-    home_page = sa.Column(sa.String)
-    docs_url = sa.Column(sa.String)
-    package_url = sa.Column(sa.String)
+    home_page: str = sa.Column(sa.String)
+    docs_url: str = sa.Column(sa.String)
+    package_url: str = sa.Column(sa.String)
 
-    author_name = sa.Column(sa.String)
-    author_email = sa.Column(sa.String, index=True)
+    author_name: str = sa.Column(sa.String)
+    author_email: str = sa.Column(sa.String, index=True)
 
-    license = sa.Column(sa.String, index=True)
+    license: str = sa.Column(sa.String, index=True)
 
     # releases relationship
-    releases: List[Release] = orm.relation(
+    releases: Mapped[Release] = orm.relationship(
         'Release',
         order_by=[
             Release.major_ver.desc(),

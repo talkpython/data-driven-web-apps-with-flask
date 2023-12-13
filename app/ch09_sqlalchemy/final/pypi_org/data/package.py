@@ -3,6 +3,8 @@ from typing import List
 
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
+from sqlalchemy.orm import Mapped
+
 from pypi_org.data.modelbase import SqlAlchemyBase
 from pypi_org.data.releases import Release
 
@@ -25,7 +27,7 @@ class Package(SqlAlchemyBase):
     license = sa.Column(sa.String, index=True)
 
     # releases relationship
-    releases: List[Release] = orm.relation(
+    releases: Mapped[Release] = orm.relationship(
         'Release',
         order_by=[
             Release.major_ver.desc(),

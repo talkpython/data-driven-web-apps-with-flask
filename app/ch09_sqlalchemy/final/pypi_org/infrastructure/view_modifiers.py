@@ -5,7 +5,7 @@ import werkzeug
 import werkzeug.wrappers
 
 
-def response(*, mimetype: str = None, template_file: str = None):
+def response(*, mimetype: object = None, template_file: object = None) -> callable:
     def response_inner(f):
         # print("Wrapping in response {}".format(f.__name__), flush=True)
 

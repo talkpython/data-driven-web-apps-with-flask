@@ -16,7 +16,7 @@ class PackageDetailsViewModel(ViewModelBase):
         self.is_latest = True
 
         if self.package and self.package.releases:
-            self.latest_release = self.package.releases[0]
+            self.latest_release = self.package.releases
             self.latest_version = self.latest_release.version_text
 
         self.release_version = self.latest_release

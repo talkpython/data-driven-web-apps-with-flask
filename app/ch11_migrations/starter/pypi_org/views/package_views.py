@@ -21,7 +21,7 @@ def package_details(package_name: str):
     is_latest = True
 
     if package.releases:
-        latest_release = package.releases[0]
+        latest_release = package.releases
         latest_version = latest_release.version_text
 
     return {

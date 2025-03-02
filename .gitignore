@@ -177,3 +177,5 @@ app/ch14_testing/starter/.idea/inspectionProfiles/Project_Default.xml
 app/ch15_deploy/final/.idea/inspectionProfiles/Project_Default.xml
 .idea/web-apps-flask-course.iml
 .idea/inspectionProfiles/Project_Default.xml
+/.idea/jsLibraryMappings.xml
+/.idea/webResources.xml

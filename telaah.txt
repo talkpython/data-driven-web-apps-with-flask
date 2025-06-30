@@ -1,0 +1,5 @@
+Saya melakukan beberapa penyesuaian ringan pada proyek ini, seperti penambahan file, pengubahan nama, dan pembaruan kecil lainnya. Semua perubahan yang saya lakukan tetap mematuhi ketentuan dari lisensi MIT, yang merupakan lisensi terbuka dan permisif.
+
+Lisensi MIT memungkinkan saya untuk menggunakan, menyalin, memodifikasi, dan mendistribusikan perangkat lunak, selama saya tetap mencantumkan salinan lisensi dan informasi hak cipta dari pengembang aslinya, yaitu Mahima Churi.
+
+Sebagai bentuk kepatuhan, saya telah menyertakan file LICENSE asli di direktori utama tanpa perubahan, serta mencantumkan keterangan lisensi di file README.md. Saya juga menambahkan komentar lisensi di bagian atas file utama proyek untuk tetap memberikan atribusi yang layak kepada pengembang awal.

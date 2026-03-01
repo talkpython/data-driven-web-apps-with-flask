@@ -1,4 +1,4 @@
-from test_client import *
+from test_client import *  # noqa: F403
 
 # Let's be sure to use conftest.py for sharing fixtures across multiple files
 # Added after the recording but will help some folks.

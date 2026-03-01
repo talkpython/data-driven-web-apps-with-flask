@@ -4,11 +4,11 @@ import sys
 import flask
 
 from pypi_org.nosql import mongo_setup
-from pypi_org.nosql.users import User
+from pypi_org.nosql.users import User  # noqa: F401
 
 folder = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, folder)
-import pypi_org.data.db_session as db_session
+import pypi_org.data.db_session as db_session  # noqa: E402, F401
 
 app = flask.Flask(__name__)
 

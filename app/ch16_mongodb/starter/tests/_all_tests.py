@@ -6,13 +6,13 @@ sys.path.insert(0, container_folder)
 
 
 # noinspection PyUnresolvedReferences
-from account_tests import *
+from account_tests import *  # noqa: E402, F403
 
 # noinspection PyUnresolvedReferences
-from package_tests import *
+from package_tests import *  # noqa: E402, F403
 
 # noinspection PyUnresolvedReferences
-from sitemap_tests import *
+from sitemap_tests import *  # noqa: E402, F403
 
 # noinspection PyUnresolvedReferences
-from home_tests import *
+from home_tests import *  # noqa: E402, F403
